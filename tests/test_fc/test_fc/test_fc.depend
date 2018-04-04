@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1522675132 source:/home/sergiu/Desktop/play_folder/tests/test_fc/test_fc/main.c
+	<stdio.h>
+	<stdlib.h>
+	"fc.h"
+	"activations.h"
+
+1522672368 /home/sergiu/Desktop/play_folder/tests/test_fc/test_fc/fc.h
+
+1522672368 /home/sergiu/Desktop/play_folder/tests/test_fc/test_fc/activations.h
+
