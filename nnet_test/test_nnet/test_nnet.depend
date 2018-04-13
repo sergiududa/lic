@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1523621157 source:/home/sergiu/git/lic/nnet_test/test_nnet/main.c
+	<stdio.h>
+	<stdlib.h>
+	"headers/activations.h"
+	"headers/fc.h"
+	"headers/conv2d.h"
+	"headers/pool.h"
+	"headers/defines.h"
+
+1522842757 /home/sergiu/git/lic/nnet_test/test_nnet/headers/activations.h
+
+1523619844 /home/sergiu/git/lic/nnet_test/test_nnet/headers/fc.h
+
+1523622627 /home/sergiu/git/lic/nnet_test/test_nnet/headers/conv2d.h
+
+1523613217 /home/sergiu/git/lic/nnet_test/test_nnet/headers/pool.h
+
+1523624346 /home/sergiu/git/lic/nnet_test/test_nnet/headers/defines.h
+

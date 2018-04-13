@@ -37,9 +37,9 @@
 #define P2_KERNEL_SIZE		2
 #define P2_STRIDE			2
 
-#define FLATTEN_SIZE		96
+#define FLATTEN_SIZE		576
 
-#define FC1_WEIGHTS_H		96
+#define FC1_WEIGHTS_H		576
 #define FC1_WEIGHTS_W		120
 #define FC1_BIAS_SIZE		120
 
@@ -64,7 +64,7 @@ int main()
 	float*		conv_layer1_bias;    	 
 	float***	conv_layer1_activation;	 
 	float***	pool_layer1_out;     	 
--	
+	
 	float**** 	conv_layer2_weights; 	 
 	float*		conv_layer2_bias;   	 
 	float***	conv_layer2_activation;  
@@ -73,16 +73,118 @@ int main()
 	float*		flatten_layer;
 	
 	float**		fc_layer1_weights;
-	float*		fc_layer1_bias
+	float*		fc_layer1_bias;
 	float*		fc_layer1_activation;
 
 	float**		fc_layer2_weights;
-	float*		fc_layer2_bias
+	float*		fc_layer2_bias;
 	float*		fc_layer2_activation;
 	
 	float**		fc_layer3_weights;
-	float*		fc_layer3_bias
+	float*		fc_layer3_bias;
 	float*		fc_layer3_activation;
+
+	/*****************************************************************/
+	// ======================= Opening Files ========================// 
+	/*****************************************************************/
+	
+
+	///////////////////////// 
+	/// Conv Layers Files ///
+	/////////////////////////
+
+	FILE* conv1_weights_file = fopen("input_files/conv1_weights.out","r");
+	if(conv1_weights_file == NULL)
+	{
+		printf("Cannot open input_files/conv1_weights.out\n");
+		exit(1);
+	}
+
+
+	FILE* conv1_biases_file = fopen("input_files/conv1_biases.out","r");
+	if(conv1_biases_file == NULL)
+	{
+		printf("Cannot open input_files/conv1_biases.out\n");
+		exit(1);
+	}
+
+
+	FILE* conv2_weights_file = fopen("input_files/conv2_weights.out","r");
+	if(conv2_weights_file == NULL)
+	{
+		printf("Cannot open input_files/conv2_weights.out\n");
+		exit(1);
+	}
+
+
+	FILE* conv2_biases_file = fopen("input_files/conv2_biases.out","r");
+	if(conv2_biases_file == NULL)
+	{
+		printf("Cannot open input_files/conv2_biases.out\n");
+		exit(1);
+	}
+
+	//////////////////////
+	/// FC Layer Files ///
+	//////////////////////
+
+	FILE* fc1_weights_file = fopen("input_files/fc1_weights.out","r");
+	if(fc1_weights_file == NULL)
+	{
+		printf("Cannot open input_files/fc1_weights.out\n");
+		exit(1);
+	}
+
+
+	FILE* fc1_biases_file = fopen("input_files/fc1_bias.out","r");
+	if(fc1_biases_file == NULL)
+	{
+		printf("Cannot open input_files/fc1_bias.out\n");
+		exit(1);
+	}
+	
+
+	FILE* fc2_weights_file = fopen("input_files/fc2_weights.out","r");
+	if(fc2_weights_file == NULL)
+	{
+		printf("Cannot open input_files/fc2_weights.out\n");
+		exit(1);
+	}
+
+
+	FILE* fc2_biases_file = fopen("input_files/fc2_bias.out","r");
+	if(fc2_biases_file == NULL)
+	{
+		printf("Cannot open input_files/fc2_bias.out\n");
+		exit(1);
+	}
+
+
+	FILE* fc3_weights_file = fopen("input_files/fc3_weights.out","r");
+	if(fc3_weights_file == NULL)
+	{
+		printf("Cannot open input_files/fc3_weights.out\n");
+		exit(1);
+	}
+
+
+	FILE* fc3_biases_file = fopen("input_files/fc3_bias.out","r");
+	if(fc3_biases_file == NULL)
+	{
+		printf("Cannot open input_files/fc3_bias.out\n");
+		exit(1);
+	}
+
+	//////////////////
+	/// Image File ///
+	//////////////////
+
+	FILE* image_file = fopen("input_files/image.in","r");
+	if(image_file == NULL)
+	{
+		printf("Cannot open input_files/image.out\n");
+		exit(1);
+	}
 
 	/*****************************************************************/
 	// ========================= malloc =============================// 
@@ -252,7 +354,7 @@ int main()
 		for(int k = 0 ; k < CONV1_CHANNELS; k++)
 			for(int i = 0; i < CONV1_KERNEL_SIZE; i++)
 				for(int j = 0 ; j < CONV1_KERNEL_SIZE; j++)
-					fscanf(/***PLACEHOLDER***/,"%f",&conv_layer1_weights[i][j][k][l]);
+					fscanf(conv1_weights_file,"%f",&conv_layer1_weights[i][j][k][l]);
 
 	/////////////////////////////
 	/// Reading CONV2 Weights ///
@@ -262,21 +364,21 @@ int main()
 		for(int k = 0 ; k < CONV2_CHANNELS; k++)
 			for(int i = 0; i < CONV2_KERNEL_SIZE; i++)
 				for(int j = 0 ; j < CONV2_KERNEL_SIZE; j++)
-					fscanf(/***PLACEHOLDER***/,"%f",&conv_layer2_weights[i][j][k][l]);
+					fscanf(conv2_weights_file,"%f",&conv_layer2_weights[i][j][k][l]);
 
 	//////////////////////////
 	/// Reading CONV1 BIAS ///
 	//////////////////////////
 
 	for(int i = 0; i < CONV1_BIAS_SIZE; i++)
-		fscanf(/***PLACEHOLDER***/,"%f",&conv_layer1_bias[i]);
+		fscanf(conv1_biases_file,"%f",&conv_layer1_bias[i]);
 
 	//////////////////////////
 	/// Reading CONV2 BIAS ///
 	//////////////////////////
 
 	for(int i = 0; i < CONV2_BIAS_SIZE; i++)
-		fscanf(/***PLACEHOLDER***/,"%f",&conv_layer2_bias[i]);
+		fscanf(conv2_biases_file,"%f",&conv_layer2_bias[i]);
 
 
 	///////////////////////////
@@ -285,7 +387,7 @@ int main()
 	
 	for(int i = 0; i < FC1_WEIGHTS_H; i++)
 		for(int j = 0; j < FC1_WEIGHTS_W; j++)
-			fscanf(/*PLACEHOLDER*/,"%f", &fc_layer1_weights[i][j]);
+			fscanf(fc1_weights_file,"%f", &fc_layer1_weights[i][j]);
 
 	///////////////////////////
 	/// Reading FC2 Weights ///
@@ -293,7 +395,7 @@ int main()
 	
 	for(int i = 0; i < FC2_WEIGHTS_H; i++)
 		for(int j = 0; j < FC2_WEIGHTS_W; j++)
-			fscanf(/*PLACEHOLDER*/,"%f", &fc_layer2_weights[i][j]);
+			fscanf(fc2_weights_file,"%f", &fc_layer2_weights[i][j]);
 
 	///////////////////////////
 	/// Reading FC3 Weights ///
@@ -301,20 +403,20 @@ int main()
 	
 	for(int i = 0; i < FC3_WEIGHTS_H; i++)
 		for(int j = 0; j < FC3_WEIGHTS_W; j++)
-			fscanf(/*PLACEHOLDER*/,"%f", &fc_layer3_weights[i][j]);
+			fscanf(fc3_weights_file,"%f", &fc_layer3_weights[i][j]);
 
 	//////////////////////////
 	/// Reading FC BIASES ///
 	//////////////////////////
 	
 	for(int i = 0; i < FC1_BIAS_SIZE; i++)
-		fscanf(/*PLACEHOLDER*/,"%f", &fc_layer1_bias[i]);
+		fscanf(fc1_biases_file,"%f", &fc_layer1_bias[i]);
 
 	for(int i = 0; i < FC2_BIAS_SIZE; i++)
-		fscanf(/*PLACEHOLDER*/,"%f", &fc_layer2_bias[i]);
+		fscanf(fc2_biases_file,"%f", &fc_layer2_bias[i]);
 
 	for(int i = 0; i < FC3_BIAS_SIZE; i++)
-		fscanf(/*PLACEHOLDER*/,"%f", &fc_layer3_bias[i]);
+		fscanf(fc3_biases_file,"%f", &fc_layer3_bias[i]);
 
 
 	/////////////////////
@@ -324,7 +426,7 @@ int main()
 	for(int k = 0 ; k < IMAGE_CHANNELS; k++)
 		for(int i = 0; i < IMAGE_SIZE; i++)
 			for(int j = 0 ; j < IMAGE_SIZE; j++)
-				fscanf(/*PLACEHOLDER*/,"%f",&image[i][j][k]);
+				fscanf(image_file,"%f",&image[i][j][k]);
 
 
 	/*************************************************************************/
@@ -336,17 +438,17 @@ int main()
 	////////////////////
 
 	conv2d(conv_layer1_activation, image, IMAGE_SIZE, IMAGE_SIZE, IMAGE_CHANNELS, conv_layer1_weights, CONV1_FILTERS, CONV1_KERNEL_SIZE, CONV1_STRIDE, 0, conv_layer1_bias, relu);
-	maxpool(pool_layer1_out, conv_layer1_activation, A1_SIZE, A1_SIZE, A1_CHANNELS, P1_KERNEL_SIZE, P1_STRIDE, 0)
+	maxpool(pool_layer1_out, conv_layer1_activation, A1_SIZE, A1_SIZE, A1_CHANNELS, P1_KERNEL_SIZE, P1_STRIDE, 0);
 	
 	////////////////////
 	/// CONV LAYER 2 ///
 	////////////////////
 
 	conv2d(conv_layer2_activation, pool_layer1_out, P1_SIZE, P1_SIZE, P1_CHANNELS, conv_layer2_weights, CONV2_FILTERS, CONV2_KERNEL_SIZE, CONV2_STRIDE, 0, conv_layer2_bias, relu);
-	maxpool(pool_layer2_out, conv_layer2_activation, A2_SIZE, A2_SIZE, A2_CHANNELS, P2_KERNEL_SIZE, P2_STRIDE, 0)
+	maxpool(pool_layer2_out, conv_layer2_activation, A2_SIZE, A2_SIZE, A2_CHANNELS, P2_KERNEL_SIZE, P2_STRIDE, 0);
 
 	// FLATTEN
-	flatten(flatten_layer, pool_layer2_out, P2_SIZE, P2_SIZE, P2_CHANNELS)
+	flatten(flatten_layer, pool_layer2_out, P2_SIZE, P2_SIZE, P2_CHANNELS);
 
 
 	//////////////////////////////
