@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define A_SIZE 			6
-#define A_CHANNELS		4
+#define A_SIZE 			2
+#define A_CHANNELS		30
 #define SIZE 			6728
 #define CHANNEL_SIZE 	841
 

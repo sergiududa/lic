@@ -439,11 +439,11 @@ int main()
 	//////////////////////////////
 	/// FULLY CONNECTED LAYERS ///
 	//////////////////////////////
-/*
+
 	fc(fc_layer1_activation, flatten_layer, FC1_ACT_SIZE, FLATTEN_SIZE, fc_layer1_weights, fc_layer1_bias, relu);
 	fc(fc_layer2_activation, fc_layer1_activation, FC2_ACT_SIZE, FC1_ACT_SIZE, fc_layer2_weights, fc_layer2_bias, relu);
 	fc(fc_layer3_activation, fc_layer2_activation, FC3_ACT_SIZE, FC2_ACT_SIZE, fc_layer3_weights, fc_layer3_bias, relu);
-*/
+
 	/// Print ///
 
     /*
@@ -454,20 +454,20 @@ int main()
 
     FILE* debug = fopen("debug_c.out","w");
 
-    for(int k = 0; k < FLATTEN_SIZE; k++)
+    for(int k = 0; k < FC3_ACT_SIZE; k++)
     {
-                fprintf(debug,"%f\n", flatten_layer[k]);
+                fprintf(debug,"%f\n", fc_layer3_activation[k]);
     }
 
 /*
 
-    for(int k = 0; k < A1_CHANNELS; k++)
+    for(int k = 0; k < P2_CHANNELS; k++)
     {
-        for(int i = 0; i < A1_SIZE; i++)
+        for(int i = 0; i < P2_SIZE; i++)
         {
-            for(int j = 0; j < A1_SIZE; j++)
-                fprintf(debug,"%f\n", conv_layer1_activation[i][j][k]);
+            for(int j = 0; j < P2_SIZE; j++)
+                fprintf(debug,"%f\n", pool_layer2_out[i][j][k]);
         }
-    }
- */   return 0;
+    }*/
+    return 0;
 }

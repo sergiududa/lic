@@ -76,6 +76,7 @@ A2 = tf.nn.relu(Z2)
 P2 = tf.nn.max_pool(A2, ksize = [1, pool_filters["pool2_f"], pool_filters["pool2_f"], 1], strides = [1, pool_filters["pool2_s"], pool_filters["pool2_s"], 1], padding = 'VALID')
 
     #Generate the input for the first fully conected layer
+
 P2 = tf.contrib.layers.flatten(P2)
 
 with tf.variable_scope("LogReg"):
@@ -103,7 +104,7 @@ with tf.Session() as sess:
 
     W1_run = sess.run(W1)
     W2_run = sess.run(W2)
-    save_3D(X_test,'input_files/image.in')
+    save_3D(X_test[0,:,:,:],'input_files/image.in')
     save_4D(W1_run,'input_files/conv1_weights.out')
     save_4D(W2_run,'input_files/conv2_weights.out')
 
@@ -148,6 +149,6 @@ with tf.Session() as sess:
         
 
 
-    out = A1.eval({X : X_test})
-    #np.savetxt('debug_py.out',out, fmt = '%.6f', delimiter=' ') 
-    save_3D(out[0,:,:,:],'debug_py.out')
+    out = Z5.eval({X : X_test})
+    np.savetxt('debug_py.out',out, fmt = '%.6f', delimiter=' ') 
+    #save_3D(out[0,:,:,:],'debug_py.out')
