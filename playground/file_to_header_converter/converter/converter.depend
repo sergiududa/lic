@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1523866439 source:/home/sergiu/git/lic/playground/file_to_header_converter/converter/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1523634642 /home/sergiu/git/lic/playground/file_to_header_converter/converter/header.h
+
