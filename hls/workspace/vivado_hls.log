@@ -1,0 +1,49 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'sergiu' on host 'kalecgos' (Linux_x86_64 version 4.13.0-38-generic) on Tue Apr 24 18:56:24 EEST 2018
+INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/sergiu/git/lic/hls/workspace'
+INFO: [HLS 200-10] Opening project '/home/sergiu/git/lic/hls/workspace/test_conv2d'.
+INFO: [HLS 200-10] Opening solution '/home/sergiu/git/lic/hls/workspace/test_conv2d/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../.tcls/conv_test.c in debug mode
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'sergiu' on host 'kalecgos' (Linux_x86_64 version 4.13.0-38-generic) on Tue Apr 24 18:56:29 EEST 2018
+INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/sergiu/git/lic/hls/workspace/test_conv2d/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_sergiu/136151524585389741552
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+Checking CONV Layer 1 ...
+DONE: 6728 out of 6728 are correct
+
+Checking POOL Layer 1 ...
+DONE: 1568 out of 1568 are correct
+
+Checking CONV Layer 2 ...
+DONE: 2704 out of 2704 are correct
+
+Checking POOL Layer 2 ...
+Missmatch in POOL2 check
+DONE: 262 out of 576 are correct
+
+Checking FLATTEN Layer ...
+Missmatch in FLATTEN check
+DONE: 262 out of 576 are correct
+
+Checking FC Layer 1 ...
+Missmatch in FC1 check
+DONE: 39 out of 120 are correct
+
+Checking FC Layer 2 ...
+Missmatch in FC2 check
+DONE: 28 out of 84 are correct
+
+Checking FC Layer 3 ...
+Missmatch in FC3 check
+DONE: 5 out of 10 are correct
+
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

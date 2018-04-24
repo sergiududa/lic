@@ -1,0 +1,14 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../conv.c in debug mode
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'sergiu' on host 'kalecgos' (Linux_x86_64 version 4.13.0-38-generic) on Tue Apr 24 18:25:41 EEST 2018
+INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/sergiu/git/lic/hls/workspace/retest_conv/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_sergiu/113301524583541859962
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+DONE: 6728 out of 6728 are correct
+Verification Done
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

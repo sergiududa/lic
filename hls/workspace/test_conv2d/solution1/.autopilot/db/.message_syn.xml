@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;test_conv2d/solution1/conv.c&apos; ..." tag=""/>
+</Messages>
