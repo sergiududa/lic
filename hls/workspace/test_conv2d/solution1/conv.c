@@ -1,67 +1,60 @@
 
 #include <stdio.h>
-#include <../../../headers/weights.h>
-float relu(float a)
-{
-	return a > 0 ? a : 0;
-}
+#include "/home/sergiu/git/lic/hls/workspace/test_conv2d/headers/weights.h"
+#include "/home/sergiu/git/lic/hls/workspace/test_conv2d/headers/defines.h"
+#include "/home/sergiu/git/lic/hls/workspace/test_conv2d/headers/activations.h"
 
-void conv_layer1(float output[29][29][8], float image[32][32][1], float weight[4][4][1][8], float bias[8])
+
+void conv_layer1(float output[A1_SIZE][A1_SIZE][A1_CHANNELS], float image[IMAGE_SIZE][IMAGE_SIZE][IMAGE_CHANNELS], float weight[CONV1_KERNEL_SIZE][CONV1_KERNEL_SIZE][CONV1_CHANNELS][CONV1_FILTERS], float bias[CONV1_BIAS_SIZE])
 {
 	int i,j,k,filter;
 	float sum;
-	int h = 32, w = 32, c = 1;
-	int number_of_filters = 8, f = 4;
-	int stride = 1;
 	int row_offset, col_offset, channel_offset;
 
 	// for each filter
 
 
-	for(filter = 0; filter < number_of_filters; filter++)
+	for(filter = 0; filter < CONV1_FILTERS; filter++)
 	{
 		// Pin point the the top left corner matrix that is TBC
-		for(i = 0; i < (h - f + 1); i += stride)
-			for(j = 0; j < (w - f + 1); j += stride)
+		for(i = 0; i < (IMAGE_SIZE - CONV1_KERNEL_SIZE + 1); i += CONV1_STRIDE)
+			for(j = 0; j < (IMAGE_SIZE - CONV1_KERNEL_SIZE + 1); j += CONV1_STRIDE)
 			{
 				//Start the convolution using the determined i & j
 				sum = 0;
-				for(row_offset = 0; row_offset <f; row_offset++)
+				for(row_offset = 0; row_offset <CONV1_KERNEL_SIZE; row_offset++)
 
-					for(col_offset = 0; col_offset <f; col_offset++)
-						for(channel_offset = 0; channel_offset < c; channel_offset++)
+					for(col_offset = 0; col_offset <CONV1_KERNEL_SIZE; col_offset++)
+						for(channel_offset = 0; channel_offset < CONV1_CHANNELS; channel_offset++)
 							sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
-				output[i/stride][j/stride][filter] = relu(sum + bias[filter]);
+				output[i/CONV1_STRIDE][j/CONV1_STRIDE][filter] = relu(sum + bias[filter]);
 			}
 	}
 }
 
-void conv_layer2(float output[13][13][16], float image[14][14][8], float weight[2][2][8][16], float bias[16])
+void conv_layer2(float output[A2_SIZE][A2_SIZE][A2_CHANNELS], float image[P1_SIZE][P1_SIZE][P1_CHANNELS], float weight[CONV2_KERNEL_SIZE][CONV2_KERNEL_SIZE][CONV2_CHANNELS][CONV2_FILTERS], float bias[CONV2_BIAS_SIZE])
 {
 	int i,j,k,filter;
 	float sum;
-	int h = 14, w = 14, c = 8;
-	int number_of_filters = 16, f = 2;
-	int stride = 1;
 	int row_offset, col_offset, channel_offset;
 
 	// for each filter
 
 
-	for(filter = 0; filter < number_of_filters; filter++)
+	for(filter = 0; filter < CONV2_FILTERS; filter++)
 	{
 		// Pin point the the top left corner matrix that is TBC
-		for(i = 0; i < (h - f + 1); i += stride)
-			for(j = 0; j < (w - f + 1); j += stride)
+		for(i = 0; i < (P1_SIZE - CONV2_KERNEL_SIZE + 1); i += CONV2_STRIDE)
+			for(j = 0; j < (P1_SIZE - CONV2_KERNEL_SIZE + 1); j += CONV2_STRIDE)
 			{
 				//Start the convolution using the determined i & j
 				sum = 0;
-				for(row_offset = 0; row_offset <f; row_offset++)
+				for(row_offset = 0; row_offset <CONV2_KERNEL_SIZE; row_offset++)
 
-					for(col_offset = 0; col_offset <f; col_offset++)
-						for(channel_offset = 0; channel_offset < c; channel_offset++)
+					for(col_offset = 0; col_offset <CONV2_KERNEL_SIZE; col_offset++)
+						for(channel_offset = 0; channel_offset < CONV2_CHANNELS; channel_offset++)
 							sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
-				output[i/stride][j/stride][filter] = relu(sum + bias[filter]);
+				output[i/CONV2_STRIDE][j/CONV2_STRIDE][filter] = relu(sum + bias[filter]);
 			}
 	}
 }
@@ -92,7 +85,7 @@ void pool_layer2(float output[6][6][16], float image[13][13][16])
 	float max;
 	int stride = 2;
 	int f = 2;
-	int h = 6, w = 6, c = 16;
+	int h = 13, w = 13, c = 16;
 	for(int channel = 0; channel < c; channel++)
 		for(int i = 0; i < w -f + 1; i += stride)
 			for(int j = 0; j < h - f + 1; j += stride)

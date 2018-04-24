@@ -20,7 +20,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "2345882",
+    "Latency": "3240373",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -44,14 +44,12 @@
       "impl\/vhdl\/conv_layer2_conv_g8j.vhd",
       "impl\/vhdl\/conv_layer2_conv_hbi.vhd",
       "impl\/vhdl\/flatten.vhd",
-      "impl\/vhdl\/nnet_conv_layer1_ibs.vhd",
-      "impl\/vhdl\/nnet_conv_layer2_jbC.vhd",
       "impl\/vhdl\/nnet_fadd_32ns_32dEe.vhd",
+      "impl\/vhdl\/nnet_fc_layer1_weibs.vhd",
+      "impl\/vhdl\/nnet_fc_layer2_wejbC.vhd",
+      "impl\/vhdl\/nnet_fc_layer3_wekbM.vhd",
       "impl\/vhdl\/nnet_fcmp_32ns_32fYi.vhd",
-      "impl\/vhdl\/nnet_flatten_out.vhd",
       "impl\/vhdl\/nnet_fmul_32ns_32eOg.vhd",
-      "impl\/vhdl\/nnet_pool_layer1_kbM.vhd",
-      "impl\/vhdl\/nnet_pool_layer2_lbW.vhd",
       "impl\/vhdl\/pool_layer1.vhd",
       "impl\/vhdl\/pool_layer2.vhd",
       "impl\/vhdl\/nnet.vhd"
@@ -70,14 +68,15 @@
       "impl\/verilog\/conv_layer2_conv_hbi.v",
       "impl\/verilog\/conv_layer2_conv_hbi_rom.dat",
       "impl\/verilog\/flatten.v",
-      "impl\/verilog\/nnet_conv_layer1_ibs.v",
-      "impl\/verilog\/nnet_conv_layer2_jbC.v",
       "impl\/verilog\/nnet_fadd_32ns_32dEe.v",
+      "impl\/verilog\/nnet_fc_layer1_weibs.v",
+      "impl\/verilog\/nnet_fc_layer1_weibs_rom.dat",
+      "impl\/verilog\/nnet_fc_layer2_wejbC.v",
+      "impl\/verilog\/nnet_fc_layer2_wejbC_rom.dat",
+      "impl\/verilog\/nnet_fc_layer3_wekbM.v",
+      "impl\/verilog\/nnet_fc_layer3_wekbM_rom.dat",
       "impl\/verilog\/nnet_fcmp_32ns_32fYi.v",
-      "impl\/verilog\/nnet_flatten_out.v",
       "impl\/verilog\/nnet_fmul_32ns_32eOg.v",
-      "impl\/verilog\/nnet_pool_layer1_kbM.v",
-      "impl\/verilog\/nnet_pool_layer2_lbW.v",
       "impl\/verilog\/pool_layer1.v",
       "impl\/verilog\/pool_layer2.v",
       "impl\/verilog\/nnet.v"
@@ -126,19 +125,217 @@
         "ready": {"Type": "bool"}
       }
     },
-    "ap_return": {
-      "type": "data",
-      "dir": "out",
-      "width": "32",
-      "ctype": {"DATA": {
-          "Type": "integer signed",
-          "Width": "32"
-        }}
-    },
     "ap_rst": {
       "type": "reset",
       "polarity": "ACTIVE_HIGH",
       "ctype": {"RST": {"Type": "bool"}}
+    },
+    "conv_layer1_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "13"
+        }}
+    },
+    "conv_layer1_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "conv_layer1_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "conv_layer2_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "12",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "12"
+        }}
+    },
+    "conv_layer2_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "conv_layer2_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "fc_layer1_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "7",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "7"
+        }}
+    },
+    "fc_layer1_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "fc_layer1_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "fc_layer2_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "7",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "7"
+        }}
+    },
+    "fc_layer2_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "fc_layer2_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "fc_layer3_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "4",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "4"
+        }}
+    },
+    "fc_layer3_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "flatten_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "10",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "10"
+        }}
+    },
+    "flatten_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "flatten_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "pool_layer1_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "11",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "11"
+        }}
+    },
+    "pool_layer1_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "pool_layer1_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "pool_layer2_out_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "10",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "10"
+        }}
+    },
+    "pool_layer2_out_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "pool_layer2_out_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
     }
   },
   "RtlPorts": {
@@ -166,7 +363,159 @@
       "dir": "out",
       "width": "1"
     },
-    "ap_return": {
+    "conv_layer1_out_address0": {
+      "dir": "out",
+      "width": "13"
+    },
+    "conv_layer1_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "conv_layer1_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "conv_layer1_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "conv_layer1_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "conv_layer2_out_address0": {
+      "dir": "out",
+      "width": "12"
+    },
+    "conv_layer2_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "conv_layer2_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "conv_layer2_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "conv_layer2_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "pool_layer1_out_address0": {
+      "dir": "out",
+      "width": "11"
+    },
+    "pool_layer1_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "pool_layer1_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "pool_layer1_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "pool_layer1_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "pool_layer2_out_address0": {
+      "dir": "out",
+      "width": "10"
+    },
+    "pool_layer2_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "pool_layer2_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "pool_layer2_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "pool_layer2_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "flatten_out_address0": {
+      "dir": "out",
+      "width": "10"
+    },
+    "flatten_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "flatten_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "flatten_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "flatten_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "fc_layer1_out_address0": {
+      "dir": "out",
+      "width": "7"
+    },
+    "fc_layer1_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "fc_layer1_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "fc_layer1_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "fc_layer1_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "fc_layer2_out_address0": {
+      "dir": "out",
+      "width": "7"
+    },
+    "fc_layer2_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "fc_layer2_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "fc_layer2_out_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "fc_layer2_out_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "fc_layer3_out_address0": {
+      "dir": "out",
+      "width": "4"
+    },
+    "fc_layer3_out_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "fc_layer3_out_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "fc_layer3_out_d0": {
       "dir": "out",
       "width": "32"
     }
@@ -176,10 +525,125 @@
       "interfaceRef": "ap_ctrl",
       "dir": "out"
     },
-    "ap_return": {
-      "interfaceRef": "ap_return",
+    "conv_layer1_out_d0": {
+      "interfaceRef": "conv_layer1_out_d0",
       "dir": "out",
-      "dataWidth": "32"
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "6728",
+      "handshakeRef": "ap_none"
+    },
+    "conv_layer1_out_q0": {
+      "interfaceRef": "conv_layer1_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "6728",
+      "handshakeRef": "ap_none"
+    },
+    "conv_layer2_out_d0": {
+      "interfaceRef": "conv_layer2_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "2704",
+      "handshakeRef": "ap_none"
+    },
+    "conv_layer2_out_q0": {
+      "interfaceRef": "conv_layer2_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "2704",
+      "handshakeRef": "ap_none"
+    },
+    "pool_layer1_out_d0": {
+      "interfaceRef": "pool_layer1_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1568",
+      "handshakeRef": "ap_none"
+    },
+    "pool_layer1_out_q0": {
+      "interfaceRef": "pool_layer1_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1568",
+      "handshakeRef": "ap_none"
+    },
+    "pool_layer2_out_d0": {
+      "interfaceRef": "pool_layer2_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "576",
+      "handshakeRef": "ap_none"
+    },
+    "pool_layer2_out_q0": {
+      "interfaceRef": "pool_layer2_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "576",
+      "handshakeRef": "ap_none"
+    },
+    "flatten_out_d0": {
+      "interfaceRef": "flatten_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "576",
+      "handshakeRef": "ap_none"
+    },
+    "flatten_out_q0": {
+      "interfaceRef": "flatten_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "576",
+      "handshakeRef": "ap_none"
+    },
+    "fc_layer1_out_d0": {
+      "interfaceRef": "fc_layer1_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "120",
+      "handshakeRef": "ap_none"
+    },
+    "fc_layer1_out_q0": {
+      "interfaceRef": "fc_layer1_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "120",
+      "handshakeRef": "ap_none"
+    },
+    "fc_layer2_out_d0": {
+      "interfaceRef": "fc_layer2_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "84",
+      "handshakeRef": "ap_none"
+    },
+    "fc_layer2_out_q0": {
+      "interfaceRef": "fc_layer2_out_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "84",
+      "handshakeRef": "ap_none"
+    },
+    "fc_layer3_out_d0": {
+      "interfaceRef": "fc_layer3_out_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "10",
+      "handshakeRef": "ap_none"
     }
   },
   "ModuleInfo": {
@@ -188,23 +652,23 @@
       "Instances": [
         {
           "ModuleName": "conv_layer2",
-          "InstanceName": "grp_conv_layer2_fu_52"
+          "InstanceName": "grp_conv_layer2_fu_318"
         },
         {
           "ModuleName": "conv_layer1",
-          "InstanceName": "grp_conv_layer1_fu_62"
+          "InstanceName": "grp_conv_layer1_fu_330"
         },
         {
           "ModuleName": "pool_layer1",
-          "InstanceName": "grp_pool_layer1_fu_74"
+          "InstanceName": "grp_pool_layer1_fu_342"
         },
         {
           "ModuleName": "pool_layer2",
-          "InstanceName": "grp_pool_layer2_fu_80"
+          "InstanceName": "grp_pool_layer2_fu_350"
         },
         {
           "ModuleName": "flatten",
-          "InstanceName": "grp_flatten_fu_86"
+          "InstanceName": "grp_flatten_fu_358"
         }
       ]
     },
@@ -386,48 +850,48 @@
       },
       "pool_layer2": {
         "Latency": {
-          "LatencyBest": "3441",
-          "LatencyAvg": "3441",
-          "LatencyWorst": "3441",
-          "PipelineII": "3441",
+          "LatencyBest": "15777",
+          "LatencyAvg": "15777",
+          "LatencyWorst": "15777",
+          "PipelineII": "15777",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.75"
+          "Estimate": "7.10"
         },
         "Loops": [{
             "Name": "Loop 1",
             "TripCount": "16",
-            "Latency": "3440",
+            "Latency": "15776",
             "PipelineII": "",
-            "PipelineDepth": "215",
+            "PipelineDepth": "986",
             "Loops": [{
                 "Name": "Loop 1.1",
-                "TripCount": "3",
-                "Latency": "213",
+                "TripCount": "6",
+                "Latency": "984",
                 "PipelineII": "",
-                "PipelineDepth": "71",
+                "PipelineDepth": "164",
                 "Loops": [{
                     "Name": "Loop 1.1.1",
-                    "TripCount": "3",
-                    "Latency": "69",
+                    "TripCount": "6",
+                    "Latency": "162",
                     "PipelineII": "",
-                    "PipelineDepth": "23",
+                    "PipelineDepth": "27",
                     "Loops": [{
                         "Name": "Loop 1.1.1.1",
                         "TripCount": "2",
-                        "Latency": "20",
+                        "Latency": "24",
                         "PipelineII": "",
-                        "PipelineDepth": "10",
+                        "PipelineDepth": "12",
                         "Loops": [{
                             "Name": "Loop 1.1.1.1.1",
                             "TripCount": "2",
-                            "Latency": "8",
+                            "Latency": "10",
                             "PipelineII": "",
-                            "PipelineDepth": "4"
+                            "PipelineDepth": "5"
                           }]
                       }]
                   }]
@@ -435,8 +899,8 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "226",
-          "LUT": "743",
+          "FF": "245",
+          "LUT": "750",
           "BRAM_18K": "0"
         }
       },
@@ -484,30 +948,74 @@
       },
       "nnet": {
         "Latency": {
-          "LatencyBest": "2345882",
-          "LatencyAvg": "2345882",
-          "LatencyWorst": "2345882",
-          "PipelineII": "2345883",
+          "LatencyBest": "3240373",
+          "LatencyAvg": "3240373",
+          "LatencyWorst": "3240373",
+          "PipelineII": "3240374",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.75"
+          "Estimate": "8.43"
         },
+        "Loops": [
+          {
+            "Name": "Loop 1",
+            "TripCount": "120",
+            "Latency": "761280",
+            "PipelineII": "",
+            "PipelineDepth": "6344",
+            "Loops": [{
+                "Name": "Loop 1.1",
+                "TripCount": "576",
+                "Latency": "6336",
+                "PipelineII": "",
+                "PipelineDepth": "11"
+              }]
+          },
+          {
+            "Name": "Loop 2",
+            "TripCount": "84",
+            "Latency": "111552",
+            "PipelineII": "",
+            "PipelineDepth": "1328",
+            "Loops": [{
+                "Name": "Loop 2.1",
+                "TripCount": "120",
+                "Latency": "1320",
+                "PipelineII": "",
+                "PipelineDepth": "11"
+              }]
+          },
+          {
+            "Name": "Loop 3",
+            "TripCount": "10",
+            "Latency": "9320",
+            "PipelineII": "",
+            "PipelineDepth": "932",
+            "Loops": [{
+                "Name": "Loop 3.1",
+                "TripCount": "84",
+                "Latency": "924",
+                "PipelineII": "",
+                "PipelineDepth": "11"
+              }]
+          }
+        ],
         "Area": {
-          "BRAM_18K": "36",
-          "DSP48E": "10",
-          "FF": "2228",
-          "LUT": "5009"
+          "BRAM_18K": "294",
+          "DSP48E": "15",
+          "FF": "3311",
+          "LUT": "6936"
         }
       }
     }
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-04-24 15:30:49 EEST",
+    "Time": "2018-04-24 19:24:20 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4.1"
   }

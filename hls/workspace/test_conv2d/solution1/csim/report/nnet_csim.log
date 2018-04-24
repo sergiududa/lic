@@ -1,11 +1,11 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling(apcc) ../../.tcls/conv_test.c in debug mode
+   Compiling(apcc) ../../conv.c in debug mode
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'sergiu' on host 'kalecgos' (Linux_x86_64 version 4.13.0-38-generic) on Tue Apr 24 18:56:29 EEST 2018
+INFO: [HLS 200-10] For user 'sergiu' on host 'kalecgos' (Linux_x86_64 version 4.13.0-38-generic) on Tue Apr 24 19:46:58 EEST 2018
 INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/sergiu/git/lic/hls/workspace/test_conv2d/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_sergiu/136151524585389741552
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_sergiu/169911524588418387957
 INFO: [APCC 202-1] APCC is done.
    Generating csim.exe
 Checking CONV Layer 1 ...
@@ -18,24 +18,19 @@ Checking CONV Layer 2 ...
 DONE: 2704 out of 2704 are correct
 
 Checking POOL Layer 2 ...
-Missmatch in POOL2 check
-DONE: 262 out of 576 are correct
+DONE: 576 out of 576 are correct
 
 Checking FLATTEN Layer ...
-Missmatch in FLATTEN check
-DONE: 262 out of 576 are correct
+DONE: 576 out of 576 are correct
 
 Checking FC Layer 1 ...
-Missmatch in FC1 check
-DONE: 39 out of 120 are correct
+DONE: 120 out of 120 are correct
 
 Checking FC Layer 2 ...
-Missmatch in FC2 check
-DONE: 28 out of 84 are correct
+DONE: 84 out of 84 are correct
 
 Checking FC Layer 3 ...
-Missmatch in FC3 check
-DONE: 5 out of 10 are correct
+DONE: 10 out of 10 are correct
 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************
