@@ -5,8 +5,8 @@
 ############################################################
 open_project nnet
 set_top nnet
-add_files nnet/solution1/nnet.c
-add_files -tb nnet/solution1/.tcls/nnet_test.c
+add_files nnet/solution1/nnet.cpp
+add_files -tb nnet/solution1/.tcls/nnet_test.cpp
 open_solution "solution1"
 set_part {xc7z020clg400-1} -tool vivado
 create_clock -period 10 -name default

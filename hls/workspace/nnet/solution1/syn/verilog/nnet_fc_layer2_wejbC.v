@@ -9,7 +9,7 @@
 module nnet_fc_layer2_wejbC_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 19;
 parameter AWIDTH = 14;
 parameter MEM_SIZE = 10080;
 
@@ -47,7 +47,7 @@ module nnet_fc_layer2_wejbC(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd19;
 parameter AddressRange = 32'd10080;
 parameter AddressWidth = 32'd14;
 input reset;

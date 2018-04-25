@@ -1,4 +1,4 @@
-INFO: [HLS 200-0] Workspace /home/sergiu/git/lic/hls/workspace/nnet/solution1 opened at Wed Apr 25 13:50:53 EEST 2018
+INFO: [HLS 200-0] Workspace /home/sergiu/git/lic/hls/workspace/nnet/solution1 opened at Wed Apr 25 19:17:35 EEST 2018
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Command     config_clock returned 0; 0 sec.
@@ -12,12 +12,12 @@ Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
-Command           ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
 Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
@@ -26,11 +26,11 @@ Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xff
 Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
 Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0.02 sec.
+Command       ap_source returned 0; 0.03 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
 Command       ap_source returned 0; 0.01 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
-Command       ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
 Command         ap_source returned 0; 0 sec.
@@ -59,11 +59,11 @@ Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/inte
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
 Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0.01 sec.
-Command     import_lib returned 0; 0.06 sec.
+Command     import_lib returned 0; 0.08 sec.
 Execute     source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
@@ -72,15 +72,15 @@ Command           ap_source returned 0; 0.01 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command           ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.02 sec.
 Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command             ap_source returned 0; 0.02 sec.
-Command           ap_source returned 0; 0.03 sec.
+Command           ap_source returned 0; 0.04 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command           ap_source returned 0; 0.03 sec.
+Command           ap_source returned 0; 0.04 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Command           ap_source returned 0; 0.02 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
@@ -88,21 +88,21 @@ Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source returned 0; 0.33 sec.
+Command           ap_source returned 0; 0.31 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.44 sec.
+Command           ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0.43 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0.45 sec.
-Command     ap_source returned 0; 0.45 sec.
+Command       ap_source returned 0; 0.43 sec.
+Command     ap_source returned 0; 0.43 sec.
 Execute     open_platform DefaultPlatform 
 Command     open_platform returned 0; 0 sec.
 Execute     import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
 Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.02 sec.
+Command       ap_source returned 0; 0.04 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
@@ -114,22 +114,22 @@ Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/in
 Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
-Command           ap_source returned 0; 0.01 sec.
-Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.01 sec.
-Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
-Command     import_lib returned 0; 0.07 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command       ap_source returned 0; 0.01 sec.
+Command     import_lib returned 0; 0.08 sec.
 Execute     source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command       ap_source returned 0; 0 sec.
-Command     ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Command     ap_source returned 0; 0.01 sec.
 Execute     set_part xc7z020clg400-1 
 Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 Execute         license_isbetapart xc7z020 
-Command         license_isbetapart returned 1; 0.02 sec.
+Command         license_isbetapart returned 1; 0.03 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
@@ -144,36 +144,1141 @@ Command       add_library returned 0; 0 sec.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 Execute       get_default_platform 
 Command       get_default_platform returned 0; 0 sec.
-Command     set_part returned 0; 0.24 sec.
+Command     set_part returned 0; 0.16 sec.
 Execute     get_default_platform 
 Command     get_default_platform returned 0; 0 sec.
 Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Command     config_chip_info returned 0; 0 sec.
 Execute     config_chip_info -quiet -speed slow 
 Command     config_chip_info returned 0; 0 sec.
-Command   open_solution returned 0; 0.83 sec.
-Execute   csim_design -compiler gcc -quiet 
-Execute     source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
-Command     ap_source returned 0; 0 sec.
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-Execute     source csim/.lst_opt.tcl 
-Command     ap_source returned 0; 0.01 sec.
-Execute     is_encrypted /home/sergiu/git/lic/hls/workspace/nnet/solution1/.tcls/nnet_test.c 
-Command     is_encrypted returned 0; 0 sec.
-Execute     is_xip /home/sergiu/git/lic/hls/workspace/nnet/solution1/.tcls/nnet_test.c 
-Command     is_xip returned 0; 0 sec.
-Execute     is_encrypted /home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.c 
-Command     is_encrypted returned 0; 0 sec.
-Execute     is_xip /home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.c 
-Command     is_xip returned 0; 0 sec.
+Command   open_solution returned 0; 0.79 sec.
+Execute   set_part xc7z020clg400-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart returned 1; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed slow 
+Command       config_chip_info returned 0; 0 sec.
+Command     add_library returned 0; 0.02 sec.
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     add_library returned 0; 0 sec.
 Execute     get_default_platform 
 Command     get_default_platform returned 0; 0 sec.
-Execute     source run_sim.tcl 
-Command     ap_source returned 0; 0.05 sec.
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-Command   csim_design returned 0; 21.06 sec.
-Command ap_source returned 0; 21.9 sec.
+Command   set_part returned 0; 0.12 sec.
+Execute   create_clock -period 10 -name default 
+Command   create_clock returned 0; 0.01 sec.
+Execute   csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -VP9_rom_infer_simplify=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file 'nnet/solution1/nnet.cpp' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling nnet/solution1/nnet.cpp as C++
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted nnet/solution1/nnet.cpp 
+Command       is_encrypted returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "nnet/solution1/nnet.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E nnet/solution1/nnet.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp
+Command       clang returned 0; 3.77 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp"  -o "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/useless.bc
+Command       clang returned 0; 32.81 sec.
+INFO: [HLS 200-0] GCC PP time: 36 seconds per iteration
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp.ap-line.cpp /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+Execute       cdt  "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp.ap-line.cpp"  -m "nnet" -o "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/sergiu/git/lic/hls/workspace/nnet/solution1/solution1.directive --source /home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp --error /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSP_Double_Pump_Mac16 DSP_Double_Pump_Mac8 DSP_Macro DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db --ca --es --gf --pd --p2d /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db --sd --scff /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/.systemc_flag --ad 
+INFO: [HLS 200-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+Command       cdt returned 0; 9.69 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pp.0.cpp.ap-cdt.cpp /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.0.cpp /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.2.cpp
+Command       clang returned 0; 1.54 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Processing labels
+Execute       clang  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.g.bc
+Command       clang returned 0; 10.63 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/ve_warning.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:15 ; elapsed = 00:01:02 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 481 ; free virtual = 3082
+INFO: [HLS 200-0] Linking Release ...
+Execute       llvm-ld /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.bc -hls-opt -except-internalize nnet -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o 
+Command       llvm-ld returned 0; 1.78 sec.
+Execute       disassemble /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o 
+Execute         is_encrypted /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.bc 
+Command         is_encrypted returned 0; 0 sec.
+Command       disassemble returned 0; 1.24 sec.
+INFO: [HLS 200-0] Disassemble time: 1 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+Execute       llvm-ld /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.g.bc -hls-opt -except-internalize nnet -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g 
+Command       llvm-ld returned 0; 1.54 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:19 ; elapsed = 00:01:07 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 415 ; free virtual = 3087
+Execute       ::config_rtl 
+Command       config_rtl returned 0; 0.01 sec.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 -enable_clang39=0 -VP9_rom_infer_simplify=0 
+Execute         cleanup_all_models 
+Command         cleanup_all_models returned 0; 0.01 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.pp.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform returned 0; 0.56 sec.
+Execute         llvm-ld /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lfloatconversion -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld returned 0; 1.49 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top nnet -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.0.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform returned 0; 17.65 sec.
+Execute         disassemble /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.1 /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.1 
+Execute           is_encrypted /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.1.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 1.01 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:39 ; elapsed = 00:01:27 . Memory (MB): peak = 825.438 ; gain = 477.375 ; free physical = 191 ; free virtual = 3183
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.1.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet/solution1/nnet.cpp:33) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet/solution1/nnet.cpp:60) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet/solution1/nnet.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet/solution1/nnet.cpp:132) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet/solution1/nnet.cpp:146) automatically.
+Command         transform returned 0; 0.67 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform returned 0; 0.17 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:40 ; elapsed = 00:01:28 . Memory (MB): peak = 827.043 ; gain = 478.980 ; free physical = 170 ; free virtual = 3173
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.g.1.bc to /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+Execute         transform -hls -tmp /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.1.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1.1.1.1.1.1' (nnet/solution1/nnet.cpp:31) in function 'conv_layer1' automatically.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1.1.1' (nnet/solution1/nnet.cpp:31) in function 'conv_layer1' completely.
+INFO: [XFORM 203-102] Partitioning array 'image.V' in dimension 3 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V' in dimension 3 automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet/solution1/nnet.cpp:33) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet/solution1/nnet.cpp:60) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet/solution1/nnet.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet/solution1/nnet.cpp:132) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet/solution1/nnet.cpp:146) automatically.
+INFO: [XFORM 203-602] Inlining function 'fc_layer1' into 'nnet' (nnet/solution1/nnet.cpp:163) automatically.
+INFO: [XFORM 203-602] Inlining function 'fc_layer2' into 'nnet' (nnet/solution1/nnet.cpp:164) automatically.
+INFO: [XFORM 203-602] Inlining function 'fc_layer3' into 'nnet' (nnet/solution1/nnet.cpp:165) automatically.
+Command         transform returned 0; 0.77 sec.
+INFO: [HLS 200-0] Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+Command         transform returned 0; 0.36 sec.
+Execute         disassemble /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.2 /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.2 
+Execute           is_encrypted /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.2.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.59 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:41 ; elapsed = 00:01:30 . Memory (MB): peak = 827.043 ; gain = 478.980 ; free physical = 151 ; free virtual = 3171
+INFO: [HLS 200-0] Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.2.bc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i5.i1.i4' in function 'pool_layer2' and propagating its result(s) since all actual argument(s) to the function are constants.
+INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i4.i1.i3' in function 'pool_layer1' and propagating its result(s) since all actual argument(s) to the function are constants.
+Command         transform returned 0; 0.93 sec.
+Execute         disassemble /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.3 /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.3 
+Execute           is_encrypted /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.o.3.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.65 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:43 ; elapsed = 00:01:31 . Memory (MB): peak = 869.059 ; gain = 520.996 ; free physical = 154 ; free virtual = 3115
+INFO: [HLS 200-0] Finish building internal data model.
+Command       opt_and_import_c returned 0; 24.88 sec.
+Command     elaborate returned 0; 89.43 sec.
+Execute     autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'nnet' ...
+Execute       ap_set_top_model nnet 
+Command       ap_set_top_model returned 0; 0 sec.
+Execute       get_model_list nnet -filter all-wo-channel -topdown 
+Command       get_model_list returned 0; 0 sec.
+Execute       preproc_iomode -model nnet 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model flatten 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model pool_layer2 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model conv_layer2 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model pool_layer1 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model conv_layer1 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       get_model_list nnet -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet
+INFO: [HLS 200-0] Configuring Module : conv_layer1 ...
+Execute       set_default_model conv_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit conv_layer1 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : pool_layer1 ...
+Execute       set_default_model pool_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit pool_layer1 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : conv_layer2 ...
+Execute       set_default_model conv_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit conv_layer2 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : pool_layer2 ...
+Execute       set_default_model pool_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit pool_layer2 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : flatten ...
+Execute       set_default_model flatten 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit flatten 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : nnet ...
+Execute       set_default_model nnet 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit nnet 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for preprocess: conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet
+INFO: [HLS 200-0] Preprocessing Module: conv_layer1 ...
+Execute       set_default_model conv_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model conv_layer1 
+Command       cdfg_preprocess returned 0; 0.01 sec.
+Execute       rtl_gen_preprocess conv_layer1 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: pool_layer1 ...
+Execute       set_default_model pool_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model pool_layer1 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess pool_layer1 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: conv_layer2 ...
+Execute       set_default_model conv_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model conv_layer2 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess conv_layer2 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: pool_layer2 ...
+Execute       set_default_model pool_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model pool_layer2 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess pool_layer2 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: flatten ...
+Execute       set_default_model flatten 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model flatten 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess flatten 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: nnet ...
+Execute       set_default_model nnet 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model nnet 
+Command       cdfg_preprocess returned 0; 0.01 sec.
+Execute       rtl_gen_preprocess nnet 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for synthesis: conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer1'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model conv_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model conv_layer1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.09 sec.
+INFO: [HLS 200-111]  Elapsed time: 91.57 seconds; current allocated memory: 331.039 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 1.4 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.sched.adb -f 
+Command       db_write returned 0; 1.39 sec.
+INFO: [HLS 200-0] Finish scheduling conv_layer1.
+Execute       set_default_model conv_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model conv_layer1 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=conv_layer1
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.84 seconds; current allocated memory: 331.367 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 1.45 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.bind.adb -f 
+Command       db_write returned 0; 1.37 sec.
+INFO: [HLS 200-0] Finish binding conv_layer1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_layer1'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pool_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model pool_layer1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.06 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.91 seconds; current allocated memory: 331.686 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 1.31 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.sched.adb -f 
+Command       db_write returned 0; 1.29 sec.
+INFO: [HLS 200-0] Finish scheduling pool_layer1.
+Execute       set_default_model pool_layer1 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model pool_layer1 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=pool_layer1
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.64 seconds; current allocated memory: 331.961 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 1.32 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.bind.adb -f 
+Command       db_write returned 0; 1.29 sec.
+INFO: [HLS 200-0] Finish binding pool_layer1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer2'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model conv_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model conv_layer2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.05 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.71 seconds; current allocated memory: 332.384 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 1.67 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.sched.adb -f 
+Command       db_write returned 0; 1.62 sec.
+INFO: [HLS 200-0] Finish scheduling conv_layer2.
+Execute       set_default_model conv_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model conv_layer2 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=conv_layer2
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.33 seconds; current allocated memory: 332.757 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 1.68 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.bind.adb -f 
+Command       db_write returned 0; 1.61 sec.
+INFO: [HLS 200-0] Finish binding conv_layer2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_layer2'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pool_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model pool_layer2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.05 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.36 seconds; current allocated memory: 333.060 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 1.24 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.sched.adb -f 
+Command       db_write returned 0; 1.24 sec.
+INFO: [HLS 200-0] Finish scheduling pool_layer2.
+Execute       set_default_model pool_layer2 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model pool_layer2 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=pool_layer2
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.53 seconds; current allocated memory: 333.335 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 1.28 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.bind.adb -f 
+Command       db_write returned 0; 1.23 sec.
+INFO: [HLS 200-0] Finish binding pool_layer2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flatten'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model flatten 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model flatten 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.56 seconds; current allocated memory: 333.507 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.78 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.sched.adb -f 
+Command       db_write returned 0; 0.75 sec.
+INFO: [HLS 200-0] Finish scheduling flatten.
+Execute       set_default_model flatten 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model flatten 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=flatten
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.57 seconds; current allocated memory: 333.677 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.82 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.bind.adb -f 
+Command       db_write returned 0; 0.78 sec.
+INFO: [HLS 200-0] Finish binding flatten.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'nnet'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model nnet 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model nnet 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.09 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.72 seconds; current allocated memory: 334.217 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 2.4 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.sched.adb -f 
+Command       db_write returned 0; 2.34 sec.
+INFO: [HLS 200-0] Finish scheduling nnet.
+Execute       set_default_model nnet 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model nnet 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=nnet
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.26 sec.
+INFO: [HLS 200-111]  Elapsed time: 5.02 seconds; current allocated memory: 334.851 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 2.55 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.bind.adb -f 
+Command       db_write returned 0; 2.3 sec.
+INFO: [HLS 200-0] Finish binding nnet.
+Execute       get_model_list nnet -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess conv_layer1 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess pool_layer1 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess conv_layer2 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess pool_layer2 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess flatten 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess nnet 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL generation: conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer1'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model conv_layer1 -vendor xilinx -mg_file /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_conv_layer1_bias_V' to 'conv_layer1_conv_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_image_V_0' to 'conv_layer1_imagecud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_conv_layer1_weights_s' to 'conv_layer1_conv_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_19s_20ns_39_1_1' to 'nnet_mul_mul_19s_eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_19s_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer1'.
+Command       create_rtl_model returned 0; 0.04 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.91 seconds; current allocated memory: 335.554 MB.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl conv_layer1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/systemc/conv_layer1 -synmodules conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_rtl conv_layer1 -style xilinx -f -lang vhdl -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/vhdl/conv_layer1 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl conv_layer1 -style xilinx -f -lang vlog -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/verilog/conv_layer1 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_tb_info conv_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1 -p /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.02 sec.
+Execute       report -model conv_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/conv_layer1_csynth.rpt -f 
+Command       report returned 0; 0.02 sec.
+Execute       report -model conv_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/conv_layer1_csynth.xml -f -x 
+Command       report returned 0; 0.02 sec.
+Execute       report -model conv_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.verbose.rpt -verbose -f 
+Command       report returned 0; 1.45 sec.
+Execute       db_write -model conv_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.adb -f 
+Command       db_write returned 0; 1.4 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer1'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model pool_layer1 -vendor xilinx -mg_file /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer1'.
+Command       create_rtl_model returned 0; 0.01 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.98 seconds; current allocated memory: 337.469 MB.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl pool_layer1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/systemc/pool_layer1 -synmodules conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_rtl pool_layer1 -style xilinx -f -lang vhdl -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/vhdl/pool_layer1 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl pool_layer1 -style xilinx -f -lang vlog -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/verilog/pool_layer1 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_tb_info pool_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1 -p /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.02 sec.
+Execute       report -model pool_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/pool_layer1_csynth.rpt -f 
+Command       report returned 0; 0.01 sec.
+Execute       report -model pool_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/pool_layer1_csynth.xml -f -x 
+Command       report returned 0; 0.02 sec.
+Execute       report -model pool_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.verbose.rpt -verbose -f 
+Command       report returned 0; 1.34 sec.
+Execute       db_write -model pool_layer1 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.adb -f 
+Command       db_write returned 0; 1.29 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer2'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model conv_layer2 -vendor xilinx -mg_file /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_bias_V' to 'conv_layer2_conv_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_s' to 'conv_layer2_conv_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_24s_19s_42_1_1' to 'nnet_mul_mul_24s_hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer2'.
+Command       create_rtl_model returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.76 seconds; current allocated memory: 339.326 MB.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl conv_layer2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/systemc/conv_layer2 -synmodules conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_rtl conv_layer2 -style xilinx -f -lang vhdl -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/vhdl/conv_layer2 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl conv_layer2 -style xilinx -f -lang vlog -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/verilog/conv_layer2 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_tb_info conv_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2 -p /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.02 sec.
+Execute       report -model conv_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/conv_layer2_csynth.rpt -f 
+Command       report returned 0; 0.02 sec.
+Execute       report -model conv_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/conv_layer2_csynth.xml -f -x 
+Command       report returned 0; 0.01 sec.
+Execute       report -model conv_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.verbose.rpt -verbose -f 
+Command       report returned 0; 1.76 sec.
+Execute       db_write -model conv_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.adb -f 
+Command       db_write returned 0; 1.74 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer2'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model pool_layer2 -vendor xilinx -mg_file /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer2'.
+Command       create_rtl_model returned 0; 0.01 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.61 seconds; current allocated memory: 341.416 MB.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl pool_layer2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/systemc/pool_layer2 -synmodules conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl pool_layer2 -style xilinx -f -lang vhdl -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/vhdl/pool_layer2 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl pool_layer2 -style xilinx -f -lang vlog -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/verilog/pool_layer2 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_tb_info pool_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2 -p /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.01 sec.
+Execute       report -model pool_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/pool_layer2_csynth.rpt -f 
+Command       report returned 0; 0.01 sec.
+Execute       report -model pool_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/pool_layer2_csynth.xml -f -x 
+Command       report returned 0; 0.01 sec.
+Execute       report -model pool_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.verbose.rpt -verbose -f 
+Command       report returned 0; 1.33 sec.
+Execute       db_write -model pool_layer2 -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.adb -f 
+Command       db_write returned 0; 1.33 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flatten'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model flatten -vendor xilinx -mg_file /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flatten'.
+Command       create_rtl_model returned 0; 0.01 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.74 seconds; current allocated memory: 342.984 MB.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl flatten -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/systemc/flatten -synmodules conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl flatten -style xilinx -f -lang vhdl -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/vhdl/flatten 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl flatten -style xilinx -f -lang vlog -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/verilog/flatten 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_tb_info flatten -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten -p /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.01 sec.
+Execute       report -model flatten -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/flatten_csynth.rpt -f 
+Command       report returned 0; 0.01 sec.
+Execute       report -model flatten -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/flatten_csynth.xml -f -x 
+Command       report returned 0; 0 sec.
+Execute       report -model flatten -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.verbose.rpt -verbose -f 
+Command       report returned 0; 0.84 sec.
+Execute       db_write -model flatten -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.adb -f 
+Command       db_write returned 0; 0.83 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'nnet'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model nnet -vendor xilinx -mg_file /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/conv_layer1_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/conv_layer2_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/pool_layer1_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/pool_layer2_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/flatten_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc_layer1_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc_layer2_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc_layer3_out_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'nnet' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_bias_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'image_V_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_s' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_bias_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_s' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'fc_layer1_weights_V' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer1_weights_V' to 'nnet_fc_layer1_weibs' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'fc_layer2_weights_V' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer2_weights_V' to 'nnet_fc_layer2_wejbC' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'fc_layer3_weights_V' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer3_weights_V' to 'nnet_fc_layer3_wekbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_24s_18s_41_1_1' to 'nnet_mul_mul_24s_lbW' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_lbW': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'nnet'.
+Command       create_rtl_model returned 0; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.92 seconds; current allocated memory: 344.903 MB.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl nnet -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/systemc/nnet -synmodules conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl nnet -istop -style xilinx -f -lang vhdl -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/vhdl/nnet 
+Command       gen_rtl returned 0; 0.1 sec.
+Execute       gen_rtl nnet -istop -style xilinx -f -lang vlog -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/verilog/nnet 
+Command       gen_rtl returned 0; 0.05 sec.
+Execute       export_constraint_db -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.constraint.tcl -f -tool general 
+Command       export_constraint_db returned 0; 0 sec.
+Execute       report -model nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.design.xml -verbose -f -dv 
+Command       report returned 0; 0.24 sec.
+Execute       report -model nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.sdaccel.xml -verbose -f -sdaccel 
+Command       report returned 0; 0.08 sec.
+Execute       gen_tb_info nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet -p /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0 sec.
+Execute       report -model nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/nnet_csynth.rpt -f 
+Command       report returned 0; 0.03 sec.
+Execute       report -model nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/syn/report/nnet_csynth.xml -f -x 
+Command       report returned 0; 0.02 sec.
+Execute       report -model nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.verbose.rpt -verbose -f 
+Command       report returned 0; 2.83 sec.
+Execute       db_write -model nnet -o /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.adb -f 
+Command       db_write returned 0; 2.54 sec.
+Execute       sc_get_clocks nnet 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       sc_get_portdomain nnet 
+Command       sc_get_portdomain returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL component generation: conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet
+INFO: [HLS 200-0] Handling components in module [conv_layer1] ... 
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.compgen.tcl 
+INFO: [HLS 200-0] Found component nnet_mul_mul_19s_eOg.
+INFO: [HLS 200-0] Append model nnet_mul_mul_19s_eOg
+INFO: [HLS 200-0] Found component conv_layer1_conv_bkb.
+INFO: [HLS 200-0] Append model conv_layer1_conv_bkb
+INFO: [HLS 200-0] Found component conv_layer1_imagecud.
+INFO: [HLS 200-0] Append model conv_layer1_imagecud
+INFO: [HLS 200-0] Found component conv_layer1_conv_dEe.
+INFO: [HLS 200-0] Append model conv_layer1_conv_dEe
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [pool_layer1] ... 
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [conv_layer2] ... 
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.compgen.tcl 
+INFO: [HLS 200-0] Found component nnet_mul_mul_24s_hbi.
+INFO: [HLS 200-0] Append model nnet_mul_mul_24s_hbi
+INFO: [HLS 200-0] Found component conv_layer2_conv_fYi.
+INFO: [HLS 200-0] Append model conv_layer2_conv_fYi
+INFO: [HLS 200-0] Found component conv_layer2_conv_g8j.
+INFO: [HLS 200-0] Append model conv_layer2_conv_g8j
+Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-0] Handling components in module [pool_layer2] ... 
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [flatten] ... 
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [nnet] ... 
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.compgen.tcl 
+INFO: [HLS 200-0] Found component nnet_mul_mul_24s_lbW.
+INFO: [HLS 200-0] Append model nnet_mul_mul_24s_lbW
+INFO: [HLS 200-0] Found component nnet_fc_layer1_weibs.
+INFO: [HLS 200-0] Append model nnet_fc_layer1_weibs
+INFO: [HLS 200-0] Found component nnet_fc_layer2_wejbC.
+INFO: [HLS 200-0] Append model nnet_fc_layer2_wejbC
+INFO: [HLS 200-0] Found component nnet_fc_layer3_wekbM.
+INFO: [HLS 200-0] Append model nnet_fc_layer3_wekbM
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Append model conv_layer1
+INFO: [HLS 200-0] Append model pool_layer1
+INFO: [HLS 200-0] Append model conv_layer2
+INFO: [HLS 200-0] Append model pool_layer2
+INFO: [HLS 200-0] Append model flatten
+INFO: [HLS 200-0] Append model nnet
+INFO: [HLS 200-0] Generating RTL model list ...
+INFO: [HLS 200-0] All models in this session: nnet_mul_mul_19s_eOg conv_layer1_conv_bkb conv_layer1_imagecud conv_layer1_conv_dEe nnet_mul_mul_24s_hbi conv_layer2_conv_fYi conv_layer2_conv_g8j nnet_mul_mul_24s_lbW nnet_fc_layer1_weibs nnet_fc_layer2_wejbC nnet_fc_layer3_wekbM conv_layer1 pool_layer1 conv_layer2 pool_layer2 flatten nnet
+INFO: [HLS 200-0] To file: write model nnet_mul_mul_19s_eOg
+INFO: [HLS 200-0] To file: write model conv_layer1_conv_bkb
+INFO: [HLS 200-0] To file: write model conv_layer1_imagecud
+INFO: [HLS 200-0] To file: write model conv_layer1_conv_dEe
+INFO: [HLS 200-0] To file: write model nnet_mul_mul_24s_hbi
+INFO: [HLS 200-0] To file: write model conv_layer2_conv_fYi
+INFO: [HLS 200-0] To file: write model conv_layer2_conv_g8j
+INFO: [HLS 200-0] To file: write model nnet_mul_mul_24s_lbW
+INFO: [HLS 200-0] To file: write model nnet_fc_layer1_weibs
+INFO: [HLS 200-0] To file: write model nnet_fc_layer2_wejbC
+INFO: [HLS 200-0] To file: write model nnet_fc_layer3_wekbM
+INFO: [HLS 200-0] To file: write model conv_layer1
+INFO: [HLS 200-0] To file: write model pool_layer1
+INFO: [HLS 200-0] To file: write model conv_layer2
+INFO: [HLS 200-0] To file: write model pool_layer2
+INFO: [HLS 200-0] To file: write model flatten
+INFO: [HLS 200-0] To file: write model nnet
+INFO: [HLS 200-0] Finished generating RTL model list.
+
+
+INFO: [HLS 200-0] RTL Generation done.
+INFO: [HLS 200-0] CAS Generation done.
+INFO: [HLS 200-0] CBC Generation done.
+Execute       export_ssdm /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/a.export.ll 
+Command       export_ssdm returned 0; 0.05 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.08 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.12 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.12 sec.
+Command       ap_source returned 0; 0.13 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_conv_bkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_imagecud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_conv_dEe_rom' using auto ROMs.
+Command       ap_source returned 0; 0.06 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_fYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_g8j_rom' using auto ROMs.
+Command       ap_source returned 0; 0.05 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer1_weibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer2_wejbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer3_wekbM_rom' using auto ROMs.
+Command       ap_source returned 0; 3.58 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.08 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.12 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.12 sec.
+Command       ap_source returned 0; 0.12 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.compgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.compgen.tcl 
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0.01 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.05 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/conv_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/pool_layer2.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/flatten.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.compgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/nnet.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       sc_get_clocks nnet 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/nnet/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:43 ; elapsed = 00:02:32 . Memory (MB): peak = 869.059 ; gain = 520.996 ; free physical = 111 ; free virtual = 3110
+INFO: [SYSC 207-301] Generating SystemC RTL for nnet.
+INFO: [VHDL 208-304] Generating VHDL RTL for nnet.
+INFO: [VLOG 209-307] Generating Verilog RTL for nnet.
+Command     autosyn returned 0; 60.72 sec.
+Command   csynth_design returned 0; 150.15 sec.
+Command ap_source returned 0; 151.1 sec.
 Execute cleanup_all 
-Command cleanup_all returned 0; 0 sec.
+Command cleanup_all returned 0; 0.02 sec.

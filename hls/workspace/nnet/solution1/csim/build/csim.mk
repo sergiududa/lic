@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../.tcls/nnet_test.c ../../nnet.c
+HLS_SOURCES = ../../.tcls/nnet_test.cpp ../../nnet.cpp
 
 TARGET := csim.exe
 
@@ -61,7 +61,6 @@ IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
 IFLAG += -g
-DFLAG += -DAUTOCC
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += 
 
@@ -73,16 +72,14 @@ all: $(TARGET)
 
 
 
-AUTOCC := apcc  
-
-$(ObjDir)/nnet_test.o: ../../.tcls/nnet_test.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../.tcls/nnet_test.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/nnet_test.o: ../../.tcls/nnet_test.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../.tcls/nnet_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/nnet_test.d
 
-$(ObjDir)/nnet.o: ../../nnet.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../nnet.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/nnet.o: ../../nnet.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../nnet.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/nnet.d

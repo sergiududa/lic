@@ -1,4 +1,4 @@
-set lang "C"
+set lang "C++"
 set moduleName "nnet"
 set moduleIsExternC "0"
 set rawDecl ""
@@ -13,7 +13,7 @@ set Pointer0 "0"
 set Reference0 "0"
 set Dims0 [list 29 29 8]
 set Interface0 "wire"
-set DataType0 "float"
+set DataType0 "[list ap_fixed 24 4 5 3 0 ]"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "conv_layer2_out"
@@ -25,7 +25,7 @@ set Pointer1 "0"
 set Reference1 "0"
 set Dims1 [list 13 13 16]
 set Interface1 "wire"
-set DataType1 "float"
+set DataType1 "[list ap_fixed 24 4 5 3 0 ]"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set PortName2 "pool_layer1_out"
@@ -37,7 +37,7 @@ set Pointer2 "0"
 set Reference2 "0"
 set Dims2 [list 14 14 8]
 set Interface2 "wire"
-set DataType2 "float"
+set DataType2 "[list ap_fixed 24 4 5 3 0 ]"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
 lappend PortList $Port2
 set PortName3 "pool_layer2_out"
@@ -49,7 +49,7 @@ set Pointer3 "0"
 set Reference3 "0"
 set Dims3 [list 6 6 16]
 set Interface3 "wire"
-set DataType3 "float"
+set DataType3 "[list ap_fixed 24 4 5 3 0 ]"
 set Port3 [list $PortName3 $Interface3 $DataType3 $Pointer3 $Dims3 $Const3 $Volatile3 $ArrayOpt3]
 lappend PortList $Port3
 set PortName4 "flatten_out"
@@ -61,7 +61,7 @@ set Pointer4 "0"
 set Reference4 "0"
 set Dims4 [list 576]
 set Interface4 "wire"
-set DataType4 "float"
+set DataType4 "[list ap_fixed 24 4 5 3 0 ]"
 set Port4 [list $PortName4 $Interface4 $DataType4 $Pointer4 $Dims4 $Const4 $Volatile4 $ArrayOpt4]
 lappend PortList $Port4
 set PortName5 "fc_layer1_out"
@@ -73,7 +73,7 @@ set Pointer5 "0"
 set Reference5 "0"
 set Dims5 [list 120]
 set Interface5 "wire"
-set DataType5 "float"
+set DataType5 "[list ap_fixed 24 4 5 3 0 ]"
 set Port5 [list $PortName5 $Interface5 $DataType5 $Pointer5 $Dims5 $Const5 $Volatile5 $ArrayOpt5]
 lappend PortList $Port5
 set PortName6 "fc_layer2_out"
@@ -85,7 +85,7 @@ set Pointer6 "0"
 set Reference6 "0"
 set Dims6 [list 84]
 set Interface6 "wire"
-set DataType6 "float"
+set DataType6 "[list ap_fixed 24 4 5 3 0 ]"
 set Port6 [list $PortName6 $Interface6 $DataType6 $Pointer6 $Dims6 $Const6 $Volatile6 $ArrayOpt6]
 lappend PortList $Port6
 set PortName7 "fc_layer3_out"
@@ -97,14 +97,14 @@ set Pointer7 "0"
 set Reference7 "0"
 set Dims7 [list 10]
 set Interface7 "wire"
-set DataType7 "float"
+set DataType7 "[list ap_fixed 24 4 5 3 0 ]"
 set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7]
 lappend PortList $Port7
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 
 set argAPInt "" 
-set hasCPPAPFix 0 
+set hasCPPAPFix 1 
 set hasSCFix 0 
 set hasCBool 0 
 set hasCPPComplex 0 

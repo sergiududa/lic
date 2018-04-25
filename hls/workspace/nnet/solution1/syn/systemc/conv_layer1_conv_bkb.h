@@ -21,7 +21,7 @@ using namespace sc_dt;
 
 struct conv_layer1_conv_bkb_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 32;
+  static const unsigned DataWidth = 21;
   static const unsigned AddressRange = 8;
   static const unsigned AddressWidth = 3;
 
@@ -39,14 +39,14 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(conv_layer1_conv_bkb_ram) {
-        ram[0] = "0b00111110110001000001010100001001";
-        ram[1] = "0b10111111000001000010000110101111";
-        ram[2] = "0b00111110111101011001110100110100";
-        ram[3] = "0b10111110110011110110011001100010";
-        ram[4] = "0b10111111000010001111101010011100";
-        ram[5] = "0b00111101011000110100110110101101";
-        ram[6] = "0b00111011100101011011111111110000";
-        ram[7] = "0b00111111000001010011001001010001";
+        ram[0] = "0b001100010000010101000";
+        ram[1] = "0b101111011110111100101";
+        ram[2] = "0b001111010110011101001";
+        ram[3] = "0b110011000010011001100";
+        ram[4] = "0b101110111000001010110";
+        ram[5] = "0b000001110001101001101";
+        ram[6] = "0b000000001001010110111";
+        ram[7] = "0b010000101001100100101";
 
 
 SC_METHOD(prc_write_0);
@@ -72,7 +72,7 @@ void prc_write_0()
 SC_MODULE(conv_layer1_conv_bkb) {
 
 
-static const unsigned DataWidth = 32;
+static const unsigned DataWidth = 21;
 static const unsigned AddressRange = 8;
 static const unsigned AddressWidth = 3;
 

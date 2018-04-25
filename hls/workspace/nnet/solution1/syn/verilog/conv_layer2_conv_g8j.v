@@ -6,19 +6,19 @@
 // ==============================================================
 
 `timescale 1 ns / 1 ps
-(* rom_style = "distributed" *) module conv_layer2_conv_g8j_rom (
+module conv_layer2_conv_g8j_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
-parameter AWIDTH = 4;
-parameter MEM_SIZE = 16;
+parameter DWIDTH = 19;
+parameter AWIDTH = 9;
+parameter MEM_SIZE = 512;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
 output reg[DWIDTH-1:0] q0;
 input clk;
 
-(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
+reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
 initial begin
     $readmemh("./conv_layer2_conv_g8j_rom.dat", ram);
@@ -47,9 +47,9 @@ module conv_layer2_conv_g8j(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd16;
-parameter AddressWidth = 32'd4;
+parameter DataWidth = 32'd19;
+parameter AddressRange = 32'd512;
+parameter AddressWidth = 32'd9;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

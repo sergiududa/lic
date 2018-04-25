@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>output_r</name>
+						<name>output_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -24,11 +24,11 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>output</originalName>
+						<originalName>output.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>24</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>input_r</name>
+						<name>input_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,11 +52,11 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>input</originalName>
+						<originalName>input.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>24</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -76,9 +76,9 @@
 						<type>0</type>
 						<id>3</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
+						<lineNumber>103</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -90,10 +90,10 @@
 									<item_version>0</item_version>
 									<item class_id="12" tracking_level="0" version="0">
 										<first class_id="13" tracking_level="0" version="0">
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>99</second>
+										<second>103</second>
 									</item>
 								</second>
 							</item>
@@ -148,10 +148,10 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>exitcond2</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<name>exitcond3</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
+						<lineNumber>103</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -163,10 +163,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>99</second>
+										<second>103</second>
 									</item>
 								</second>
 							</item>
@@ -192,9 +192,9 @@
 						<type>0</type>
 						<id>8</id>
 						<name>i_3</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
+						<lineNumber>103</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -206,10 +206,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>99</second>
+										<second>103</second>
 									</item>
 								</second>
 							</item>
@@ -235,9 +235,9 @@
 						<type>0</type>
 						<id>9</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
+						<lineNumber>103</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -249,10 +249,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>99</second>
+										<second>103</second>
 									</item>
 								</second>
 							</item>
@@ -278,225 +278,10 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>tmp</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>99</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>79</item>
-					<item>80</item>
-					<item>81</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_9">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>12</id>
-						<name>p_shl1_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>99</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>82</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_10">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>13</id>
-						<name>tmp_54</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>99</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>99</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>4</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>84</item>
-					<item>85</item>
-					<item>87</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_11">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>14</id>
-						<name>p_shl2_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>88</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_12">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>15</id>
-						<name>tmp_55</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>89</item>
-					<item>90</item>
-				</oprand_edges>
-				<opcode>sub</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_13">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>16</id>
 						<name>p_shl</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -508,10 +293,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -525,22 +310,22 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>92</item>
-					<item>93</item>
-					<item>95</item>
+					<item>79</item>
+					<item>80</item>
+					<item>82</item>
 				</oprand_edges>
 				<opcode>bitconcatenate</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_14">
+			<item class_id_reference="9" object_id="_9">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>17</id>
+						<id>12</id>
 						<name>p_shl_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -552,10 +337,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -565,6 +350,221 @@
 						<coreName></coreName>
 					</Obj>
 					<bitwidth>11</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>83</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_10">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>13</id>
+						<name>p_shl5</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>85</item>
+					<item>86</item>
+					<item>88</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_11">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>14</id>
+						<name>p_shl5_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>11</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>89</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_12">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>15</id>
+						<name>tmp</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>11</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>90</item>
+					<item>91</item>
+				</oprand_edges>
+				<opcode>sub</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_13">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>16</id>
+						<name>tmp_44</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>103</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>103</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>93</item>
+					<item>94</item>
+					<item>95</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_14">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>17</id>
+						<name>p_shl1_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>103</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>103</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>7</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -579,10 +579,10 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>p_shl5</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<name>tmp_45</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>103</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -594,10 +594,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>103</second>
 									</item>
 								</second>
 							</item>
@@ -606,7 +606,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>8</bitwidth>
+					<bitwidth>4</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -623,10 +623,10 @@
 					<Obj>
 						<type>0</type>
 						<id>19</id>
-						<name>p_shl5_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<name>p_shl2_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -638,10 +638,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -650,7 +650,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>7</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -665,10 +665,10 @@
 					<Obj>
 						<type>0</type>
 						<id>20</id>
-						<name>tmp_s</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<name>tmp_46</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -680,10 +680,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -692,7 +692,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>7</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -709,9 +709,9 @@
 						<type>0</type>
 						<id>21</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>104</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -723,10 +723,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>100</second>
+										<second>104</second>
 									</item>
 								</second>
 							</item>
@@ -781,10 +781,10 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>exitcond1</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<name>exitcond2</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>104</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -796,10 +796,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>100</second>
+										<second>104</second>
 									</item>
 								</second>
 							</item>
@@ -825,9 +825,9 @@
 						<type>0</type>
 						<id>26</id>
 						<name>j_3</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>104</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -839,10 +839,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>100</second>
+										<second>104</second>
 									</item>
 								</second>
 							</item>
@@ -868,9 +868,9 @@
 						<type>0</type>
 						<id>27</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>104</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -882,10 +882,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>100</second>
+										<second>104</second>
 									</item>
 								</second>
 							</item>
@@ -911,10 +911,10 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>tmp_14_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<name>tmp_s</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -926,10 +926,54 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>100</second>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>119</item>
+					<item>120</item>
+					<item>122</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_24">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>30</id>
+						<name>tmp_22_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>104</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>104</second>
 									</item>
 								</second>
 							</item>
@@ -943,20 +987,20 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>118</item>
+					<item>123</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_24">
+			<item class_id_reference="9" object_id="_25">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>30</id>
-						<name>tmp_56</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<id>31</id>
+						<name>tmp_47</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>104</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -968,10 +1012,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>100</second>
+										<second>104</second>
 									</item>
 								</second>
 							</item>
@@ -985,21 +1029,21 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>119</item>
-					<item>120</item>
+					<item>124</item>
+					<item>125</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_25">
+			<item class_id_reference="9" object_id="_26">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>31</id>
-						<name>tmp_74_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<id>32</id>
+						<name>tmp_65_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1011,10 +1055,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1024,50 +1068,6 @@
 						<coreName></coreName>
 					</Obj>
 					<bitwidth>11</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>122</item>
-					<item>123</item>
-					<item>125</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_26">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>32</id>
-						<name>tmp_15</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>7</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1085,9 +1085,9 @@
 						<type>0</type>
 						<id>33</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1099,10 +1099,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>101</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1158,9 +1158,9 @@
 						<type>0</type>
 						<id>36</id>
 						<name>k_cast3</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1172,10 +1172,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>101</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1200,9 +1200,9 @@
 						<type>0</type>
 						<id>37</id>
 						<name>exitcond</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1214,10 +1214,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>101</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1243,9 +1243,9 @@
 						<type>0</type>
 						<id>39</id>
 						<name>k_3</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1257,10 +1257,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>101</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1286,9 +1286,9 @@
 						<type>0</type>
 						<id>40</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1300,10 +1300,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>101</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1329,223 +1329,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>tmp_16_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>11</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>145</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_34">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>43</id>
-						<name>tmp_57</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>11</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>146</item>
-					<item>147</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_35">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>44</id>
-						<name>tmp_75_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>148</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_36">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>45</id>
-						<name>input_addr</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>149</item>
-					<item>151</item>
-					<item>152</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_37">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>46</id>
-						<name>input_load</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
-						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
-						<contextFuncName>flatten</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/sergiu/git/lic/hls/workspace</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>nnet/solution1/nnet.c</first>
-											<second>flatten</second>
-										</first>
-										<second>102</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>153</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_38">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>47</id>
 						<name>tmp1</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1557,10 +1344,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1574,21 +1361,21 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>154</item>
-					<item>155</item>
+					<item>145</item>
+					<item>146</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_39">
+			<item class_id_reference="9" object_id="_34">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>48</id>
+						<id>43</id>
 						<name>tmp1_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1600,10 +1387,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1617,20 +1404,20 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>156</item>
+					<item>147</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_40">
+			<item class_id_reference="9" object_id="_35">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>49</id>
-						<name>tmp_17</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<id>44</id>
+						<name>tmp_23</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1642,10 +1429,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1659,21 +1446,21 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>157</item>
-					<item>158</item>
+					<item>148</item>
+					<item>149</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_41">
+			<item class_id_reference="9" object_id="_36">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>50</id>
-						<name>tmp_28_cast</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<id>45</id>
+						<name>tmp_27_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1685,10 +1472,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1702,20 +1489,20 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>159</item>
+					<item>150</item>
 				</oprand_edges>
 				<opcode>sext</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_42">
+			<item class_id_reference="9" object_id="_37">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>51</id>
-						<name>tmp_18</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<id>46</id>
+						<name>tmp_24</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1727,10 +1514,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1744,20 +1531,20 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>160</item>
+					<item>151</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_43">
+			<item class_id_reference="9" object_id="_38">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>52</id>
-						<name>output_addr</name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<id>47</id>
+						<name>tmp_25_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1769,10 +1556,223 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>11</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>152</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_39">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>48</id>
+						<name>tmp_48</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>11</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>153</item>
+					<item>154</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_40">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>49</id>
+						<name>tmp_66_cast</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>155</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_41">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>50</id>
+						<name>input_V_addr</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>156</item>
+					<item>158</item>
+					<item>159</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_42">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>51</id>
+						<name>input_V_load</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>24</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>160</item>
+				</oprand_edges>
+				<opcode>load</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_43">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>52</id>
+						<name>output_V_addr</name>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
+						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
+						<lineNumber>106</lineNumber>
+						<contextFuncName>flatten</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/sergiu/git/lic/hls/workspace</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>nnet/solution1/nnet.cpp</first>
+											<second>flatten</second>
+										</first>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1799,9 +1799,9 @@
 						<type>0</type>
 						<id>53</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>102</lineNumber>
+						<lineNumber>106</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1813,10 +1813,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>102</second>
+										<second>106</second>
 									</item>
 								</second>
 							</item>
@@ -1842,9 +1842,9 @@
 						<type>0</type>
 						<id>54</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1856,10 +1856,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>101</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1940,9 +1940,9 @@
 						<type>0</type>
 						<id>60</id>
 						<name></name>
-						<fileName>nnet/solution1/nnet.c</fileName>
+						<fileName>nnet/solution1/nnet.cpp</fileName>
 						<fileDirectory>/home/sergiu/git/lic/hls/workspace</fileDirectory>
-						<lineNumber>103</lineNumber>
+						<lineNumber>107</lineNumber>
 						<contextFuncName>flatten</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1954,10 +1954,10 @@
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>nnet/solution1/nnet.c</first>
+											<first>nnet/solution1/nnet.cpp</first>
 											<second>flatten</second>
 										</first>
-										<second>103</second>
+										<second>107</second>
 									</item>
 								</second>
 							</item>
@@ -2052,30 +2052,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>86</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>0</content>
-			</item>
-			<item class_id_reference="16" object_id="_53">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>94</id>
+						<id>81</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2090,6 +2067,29 @@
 						<coreName></coreName>
 					</Obj>
 					<bitwidth>7</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>0</content>
+			</item>
+			<item class_id_reference="16" object_id="_53">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>87</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>5</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -2112,7 +2112,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>5</bitwidth>
+					<bitwidth>1</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -2121,7 +2121,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>124</id>
+						<id>121</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2190,7 +2190,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>150</id>
+						<id>157</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2266,7 +2266,7 @@
 				<Obj>
 					<type>3</type>
 					<id>22</id>
-					<name>.preheader3.preheader</name>
+					<name>.preheader4.preheader</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -2299,7 +2299,7 @@
 				<Obj>
 					<type>3</type>
 					<id>28</id>
-					<name>.preheader3</name>
+					<name>.preheader4</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -2414,7 +2414,7 @@
 				<Obj>
 					<type>3</type>
 					<id>57</id>
-					<name>.preheader3.loopexit</name>
+					<name>.preheader4.loopexit</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -2568,49 +2568,49 @@
 				<sink_obj>11</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_83">
-				<id>81</id>
+				<id>82</id>
 				<edge_type>1</edge_type>
-				<source_obj>64</source_obj>
+				<source_obj>81</source_obj>
 				<sink_obj>11</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_84">
-				<id>82</id>
+				<id>83</id>
 				<edge_type>1</edge_type>
 				<source_obj>11</source_obj>
 				<sink_obj>12</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_85">
-				<id>85</id>
+				<id>86</id>
 				<edge_type>1</edge_type>
 				<source_obj>5</source_obj>
 				<sink_obj>13</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_86">
-				<id>87</id>
+				<id>88</id>
 				<edge_type>1</edge_type>
-				<source_obj>86</source_obj>
+				<source_obj>87</source_obj>
 				<sink_obj>13</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_87">
-				<id>88</id>
+				<id>89</id>
 				<edge_type>1</edge_type>
 				<source_obj>13</source_obj>
 				<sink_obj>14</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_88">
-				<id>89</id>
+				<id>90</id>
 				<edge_type>1</edge_type>
 				<source_obj>12</source_obj>
 				<sink_obj>15</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_89">
-				<id>90</id>
+				<id>91</id>
 				<edge_type>1</edge_type>
 				<source_obj>14</source_obj>
 				<sink_obj>15</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_90">
-				<id>93</id>
+				<id>94</id>
 				<edge_type>1</edge_type>
 				<source_obj>5</source_obj>
 				<sink_obj>16</sink_obj>
@@ -2618,7 +2618,7 @@
 			<item class_id_reference="20" object_id="_91">
 				<id>95</id>
 				<edge_type>1</edge_type>
-				<source_obj>94</source_obj>
+				<source_obj>64</source_obj>
 				<sink_obj>16</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_92">
@@ -2736,25 +2736,25 @@
 				<sink_obj>27</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_111">
-				<id>118</id>
+				<id>120</id>
 				<edge_type>1</edge_type>
 				<source_obj>23</source_obj>
 				<sink_obj>29</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_112">
-				<id>119</id>
+				<id>122</id>
 				<edge_type>1</edge_type>
-				<source_obj>29</source_obj>
-				<sink_obj>30</sink_obj>
+				<source_obj>121</source_obj>
+				<sink_obj>29</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_113">
-				<id>120</id>
+				<id>123</id>
 				<edge_type>1</edge_type>
-				<source_obj>15</source_obj>
+				<source_obj>23</source_obj>
 				<sink_obj>30</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_114">
-				<id>123</id>
+				<id>124</id>
 				<edge_type>1</edge_type>
 				<source_obj>30</source_obj>
 				<sink_obj>31</sink_obj>
@@ -2762,19 +2762,19 @@
 			<item class_id_reference="20" object_id="_115">
 				<id>125</id>
 				<edge_type>1</edge_type>
-				<source_obj>124</source_obj>
+				<source_obj>20</source_obj>
 				<sink_obj>31</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_116">
 				<id>128</id>
 				<edge_type>1</edge_type>
-				<source_obj>23</source_obj>
+				<source_obj>31</source_obj>
 				<sink_obj>32</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_117">
 				<id>129</id>
 				<edge_type>1</edge_type>
-				<source_obj>124</source_obj>
+				<source_obj>121</source_obj>
 				<sink_obj>32</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_118">
@@ -2798,7 +2798,7 @@
 			<item class_id_reference="20" object_id="_121">
 				<id>133</id>
 				<edge_type>1</edge_type>
-				<source_obj>100</source_obj>
+				<source_obj>87</source_obj>
 				<sink_obj>35</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_122">
@@ -2858,14 +2858,14 @@
 			<item class_id_reference="20" object_id="_131">
 				<id>145</id>
 				<edge_type>1</edge_type>
-				<source_obj>35</source_obj>
+				<source_obj>36</source_obj>
 				<sink_obj>42</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_132">
 				<id>146</id>
 				<edge_type>1</edge_type>
-				<source_obj>31</source_obj>
-				<sink_obj>43</sink_obj>
+				<source_obj>29</source_obj>
+				<sink_obj>42</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_133">
 				<id>147</id>
@@ -2876,62 +2876,62 @@
 			<item class_id_reference="20" object_id="_134">
 				<id>148</id>
 				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
+				<source_obj>15</source_obj>
 				<sink_obj>44</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_135">
 				<id>149</id>
 				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>45</sink_obj>
+				<source_obj>43</source_obj>
+				<sink_obj>44</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_136">
-				<id>151</id>
-				<edge_type>1</edge_type>
-				<source_obj>150</source_obj>
-				<sink_obj>45</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_137">
-				<id>152</id>
+				<id>150</id>
 				<edge_type>1</edge_type>
 				<source_obj>44</source_obj>
 				<sink_obj>45</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_138">
-				<id>153</id>
+			<item class_id_reference="20" object_id="_137">
+				<id>151</id>
 				<edge_type>1</edge_type>
 				<source_obj>45</source_obj>
 				<sink_obj>46</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_139">
-				<id>154</id>
+			<item class_id_reference="20" object_id="_138">
+				<id>152</id>
 				<edge_type>1</edge_type>
-				<source_obj>36</source_obj>
+				<source_obj>35</source_obj>
 				<sink_obj>47</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_140">
-				<id>155</id>
+			<item class_id_reference="20" object_id="_139">
+				<id>153</id>
 				<edge_type>1</edge_type>
 				<source_obj>32</source_obj>
-				<sink_obj>47</sink_obj>
+				<sink_obj>48</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_141">
-				<id>156</id>
+			<item class_id_reference="20" object_id="_140">
+				<id>154</id>
 				<edge_type>1</edge_type>
 				<source_obj>47</source_obj>
 				<sink_obj>48</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_142">
-				<id>157</id>
+			<item class_id_reference="20" object_id="_141">
+				<id>155</id>
 				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
+				<source_obj>48</source_obj>
 				<sink_obj>49</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_142">
+				<id>156</id>
+				<edge_type>1</edge_type>
+				<source_obj>2</source_obj>
+				<sink_obj>50</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_143">
 				<id>158</id>
 				<edge_type>1</edge_type>
-				<source_obj>48</source_obj>
-				<sink_obj>49</sink_obj>
+				<source_obj>157</source_obj>
+				<sink_obj>50</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_144">
 				<id>159</id>
@@ -2954,19 +2954,19 @@
 			<item class_id_reference="20" object_id="_147">
 				<id>162</id>
 				<edge_type>1</edge_type>
-				<source_obj>150</source_obj>
+				<source_obj>157</source_obj>
 				<sink_obj>52</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_148">
 				<id>163</id>
 				<edge_type>1</edge_type>
-				<source_obj>51</source_obj>
+				<source_obj>46</source_obj>
 				<sink_obj>52</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_149">
 				<id>164</id>
 				<edge_type>1</edge_type>
-				<source_obj>46</source_obj>
+				<source_obj>51</source_obj>
 				<sink_obj>53</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_150">
@@ -3527,15 +3527,15 @@
 		<item>
 			<first>45</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>46</first>
 			<second>
-				<first>3</first>
-				<second>1</second>
+				<first>4</first>
+				<second>0</second>
 			</second>
 		</item>
 		<item>
@@ -3562,15 +3562,15 @@
 		<item>
 			<first>50</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>51</first>
 			<second>
-				<first>4</first>
-				<second>0</second>
+				<first>3</first>
+				<second>1</second>
 			</second>
 		</item>
 		<item>

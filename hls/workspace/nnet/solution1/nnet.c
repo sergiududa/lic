@@ -1,7 +1,12 @@
 #include "/home/sergiu/git/lic/hls/workspace/nnet/headers/weights.h"
 #include "/home/sergiu/git/lic/hls/workspace/nnet/headers/defines.h"
 #include "/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h"
+#include "ap_fixed.h"
 
+#define WIDTH		24
+#define INT_WIDTH	4
+
+typedef ap_fixed<WIDTH, INT_WIDTH> float_t;
 
 void conv_layer1(float output[A1_SIZE][A1_SIZE][A1_CHANNELS], float image[IMAGE_SIZE][IMAGE_SIZE][IMAGE_CHANNELS], float weight[CONV1_KERNEL_SIZE][CONV1_KERNEL_SIZE][CONV1_CHANNELS][CONV1_FILTERS], float bias[CONV1_BIAS_SIZE])
 {

@@ -9,7 +9,7 @@
 module nnet_fc_layer3_wekbM_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 20;
 parameter AWIDTH = 10;
 parameter MEM_SIZE = 840;
 
@@ -47,7 +47,7 @@ module nnet_fc_layer3_wekbM(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd20;
 parameter AddressRange = 32'd840;
 parameter AddressWidth = 32'd10;
 input reset;

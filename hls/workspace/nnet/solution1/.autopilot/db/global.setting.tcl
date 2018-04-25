@@ -9,12 +9,12 @@ set PipelineFlag 0
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
-set FloatingPointFlag 1
+set FloatingPointFlag 0
 set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 0
+set HasDSPModule 1
 set ResetLevelFlag 1
 set ResetStyle "control"
 set ResetSyncFlag 1
@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg400:-1"
-set SourceFiles {sc {} c nnet.c}
+set SourceFiles {sc {} c nnet.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/sergiu/git/lic/hls/workspace/nnet/solution1/solution1.directive}
-set TBFiles {verilog .tcls/nnet_test.c bc .tcls/nnet_test.c vhdl .tcls/nnet_test.c sc .tcls/nnet_test.c cas .tcls/nnet_test.c c {}}
+set TBFiles {verilog .tcls/nnet_test.cpp bc .tcls/nnet_test.cpp vhdl .tcls/nnet_test.cpp sc .tcls/nnet_test.cpp cas .tcls/nnet_test.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'flatten'" level="0">
-<item name = "Date">Wed Apr 25 13:26:59 2018
+<item name = "Date">Wed Apr 25 19:19:54 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet</item>
@@ -83,14 +83,14 @@
 <column name="i_3_fu_106_p2">+, 0, 0, 12, 3, 1</column>
 <column name="j_3_fu_178_p2">+, 0, 0, 12, 3, 1</column>
 <column name="k_3_fu_219_p2">+, 0, 0, 15, 5, 1</column>
-<column name="tmp1_fu_239_p2">+, 0, 0, 15, 7, 7</column>
-<column name="tmp_17_fu_248_p2">+, 0, 0, 18, 11, 11</column>
-<column name="tmp_56_fu_188_p2">+, 0, 0, 15, 7, 7</column>
-<column name="tmp_57_fu_229_p2">+, 0, 0, 18, 11, 11</column>
-<column name="tmp_55_fu_136_p2">-, 0, 0, 15, 7, 7</column>
-<column name="tmp_s_fu_166_p2">-, 0, 0, 18, 11, 11</column>
-<column name="exitcond1_fu_172_p2">icmp, 0, 0, 9, 3, 3</column>
-<column name="exitcond2_fu_100_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="tmp1_fu_225_p2">+, 0, 0, 15, 7, 7</column>
+<column name="tmp_23_fu_234_p2">+, 0, 0, 18, 11, 11</column>
+<column name="tmp_47_fu_196_p2">+, 0, 0, 15, 7, 7</column>
+<column name="tmp_48_fu_243_p2">+, 0, 0, 18, 11, 11</column>
+<column name="tmp_46_fu_166_p2">-, 0, 0, 15, 7, 7</column>
+<column name="tmp_fu_136_p2">-, 0, 0, 18, 11, 11</column>
+<column name="exitcond2_fu_172_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="exitcond3_fu_100_p2">icmp, 0, 0, 9, 3, 3</column>
 <column name="exitcond_fu_213_p2">icmp, 0, 0, 11, 5, 6</column>
 </table>
 </item>
@@ -111,11 +111,11 @@
 <column name="j_reg_78">3, 0, 3, 0</column>
 <column name="k_3_reg_300">5, 0, 5, 0</column>
 <column name="k_reg_89">5, 0, 5, 0</column>
-<column name="tmp_15_reg_292">3, 0, 7, 4</column>
-<column name="tmp_17_reg_310">11, 0, 11, 0</column>
-<column name="tmp_55_reg_269">6, 0, 7, 1</column>
-<column name="tmp_74_cast_reg_287">7, 0, 11, 4</column>
-<column name="tmp_s_reg_274">6, 0, 11, 5</column>
+<column name="tmp_23_reg_305">11, 0, 11, 0</column>
+<column name="tmp_46_reg_274">6, 0, 7, 1</column>
+<column name="tmp_65_cast_reg_292">7, 0, 11, 4</column>
+<column name="tmp_reg_269">6, 0, 11, 5</column>
+<column name="tmp_s_reg_287">3, 0, 7, 4</column>
 </table>
 </item>
 </section>
@@ -131,13 +131,13 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, flatten, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, flatten, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, flatten, return value</column>
-<column name="output_r_address0">out, 10, ap_memory, output_r, array</column>
-<column name="output_r_ce0">out, 1, ap_memory, output_r, array</column>
-<column name="output_r_we0">out, 1, ap_memory, output_r, array</column>
-<column name="output_r_d0">out, 32, ap_memory, output_r, array</column>
-<column name="input_r_address0">out, 10, ap_memory, input_r, array</column>
-<column name="input_r_ce0">out, 1, ap_memory, input_r, array</column>
-<column name="input_r_q0">in, 32, ap_memory, input_r, array</column>
+<column name="output_V_address0">out, 10, ap_memory, output_V, array</column>
+<column name="output_V_ce0">out, 1, ap_memory, output_V, array</column>
+<column name="output_V_we0">out, 1, ap_memory, output_V, array</column>
+<column name="output_V_d0">out, 24, ap_memory, output_V, array</column>
+<column name="input_V_address0">out, 10, ap_memory, input_V, array</column>
+<column name="input_V_ce0">out, 1, ap_memory, input_V, array</column>
+<column name="input_V_q0">in, 24, ap_memory, input_V, array</column>
 </table>
 </item>
 </section>

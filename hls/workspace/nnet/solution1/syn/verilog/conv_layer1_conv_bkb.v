@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module conv_layer1_conv_bkb_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 21;
 parameter AWIDTH = 3;
 parameter MEM_SIZE = 8;
 
@@ -47,7 +47,7 @@ module conv_layer1_conv_bkb(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd21;
 parameter AddressRange = 32'd8;
 parameter AddressWidth = 32'd3;
 input reset;

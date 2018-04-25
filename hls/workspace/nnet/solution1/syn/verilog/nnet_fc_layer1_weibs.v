@@ -9,7 +9,7 @@
 module nnet_fc_layer1_weibs_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 18;
 parameter AWIDTH = 17;
 parameter MEM_SIZE = 69120;
 
@@ -47,7 +47,7 @@ module nnet_fc_layer1_weibs(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd18;
 parameter AddressRange = 32'd69120;
 parameter AddressWidth = 32'd17;
 input reset;

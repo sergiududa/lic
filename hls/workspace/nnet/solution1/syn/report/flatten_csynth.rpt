@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'flatten'
 ================================================================
-* Date:           Wed Apr 25 13:26:59 2018
+* Date:           Wed Apr 25 19:19:54 2018
 
 * Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
 * Project:        nnet
@@ -90,14 +90,14 @@
     |i_3_fu_106_p2        |     +    |      0|  0|  12|           3|           1|
     |j_3_fu_178_p2        |     +    |      0|  0|  12|           3|           1|
     |k_3_fu_219_p2        |     +    |      0|  0|  15|           5|           1|
-    |tmp1_fu_239_p2       |     +    |      0|  0|  15|           7|           7|
-    |tmp_17_fu_248_p2     |     +    |      0|  0|  18|          11|          11|
-    |tmp_56_fu_188_p2     |     +    |      0|  0|  15|           7|           7|
-    |tmp_57_fu_229_p2     |     +    |      0|  0|  18|          11|          11|
-    |tmp_55_fu_136_p2     |     -    |      0|  0|  15|           7|           7|
-    |tmp_s_fu_166_p2      |     -    |      0|  0|  18|          11|          11|
-    |exitcond1_fu_172_p2  |   icmp   |      0|  0|   9|           3|           3|
-    |exitcond2_fu_100_p2  |   icmp   |      0|  0|   9|           3|           3|
+    |tmp1_fu_225_p2       |     +    |      0|  0|  15|           7|           7|
+    |tmp_23_fu_234_p2     |     +    |      0|  0|  18|          11|          11|
+    |tmp_47_fu_196_p2     |     +    |      0|  0|  15|           7|           7|
+    |tmp_48_fu_243_p2     |     +    |      0|  0|  18|          11|          11|
+    |tmp_46_fu_166_p2     |     -    |      0|  0|  15|           7|           7|
+    |tmp_fu_136_p2        |     -    |      0|  0|  18|          11|          11|
+    |exitcond2_fu_172_p2  |   icmp   |      0|  0|   9|           3|           3|
+    |exitcond3_fu_100_p2  |   icmp   |      0|  0|   9|           3|           3|
     |exitcond_fu_213_p2   |   icmp   |      0|  0|  11|           5|           6|
     +---------------------+----------+-------+---+----+------------+------------+
     |Total                |          |      0|  0| 167|          76|          69|
@@ -126,11 +126,11 @@
     |j_reg_78             |   3|   0|    3|          0|
     |k_3_reg_300          |   5|   0|    5|          0|
     |k_reg_89             |   5|   0|    5|          0|
-    |tmp_15_reg_292       |   3|   0|    7|          4|
-    |tmp_17_reg_310       |  11|   0|   11|          0|
-    |tmp_55_reg_269       |   6|   0|    7|          1|
-    |tmp_74_cast_reg_287  |   7|   0|   11|          4|
-    |tmp_s_reg_274        |   6|   0|   11|          5|
+    |tmp_23_reg_305       |  11|   0|   11|          0|
+    |tmp_46_reg_274       |   6|   0|    7|          1|
+    |tmp_65_cast_reg_292  |   7|   0|   11|          4|
+    |tmp_reg_269          |   6|   0|   11|          5|
+    |tmp_s_reg_287        |   3|   0|    7|          4|
     +---------------------+----+----+-----+-----------+
     |Total                |  60|   0|   74|         14|
     +---------------------+----+----+-----+-----------+
@@ -150,12 +150,12 @@
 |ap_done            | out |    1| ap_ctrl_hs |    flatten   | return value |
 |ap_idle            | out |    1| ap_ctrl_hs |    flatten   | return value |
 |ap_ready           | out |    1| ap_ctrl_hs |    flatten   | return value |
-|output_r_address0  | out |   10|  ap_memory |   output_r   |     array    |
-|output_r_ce0       | out |    1|  ap_memory |   output_r   |     array    |
-|output_r_we0       | out |    1|  ap_memory |   output_r   |     array    |
-|output_r_d0        | out |   32|  ap_memory |   output_r   |     array    |
-|input_r_address0   | out |   10|  ap_memory |    input_r   |     array    |
-|input_r_ce0        | out |    1|  ap_memory |    input_r   |     array    |
-|input_r_q0         |  in |   32|  ap_memory |    input_r   |     array    |
+|output_V_address0  | out |   10|  ap_memory |   output_V   |     array    |
+|output_V_ce0       | out |    1|  ap_memory |   output_V   |     array    |
+|output_V_we0       | out |    1|  ap_memory |   output_V   |     array    |
+|output_V_d0        | out |   24|  ap_memory |   output_V   |     array    |
+|input_V_address0   | out |   10|  ap_memory |    input_V   |     array    |
+|input_V_ce0        | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_q0         |  in |   24|  ap_memory |    input_V   |     array    |
 +-------------------+-----+-----+------------+--------------+--------------+
 

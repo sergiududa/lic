@@ -42,14 +42,14 @@
 			<location>/home/sergiu/git/lic/hls/workspace/nnet/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/nnet.c</name>
+			<name>source/nnet.cpp</name>
 			<type>1</type>
-			<location>/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.c</location>
+			<location>/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp</location>
 		</link>
 		<link>
-			<name>testbench/nnet_test.c</name>
+			<name>testbench/nnet_test.cpp</name>
 			<type>1</type>
-			<location>/home/sergiu/git/lic/hls/workspace/nnet/solution1/.tcls/nnet_test.c</location>
+			<location>/home/sergiu/git/lic/hls/workspace/nnet/solution1/.tcls/nnet_test.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

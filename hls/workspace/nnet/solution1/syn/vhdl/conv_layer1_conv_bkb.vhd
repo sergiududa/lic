@@ -11,7 +11,7 @@ use ieee.std_logic_unsigned.all;
 
 entity conv_layer1_conv_bkb_rom is 
     generic(
-             dwidth     : integer := 32; 
+             dwidth     : integer := 21; 
              awidth     : integer := 3; 
              mem_size    : integer := 8
     ); 
@@ -29,14 +29,10 @@ architecture rtl of conv_layer1_conv_bkb_rom is
 signal addr0_tmp : std_logic_vector(awidth-1 downto 0); 
 type mem_array is array (0 to mem_size-1) of std_logic_vector (dwidth-1 downto 0); 
 signal mem : mem_array := (
-    0 => "00111110110001000001010100001001", 
-    1 => "10111111000001000010000110101111", 
-    2 => "00111110111101011001110100110100", 
-    3 => "10111110110011110110011001100010", 
-    4 => "10111111000010001111101010011100", 
-    5 => "00111101011000110100110110101101", 
-    6 => "00111011100101011011111111110000", 
-    7 => "00111111000001010011001001010001" );
+    0 => "001100010000010101000", 1 => "101111011110111100101", 
+    2 => "001111010110011101001", 3 => "110011000010011001100", 
+    4 => "101110111000001010110", 5 => "000001110001101001101", 
+    6 => "000000001001010110111", 7 => "010000101001100100101" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -75,7 +71,7 @@ use IEEE.std_logic_1164.all;
 
 entity conv_layer1_conv_bkb is
     generic (
-        DataWidth : INTEGER := 32;
+        DataWidth : INTEGER := 21;
         AddressRange : INTEGER := 8;
         AddressWidth : INTEGER := 3);
     port (

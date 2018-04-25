@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'conv_layer2'
 ================================================================
-* Date:           Wed Apr 25 13:26:48 2018
+* Date:           Wed Apr 25 19:19:16 2018
 
 * Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
 * Project:        nnet
@@ -20,34 +20,34 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|      8.16|        1.25|
+    |ap_clk  |  10.00|      7.10|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
     * Summary: 
-    +---------+---------+---------+---------+---------+
-    |      Latency      |      Interval     | Pipeline|
-    |   min   |   max   |   min   |   max   |   Type  |
-    +---------+---------+---------+---------+---------+
-    |  1006353|  1006353|  1006353|  1006353|   none  |
-    +---------+---------+---------+---------+---------+
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  387137|  387137|  387137|  387137|   none  |
+    +--------+--------+--------+--------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +-----------------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |                             |      Latency      | Iteration|  Initiation Interval  | Trip |          |
-        |          Loop Name          |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
-        +-----------------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- Loop 1                     |  1006352|  1006352|     62897|          -|          -|    16|    no    |
-        | + Loop 1.1                  |    62894|    62894|      4838|          -|          -|    13|    no    |
-        |  ++ Loop 1.1.1              |     4836|     4836|       372|          -|          -|    13|    no    |
-        |   +++ Loop 1.1.1.1          |      364|      364|       182|          -|          -|     2|    no    |
-        |    ++++ Loop 1.1.1.1.1      |      180|      180|        90|          -|          -|     2|    no    |
-        |     +++++ Loop 1.1.1.1.1.1  |       88|       88|        11|          -|          -|     8|    no    |
-        +-----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        +-----------------------------+--------+--------+----------+-----------+-----------+------+----------+
+        |                             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |          Loop Name          |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1                     |  387136|  387136|     24196|          -|          -|    16|    no    |
+        | + Loop 1.1                  |   24193|   24193|      1861|          -|          -|    13|    no    |
+        |  ++ Loop 1.1.1              |    1859|    1859|       143|          -|          -|    13|    no    |
+        |   +++ Loop 1.1.1.1          |     140|     140|        70|          -|          -|     2|    no    |
+        |    ++++ Loop 1.1.1.1.1      |      68|      68|        34|          -|          -|     2|    no    |
+        |     +++++ Loop 1.1.1.1.1.1  |      32|      32|         4|          -|          -|     8|    no    |
+        +-----------------------------+--------+--------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -75,7 +75,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 24
+* Number of FSM states : 12
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
@@ -83,21 +83,21 @@ IsGatedGlobalClock: 0
 1 --> 
 	2  / true
 2 --> 
-	3  / (!exitcond5)
+	3  / (!exitcond8)
 3 --> 
 	4  / true
 4 --> 
-	5  / (!exitcond4)
-	2  / (exitcond4)
+	5  / (!exitcond9)
+	2  / (exitcond9)
 5 --> 
-	6  / (!exitcond3)
-	4  / (exitcond3)
+	6  / (!exitcond1)
+	4  / (exitcond1)
 6 --> 
-	19  / (exitcond2)
+	12  / (exitcond2)
 	7  / (!exitcond2)
 7 --> 
-	8  / (!exitcond1)
-	6  / (exitcond1)
+	8  / (!exitcond3)
+	6  / (exitcond3)
 8 --> 
 	9  / (!exitcond)
 	7  / (exitcond)
@@ -106,198 +106,142 @@ IsGatedGlobalClock: 0
 10 --> 
 	11  / true
 11 --> 
-	12  / true
-12 --> 
-	13  / true
-13 --> 
-	14  / true
-14 --> 
-	15  / true
-15 --> 
-	16  / true
-16 --> 
-	17  / true
-17 --> 
-	18  / true
-18 --> 
 	8  / true
-19 --> 
-	20  / true
-20 --> 
-	21  / true
-21 --> 
-	22  / true
-22 --> 
-	23  / true
-23 --> 
-	24  / true
-24 --> 
+12 --> 
 	5  / true
 
 * FSM state operations: 
 
  <State 1> : 1.77ns
-ST_1 : Operation 25 [1/1] (1.76ns)   --->   "br label %.loopexit" [nnet/solution1/nnet.c:43]
+ST_1 : Operation 13 [1/1] (1.76ns)   --->   "br label %.loopexit" [nnet/solution1/nnet.cpp:47]
 
  <State 2> : 3.25ns
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%filter = phi i5 [ 0, %0 ], [ %filter_1, %.loopexit.loopexit ]"
-ST_2 : Operation 27 [1/1] (1.36ns)   --->   "%exitcond5 = icmp eq i5 %filter, -16" [nnet/solution1/nnet.c:43]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"
-ST_2 : Operation 29 [1/1] (1.78ns)   --->   "%filter_1 = add i5 %filter, 1" [nnet/solution1/nnet.c:43]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 30 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %3, label %.preheader9.preheader" [nnet/solution1/nnet.c:43]
-ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%tmp = zext i5 %filter to i64" [nnet/solution1/nnet.c:55]
-ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%conv_layer2_bias_add = getelementptr inbounds [16 x float]* @conv_layer2_bias, i64 0, i64 %tmp" [nnet/solution1/nnet.c:56]
-ST_2 : Operation 33 [2/2] (3.25ns)   --->   "%conv_layer2_bias_loa = load float* %conv_layer2_bias_add, align 4" [nnet/solution1/nnet.c:56]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 512> <ROM>
-ST_2 : Operation 34 [1/1] (0.00ns)   --->   "ret void" [nnet/solution1/nnet.c:59]
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%filter = phi i5 [ 0, %0 ], [ %filter_1, %.loopexit.loopexit ]"
+ST_2 : Operation 15 [1/1] (1.36ns)   --->   "%exitcond8 = icmp eq i5 %filter, -16" [nnet/solution1/nnet.cpp:47]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"
+ST_2 : Operation 17 [1/1] (1.78ns)   --->   "%filter_1 = add i5 %filter, 1" [nnet/solution1/nnet.cpp:47]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %exitcond8, label %3, label %.preheader57.preheader" [nnet/solution1/nnet.cpp:47]
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp = zext i5 %filter to i64" [nnet/solution1/nnet.cpp:59]
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%conv_layer2_bias_V_a = getelementptr [16 x i20]* @conv_layer2_bias_V, i64 0, i64 %tmp" [nnet/solution1/nnet.cpp:60]
+ST_2 : Operation 21 [2/2] (3.25ns)   --->   "%p_Val2_9 = load i20* %conv_layer2_bias_V_a, align 4" [nnet/solution1/nnet.cpp:60]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 19> <Depth = 512> <ROM>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "ret void" [nnet/solution1/nnet.cpp:63]
 
  <State 3> : 3.25ns
-ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_cast2 = zext i5 %filter to i11" [nnet/solution1/nnet.c:56]
-ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_cast = zext i5 %filter to i13" [nnet/solution1/nnet.c:56]
-ST_3 : Operation 37 [1/2] (3.25ns)   --->   "%conv_layer2_bias_loa = load float* %conv_layer2_bias_add, align 4" [nnet/solution1/nnet.c:56]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 512> <ROM>
-ST_3 : Operation 38 [1/1] (1.76ns)   --->   "br label %.preheader9" [nnet/solution1/nnet.c:46]
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_cast2 = zext i5 %filter to i11" [nnet/solution1/nnet.cpp:60]
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_cast = zext i5 %filter to i13" [nnet/solution1/nnet.cpp:60]
+ST_3 : Operation 25 [1/2] (3.25ns)   --->   "%p_Val2_9 = load i20* %conv_layer2_bias_V_a, align 4" [nnet/solution1/nnet.cpp:60]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 19> <Depth = 512> <ROM>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%p_Val2_12_cast = sext i20 %p_Val2_9 to i24" [nnet/solution1/nnet.cpp:60]
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_2 = sext i20 %p_Val2_9 to i23" [nnet/solution1/nnet.cpp:60]
+ST_3 : Operation 28 [1/1] (1.76ns)   --->   "br label %.preheader57" [nnet/solution1/nnet.cpp:50]
 
  <State 4> : 1.92ns
-ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%i = phi i4 [ 0, %.preheader9.preheader ], [ %i_5, %.preheader9.loopexit ]"
-ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%phi_mul = phi i8 [ 0, %.preheader9.preheader ], [ %next_mul, %.preheader9.loopexit ]"
-ST_4 : Operation 41 [1/1] (1.91ns)   --->   "%next_mul = add i8 %phi_mul, 13"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 42 [1/1] (1.30ns)   --->   "%exitcond4 = icmp eq i4 %i, -3" [nnet/solution1/nnet.c:46]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%empty_30 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 13, i64 13, i64 13)"
-ST_4 : Operation 44 [1/1] (1.73ns)   --->   "%i_5 = add i4 %i, 1" [nnet/solution1/nnet.c:46]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %.loopexit.loopexit, label %.preheader8.preheader" [nnet/solution1/nnet.c:46]
-ST_4 : Operation 46 [1/1] (1.76ns)   --->   "br label %.preheader8" [nnet/solution1/nnet.c:47]
-ST_4 : Operation 47 [1/1] (0.00ns)   --->   "br label %.loopexit"
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%i = phi i4 [ 0, %.preheader57.preheader ], [ %i_5, %.preheader57.loopexit ]"
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%phi_mul = phi i8 [ 0, %.preheader57.preheader ], [ %next_mul, %.preheader57.loopexit ]"
+ST_4 : Operation 31 [1/1] (1.91ns)   --->   "%next_mul = add i8 %phi_mul, 13"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 32 [1/1] (1.30ns)   --->   "%exitcond9 = icmp eq i4 %i, -3" [nnet/solution1/nnet.cpp:50]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%empty_29 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 13, i64 13, i64 13)"
+ST_4 : Operation 34 [1/1] (1.73ns)   --->   "%i_5 = add i4 %i, 1" [nnet/solution1/nnet.cpp:50]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond9, label %.loopexit.loopexit, label %.preheader56.preheader" [nnet/solution1/nnet.cpp:50]
+ST_4 : Operation 36 [1/1] (1.76ns)   --->   "br label %.preheader56" [nnet/solution1/nnet.cpp:51]
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "br label %.loopexit"
 
  <State 5> : 1.77ns
-ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%j = phi i4 [ %j_5, %2 ], [ 0, %.preheader8.preheader ]"
-ST_5 : Operation 49 [1/1] (1.30ns)   --->   "%exitcond3 = icmp eq i4 %j, -3" [nnet/solution1/nnet.c:47]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 13, i64 13, i64 13)"
-ST_5 : Operation 51 [1/1] (1.73ns)   --->   "%j_5 = add i4 %j, 1" [nnet/solution1/nnet.c:47]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 52 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader9.loopexit, label %.preheader7.preheader" [nnet/solution1/nnet.c:47]
-ST_5 : Operation 53 [1/1] (1.76ns)   --->   "br label %.preheader7" [nnet/solution1/nnet.c:51]
-ST_5 : Operation 54 [1/1] (0.00ns)   --->   "br label %.preheader9"
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "%j = phi i4 [ %j_5, %2 ], [ 0, %.preheader56.preheader ]"
+ST_5 : Operation 39 [1/1] (1.30ns)   --->   "%exitcond1 = icmp eq i4 %j, -3" [nnet/solution1/nnet.cpp:51]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "%empty_30 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 13, i64 13, i64 13)"
+ST_5 : Operation 41 [1/1] (1.73ns)   --->   "%j_5 = add i4 %j, 1" [nnet/solution1/nnet.cpp:51]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader57.loopexit, label %.preheader12.preheader" [nnet/solution1/nnet.cpp:51]
+ST_5 : Operation 43 [1/1] (1.76ns)   --->   "br label %.preheader12" [nnet/solution1/nnet.cpp:55]
+ST_5 : Operation 44 [1/1] (0.00ns)   --->   "br label %.preheader57"
 
- <State 6> : 7.26ns
-ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%sum = phi float [ %sum_1, %.preheader7.loopexit ], [ 0.000000e+00, %.preheader7.preheader ]" [nnet/solution1/nnet.c:55]
-ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%row_offset = phi i2 [ %row_offset_1, %.preheader7.loopexit ], [ 0, %.preheader7.preheader ]"
-ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%row_offset_cast5 = zext i2 %row_offset to i4" [nnet/solution1/nnet.c:51]
-ST_6 : Operation 58 [1/1] (0.95ns)   --->   "%exitcond2 = icmp eq i2 %row_offset, -2" [nnet/solution1/nnet.c:51]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"
-ST_6 : Operation 60 [1/1] (1.56ns)   --->   "%row_offset_1 = add i2 %row_offset, 1" [nnet/solution1/nnet.c:51]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 61 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %2, label %.preheader6.preheader" [nnet/solution1/nnet.c:51]
-ST_6 : Operation 62 [1/1] (1.73ns)   --->   "%tmp_20 = add i4 %row_offset_cast5, %i" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_59 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_20, i4 0)" [nnet/solution1/nnet.c:55]
-ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i8 %tmp_59 to i9" [nnet/solution1/nnet.c:55]
-ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_60 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_20, i1 false)" [nnet/solution1/nnet.c:55]
-ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i5 %tmp_60 to i9" [nnet/solution1/nnet.c:55]
-ST_6 : Operation 67 [1/1] (1.91ns)   --->   "%tmp_61 = sub i9 %p_shl_cast, %p_shl1_cast" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_62 = call i3 @_ssdm_op_BitConcatenate.i3.i2.i1(i2 %row_offset, i1 false)" [nnet/solution1/nnet.c:51]
-ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_85_cast = zext i3 %tmp_62 to i4" [nnet/solution1/nnet.c:53]
-ST_6 : Operation 70 [1/1] (1.76ns)   --->   "br label %.preheader6" [nnet/solution1/nnet.c:53]
-ST_6 : Operation 71 [5/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %conv_layer2_bias_loa" [nnet/solution1/nnet.c:56]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_19_cast = zext i4 %j to i8" [nnet/solution1/nnet.c:56]
-ST_6 : Operation 73 [1/1] (1.91ns)   --->   "%tmp_s = add i8 %tmp_19_cast, %phi_mul" [nnet/solution1/nnet.c:56]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_51 = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %tmp_s, i4 0)" [nnet/solution1/nnet.c:56]
-ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_79_cast = zext i12 %tmp_51 to i13" [nnet/solution1/nnet.c:56]
-ST_6 : Operation 76 [1/1] (1.99ns)   --->   "%tmp_58 = add i13 %tmp_cast, %tmp_79_cast" [nnet/solution1/nnet.c:56]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ <State 6> : 6.14ns
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i24 [ %sum_1, %.preheader12.loopexit ], [ 0, %.preheader12.preheader ]" [nnet/solution1/nnet.cpp:59]
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%row_offset = phi i2 [ %row_offset_1, %.preheader12.loopexit ], [ 0, %.preheader12.preheader ]"
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%row_offset_cast5 = zext i2 %row_offset to i4" [nnet/solution1/nnet.cpp:55]
+ST_6 : Operation 48 [1/1] (0.95ns)   --->   "%exitcond2 = icmp eq i2 %row_offset, -2" [nnet/solution1/nnet.cpp:55]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"
+ST_6 : Operation 50 [1/1] (1.56ns)   --->   "%row_offset_1 = add i2 %row_offset, 1" [nnet/solution1/nnet.cpp:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %2, label %.preheader55.preheader" [nnet/solution1/nnet.cpp:55]
+ST_6 : Operation 52 [1/1] (1.73ns)   --->   "%tmp_27 = add i4 %row_offset_cast5, %i" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_50 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_27, i4 0)" [nnet/solution1/nnet.cpp:59]
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i8 %tmp_50 to i9" [nnet/solution1/nnet.cpp:59]
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_51 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_27, i1 false)" [nnet/solution1/nnet.cpp:59]
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i5 %tmp_51 to i9" [nnet/solution1/nnet.cpp:59]
+ST_6 : Operation 57 [1/1] (1.91ns)   --->   "%tmp_52 = sub i9 %p_shl_cast, %p_shl1_cast" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_53 = call i3 @_ssdm_op_BitConcatenate.i3.i2.i1(i2 %row_offset, i1 false)" [nnet/solution1/nnet.cpp:55]
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_76_cast = zext i3 %tmp_53 to i4" [nnet/solution1/nnet.cpp:57]
+ST_6 : Operation 60 [1/1] (1.76ns)   --->   "br label %.preheader55" [nnet/solution1/nnet.cpp:57]
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_26_cast = zext i4 %j to i8" [nnet/solution1/nnet.cpp:60]
+ST_6 : Operation 62 [1/1] (1.91ns)   --->   "%tmp_s = add i8 %tmp_26_cast, %phi_mul" [nnet/solution1/nnet.cpp:60]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_40 = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %tmp_s, i4 0)" [nnet/solution1/nnet.cpp:60]
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_70_cast = zext i12 %tmp_40 to i13" [nnet/solution1/nnet.cpp:60]
+ST_6 : Operation 65 [1/1] (1.99ns)   --->   "%tmp_49 = add i13 %tmp_cast, %tmp_70_cast" [nnet/solution1/nnet.cpp:60]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_41 = trunc i24 %p_Val2_s to i23" [nnet/solution1/nnet.cpp:59]
+ST_6 : Operation 67 [1/1] (2.31ns)   --->   "%p_Val2_s_34 = add i24 %p_Val2_s, %p_Val2_12_cast" [nnet/solution1/nnet.cpp:60]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 68 [1/1] (2.28ns)   --->   "%p_Val2_cast = add i23 %tmp_2, %tmp_41" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 69 [1/1] (2.45ns)   --->   "%tmp_i = icmp sgt i24 %p_Val2_s_34, 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (1.37ns)   --->   "%a_V_i = select i1 %tmp_i, i23 %p_Val2_cast, i23 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 
  <State 7> : 3.67ns
-ST_7 : Operation 77 [1/1] (0.00ns)   --->   "%sum_1 = phi float [ %sum, %.preheader6.preheader ], [ %sum_2, %.preheader6.loopexit ]" [nnet/solution1/nnet.c:55]
-ST_7 : Operation 78 [1/1] (0.00ns)   --->   "%col_offset = phi i2 [ 0, %.preheader6.preheader ], [ %col_offset_1, %.preheader6.loopexit ]"
-ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%col_offset_cast3 = zext i2 %col_offset to i4" [nnet/solution1/nnet.c:53]
-ST_7 : Operation 80 [1/1] (0.95ns)   --->   "%exitcond1 = icmp eq i2 %col_offset, -2" [nnet/solution1/nnet.c:53]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 81 [1/1] (0.00ns)   --->   "%empty_33 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"
-ST_7 : Operation 82 [1/1] (1.56ns)   --->   "%col_offset_1 = add i2 %col_offset, 1" [nnet/solution1/nnet.c:53]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 83 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader7.loopexit, label %.preheader.preheader" [nnet/solution1/nnet.c:53]
-ST_7 : Operation 84 [1/1] (1.73ns)   --->   "%tmp_23 = add i4 %j, %col_offset_cast3" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_24_cast = zext i4 %tmp_23 to i9" [nnet/solution1/nnet.c:55]
-ST_7 : Operation 86 [1/1] (1.93ns)   --->   "%tmp_63 = add i9 %tmp_24_cast, %tmp_61" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_88_cast = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_63, i3 0)" [nnet/solution1/nnet.c:55]
-ST_7 : Operation 88 [1/1] (1.65ns)   --->   "%tmp_64 = add i4 %col_offset_cast3, %tmp_85_cast" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_52 = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %tmp_64, i3 0)" [nnet/solution1/nnet.c:55]
-ST_7 : Operation 90 [1/1] (1.76ns)   --->   "br label %.preheader" [nnet/solution1/nnet.c:54]
-ST_7 : Operation 91 [1/1] (0.00ns)   --->   "br label %.preheader7"
+ST_7 : Operation 71 [1/1] (0.00ns)   --->   "%sum_1 = phi i24 [ %p_Val2_s, %.preheader55.preheader ], [ %p_Val2_1, %.preheader55.loopexit ]"
+ST_7 : Operation 72 [1/1] (0.00ns)   --->   "%col_offset = phi i2 [ 0, %.preheader55.preheader ], [ %col_offset_1, %.preheader55.loopexit ]"
+ST_7 : Operation 73 [1/1] (0.00ns)   --->   "%col_offset_cast3 = zext i2 %col_offset to i4" [nnet/solution1/nnet.cpp:57]
+ST_7 : Operation 74 [1/1] (0.95ns)   --->   "%exitcond3 = icmp eq i2 %col_offset, -2" [nnet/solution1/nnet.cpp:57]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 75 [1/1] (0.00ns)   --->   "%empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"
+ST_7 : Operation 76 [1/1] (1.56ns)   --->   "%col_offset_1 = add i2 %col_offset, 1" [nnet/solution1/nnet.cpp:57]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 77 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader12.loopexit, label %.preheader.preheader" [nnet/solution1/nnet.cpp:57]
+ST_7 : Operation 78 [1/1] (1.73ns)   --->   "%tmp_28 = add i4 %j, %col_offset_cast3" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_29_cast = zext i4 %tmp_28 to i9" [nnet/solution1/nnet.cpp:59]
+ST_7 : Operation 80 [1/1] (1.93ns)   --->   "%tmp_54 = add i9 %tmp_29_cast, %tmp_52" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_79_cast = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_54, i3 0)" [nnet/solution1/nnet.cpp:59]
+ST_7 : Operation 82 [1/1] (1.65ns)   --->   "%tmp_55 = add i4 %col_offset_cast3, %tmp_76_cast" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_42 = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %tmp_55, i3 0)" [nnet/solution1/nnet.cpp:59]
+ST_7 : Operation 84 [1/1] (1.76ns)   --->   "br label %.preheader" [nnet/solution1/nnet.cpp:58]
+ST_7 : Operation 85 [1/1] (0.00ns)   --->   "br label %.preheader12"
 
  <State 8> : 7.10ns
-ST_8 : Operation 92 [1/1] (0.00ns)   --->   "%sum_2 = phi float [ %sum_3, %1 ], [ %sum_1, %.preheader.preheader ]"
-ST_8 : Operation 93 [1/1] (0.00ns)   --->   "%channel_offset = phi i4 [ %channel_offset_1, %1 ], [ 0, %.preheader.preheader ]"
-ST_8 : Operation 94 [1/1] (1.30ns)   --->   "%exitcond = icmp eq i4 %channel_offset, -8" [nnet/solution1/nnet.c:54]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 95 [1/1] (0.00ns)   --->   "%empty_34 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"
-ST_8 : Operation 96 [1/1] (1.73ns)   --->   "%channel_offset_1 = add i4 %channel_offset, 1" [nnet/solution1/nnet.c:54]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 97 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader6.loopexit, label %1" [nnet/solution1/nnet.c:54]
-ST_8 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_26 = zext i4 %channel_offset to i7" [nnet/solution1/nnet.c:54]
-ST_8 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_26_cast = zext i4 %channel_offset to i12" [nnet/solution1/nnet.c:55]
-ST_8 : Operation 100 [1/1] (1.99ns)   --->   "%tmp_65 = add i12 %tmp_26_cast, %tmp_88_cast" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_92_cast = zext i12 %tmp_65 to i64" [nnet/solution1/nnet.c:55]
-ST_8 : Operation 102 [1/1] (0.00ns)   --->   "%image_addr = getelementptr [1568 x float]* %image_r, i64 0, i64 %tmp_92_cast" [nnet/solution1/nnet.c:55]
-ST_8 : Operation 103 [1/1] (1.87ns)   --->   "%tmp_66 = add i7 %tmp_26, %tmp_52" [nnet/solution1/nnet.c:54]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_95_cast = call i11 @_ssdm_op_BitConcatenate.i11.i7.i4(i7 %tmp_66, i4 0)" [nnet/solution1/nnet.c:55]
-ST_8 : Operation 105 [1/1] (1.97ns)   --->   "%tmp_67 = add i11 %tmp_cast2, %tmp_95_cast" [nnet/solution1/nnet.c:55]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_96_cast = zext i11 %tmp_67 to i64" [nnet/solution1/nnet.c:55]
-ST_8 : Operation 107 [1/1] (0.00ns)   --->   "%conv_layer2_weights_s = getelementptr [512 x float]* @conv_layer2_weights, i64 0, i64 %tmp_96_cast" [nnet/solution1/nnet.c:55]
-ST_8 : Operation 108 [2/2] (3.25ns)   --->   "%image_load = load float* %image_addr, align 4" [nnet/solution1/nnet.c:55]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2704> <RAM>
-ST_8 : Operation 109 [2/2] (3.25ns)   --->   "%conv_layer2_weights_1 = load float* %conv_layer2_weights_s, align 4" [nnet/solution1/nnet.c:55]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 512> <ROM>
-ST_8 : Operation 110 [1/1] (0.00ns)   --->   "br label %.preheader6"
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "%p_Val2_1 = phi i24 [ %sum_1, %.preheader.preheader ], [ %sum_V, %1 ]"
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "%channel_offset = phi i4 [ 0, %.preheader.preheader ], [ %channel_offset_1, %1 ]"
+ST_8 : Operation 88 [1/1] (1.30ns)   --->   "%exitcond = icmp eq i4 %channel_offset, -8" [nnet/solution1/nnet.cpp:58]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "%empty_33 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"
+ST_8 : Operation 90 [1/1] (1.73ns)   --->   "%channel_offset_1 = add i4 %channel_offset, 1" [nnet/solution1/nnet.cpp:58]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader55.loopexit, label %1" [nnet/solution1/nnet.cpp:58]
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_31 = zext i4 %channel_offset to i7" [nnet/solution1/nnet.cpp:58]
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_31_cast = zext i4 %channel_offset to i12" [nnet/solution1/nnet.cpp:59]
+ST_8 : Operation 94 [1/1] (1.99ns)   --->   "%tmp_56 = add i12 %tmp_31_cast, %tmp_79_cast" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_83_cast = zext i12 %tmp_56 to i64" [nnet/solution1/nnet.cpp:59]
+ST_8 : Operation 96 [1/1] (0.00ns)   --->   "%image_V_addr = getelementptr [1568 x i24]* %image_V, i64 0, i64 %tmp_83_cast" [nnet/solution1/nnet.cpp:59]
+ST_8 : Operation 97 [1/1] (1.87ns)   --->   "%tmp_57 = add i7 %tmp_31, %tmp_42" [nnet/solution1/nnet.cpp:58]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_86_cast = call i11 @_ssdm_op_BitConcatenate.i11.i7.i4(i7 %tmp_57, i4 0)" [nnet/solution1/nnet.cpp:59]
+ST_8 : Operation 99 [1/1] (1.97ns)   --->   "%tmp_58 = add i11 %tmp_cast2, %tmp_86_cast" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_87_cast = zext i11 %tmp_58 to i64" [nnet/solution1/nnet.cpp:59]
+ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%conv_layer2_weights_s = getelementptr [512 x i19]* @conv_layer2_weights_s, i64 0, i64 %tmp_87_cast" [nnet/solution1/nnet.cpp:59]
+ST_8 : Operation 102 [2/2] (3.25ns)   --->   "%image_V_load = load i24* %image_V_addr, align 4" [nnet/solution1/nnet.cpp:59]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 2704> <RAM>
+ST_8 : Operation 103 [2/2] (3.25ns)   --->   "%conv_layer2_weights_2 = load i19* %conv_layer2_weights_s, align 4" [nnet/solution1/nnet.cpp:59]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 19> <Depth = 512> <ROM>
+ST_8 : Operation 104 [1/1] (0.00ns)   --->   "br label %.preheader55"
 
  <State 9> : 3.25ns
-ST_9 : Operation 111 [1/2] (3.25ns)   --->   "%image_load = load float* %image_addr, align 4" [nnet/solution1/nnet.c:55]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2704> <RAM>
-ST_9 : Operation 112 [1/2] (3.25ns)   --->   "%conv_layer2_weights_1 = load float* %conv_layer2_weights_s, align 4" [nnet/solution1/nnet.c:55]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 512> <ROM>
+ST_9 : Operation 105 [1/2] (3.25ns)   --->   "%image_V_load = load i24* %image_V_addr, align 4" [nnet/solution1/nnet.cpp:59]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 2704> <RAM>
+ST_9 : Operation 106 [1/2] (3.25ns)   --->   "%conv_layer2_weights_2 = load i19* %conv_layer2_weights_s, align 4" [nnet/solution1/nnet.cpp:59]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 19> <Depth = 512> <ROM>
 
- <State 10> : 5.70ns
-ST_10 : Operation 113 [4/4] (5.70ns)   --->   "%tmp_27 = fmul float %image_load, %conv_layer2_weights_1" [nnet/solution1/nnet.c:55]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ <State 10> : 6.38ns
+ST_10 : Operation 107 [1/1] (0.00ns)   --->   "%OP1_V_cast = sext i24 %image_V_load to i42" [nnet/solution1/nnet.cpp:59]
+ST_10 : Operation 108 [1/1] (0.00ns)   --->   "%OP2_V_cast = sext i19 %conv_layer2_weights_2 to i42" [nnet/solution1/nnet.cpp:59]
+ST_10 : Operation 109 [1/1] (6.38ns)   --->   "%p_Val2_2 = mul i42 %OP1_V_cast, %OP2_V_cast" [nnet/solution1/nnet.cpp:59]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
 
- <State 11> : 5.70ns
-ST_11 : Operation 114 [3/4] (5.70ns)   --->   "%tmp_27 = fmul float %image_load, %conv_layer2_weights_1" [nnet/solution1/nnet.c:55]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ <State 11> : 2.99ns
+ST_11 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_32 = call i44 @_ssdm_op_BitConcatenate.i44.i24.i20(i24 %p_Val2_1, i20 0)" [nnet/solution1/nnet.cpp:59]
+ST_11 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_40_cast = sext i42 %p_Val2_2 to i44" [nnet/solution1/nnet.cpp:59]
+ST_11 : Operation 112 [1/1] (2.98ns)   --->   "%p_Val2_3 = add i44 %tmp_32, %tmp_40_cast" [nnet/solution1/nnet.cpp:59]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 113 [1/1] (0.00ns)   --->   "%sum_V = call i24 @_ssdm_op_PartSelect.i24.i44.i32.i32(i44 %p_Val2_3, i32 20, i32 43)" [nnet/solution1/nnet.cpp:59]
+ST_11 : Operation 114 [1/1] (0.00ns)   --->   "br label %.preheader" [nnet/solution1/nnet.cpp:58]
 
- <State 12> : 5.70ns
-ST_12 : Operation 115 [2/4] (5.70ns)   --->   "%tmp_27 = fmul float %image_load, %conv_layer2_weights_1" [nnet/solution1/nnet.c:55]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-
- <State 13> : 5.70ns
-ST_13 : Operation 116 [1/4] (5.70ns)   --->   "%tmp_27 = fmul float %image_load, %conv_layer2_weights_1" [nnet/solution1/nnet.c:55]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-
- <State 14> : 7.26ns
-ST_14 : Operation 117 [5/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_2, %tmp_27" [nnet/solution1/nnet.c:55]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 15> : 7.26ns
-ST_15 : Operation 118 [4/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_2, %tmp_27" [nnet/solution1/nnet.c:55]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 16> : 7.26ns
-ST_16 : Operation 119 [3/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_2, %tmp_27" [nnet/solution1/nnet.c:55]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 17> : 7.26ns
-ST_17 : Operation 120 [2/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_2, %tmp_27" [nnet/solution1/nnet.c:55]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 18> : 7.26ns
-ST_18 : Operation 121 [1/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_2, %tmp_27" [nnet/solution1/nnet.c:55]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_18 : Operation 122 [1/1] (0.00ns)   --->   "br label %.preheader" [nnet/solution1/nnet.c:54]
-
- <State 19> : 7.26ns
-ST_19 : Operation 123 [4/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %conv_layer2_bias_loa" [nnet/solution1/nnet.c:56]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 20> : 7.26ns
-ST_20 : Operation 124 [3/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %conv_layer2_bias_loa" [nnet/solution1/nnet.c:56]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 21> : 7.26ns
-ST_21 : Operation 125 [2/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %conv_layer2_bias_loa" [nnet/solution1/nnet.c:56]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 22> : 7.26ns
-ST_22 : Operation 126 [1/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %conv_layer2_bias_loa" [nnet/solution1/nnet.c:56]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-
- <State 23> : 8.16ns
-ST_23 : Operation 127 [1/1] (0.00ns)   --->   "%a_assign_to_int = bitcast float %a_assign to i32" [nnet/solution1/nnet.c:56]
-ST_23 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_41 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %a_assign_to_int, i32 23, i32 30)" [nnet/solution1/nnet.c:56]
-ST_23 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_50 = trunc i32 %a_assign_to_int to i23" [nnet/solution1/nnet.c:56]
-ST_23 : Operation 130 [1/1] (1.55ns)   --->   "%notlhs = icmp ne i8 %tmp_41, -1" [nnet/solution1/nnet.c:56]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_23 : Operation 131 [1/1] (2.44ns)   --->   "%notrhs = icmp eq i23 %tmp_50, 0" [nnet/solution1/nnet.c:56]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_23 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node a_assign_6)   --->   "%tmp_43 = or i1 %notrhs, %notlhs" [nnet/solution1/nnet.c:56]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_23 : Operation 133 [1/1] (6.78ns)   --->   "%tmp_44 = fcmp ogt float %a_assign, 0.000000e+00" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56]   --->   Core 105 'FCmp' <Latency = 0> <II = 1> <Delay = 6.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
-ST_23 : Operation 134 [1/1] (0.00ns) (grouped into LUT with out node a_assign_6)   --->   "%tmp_45 = and i1 %tmp_43, %tmp_44" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_23 : Operation 135 [1/1] (1.37ns) (out node of the LUT)   --->   "%a_assign_6 = select i1 %tmp_45, float %a_assign, float 0.000000e+00" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-
- <State 24> : 3.25ns
-ST_24 : Operation 136 [1/1] (0.00ns)   --->   "%tmp_80_cast = zext i13 %tmp_58 to i64" [nnet/solution1/nnet.c:56]
-ST_24 : Operation 137 [1/1] (0.00ns)   --->   "%output_addr = getelementptr [2704 x float]* %output_r, i64 0, i64 %tmp_80_cast" [nnet/solution1/nnet.c:56]
-ST_24 : Operation 138 [1/1] (3.25ns)   --->   "store float %a_assign_6, float* %output_addr, align 4" [nnet/solution1/nnet.c:56]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2704> <RAM>
-ST_24 : Operation 139 [1/1] (0.00ns)   --->   "br label %.preheader8" [nnet/solution1/nnet.c:47]
+ <State 12> : 3.25ns
+ST_12 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_71_cast = zext i13 %tmp_49 to i64" [nnet/solution1/nnet.cpp:60]
+ST_12 : Operation 116 [1/1] (0.00ns)   --->   "%output_V_addr = getelementptr [2704 x i24]* %output_V, i64 0, i64 %tmp_71_cast" [nnet/solution1/nnet.cpp:60]
+ST_12 : Operation 117 [1/1] (0.00ns)   --->   "%a_V_i_cast = zext i23 %a_V_i to i24" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60]
+ST_12 : Operation 118 [1/1] (3.25ns)   --->   "store i24 %a_V_i_cast, i24* %output_V_addr, align 4" [nnet/solution1/nnet.cpp:60]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 2704> <RAM>
+ST_12 : Operation 119 [1/1] (0.00ns)   --->   "br label %.preheader56" [nnet/solution1/nnet.cpp:51]
 
 
 ============================================================
@@ -307,112 +251,64 @@ Target clock period: 10ns, clock uncertainty: 1.25ns.
 
  <State 1>: 1.77ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('filter') with incoming values : ('filter', nnet/solution1/nnet.c:43) [7]  (1.77 ns)
+	multiplexor before 'phi' operation ('filter') with incoming values : ('filter', nnet/solution1/nnet.cpp:47) [7]  (1.77 ns)
 
  <State 2>: 3.25ns
 The critical path consists of the following:
-	'phi' operation ('filter') with incoming values : ('filter', nnet/solution1/nnet.c:43) [7]  (0 ns)
-	'getelementptr' operation ('conv_layer2_bias_add', nnet/solution1/nnet.c:56) [16]  (0 ns)
-	'load' operation ('conv_layer2_bias_loa', nnet/solution1/nnet.c:56) on array 'conv_layer2_bias' [17]  (3.25 ns)
+	'phi' operation ('filter') with incoming values : ('filter', nnet/solution1/nnet.cpp:47) [7]  (0 ns)
+	'getelementptr' operation ('conv_layer2_bias_V_a', nnet/solution1/nnet.cpp:60) [16]  (0 ns)
+	'load' operation ('__Val2__', nnet/solution1/nnet.cpp:60) on array 'conv_layer2_bias_V' [17]  (3.25 ns)
 
  <State 3>: 3.25ns
 The critical path consists of the following:
-	'load' operation ('conv_layer2_bias_loa', nnet/solution1/nnet.c:56) on array 'conv_layer2_bias' [17]  (3.25 ns)
+	'load' operation ('__Val2__', nnet/solution1/nnet.cpp:60) on array 'conv_layer2_bias_V' [17]  (3.25 ns)
 
  <State 4>: 1.92ns
 The critical path consists of the following:
-	'phi' operation ('phi_mul') with incoming values : ('next_mul') [21]  (0 ns)
-	'add' operation ('next_mul') [22]  (1.92 ns)
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [23]  (0 ns)
+	'add' operation ('next_mul') [24]  (1.92 ns)
 
  <State 5>: 1.77ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('sum', nnet/solution1/nnet.c:55) with incoming values : ('sum', nnet/solution1/nnet.c:55) [38]  (1.77 ns)
+	multiplexor before 'phi' operation ('__Val2__', nnet/solution1/nnet.cpp:59) with incoming values : ('sum.V', nnet/solution1/nnet.cpp:59) [40]  (1.77 ns)
 
- <State 6>: 7.26ns
+ <State 6>: 6.14ns
 The critical path consists of the following:
-	'phi' operation ('sum', nnet/solution1/nnet.c:55) with incoming values : ('sum', nnet/solution1/nnet.c:55) [38]  (0 ns)
-	'fadd' operation ('a', nnet/solution1/nnet.c:56) [99]  (7.26 ns)
+	'phi' operation ('__Val2__', nnet/solution1/nnet.cpp:59) with incoming values : ('sum.V', nnet/solution1/nnet.cpp:59) [40]  (0 ns)
+	'add' operation ('p_Val2_s_34', nnet/solution1/nnet.cpp:60) [114]  (2.31 ns)
+	'icmp' operation ('tmp_i', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60) [116]  (2.45 ns)
+	'select' operation ('a_V_i', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60) [117]  (1.37 ns)
 
  <State 7>: 3.67ns
 The critical path consists of the following:
-	'phi' operation ('col_offset') with incoming values : ('col_offset', nnet/solution1/nnet.c:53) [57]  (0 ns)
-	'add' operation ('tmp_23', nnet/solution1/nnet.c:55) [64]  (1.74 ns)
-	'add' operation ('tmp_63', nnet/solution1/nnet.c:55) [66]  (1.94 ns)
+	'phi' operation ('col_offset') with incoming values : ('col_offset', nnet/solution1/nnet.cpp:57) [59]  (0 ns)
+	'add' operation ('tmp_28', nnet/solution1/nnet.cpp:59) [66]  (1.74 ns)
+	'add' operation ('tmp_54', nnet/solution1/nnet.cpp:59) [68]  (1.94 ns)
 
  <State 8>: 7.1ns
 The critical path consists of the following:
-	'phi' operation ('channel_offset') with incoming values : ('channel_offset', nnet/solution1/nnet.c:54) [73]  (0 ns)
-	'add' operation ('tmp_66', nnet/solution1/nnet.c:54) [84]  (1.87 ns)
-	'add' operation ('tmp_67', nnet/solution1/nnet.c:55) [86]  (1.98 ns)
-	'getelementptr' operation ('conv_layer2_weights_s', nnet/solution1/nnet.c:55) [88]  (0 ns)
-	'load' operation ('conv_layer2_weights_1', nnet/solution1/nnet.c:55) on array 'conv_layer2_weights' [90]  (3.25 ns)
+	'phi' operation ('channel_offset') with incoming values : ('channel_offset', nnet/solution1/nnet.cpp:58) [75]  (0 ns)
+	'add' operation ('tmp_57', nnet/solution1/nnet.cpp:58) [86]  (1.87 ns)
+	'add' operation ('tmp_58', nnet/solution1/nnet.cpp:59) [88]  (1.98 ns)
+	'getelementptr' operation ('conv_layer2_weights_s', nnet/solution1/nnet.cpp:59) [90]  (0 ns)
+	'load' operation ('conv_layer2_weights_2', nnet/solution1/nnet.cpp:59) on array 'conv_layer2_weights_s' [93]  (3.25 ns)
 
  <State 9>: 3.25ns
 The critical path consists of the following:
-	'load' operation ('image_load', nnet/solution1/nnet.c:55) on array 'image_r' [89]  (3.25 ns)
+	'load' operation ('image_V_load', nnet/solution1/nnet.cpp:59) on array 'image_V' [91]  (3.25 ns)
 
- <State 10>: 5.7ns
+ <State 10>: 6.38ns
 The critical path consists of the following:
-	'fmul' operation ('tmp_27', nnet/solution1/nnet.c:55) [91]  (5.7 ns)
+	'mul' operation ('__Val2__', nnet/solution1/nnet.cpp:59) [95]  (6.38 ns)
 
- <State 11>: 5.7ns
+ <State 11>: 2.99ns
 The critical path consists of the following:
-	'fmul' operation ('tmp_27', nnet/solution1/nnet.c:55) [91]  (5.7 ns)
+	'add' operation ('__Val2__', nnet/solution1/nnet.cpp:59) [98]  (2.99 ns)
 
- <State 12>: 5.7ns
+ <State 12>: 3.25ns
 The critical path consists of the following:
-	'fmul' operation ('tmp_27', nnet/solution1/nnet.c:55) [91]  (5.7 ns)
-
- <State 13>: 5.7ns
-The critical path consists of the following:
-	'fmul' operation ('tmp_27', nnet/solution1/nnet.c:55) [91]  (5.7 ns)
-
- <State 14>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('sum', nnet/solution1/nnet.c:55) [92]  (7.26 ns)
-
- <State 15>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('sum', nnet/solution1/nnet.c:55) [92]  (7.26 ns)
-
- <State 16>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('sum', nnet/solution1/nnet.c:55) [92]  (7.26 ns)
-
- <State 17>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('sum', nnet/solution1/nnet.c:55) [92]  (7.26 ns)
-
- <State 18>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('sum', nnet/solution1/nnet.c:55) [92]  (7.26 ns)
-
- <State 19>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('a', nnet/solution1/nnet.c:56) [99]  (7.26 ns)
-
- <State 20>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('a', nnet/solution1/nnet.c:56) [99]  (7.26 ns)
-
- <State 21>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('a', nnet/solution1/nnet.c:56) [99]  (7.26 ns)
-
- <State 22>: 7.26ns
-The critical path consists of the following:
-	'fadd' operation ('a', nnet/solution1/nnet.c:56) [99]  (7.26 ns)
-
- <State 23>: 8.16ns
-The critical path consists of the following:
-	'fcmp' operation ('tmp_44', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56) [106]  (6.79 ns)
-	'and' operation ('tmp_45', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56) [107]  (0 ns)
-	'select' operation ('a', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56) [108]  (1.37 ns)
-
- <State 24>: 3.25ns
-The critical path consists of the following:
-	'getelementptr' operation ('output_addr', nnet/solution1/nnet.c:56) [115]  (0 ns)
-	'store' operation (nnet/solution1/nnet.c:56) of variable 'a', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:6->nnet/solution1/nnet.c:56 on array 'output_r' [116]  (3.25 ns)
+	'getelementptr' operation ('output_V_addr', nnet/solution1/nnet.cpp:60) [112]  (0 ns)
+	'store' operation (nnet/solution1/nnet.cpp:60) of variable 'a_V_i_cast', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet/solution1/nnet.cpp:60 on array 'output_V' [119]  (3.25 ns)
 
 
 ============================================================
@@ -435,18 +331,6 @@ N/A
 	State 10
 	State 11
 	State 12
-	State 13
-	State 14
-	State 15
-	State 16
-	State 17
-	State 18
-	State 19
-	State 20
-	State 21
-	State 22
-	State 23
-	State 24
 
 
 ============================================================
