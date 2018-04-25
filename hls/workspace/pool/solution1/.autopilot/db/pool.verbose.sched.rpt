@@ -1,0 +1,322 @@
+
+
+================================================================
+== Vivado HLS Report for 'pool'
+================================================================
+* Date:           Wed Apr 25 14:33:02 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        pool
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.19|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  42577|  42577|  42577|  42577|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |                         |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1                 |  42576|  42576|      5322|          -|          -|     8|    no    |
+        | + Loop 1.1              |   5320|   5320|       380|          -|          -|    14|    no    |
+        |  ++ Loop 1.1.1          |    378|    378|        27|          -|          -|    14|    no    |
+        |   +++ Loop 1.1.1.1      |     24|     24|        12|          -|          -|     2|    no    |
+        |    ++++ Loop 1.1.1.1.1  |     10|     10|         5|          -|          -|     2|    no    |
+        +-------------------------+-------+-------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond2)
+3 --> 
+	4  / (tmp_1)
+	2  / (!tmp_1)
+4 --> 
+	5  / (tmp_6)
+	3  / (!tmp_6)
+5 --> 
+	6  / true
+6 --> 
+	7  / (!exitcond1)
+	4  / (exitcond1)
+7 --> 
+	8  / (!exitcond)
+	6  / (exitcond)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	7  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1568 x float]* %output_r) nounwind, !map !7"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([6728 x float]* %image_r) nounwind, !map !14"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @pool_str) nounwind"
+ST_1 : Operation 15 [1/1] (1.76ns)   --->   "br label %.loopexit3" [pool/solution1/pool.c:7]
+
+ <State 2> : 1.77ns
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%channel = phi i4 [ 0, %0 ], [ %channel_1, %.loopexit3.loopexit ]"
+ST_2 : Operation 17 [1/1] (1.30ns)   --->   "%exitcond2 = icmp eq i4 %channel, -8" [pool/solution1/pool.c:7]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind"
+ST_2 : Operation 19 [1/1] (1.73ns)   --->   "%channel_1 = add i4 %channel, 1" [pool/solution1/pool.c:7]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %4, label %.preheader4.preheader" [pool/solution1/pool.c:7]
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_cast2 = zext i4 %channel to i14" [pool/solution1/pool.c:8]
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_cast = zext i4 %channel to i12" [pool/solution1/pool.c:8]
+ST_2 : Operation 23 [1/1] (1.76ns)   --->   "br label %.preheader4" [pool/solution1/pool.c:8]
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "ret void" [pool/solution1/pool.c:18]
+
+ <State 3> : 3.78ns
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%i = phi i5 [ %i_1, %3 ], [ 0, %.preheader4.preheader ]"
+ST_3 : Operation 26 [1/1] (1.36ns)   --->   "%tmp_1 = icmp ult i5 %i, -4" [pool/solution1/pool.c:8]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %.preheader3.preheader, label %.loopexit3.loopexit" [pool/solution1/pool.c:8]
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_2_cast = zext i5 %i to i10" [pool/solution1/pool.c:11]
+ST_3 : Operation 30 [1/1] (3.78ns)   --->   "%tmp_4 = mul i10 %tmp_2_cast, 29" [pool/solution1/pool.c:11]   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.78> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_s = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %i, i32 1, i32 4)" [pool/solution1/pool.c:8]
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_2 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_s, i4 0)" [pool/solution1/pool.c:8]
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i8 %tmp_2 to i9" [pool/solution1/pool.c:8]
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_7 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_s, i1 false)" [pool/solution1/pool.c:8]
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i5 %tmp_7 to i9" [pool/solution1/pool.c:15]
+ST_3 : Operation 36 [1/1] (1.91ns)   --->   "%tmp_8 = sub i9 %p_shl_cast, %p_shl1_cast" [pool/solution1/pool.c:15]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 37 [1/1] (1.76ns)   --->   "br label %.preheader3" [pool/solution1/pool.c:9]
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "br label %.loopexit3"
+
+ <State 4> : 5.21ns
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%j = phi i5 [ %j_1, %2 ], [ 0, %.preheader3.preheader ]"
+ST_4 : Operation 40 [1/1] (1.36ns)   --->   "%tmp_6 = icmp ult i5 %j, -4" [pool/solution1/pool.c:9]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %tmp_6, label %1, label %3" [pool/solution1/pool.c:9]
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_7_cast = zext i5 %j to i10" [pool/solution1/pool.c:11]
+ST_4 : Operation 44 [1/1] (1.95ns)   --->   "%tmp_9 = add i10 %tmp_4, %tmp_7_cast" [pool/solution1/pool.c:11]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%tmp = call i9 @_ssdm_op_PartSelect.i9.i10.i32.i32(i10 %tmp_9, i32 1, i32 9)" [pool/solution1/pool.c:11]
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_11 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp, i4 %channel)" [pool/solution1/pool.c:11]
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_13 = zext i13 %tmp_11 to i64" [pool/solution1/pool.c:11]
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%image_addr = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_13" [pool/solution1/pool.c:11]
+ST_4 : Operation 49 [2/2] (3.25ns)   --->   "%max = load float* %image_addr, align 4" [pool/solution1/pool.c:11]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1568> <RAM>
+ST_4 : Operation 50 [1/1] (1.78ns)   --->   "%i_1 = add i5 %i, 2" [pool/solution1/pool.c:8]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "br label %.preheader4" [pool/solution1/pool.c:8]
+
+ <State 5> : 5.02ns
+ST_5 : Operation 52 [1/2] (3.25ns)   --->   "%max = load float* %image_addr, align 4" [pool/solution1/pool.c:11]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1568> <RAM>
+ST_5 : Operation 53 [1/1] (1.76ns)   --->   "br label %.loopexit" [pool/solution1/pool.c:12]
+
+ <State 6> : 7.19ns
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%max1 = phi float [ %max, %1 ], [ %max_1, %.loopexit.loopexit ]"
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%k = phi i2 [ 0, %1 ], [ %k_1, %.loopexit.loopexit ]"
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%k_cast2 = zext i2 %k to i5" [pool/solution1/pool.c:12]
+ST_6 : Operation 57 [1/1] (0.95ns)   --->   "%exitcond1 = icmp eq i2 %k, -2" [pool/solution1/pool.c:12]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
+ST_6 : Operation 59 [1/1] (1.56ns)   --->   "%k_1 = add i2 %k, 1" [pool/solution1/pool.c:12]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %2, label %.preheader.preheader" [pool/solution1/pool.c:12]
+ST_6 : Operation 61 [1/1] (1.78ns)   --->   "%tmp_5 = add i5 %k_cast2, %i" [pool/solution1/pool.c:14]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_8_cast = zext i5 %tmp_5 to i10" [pool/solution1/pool.c:14]
+ST_6 : Operation 63 [1/1] (3.78ns)   --->   "%tmp_22 = mul i10 %tmp_8_cast, 29" [pool/solution1/pool.c:14]   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.78> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 64 [1/1] (1.76ns)   --->   "br label %.preheader" [pool/solution1/pool.c:13]
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_19 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %j, i32 1, i32 4)" [pool/solution1/pool.c:15]
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_cast_12 = zext i4 %tmp_19 to i9" [pool/solution1/pool.c:15]
+ST_6 : Operation 67 [1/1] (1.93ns)   --->   "%tmp_20 = add i9 %tmp_8, %tmp_cast_12" [pool/solution1/pool.c:15]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_32_cast = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_20, i3 0)" [pool/solution1/pool.c:15]
+ST_6 : Operation 69 [1/1] (1.99ns)   --->   "%tmp_21 = add i12 %tmp_32_cast, %tmp_cast" [pool/solution1/pool.c:15]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_33_cast = zext i12 %tmp_21 to i64" [pool/solution1/pool.c:15]
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%output_addr = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_33_cast" [pool/solution1/pool.c:15]
+ST_6 : Operation 72 [1/1] (3.25ns)   --->   "store float %max1, float* %output_addr, align 4" [pool/solution1/pool.c:15]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1568> <RAM>
+ST_6 : Operation 73 [1/1] (1.78ns)   --->   "%j_1 = add i5 %j, 2" [pool/solution1/pool.c:9]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "br label %.preheader3" [pool/solution1/pool.c:9]
+
+ <State 7> : 5.75ns
+ST_7 : Operation 75 [1/1] (0.00ns)   --->   "%max_1 = phi float [ %max_2, %._crit_edge ], [ %max1, %.preheader.preheader ]"
+ST_7 : Operation 76 [1/1] (0.00ns)   --->   "%l = phi i2 [ %l_1, %._crit_edge ], [ 0, %.preheader.preheader ]"
+ST_7 : Operation 77 [1/1] (0.00ns)   --->   "%l_cast1 = zext i2 %l to i5" [pool/solution1/pool.c:13]
+ST_7 : Operation 78 [1/1] (0.95ns)   --->   "%exitcond = icmp eq i2 %l, -2" [pool/solution1/pool.c:13]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
+ST_7 : Operation 80 [1/1] (1.56ns)   --->   "%l_1 = add i2 %l, 1" [pool/solution1/pool.c:13]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 81 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.loopexit.loopexit, label %._crit_edge" [pool/solution1/pool.c:13]
+ST_7 : Operation 82 [1/1] (1.78ns)   --->   "%tmp_3 = add i5 %j, %l_cast1" [pool/solution1/pool.c:14]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_9_cast = zext i5 %tmp_3 to i10" [pool/solution1/pool.c:14]
+ST_7 : Operation 84 [1/1] (1.95ns)   --->   "%tmp_23 = add i10 %tmp_9_cast, %tmp_22" [pool/solution1/pool.c:14]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_24 = call i13 @_ssdm_op_BitConcatenate.i13.i10.i3(i10 %tmp_23, i3 0)" [pool/solution1/pool.c:14]
+ST_7 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_37_cast = zext i13 %tmp_24 to i14" [pool/solution1/pool.c:14]
+ST_7 : Operation 87 [1/1] (2.01ns)   --->   "%tmp_25 = add i14 %tmp_cast2, %tmp_37_cast" [pool/solution1/pool.c:14]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 88 [1/1] (0.00ns)   --->   "br label %.loopexit"
+
+ <State 8> : 3.25ns
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_38_cast = zext i14 %tmp_25 to i64" [pool/solution1/pool.c:14]
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "%image_addr_1 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_38_cast" [pool/solution1/pool.c:14]
+ST_8 : Operation 91 [2/2] (3.25ns)   --->   "%image_load = load float* %image_addr_1, align 4" [pool/solution1/pool.c:14]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1568> <RAM>
+
+ <State 9> : 3.25ns
+ST_9 : Operation 92 [1/2] (3.25ns)   --->   "%image_load = load float* %image_addr_1, align 4" [pool/solution1/pool.c:14]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1568> <RAM>
+
+ <State 10> : 6.79ns
+ST_10 : Operation 93 [1/1] (6.78ns)   --->   "%tmp_17 = fcmp ogt float %image_load, %max_1" [pool/solution1/pool.c:14]   --->   Core 105 'FCmp' <Latency = 0> <II = 1> <Delay = 6.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 4.75ns
+ST_11 : Operation 94 [1/1] (0.00ns)   --->   "%image_load_to_int = bitcast float %image_load to i32" [pool/solution1/pool.c:14]
+ST_11 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_10 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_to_int, i32 23, i32 30)" [pool/solution1/pool.c:14]
+ST_11 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_26 = trunc i32 %image_load_to_int to i23" [pool/solution1/pool.c:14]
+ST_11 : Operation 97 [1/1] (0.00ns)   --->   "%max_1_to_int = bitcast float %max_1 to i32" [pool/solution1/pool.c:14]
+ST_11 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_to_int, i32 23, i32 30)" [pool/solution1/pool.c:14]
+ST_11 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_27 = trunc i32 %max_1_to_int to i23" [pool/solution1/pool.c:14]
+ST_11 : Operation 100 [1/1] (1.55ns)   --->   "%notlhs = icmp ne i8 %tmp_10, -1" [pool/solution1/pool.c:14]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 101 [1/1] (2.44ns)   --->   "%notrhs = icmp eq i23 %tmp_26, 0" [pool/solution1/pool.c:14]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node tmp_18)   --->   "%tmp_14 = or i1 %notrhs, %notlhs" [pool/solution1/pool.c:14]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 103 [1/1] (1.55ns)   --->   "%notlhs6 = icmp ne i8 %tmp_12, -1" [pool/solution1/pool.c:14]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 104 [1/1] (2.44ns)   --->   "%notrhs7 = icmp eq i23 %tmp_27, 0" [pool/solution1/pool.c:14]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node tmp_18)   --->   "%tmp_15 = or i1 %notrhs7, %notlhs6" [pool/solution1/pool.c:14]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node tmp_18)   --->   "%tmp_16 = and i1 %tmp_14, %tmp_15" [pool/solution1/pool.c:14]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 107 [1/1] (0.93ns) (out node of the LUT)   --->   "%tmp_18 = and i1 %tmp_16, %tmp_17" [pool/solution1/pool.c:14]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 108 [1/1] (1.37ns) (out node of the LUT)   --->   "%max_2 = select i1 %tmp_18, float %image_load, float %max_1" [pool/solution1/pool.c:14]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 109 [1/1] (0.00ns)   --->   "br label %.preheader" [pool/solution1/pool.c:13]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('channel') with incoming values : ('channel', pool/solution1/pool.c:7) [8]  (1.77 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', pool/solution1/pool.c:8) [18]  (1.77 ns)
+
+ <State 3>: 3.78ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', pool/solution1/pool.c:8) [18]  (0 ns)
+	'mul' operation ('tmp_4', pool/solution1/pool.c:11) [24]  (3.78 ns)
+
+ <State 4>: 5.21ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', pool/solution1/pool.c:9) [33]  (0 ns)
+	'add' operation ('tmp_9', pool/solution1/pool.c:11) [39]  (1.96 ns)
+	'getelementptr' operation ('image_addr', pool/solution1/pool.c:11) [43]  (0 ns)
+	'load' operation ('max', pool/solution1/pool.c:11) on array 'image_r' [44]  (3.25 ns)
+
+ <State 5>: 5.02ns
+The critical path consists of the following:
+	'load' operation ('max', pool/solution1/pool.c:11) on array 'image_r' [44]  (3.25 ns)
+	multiplexor before 'phi' operation ('max') with incoming values : ('max', pool/solution1/pool.c:11) ('max', pool/solution1/pool.c:14) [47]  (1.77 ns)
+
+ <State 6>: 7.19ns
+The critical path consists of the following:
+	'add' operation ('tmp_20', pool/solution1/pool.c:15) [99]  (1.94 ns)
+	'add' operation ('tmp_21', pool/solution1/pool.c:15) [101]  (2 ns)
+	'getelementptr' operation ('output_addr', pool/solution1/pool.c:15) [103]  (0 ns)
+	'store' operation (pool/solution1/pool.c:15) of variable 'max' on array 'output_r' [104]  (3.25 ns)
+
+ <State 7>: 5.75ns
+The critical path consists of the following:
+	'phi' operation ('l') with incoming values : ('l', pool/solution1/pool.c:13) [61]  (0 ns)
+	'add' operation ('tmp_3', pool/solution1/pool.c:14) [68]  (1.78 ns)
+	'add' operation ('tmp_23', pool/solution1/pool.c:14) [70]  (1.96 ns)
+	'add' operation ('tmp_25', pool/solution1/pool.c:14) [73]  (2.02 ns)
+
+ <State 8>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('image_addr_1', pool/solution1/pool.c:14) [75]  (0 ns)
+	'load' operation ('image_load', pool/solution1/pool.c:14) on array 'image_r' [76]  (3.25 ns)
+
+ <State 9>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('image_load', pool/solution1/pool.c:14) on array 'image_r' [76]  (3.25 ns)
+
+ <State 10>: 6.79ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_17', pool/solution1/pool.c:14) [90]  (6.79 ns)
+
+ <State 11>: 4.75ns
+The critical path consists of the following:
+	'icmp' operation ('notrhs', pool/solution1/pool.c:14) [84]  (2.45 ns)
+	'or' operation ('tmp_14', pool/solution1/pool.c:14) [85]  (0 ns)
+	'and' operation ('tmp_16', pool/solution1/pool.c:14) [89]  (0 ns)
+	'and' operation ('tmp_18', pool/solution1/pool.c:14) [91]  (0.931 ns)
+	'select' operation ('max', pool/solution1/pool.c:14) [92]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

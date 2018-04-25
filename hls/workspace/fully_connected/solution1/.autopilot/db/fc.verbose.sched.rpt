@@ -1,0 +1,364 @@
+
+
+================================================================
+== Vivado HLS Report for 'fc'
+================================================================
+* Date:           Wed Apr 25 15:38:48 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        fully_connected
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.16|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  761521|  761521|  761521|  761521|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  761520|  761520|      6346|          -|          -|   120|    no    |
+        | + Loop 1.1  |    6336|    6336|        11|          -|          -|   576|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 21
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	4  / (!exitcond)
+	14  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	3  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	2  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([120 x float]* %output_r) nounwind, !map !13"
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([576 x float]* %input_r) nounwind, !map !19"
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([69120 x float]* %weight) nounwind, !map !25"
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([120 x float]* %bias) nounwind, !map !30"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([3 x i8]* @fc_str) nounwind"
+ST_1 : Operation 27 [1/1] (1.76ns)   --->   "br label %1" [fully_connected/solution1/fc.c:7]
+
+ <State 2> : 1.87ns
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%i = phi i7 [ 0, %0 ], [ %i_1, %5 ]"
+ST_2 : Operation 29 [1/1] (1.48ns)   --->   "%exitcond1 = icmp eq i7 %i, -8" [fully_connected/solution1/fc.c:7]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 120, i64 120, i64 120) nounwind"
+ST_2 : Operation 31 [1/1] (1.87ns)   --->   "%i_1 = add i7 %i, 1" [fully_connected/solution1/fc.c:7]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %6, label %2" [fully_connected/solution1/fc.c:7]
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%tmp = zext i7 %i to i64" [fully_connected/solution1/fc.c:9]
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_cast = zext i7 %i to i18" [fully_connected/solution1/fc.c:9]
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%output_addr = getelementptr [120 x float]* %output_r, i64 0, i64 %tmp" [fully_connected/solution1/fc.c:9]
+ST_2 : Operation 36 [1/1] (1.76ns)   --->   "br label %3" [fully_connected/solution1/fc.c:10]
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "ret void" [fully_connected/solution1/fc.c:16]
+
+ <State 3> : 7.22ns
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_2 = phi float [ 0.000000e+00, %2 ], [ %tmp_8, %4 ]" [fully_connected/solution1/fc.c:11]
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%j = phi i10 [ 0, %2 ], [ %j_1, %4 ]"
+ST_3 : Operation 40 [1/1] (1.77ns)   --->   "%exitcond = icmp eq i10 %j, -448" [fully_connected/solution1/fc.c:10]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 576, i64 576, i64 576) nounwind"
+ST_3 : Operation 42 [1/1] (1.95ns)   --->   "%j_1 = add i10 %j, 1" [fully_connected/solution1/fc.c:10]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %5, label %4" [fully_connected/solution1/fc.c:10]
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_6 = zext i10 %j to i64" [fully_connected/solution1/fc.c:11]
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_s = call i17 @_ssdm_op_BitConcatenate.i17.i10.i7(i10 %j, i7 0)" [fully_connected/solution1/fc.c:10]
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i17 %tmp_s to i18" [fully_connected/solution1/fc.c:10]
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_10 = call i13 @_ssdm_op_BitConcatenate.i13.i10.i3(i10 %j, i3 0)" [fully_connected/solution1/fc.c:10]
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i13 %tmp_10 to i18" [fully_connected/solution1/fc.c:11]
+ST_3 : Operation 49 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_11 = sub i18 %p_shl_cast, %p_shl1_cast" [fully_connected/solution1/fc.c:11]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.98> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 50 [1/1] (3.96ns) (root node of TernaryAdder)   --->   "%tmp_12 = add i18 %tmp_11, %tmp_cast" [fully_connected/solution1/fc.c:11]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.98> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_13_cast = sext i18 %tmp_12 to i64" [fully_connected/solution1/fc.c:11]
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%weight_addr = getelementptr [69120 x float]* %weight, i64 0, i64 %tmp_13_cast" [fully_connected/solution1/fc.c:11]
+ST_3 : Operation 53 [2/2] (3.25ns)   --->   "%weight_load = load float* %weight_addr, align 4" [fully_connected/solution1/fc.c:11]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%input_addr = getelementptr [576 x float]* %input_r, i64 0, i64 %tmp_6" [fully_connected/solution1/fc.c:11]
+ST_3 : Operation 55 [2/2] (3.25ns)   --->   "%input_load = load float* %input_addr, align 4" [fully_connected/solution1/fc.c:11]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%bias_addr = getelementptr [120 x float]* %bias, i64 0, i64 %tmp" [fully_connected/solution1/fc.c:12]
+ST_3 : Operation 57 [2/2] (3.25ns)   --->   "%bias_load = load float* %bias_addr, align 4" [fully_connected/solution1/fc.c:12]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+
+ <State 4> : 3.25ns
+ST_4 : Operation 58 [1/2] (3.25ns)   --->   "%weight_load = load float* %weight_addr, align 4" [fully_connected/solution1/fc.c:11]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+ST_4 : Operation 59 [1/2] (3.25ns)   --->   "%input_load = load float* %input_addr, align 4" [fully_connected/solution1/fc.c:11]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+
+ <State 5> : 5.70ns
+ST_5 : Operation 60 [4/4] (5.70ns)   --->   "%tmp_7 = fmul float %weight_load, %input_load" [fully_connected/solution1/fc.c:11]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 5.70ns
+ST_6 : Operation 61 [3/4] (5.70ns)   --->   "%tmp_7 = fmul float %weight_load, %input_load" [fully_connected/solution1/fc.c:11]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 7> : 5.70ns
+ST_7 : Operation 62 [2/4] (5.70ns)   --->   "%tmp_7 = fmul float %weight_load, %input_load" [fully_connected/solution1/fc.c:11]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 5.70ns
+ST_8 : Operation 63 [1/4] (5.70ns)   --->   "%tmp_7 = fmul float %weight_load, %input_load" [fully_connected/solution1/fc.c:11]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 7.26ns
+ST_9 : Operation 64 [5/5] (7.25ns)   --->   "%tmp_8 = fadd float %tmp_2, %tmp_7" [fully_connected/solution1/fc.c:11]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 10> : 7.26ns
+ST_10 : Operation 65 [4/5] (7.25ns)   --->   "%tmp_8 = fadd float %tmp_2, %tmp_7" [fully_connected/solution1/fc.c:11]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 7.26ns
+ST_11 : Operation 66 [3/5] (7.25ns)   --->   "%tmp_8 = fadd float %tmp_2, %tmp_7" [fully_connected/solution1/fc.c:11]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 12> : 7.26ns
+ST_12 : Operation 67 [2/5] (7.25ns)   --->   "%tmp_8 = fadd float %tmp_2, %tmp_7" [fully_connected/solution1/fc.c:11]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 13> : 7.26ns
+ST_13 : Operation 68 [1/5] (7.25ns)   --->   "%tmp_8 = fadd float %tmp_2, %tmp_7" [fully_connected/solution1/fc.c:11]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 69 [1/1] (0.00ns)   --->   "br label %3" [fully_connected/solution1/fc.c:10]
+
+ <State 14> : 3.25ns
+ST_14 : Operation 70 [1/2] (3.25ns)   --->   "%bias_load = load float* %bias_addr, align 4" [fully_connected/solution1/fc.c:12]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+
+ <State 15> : 7.26ns
+ST_15 : Operation 71 [5/5] (7.25ns)   --->   "%a_assign = fadd float %tmp_2, %bias_load" [fully_connected/solution1/fc.c:12]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 16> : 7.26ns
+ST_16 : Operation 72 [4/5] (7.25ns)   --->   "%a_assign = fadd float %tmp_2, %bias_load" [fully_connected/solution1/fc.c:12]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 17> : 7.26ns
+ST_17 : Operation 73 [3/5] (7.25ns)   --->   "%a_assign = fadd float %tmp_2, %bias_load" [fully_connected/solution1/fc.c:12]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 18> : 7.26ns
+ST_18 : Operation 74 [2/5] (7.25ns)   --->   "%a_assign = fadd float %tmp_2, %bias_load" [fully_connected/solution1/fc.c:12]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 19> : 7.26ns
+ST_19 : Operation 75 [1/5] (7.25ns)   --->   "%a_assign = fadd float %tmp_2, %bias_load" [fully_connected/solution1/fc.c:12]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 20> : 8.16ns
+ST_20 : Operation 76 [1/1] (0.00ns)   --->   "%a_assign_to_int = bitcast float %a_assign to i32" [fully_connected/solution1/fc.c:12]
+ST_20 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_1 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %a_assign_to_int, i32 23, i32 30)" [fully_connected/solution1/fc.c:12]
+ST_20 : Operation 78 [1/1] (0.00ns)   --->   "%tmp_3 = trunc i32 %a_assign_to_int to i23" [fully_connected/solution1/fc.c:12]
+ST_20 : Operation 79 [1/1] (1.55ns)   --->   "%notlhs = icmp ne i8 %tmp_1, -1" [fully_connected/solution1/fc.c:12]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 80 [1/1] (2.44ns)   --->   "%notrhs = icmp eq i23 %tmp_3, 0" [fully_connected/solution1/fc.c:12]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node a_assign_1)   --->   "%tmp_4 = or i1 %notrhs, %notlhs" [fully_connected/solution1/fc.c:12]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 82 [1/1] (6.78ns)   --->   "%tmp_5 = fcmp ogt float %a_assign, 0.000000e+00" [/home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13]   --->   Core 105 'FCmp' <Latency = 0> <II = 1> <Delay = 6.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node a_assign_1)   --->   "%tmp_9 = and i1 %tmp_4, %tmp_5" [/home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 84 [1/1] (1.37ns) (out node of the LUT)   --->   "%a_assign_1 = select i1 %tmp_9, float %a_assign, float 0.000000e+00" [/home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 21> : 3.25ns
+ST_21 : Operation 85 [1/1] (3.25ns)   --->   "store float %a_assign_1, float* %output_addr, align 4" [fully_connected/solution1/fc.c:13]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 120> <RAM>
+ST_21 : Operation 86 [1/1] (0.00ns)   --->   "br label %1" [fully_connected/solution1/fc.c:7]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', fully_connected/solution1/fc.c:7) [12]  (1.77 ns)
+
+ <State 2>: 1.87ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', fully_connected/solution1/fc.c:7) [12]  (0 ns)
+	'add' operation ('i', fully_connected/solution1/fc.c:7) [15]  (1.87 ns)
+
+ <State 3>: 7.22ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', fully_connected/solution1/fc.c:10) [24]  (0 ns)
+	'sub' operation ('tmp_11', fully_connected/solution1/fc.c:11) [35]  (0 ns)
+	'add' operation ('tmp_12', fully_connected/solution1/fc.c:11) [36]  (3.96 ns)
+	'getelementptr' operation ('weight_addr', fully_connected/solution1/fc.c:11) [38]  (0 ns)
+	'load' operation ('weight_load', fully_connected/solution1/fc.c:11) on array 'weight' [39]  (3.25 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('weight_load', fully_connected/solution1/fc.c:11) on array 'weight' [39]  (3.25 ns)
+
+ <State 5>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', fully_connected/solution1/fc.c:11) [42]  (5.7 ns)
+
+ <State 6>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', fully_connected/solution1/fc.c:11) [42]  (5.7 ns)
+
+ <State 7>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', fully_connected/solution1/fc.c:11) [42]  (5.7 ns)
+
+ <State 8>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', fully_connected/solution1/fc.c:11) [42]  (5.7 ns)
+
+ <State 9>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_8', fully_connected/solution1/fc.c:11) [43]  (7.26 ns)
+
+ <State 10>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_8', fully_connected/solution1/fc.c:11) [43]  (7.26 ns)
+
+ <State 11>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_8', fully_connected/solution1/fc.c:11) [43]  (7.26 ns)
+
+ <State 12>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_8', fully_connected/solution1/fc.c:11) [43]  (7.26 ns)
+
+ <State 13>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_8', fully_connected/solution1/fc.c:11) [43]  (7.26 ns)
+
+ <State 14>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('bias_load', fully_connected/solution1/fc.c:12) on array 'bias' [47]  (3.25 ns)
+
+ <State 15>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', fully_connected/solution1/fc.c:12) [48]  (7.26 ns)
+
+ <State 16>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', fully_connected/solution1/fc.c:12) [48]  (7.26 ns)
+
+ <State 17>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', fully_connected/solution1/fc.c:12) [48]  (7.26 ns)
+
+ <State 18>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', fully_connected/solution1/fc.c:12) [48]  (7.26 ns)
+
+ <State 19>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', fully_connected/solution1/fc.c:12) [48]  (7.26 ns)
+
+ <State 20>: 8.16ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_5', /home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13) [55]  (6.79 ns)
+	'and' operation ('tmp_9', /home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13) [56]  (0 ns)
+	'select' operation ('a', /home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13) [57]  (1.37 ns)
+
+ <State 21>: 3.25ns
+The critical path consists of the following:
+	'store' operation (fully_connected/solution1/fc.c:13) of variable 'a', /home/sergiu/git/lic/hls/workspace/fully_connected/headers/activations.h:6->fully_connected/solution1/fc.c:13 on array 'output_r' [58]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

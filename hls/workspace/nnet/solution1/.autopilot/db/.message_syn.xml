@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;nnet/solution1/nnet.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:30 ; elapsed = 00:00:25 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 448 ; free virtual = 5683" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 471 ; free virtual = 5711" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:42 ; elapsed = 00:00:37 . Memory (MB): peak = 361.832 ; gain = 13.773 ; free physical = 466 ; free virtual = 5710" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv_layer1&apos; (nnet/solution1/nnet.c:29) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv_layer2&apos; (nnet/solution1/nnet.c:56) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc_layer1&apos; (nnet/solution1/nnet.c:114) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc_layer2&apos; (nnet/solution1/nnet.c:128) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc_layer3&apos; (nnet/solution1/nnet.c:142) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fc_layer1&apos; into &apos;nnet&apos; (nnet/solution1/nnet.c:159) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fc_layer2&apos; into &apos;nnet&apos; (nnet/solution1/nnet.c:160) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fc_layer3&apos; into &apos;nnet&apos; (nnet/solution1/nnet.c:161) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:42 ; elapsed = 00:00:38 . Memory (MB): peak = 361.832 ; gain = 13.773 ; free physical = 454 ; free virtual = 5701" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="812" content="Unrolling small iteration loop &apos;Loop-1.1.1.1.1.1&apos; (nnet/solution1/nnet.c:27) in function &apos;conv_layer1&apos; automatically." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.1.1.1.1&apos; (nnet/solution1/nnet.c:27) in function &apos;conv_layer1&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="697" content="Partitioning array &apos;image&apos; in dimension 3 automatically." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="697" content="Partitioning array &apos;conv_layer1_weights&apos; in dimension 3 automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv_layer1&apos; (nnet/solution1/nnet.c:29) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv_layer2&apos; (nnet/solution1/nnet.c:56) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc_layer1&apos; (nnet/solution1/nnet.c:114) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc_layer2&apos; (nnet/solution1/nnet.c:128) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc_layer3&apos; (nnet/solution1/nnet.c:142) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fc_layer1&apos; into &apos;nnet&apos; (nnet/solution1/nnet.c:159) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fc_layer2&apos; into &apos;nnet&apos; (nnet/solution1/nnet.c:160) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fc_layer3&apos; into &apos;nnet&apos; (nnet/solution1/nnet.c:161) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:47 ; elapsed = 00:00:42 . Memory (MB): peak = 503.547 ; gain = 155.488 ; free physical = 420 ; free virtual = 5670" tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="805" content="Evaluating the output(s) of a call to function &apos;_ssdm_op_BitConcatenate.i5.i1.i4&apos; in function &apos;pool_layer2&apos; and propagating its result(s) since all actual argument(s) to the function are constants." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="805" content="Evaluating the output(s) of a call to function &apos;_ssdm_op_BitConcatenate.i4.i1.i3&apos; in function &apos;pool_layer1&apos; and propagating its result(s) since all actual argument(s) to the function are constants." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:51 ; elapsed = 00:00:47 . Memory (MB): peak = 503.547 ; gain = 155.488 ; free physical = 371 ; free virtual = 5624" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;nnet&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;conv_layer1&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 47.37 seconds; current allocated memory: 123.758 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.26 seconds; current allocated memory: 124.150 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;pool_layer1&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.6 seconds; current allocated memory: 124.554 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.23 seconds; current allocated memory: 124.890 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;conv_layer2&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.65 seconds; current allocated memory: 125.375 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.29 seconds; current allocated memory: 125.772 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;pool_layer2&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.63 seconds; current allocated memory: 126.114 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.22 seconds; current allocated memory: 126.434 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;flatten&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.49 seconds; current allocated memory: 126.643 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.14 seconds; current allocated memory: 126.814 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;nnet&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.68 seconds; current allocated memory: 127.472 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.7 seconds; current allocated memory: 128.217 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;conv_layer1&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_layer1_conv_layer1_bias&apos; to &apos;conv_layer1_conv_bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_layer1_conv_layer1_weights_s&apos; to &apos;conv_layer1_conv_cud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;nnet_fadd_32ns_32ns_32_5_full_dsp_1&apos; to &apos;nnet_fadd_32ns_32dEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;nnet_fmul_32ns_32ns_32_4_max_dsp_1&apos; to &apos;nnet_fmul_32ns_32eOg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;nnet_fcmp_32ns_32ns_1_1_1&apos; to &apos;nnet_fcmp_32ns_32fYi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fadd_32ns_32dEe&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fcmp_32ns_32fYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fmul_32ns_32eOg&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;conv_layer1&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.68 seconds; current allocated memory: 129.034 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;pool_layer1&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fcmp_32ns_32fYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;pool_layer1&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.26 seconds; current allocated memory: 130.965 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;conv_layer2&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_layer2_conv_layer2_bias&apos; to &apos;conv_layer2_conv_g8j&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_layer2_conv_layer2_weights&apos; to &apos;conv_layer2_conv_hbi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fadd_32ns_32dEe&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fcmp_32ns_32fYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fmul_32ns_32eOg&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;conv_layer2&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.1 seconds; current allocated memory: 133.059 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;pool_layer2&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fcmp_32ns_32fYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;pool_layer2&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.18 seconds; current allocated memory: 135.219 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;flatten&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;flatten&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.99 seconds; current allocated memory: 136.807 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;nnet&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/conv_layer1_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/conv_layer2_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/pool_layer1_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/pool_layer2_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/flatten_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/fc_layer1_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/fc_layer2_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;nnet/fc_layer3_out&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;nnet&apos; to &apos;ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;conv_layer1_bias&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;image_0&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;conv_layer1_weights_s&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;conv_layer2_bias&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;conv_layer2_weights&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;fc_layer1_weights&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;nnet_fc_layer1_weights&apos; to &apos;nnet_fc_layer1_weibs&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;fc_layer2_weights&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;nnet_fc_layer2_weights&apos; to &apos;nnet_fc_layer2_wejbC&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;fc_layer3_weights&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;nnet_fc_layer3_weights&apos; to &apos;nnet_fc_layer3_wekbM&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fadd_32ns_32dEe&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fcmp_32ns_32fYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;nnet_fmul_32ns_32eOg&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;nnet&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 2.12 seconds; current allocated memory: 139.016 MB." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;conv_layer1_conv_bkb_rom&apos; using distributed ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;conv_layer1_image_0_rom&apos; using auto ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;conv_layer1_conv_cud_rom&apos; using auto ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;conv_layer2_conv_g8j_rom&apos; using distributed ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;conv_layer2_conv_hbi_rom&apos; using auto ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;nnet_fc_layer1_weibs_rom&apos; using auto ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;nnet_fc_layer2_wejbC_rom&apos; using auto ROMs." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;nnet_fc_layer3_wekbM_rom&apos; using auto ROMs." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:36 ; elapsed = 00:01:36 . Memory (MB): peak = 567.547 ; gain = 219.488 ; free physical = 212 ; free virtual = 5518" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for nnet." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for nnet." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for nnet." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 95.86 seconds; peak allocated memory: 139.016 MB." tag=""/>
+</Messages>

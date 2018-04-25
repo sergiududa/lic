@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'fc/input' to 'fc/input_r' to avoid the conflict with HDL keywords or other object names." projectName="fully_connected" solutionName="solution1" date="2018-04-25T15:38:47.868+0300" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'fc/output' to 'fc/output_r' to avoid the conflict with HDL keywords or other object names." projectName="fully_connected" solutionName="solution1" date="2018-04-25T15:38:47.815+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

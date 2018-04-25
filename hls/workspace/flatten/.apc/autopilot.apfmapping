@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="flatten.c" path="/home/sergiu/git/lic/hls/workspace/flatten/solution1/.tcls/flatten.c"/>
+  </source>
+  <testbench>
+    <originFiles name="flatten_test.c" path="/home/sergiu/git/lic/hls/workspace/flatten/solution1/.tcls/flatten_test.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

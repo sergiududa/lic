@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;fully_connected/solution1/fc.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:20 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 259 ; free virtual = 5217" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 250 ; free virtual = 5216" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 255 ; free virtual = 5214" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc&apos; (fully_connected/solution1/fc.c:13) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 255 ; free virtual = 5214" tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;fc&apos; (fully_connected/solution1/fc.c:13) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 236 ; free virtual = 5194" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 244 ; free virtual = 5202" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;fc&apos; ..." tag=""/>
+	<Message prefix="[SYN 201-107]" severity="WARNING" keynum="557" content="Renaming port name &apos;fc/output&apos; to &apos;fc/output_r&apos; to avoid the conflict with HDL keywords or other object names." tag=""/>
+	<Message prefix="[SYN 201-107]" severity="WARNING" keynum="557" content="Renaming port name &apos;fc/input&apos; to &apos;fc/input_r&apos; to avoid the conflict with HDL keywords or other object names." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;fc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 32.7 seconds; current allocated memory: 60.207 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.15 seconds; current allocated memory: 60.470 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;fc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;fc/output_r&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;fc/input_r&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;fc/weight&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;fc/bias&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;fc&apos; to &apos;ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;fc_fadd_32ns_32ns_32_5_full_dsp_1&apos; to &apos;fc_fadd_32ns_32nsbkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;fc_fmul_32ns_32ns_32_4_max_dsp_1&apos; to &apos;fc_fmul_32ns_32nscud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;fc_fcmp_32ns_32ns_1_1_1&apos; to &apos;fc_fcmp_32ns_32nsdEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;fc_fadd_32ns_32nsbkb&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;fc_fcmp_32ns_32nsdEe&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;fc_fmul_32ns_32nscud&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;fc&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.29 seconds; current allocated memory: 60.991 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:38 ; elapsed = 00:00:36 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 233 ; free virtual = 5192" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for fc." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for fc." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for fc." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 35.94 seconds; peak allocated memory: 60.991 MB." tag=""/>
+</Messages>

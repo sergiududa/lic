@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fc_layer3_weights' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.518+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fc_layer2_weights' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.396+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fc_layer1_weights' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.364+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.343+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_bias' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.321+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_s' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.260+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'image_0' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.211+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_bias' will not be exposed as RTL port." projectName="nnet" solutionName="solution1" date="2018-04-25T13:27:00.129+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

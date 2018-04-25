@@ -1,0 +1,436 @@
+
+
+================================================================
+== Vivado HLS Report for 'conv'
+================================================================
+* Date:           Wed Apr 25 14:03:41 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        conv
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.16|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |   min   |   max   |   min   |   max   |   Type  |
+    +---------+---------+---------+---------+---------+
+    |  1305713|  1305713|  1305713|  1305713|   none  |
+    +---------+---------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                         |      Latency      | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1                 |  1305712|  1305712|    163214|          -|          -|     8|    no    |
+        | + Loop 1.1              |   163212|   163212|      5628|          -|          -|    29|    no    |
+        |  ++ Loop 1.1.1          |     5626|     5626|       194|          -|          -|    29|    no    |
+        |   +++ Loop 1.1.1.1      |      184|      184|        46|          -|          -|     4|    no    |
+        |    ++++ Loop 1.1.1.1.1  |       44|       44|        11|          -|          -|     4|    no    |
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond5)
+3 --> 
+	4  / (!exitcond4)
+	2  / (exitcond4)
+4 --> 
+	5  / (!exitcond3)
+	3  / (exitcond3)
+5 --> 
+	17  / (exitcond2)
+	6  / (!exitcond2)
+6 --> 
+	7  / (!exitcond1)
+	5  / (exitcond1)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	6  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	4  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([6728 x float]* %output_r) nounwind, !map !13"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1024 x float]* %image_r) nounwind, !map !20"
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([128 x float]* %weight) nounwind, !map !27"
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %bias) nounwind, !map !33"
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @conv_str) nounwind"
+ST_1 : Operation 30 [1/1] (1.76ns)   --->   "br label %.loopexit" [conv/solution1/conv.c:15]
+
+ <State 2> : 1.77ns
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%filter = phi i4 [ 0, %0 ], [ %filter_1, %.loopexit.loopexit ]"
+ST_2 : Operation 32 [1/1] (1.30ns)   --->   "%exitcond5 = icmp eq i4 %filter, -8" [conv/solution1/conv.c:15]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind"
+ST_2 : Operation 34 [1/1] (1.73ns)   --->   "%filter_1 = add i4 %filter, 1" [conv/solution1/conv.c:15]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %2, label %.preheader9.preheader" [conv/solution1/conv.c:15]
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp = zext i4 %filter to i64" [conv/solution1/conv.c:27]
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_cast1 = zext i4 %filter to i9" [conv/solution1/conv.c:28]
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_cast = zext i4 %filter to i14" [conv/solution1/conv.c:28]
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%bias_addr = getelementptr [8 x float]* %bias, i64 0, i64 %tmp" [conv/solution1/conv.c:28]
+ST_2 : Operation 40 [1/1] (1.76ns)   --->   "br label %.preheader9" [conv/solution1/conv.c:18]
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "ret void" [conv/solution1/conv.c:31]
+
+ <State 3> : 1.96ns
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%i = phi i5 [ 0, %.preheader9.preheader ], [ %i_1, %.preheader9.loopexit ]"
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%phi_mul = phi i10 [ 0, %.preheader9.preheader ], [ %next_mul, %.preheader9.loopexit ]"
+ST_3 : Operation 44 [1/1] (1.95ns)   --->   "%next_mul = add i10 %phi_mul, 29"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (1.36ns)   --->   "%exitcond4 = icmp eq i5 %i, -3" [conv/solution1/conv.c:18]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 29, i64 29, i64 29) nounwind"
+ST_3 : Operation 47 [1/1] (1.78ns)   --->   "%i_1 = add i5 %i, 1" [conv/solution1/conv.c:18]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %.loopexit.loopexit, label %.preheader8.preheader" [conv/solution1/conv.c:18]
+ST_3 : Operation 49 [1/1] (1.76ns)   --->   "br label %.preheader8" [conv/solution1/conv.c:19]
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "br label %.loopexit"
+
+ <State 4> : 1.78ns
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%j = phi i5 [ %j_1, %1 ], [ 0, %.preheader8.preheader ]"
+ST_4 : Operation 52 [1/1] (1.36ns)   --->   "%exitcond3 = icmp eq i5 %j, -3" [conv/solution1/conv.c:19]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 29, i64 29, i64 29) nounwind"
+ST_4 : Operation 54 [1/1] (1.78ns)   --->   "%j_1 = add i5 %j, 1" [conv/solution1/conv.c:19]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader9.loopexit, label %.preheader7.preheader" [conv/solution1/conv.c:19]
+ST_4 : Operation 56 [1/1] (1.76ns)   --->   "br label %.preheader7" [conv/solution1/conv.c:23]
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "br label %.preheader9"
+
+ <State 5> : 3.97ns
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%sum = phi float [ %sum_1, %.preheader7.loopexit ], [ 0.000000e+00, %.preheader7.preheader ]" [conv/solution1/conv.c:27]
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%row_offset = phi i3 [ %row_offset_1, %.preheader7.loopexit ], [ 0, %.preheader7.preheader ]"
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%row_offset_cast4 = zext i3 %row_offset to i5" [conv/solution1/conv.c:23]
+ST_5 : Operation 61 [1/1] (1.13ns)   --->   "%exitcond2 = icmp eq i3 %row_offset, -4" [conv/solution1/conv.c:23]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4) nounwind"
+ST_5 : Operation 63 [1/1] (1.65ns)   --->   "%row_offset_1 = add i3 %row_offset, 1" [conv/solution1/conv.c:23]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %1, label %.preheader6.preheader" [conv/solution1/conv.c:23]
+ST_5 : Operation 65 [1/1] (1.78ns)   --->   "%tmp_9 = add i5 %i, %row_offset_cast4" [conv/solution1/conv.c:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_11 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %row_offset, i2 0)" [conv/solution1/conv.c:23]
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_17_cast = zext i5 %tmp_11 to i6" [conv/solution1/conv.c:25]
+ST_5 : Operation 68 [1/1] (1.76ns)   --->   "br label %.preheader6" [conv/solution1/conv.c:25]
+ST_5 : Operation 69 [2/2] (2.32ns)   --->   "%bias_load = load float* %bias_addr, align 4" [conv/solution1/conv.c:28]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_7_cast = zext i5 %j to i10" [conv/solution1/conv.c:28]
+ST_5 : Operation 71 [1/1] (1.95ns)   --->   "%tmp_7 = add i10 %tmp_7_cast, %phi_mul" [conv/solution1/conv.c:28]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_8 = call i13 @_ssdm_op_BitConcatenate.i13.i10.i3(i10 %tmp_7, i3 0)" [conv/solution1/conv.c:28]
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_14_cast = zext i13 %tmp_8 to i14" [conv/solution1/conv.c:28]
+ST_5 : Operation 74 [1/1] (2.01ns)   --->   "%tmp_10 = add i14 %tmp_cast, %tmp_14_cast" [conv/solution1/conv.c:28]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 6.97ns
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%sum_1 = phi float [ %sum_3, %.preheader.preheader ], [ %sum, %.preheader6.preheader ]" [conv/solution1/conv.c:27]
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%col_offset = phi i3 [ %col_offset_1, %.preheader.preheader ], [ 0, %.preheader6.preheader ]"
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%col_offset_cast2 = zext i3 %col_offset to i5" [conv/solution1/conv.c:25]
+ST_6 : Operation 78 [1/1] (1.13ns)   --->   "%exitcond1 = icmp eq i3 %col_offset, -4" [conv/solution1/conv.c:25]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4) nounwind"
+ST_6 : Operation 80 [1/1] (1.65ns)   --->   "%col_offset_1 = add i3 %col_offset, 1" [conv/solution1/conv.c:25]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader7.loopexit, label %.preheader.preheader" [conv/solution1/conv.c:25]
+ST_6 : Operation 82 [1/1] (1.78ns)   --->   "%tmp_2 = add i5 %col_offset_cast2, %j" [conv/solution1/conv.c:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_12 = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %tmp_9, i5 %tmp_2)" [conv/solution1/conv.c:27]
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_13 = zext i10 %tmp_12 to i64" [conv/solution1/conv.c:27]
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%image_addr = getelementptr [1024 x float]* %image_r, i64 0, i64 %tmp_13" [conv/solution1/conv.c:27]
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_8_cast = zext i3 %col_offset to i6" [conv/solution1/conv.c:27]
+ST_6 : Operation 87 [1/1] (1.78ns)   --->   "%tmp_14 = add i6 %tmp_17_cast, %tmp_8_cast" [conv/solution1/conv.c:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_22_cast = call i9 @_ssdm_op_BitConcatenate.i9.i6.i3(i6 %tmp_14, i3 0)" [conv/solution1/conv.c:27]
+ST_6 : Operation 89 [1/1] (1.93ns)   --->   "%tmp_15 = add i9 %tmp_22_cast, %tmp_cast1" [conv/solution1/conv.c:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_23_cast = zext i9 %tmp_15 to i64" [conv/solution1/conv.c:27]
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%weight_addr = getelementptr [128 x float]* %weight, i64 0, i64 %tmp_23_cast" [conv/solution1/conv.c:27]
+ST_6 : Operation 92 [2/2] (3.25ns)   --->   "%image_load = load float* %image_addr, align 4" [conv/solution1/conv.c:27]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+ST_6 : Operation 93 [2/2] (3.25ns)   --->   "%weight_load = load float* %weight_addr, align 4" [conv/solution1/conv.c:27]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "br label %.preheader7"
+
+ <State 7> : 3.25ns
+ST_7 : Operation 95 [1/2] (3.25ns)   --->   "%image_load = load float* %image_addr, align 4" [conv/solution1/conv.c:27]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+ST_7 : Operation 96 [1/2] (3.25ns)   --->   "%weight_load = load float* %weight_addr, align 4" [conv/solution1/conv.c:27]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+
+ <State 8> : 5.70ns
+ST_8 : Operation 97 [4/4] (5.70ns)   --->   "%tmp_5 = fmul float %image_load, %weight_load" [conv/solution1/conv.c:27]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 5.70ns
+ST_9 : Operation 98 [3/4] (5.70ns)   --->   "%tmp_5 = fmul float %image_load, %weight_load" [conv/solution1/conv.c:27]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 10> : 5.70ns
+ST_10 : Operation 99 [2/4] (5.70ns)   --->   "%tmp_5 = fmul float %image_load, %weight_load" [conv/solution1/conv.c:27]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 5.70ns
+ST_11 : Operation 100 [1/4] (5.70ns)   --->   "%tmp_5 = fmul float %image_load, %weight_load" [conv/solution1/conv.c:27]   --->   Core 100 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 12> : 7.26ns
+ST_12 : Operation 101 [5/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_1, %tmp_5" [conv/solution1/conv.c:27]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 13> : 7.26ns
+ST_13 : Operation 102 [4/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_1, %tmp_5" [conv/solution1/conv.c:27]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 14> : 7.26ns
+ST_14 : Operation 103 [3/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_1, %tmp_5" [conv/solution1/conv.c:27]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 15> : 7.26ns
+ST_15 : Operation 104 [2/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_1, %tmp_5" [conv/solution1/conv.c:27]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 16> : 7.26ns
+ST_16 : Operation 105 [1/5] (7.25ns)   --->   "%sum_3 = fadd float %sum_1, %tmp_5" [conv/solution1/conv.c:27]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 106 [1/1] (0.00ns)   --->   "br label %.preheader6" [conv/solution1/conv.c:25]
+
+ <State 17> : 2.32ns
+ST_17 : Operation 107 [1/2] (2.32ns)   --->   "%bias_load = load float* %bias_addr, align 4" [conv/solution1/conv.c:28]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+
+ <State 18> : 7.26ns
+ST_18 : Operation 108 [5/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %bias_load" [conv/solution1/conv.c:28]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 19> : 7.26ns
+ST_19 : Operation 109 [4/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %bias_load" [conv/solution1/conv.c:28]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 20> : 7.26ns
+ST_20 : Operation 110 [3/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %bias_load" [conv/solution1/conv.c:28]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 21> : 7.26ns
+ST_21 : Operation 111 [2/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %bias_load" [conv/solution1/conv.c:28]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 22> : 7.26ns
+ST_22 : Operation 112 [1/5] (7.25ns)   --->   "%a_assign = fadd float %sum, %bias_load" [conv/solution1/conv.c:28]   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 23> : 8.16ns
+ST_23 : Operation 113 [1/1] (0.00ns)   --->   "%a_assign_to_int = bitcast float %a_assign to i32" [conv/solution1/conv.c:28]
+ST_23 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %a_assign_to_int, i32 23, i32 30)" [conv/solution1/conv.c:28]
+ST_23 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_1 = trunc i32 %a_assign_to_int to i23" [conv/solution1/conv.c:28]
+ST_23 : Operation 116 [1/1] (1.55ns)   --->   "%notlhs = icmp ne i8 %tmp_6, -1" [conv/solution1/conv.c:28]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 117 [1/1] (2.44ns)   --->   "%notrhs = icmp eq i23 %tmp_1, 0" [conv/solution1/conv.c:28]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node a_assign_1)   --->   "%tmp_4 = or i1 %notrhs, %notlhs" [conv/solution1/conv.c:28]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 119 [1/1] (6.78ns)   --->   "%tmp_s = fcmp ogt float %a_assign, 0.000000e+00" [/home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28]   --->   Core 105 'FCmp' <Latency = 0> <II = 1> <Delay = 6.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 120 [1/1] (0.00ns) (grouped into LUT with out node a_assign_1)   --->   "%tmp_3 = and i1 %tmp_4, %tmp_s" [/home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 121 [1/1] (1.37ns) (out node of the LUT)   --->   "%a_assign_1 = select i1 %tmp_3, float %a_assign, float 0.000000e+00" [/home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 24> : 3.25ns
+ST_24 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_15_cast = zext i14 %tmp_10 to i64" [conv/solution1/conv.c:28]
+ST_24 : Operation 123 [1/1] (0.00ns)   --->   "%output_addr = getelementptr [6728 x float]* %output_r, i64 0, i64 %tmp_15_cast" [conv/solution1/conv.c:28]
+ST_24 : Operation 124 [1/1] (3.25ns)   --->   "store float %a_assign_1, float* %output_addr, align 4" [conv/solution1/conv.c:28]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6728> <RAM>
+ST_24 : Operation 125 [1/1] (0.00ns)   --->   "br label %.preheader8" [conv/solution1/conv.c:19]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('filter') with incoming values : ('filter', conv/solution1/conv.c:15) [12]  (1.77 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', conv/solution1/conv.c:18) [24]  (1.77 ns)
+
+ <State 3>: 1.96ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [25]  (0 ns)
+	'add' operation ('next_mul') [26]  (1.96 ns)
+
+ <State 4>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', conv/solution1/conv.c:19) [34]  (0 ns)
+	'add' operation ('j', conv/solution1/conv.c:19) [37]  (1.78 ns)
+
+ <State 5>: 3.97ns
+The critical path consists of the following:
+	'add' operation ('tmp_7', conv/solution1/conv.c:28) [93]  (1.96 ns)
+	'add' operation ('tmp_10', conv/solution1/conv.c:28) [96]  (2.02 ns)
+
+ <State 6>: 6.97ns
+The critical path consists of the following:
+	'phi' operation ('col_offset') with incoming values : ('col_offset', conv/solution1/conv.c:25) [56]  (0 ns)
+	'add' operation ('tmp_14', conv/solution1/conv.c:27) [68]  (1.78 ns)
+	'add' operation ('tmp_15', conv/solution1/conv.c:27) [70]  (1.94 ns)
+	'getelementptr' operation ('weight_addr', conv/solution1/conv.c:27) [72]  (0 ns)
+	'load' operation ('weight_load', conv/solution1/conv.c:27) on array 'weight' [74]  (3.25 ns)
+
+ <State 7>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('image_load', conv/solution1/conv.c:27) on array 'image_r' [73]  (3.25 ns)
+
+ <State 8>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', conv/solution1/conv.c:27) [75]  (5.7 ns)
+
+ <State 9>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', conv/solution1/conv.c:27) [75]  (5.7 ns)
+
+ <State 10>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', conv/solution1/conv.c:27) [75]  (5.7 ns)
+
+ <State 11>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', conv/solution1/conv.c:27) [75]  (5.7 ns)
+
+ <State 12>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_3', conv/solution1/conv.c:27) [76]  (7.26 ns)
+
+ <State 13>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_3', conv/solution1/conv.c:27) [76]  (7.26 ns)
+
+ <State 14>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_3', conv/solution1/conv.c:27) [76]  (7.26 ns)
+
+ <State 15>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_3', conv/solution1/conv.c:27) [76]  (7.26 ns)
+
+ <State 16>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_3', conv/solution1/conv.c:27) [76]  (7.26 ns)
+
+ <State 17>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('bias_load', conv/solution1/conv.c:28) on array 'bias' [81]  (2.32 ns)
+
+ <State 18>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', conv/solution1/conv.c:28) [82]  (7.26 ns)
+
+ <State 19>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', conv/solution1/conv.c:28) [82]  (7.26 ns)
+
+ <State 20>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', conv/solution1/conv.c:28) [82]  (7.26 ns)
+
+ <State 21>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', conv/solution1/conv.c:28) [82]  (7.26 ns)
+
+ <State 22>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('a', conv/solution1/conv.c:28) [82]  (7.26 ns)
+
+ <State 23>: 8.16ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_s', /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28) [89]  (6.79 ns)
+	'and' operation ('tmp_3', /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28) [90]  (0 ns)
+	'select' operation ('a', /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28) [91]  (1.37 ns)
+
+ <State 24>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('output_addr', conv/solution1/conv.c:28) [98]  (0 ns)
+	'store' operation (conv/solution1/conv.c:28) of variable 'a', /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:28 on array 'output_r' [99]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
