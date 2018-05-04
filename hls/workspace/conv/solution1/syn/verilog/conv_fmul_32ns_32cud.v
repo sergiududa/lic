@@ -10,7 +10,7 @@
 
 module conv_fmul_32ns_32cud
 #(parameter
-    ID         = 2,
+    ID         = 9,
     NUM_STAGE  = 4,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

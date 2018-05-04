@@ -12,8 +12,8 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/image' to 'pool/image_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-04-25T14:33:02.676+0300" type="Warning"/>
-        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/output' to 'pool/output_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-04-25T14:33:02.617+0300" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/image' to 'pool/image_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-05-04T15:40:07.503+0300" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/output' to 'pool/output_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-05-04T15:40:07.482+0300" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

@@ -11,3 +11,7 @@
 #pragma line 1 "pool/solution1/pool.c" 2 ::: 120
 #pragma line 1 "/home/sergiu/git/lic/hls/workspace/pool/headers/defines.h" 1 ::: 121
 #pragma line 2 "pool/solution1/pool.c" 2 ::: 122
+#pragma line 9 "pool/solution1/pool.c" ::: 132
+#pragma line 10 "pool/solution1/pool.c" ::: 136
+#pragma line 13 "pool/solution1/pool.c" ::: 142
+#pragma line 14 "pool/solution1/pool.c" ::: 146

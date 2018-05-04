@@ -11,13 +11,13 @@ set C_modelName {pool_layer1}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ output_V int 24 regular {array 1568 { 0 3 } 0 1 }  }
-	{ image_V int 24 regular {array 6728 { 1 3 } 1 1 }  }
+	{ image_V int 24 regular {array 6728 { 1 1 } 1 1 }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "output_V", "interface" : "memory", "bitwidth" : 24, "direction" : "WRITEONLY"} , 
  	{ "Name" : "image_V", "interface" : "memory", "bitwidth" : 24, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
-set portNum 13
+set portNum 16
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -32,6 +32,9 @@ set portList {
 	{ image_V_address0 sc_out sc_lv 13 signal 1 } 
 	{ image_V_ce0 sc_out sc_logic 1 signal 1 } 
 	{ image_V_q0 sc_in sc_lv 24 signal 1 } 
+	{ image_V_address1 sc_out sc_lv 13 signal 1 } 
+	{ image_V_ce1 sc_out sc_logic 1 signal 1 } 
+	{ image_V_q1 sc_in sc_lv 24 signal 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -46,7 +49,10 @@ set NewPortList {[
  	{ "name": "output_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "output_V", "role": "d0" }} , 
  	{ "name": "image_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "image_V", "role": "address0" }} , 
  	{ "name": "image_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_V", "role": "ce0" }} , 
- 	{ "name": "image_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "image_V", "role": "q0" }}  ]}
+ 	{ "name": "image_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "image_V", "role": "q0" }} , 
+ 	{ "name": "image_V_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "image_V", "role": "address1" }} , 
+ 	{ "name": "image_V_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_V", "role": "ce1" }} , 
+ 	{ "name": "image_V_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "image_V", "role": "q1" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -64,20 +70,21 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	pool_layer1 {
-		output_V {Type O LastRead -1 FirstWrite 5}
-		image_V {Type I LastRead 7 FirstWrite -1}}}
+		output_V {Type O LastRead -1 FirstWrite 18}
+		image_V {Type I LastRead 52 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "30033", "Max" : "30033"}
-	, {"Name" : "Interval", "Min" : "30033", "Max" : "30033"}
+	{"Name" : "Latency", "Min" : "5603", "Max" : "5603"}
+	, {"Name" : "Interval", "Min" : "5603", "Max" : "5603"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 
 	output_V { ap_memory {  { output_V_address0 mem_address 1 11 }  { output_V_ce0 mem_ce 1 1 }  { output_V_we0 mem_we 1 1 }  { output_V_d0 mem_din 1 24 } } }
-	image_V { ap_memory {  { image_V_address0 mem_address 1 13 }  { image_V_ce0 mem_ce 1 1 }  { image_V_q0 mem_dout 0 24 } } }
+	image_V { ap_memory {  { image_V_address0 mem_address 1 13 }  { image_V_ce0 mem_ce 1 1 }  { image_V_q0 mem_dout 0 24 }  { image_V_address1 mem_address 1 13 }  { image_V_ce1 mem_ce 1 1 }  { image_V_q1 mem_dout 0 24 } } }
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'flatten'" level="0">
-<item name = "Date">Wed Apr 25 19:19:54 2018
+<item name = "Date">Fri May  4 18:55:17 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet</item>
@@ -37,7 +37,7 @@
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">1236, 1236, 206, -, -, 6, no</column>
 <column name=" + Loop 1.1">204, 204, 34, -, -, 6, no</column>
-<column name="  ++ Loop 1.1.1">32, 32, 2, -, -, 16, no</column>
+<column name="  ++ flatten_label4">32, 32, 2, -, -, 16, no</column>
 </table>
 </item>
 </section>
@@ -80,42 +80,42 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_3_fu_106_p2">+, 0, 0, 12, 3, 1</column>
-<column name="j_3_fu_178_p2">+, 0, 0, 12, 3, 1</column>
-<column name="k_3_fu_219_p2">+, 0, 0, 15, 5, 1</column>
-<column name="tmp1_fu_225_p2">+, 0, 0, 15, 7, 7</column>
-<column name="tmp_23_fu_234_p2">+, 0, 0, 18, 11, 11</column>
-<column name="tmp_47_fu_196_p2">+, 0, 0, 15, 7, 7</column>
-<column name="tmp_48_fu_243_p2">+, 0, 0, 18, 11, 11</column>
-<column name="tmp_46_fu_166_p2">-, 0, 0, 15, 7, 7</column>
-<column name="tmp_fu_136_p2">-, 0, 0, 18, 11, 11</column>
-<column name="exitcond2_fu_172_p2">icmp, 0, 0, 9, 3, 3</column>
-<column name="exitcond3_fu_100_p2">icmp, 0, 0, 9, 3, 3</column>
-<column name="exitcond_fu_213_p2">icmp, 0, 0, 11, 5, 6</column>
+<column name="i_3_fu_110_p2">+, 0, 0, 12, 3, 1</column>
+<column name="j_1_fu_182_p2">+, 0, 0, 12, 3, 1</column>
+<column name="k_1_fu_227_p2">+, 0, 0, 15, 5, 1</column>
+<column name="tmp1_fu_233_p2">+, 0, 0, 15, 8, 8</column>
+<column name="tmp_235_fu_204_p2">+, 0, 0, 15, 7, 7</column>
+<column name="tmp_236_fu_251_p2">+, 0, 0, 18, 11, 11</column>
+<column name="tmp_7_fu_242_p2">+, 0, 0, 18, 11, 11</column>
+<column name="tmp_234_fu_170_p2">-, 0, 0, 15, 7, 7</column>
+<column name="tmp_fu_140_p2">-, 0, 0, 18, 11, 11</column>
+<column name="exitcond2_fu_176_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="exitcond3_fu_104_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="exitcond_fu_221_p2">icmp, 0, 0, 11, 5, 6</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">33, 6, 1, 6</column>
-<column name="i_reg_67">9, 2, 3, 6</column>
-<column name="j_reg_78">9, 2, 3, 6</column>
-<column name="k_reg_89">9, 2, 5, 10</column>
+<column name="i_reg_71">9, 2, 3, 6</column>
+<column name="j_reg_82">9, 2, 3, 6</column>
+<column name="k_reg_93">9, 2, 5, 10</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">5, 0, 5, 0</column>
-<column name="i_3_reg_264">3, 0, 3, 0</column>
-<column name="i_reg_67">3, 0, 3, 0</column>
-<column name="j_3_reg_282">3, 0, 3, 0</column>
-<column name="j_reg_78">3, 0, 3, 0</column>
-<column name="k_3_reg_300">5, 0, 5, 0</column>
-<column name="k_reg_89">5, 0, 5, 0</column>
-<column name="tmp_23_reg_305">11, 0, 11, 0</column>
-<column name="tmp_46_reg_274">6, 0, 7, 1</column>
-<column name="tmp_65_cast_reg_292">7, 0, 11, 4</column>
-<column name="tmp_reg_269">6, 0, 11, 5</column>
-<column name="tmp_s_reg_287">3, 0, 7, 4</column>
+<column name="i_3_reg_272">3, 0, 3, 0</column>
+<column name="i_reg_71">3, 0, 3, 0</column>
+<column name="j_1_reg_290">3, 0, 3, 0</column>
+<column name="j_reg_82">3, 0, 3, 0</column>
+<column name="k_1_reg_308">5, 0, 5, 0</column>
+<column name="k_reg_93">5, 0, 5, 0</column>
+<column name="tmp_234_reg_282">6, 0, 7, 1</column>
+<column name="tmp_255_cast_reg_300">7, 0, 11, 4</column>
+<column name="tmp_4_cast_cast_reg_295">3, 0, 8, 5</column>
+<column name="tmp_7_reg_313">11, 0, 11, 0</column>
+<column name="tmp_reg_277">6, 0, 11, 5</column>
 </table>
 </item>
 </section>

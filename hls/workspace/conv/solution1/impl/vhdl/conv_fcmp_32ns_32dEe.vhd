@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity conv_fcmp_32ns_32dEe is
     generic (
-        ID         : integer := 3;
+        ID         : integer := 17;
         NUM_STAGE  : integer := 1;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

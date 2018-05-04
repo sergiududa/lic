@@ -136,14 +136,26 @@ void pool(float output[14][14][8], float image[29][29][8])
 {_ssdm_SpecArrayDimSize(output,14);_ssdm_SpecArrayDimSize(image,29);
 #pragma empty_line
  float max;
- for(int channel = 0; channel < 8; channel++)
-  for(int i = 0; i < 29 -2 + 1; i += 2)
-   for(int j = 0; j < 29 - 2 + 1; j += 2)
+ pool_label2:for(int channel = 0; channel < 8; channel++)
+  pool_label3:for(int i = 0; i < 29 -2 + 1; i += 2)
+   
+#pragma HLS PIPELINE II=50
+#pragma line 9 "pool/solution1/pool.c"
+pool_label4:for(int j = 0; j < 29 - 2 + 1; j += 2)
    {
+#pragma HLS UNROLL
+#pragma line 10 "pool/solution1/pool.c"
+
     max = image[i][j][channel];
-    for(int k = 0; k < 2; k++)
-     for(int l = 0; l < 2; l++)
-      max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
+    pool_label5:for(int k = 0; k < 2; k++)
+     
+#pragma HLS UNROLL
+#pragma line 13 "pool/solution1/pool.c"
+pool_label6:for(int l = 0; l < 2; l++)
+      
+#pragma HLS UNROLL
+#pragma line 14 "pool/solution1/pool.c"
+max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
     output[i/2][j/2][channel] = max;
    }
 #pragma empty_line

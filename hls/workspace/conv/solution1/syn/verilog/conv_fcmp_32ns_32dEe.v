@@ -10,7 +10,7 @@
 
 module conv_fcmp_32ns_32dEe
 #(parameter
-    ID         = 3,
+    ID         = 17,
     NUM_STAGE  = 1,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

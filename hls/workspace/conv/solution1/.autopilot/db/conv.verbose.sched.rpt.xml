@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'conv'" level="0">
-<item name = "Date">Wed Apr 25 14:03:41 2018
+<item name = "Date">Fri May  4 16:08:03 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">conv</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1305713, 1305713, 1305713, 1305713, none</column>
+<column name="">14932, 14932, 14932, 14932, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,11 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">1305712, 1305712, 163214, -, -, 8, no</column>
-<column name=" + Loop 1.1">163212, 163212, 5628, -, -, 29, no</column>
-<column name="  ++ Loop 1.1.1">5626, 5626, 194, -, -, 29, no</column>
-<column name="   +++ Loop 1.1.1.1">184, 184, 46, -, -, 4, no</column>
-<column name="    ++++ Loop 1.1.1.1.1">44, 44, 11, -, -, 4, no</column>
+<column name="- L_conv_label4">14930, 14930, 147, 64, 1, 232, yes</column>
 </table>
 </item>
 </section>

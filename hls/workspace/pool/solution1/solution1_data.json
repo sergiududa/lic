@@ -12,15 +12,18 @@
     "Package": "clg400",
     "Speed": "-1"
   },
-  "HlsSolution": {
-    
-  },
+  "HlsSolution": {"Directives": [
+      "unroll pool\/pool_label4 {} {}",
+      "unroll pool\/pool_label5 {} {}",
+      "unroll pool\/pool_label6 {} {}",
+      "pipeline pool\/pool_label3 {{II 50}} {}"
+    ]},
   "ClockInfo": {
     "ClockName": "ap_clk",
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "42577",
+    "Latency": "5604",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -85,7 +88,25 @@
           "Width": "13"
         }}
     },
+    "image_r_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "13"
+        }}
+    },
     "image_r_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "image_r_q1": {
       "type": "data",
       "dir": "in",
       "width": "32",
@@ -165,6 +186,18 @@
     "image_r_q0": {
       "dir": "in",
       "width": "32"
+    },
+    "image_r_address1": {
+      "dir": "out",
+      "width": "13"
+    },
+    "image_r_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "image_r_q1": {
+      "dir": "in",
+      "width": "32"
     }
   },
   "CPorts": {
@@ -187,70 +220,50 @@
       "busTypeRef": "ap_memory",
       "arraySize": "6728",
       "handshakeRef": "ap_none"
+    },
+    "image_r_q1": {
+      "interfaceRef": "image_r_q1",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "6728",
+      "handshakeRef": "ap_none"
     }
   },
   "ModuleInfo": {
     "Hierarchy": {"ModuleName": "pool"},
     "Metrics": {"pool": {
         "Latency": {
-          "LatencyBest": "42577",
-          "LatencyAvg": "42577",
-          "LatencyWorst": "42577",
-          "PipelineII": "42578",
+          "LatencyBest": "5604",
+          "LatencyAvg": "5604",
+          "LatencyWorst": "5604",
+          "PipelineII": "5605",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "7.19"
+          "Estimate": "7.72"
         },
         "Loops": [{
-            "Name": "Loop 1",
-            "TripCount": "8",
-            "Latency": "42576",
-            "PipelineII": "",
-            "PipelineDepth": "5322",
-            "Loops": [{
-                "Name": "Loop 1.1",
-                "TripCount": "14",
-                "Latency": "5320",
-                "PipelineII": "",
-                "PipelineDepth": "380",
-                "Loops": [{
-                    "Name": "Loop 1.1.1",
-                    "TripCount": "14",
-                    "Latency": "378",
-                    "PipelineII": "",
-                    "PipelineDepth": "27",
-                    "Loops": [{
-                        "Name": "Loop 1.1.1.1",
-                        "TripCount": "2",
-                        "Latency": "24",
-                        "PipelineII": "",
-                        "PipelineDepth": "12",
-                        "Loops": [{
-                            "Name": "Loop 1.1.1.1.1",
-                            "TripCount": "2",
-                            "Latency": "10",
-                            "PipelineII": "",
-                            "PipelineDepth": "5"
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "pool_label2_pool_label3",
+            "TripCount": "112",
+            "Latency": "5602",
+            "PipelineII": "50",
+            "PipelineDepth": "53"
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "250",
-          "LUT": "776",
+          "FF": "1688",
+          "LUT": "7508",
           "BRAM_18K": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-04-25 14:33:06 EEST",
+    "Time": "2018-05-04 15:40:40 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4.1"
   }

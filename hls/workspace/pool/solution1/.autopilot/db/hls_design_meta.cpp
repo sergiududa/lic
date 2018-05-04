@@ -13,5 +13,8 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("image_r_address0", 13, hls_out, 1, "ap_memory", "mem_address", 1),
 	Port_Property("image_r_ce0", 1, hls_out, 1, "ap_memory", "mem_ce", 1),
 	Port_Property("image_r_q0", 32, hls_in, 1, "ap_memory", "mem_dout", 1),
+	Port_Property("image_r_address1", 13, hls_out, 1, "ap_memory", "mem_address", 1),
+	Port_Property("image_r_ce1", 1, hls_out, 1, "ap_memory", "mem_ce", 1),
+	Port_Property("image_r_q1", 32, hls_in, 1, "ap_memory", "mem_dout", 1),
 };
 const char* HLS_Design_Meta::dut_name = "pool";

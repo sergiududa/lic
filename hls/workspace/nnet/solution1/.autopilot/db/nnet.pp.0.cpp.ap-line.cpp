@@ -29028,19 +29028,20 @@ void conv_layer1(float24_t output[29][29][8], float24_t image[32][32][1], float2
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
- for(filter = 0; filter < 8; filter++)
+ conv_layer1_label19:for(filter = 0; filter < 8; filter++)
  {
 #pragma empty_line
-  for(i = 0; i < (32 - 4 + 1); i += 1)
-   for(j = 0; j < (32 - 4 + 1); j += 1)
+  conv_layer1_label8:for(i = 0; i < (32 - 4 + 1); i += 1)
+   conv_layer1_label7:for(j = 0; j < (32 - 4 + 1); j += 1)
    {
 #pragma empty_line
     sum = 0;
-    for(row_offset = 0; row_offset <4; row_offset++)
+    conv_layer1_label6:for(row_offset = 0; row_offset <4; row_offset++)
 #pragma empty_line
-     for(col_offset = 0; col_offset <4; col_offset++)
-      for(channel_offset = 0; channel_offset < 1; channel_offset++)
-       sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
+     conv_layer1_label5:for(col_offset = 0; col_offset <4; col_offset++)
+      conv_layer1_label0:for(channel_offset = 0; channel_offset < 1; channel_offset++)
+#pragma empty_line
+sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
     output[i/1][j/1][filter] = relu(sum + bias[filter]);
    }
  }
@@ -29058,15 +29059,15 @@ void conv_layer2(float24_t output[13][13][16], float24_t image[14][14][8], float
  for(filter = 0; filter < 16; filter++)
  {
 #pragma empty_line
-  for(i = 0; i < (14 - 2 + 1); i += 1)
-   for(j = 0; j < (14 - 2 + 1); j += 1)
+  conv_layer2_label12:for(i = 0; i < (14 - 2 + 1); i += 1)
+   conv_layer2_label11:for(j = 0; j < (14 - 2 + 1); j += 1)
    {
 #pragma empty_line
     sum = 0;
-    for(row_offset = 0; row_offset <2; row_offset++)
+    conv_layer2_label10:for(row_offset = 0; row_offset <2; row_offset++)
 #pragma empty_line
-     for(col_offset = 0; col_offset <2; col_offset++)
-      for(channel_offset = 0; channel_offset < 8; channel_offset++)
+     conv_layer2_label9:for(col_offset = 0; col_offset <2; col_offset++)
+      conv_layer2_label1:for(channel_offset = 0; channel_offset < 8; channel_offset++)
        sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
     output[i/1][j/1][filter] = relu(sum + bias[filter]);
    }
@@ -29078,12 +29079,12 @@ void pool_layer1(float24_t output[14][14][8], float24_t image[29][29][8])
 #pragma empty_line
  float24_t max;
  for(int channel = 0; channel < 8; channel++)
-  for(int i = 0; i < 29 -2 + 1; i += 2)
-   for(int j = 0; j < 29 - 2 + 1; j += 2)
+  pool_layer1_label15:for(int i = 0; i < 29 -2 + 1; i += 2)
+   pool_layer1_label14:for(int j = 0; j < 29 - 2 + 1; j += 2)
    {
     max = image[i][j][channel];
-    for(int k = 0; k < 2; k++)
-     for(int l = 0; l < 2; l++)
+    pool_layer1_label13:for(int k = 0; k < 2; k++)
+     pool_layer1_label2:for(int l = 0; l < 2; l++)
       max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
     output[i/2][j/2][channel] = max;
    }
@@ -29095,12 +29096,12 @@ void pool_layer2(float24_t output[6][6][16], float24_t image[13][13][16])
 #pragma empty_line
  float24_t max;
  for(int channel = 0; channel < 16; channel++)
-  for(int i = 0; i < 13 -2 + 1; i += 2)
-   for(int j = 0; j < 13 - 2 + 1; j += 2)
+  pool_layer2_label18:for(int i = 0; i < 13 -2 + 1; i += 2)
+   pool_layer2_label17:for(int j = 0; j < 13 - 2 + 1; j += 2)
    {
     max = image[i][j][channel];
-    for(int k = 0; k < 2; k++)
-     for(int l = 0; l < 2; l++)
+    pool_layer2_label16:for(int k = 0; k < 2; k++)
+     pool_layer2_label3:for(int l = 0; l < 2; l++)
       max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
     output[i/2][j/2][channel] = max;
    }
@@ -29113,7 +29114,7 @@ void flatten(float24_t output[576], float24_t input[6][6][16])
     int i,j,k;
   for(i = 0; i < 6; i++)
    for(j = 0; j < 6; j++)
-                for(k = 0; k < 16;k++)
+                flatten_label4:for(k = 0; k < 16;k++)
                     output[i * 6 * 16 + j * 16 + k] = input[i][j][k];
 }
 #pragma empty_line
@@ -29123,7 +29124,7 @@ void fc_layer1(float24_t output[120], float24_t input[576], float24_t weight[576
  for(int i = 0; i < 120; i++)
  {
   output[i] = 0;
-  for(int j = 0; j < 576; j++)
+  fc_layer1_label5:for(int j = 0; j < 576; j++)
    output[i] += weight[j][i] * input[j];
   output[i] += bias[i];
   output[i] = relu(output[i]);
@@ -29137,7 +29138,7 @@ void fc_layer2(float24_t output[84], float24_t input[120], float24_t weight[120]
  for(int i = 0; i < 84; i++)
  {
   output[i] = 0;
-  for(int j = 0; j < 120; j++)
+  fc_layer2_label6:for(int j = 0; j < 120; j++)
    output[i] += weight[j][i] * input[j];
   output[i] += bias[i];
   output[i] = relu(output[i]);
@@ -29151,7 +29152,7 @@ void fc_layer3(float24_t output[10], float24_t input[84], float24_t weight[84][1
  for(int i = 0; i < 10; i++)
  {
   output[i] = 0;
-  for(int j = 0; j < 84; j++)
+  fc_layer3_label7:for(int j = 0; j < 84; j++)
    output[i] += weight[j][i] * input[j];
   output[i] += bias[i];
   output[i] = relu(output[i]);
@@ -29161,7 +29162,6 @@ void fc_layer3(float24_t output[10], float24_t input[84], float24_t weight[84][1
 #pragma empty_line
 void nnet(float24_t conv_layer1_out[29][29][8], float24_t conv_layer2_out[13][13][16], float24_t pool_layer1_out[14][14][8], float24_t pool_layer2_out[6][6][16], float24_t flatten_out[576], float24_t fc_layer1_out[120], float24_t fc_layer2_out[84], float24_t fc_layer3_out[10])
 {
-#pragma empty_line
  conv_layer1(conv_layer1_out, image, conv_layer1_weights, conv_layer1_bias);
  pool_layer1(pool_layer1_out, conv_layer1_out);
 #pragma empty_line

@@ -12,15 +12,31 @@
     "Package": "clg400",
     "Speed": "-1"
   },
-  "HlsSolution": {
-    
-  },
+  "HlsSolution": {"Directives": [
+      "unroll conv_layer1\/conv_layer1_label0 {} {}",
+      "unroll pool_layer1\/pool_layer1_label2 {} {}",
+      "unroll pool_layer2\/pool_layer2_label3 {} {}",
+      "unroll conv_layer1\/conv_layer1_label5 {} {}",
+      "unroll conv_layer1\/conv_layer1_label6 {} {}",
+      "pipeline conv_layer1\/conv_layer1_label7 {} {}",
+      "unroll conv_layer2\/conv_layer2_label1 {} {}",
+      "unroll conv_layer2\/conv_layer2_label9 {} {}",
+      "unroll conv_layer2\/conv_layer2_label10 {} {}",
+      "pipeline conv_layer2\/conv_layer2_label11 {{II 16}} {}",
+      "unroll pool_layer1\/pool_layer1_label13 {} {}",
+      "unroll pool_layer1\/pool_layer1_label14 {} {}",
+      "pipeline pool_layer1\/pool_layer1_label15 {{II 50}} {}",
+      "unroll pool_layer2\/pool_layer2_label16 {} {}",
+      "unroll pool_layer2\/pool_layer2_label17 {} {}",
+      "pipeline pool_layer2\/pool_layer2_label18 {{II 21}} {}",
+      "dataflow conv_layer1\/conv_layer1_label19 {} {}"
+    ]},
   "ClockInfo": {
     "ClockName": "ap_clk",
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1255479",
+    "Latency": "379809",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -37,46 +53,194 @@
     "CSource": ["nnet.cpp"],
     "Vhdl": [
       "impl\/vhdl\/conv_layer1.vhd",
-      "impl\/vhdl\/conv_layer1_conv_bkb.vhd",
-      "impl\/vhdl\/conv_layer1_conv_dEe.vhd",
-      "impl\/vhdl\/conv_layer1_imagecud.vhd",
+      "impl\/vhdl\/conv_layer1_label8_p.vhd",
+      "impl\/vhdl\/conv_layer1_labelbkb.vhd",
+      "impl\/vhdl\/conv_layer1_labelcud.vhd",
+      "impl\/vhdl\/conv_layer1_labeldEe.vhd",
+      "impl\/vhdl\/conv_layer1_labeleOg.vhd",
+      "impl\/vhdl\/conv_layer1_labelfYi.vhd",
+      "impl\/vhdl\/conv_layer1_labelg8j.vhd",
+      "impl\/vhdl\/conv_layer1_labelhbi.vhd",
+      "impl\/vhdl\/conv_layer1_labelibs.vhd",
+      "impl\/vhdl\/conv_layer1_labeljbC.vhd",
+      "impl\/vhdl\/conv_layer1_labelkbM.vhd",
+      "impl\/vhdl\/conv_layer1_labellbW.vhd",
+      "impl\/vhdl\/conv_layer1_labelmb6.vhd",
+      "impl\/vhdl\/conv_layer1_labelncg.vhd",
+      "impl\/vhdl\/conv_layer1_labelocq.vhd",
+      "impl\/vhdl\/conv_layer1_labelpcA.vhd",
+      "impl\/vhdl\/conv_layer1_labelqcK.vhd",
+      "impl\/vhdl\/conv_layer1_labelrcU.vhd",
+      "impl\/vhdl\/conv_layer1_labelsc4.vhd",
       "impl\/vhdl\/conv_layer2.vhd",
-      "impl\/vhdl\/conv_layer2_conv_fYi.vhd",
-      "impl\/vhdl\/conv_layer2_conv_g8j.vhd",
+      "impl\/vhdl\/conv_layer2_conv_0iy.vhd",
+      "impl\/vhdl\/conv_layer2_conv_1iI.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Aem.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Bew.vhd",
+      "impl\/vhdl\/conv_layer2_conv_CeG.vhd",
+      "impl\/vhdl\/conv_layer2_conv_DeQ.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Ee0.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Ffa.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Gfk.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Hfu.vhd",
+      "impl\/vhdl\/conv_layer2_conv_IfE.vhd",
+      "impl\/vhdl\/conv_layer2_conv_JfO.vhd",
+      "impl\/vhdl\/conv_layer2_conv_KfY.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Lf8.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Mgi.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Ngs.vhd",
+      "impl\/vhdl\/conv_layer2_conv_OgC.vhd",
+      "impl\/vhdl\/conv_layer2_conv_PgM.vhd",
+      "impl\/vhdl\/conv_layer2_conv_QgW.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Rg6.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Shg.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Thq.vhd",
+      "impl\/vhdl\/conv_layer2_conv_UhA.vhd",
+      "impl\/vhdl\/conv_layer2_conv_vdy.vhd",
+      "impl\/vhdl\/conv_layer2_conv_VhK.vhd",
+      "impl\/vhdl\/conv_layer2_conv_wdI.vhd",
+      "impl\/vhdl\/conv_layer2_conv_WhU.vhd",
+      "impl\/vhdl\/conv_layer2_conv_xdS.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Xh4.vhd",
+      "impl\/vhdl\/conv_layer2_conv_yd2.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Yie.vhd",
+      "impl\/vhdl\/conv_layer2_conv_zec.vhd",
+      "impl\/vhdl\/conv_layer2_conv_Zio.vhd",
+      "impl\/vhdl\/dataflow_in_loop_con.vhd",
       "impl\/vhdl\/flatten.vhd",
-      "impl\/vhdl\/nnet_fc_layer1_weibs.vhd",
-      "impl\/vhdl\/nnet_fc_layer2_wejbC.vhd",
-      "impl\/vhdl\/nnet_fc_layer3_wekbM.vhd",
-      "impl\/vhdl\/nnet_mul_mul_19s_eOg.vhd",
-      "impl\/vhdl\/nnet_mul_mul_24s_hbi.vhd",
-      "impl\/vhdl\/nnet_mul_mul_24s_lbW.vhd",
+      "impl\/vhdl\/nnet_fc_layer1_we4jc.vhd",
+      "impl\/vhdl\/nnet_fc_layer2_we5jm.vhd",
+      "impl\/vhdl\/nnet_fc_layer3_we6jw.vhd",
+      "impl\/vhdl\/nnet_mac_muladd_5udo.vhd",
+      "impl\/vhdl\/nnet_mac_muladd_52iS.vhd",
+      "impl\/vhdl\/nnet_mul_mul_19s_3i2.vhd",
+      "impl\/vhdl\/nnet_mul_mul_19s_tde.vhd",
+      "impl\/vhdl\/nnet_mul_mul_24s_7jG.vhd",
+      "impl\/vhdl\/nnet_mul_mul_24s_8jQ.vhd",
       "impl\/vhdl\/pool_layer1.vhd",
       "impl\/vhdl\/pool_layer2.vhd",
       "impl\/vhdl\/nnet.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/conv_layer1.v",
-      "impl\/verilog\/conv_layer1_conv_bkb.v",
-      "impl\/verilog\/conv_layer1_conv_bkb_rom.dat",
-      "impl\/verilog\/conv_layer1_conv_dEe.v",
-      "impl\/verilog\/conv_layer1_conv_dEe_rom.dat",
-      "impl\/verilog\/conv_layer1_imagecud.v",
-      "impl\/verilog\/conv_layer1_imagecud_rom.dat",
+      "impl\/verilog\/conv_layer1_label8_p.v",
+      "impl\/verilog\/conv_layer1_labelbkb.v",
+      "impl\/verilog\/conv_layer1_labelbkb_rom.dat",
+      "impl\/verilog\/conv_layer1_labelcud.v",
+      "impl\/verilog\/conv_layer1_labelcud_rom.dat",
+      "impl\/verilog\/conv_layer1_labeldEe.v",
+      "impl\/verilog\/conv_layer1_labeldEe_rom.dat",
+      "impl\/verilog\/conv_layer1_labeleOg.v",
+      "impl\/verilog\/conv_layer1_labeleOg_rom.dat",
+      "impl\/verilog\/conv_layer1_labelfYi.v",
+      "impl\/verilog\/conv_layer1_labelfYi_rom.dat",
+      "impl\/verilog\/conv_layer1_labelg8j.v",
+      "impl\/verilog\/conv_layer1_labelg8j_rom.dat",
+      "impl\/verilog\/conv_layer1_labelhbi.v",
+      "impl\/verilog\/conv_layer1_labelhbi_rom.dat",
+      "impl\/verilog\/conv_layer1_labelibs.v",
+      "impl\/verilog\/conv_layer1_labelibs_rom.dat",
+      "impl\/verilog\/conv_layer1_labeljbC.v",
+      "impl\/verilog\/conv_layer1_labeljbC_rom.dat",
+      "impl\/verilog\/conv_layer1_labelkbM.v",
+      "impl\/verilog\/conv_layer1_labelkbM_rom.dat",
+      "impl\/verilog\/conv_layer1_labellbW.v",
+      "impl\/verilog\/conv_layer1_labellbW_rom.dat",
+      "impl\/verilog\/conv_layer1_labelmb6.v",
+      "impl\/verilog\/conv_layer1_labelmb6_rom.dat",
+      "impl\/verilog\/conv_layer1_labelncg.v",
+      "impl\/verilog\/conv_layer1_labelncg_rom.dat",
+      "impl\/verilog\/conv_layer1_labelocq.v",
+      "impl\/verilog\/conv_layer1_labelocq_rom.dat",
+      "impl\/verilog\/conv_layer1_labelpcA.v",
+      "impl\/verilog\/conv_layer1_labelpcA_rom.dat",
+      "impl\/verilog\/conv_layer1_labelqcK.v",
+      "impl\/verilog\/conv_layer1_labelqcK_rom.dat",
+      "impl\/verilog\/conv_layer1_labelrcU.v",
+      "impl\/verilog\/conv_layer1_labelrcU_rom.dat",
+      "impl\/verilog\/conv_layer1_labelsc4.v",
+      "impl\/verilog\/conv_layer1_labelsc4_rom.dat",
       "impl\/verilog\/conv_layer2.v",
-      "impl\/verilog\/conv_layer2_conv_fYi.v",
-      "impl\/verilog\/conv_layer2_conv_fYi_rom.dat",
-      "impl\/verilog\/conv_layer2_conv_g8j.v",
-      "impl\/verilog\/conv_layer2_conv_g8j_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_0iy.v",
+      "impl\/verilog\/conv_layer2_conv_0iy_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_1iI.v",
+      "impl\/verilog\/conv_layer2_conv_1iI_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Aem.v",
+      "impl\/verilog\/conv_layer2_conv_Aem_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Bew.v",
+      "impl\/verilog\/conv_layer2_conv_Bew_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_CeG.v",
+      "impl\/verilog\/conv_layer2_conv_CeG_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_DeQ.v",
+      "impl\/verilog\/conv_layer2_conv_DeQ_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Ee0.v",
+      "impl\/verilog\/conv_layer2_conv_Ee0_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Ffa.v",
+      "impl\/verilog\/conv_layer2_conv_Ffa_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Gfk.v",
+      "impl\/verilog\/conv_layer2_conv_Gfk_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Hfu.v",
+      "impl\/verilog\/conv_layer2_conv_Hfu_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_IfE.v",
+      "impl\/verilog\/conv_layer2_conv_IfE_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_JfO.v",
+      "impl\/verilog\/conv_layer2_conv_JfO_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_KfY.v",
+      "impl\/verilog\/conv_layer2_conv_KfY_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Lf8.v",
+      "impl\/verilog\/conv_layer2_conv_Lf8_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Mgi.v",
+      "impl\/verilog\/conv_layer2_conv_Mgi_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Ngs.v",
+      "impl\/verilog\/conv_layer2_conv_Ngs_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_OgC.v",
+      "impl\/verilog\/conv_layer2_conv_OgC_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_PgM.v",
+      "impl\/verilog\/conv_layer2_conv_PgM_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_QgW.v",
+      "impl\/verilog\/conv_layer2_conv_QgW_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Rg6.v",
+      "impl\/verilog\/conv_layer2_conv_Rg6_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Shg.v",
+      "impl\/verilog\/conv_layer2_conv_Shg_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Thq.v",
+      "impl\/verilog\/conv_layer2_conv_Thq_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_UhA.v",
+      "impl\/verilog\/conv_layer2_conv_UhA_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_vdy.v",
+      "impl\/verilog\/conv_layer2_conv_vdy_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_VhK.v",
+      "impl\/verilog\/conv_layer2_conv_VhK_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_wdI.v",
+      "impl\/verilog\/conv_layer2_conv_wdI_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_WhU.v",
+      "impl\/verilog\/conv_layer2_conv_WhU_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_xdS.v",
+      "impl\/verilog\/conv_layer2_conv_xdS_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Xh4.v",
+      "impl\/verilog\/conv_layer2_conv_Xh4_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_yd2.v",
+      "impl\/verilog\/conv_layer2_conv_yd2_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Yie.v",
+      "impl\/verilog\/conv_layer2_conv_Yie_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_zec.v",
+      "impl\/verilog\/conv_layer2_conv_zec_rom.dat",
+      "impl\/verilog\/conv_layer2_conv_Zio.v",
+      "impl\/verilog\/conv_layer2_conv_Zio_rom.dat",
+      "impl\/verilog\/dataflow_in_loop_con.v",
       "impl\/verilog\/flatten.v",
-      "impl\/verilog\/nnet_fc_layer1_weibs.v",
-      "impl\/verilog\/nnet_fc_layer1_weibs_rom.dat",
-      "impl\/verilog\/nnet_fc_layer2_wejbC.v",
-      "impl\/verilog\/nnet_fc_layer2_wejbC_rom.dat",
-      "impl\/verilog\/nnet_fc_layer3_wekbM.v",
-      "impl\/verilog\/nnet_fc_layer3_wekbM_rom.dat",
-      "impl\/verilog\/nnet_mul_mul_19s_eOg.v",
-      "impl\/verilog\/nnet_mul_mul_24s_hbi.v",
-      "impl\/verilog\/nnet_mul_mul_24s_lbW.v",
+      "impl\/verilog\/nnet_fc_layer1_we4jc.v",
+      "impl\/verilog\/nnet_fc_layer1_we4jc_rom.dat",
+      "impl\/verilog\/nnet_fc_layer2_we5jm.v",
+      "impl\/verilog\/nnet_fc_layer2_we5jm_rom.dat",
+      "impl\/verilog\/nnet_fc_layer3_we6jw.v",
+      "impl\/verilog\/nnet_fc_layer3_we6jw_rom.dat",
+      "impl\/verilog\/nnet_mac_muladd_5udo.v",
+      "impl\/verilog\/nnet_mac_muladd_52iS.v",
+      "impl\/verilog\/nnet_mul_mul_19s_3i2.v",
+      "impl\/verilog\/nnet_mul_mul_19s_tde.v",
+      "impl\/verilog\/nnet_mul_mul_24s_7jG.v",
+      "impl\/verilog\/nnet_mul_mul_24s_8jQ.v",
       "impl\/verilog\/pool_layer1.v",
       "impl\/verilog\/pool_layer2.v",
       "impl\/verilog\/nnet.v"
@@ -118,6 +282,15 @@
           "Width": "13"
         }}
     },
+    "conv_layer1_out_V_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "13"
+        }}
+    },
     "conv_layer1_out_V_d0": {
       "type": "data",
       "dir": "out",
@@ -136,7 +309,25 @@
           "Width": "24"
         }}
     },
+    "conv_layer1_out_V_q1": {
+      "type": "data",
+      "dir": "in",
+      "width": "24",
+      "ctype": {"DATA": {
+          "Type": "real fixed signed 20",
+          "Width": "24"
+        }}
+    },
     "conv_layer2_out_V_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "12",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "12"
+        }}
+    },
+    "conv_layer2_out_V_address1": {
       "type": "data",
       "dir": "out",
       "width": "12",
@@ -155,6 +346,15 @@
         }}
     },
     "conv_layer2_out_V_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "24",
+      "ctype": {"DATA": {
+          "Type": "real fixed signed 20",
+          "Width": "24"
+        }}
+    },
+    "conv_layer2_out_V_q1": {
       "type": "data",
       "dir": "in",
       "width": "24",
@@ -271,6 +471,15 @@
           "Width": "11"
         }}
     },
+    "pool_layer1_out_V_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "11",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "11"
+        }}
+    },
     "pool_layer1_out_V_d0": {
       "type": "data",
       "dir": "out",
@@ -281,6 +490,15 @@
         }}
     },
     "pool_layer1_out_V_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "24",
+      "ctype": {"DATA": {
+          "Type": "real fixed signed 20",
+          "Width": "24"
+        }}
+    },
+    "pool_layer1_out_V_q1": {
       "type": "data",
       "dir": "in",
       "width": "24",
@@ -362,6 +580,18 @@
       "dir": "in",
       "width": "24"
     },
+    "conv_layer1_out_V_address1": {
+      "dir": "out",
+      "width": "13"
+    },
+    "conv_layer1_out_V_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "conv_layer1_out_V_q1": {
+      "dir": "in",
+      "width": "24"
+    },
     "conv_layer2_out_V_address0": {
       "dir": "out",
       "width": "12"
@@ -382,6 +612,18 @@
       "dir": "in",
       "width": "24"
     },
+    "conv_layer2_out_V_address1": {
+      "dir": "out",
+      "width": "12"
+    },
+    "conv_layer2_out_V_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "conv_layer2_out_V_q1": {
+      "dir": "in",
+      "width": "24"
+    },
     "pool_layer1_out_V_address0": {
       "dir": "out",
       "width": "11"
@@ -399,6 +641,18 @@
       "width": "24"
     },
     "pool_layer1_out_V_q0": {
+      "dir": "in",
+      "width": "24"
+    },
+    "pool_layer1_out_V_address1": {
+      "dir": "out",
+      "width": "11"
+    },
+    "pool_layer1_out_V_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "pool_layer1_out_V_q1": {
       "dir": "in",
       "width": "24"
     },
@@ -520,6 +774,14 @@
       "arraySize": "6728",
       "handshakeRef": "ap_none"
     },
+    "conv_layer1_out_V_q1": {
+      "interfaceRef": "conv_layer1_out_V_q1",
+      "dir": "in",
+      "dataWidth": "24",
+      "busTypeRef": "ap_memory",
+      "arraySize": "6728",
+      "handshakeRef": "ap_none"
+    },
     "conv_layer2_out_V_d0": {
       "interfaceRef": "conv_layer2_out_V_d0",
       "dir": "out",
@@ -536,6 +798,14 @@
       "arraySize": "2704",
       "handshakeRef": "ap_none"
     },
+    "conv_layer2_out_V_q1": {
+      "interfaceRef": "conv_layer2_out_V_q1",
+      "dir": "in",
+      "dataWidth": "24",
+      "busTypeRef": "ap_memory",
+      "arraySize": "2704",
+      "handshakeRef": "ap_none"
+    },
     "pool_layer1_out_V_d0": {
       "interfaceRef": "pool_layer1_out_V_d0",
       "dir": "out",
@@ -546,6 +816,14 @@
     },
     "pool_layer1_out_V_q0": {
       "interfaceRef": "pool_layer1_out_V_q0",
+      "dir": "in",
+      "dataWidth": "24",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1568",
+      "handshakeRef": "ap_none"
+    },
+    "pool_layer1_out_V_q1": {
+      "interfaceRef": "pool_layer1_out_V_q1",
       "dir": "in",
       "dataWidth": "24",
       "busTypeRef": "ap_memory",
@@ -630,257 +908,195 @@
       "ModuleName": "nnet",
       "Instances": [
         {
+          "ModuleName": "pool_layer1",
+          "InstanceName": "grp_pool_layer1_fu_423"
+        },
+        {
           "ModuleName": "conv_layer2",
-          "InstanceName": "grp_conv_layer2_fu_323"
+          "InstanceName": "grp_conv_layer2_fu_431"
         },
         {
           "ModuleName": "conv_layer1",
-          "InstanceName": "grp_conv_layer1_fu_335"
-        },
-        {
-          "ModuleName": "pool_layer1",
-          "InstanceName": "grp_pool_layer1_fu_347"
+          "InstanceName": "grp_conv_layer1_fu_505",
+          "Instances": [{
+              "ModuleName": "dataflow_in_loop_con",
+              "InstanceName": "dataflow_in_loop_con_U0",
+              "Instances": [{
+                  "ModuleName": "conv_layer1_label8_p",
+                  "InstanceName": "conv_layer1_label8_p_U0"
+                }]
+            }]
         },
         {
           "ModuleName": "pool_layer2",
-          "InstanceName": "grp_pool_layer2_fu_355"
+          "InstanceName": "grp_pool_layer2_fu_547"
         },
         {
           "ModuleName": "flatten",
-          "InstanceName": "grp_flatten_fu_363"
+          "InstanceName": "grp_flatten_fu_555"
         }
       ]
     },
     "Metrics": {
-      "conv_layer1": {
+      "conv_layer1_label8_p": {
         "Latency": {
-          "LatencyBest": "505089",
-          "LatencyAvg": "505089",
-          "LatencyWorst": "505089",
-          "PipelineII": "505089",
+          "LatencyBest": "854",
+          "LatencyAvg": "854",
+          "LatencyWorst": "854",
+          "PipelineII": "854",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "6.97"
+          "Estimate": "9.63"
         },
         "Loops": [{
-            "Name": "Loop 1",
-            "TripCount": "8",
-            "Latency": "505088",
-            "PipelineII": "",
-            "PipelineDepth": "63136",
-            "Loops": [{
-                "Name": "Loop 1.1",
-                "TripCount": "29",
-                "Latency": "63133",
-                "PipelineII": "",
-                "PipelineDepth": "2177",
-                "Loops": [{
-                    "Name": "Loop 1.1.1",
-                    "TripCount": "29",
-                    "Latency": "2175",
-                    "PipelineII": "",
-                    "PipelineDepth": "75",
-                    "Loops": [{
-                        "Name": "Loop 1.1.1.1",
-                        "TripCount": "4",
-                        "Latency": "72",
-                        "PipelineII": "",
-                        "PipelineDepth": "18",
-                        "Loops": [{
-                            "Name": "Loop 1.1.1.1.1",
-                            "TripCount": "4",
-                            "Latency": "16",
-                            "PipelineII": "",
-                            "PipelineDepth": "4"
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "conv_layer1_label8_conv_layer1_label7",
+            "TripCount": "841",
+            "Latency": "851",
+            "PipelineII": "1",
+            "PipelineDepth": "12"
           }],
         "Area": {
-          "BRAM_18K": "3",
-          "DSP48E": "1",
-          "FF": "318",
-          "LUT": "515"
+          "BRAM_18K": "16",
+          "DSP48E": "17",
+          "FF": "2785",
+          "LUT": "1495"
+        }
+      },
+      "dataflow_in_loop_con": {
+        "Latency": {
+          "LatencyBest": "854",
+          "LatencyAvg": "854",
+          "LatencyWorst": "854",
+          "PipelineII": "855",
+          "PipelineDepth": "",
+          "PipelineType": "dataflow"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.63"
+        },
+        "Area": {
+          "BRAM_18K": "16",
+          "DSP48E": "17",
+          "FF": "2785",
+          "LUT": "1495"
+        }
+      },
+      "conv_layer1": {
+        "Latency": {
+          "LatencyBest": "6841",
+          "LatencyAvg": "6841",
+          "LatencyWorst": "6841",
+          "PipelineII": "6841",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.63"
+        },
+        "Loops": [{
+            "Name": "conv_layer1_label19",
+            "TripCount": "8",
+            "Latency": "6840",
+            "PipelineII": "",
+            "PipelineDepth": "6840"
+          }],
+        "Area": {
+          "BRAM_18K": "16",
+          "DSP48E": "17",
+          "FF": "2795",
+          "LUT": "1539"
         }
       },
       "pool_layer1": {
         "Latency": {
-          "LatencyBest": "30033",
-          "LatencyAvg": "30033",
-          "LatencyWorst": "30033",
-          "PipelineII": "30033",
+          "LatencyBest": "5603",
+          "LatencyAvg": "5603",
+          "LatencyWorst": "5603",
+          "PipelineII": "5603",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "7.19"
+          "Estimate": "7.08"
         },
         "Loops": [{
-            "Name": "Loop 1",
-            "TripCount": "8",
-            "Latency": "30032",
-            "PipelineII": "",
-            "PipelineDepth": "3754",
-            "Loops": [{
-                "Name": "Loop 1.1",
-                "TripCount": "14",
-                "Latency": "3752",
-                "PipelineII": "",
-                "PipelineDepth": "268",
-                "Loops": [{
-                    "Name": "Loop 1.1.1",
-                    "TripCount": "14",
-                    "Latency": "266",
-                    "PipelineII": "",
-                    "PipelineDepth": "19",
-                    "Loops": [{
-                        "Name": "Loop 1.1.1.1",
-                        "TripCount": "2",
-                        "Latency": "16",
-                        "PipelineII": "",
-                        "PipelineDepth": "8",
-                        "Loops": [{
-                            "Name": "Loop 1.1.1.1.1",
-                            "TripCount": "2",
-                            "Latency": "6",
-                            "PipelineII": "",
-                            "PipelineDepth": "3"
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "L_pool_layer1_label15",
+            "TripCount": "112",
+            "Latency": "5601",
+            "PipelineII": "50",
+            "PipelineDepth": "52"
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "133",
-          "LUT": "451",
+          "FF": "1505",
+          "LUT": "3315",
           "BRAM_18K": "0"
         }
       },
       "conv_layer2": {
         "Latency": {
-          "LatencyBest": "387137",
-          "LatencyAvg": "387137",
-          "LatencyWorst": "387137",
-          "PipelineII": "387137",
+          "LatencyBest": "43270",
+          "LatencyAvg": "43270",
+          "LatencyWorst": "43270",
+          "PipelineII": "43270",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "7.10"
+          "Estimate": "8.29"
         },
         "Loops": [{
-            "Name": "Loop 1",
-            "TripCount": "16",
-            "Latency": "387136",
-            "PipelineII": "",
-            "PipelineDepth": "24196",
-            "Loops": [{
-                "Name": "Loop 1.1",
-                "TripCount": "13",
-                "Latency": "24193",
-                "PipelineII": "",
-                "PipelineDepth": "1861",
-                "Loops": [{
-                    "Name": "Loop 1.1.1",
-                    "TripCount": "13",
-                    "Latency": "1859",
-                    "PipelineII": "",
-                    "PipelineDepth": "143",
-                    "Loops": [{
-                        "Name": "Loop 1.1.1.1",
-                        "TripCount": "2",
-                        "Latency": "140",
-                        "PipelineII": "",
-                        "PipelineDepth": "70",
-                        "Loops": [{
-                            "Name": "Loop 1.1.1.1.1",
-                            "TripCount": "2",
-                            "Latency": "68",
-                            "PipelineII": "",
-                            "PipelineDepth": "34",
-                            "Loops": [{
-                                "Name": "Loop 1.1.1.1.1.1",
-                                "TripCount": "8",
-                                "Latency": "32",
-                                "PipelineII": "",
-                                "PipelineDepth": "4"
-                              }]
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "L_conv_layer2_label12_conv_layer2_label11",
+            "TripCount": "2704",
+            "Latency": "43268",
+            "PipelineII": "16",
+            "PipelineDepth": "21"
           }],
         "Area": {
-          "BRAM_18K": "1",
-          "DSP48E": "1",
-          "FF": "363",
-          "LUT": "609"
+          "BRAM_18K": "0",
+          "DSP48E": "33",
+          "FF": "3369",
+          "LUT": "3401"
         }
       },
       "pool_layer2": {
         "Latency": {
-          "LatencyBest": "11169",
-          "LatencyAvg": "11169",
-          "LatencyWorst": "11169",
-          "PipelineII": "11169",
+          "LatencyBest": "2044",
+          "LatencyAvg": "2044",
+          "LatencyWorst": "2044",
+          "PipelineII": "2044",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "7.10"
+          "Estimate": "7.08"
         },
         "Loops": [{
-            "Name": "Loop 1",
-            "TripCount": "16",
-            "Latency": "11168",
-            "PipelineII": "",
-            "PipelineDepth": "698",
-            "Loops": [{
-                "Name": "Loop 1.1",
-                "TripCount": "6",
-                "Latency": "696",
-                "PipelineII": "",
-                "PipelineDepth": "116",
-                "Loops": [{
-                    "Name": "Loop 1.1.1",
-                    "TripCount": "6",
-                    "Latency": "114",
-                    "PipelineII": "",
-                    "PipelineDepth": "19",
-                    "Loops": [{
-                        "Name": "Loop 1.1.1.1",
-                        "TripCount": "2",
-                        "Latency": "16",
-                        "PipelineII": "",
-                        "PipelineDepth": "8",
-                        "Loops": [{
-                            "Name": "Loop 1.1.1.1.1",
-                            "TripCount": "2",
-                            "Latency": "6",
-                            "PipelineII": "",
-                            "PipelineDepth": "3"
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "L_pool_layer2_label18",
+            "TripCount": "96",
+            "Latency": "2042",
+            "PipelineII": "21",
+            "PipelineDepth": "48"
           }],
         "Area": {
+          "BRAM_18K": "0",
           "DSP48E": "0",
-          "FF": "128",
-          "LUT": "425",
-          "BRAM_18K": "0"
+          "FF": "930",
+          "LUT": "1914"
         }
       },
       "flatten": {
@@ -910,7 +1126,7 @@
                 "PipelineII": "",
                 "PipelineDepth": "34",
                 "Loops": [{
-                    "Name": "Loop 1.1.1",
+                    "Name": "flatten_label4",
                     "TripCount": "16",
                     "Latency": "32",
                     "PipelineII": "",
@@ -927,17 +1143,17 @@
       },
       "nnet": {
         "Latency": {
-          "LatencyBest": "1255479",
-          "LatencyAvg": "1255479",
-          "LatencyWorst": "1255479",
-          "PipelineII": "1255480",
+          "LatencyBest": "379809",
+          "LatencyAvg": "379809",
+          "LatencyWorst": "379809",
+          "PipelineII": "379810",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "7.22"
+          "Estimate": "9.63"
         },
         "Loops": [
           {
@@ -947,7 +1163,7 @@
             "PipelineII": "",
             "PipelineDepth": "2307",
             "Loops": [{
-                "Name": "Loop 1.1",
+                "Name": "fc_layer1_label5",
                 "TripCount": "576",
                 "Latency": "2304",
                 "PipelineII": "",
@@ -961,7 +1177,7 @@
             "PipelineII": "",
             "PipelineDepth": "483",
             "Loops": [{
-                "Name": "Loop 2.1",
+                "Name": "fc_layer2_label6",
                 "TripCount": "120",
                 "Latency": "480",
                 "PipelineII": "",
@@ -975,7 +1191,7 @@
             "PipelineII": "",
             "PipelineDepth": "339",
             "Loops": [{
-                "Name": "Loop 3.1",
+                "Name": "fc_layer3_label7",
                 "TripCount": "84",
                 "Latency": "336",
                 "PipelineII": "",
@@ -984,17 +1200,17 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "169",
-          "DSP48E": "5",
-          "FF": "1510",
-          "LUT": "3278"
+          "BRAM_18K": "181",
+          "DSP48E": "53",
+          "FF": "9168",
+          "LUT": "11483"
         }
       }
     }
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-04-25 19:20:06 EEST",
+    "Time": "2018-05-04 18:56:10 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4.1"
   }

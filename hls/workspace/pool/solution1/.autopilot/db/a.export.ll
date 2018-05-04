@@ -2,134 +2,1220 @@
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
+@pool_label2_pool_lab = internal unnamed_addr constant [24 x i8] c"pool_label2_pool_label3\00"
 @pool_str = internal unnamed_addr constant [5 x i8] c"pool\00"
+@p_str2 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
+@p_str1 = private unnamed_addr constant [12 x i8] c"pool_label3\00", align 1
 
 define void @pool([1568 x float]* %output_r, [6728 x float]* %image_r) nounwind uwtable {
   call void (...)* @_ssdm_op_SpecBitsMap([1568 x float]* %output_r) nounwind, !map !7
   call void (...)* @_ssdm_op_SpecBitsMap([6728 x float]* %image_r) nounwind, !map !14
   call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @pool_str) nounwind
-  br label %.loopexit3
+  br label %1
 
-.loopexit3.loopexit:                              ; preds = %.preheader4
-  br label %.loopexit3
+; <label>:1                                       ; preds = %.reset, %0
+  %indvar_flatten = phi i7 [ 0, %0 ], [ %indvar_flatten_next, %.reset ]
+  %channel = phi i4 [ 0, %0 ], [ %tmp_mid2_v, %.reset ]
+  %i = phi i5 [ 0, %0 ], [ %i_1, %.reset ]
+  %exitcond_flatten = icmp eq i7 %indvar_flatten, -16
+  %indvar_flatten_next = add i7 %indvar_flatten, 1
+  br i1 %exitcond_flatten, label %2, label %.reset
 
-.loopexit3:                                       ; preds = %.loopexit3.loopexit, %0
-  %channel = phi i4 [ 0, %0 ], [ %channel_1, %.loopexit3.loopexit ]
-  %exitcond2 = icmp eq i4 %channel, -8
-  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
-  %channel_1 = add i4 %channel, 1
-  br i1 %exitcond2, label %4, label %.preheader4.preheader
-
-.preheader4.preheader:                            ; preds = %.loopexit3
-  %tmp_cast2 = zext i4 %channel to i14
-  %tmp_cast = zext i4 %channel to i12
-  br label %.preheader4
-
-.preheader4:                                      ; preds = %3, %.preheader4.preheader
-  %i = phi i5 [ %i_1, %3 ], [ 0, %.preheader4.preheader ]
+.reset:                                           ; preds = %1
+  %channel_1 = add i4 1, %channel
+  call void (...)* @_ssdm_op_SpecLoopName([24 x i8]* @pool_label2_pool_lab)
+  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 112, i64 112, i64 112) nounwind
   %tmp_1 = icmp ult i5 %i, -4
-  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind
-  br i1 %tmp_1, label %.preheader3.preheader, label %.loopexit3.loopexit
-
-.preheader3.preheader:                            ; preds = %.preheader4
-  %tmp_2_cast = zext i5 %i to i10
-  %tmp_4 = mul i10 %tmp_2_cast, 29
-  %tmp_s = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %i, i32 1, i32 4)
-  %tmp_2 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_s, i4 0)
-  %p_shl_cast = zext i8 %tmp_2 to i9
-  %tmp_7 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_s, i1 false)
-  %p_shl1_cast = zext i5 %tmp_7 to i9
-  %tmp_8 = sub i9 %p_shl_cast, %p_shl1_cast
-  br label %.preheader3
-
-.preheader3:                                      ; preds = %2, %.preheader3.preheader
-  %j = phi i5 [ %j_1, %2 ], [ 0, %.preheader3.preheader ]
-  %tmp_6 = icmp ult i5 %j, -4
-  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind
-  br i1 %tmp_6, label %1, label %3
-
-; <label>:1                                       ; preds = %.preheader3
-  %tmp_7_cast = zext i5 %j to i10
-  %tmp_9 = add i10 %tmp_4, %tmp_7_cast
-  %tmp = call i9 @_ssdm_op_PartSelect.i9.i10.i32.i32(i10 %tmp_9, i32 1, i32 9)
-  %tmp_11 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp, i4 %channel)
-  %tmp_13 = zext i13 %tmp_11 to i64
-  %image_addr = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_13
-  %max = load float* %image_addr, align 4
-  br label %.loopexit
-
-.loopexit.loopexit:                               ; preds = %.preheader
-  br label %.loopexit
-
-.loopexit:                                        ; preds = %.loopexit.loopexit, %1
-  %max1 = phi float [ %max, %1 ], [ %max_1, %.loopexit.loopexit ]
-  %k = phi i2 [ 0, %1 ], [ %k_1, %.loopexit.loopexit ]
-  %k_cast2 = zext i2 %k to i5
-  %exitcond1 = icmp eq i2 %k, -2
-  %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind
-  %k_1 = add i2 %k, 1
-  br i1 %exitcond1, label %2, label %.preheader.preheader
-
-.preheader.preheader:                             ; preds = %.loopexit
-  %tmp_5 = add i5 %k_cast2, %i
-  %tmp_8_cast = zext i5 %tmp_5 to i10
-  %tmp_22 = mul i10 %tmp_8_cast, 29
-  br label %.preheader
-
-.preheader:                                       ; preds = %._crit_edge, %.preheader.preheader
-  %max_1 = phi float [ %max_2, %._crit_edge ], [ %max1, %.preheader.preheader ]
-  %l = phi i2 [ %l_1, %._crit_edge ], [ 0, %.preheader.preheader ]
-  %l_cast1 = zext i2 %l to i5
-  %exitcond = icmp eq i2 %l, -2
-  %empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind
-  %l_1 = add i2 %l, 1
-  br i1 %exitcond, label %.loopexit.loopexit, label %._crit_edge
-
-._crit_edge:                                      ; preds = %.preheader
-  %tmp_3 = add i5 %j, %l_cast1
-  %tmp_9_cast = zext i5 %tmp_3 to i10
-  %tmp_23 = add i10 %tmp_9_cast, %tmp_22
-  %tmp_24 = call i13 @_ssdm_op_BitConcatenate.i13.i10.i3(i10 %tmp_23, i3 0)
-  %tmp_37_cast = zext i13 %tmp_24 to i14
-  %tmp_25 = add i14 %tmp_cast2, %tmp_37_cast
-  %tmp_38_cast = zext i14 %tmp_25 to i64
-  %image_addr_1 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_38_cast
-  %image_load = load float* %image_addr_1, align 4
+  %i_mid2 = select i1 %tmp_1, i5 %i, i5 0
+  %tmp_mid2_v = select i1 %tmp_1, i4 %channel, i4 %channel_1
+  %tmp_mid2_cast1 = zext i4 %tmp_mid2_v to i12
+  %tmp_mid2_cast = zext i4 %tmp_mid2_v to i13
+  call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str1) nounwind
+  %tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecPipeline(i32 50, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+  %tmp_2_cast = zext i5 %i_mid2 to i13
+  %tmp = mul i13 232, %tmp_2_cast
+  %tmp_3 = add i13 %tmp_mid2_cast, %tmp
+  %tmp_3_cast = zext i13 %tmp_3 to i64
+  %image_addr = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_3_cast
+  %tmp_4 = add i13 8, %tmp
+  %tmp_2 = add i13 %tmp_mid2_cast, %tmp_4
+  %tmp_384_cast = zext i13 %tmp_2 to i64
+  %image_addr_1 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_384_cast
+  %tmp_7 = add i13 16, %tmp
+  %tmp_9 = add i13 %tmp_mid2_cast, %tmp_7
+  %tmp_386_cast = zext i13 %tmp_9 to i64
+  %image_addr_4 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_386_cast
+  %tmp_15 = add i13 24, %tmp
+  %tmp_17 = add i13 %tmp_mid2_cast, %tmp_15
+  %tmp_388_cast = zext i13 %tmp_17 to i64
+  %image_addr_5 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_388_cast
+  %tmp_24 = add i13 32, %tmp
+  %tmp_26 = add i13 %tmp_mid2_cast, %tmp_24
+  %tmp_390_cast = zext i13 %tmp_26 to i64
+  %image_addr_8 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_390_cast
+  %tmp_33 = add i13 40, %tmp
+  %tmp_35 = add i13 %tmp_mid2_cast, %tmp_33
+  %tmp_392_cast = zext i13 %tmp_35 to i64
+  %image_addr_9 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_392_cast
+  %tmp_42 = add i13 48, %tmp
+  %tmp_44 = add i13 %tmp_mid2_cast, %tmp_42
+  %tmp_394_cast = zext i13 %tmp_44 to i64
+  %image_addr_12 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_394_cast
+  %tmp_51 = add i13 56, %tmp
+  %tmp_53 = add i13 %tmp_mid2_cast, %tmp_51
+  %tmp_396_cast = zext i13 %tmp_53 to i64
+  %image_addr_13 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_396_cast
+  %tmp_60 = add i13 64, %tmp
+  %tmp_62 = add i13 %tmp_mid2_cast, %tmp_60
+  %tmp_398_cast = zext i13 %tmp_62 to i64
+  %image_addr_16 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_398_cast
+  %tmp_69 = add i13 72, %tmp
+  %tmp_71 = add i13 %tmp_mid2_cast, %tmp_69
+  %tmp_400_cast = zext i13 %tmp_71 to i64
+  %image_addr_17 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_400_cast
+  %tmp_78 = add i13 80, %tmp
+  %tmp_80 = add i13 %tmp_mid2_cast, %tmp_78
+  %tmp_402_cast = zext i13 %tmp_80 to i64
+  %image_addr_20 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_402_cast
+  %tmp_87 = add i13 88, %tmp
+  %tmp_89 = add i13 %tmp_mid2_cast, %tmp_87
+  %tmp_404_cast = zext i13 %tmp_89 to i64
+  %image_addr_21 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_404_cast
+  %tmp_96 = add i13 96, %tmp
+  %tmp_98 = add i13 %tmp_mid2_cast, %tmp_96
+  %tmp_406_cast = zext i13 %tmp_98 to i64
+  %image_addr_24 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_406_cast
+  %tmp_105 = add i13 104, %tmp
+  %tmp_107 = add i13 %tmp_mid2_cast, %tmp_105
+  %tmp_408_cast = zext i13 %tmp_107 to i64
+  %image_addr_25 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_408_cast
+  %tmp_114 = add i13 112, %tmp
+  %tmp_116 = add i13 %tmp_mid2_cast, %tmp_114
+  %tmp_410_cast = zext i13 %tmp_116 to i64
+  %image_addr_28 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_410_cast
+  %tmp_123 = add i13 120, %tmp
+  %tmp_125 = add i13 %tmp_mid2_cast, %tmp_123
+  %tmp_412_cast = zext i13 %tmp_125 to i64
+  %image_addr_29 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_412_cast
+  %tmp_132 = add i13 128, %tmp
+  %tmp_134 = add i13 %tmp_mid2_cast, %tmp_132
+  %tmp_414_cast = zext i13 %tmp_134 to i64
+  %image_addr_32 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_414_cast
+  %tmp_141 = add i13 136, %tmp
+  %tmp_143 = add i13 %tmp_mid2_cast, %tmp_141
+  %tmp_416_cast = zext i13 %tmp_143 to i64
+  %image_addr_33 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_416_cast
+  %tmp_150 = add i13 144, %tmp
+  %tmp_152 = add i13 %tmp_mid2_cast, %tmp_150
+  %tmp_418_cast = zext i13 %tmp_152 to i64
+  %image_addr_36 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_418_cast
+  %tmp_159 = add i13 152, %tmp
+  %tmp_161 = add i13 %tmp_mid2_cast, %tmp_159
+  %tmp_420_cast = zext i13 %tmp_161 to i64
+  %image_addr_37 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_420_cast
+  %tmp_168 = add i13 160, %tmp
+  %tmp_170 = add i13 %tmp_mid2_cast, %tmp_168
+  %tmp_422_cast = zext i13 %tmp_170 to i64
+  %image_addr_40 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_422_cast
+  %tmp_177 = add i13 168, %tmp
+  %tmp_179 = add i13 %tmp_mid2_cast, %tmp_177
+  %tmp_424_cast = zext i13 %tmp_179 to i64
+  %image_addr_41 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_424_cast
+  %tmp_186 = add i13 176, %tmp
+  %tmp_188 = add i13 %tmp_mid2_cast, %tmp_186
+  %tmp_426_cast = zext i13 %tmp_188 to i64
+  %image_addr_44 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_426_cast
+  %tmp_195 = add i13 184, %tmp
+  %tmp_197 = add i13 %tmp_mid2_cast, %tmp_195
+  %tmp_428_cast = zext i13 %tmp_197 to i64
+  %image_addr_45 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_428_cast
+  %tmp_204 = add i13 192, %tmp
+  %tmp_206 = add i13 %tmp_mid2_cast, %tmp_204
+  %tmp_430_cast = zext i13 %tmp_206 to i64
+  %image_addr_48 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_430_cast
+  %tmp_213 = add i13 200, %tmp
+  %tmp_215 = add i13 %tmp_mid2_cast, %tmp_213
+  %tmp_432_cast = zext i13 %tmp_215 to i64
+  %image_addr_49 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_432_cast
+  %tmp_222 = add i13 208, %tmp
+  %tmp_224 = add i13 %tmp_mid2_cast, %tmp_222
+  %tmp_434_cast = zext i13 %tmp_224 to i64
+  %image_addr_52 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_434_cast
+  %tmp_231 = add i13 216, %tmp
+  %tmp_233 = add i13 %tmp_mid2_cast, %tmp_231
+  %tmp_436_cast = zext i13 %tmp_233 to i64
+  %image_addr_53 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_436_cast
+  %tmp_240 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %i_mid2, i32 1, i32 4)
+  %tmp_242 = call i11 @_ssdm_op_BitConcatenate.i11.i4.i7(i4 %tmp_240, i7 0)
+  %p_shl_cast = zext i11 %tmp_242 to i12
+  %tmp_249 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_240, i4 0)
+  %p_shl1_cast = zext i8 %tmp_249 to i12
+  %tmp_251 = sub i12 %p_shl_cast, %p_shl1_cast
+  %tmp_441_cast = sext i12 %tmp_251 to i13
+  %tmp_258 = trunc i12 %tmp_251 to i4
+  %tmp_260 = or i4 %tmp_258, %tmp_mid2_v
+  %tmp_267 = call i8 @_ssdm_op_PartSelect.i8.i12.i32.i32(i12 %tmp_251, i32 4, i32 11)
+  %tmp_269 = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %tmp_267, i4 %tmp_260)
+  %tmp_276 = sext i12 %tmp_269 to i64
+  %output_addr = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_276
+  %tmp_278 = or i12 %tmp_251, 8
+  %tmp_285 = add i12 %tmp_mid2_cast1, %tmp_278
+  %tmp_447_cast = sext i12 %tmp_285 to i64
+  %output_addr_1 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_447_cast
+  %tmp_287 = add i13 16, %tmp_441_cast
+  %tmp_294 = trunc i13 %tmp_287 to i4
+  %tmp_296 = or i4 %tmp_294, %tmp_mid2_v
+  %tmp_303 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_287, i32 4, i32 12)
+  %tmp_305 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_303, i4 %tmp_296)
+  %tmp_312 = sext i13 %tmp_305 to i64
+  %output_addr_2 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_312
+  %tmp_314 = add i12 24, %tmp_251
+  %tmp_321 = add i12 %tmp_mid2_cast1, %tmp_314
+  %tmp_454_cast = sext i12 %tmp_321 to i64
+  %output_addr_3 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_454_cast
+  %tmp_323 = add i13 32, %tmp_441_cast
+  %tmp_330 = trunc i13 %tmp_323 to i4
+  %tmp_332 = or i4 %tmp_330, %tmp_mid2_v
+  %tmp_339 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_323, i32 4, i32 12)
+  %tmp_341 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_339, i4 %tmp_332)
+  %tmp_348 = sext i13 %tmp_341 to i64
+  %output_addr_4 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_348
+  %tmp_350 = add i12 40, %tmp_251
+  %tmp_357 = add i12 %tmp_mid2_cast1, %tmp_350
+  %tmp_461_cast = sext i12 %tmp_357 to i64
+  %output_addr_5 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_461_cast
+  %tmp_359 = add i13 48, %tmp_441_cast
+  %tmp_366 = trunc i13 %tmp_359 to i4
+  %tmp_368 = or i4 %tmp_366, %tmp_mid2_v
+  %tmp_375 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_359, i32 4, i32 12)
+  %tmp_377 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_375, i4 %tmp_368)
+  %tmp_383 = sext i13 %tmp_377 to i64
+  %output_addr_6 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_383
+  %tmp_384 = add i12 56, %tmp_251
+  %tmp_385 = add i12 %tmp_mid2_cast1, %tmp_384
+  %tmp_468_cast = sext i12 %tmp_385 to i64
+  %output_addr_7 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_468_cast
+  %tmp_386 = add i13 64, %tmp_441_cast
+  %tmp_387 = trunc i13 %tmp_386 to i4
+  %tmp_388 = or i4 %tmp_387, %tmp_mid2_v
+  %tmp_389 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_386, i32 4, i32 12)
+  %tmp_390 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_389, i4 %tmp_388)
+  %tmp_391 = sext i13 %tmp_390 to i64
+  %output_addr_8 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_391
+  %tmp_392 = add i12 72, %tmp_251
+  %tmp_393 = add i12 %tmp_mid2_cast1, %tmp_392
+  %tmp_475_cast = sext i12 %tmp_393 to i64
+  %output_addr_9 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_475_cast
+  %tmp_394 = add i13 80, %tmp_441_cast
+  %tmp_395 = trunc i13 %tmp_394 to i4
+  %tmp_396 = or i4 %tmp_395, %tmp_mid2_v
+  %tmp_397 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_394, i32 4, i32 12)
+  %tmp_398 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_397, i4 %tmp_396)
+  %tmp_399 = sext i13 %tmp_398 to i64
+  %output_addr_10 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_399
+  %tmp_400 = add i12 88, %tmp_251
+  %tmp_401 = add i12 %tmp_mid2_cast1, %tmp_400
+  %tmp_482_cast = sext i12 %tmp_401 to i64
+  %output_addr_11 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_482_cast
+  %tmp_402 = add i13 96, %tmp_441_cast
+  %tmp_403 = trunc i13 %tmp_402 to i4
+  %tmp_404 = or i4 %tmp_403, %tmp_mid2_v
+  %tmp_405 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_402, i32 4, i32 12)
+  %tmp_406 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_405, i4 %tmp_404)
+  %tmp_407 = sext i13 %tmp_406 to i64
+  %output_addr_12 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_407
+  %tmp_408 = add i12 104, %tmp_251
+  %tmp_409 = add i12 %tmp_mid2_cast1, %tmp_408
+  %tmp_489_cast = sext i12 %tmp_409 to i64
+  %output_addr_13 = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_489_cast
+  %image_load = load float* %image_addr, align 4
+  %image_load_1 = load float* %image_addr_1, align 4
+  %image_load_1_to_int = bitcast float %image_load_1 to i32
+  %tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_1_to_int, i32 23, i32 30)
+  %tmp_410 = trunc i32 %image_load_1_to_int to i23
   %image_load_to_int = bitcast float %image_load to i32
-  %tmp_10 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_to_int, i32 23, i32 30)
-  %tmp_26 = trunc i32 %image_load_to_int to i23
-  %max_1_to_int = bitcast float %max_1 to i32
-  %tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_to_int, i32 23, i32 30)
-  %tmp_27 = trunc i32 %max_1_to_int to i23
-  %notlhs = icmp ne i8 %tmp_10, -1
-  %notrhs = icmp eq i23 %tmp_26, 0
-  %tmp_14 = or i1 %notrhs, %notlhs
-  %notlhs6 = icmp ne i8 %tmp_12, -1
-  %notrhs7 = icmp eq i23 %tmp_27, 0
-  %tmp_15 = or i1 %notrhs7, %notlhs6
-  %tmp_16 = and i1 %tmp_14, %tmp_15
-  %tmp_17 = fcmp ogt float %image_load, %max_1
-  %tmp_18 = and i1 %tmp_16, %tmp_17
-  %max_2 = select i1 %tmp_18, float %image_load, float %max_1
-  br label %.preheader
+  %tmp_8 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_to_int, i32 23, i32 30)
+  %tmp_411 = trunc i32 %image_load_to_int to i23
+  %notlhs = icmp ne i8 %tmp_6, -1
+  %notrhs = icmp eq i23 %tmp_410, 0
+  %tmp_s = or i1 %notrhs, %notlhs
+  %notlhs3 = icmp ne i8 %tmp_8, -1
+  %notrhs4 = icmp eq i23 %tmp_411, 0
+  %tmp_10 = or i1 %notrhs4, %notlhs3
+  %tmp_11 = and i1 %tmp_s, %tmp_10
+  %tmp_12 = fcmp ogt float %image_load_1, %image_load
+  %tmp_13 = and i1 %tmp_11, %tmp_12
+  %max_2_0_0_1 = select i1 %tmp_13, i13 %tmp_2, i13 %tmp_3
+  %max_2_0_0_1_cast = zext i13 %max_2_0_0_1 to i64
+  %image_addr_56 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_0_0_1_cast
+  %image_load_56 = load float* %image_addr_56, align 4
+  %tmp_5_0_s = or i5 %i_mid2, 1
+  %tmp_8_0_1_cast = zext i5 %tmp_5_0_s to i13
+  %tmp_412 = mul i13 232, %tmp_8_0_1_cast
+  %tmp_413 = add i13 %tmp_mid2_cast, %tmp_412
+  %tmp_491_cast = zext i13 %tmp_413 to i64
+  %image_addr_2 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_491_cast
+  %tmp_414 = add i13 8, %tmp_412
+  %tmp_415 = add i13 %tmp_mid2_cast, %tmp_414
+  %tmp_493_cast = zext i13 %tmp_415 to i64
+  %image_addr_3 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_493_cast
+  %tmp_416 = add i13 16, %tmp_412
+  %tmp_417 = add i13 %tmp_mid2_cast, %tmp_416
+  %tmp_495_cast = zext i13 %tmp_417 to i64
+  %image_addr_6 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_495_cast
+  %tmp_418 = add i13 24, %tmp_412
+  %tmp_419 = add i13 %tmp_mid2_cast, %tmp_418
+  %tmp_497_cast = zext i13 %tmp_419 to i64
+  %image_addr_7 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_497_cast
+  %tmp_420 = add i13 32, %tmp_412
+  %tmp_421 = add i13 %tmp_mid2_cast, %tmp_420
+  %tmp_499_cast = zext i13 %tmp_421 to i64
+  %image_addr_10 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_499_cast
+  %tmp_422 = add i13 40, %tmp_412
+  %tmp_423 = add i13 %tmp_mid2_cast, %tmp_422
+  %tmp_501_cast = zext i13 %tmp_423 to i64
+  %image_addr_11 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_501_cast
+  %tmp_424 = add i13 48, %tmp_412
+  %tmp_425 = add i13 %tmp_mid2_cast, %tmp_424
+  %tmp_503_cast = zext i13 %tmp_425 to i64
+  %image_addr_14 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_503_cast
+  %tmp_426 = add i13 56, %tmp_412
+  %tmp_427 = add i13 %tmp_mid2_cast, %tmp_426
+  %tmp_505_cast = zext i13 %tmp_427 to i64
+  %image_addr_15 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_505_cast
+  %tmp_428 = add i13 64, %tmp_412
+  %tmp_429 = add i13 %tmp_mid2_cast, %tmp_428
+  %tmp_507_cast = zext i13 %tmp_429 to i64
+  %image_addr_18 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_507_cast
+  %tmp_430 = add i13 72, %tmp_412
+  %tmp_431 = add i13 %tmp_mid2_cast, %tmp_430
+  %tmp_509_cast = zext i13 %tmp_431 to i64
+  %image_addr_19 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_509_cast
+  %tmp_432 = add i13 80, %tmp_412
+  %tmp_433 = add i13 %tmp_mid2_cast, %tmp_432
+  %tmp_511_cast = zext i13 %tmp_433 to i64
+  %image_addr_22 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_511_cast
+  %tmp_434 = add i13 88, %tmp_412
+  %tmp_435 = add i13 %tmp_mid2_cast, %tmp_434
+  %tmp_513_cast = zext i13 %tmp_435 to i64
+  %image_addr_23 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_513_cast
+  %tmp_436 = add i13 96, %tmp_412
+  %tmp_437 = add i13 %tmp_mid2_cast, %tmp_436
+  %tmp_515_cast = zext i13 %tmp_437 to i64
+  %image_addr_26 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_515_cast
+  %tmp_438 = add i13 104, %tmp_412
+  %tmp_439 = add i13 %tmp_mid2_cast, %tmp_438
+  %tmp_517_cast = zext i13 %tmp_439 to i64
+  %image_addr_27 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_517_cast
+  %tmp_440 = add i13 112, %tmp_412
+  %tmp_441 = add i13 %tmp_mid2_cast, %tmp_440
+  %tmp_519_cast = zext i13 %tmp_441 to i64
+  %image_addr_30 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_519_cast
+  %tmp_442 = add i13 120, %tmp_412
+  %tmp_443 = add i13 %tmp_mid2_cast, %tmp_442
+  %tmp_521_cast = zext i13 %tmp_443 to i64
+  %image_addr_31 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_521_cast
+  %tmp_444 = add i13 128, %tmp_412
+  %tmp_445 = add i13 %tmp_mid2_cast, %tmp_444
+  %tmp_523_cast = zext i13 %tmp_445 to i64
+  %image_addr_34 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_523_cast
+  %tmp_446 = add i13 136, %tmp_412
+  %tmp_447 = add i13 %tmp_mid2_cast, %tmp_446
+  %tmp_525_cast = zext i13 %tmp_447 to i64
+  %image_addr_35 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_525_cast
+  %tmp_448 = add i13 144, %tmp_412
+  %tmp_449 = add i13 %tmp_mid2_cast, %tmp_448
+  %tmp_527_cast = zext i13 %tmp_449 to i64
+  %image_addr_38 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_527_cast
+  %tmp_450 = add i13 152, %tmp_412
+  %tmp_451 = add i13 %tmp_mid2_cast, %tmp_450
+  %tmp_529_cast = zext i13 %tmp_451 to i64
+  %image_addr_39 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_529_cast
+  %tmp_452 = add i13 160, %tmp_412
+  %tmp_453 = add i13 %tmp_mid2_cast, %tmp_452
+  %tmp_531_cast = zext i13 %tmp_453 to i64
+  %image_addr_42 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_531_cast
+  %tmp_454 = add i13 168, %tmp_412
+  %tmp_455 = add i13 %tmp_mid2_cast, %tmp_454
+  %tmp_533_cast = zext i13 %tmp_455 to i64
+  %image_addr_43 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_533_cast
+  %tmp_456 = add i13 176, %tmp_412
+  %tmp_457 = add i13 %tmp_mid2_cast, %tmp_456
+  %tmp_535_cast = zext i13 %tmp_457 to i64
+  %image_addr_46 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_535_cast
+  %tmp_458 = add i13 184, %tmp_412
+  %tmp_459 = add i13 %tmp_mid2_cast, %tmp_458
+  %tmp_537_cast = zext i13 %tmp_459 to i64
+  %image_addr_47 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_537_cast
+  %tmp_460 = add i13 192, %tmp_412
+  %tmp_461 = add i13 %tmp_mid2_cast, %tmp_460
+  %tmp_539_cast = zext i13 %tmp_461 to i64
+  %image_addr_50 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_539_cast
+  %tmp_462 = add i13 200, %tmp_412
+  %tmp_463 = add i13 %tmp_mid2_cast, %tmp_462
+  %tmp_541_cast = zext i13 %tmp_463 to i64
+  %image_addr_51 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_541_cast
+  %tmp_464 = add i13 208, %tmp_412
+  %tmp_465 = add i13 %tmp_mid2_cast, %tmp_464
+  %tmp_543_cast = zext i13 %tmp_465 to i64
+  %image_addr_54 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_543_cast
+  %tmp_466 = add i13 216, %tmp_412
+  %tmp_467 = add i13 %tmp_mid2_cast, %tmp_466
+  %tmp_545_cast = zext i13 %tmp_467 to i64
+  %image_addr_55 = getelementptr [6728 x float]* %image_r, i64 0, i64 %tmp_545_cast
+  %image_load_2 = load float* %image_addr_2, align 4
+  %image_load_2_to_int = bitcast float %image_load_2 to i32
+  %tmp_14 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_2_to_int, i32 23, i32 30)
+  %tmp_468 = trunc i32 %image_load_2_to_int to i23
+  %max_2_0_0_1_to_int = bitcast float %image_load_56 to i32
+  %tmp_16 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_0_0_1_to_int, i32 23, i32 30)
+  %tmp_469 = trunc i32 %max_2_0_0_1_to_int to i23
+  %notlhs5 = icmp ne i8 %tmp_14, -1
+  %notrhs6 = icmp eq i23 %tmp_468, 0
+  %tmp_18 = or i1 %notrhs6, %notlhs5
+  %notlhs7 = icmp ne i8 %tmp_16, -1
+  %notrhs8 = icmp eq i23 %tmp_469, 0
+  %tmp_19 = or i1 %notrhs8, %notlhs7
+  %tmp_20 = and i1 %tmp_18, %tmp_19
+  %tmp_21 = fcmp ogt float %image_load_2, %image_load_56
+  %tmp_22 = and i1 %tmp_20, %tmp_21
+  %max_2_0_1 = select i1 %tmp_22, i13 %tmp_413, i13 %max_2_0_0_1
+  %max_2_0_1_cast = zext i13 %max_2_0_1 to i64
+  %image_addr_57 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_0_1_cast
+  %image_load_57 = load float* %image_addr_57, align 4
+  %image_load_3 = load float* %image_addr_3, align 4
+  %image_load_3_to_int = bitcast float %image_load_3 to i32
+  %tmp_23 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_3_to_int, i32 23, i32 30)
+  %tmp_470 = trunc i32 %image_load_3_to_int to i23
+  %max_2_0_1_to_int = bitcast float %image_load_57 to i32
+  %tmp_25 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_0_1_to_int, i32 23, i32 30)
+  %tmp_471 = trunc i32 %max_2_0_1_to_int to i23
+  %notlhs9 = icmp ne i8 %tmp_23, -1
+  %notrhs1 = icmp eq i23 %tmp_470, 0
+  %tmp_27 = or i1 %notrhs1, %notlhs9
+  %notlhs1 = icmp ne i8 %tmp_25, -1
+  %notrhs2 = icmp eq i23 %tmp_471, 0
+  %tmp_28 = or i1 %notrhs2, %notlhs1
+  %tmp_29 = and i1 %tmp_27, %tmp_28
+  %tmp_30 = fcmp ogt float %image_load_3, %image_load_57
+  %tmp_31 = and i1 %tmp_29, %tmp_30
+  %max_2_0_1_1 = select i1 %tmp_31, i13 %tmp_415, i13 %max_2_0_1
+  %max_2_0_1_1_cast = zext i13 %max_2_0_1_1 to i64
+  %image_addr_58 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_0_1_1_cast
+  %image_load_58 = load float* %image_addr_58, align 4
+  store float %image_load_58, float* %output_addr, align 4
+  %image_load_4 = load float* %image_addr_4, align 4
+  %image_load_5 = load float* %image_addr_5, align 4
+  %image_load_5_to_int = bitcast float %image_load_5 to i32
+  %tmp_32 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_5_to_int, i32 23, i32 30)
+  %tmp_472 = trunc i32 %image_load_5_to_int to i23
+  %image_load_4_to_int = bitcast float %image_load_4 to i32
+  %tmp_34 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_4_to_int, i32 23, i32 30)
+  %tmp_473 = trunc i32 %image_load_4_to_int to i23
+  %notlhs2 = icmp ne i8 %tmp_32, -1
+  %notrhs3 = icmp eq i23 %tmp_472, 0
+  %tmp_36 = or i1 %notrhs3, %notlhs2
+  %notlhs4 = icmp ne i8 %tmp_34, -1
+  %notrhs5 = icmp eq i23 %tmp_473, 0
+  %tmp_37 = or i1 %notrhs5, %notlhs4
+  %tmp_38 = and i1 %tmp_36, %tmp_37
+  %tmp_39 = fcmp ogt float %image_load_5, %image_load_4
+  %tmp_40 = and i1 %tmp_38, %tmp_39
+  %max_2_1_0_1 = select i1 %tmp_40, i13 %tmp_17, i13 %tmp_9
+  %max_2_1_0_1_cast = zext i13 %max_2_1_0_1 to i64
+  %image_addr_59 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_1_0_1_cast
+  %image_load_59 = load float* %image_addr_59, align 4
+  %image_load_6 = load float* %image_addr_6, align 4
+  %image_load_6_to_int = bitcast float %image_load_6 to i32
+  %tmp_41 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_6_to_int, i32 23, i32 30)
+  %tmp_474 = trunc i32 %image_load_6_to_int to i23
+  %max_2_1_0_1_to_int = bitcast float %image_load_59 to i32
+  %tmp_43 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_1_0_1_to_int, i32 23, i32 30)
+  %tmp_475 = trunc i32 %max_2_1_0_1_to_int to i23
+  %notlhs6 = icmp ne i8 %tmp_41, -1
+  %notrhs7 = icmp eq i23 %tmp_474, 0
+  %tmp_45 = or i1 %notrhs7, %notlhs6
+  %notlhs8 = icmp ne i8 %tmp_43, -1
+  %notrhs9 = icmp eq i23 %tmp_475, 0
+  %tmp_46 = or i1 %notrhs9, %notlhs8
+  %tmp_47 = and i1 %tmp_45, %tmp_46
+  %tmp_48 = fcmp ogt float %image_load_6, %image_load_59
+  %tmp_49 = and i1 %tmp_47, %tmp_48
+  %max_2_1_1 = select i1 %tmp_49, i13 %tmp_417, i13 %max_2_1_0_1
+  %max_2_1_1_cast = zext i13 %max_2_1_1 to i64
+  %image_addr_60 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_1_1_cast
+  %image_load_60 = load float* %image_addr_60, align 4
+  %image_load_7 = load float* %image_addr_7, align 4
+  %image_load_7_to_int = bitcast float %image_load_7 to i32
+  %tmp_50 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_7_to_int, i32 23, i32 30)
+  %tmp_476 = trunc i32 %image_load_7_to_int to i23
+  %max_2_1_1_to_int = bitcast float %image_load_60 to i32
+  %tmp_52 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_1_1_to_int, i32 23, i32 30)
+  %tmp_477 = trunc i32 %max_2_1_1_to_int to i23
+  %notlhs10 = icmp ne i8 %tmp_50, -1
+  %notrhs10 = icmp eq i23 %tmp_476, 0
+  %tmp_54 = or i1 %notrhs10, %notlhs10
+  %notlhs11 = icmp ne i8 %tmp_52, -1
+  %notrhs11 = icmp eq i23 %tmp_477, 0
+  %tmp_55 = or i1 %notrhs11, %notlhs11
+  %tmp_56 = and i1 %tmp_54, %tmp_55
+  %tmp_57 = fcmp ogt float %image_load_7, %image_load_60
+  %tmp_58 = and i1 %tmp_56, %tmp_57
+  %max_2_1_1_1 = select i1 %tmp_58, i13 %tmp_419, i13 %max_2_1_1
+  %max_2_1_1_1_cast = zext i13 %max_2_1_1_1 to i64
+  %image_addr_61 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_1_1_1_cast
+  %image_load_61 = load float* %image_addr_61, align 4
+  store float %image_load_61, float* %output_addr_1, align 4
+  %image_load_8 = load float* %image_addr_8, align 4
+  %image_load_9 = load float* %image_addr_9, align 4
+  %image_load_9_to_int = bitcast float %image_load_9 to i32
+  %tmp_59 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_9_to_int, i32 23, i32 30)
+  %tmp_478 = trunc i32 %image_load_9_to_int to i23
+  %image_load_8_to_int = bitcast float %image_load_8 to i32
+  %tmp_61 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_8_to_int, i32 23, i32 30)
+  %tmp_479 = trunc i32 %image_load_8_to_int to i23
+  %notlhs12 = icmp ne i8 %tmp_59, -1
+  %notrhs12 = icmp eq i23 %tmp_478, 0
+  %tmp_63 = or i1 %notrhs12, %notlhs12
+  %notlhs13 = icmp ne i8 %tmp_61, -1
+  %notrhs13 = icmp eq i23 %tmp_479, 0
+  %tmp_64 = or i1 %notrhs13, %notlhs13
+  %tmp_65 = and i1 %tmp_63, %tmp_64
+  %tmp_66 = fcmp ogt float %image_load_9, %image_load_8
+  %tmp_67 = and i1 %tmp_65, %tmp_66
+  %max_2_2_0_1 = select i1 %tmp_67, i13 %tmp_35, i13 %tmp_26
+  %max_2_2_0_1_cast = zext i13 %max_2_2_0_1 to i64
+  %image_addr_62 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_2_0_1_cast
+  %image_load_62 = load float* %image_addr_62, align 4
+  %image_load_10 = load float* %image_addr_10, align 4
+  %image_load_10_to_int = bitcast float %image_load_10 to i32
+  %tmp_68 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_10_to_int, i32 23, i32 30)
+  %tmp_480 = trunc i32 %image_load_10_to_int to i23
+  %max_2_2_0_1_to_int = bitcast float %image_load_62 to i32
+  %tmp_70 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_2_0_1_to_int, i32 23, i32 30)
+  %tmp_481 = trunc i32 %max_2_2_0_1_to_int to i23
+  %notlhs14 = icmp ne i8 %tmp_68, -1
+  %notrhs14 = icmp eq i23 %tmp_480, 0
+  %tmp_72 = or i1 %notrhs14, %notlhs14
+  %notlhs15 = icmp ne i8 %tmp_70, -1
+  %notrhs15 = icmp eq i23 %tmp_481, 0
+  %tmp_73 = or i1 %notrhs15, %notlhs15
+  %tmp_74 = and i1 %tmp_72, %tmp_73
+  %tmp_75 = fcmp ogt float %image_load_10, %image_load_62
+  %tmp_76 = and i1 %tmp_74, %tmp_75
+  %max_2_2_1 = select i1 %tmp_76, i13 %tmp_421, i13 %max_2_2_0_1
+  %max_2_2_1_cast = zext i13 %max_2_2_1 to i64
+  %image_addr_63 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_2_1_cast
+  %image_load_63 = load float* %image_addr_63, align 4
+  %image_load_11 = load float* %image_addr_11, align 4
+  %image_load_11_to_int = bitcast float %image_load_11 to i32
+  %tmp_77 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_11_to_int, i32 23, i32 30)
+  %tmp_482 = trunc i32 %image_load_11_to_int to i23
+  %max_2_2_1_to_int = bitcast float %image_load_63 to i32
+  %tmp_79 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_2_1_to_int, i32 23, i32 30)
+  %tmp_483 = trunc i32 %max_2_2_1_to_int to i23
+  %notlhs16 = icmp ne i8 %tmp_77, -1
+  %notrhs16 = icmp eq i23 %tmp_482, 0
+  %tmp_81 = or i1 %notrhs16, %notlhs16
+  %notlhs17 = icmp ne i8 %tmp_79, -1
+  %notrhs17 = icmp eq i23 %tmp_483, 0
+  %tmp_82 = or i1 %notrhs17, %notlhs17
+  %tmp_83 = and i1 %tmp_81, %tmp_82
+  %tmp_84 = fcmp ogt float %image_load_11, %image_load_63
+  %tmp_85 = and i1 %tmp_83, %tmp_84
+  %max_2_2_1_1 = select i1 %tmp_85, i13 %tmp_423, i13 %max_2_2_1
+  %max_2_2_1_1_cast = zext i13 %max_2_2_1_1 to i64
+  %image_addr_64 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_2_1_1_cast
+  %image_load_64 = load float* %image_addr_64, align 4
+  store float %image_load_64, float* %output_addr_2, align 4
+  %image_load_12 = load float* %image_addr_12, align 4
+  %image_load_13 = load float* %image_addr_13, align 4
+  %image_load_13_to_int = bitcast float %image_load_13 to i32
+  %tmp_86 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_13_to_int, i32 23, i32 30)
+  %tmp_484 = trunc i32 %image_load_13_to_int to i23
+  %image_load_12_to_int = bitcast float %image_load_12 to i32
+  %tmp_88 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_12_to_int, i32 23, i32 30)
+  %tmp_485 = trunc i32 %image_load_12_to_int to i23
+  %notlhs18 = icmp ne i8 %tmp_86, -1
+  %notrhs18 = icmp eq i23 %tmp_484, 0
+  %tmp_90 = or i1 %notrhs18, %notlhs18
+  %notlhs19 = icmp ne i8 %tmp_88, -1
+  %notrhs19 = icmp eq i23 %tmp_485, 0
+  %tmp_91 = or i1 %notrhs19, %notlhs19
+  %tmp_92 = and i1 %tmp_90, %tmp_91
+  %tmp_93 = fcmp ogt float %image_load_13, %image_load_12
+  %tmp_94 = and i1 %tmp_92, %tmp_93
+  %max_2_3_0_1 = select i1 %tmp_94, i13 %tmp_53, i13 %tmp_44
+  %max_2_3_0_1_cast = zext i13 %max_2_3_0_1 to i64
+  %image_addr_65 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_3_0_1_cast
+  %image_load_65 = load float* %image_addr_65, align 4
+  %image_load_14 = load float* %image_addr_14, align 4
+  %image_load_14_to_int = bitcast float %image_load_14 to i32
+  %tmp_95 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_14_to_int, i32 23, i32 30)
+  %tmp_486 = trunc i32 %image_load_14_to_int to i23
+  %max_2_3_0_1_to_int = bitcast float %image_load_65 to i32
+  %tmp_97 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_3_0_1_to_int, i32 23, i32 30)
+  %tmp_487 = trunc i32 %max_2_3_0_1_to_int to i23
+  %notlhs20 = icmp ne i8 %tmp_95, -1
+  %notrhs20 = icmp eq i23 %tmp_486, 0
+  %tmp_99 = or i1 %notrhs20, %notlhs20
+  %notlhs21 = icmp ne i8 %tmp_97, -1
+  %notrhs21 = icmp eq i23 %tmp_487, 0
+  %tmp_100 = or i1 %notrhs21, %notlhs21
+  %tmp_101 = and i1 %tmp_99, %tmp_100
+  %tmp_102 = fcmp ogt float %image_load_14, %image_load_65
+  %tmp_103 = and i1 %tmp_101, %tmp_102
+  %max_2_3_1 = select i1 %tmp_103, i13 %tmp_425, i13 %max_2_3_0_1
+  %max_2_3_1_cast = zext i13 %max_2_3_1 to i64
+  %image_addr_66 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_3_1_cast
+  %image_load_66 = load float* %image_addr_66, align 4
+  %image_load_15 = load float* %image_addr_15, align 4
+  %image_load_15_to_int = bitcast float %image_load_15 to i32
+  %tmp_104 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_15_to_int, i32 23, i32 30)
+  %tmp_488 = trunc i32 %image_load_15_to_int to i23
+  %max_2_3_1_to_int = bitcast float %image_load_66 to i32
+  %tmp_106 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_3_1_to_int, i32 23, i32 30)
+  %tmp_489 = trunc i32 %max_2_3_1_to_int to i23
+  %notlhs22 = icmp ne i8 %tmp_104, -1
+  %notrhs22 = icmp eq i23 %tmp_488, 0
+  %tmp_108 = or i1 %notrhs22, %notlhs22
+  %notlhs23 = icmp ne i8 %tmp_106, -1
+  %notrhs23 = icmp eq i23 %tmp_489, 0
+  %tmp_109 = or i1 %notrhs23, %notlhs23
+  %tmp_110 = and i1 %tmp_108, %tmp_109
+  %tmp_111 = fcmp ogt float %image_load_15, %image_load_66
+  %tmp_112 = and i1 %tmp_110, %tmp_111
+  %max_2_3_1_1 = select i1 %tmp_112, i13 %tmp_427, i13 %max_2_3_1
+  %max_2_3_1_1_cast = zext i13 %max_2_3_1_1 to i64
+  %image_addr_67 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_3_1_1_cast
+  %image_load_67 = load float* %image_addr_67, align 4
+  store float %image_load_67, float* %output_addr_3, align 4
+  %image_load_16 = load float* %image_addr_16, align 4
+  %image_load_17 = load float* %image_addr_17, align 4
+  %image_load_17_to_int = bitcast float %image_load_17 to i32
+  %tmp_113 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_17_to_int, i32 23, i32 30)
+  %tmp_490 = trunc i32 %image_load_17_to_int to i23
+  %image_load_16_to_int = bitcast float %image_load_16 to i32
+  %tmp_115 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_16_to_int, i32 23, i32 30)
+  %tmp_491 = trunc i32 %image_load_16_to_int to i23
+  %notlhs24 = icmp ne i8 %tmp_113, -1
+  %notrhs24 = icmp eq i23 %tmp_490, 0
+  %tmp_117 = or i1 %notrhs24, %notlhs24
+  %notlhs25 = icmp ne i8 %tmp_115, -1
+  %notrhs25 = icmp eq i23 %tmp_491, 0
+  %tmp_118 = or i1 %notrhs25, %notlhs25
+  %tmp_119 = and i1 %tmp_117, %tmp_118
+  %tmp_120 = fcmp ogt float %image_load_17, %image_load_16
+  %tmp_121 = and i1 %tmp_119, %tmp_120
+  %max_2_4_0_1 = select i1 %tmp_121, i13 %tmp_71, i13 %tmp_62
+  %max_2_4_0_1_cast = zext i13 %max_2_4_0_1 to i64
+  %image_addr_68 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_4_0_1_cast
+  %image_load_68 = load float* %image_addr_68, align 4
+  %image_load_18 = load float* %image_addr_18, align 4
+  %image_load_18_to_int = bitcast float %image_load_18 to i32
+  %tmp_122 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_18_to_int, i32 23, i32 30)
+  %tmp_492 = trunc i32 %image_load_18_to_int to i23
+  %max_2_4_0_1_to_int = bitcast float %image_load_68 to i32
+  %tmp_124 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_4_0_1_to_int, i32 23, i32 30)
+  %tmp_493 = trunc i32 %max_2_4_0_1_to_int to i23
+  %notlhs26 = icmp ne i8 %tmp_122, -1
+  %notrhs26 = icmp eq i23 %tmp_492, 0
+  %tmp_126 = or i1 %notrhs26, %notlhs26
+  %notlhs27 = icmp ne i8 %tmp_124, -1
+  %notrhs27 = icmp eq i23 %tmp_493, 0
+  %tmp_127 = or i1 %notrhs27, %notlhs27
+  %tmp_128 = and i1 %tmp_126, %tmp_127
+  %tmp_129 = fcmp ogt float %image_load_18, %image_load_68
+  %tmp_130 = and i1 %tmp_128, %tmp_129
+  %max_2_4_1 = select i1 %tmp_130, i13 %tmp_429, i13 %max_2_4_0_1
+  %max_2_4_1_cast = zext i13 %max_2_4_1 to i64
+  %image_addr_69 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_4_1_cast
+  %image_load_69 = load float* %image_addr_69, align 4
+  %image_load_19 = load float* %image_addr_19, align 4
+  %image_load_19_to_int = bitcast float %image_load_19 to i32
+  %tmp_131 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_19_to_int, i32 23, i32 30)
+  %tmp_494 = trunc i32 %image_load_19_to_int to i23
+  %max_2_4_1_to_int = bitcast float %image_load_69 to i32
+  %tmp_133 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_4_1_to_int, i32 23, i32 30)
+  %tmp_495 = trunc i32 %max_2_4_1_to_int to i23
+  %notlhs28 = icmp ne i8 %tmp_131, -1
+  %notrhs28 = icmp eq i23 %tmp_494, 0
+  %tmp_135 = or i1 %notrhs28, %notlhs28
+  %notlhs29 = icmp ne i8 %tmp_133, -1
+  %notrhs29 = icmp eq i23 %tmp_495, 0
+  %tmp_136 = or i1 %notrhs29, %notlhs29
+  %tmp_137 = and i1 %tmp_135, %tmp_136
+  %tmp_138 = fcmp ogt float %image_load_19, %image_load_69
+  %tmp_139 = and i1 %tmp_137, %tmp_138
+  %max_2_4_1_1 = select i1 %tmp_139, i13 %tmp_431, i13 %max_2_4_1
+  %max_2_4_1_1_cast = zext i13 %max_2_4_1_1 to i64
+  %image_addr_70 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_4_1_1_cast
+  %image_load_70 = load float* %image_addr_70, align 4
+  store float %image_load_70, float* %output_addr_4, align 4
+  %image_load_20 = load float* %image_addr_20, align 4
+  %image_load_21 = load float* %image_addr_21, align 4
+  %image_load_21_to_int = bitcast float %image_load_21 to i32
+  %tmp_140 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_21_to_int, i32 23, i32 30)
+  %tmp_496 = trunc i32 %image_load_21_to_int to i23
+  %image_load_20_to_int = bitcast float %image_load_20 to i32
+  %tmp_142 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_20_to_int, i32 23, i32 30)
+  %tmp_497 = trunc i32 %image_load_20_to_int to i23
+  %notlhs30 = icmp ne i8 %tmp_140, -1
+  %notrhs30 = icmp eq i23 %tmp_496, 0
+  %tmp_144 = or i1 %notrhs30, %notlhs30
+  %notlhs31 = icmp ne i8 %tmp_142, -1
+  %notrhs31 = icmp eq i23 %tmp_497, 0
+  %tmp_145 = or i1 %notrhs31, %notlhs31
+  %tmp_146 = and i1 %tmp_144, %tmp_145
+  %tmp_147 = fcmp ogt float %image_load_21, %image_load_20
+  %tmp_148 = and i1 %tmp_146, %tmp_147
+  %max_2_5_0_1 = select i1 %tmp_148, i13 %tmp_89, i13 %tmp_80
+  %max_2_5_0_1_cast = zext i13 %max_2_5_0_1 to i64
+  %image_addr_71 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_5_0_1_cast
+  %image_load_71 = load float* %image_addr_71, align 4
+  %image_load_22 = load float* %image_addr_22, align 4
+  %image_load_22_to_int = bitcast float %image_load_22 to i32
+  %tmp_149 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_22_to_int, i32 23, i32 30)
+  %tmp_498 = trunc i32 %image_load_22_to_int to i23
+  %max_2_5_0_1_to_int = bitcast float %image_load_71 to i32
+  %tmp_151 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_5_0_1_to_int, i32 23, i32 30)
+  %tmp_499 = trunc i32 %max_2_5_0_1_to_int to i23
+  %notlhs32 = icmp ne i8 %tmp_149, -1
+  %notrhs32 = icmp eq i23 %tmp_498, 0
+  %tmp_153 = or i1 %notrhs32, %notlhs32
+  %notlhs33 = icmp ne i8 %tmp_151, -1
+  %notrhs33 = icmp eq i23 %tmp_499, 0
+  %tmp_154 = or i1 %notrhs33, %notlhs33
+  %tmp_155 = and i1 %tmp_153, %tmp_154
+  %tmp_156 = fcmp ogt float %image_load_22, %image_load_71
+  %tmp_157 = and i1 %tmp_155, %tmp_156
+  %max_2_5_1 = select i1 %tmp_157, i13 %tmp_433, i13 %max_2_5_0_1
+  %max_2_5_1_cast = zext i13 %max_2_5_1 to i64
+  %image_addr_72 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_5_1_cast
+  %image_load_72 = load float* %image_addr_72, align 4
+  %image_load_23 = load float* %image_addr_23, align 4
+  %image_load_23_to_int = bitcast float %image_load_23 to i32
+  %tmp_158 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_23_to_int, i32 23, i32 30)
+  %tmp_500 = trunc i32 %image_load_23_to_int to i23
+  %max_2_5_1_to_int = bitcast float %image_load_72 to i32
+  %tmp_160 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_5_1_to_int, i32 23, i32 30)
+  %tmp_501 = trunc i32 %max_2_5_1_to_int to i23
+  %notlhs34 = icmp ne i8 %tmp_158, -1
+  %notrhs34 = icmp eq i23 %tmp_500, 0
+  %tmp_162 = or i1 %notrhs34, %notlhs34
+  %notlhs35 = icmp ne i8 %tmp_160, -1
+  %notrhs35 = icmp eq i23 %tmp_501, 0
+  %tmp_163 = or i1 %notrhs35, %notlhs35
+  %tmp_164 = and i1 %tmp_162, %tmp_163
+  %tmp_165 = fcmp ogt float %image_load_23, %image_load_72
+  %tmp_166 = and i1 %tmp_164, %tmp_165
+  %max_2_5_1_1 = select i1 %tmp_166, i13 %tmp_435, i13 %max_2_5_1
+  %max_2_5_1_1_cast = zext i13 %max_2_5_1_1 to i64
+  %image_addr_73 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_5_1_1_cast
+  %image_load_73 = load float* %image_addr_73, align 4
+  store float %image_load_73, float* %output_addr_5, align 4
+  %image_load_24 = load float* %image_addr_24, align 4
+  %image_load_25 = load float* %image_addr_25, align 4
+  %image_load_25_to_int = bitcast float %image_load_25 to i32
+  %tmp_167 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_25_to_int, i32 23, i32 30)
+  %tmp_502 = trunc i32 %image_load_25_to_int to i23
+  %image_load_24_to_int = bitcast float %image_load_24 to i32
+  %tmp_169 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_24_to_int, i32 23, i32 30)
+  %tmp_503 = trunc i32 %image_load_24_to_int to i23
+  %notlhs36 = icmp ne i8 %tmp_167, -1
+  %notrhs36 = icmp eq i23 %tmp_502, 0
+  %tmp_171 = or i1 %notrhs36, %notlhs36
+  %notlhs37 = icmp ne i8 %tmp_169, -1
+  %notrhs37 = icmp eq i23 %tmp_503, 0
+  %tmp_172 = or i1 %notrhs37, %notlhs37
+  %tmp_173 = and i1 %tmp_171, %tmp_172
+  %tmp_174 = fcmp ogt float %image_load_25, %image_load_24
+  %tmp_175 = and i1 %tmp_173, %tmp_174
+  %max_2_6_0_1 = select i1 %tmp_175, i13 %tmp_107, i13 %tmp_98
+  %max_2_6_0_1_cast = zext i13 %max_2_6_0_1 to i64
+  %image_addr_74 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_6_0_1_cast
+  %image_load_74 = load float* %image_addr_74, align 4
+  %image_load_26 = load float* %image_addr_26, align 4
+  %image_load_26_to_int = bitcast float %image_load_26 to i32
+  %tmp_176 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_26_to_int, i32 23, i32 30)
+  %tmp_504 = trunc i32 %image_load_26_to_int to i23
+  %max_2_6_0_1_to_int = bitcast float %image_load_74 to i32
+  %tmp_178 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_6_0_1_to_int, i32 23, i32 30)
+  %tmp_505 = trunc i32 %max_2_6_0_1_to_int to i23
+  %notlhs38 = icmp ne i8 %tmp_176, -1
+  %notrhs38 = icmp eq i23 %tmp_504, 0
+  %tmp_180 = or i1 %notrhs38, %notlhs38
+  %notlhs39 = icmp ne i8 %tmp_178, -1
+  %notrhs39 = icmp eq i23 %tmp_505, 0
+  %tmp_181 = or i1 %notrhs39, %notlhs39
+  %tmp_182 = and i1 %tmp_180, %tmp_181
+  %tmp_183 = fcmp ogt float %image_load_26, %image_load_74
+  %tmp_184 = and i1 %tmp_182, %tmp_183
+  %max_2_6_1 = select i1 %tmp_184, i13 %tmp_437, i13 %max_2_6_0_1
+  %max_2_6_1_cast = zext i13 %max_2_6_1 to i64
+  %image_addr_75 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_6_1_cast
+  %image_load_75 = load float* %image_addr_75, align 4
+  %image_load_27 = load float* %image_addr_27, align 4
+  %image_load_27_to_int = bitcast float %image_load_27 to i32
+  %tmp_185 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_27_to_int, i32 23, i32 30)
+  %tmp_506 = trunc i32 %image_load_27_to_int to i23
+  %max_2_6_1_to_int = bitcast float %image_load_75 to i32
+  %tmp_187 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_6_1_to_int, i32 23, i32 30)
+  %tmp_507 = trunc i32 %max_2_6_1_to_int to i23
+  %notlhs40 = icmp ne i8 %tmp_185, -1
+  %notrhs40 = icmp eq i23 %tmp_506, 0
+  %tmp_189 = or i1 %notrhs40, %notlhs40
+  %notlhs41 = icmp ne i8 %tmp_187, -1
+  %notrhs41 = icmp eq i23 %tmp_507, 0
+  %tmp_190 = or i1 %notrhs41, %notlhs41
+  %tmp_191 = and i1 %tmp_189, %tmp_190
+  %tmp_192 = fcmp ogt float %image_load_27, %image_load_75
+  %tmp_193 = and i1 %tmp_191, %tmp_192
+  %max_2_6_1_1 = select i1 %tmp_193, i13 %tmp_439, i13 %max_2_6_1
+  %max_2_6_1_1_cast = zext i13 %max_2_6_1_1 to i64
+  %image_addr_76 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_6_1_1_cast
+  %image_load_76 = load float* %image_addr_76, align 4
+  store float %image_load_76, float* %output_addr_6, align 4
+  %image_load_28 = load float* %image_addr_28, align 4
+  %image_load_29 = load float* %image_addr_29, align 4
+  %image_load_29_to_int = bitcast float %image_load_29 to i32
+  %tmp_194 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_29_to_int, i32 23, i32 30)
+  %tmp_508 = trunc i32 %image_load_29_to_int to i23
+  %image_load_28_to_int = bitcast float %image_load_28 to i32
+  %tmp_196 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_28_to_int, i32 23, i32 30)
+  %tmp_509 = trunc i32 %image_load_28_to_int to i23
+  %notlhs42 = icmp ne i8 %tmp_194, -1
+  %notrhs42 = icmp eq i23 %tmp_508, 0
+  %tmp_198 = or i1 %notrhs42, %notlhs42
+  %notlhs43 = icmp ne i8 %tmp_196, -1
+  %notrhs43 = icmp eq i23 %tmp_509, 0
+  %tmp_199 = or i1 %notrhs43, %notlhs43
+  %tmp_200 = and i1 %tmp_198, %tmp_199
+  %tmp_201 = fcmp ogt float %image_load_29, %image_load_28
+  %tmp_202 = and i1 %tmp_200, %tmp_201
+  %max_2_7_0_1 = select i1 %tmp_202, i13 %tmp_125, i13 %tmp_116
+  %max_2_7_0_1_cast = zext i13 %max_2_7_0_1 to i64
+  %image_addr_77 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_7_0_1_cast
+  %image_load_77 = load float* %image_addr_77, align 4
+  %image_load_30 = load float* %image_addr_30, align 4
+  %image_load_30_to_int = bitcast float %image_load_30 to i32
+  %tmp_203 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_30_to_int, i32 23, i32 30)
+  %tmp_510 = trunc i32 %image_load_30_to_int to i23
+  %max_2_7_0_1_to_int = bitcast float %image_load_77 to i32
+  %tmp_205 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_7_0_1_to_int, i32 23, i32 30)
+  %tmp_511 = trunc i32 %max_2_7_0_1_to_int to i23
+  %notlhs44 = icmp ne i8 %tmp_203, -1
+  %notrhs44 = icmp eq i23 %tmp_510, 0
+  %tmp_207 = or i1 %notrhs44, %notlhs44
+  %notlhs45 = icmp ne i8 %tmp_205, -1
+  %notrhs45 = icmp eq i23 %tmp_511, 0
+  %tmp_208 = or i1 %notrhs45, %notlhs45
+  %tmp_209 = and i1 %tmp_207, %tmp_208
+  %tmp_210 = fcmp ogt float %image_load_30, %image_load_77
+  %tmp_211 = and i1 %tmp_209, %tmp_210
+  %max_2_7_1 = select i1 %tmp_211, i13 %tmp_441, i13 %max_2_7_0_1
+  %max_2_7_1_cast = zext i13 %max_2_7_1 to i64
+  %image_addr_78 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_7_1_cast
+  %image_load_78 = load float* %image_addr_78, align 4
+  %image_load_31 = load float* %image_addr_31, align 4
+  %image_load_31_to_int = bitcast float %image_load_31 to i32
+  %tmp_212 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_31_to_int, i32 23, i32 30)
+  %tmp_512 = trunc i32 %image_load_31_to_int to i23
+  %max_2_7_1_to_int = bitcast float %image_load_78 to i32
+  %tmp_214 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_7_1_to_int, i32 23, i32 30)
+  %tmp_513 = trunc i32 %max_2_7_1_to_int to i23
+  %notlhs46 = icmp ne i8 %tmp_212, -1
+  %notrhs46 = icmp eq i23 %tmp_512, 0
+  %tmp_216 = or i1 %notrhs46, %notlhs46
+  %notlhs47 = icmp ne i8 %tmp_214, -1
+  %notrhs47 = icmp eq i23 %tmp_513, 0
+  %tmp_217 = or i1 %notrhs47, %notlhs47
+  %tmp_218 = and i1 %tmp_216, %tmp_217
+  %tmp_219 = fcmp ogt float %image_load_31, %image_load_78
+  %tmp_220 = and i1 %tmp_218, %tmp_219
+  %max_2_7_1_1 = select i1 %tmp_220, i13 %tmp_443, i13 %max_2_7_1
+  %max_2_7_1_1_cast = zext i13 %max_2_7_1_1 to i64
+  %image_addr_79 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_7_1_1_cast
+  %image_load_79 = load float* %image_addr_79, align 4
+  store float %image_load_79, float* %output_addr_7, align 4
+  %image_load_32 = load float* %image_addr_32, align 4
+  %image_load_33 = load float* %image_addr_33, align 4
+  %image_load_33_to_int = bitcast float %image_load_33 to i32
+  %tmp_221 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_33_to_int, i32 23, i32 30)
+  %tmp_514 = trunc i32 %image_load_33_to_int to i23
+  %image_load_32_to_int = bitcast float %image_load_32 to i32
+  %tmp_223 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_32_to_int, i32 23, i32 30)
+  %tmp_515 = trunc i32 %image_load_32_to_int to i23
+  %notlhs48 = icmp ne i8 %tmp_221, -1
+  %notrhs48 = icmp eq i23 %tmp_514, 0
+  %tmp_225 = or i1 %notrhs48, %notlhs48
+  %notlhs49 = icmp ne i8 %tmp_223, -1
+  %notrhs49 = icmp eq i23 %tmp_515, 0
+  %tmp_226 = or i1 %notrhs49, %notlhs49
+  %tmp_227 = and i1 %tmp_225, %tmp_226
+  %tmp_228 = fcmp ogt float %image_load_33, %image_load_32
+  %tmp_229 = and i1 %tmp_227, %tmp_228
+  %max_2_8_0_1 = select i1 %tmp_229, i13 %tmp_143, i13 %tmp_134
+  %max_2_8_0_1_cast = zext i13 %max_2_8_0_1 to i64
+  %image_addr_80 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_8_0_1_cast
+  %image_load_80 = load float* %image_addr_80, align 4
+  %image_load_34 = load float* %image_addr_34, align 4
+  %image_load_34_to_int = bitcast float %image_load_34 to i32
+  %tmp_230 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_34_to_int, i32 23, i32 30)
+  %tmp_516 = trunc i32 %image_load_34_to_int to i23
+  %max_2_8_0_1_to_int = bitcast float %image_load_80 to i32
+  %tmp_232 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_8_0_1_to_int, i32 23, i32 30)
+  %tmp_517 = trunc i32 %max_2_8_0_1_to_int to i23
+  %notlhs50 = icmp ne i8 %tmp_230, -1
+  %notrhs50 = icmp eq i23 %tmp_516, 0
+  %tmp_234 = or i1 %notrhs50, %notlhs50
+  %notlhs51 = icmp ne i8 %tmp_232, -1
+  %notrhs51 = icmp eq i23 %tmp_517, 0
+  %tmp_235 = or i1 %notrhs51, %notlhs51
+  %tmp_236 = and i1 %tmp_234, %tmp_235
+  %tmp_237 = fcmp ogt float %image_load_34, %image_load_80
+  %tmp_238 = and i1 %tmp_236, %tmp_237
+  %max_2_8_1 = select i1 %tmp_238, i13 %tmp_445, i13 %max_2_8_0_1
+  %max_2_8_1_cast = zext i13 %max_2_8_1 to i64
+  %image_addr_81 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_8_1_cast
+  %image_load_81 = load float* %image_addr_81, align 4
+  %image_load_35 = load float* %image_addr_35, align 4
+  %image_load_35_to_int = bitcast float %image_load_35 to i32
+  %tmp_239 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_35_to_int, i32 23, i32 30)
+  %tmp_518 = trunc i32 %image_load_35_to_int to i23
+  %max_2_8_1_to_int = bitcast float %image_load_81 to i32
+  %tmp_241 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_8_1_to_int, i32 23, i32 30)
+  %tmp_519 = trunc i32 %max_2_8_1_to_int to i23
+  %notlhs52 = icmp ne i8 %tmp_239, -1
+  %notrhs52 = icmp eq i23 %tmp_518, 0
+  %tmp_243 = or i1 %notrhs52, %notlhs52
+  %notlhs53 = icmp ne i8 %tmp_241, -1
+  %notrhs53 = icmp eq i23 %tmp_519, 0
+  %tmp_244 = or i1 %notrhs53, %notlhs53
+  %tmp_245 = and i1 %tmp_243, %tmp_244
+  %tmp_246 = fcmp ogt float %image_load_35, %image_load_81
+  %tmp_247 = and i1 %tmp_245, %tmp_246
+  %max_2_8_1_1 = select i1 %tmp_247, i13 %tmp_447, i13 %max_2_8_1
+  %max_2_8_1_1_cast = zext i13 %max_2_8_1_1 to i64
+  %image_addr_82 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_8_1_1_cast
+  %image_load_82 = load float* %image_addr_82, align 4
+  store float %image_load_82, float* %output_addr_8, align 4
+  %image_load_36 = load float* %image_addr_36, align 4
+  %image_load_37 = load float* %image_addr_37, align 4
+  %image_load_37_to_int = bitcast float %image_load_37 to i32
+  %tmp_248 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_37_to_int, i32 23, i32 30)
+  %tmp_520 = trunc i32 %image_load_37_to_int to i23
+  %image_load_36_to_int = bitcast float %image_load_36 to i32
+  %tmp_250 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_36_to_int, i32 23, i32 30)
+  %tmp_521 = trunc i32 %image_load_36_to_int to i23
+  %notlhs54 = icmp ne i8 %tmp_248, -1
+  %notrhs54 = icmp eq i23 %tmp_520, 0
+  %tmp_252 = or i1 %notrhs54, %notlhs54
+  %notlhs55 = icmp ne i8 %tmp_250, -1
+  %notrhs55 = icmp eq i23 %tmp_521, 0
+  %tmp_253 = or i1 %notrhs55, %notlhs55
+  %tmp_254 = and i1 %tmp_252, %tmp_253
+  %tmp_255 = fcmp ogt float %image_load_37, %image_load_36
+  %tmp_256 = and i1 %tmp_254, %tmp_255
+  %max_2_9_0_1 = select i1 %tmp_256, i13 %tmp_161, i13 %tmp_152
+  %max_2_9_0_1_cast = zext i13 %max_2_9_0_1 to i64
+  %image_addr_83 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_9_0_1_cast
+  %image_load_83 = load float* %image_addr_83, align 4
+  %image_load_38 = load float* %image_addr_38, align 4
+  %image_load_38_to_int = bitcast float %image_load_38 to i32
+  %tmp_257 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_38_to_int, i32 23, i32 30)
+  %tmp_522 = trunc i32 %image_load_38_to_int to i23
+  %max_2_9_0_1_to_int = bitcast float %image_load_83 to i32
+  %tmp_259 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_9_0_1_to_int, i32 23, i32 30)
+  %tmp_523 = trunc i32 %max_2_9_0_1_to_int to i23
+  %notlhs56 = icmp ne i8 %tmp_257, -1
+  %notrhs56 = icmp eq i23 %tmp_522, 0
+  %tmp_261 = or i1 %notrhs56, %notlhs56
+  %notlhs57 = icmp ne i8 %tmp_259, -1
+  %notrhs57 = icmp eq i23 %tmp_523, 0
+  %tmp_262 = or i1 %notrhs57, %notlhs57
+  %tmp_263 = and i1 %tmp_261, %tmp_262
+  %tmp_264 = fcmp ogt float %image_load_38, %image_load_83
+  %tmp_265 = and i1 %tmp_263, %tmp_264
+  %max_2_9_1 = select i1 %tmp_265, i13 %tmp_449, i13 %max_2_9_0_1
+  %max_2_9_1_cast = zext i13 %max_2_9_1 to i64
+  %image_addr_84 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_9_1_cast
+  %image_load_84 = load float* %image_addr_84, align 4
+  %image_load_39 = load float* %image_addr_39, align 4
+  %image_load_39_to_int = bitcast float %image_load_39 to i32
+  %tmp_266 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_39_to_int, i32 23, i32 30)
+  %tmp_524 = trunc i32 %image_load_39_to_int to i23
+  %max_2_9_1_to_int = bitcast float %image_load_84 to i32
+  %tmp_268 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_9_1_to_int, i32 23, i32 30)
+  %tmp_525 = trunc i32 %max_2_9_1_to_int to i23
+  %notlhs58 = icmp ne i8 %tmp_266, -1
+  %notrhs58 = icmp eq i23 %tmp_524, 0
+  %tmp_270 = or i1 %notrhs58, %notlhs58
+  %notlhs59 = icmp ne i8 %tmp_268, -1
+  %notrhs59 = icmp eq i23 %tmp_525, 0
+  %tmp_271 = or i1 %notrhs59, %notlhs59
+  %tmp_272 = and i1 %tmp_270, %tmp_271
+  %tmp_273 = fcmp ogt float %image_load_39, %image_load_84
+  %tmp_274 = and i1 %tmp_272, %tmp_273
+  %max_2_9_1_1 = select i1 %tmp_274, i13 %tmp_451, i13 %max_2_9_1
+  %max_2_9_1_1_cast = zext i13 %max_2_9_1_1 to i64
+  %image_addr_85 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_9_1_1_cast
+  %image_load_85 = load float* %image_addr_85, align 4
+  store float %image_load_85, float* %output_addr_9, align 4
+  %image_load_40 = load float* %image_addr_40, align 4
+  %image_load_41 = load float* %image_addr_41, align 4
+  %image_load_41_to_int = bitcast float %image_load_41 to i32
+  %tmp_275 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_41_to_int, i32 23, i32 30)
+  %tmp_526 = trunc i32 %image_load_41_to_int to i23
+  %image_load_40_to_int = bitcast float %image_load_40 to i32
+  %tmp_277 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_40_to_int, i32 23, i32 30)
+  %tmp_527 = trunc i32 %image_load_40_to_int to i23
+  %notlhs60 = icmp ne i8 %tmp_275, -1
+  %notrhs60 = icmp eq i23 %tmp_526, 0
+  %tmp_279 = or i1 %notrhs60, %notlhs60
+  %notlhs61 = icmp ne i8 %tmp_277, -1
+  %notrhs61 = icmp eq i23 %tmp_527, 0
+  %tmp_280 = or i1 %notrhs61, %notlhs61
+  %tmp_281 = and i1 %tmp_279, %tmp_280
+  %tmp_282 = fcmp ogt float %image_load_41, %image_load_40
+  %tmp_283 = and i1 %tmp_281, %tmp_282
+  %max_2_10_0_1 = select i1 %tmp_283, i13 %tmp_179, i13 %tmp_170
+  %max_2_10_0_1_cast = zext i13 %max_2_10_0_1 to i64
+  %image_addr_86 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_10_0_1_cast
+  %image_load_86 = load float* %image_addr_86, align 4
+  %image_load_42 = load float* %image_addr_42, align 4
+  %image_load_42_to_int = bitcast float %image_load_42 to i32
+  %tmp_284 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_42_to_int, i32 23, i32 30)
+  %tmp_528 = trunc i32 %image_load_42_to_int to i23
+  %max_2_10_0_1_to_int = bitcast float %image_load_86 to i32
+  %tmp_286 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_10_0_1_to_int, i32 23, i32 30)
+  %tmp_529 = trunc i32 %max_2_10_0_1_to_int to i23
+  %notlhs62 = icmp ne i8 %tmp_284, -1
+  %notrhs62 = icmp eq i23 %tmp_528, 0
+  %tmp_288 = or i1 %notrhs62, %notlhs62
+  %notlhs63 = icmp ne i8 %tmp_286, -1
+  %notrhs63 = icmp eq i23 %tmp_529, 0
+  %tmp_289 = or i1 %notrhs63, %notlhs63
+  %tmp_290 = and i1 %tmp_288, %tmp_289
+  %tmp_291 = fcmp ogt float %image_load_42, %image_load_86
+  %tmp_292 = and i1 %tmp_290, %tmp_291
+  %max_2_10_1 = select i1 %tmp_292, i13 %tmp_453, i13 %max_2_10_0_1
+  %max_2_10_1_cast = zext i13 %max_2_10_1 to i64
+  %image_addr_87 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_10_1_cast
+  %image_load_87 = load float* %image_addr_87, align 4
+  %image_load_43 = load float* %image_addr_43, align 4
+  %image_load_43_to_int = bitcast float %image_load_43 to i32
+  %tmp_293 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_43_to_int, i32 23, i32 30)
+  %tmp_530 = trunc i32 %image_load_43_to_int to i23
+  %max_2_10_1_to_int = bitcast float %image_load_87 to i32
+  %tmp_295 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_10_1_to_int, i32 23, i32 30)
+  %tmp_531 = trunc i32 %max_2_10_1_to_int to i23
+  %notlhs64 = icmp ne i8 %tmp_293, -1
+  %notrhs64 = icmp eq i23 %tmp_530, 0
+  %tmp_297 = or i1 %notrhs64, %notlhs64
+  %notlhs65 = icmp ne i8 %tmp_295, -1
+  %notrhs65 = icmp eq i23 %tmp_531, 0
+  %tmp_298 = or i1 %notrhs65, %notlhs65
+  %tmp_299 = and i1 %tmp_297, %tmp_298
+  %tmp_300 = fcmp ogt float %image_load_43, %image_load_87
+  %tmp_301 = and i1 %tmp_299, %tmp_300
+  %max_2_10_1_1 = select i1 %tmp_301, i13 %tmp_455, i13 %max_2_10_1
+  %max_2_10_1_1_cast = zext i13 %max_2_10_1_1 to i64
+  %image_addr_88 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_10_1_1_cast
+  %image_load_88 = load float* %image_addr_88, align 4
+  store float %image_load_88, float* %output_addr_10, align 4
+  %image_load_44 = load float* %image_addr_44, align 4
+  %image_load_45 = load float* %image_addr_45, align 4
+  %image_load_45_to_int = bitcast float %image_load_45 to i32
+  %tmp_302 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_45_to_int, i32 23, i32 30)
+  %tmp_532 = trunc i32 %image_load_45_to_int to i23
+  %image_load_44_to_int = bitcast float %image_load_44 to i32
+  %tmp_304 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_44_to_int, i32 23, i32 30)
+  %tmp_533 = trunc i32 %image_load_44_to_int to i23
+  %notlhs66 = icmp ne i8 %tmp_302, -1
+  %notrhs66 = icmp eq i23 %tmp_532, 0
+  %tmp_306 = or i1 %notrhs66, %notlhs66
+  %notlhs67 = icmp ne i8 %tmp_304, -1
+  %notrhs67 = icmp eq i23 %tmp_533, 0
+  %tmp_307 = or i1 %notrhs67, %notlhs67
+  %tmp_308 = and i1 %tmp_306, %tmp_307
+  %tmp_309 = fcmp ogt float %image_load_45, %image_load_44
+  %tmp_310 = and i1 %tmp_308, %tmp_309
+  %max_2_11_0_1 = select i1 %tmp_310, i13 %tmp_197, i13 %tmp_188
+  %max_2_11_0_1_cast = zext i13 %max_2_11_0_1 to i64
+  %image_addr_89 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_11_0_1_cast
+  %image_load_89 = load float* %image_addr_89, align 4
+  %image_load_46 = load float* %image_addr_46, align 4
+  %image_load_46_to_int = bitcast float %image_load_46 to i32
+  %tmp_311 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_46_to_int, i32 23, i32 30)
+  %tmp_534 = trunc i32 %image_load_46_to_int to i23
+  %max_2_11_0_1_to_int = bitcast float %image_load_89 to i32
+  %tmp_313 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_11_0_1_to_int, i32 23, i32 30)
+  %tmp_535 = trunc i32 %max_2_11_0_1_to_int to i23
+  %notlhs68 = icmp ne i8 %tmp_311, -1
+  %notrhs68 = icmp eq i23 %tmp_534, 0
+  %tmp_315 = or i1 %notrhs68, %notlhs68
+  %notlhs69 = icmp ne i8 %tmp_313, -1
+  %notrhs69 = icmp eq i23 %tmp_535, 0
+  %tmp_316 = or i1 %notrhs69, %notlhs69
+  %tmp_317 = and i1 %tmp_315, %tmp_316
+  %tmp_318 = fcmp ogt float %image_load_46, %image_load_89
+  %tmp_319 = and i1 %tmp_317, %tmp_318
+  %max_2_11_1 = select i1 %tmp_319, i13 %tmp_457, i13 %max_2_11_0_1
+  %max_2_11_1_cast = zext i13 %max_2_11_1 to i64
+  %image_addr_90 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_11_1_cast
+  %image_load_90 = load float* %image_addr_90, align 4
+  %image_load_47 = load float* %image_addr_47, align 4
+  %image_load_47_to_int = bitcast float %image_load_47 to i32
+  %tmp_320 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_47_to_int, i32 23, i32 30)
+  %tmp_536 = trunc i32 %image_load_47_to_int to i23
+  %max_2_11_1_to_int = bitcast float %image_load_90 to i32
+  %tmp_322 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_11_1_to_int, i32 23, i32 30)
+  %tmp_537 = trunc i32 %max_2_11_1_to_int to i23
+  %notlhs70 = icmp ne i8 %tmp_320, -1
+  %notrhs70 = icmp eq i23 %tmp_536, 0
+  %tmp_324 = or i1 %notrhs70, %notlhs70
+  %notlhs71 = icmp ne i8 %tmp_322, -1
+  %notrhs71 = icmp eq i23 %tmp_537, 0
+  %tmp_325 = or i1 %notrhs71, %notlhs71
+  %tmp_326 = and i1 %tmp_324, %tmp_325
+  %tmp_327 = fcmp ogt float %image_load_47, %image_load_90
+  %tmp_328 = and i1 %tmp_326, %tmp_327
+  %max_2_11_1_1 = select i1 %tmp_328, i13 %tmp_459, i13 %max_2_11_1
+  %max_2_11_1_1_cast = zext i13 %max_2_11_1_1 to i64
+  %image_addr_91 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_11_1_1_cast
+  %image_load_91 = load float* %image_addr_91, align 4
+  store float %image_load_91, float* %output_addr_11, align 4
+  %image_load_48 = load float* %image_addr_48, align 4
+  %image_load_49 = load float* %image_addr_49, align 4
+  %image_load_49_to_int = bitcast float %image_load_49 to i32
+  %tmp_329 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_49_to_int, i32 23, i32 30)
+  %tmp_538 = trunc i32 %image_load_49_to_int to i23
+  %image_load_48_to_int = bitcast float %image_load_48 to i32
+  %tmp_331 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_48_to_int, i32 23, i32 30)
+  %tmp_539 = trunc i32 %image_load_48_to_int to i23
+  %notlhs72 = icmp ne i8 %tmp_329, -1
+  %notrhs72 = icmp eq i23 %tmp_538, 0
+  %tmp_333 = or i1 %notrhs72, %notlhs72
+  %notlhs73 = icmp ne i8 %tmp_331, -1
+  %notrhs73 = icmp eq i23 %tmp_539, 0
+  %tmp_334 = or i1 %notrhs73, %notlhs73
+  %tmp_335 = and i1 %tmp_333, %tmp_334
+  %tmp_336 = fcmp ogt float %image_load_49, %image_load_48
+  %tmp_337 = and i1 %tmp_335, %tmp_336
+  %max_2_12_0_1 = select i1 %tmp_337, i13 %tmp_215, i13 %tmp_206
+  %max_2_12_0_1_cast = zext i13 %max_2_12_0_1 to i64
+  %image_addr_92 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_12_0_1_cast
+  %image_load_92 = load float* %image_addr_92, align 4
+  %image_load_50 = load float* %image_addr_50, align 4
+  %image_load_50_to_int = bitcast float %image_load_50 to i32
+  %tmp_338 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_50_to_int, i32 23, i32 30)
+  %tmp_540 = trunc i32 %image_load_50_to_int to i23
+  %max_2_12_0_1_to_int = bitcast float %image_load_92 to i32
+  %tmp_340 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_12_0_1_to_int, i32 23, i32 30)
+  %tmp_541 = trunc i32 %max_2_12_0_1_to_int to i23
+  %notlhs74 = icmp ne i8 %tmp_338, -1
+  %notrhs74 = icmp eq i23 %tmp_540, 0
+  %tmp_342 = or i1 %notrhs74, %notlhs74
+  %notlhs75 = icmp ne i8 %tmp_340, -1
+  %notrhs75 = icmp eq i23 %tmp_541, 0
+  %tmp_343 = or i1 %notrhs75, %notlhs75
+  %tmp_344 = and i1 %tmp_342, %tmp_343
+  %tmp_345 = fcmp ogt float %image_load_50, %image_load_92
+  %tmp_346 = and i1 %tmp_344, %tmp_345
+  %max_2_12_1 = select i1 %tmp_346, i13 %tmp_461, i13 %max_2_12_0_1
+  %max_2_12_1_cast = zext i13 %max_2_12_1 to i64
+  %image_addr_93 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_12_1_cast
+  %image_load_93 = load float* %image_addr_93, align 4
+  %image_load_51 = load float* %image_addr_51, align 4
+  %image_load_51_to_int = bitcast float %image_load_51 to i32
+  %tmp_347 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_51_to_int, i32 23, i32 30)
+  %tmp_542 = trunc i32 %image_load_51_to_int to i23
+  %max_2_12_1_to_int = bitcast float %image_load_93 to i32
+  %tmp_349 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_12_1_to_int, i32 23, i32 30)
+  %tmp_543 = trunc i32 %max_2_12_1_to_int to i23
+  %notlhs76 = icmp ne i8 %tmp_347, -1
+  %notrhs76 = icmp eq i23 %tmp_542, 0
+  %tmp_351 = or i1 %notrhs76, %notlhs76
+  %notlhs77 = icmp ne i8 %tmp_349, -1
+  %notrhs77 = icmp eq i23 %tmp_543, 0
+  %tmp_352 = or i1 %notrhs77, %notlhs77
+  %tmp_353 = and i1 %tmp_351, %tmp_352
+  %tmp_354 = fcmp ogt float %image_load_51, %image_load_93
+  %tmp_355 = and i1 %tmp_353, %tmp_354
+  %max_2_12_1_1 = select i1 %tmp_355, i13 %tmp_463, i13 %max_2_12_1
+  %max_2_12_1_1_cast = zext i13 %max_2_12_1_1 to i64
+  %image_addr_94 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_12_1_1_cast
+  %image_load_94 = load float* %image_addr_94, align 4
+  store float %image_load_94, float* %output_addr_12, align 4
+  %image_load_52 = load float* %image_addr_52, align 4
+  %image_load_53 = load float* %image_addr_53, align 4
+  %image_load_53_to_int = bitcast float %image_load_53 to i32
+  %tmp_356 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_53_to_int, i32 23, i32 30)
+  %tmp_544 = trunc i32 %image_load_53_to_int to i23
+  %image_load_52_to_int = bitcast float %image_load_52 to i32
+  %tmp_358 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_52_to_int, i32 23, i32 30)
+  %tmp_545 = trunc i32 %image_load_52_to_int to i23
+  %notlhs78 = icmp ne i8 %tmp_356, -1
+  %notrhs78 = icmp eq i23 %tmp_544, 0
+  %tmp_360 = or i1 %notrhs78, %notlhs78
+  %notlhs79 = icmp ne i8 %tmp_358, -1
+  %notrhs79 = icmp eq i23 %tmp_545, 0
+  %tmp_361 = or i1 %notrhs79, %notlhs79
+  %tmp_362 = and i1 %tmp_360, %tmp_361
+  %tmp_363 = fcmp ogt float %image_load_53, %image_load_52
+  %tmp_364 = and i1 %tmp_362, %tmp_363
+  %max_2_13_0_1 = select i1 %tmp_364, i13 %tmp_233, i13 %tmp_224
+  %max_2_13_0_1_cast = zext i13 %max_2_13_0_1 to i64
+  %image_addr_95 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_13_0_1_cast
+  %image_load_95 = load float* %image_addr_95, align 4
+  %image_load_54 = load float* %image_addr_54, align 4
+  %image_load_54_to_int = bitcast float %image_load_54 to i32
+  %tmp_365 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_54_to_int, i32 23, i32 30)
+  %tmp_546 = trunc i32 %image_load_54_to_int to i23
+  %max_2_13_0_1_to_int = bitcast float %image_load_95 to i32
+  %tmp_367 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_13_0_1_to_int, i32 23, i32 30)
+  %tmp_547 = trunc i32 %max_2_13_0_1_to_int to i23
+  %notlhs80 = icmp ne i8 %tmp_365, -1
+  %notrhs80 = icmp eq i23 %tmp_546, 0
+  %tmp_369 = or i1 %notrhs80, %notlhs80
+  %notlhs81 = icmp ne i8 %tmp_367, -1
+  %notrhs81 = icmp eq i23 %tmp_547, 0
+  %tmp_370 = or i1 %notrhs81, %notlhs81
+  %tmp_371 = and i1 %tmp_369, %tmp_370
+  %tmp_372 = fcmp ogt float %image_load_54, %image_load_95
+  %tmp_373 = and i1 %tmp_371, %tmp_372
+  %max_2_13_1 = select i1 %tmp_373, i13 %tmp_465, i13 %max_2_13_0_1
+  %max_2_13_1_cast = zext i13 %max_2_13_1 to i64
+  %image_addr_96 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_13_1_cast
+  %image_load_96 = load float* %image_addr_96, align 4
+  %image_load_55 = load float* %image_addr_55, align 4
+  %image_load_55_to_int = bitcast float %image_load_55 to i32
+  %tmp_374 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_55_to_int, i32 23, i32 30)
+  %tmp_548 = trunc i32 %image_load_55_to_int to i23
+  %max_2_13_1_to_int = bitcast float %image_load_96 to i32
+  %tmp_376 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_2_13_1_to_int, i32 23, i32 30)
+  %tmp_549 = trunc i32 %max_2_13_1_to_int to i23
+  %notlhs82 = icmp ne i8 %tmp_374, -1
+  %notrhs82 = icmp eq i23 %tmp_548, 0
+  %tmp_378 = or i1 %notrhs82, %notlhs82
+  %notlhs83 = icmp ne i8 %tmp_376, -1
+  %notrhs83 = icmp eq i23 %tmp_549, 0
+  %tmp_379 = or i1 %notrhs83, %notlhs83
+  %tmp_380 = and i1 %tmp_378, %tmp_379
+  %tmp_381 = fcmp ogt float %image_load_55, %image_load_96
+  %tmp_382 = and i1 %tmp_380, %tmp_381
+  %max_2_13_1_1 = select i1 %tmp_382, i13 %tmp_467, i13 %max_2_13_1
+  %max_2_13_1_1_cast = zext i13 %max_2_13_1_1 to i64
+  %image_addr_97 = getelementptr [6728 x float]* %image_r, i64 0, i64 %max_2_13_1_1_cast
+  %image_load_97 = load float* %image_addr_97, align 4
+  store float %image_load_97, float* %output_addr_13, align 4
+  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_5) nounwind
+  %i_1 = add i5 2, %i_mid2
+  br label %1
 
-; <label>:2                                       ; preds = %.loopexit
-  %tmp_19 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %j, i32 1, i32 4)
-  %tmp_cast_12 = zext i4 %tmp_19 to i9
-  %tmp_20 = add i9 %tmp_8, %tmp_cast_12
-  %tmp_32_cast = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_20, i3 0)
-  %tmp_21 = add i12 %tmp_32_cast, %tmp_cast
-  %tmp_33_cast = zext i12 %tmp_21 to i64
-  %output_addr = getelementptr [1568 x float]* %output_r, i64 0, i64 %tmp_33_cast
-  store float %max1, float* %output_addr, align 4
-  %j_1 = add i5 %j, 2
-  br label %.preheader3
-
-; <label>:3                                       ; preds = %.preheader3
-  %i_1 = add i5 %i, 2
-  br label %.preheader4
-
-; <label>:4                                       ; preds = %.loopexit3
+; <label>:2                                       ; preds = %1
   ret void
 }
 
@@ -137,11 +1223,28 @@ declare i5 @llvm.part.select.i5(i5, i32, i32) nounwind readnone
 
 declare i32 @llvm.part.select.i32(i32, i32, i32) nounwind readnone
 
-declare i10 @llvm.part.select.i10(i10, i32, i32) nounwind readnone
+declare i13 @llvm.part.select.i13(i13, i32, i32) nounwind readnone
+
+declare i12 @llvm.part.select.i12(i12, i32, i32) nounwind readnone
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 define weak void @_ssdm_op_SpecTopModule(...) {
+entry:
+  ret void
+}
+
+define weak i32 @_ssdm_op_SpecRegionEnd(...) {
+entry:
+  ret i32 0
+}
+
+define weak i32 @_ssdm_op_SpecRegionBegin(...) {
+entry:
+  ret i32 0
+}
+
+define weak void @_ssdm_op_SpecPipeline(...) nounwind {
 entry:
   ret void
 }
@@ -151,86 +1254,84 @@ entry:
   ret i32 0
 }
 
+define weak void @_ssdm_op_SpecLoopName(...) nounwind {
+entry:
+  ret void
+}
+
 define weak void @_ssdm_op_SpecBitsMap(...) {
 entry:
   ret void
 }
 
-define weak i9 @_ssdm_op_PartSelect.i9.i10.i32.i32(i10, i32, i32) nounwind readnone {
+define weak i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13, i32, i32) nounwind readnone {
 entry:
-  %empty = call i10 @llvm.part.select.i10(i10 %0, i32 %1, i32 %2)
-  %empty_13 = trunc i10 %empty to i9
-  ret i9 %empty_13
+  %empty = call i13 @llvm.part.select.i13(i13 %0, i32 %1, i32 %2)
+  %empty_11 = trunc i13 %empty to i9
+  ret i9 %empty_11
 }
 
 define weak i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32, i32, i32) nounwind readnone {
 entry:
   %empty = call i32 @llvm.part.select.i32(i32 %0, i32 %1, i32 %2)
-  %empty_14 = trunc i32 %empty to i8
-  ret i8 %empty_14
+  %empty_12 = trunc i32 %empty to i8
+  ret i8 %empty_12
+}
+
+define weak i8 @_ssdm_op_PartSelect.i8.i12.i32.i32(i12, i32, i32) nounwind readnone {
+entry:
+  %empty = call i12 @llvm.part.select.i12(i12 %0, i32 %1, i32 %2)
+  %empty_13 = trunc i12 %empty to i8
+  ret i8 %empty_13
 }
 
 define weak i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5, i32, i32) nounwind readnone {
 entry:
   %empty = call i5 @llvm.part.select.i5(i5 %0, i32 %1, i32 %2)
-  %empty_15 = trunc i5 %empty to i4
-  ret i4 %empty_15
+  %empty_14 = trunc i5 %empty to i4
+  ret i4 %empty_14
 }
+
+declare i4 @_ssdm_op_PartSelect.i4.i13.i32.i32(i13, i32, i32) nounwind readnone
+
+declare i4 @_ssdm_op_PartSelect.i4.i12.i32.i32(i12, i32, i32) nounwind readnone
 
 declare i23 @_ssdm_op_PartSelect.i23.i32.i32.i32(i32, i32, i32) nounwind readnone
 
 define weak i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4, i4) nounwind readnone {
 entry:
   %empty = zext i4 %0 to i8
-  %empty_16 = zext i4 %1 to i8
-  %empty_17 = shl i8 %empty, 4
-  %empty_18 = or i8 %empty_17, %empty_16
-  ret i8 %empty_18
-}
-
-define weak i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4, i1) nounwind readnone {
-entry:
-  %empty = zext i4 %0 to i5
-  %empty_19 = zext i1 %1 to i5
-  %empty_20 = shl i5 %empty, 1
-  %empty_21 = or i5 %empty_20, %empty_19
-  ret i5 %empty_21
-}
-
-define weak i4 @_ssdm_op_BitConcatenate.i4.i1.i3(i1, i3) nounwind readnone {
-entry:
-  %empty = zext i1 %0 to i4
-  %empty_22 = zext i3 %1 to i4
-  %empty_23 = shl i4 %empty, 3
-  %empty_24 = or i4 %empty_23, %empty_22
-  ret i4 %empty_24
+  %empty_15 = zext i4 %1 to i8
+  %empty_16 = shl i8 %empty, 4
+  %empty_17 = or i8 %empty_16, %empty_15
+  ret i8 %empty_17
 }
 
 define weak i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9, i4) nounwind readnone {
 entry:
   %empty = zext i9 %0 to i13
-  %empty_25 = zext i4 %1 to i13
-  %empty_26 = shl i13 %empty, 4
-  %empty_27 = or i13 %empty_26, %empty_25
-  ret i13 %empty_27
+  %empty_18 = zext i4 %1 to i13
+  %empty_19 = shl i13 %empty, 4
+  %empty_20 = or i13 %empty_19, %empty_18
+  ret i13 %empty_20
 }
 
-define weak i13 @_ssdm_op_BitConcatenate.i13.i10.i3(i10, i3) nounwind readnone {
+define weak i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8, i4) nounwind readnone {
 entry:
-  %empty = zext i10 %0 to i13
-  %empty_28 = zext i3 %1 to i13
-  %empty_29 = shl i13 %empty, 3
-  %empty_30 = or i13 %empty_29, %empty_28
-  ret i13 %empty_30
+  %empty = zext i8 %0 to i12
+  %empty_21 = zext i4 %1 to i12
+  %empty_22 = shl i12 %empty, 4
+  %empty_23 = or i12 %empty_22, %empty_21
+  ret i12 %empty_23
 }
 
-define weak i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9, i3) nounwind readnone {
+define weak i11 @_ssdm_op_BitConcatenate.i11.i4.i7(i4, i7) nounwind readnone {
 entry:
-  %empty = zext i9 %0 to i12
-  %empty_31 = zext i3 %1 to i12
-  %empty_32 = shl i12 %empty, 3
-  %empty_33 = or i12 %empty_32, %empty_31
-  ret i12 %empty_33
+  %empty = zext i4 %0 to i11
+  %empty_24 = zext i7 %1 to i11
+  %empty_25 = shl i11 %empty, 7
+  %empty_26 = or i11 %empty_25, %empty_24
+  ret i11 %empty_26
 }
 
 !opencl.kernels = !{!0}

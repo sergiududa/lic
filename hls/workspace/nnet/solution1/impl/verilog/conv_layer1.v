@@ -8,335 +8,150 @@
 `timescale 1 ns / 1 ps 
 
 module conv_layer1 (
-        ap_clk,
-        ap_rst,
-        ap_start,
-        ap_done,
-        ap_idle,
-        ap_ready,
         output_V_address0,
         output_V_ce0,
+        output_V_d0,
+        output_V_q0,
         output_V_we0,
-        output_V_d0
+        output_V_address1,
+        output_V_ce1,
+        output_V_d1,
+        output_V_q1,
+        output_V_we1,
+        ap_clk,
+        ap_rst,
+        ap_done,
+        ap_start,
+        ap_ready,
+        ap_idle,
+        ap_continue
 );
 
-parameter    ap_ST_fsm_state1 = 11'd1;
-parameter    ap_ST_fsm_state2 = 11'd2;
-parameter    ap_ST_fsm_state3 = 11'd4;
-parameter    ap_ST_fsm_state4 = 11'd8;
-parameter    ap_ST_fsm_state5 = 11'd16;
-parameter    ap_ST_fsm_state6 = 11'd32;
-parameter    ap_ST_fsm_state7 = 11'd64;
-parameter    ap_ST_fsm_state8 = 11'd128;
-parameter    ap_ST_fsm_state9 = 11'd256;
-parameter    ap_ST_fsm_state10 = 11'd512;
-parameter    ap_ST_fsm_state11 = 11'd1024;
 
-input   ap_clk;
-input   ap_rst;
-input   ap_start;
-output   ap_done;
-output   ap_idle;
-output   ap_ready;
 output  [12:0] output_V_address0;
 output   output_V_ce0;
-output   output_V_we0;
 output  [23:0] output_V_d0;
+input  [23:0] output_V_q0;
+output   output_V_we0;
+output  [12:0] output_V_address1;
+output   output_V_ce1;
+output  [23:0] output_V_d1;
+input  [23:0] output_V_q1;
+output   output_V_we1;
+input   ap_clk;
+input   ap_rst;
+output   ap_done;
+input   ap_start;
+output   ap_ready;
+output   ap_idle;
+input   ap_continue;
 
 reg ap_done;
-reg ap_idle;
 reg ap_ready;
-reg output_V_ce0;
-reg output_V_we0;
 
-(* fsm_encoding = "none" *) reg   [10:0] ap_CS_fsm;
-wire    ap_CS_fsm_state1;
-wire   [2:0] conv_layer1_bias_V_address0;
-reg    conv_layer1_bias_V_ce0;
-wire   [20:0] conv_layer1_bias_V_q0;
-wire   [9:0] image_V_0_address0;
-reg    image_V_0_ce0;
-wire   [19:0] image_V_0_q0;
-wire   [6:0] conv_layer1_weights_s_address0;
-reg    conv_layer1_weights_s_ce0;
-wire   [18:0] conv_layer1_weights_s_q0;
-wire   [3:0] filter_2_fu_212_p2;
-reg   [3:0] filter_2_reg_469;
-wire    ap_CS_fsm_state2;
-wire   [0:0] exitcond4_fu_206_p2;
-wire   [8:0] tmp_cast1_fu_223_p1;
-reg   [8:0] tmp_cast1_reg_479;
-wire    ap_CS_fsm_state3;
-wire   [13:0] tmp_cast_fu_227_p1;
-reg   [13:0] tmp_cast_reg_484;
-wire  signed [23:0] p_Val2_13_cast_fu_231_p1;
-reg  signed [23:0] p_Val2_13_cast_reg_489;
-wire  signed [22:0] tmp_4_fu_235_p1;
-reg  signed [22:0] tmp_4_reg_494;
-wire   [9:0] next_mul_fu_239_p2;
-reg   [9:0] next_mul_reg_499;
-wire    ap_CS_fsm_state4;
-wire   [4:0] i_6_fu_251_p2;
-reg   [4:0] i_6_reg_507;
-wire   [4:0] j_6_fu_263_p2;
-reg   [4:0] j_6_reg_515;
-wire    ap_CS_fsm_state5;
-wire   [2:0] row_offset_2_fu_279_p2;
-reg   [2:0] row_offset_2_reg_523;
-wire    ap_CS_fsm_state6;
-wire   [4:0] tmp_34_fu_285_p2;
-reg   [4:0] tmp_34_reg_528;
-wire   [0:0] exitcond7_fu_273_p2;
-wire   [5:0] tmp_94_cast_fu_299_p1;
-reg   [5:0] tmp_94_cast_reg_533;
-wire   [13:0] tmp_59_fu_325_p2;
-reg   [13:0] tmp_59_reg_538;
-wire   [22:0] a_V_i_fu_350_p3;
-reg   [22:0] a_V_i_reg_543;
-wire   [2:0] col_offset_2_fu_368_p2;
-reg   [2:0] col_offset_2_reg_551;
-wire    ap_CS_fsm_state7;
-wire   [0:0] exitcond8_fu_362_p2;
-reg   [19:0] image_V_0_load_reg_566;
-wire    ap_CS_fsm_state8;
-reg  signed [18:0] conv_layer1_weights_2_reg_571;
-wire  signed [38:0] p_Val2_1_fu_460_p2;
-reg  signed [38:0] p_Val2_1_reg_576;
-wire    ap_CS_fsm_state9;
-wire    ap_CS_fsm_state10;
-reg   [3:0] filter_reg_112;
-wire   [0:0] exitcond5_fu_245_p2;
-reg   [4:0] i_reg_124;
-wire   [0:0] exitcond6_fu_257_p2;
-reg   [9:0] phi_mul_reg_136;
-reg   [4:0] j_reg_148;
-wire    ap_CS_fsm_state11;
-reg   [23:0] p_Val2_s_reg_160;
-reg   [2:0] row_offset_reg_172;
-reg   [23:0] sum_1_reg_183;
-reg   [2:0] col_offset_reg_195;
-wire   [63:0] tmp_fu_218_p1;
-wire   [63:0] tmp_62_fu_387_p1;
-wire   [63:0] tmp_100_cast_fu_414_p1;
-wire   [63:0] tmp_92_cast_fu_452_p1;
-wire   [4:0] row_offset_cast4_fu_269_p1;
-wire   [4:0] tmp_60_fu_291_p3;
-wire   [9:0] tmp_33_cast_fu_303_p1;
-wire   [9:0] tmp_s_fu_307_p2;
-wire   [12:0] tmp_43_fu_313_p3;
-wire   [13:0] tmp_91_cast_fu_321_p1;
-wire   [22:0] tmp_44_fu_330_p1;
-wire   [23:0] p_Val2_s_39_fu_334_p2;
-wire   [0:0] tmp_i_fu_344_p2;
-wire   [22:0] p_Val2_cast_fu_339_p2;
-wire   [4:0] col_offset_cast2_fu_358_p1;
-wire   [4:0] tmp_35_fu_374_p2;
-wire   [9:0] tmp_61_fu_380_p3;
-wire   [5:0] tmp_36_cast_fu_392_p1;
-wire   [5:0] tmp_63_fu_396_p2;
-wire   [8:0] tmp_99_cast_fu_401_p3;
-wire   [8:0] tmp_64_fu_409_p2;
-wire   [43:0] tmp_37_fu_425_p3;
-wire  signed [43:0] tmp_51_cast_fu_433_p1;
-wire   [43:0] p_Val2_2_fu_436_p2;
-wire   [19:0] p_Val2_1_fu_460_p1;
-reg   [10:0] ap_NS_fsm;
-wire   [38:0] p_Val2_1_fu_460_p10;
+wire   [12:0] dataflow_in_loop_con_U0_output_V_address0;
+wire    dataflow_in_loop_con_U0_output_V_ce0;
+wire   [23:0] dataflow_in_loop_con_U0_output_V_d0;
+wire    dataflow_in_loop_con_U0_output_V_we0;
+wire   [12:0] dataflow_in_loop_con_U0_output_V_address1;
+wire    dataflow_in_loop_con_U0_output_V_ce1;
+wire   [23:0] dataflow_in_loop_con_U0_output_V_d1;
+wire    dataflow_in_loop_con_U0_output_V_we1;
+wire    dataflow_in_loop_con_U0_ap_done;
+reg    dataflow_in_loop_con_U0_ap_start;
+wire    dataflow_in_loop_con_U0_ap_ready;
+wire    dataflow_in_loop_con_U0_ap_idle;
+wire    dataflow_in_loop_con_U0_ap_continue;
+wire    ap_sync_continue;
+wire    ap_sync_done;
+wire    ap_sync_ready;
+reg    loop_dataflow_enable;
+reg   [3:0] loop_dataflow_input_count;
+reg   [3:0] loop_dataflow_output_count;
+reg    loop_dataflow_busy;
+wire    dataflow_in_loop_con_U0_start_full_n;
+wire    dataflow_in_loop_con_U0_start_write;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 11'd1;
+#0 loop_dataflow_enable = 1'b0;
+#0 loop_dataflow_input_count = 4'd0;
+#0 loop_dataflow_output_count = 4'd0;
+#0 loop_dataflow_busy = 1'b0;
 end
 
-conv_layer1_conv_bkb #(
-    .DataWidth( 21 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-conv_layer1_bias_V_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(conv_layer1_bias_V_address0),
-    .ce0(conv_layer1_bias_V_ce0),
-    .q0(conv_layer1_bias_V_q0)
-);
-
-conv_layer1_imagecud #(
-    .DataWidth( 20 ),
-    .AddressRange( 1024 ),
-    .AddressWidth( 10 ))
-image_V_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(image_V_0_address0),
-    .ce0(image_V_0_ce0),
-    .q0(image_V_0_q0)
-);
-
-conv_layer1_conv_dEe #(
-    .DataWidth( 19 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-conv_layer1_weights_s_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(conv_layer1_weights_s_address0),
-    .ce0(conv_layer1_weights_s_ce0),
-    .q0(conv_layer1_weights_s_q0)
-);
-
-nnet_mul_mul_19s_eOg #(
-    .ID( 1 ),
-    .NUM_STAGE( 1 ),
-    .din0_WIDTH( 19 ),
-    .din1_WIDTH( 20 ),
-    .dout_WIDTH( 39 ))
-nnet_mul_mul_19s_eOg_U1(
-    .din0(conv_layer1_weights_2_reg_571),
-    .din1(p_Val2_1_fu_460_p1),
-    .dout(p_Val2_1_fu_460_p2)
+dataflow_in_loop_con dataflow_in_loop_con_U0(
+    .filter_0_i_i(loop_dataflow_input_count),
+    .output_V_address0(dataflow_in_loop_con_U0_output_V_address0),
+    .output_V_ce0(dataflow_in_loop_con_U0_output_V_ce0),
+    .output_V_d0(dataflow_in_loop_con_U0_output_V_d0),
+    .output_V_q0(24'd0),
+    .output_V_we0(dataflow_in_loop_con_U0_output_V_we0),
+    .output_V_address1(dataflow_in_loop_con_U0_output_V_address1),
+    .output_V_ce1(dataflow_in_loop_con_U0_output_V_ce1),
+    .output_V_d1(dataflow_in_loop_con_U0_output_V_d1),
+    .output_V_q1(24'd0),
+    .output_V_we1(dataflow_in_loop_con_U0_output_V_we1),
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .filter_0_i_i_ap_vld(1'b0),
+    .ap_done(dataflow_in_loop_con_U0_ap_done),
+    .ap_start(dataflow_in_loop_con_U0_ap_start),
+    .ap_ready(dataflow_in_loop_con_U0_ap_ready),
+    .ap_idle(dataflow_in_loop_con_U0_ap_idle),
+    .ap_continue(dataflow_in_loop_con_U0_ap_continue)
 );
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_CS_fsm <= ap_ST_fsm_state1;
+        loop_dataflow_busy <= 1'b0;
     end else begin
-        ap_CS_fsm <= ap_NS_fsm;
+        if (((loop_dataflow_output_count == 4'd8) & (ap_continue == 1'b1))) begin
+            loop_dataflow_busy <= 1'b0;
+        end else if ((ap_start == 1'b1)) begin
+            loop_dataflow_busy <= 1'b1;
+        end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        col_offset_reg_195 <= col_offset_2_reg_551;
-    end else if (((exitcond7_fu_273_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
-        col_offset_reg_195 <= 3'd0;
+    if (ap_rst == 1'b1) begin
+        loop_dataflow_enable <= 1'b0;
+    end else begin
+        if (((loop_dataflow_enable == 1'b0) & (ap_start == 1'b1))) begin
+            loop_dataflow_enable <= 1'b1;
+        end else if (((loop_dataflow_input_count == 4'd8) & (loop_dataflow_enable == 1'b1))) begin
+            loop_dataflow_enable <= 1'b0;
+        end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state4) & (exitcond5_fu_245_p2 == 1'd1))) begin
-        filter_reg_112 <= filter_2_reg_469;
-    end else if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        filter_reg_112 <= 4'd0;
+    if (ap_rst == 1'b1) begin
+        loop_dataflow_input_count <= 4'd0;
+    end else begin
+        if (((loop_dataflow_input_count == 4'd8) & (loop_dataflow_enable == 1'b1))) begin
+            loop_dataflow_input_count <= 4'd0;
+        end else if (((loop_dataflow_enable == 1'b1) & (dataflow_in_loop_con_U0_ap_ready == 1'b1))) begin
+            loop_dataflow_input_count <= (loop_dataflow_input_count + 4'd1);
+        end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (exitcond6_fu_257_p2 == 1'd1))) begin
-        i_reg_124 <= i_6_reg_507;
-    end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        i_reg_124 <= 5'd0;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((exitcond5_fu_245_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
-        j_reg_148 <= 5'd0;
-    end else if ((1'b1 == ap_CS_fsm_state11)) begin
-        j_reg_148 <= j_6_reg_515;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((exitcond6_fu_257_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
-        p_Val2_s_reg_160 <= 24'd0;
-    end else if (((1'b1 == ap_CS_fsm_state7) & (exitcond8_fu_362_p2 == 1'd1))) begin
-        p_Val2_s_reg_160 <= sum_1_reg_183;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (exitcond6_fu_257_p2 == 1'd1))) begin
-        phi_mul_reg_136 <= next_mul_reg_499;
-    end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        phi_mul_reg_136 <= 10'd0;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((exitcond6_fu_257_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
-        row_offset_reg_172 <= 3'd0;
-    end else if (((1'b1 == ap_CS_fsm_state7) & (exitcond8_fu_362_p2 == 1'd1))) begin
-        row_offset_reg_172 <= row_offset_2_reg_523;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        sum_1_reg_183 <= {{p_Val2_2_fu_436_p2[43:20]}};
-    end else if (((exitcond7_fu_273_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
-        sum_1_reg_183 <= p_Val2_s_reg_160;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state6) & (exitcond7_fu_273_p2 == 1'd1))) begin
-        a_V_i_reg_543 <= a_V_i_fu_350_p3;
-        tmp_59_reg_538 <= tmp_59_fu_325_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state7)) begin
-        col_offset_2_reg_551 <= col_offset_2_fu_368_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        conv_layer1_weights_2_reg_571 <= conv_layer1_weights_s_q0;
-        image_V_0_load_reg_566 <= image_V_0_q0;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        filter_2_reg_469 <= filter_2_fu_212_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        i_6_reg_507 <= i_6_fu_251_p2;
-        next_mul_reg_499 <= next_mul_fu_239_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
-        j_6_reg_515 <= j_6_fu_263_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        p_Val2_13_cast_reg_489 <= p_Val2_13_cast_fu_231_p1;
-        tmp_4_reg_494 <= tmp_4_fu_235_p1;
-        tmp_cast1_reg_479[3 : 0] <= tmp_cast1_fu_223_p1[3 : 0];
-        tmp_cast_reg_484[3 : 0] <= tmp_cast_fu_227_p1[3 : 0];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state9)) begin
-        p_Val2_1_reg_576 <= p_Val2_1_fu_460_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        row_offset_2_reg_523 <= row_offset_2_fu_279_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((exitcond7_fu_273_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
-        tmp_34_reg_528 <= tmp_34_fu_285_p2;
-        tmp_94_cast_reg_533[4 : 2] <= tmp_94_cast_fu_299_p1[4 : 2];
+    if (ap_rst == 1'b1) begin
+        loop_dataflow_output_count <= 4'd0;
+    end else begin
+        if (((loop_dataflow_output_count == 4'd8) & (ap_continue == 1'b1))) begin
+            loop_dataflow_output_count <= 4'd0;
+        end else if ((dataflow_in_loop_con_U0_ap_done == 1'b1)) begin
+            loop_dataflow_output_count <= (loop_dataflow_output_count + 4'd1);
+        end
     end
 end
 
 always @ (*) begin
-    if ((((exitcond4_fu_206_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2)) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
+    if (((loop_dataflow_output_count == 4'd8) & (loop_dataflow_busy == 1'b1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -344,15 +159,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
-        ap_idle = 1'b1;
-    end else begin
-        ap_idle = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond4_fu_206_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if ((loop_dataflow_input_count == 4'd8)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -360,237 +167,41 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        conv_layer1_bias_V_ce0 = 1'b1;
+    if ((~(loop_dataflow_input_count == 4'd8) & (loop_dataflow_enable == 1'b1))) begin
+        dataflow_in_loop_con_U0_ap_start = 1'b1;
     end else begin
-        conv_layer1_bias_V_ce0 = 1'b0;
+        dataflow_in_loop_con_U0_ap_start = 1'b0;
     end
 end
 
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state7)) begin
-        conv_layer1_weights_s_ce0 = 1'b1;
-    end else begin
-        conv_layer1_weights_s_ce0 = 1'b0;
-    end
-end
+assign ap_idle = dataflow_in_loop_con_U0_ap_idle;
 
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state7)) begin
-        image_V_0_ce0 = 1'b1;
-    end else begin
-        image_V_0_ce0 = 1'b0;
-    end
-end
+assign ap_sync_continue = ap_continue;
 
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state11)) begin
-        output_V_ce0 = 1'b1;
-    end else begin
-        output_V_ce0 = 1'b0;
-    end
-end
+assign ap_sync_done = dataflow_in_loop_con_U0_ap_done;
 
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state11)) begin
-        output_V_we0 = 1'b1;
-    end else begin
-        output_V_we0 = 1'b0;
-    end
-end
+assign ap_sync_ready = ap_sync_done;
 
-always @ (*) begin
-    case (ap_CS_fsm)
-        ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state1;
-            end
-        end
-        ap_ST_fsm_state2 : begin
-            if (((exitcond4_fu_206_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state1;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end
-        end
-        ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
-        end
-        ap_ST_fsm_state4 : begin
-            if (((1'b1 == ap_CS_fsm_state4) & (exitcond5_fu_245_p2 == 1'd1))) begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state5;
-            end
-        end
-        ap_ST_fsm_state5 : begin
-            if (((1'b1 == ap_CS_fsm_state5) & (exitcond6_fu_257_p2 == 1'd1))) begin
-                ap_NS_fsm = ap_ST_fsm_state4;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state6;
-            end
-        end
-        ap_ST_fsm_state6 : begin
-            if (((exitcond7_fu_273_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
-                ap_NS_fsm = ap_ST_fsm_state7;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state11;
-            end
-        end
-        ap_ST_fsm_state7 : begin
-            if (((1'b1 == ap_CS_fsm_state7) & (exitcond8_fu_362_p2 == 1'd1))) begin
-                ap_NS_fsm = ap_ST_fsm_state6;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state8;
-            end
-        end
-        ap_ST_fsm_state8 : begin
-            ap_NS_fsm = ap_ST_fsm_state9;
-        end
-        ap_ST_fsm_state9 : begin
-            ap_NS_fsm = ap_ST_fsm_state10;
-        end
-        ap_ST_fsm_state10 : begin
-            ap_NS_fsm = ap_ST_fsm_state7;
-        end
-        ap_ST_fsm_state11 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
-        end
-        default : begin
-            ap_NS_fsm = 'bx;
-        end
-    endcase
-end
+assign dataflow_in_loop_con_U0_ap_continue = 1'b1;
 
-assign a_V_i_fu_350_p3 = ((tmp_i_fu_344_p2[0:0] === 1'b1) ? p_Val2_cast_fu_339_p2 : 23'd0);
+assign dataflow_in_loop_con_U0_start_full_n = 1'b1;
 
-assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign dataflow_in_loop_con_U0_start_write = 1'b0;
 
-assign ap_CS_fsm_state10 = ap_CS_fsm[32'd9];
+assign output_V_address0 = dataflow_in_loop_con_U0_output_V_address0;
 
-assign ap_CS_fsm_state11 = ap_CS_fsm[32'd10];
+assign output_V_address1 = 13'd0;
 
-assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign output_V_ce0 = dataflow_in_loop_con_U0_output_V_ce0;
 
-assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+assign output_V_ce1 = 1'b0;
 
-assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
+assign output_V_d0 = dataflow_in_loop_con_U0_output_V_d0;
 
-assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
+assign output_V_d1 = 24'd0;
 
-assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
+assign output_V_we0 = dataflow_in_loop_con_U0_output_V_we0;
 
-assign ap_CS_fsm_state7 = ap_CS_fsm[32'd6];
-
-assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
-
-assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
-
-assign col_offset_2_fu_368_p2 = (col_offset_reg_195 + 3'd1);
-
-assign col_offset_cast2_fu_358_p1 = col_offset_reg_195;
-
-assign conv_layer1_bias_V_address0 = tmp_fu_218_p1;
-
-assign conv_layer1_weights_s_address0 = tmp_100_cast_fu_414_p1;
-
-assign exitcond4_fu_206_p2 = ((filter_reg_112 == 4'd8) ? 1'b1 : 1'b0);
-
-assign exitcond5_fu_245_p2 = ((i_reg_124 == 5'd29) ? 1'b1 : 1'b0);
-
-assign exitcond6_fu_257_p2 = ((j_reg_148 == 5'd29) ? 1'b1 : 1'b0);
-
-assign exitcond7_fu_273_p2 = ((row_offset_reg_172 == 3'd4) ? 1'b1 : 1'b0);
-
-assign exitcond8_fu_362_p2 = ((col_offset_reg_195 == 3'd4) ? 1'b1 : 1'b0);
-
-assign filter_2_fu_212_p2 = (filter_reg_112 + 4'd1);
-
-assign i_6_fu_251_p2 = (i_reg_124 + 5'd1);
-
-assign image_V_0_address0 = tmp_62_fu_387_p1;
-
-assign j_6_fu_263_p2 = (j_reg_148 + 5'd1);
-
-assign next_mul_fu_239_p2 = (phi_mul_reg_136 + 10'd29);
-
-assign output_V_address0 = tmp_92_cast_fu_452_p1;
-
-assign output_V_d0 = a_V_i_reg_543;
-
-assign p_Val2_13_cast_fu_231_p1 = $signed(conv_layer1_bias_V_q0);
-
-assign p_Val2_1_fu_460_p1 = p_Val2_1_fu_460_p10;
-
-assign p_Val2_1_fu_460_p10 = image_V_0_load_reg_566;
-
-assign p_Val2_2_fu_436_p2 = ($signed(tmp_37_fu_425_p3) + $signed(tmp_51_cast_fu_433_p1));
-
-assign p_Val2_cast_fu_339_p2 = ($signed(tmp_4_reg_494) + $signed(tmp_44_fu_330_p1));
-
-assign p_Val2_s_39_fu_334_p2 = ($signed(p_Val2_s_reg_160) + $signed(p_Val2_13_cast_reg_489));
-
-assign row_offset_2_fu_279_p2 = (row_offset_reg_172 + 3'd1);
-
-assign row_offset_cast4_fu_269_p1 = row_offset_reg_172;
-
-assign tmp_100_cast_fu_414_p1 = tmp_64_fu_409_p2;
-
-assign tmp_33_cast_fu_303_p1 = j_reg_148;
-
-assign tmp_34_fu_285_p2 = (i_reg_124 + row_offset_cast4_fu_269_p1);
-
-assign tmp_35_fu_374_p2 = (col_offset_cast2_fu_358_p1 + j_reg_148);
-
-assign tmp_36_cast_fu_392_p1 = col_offset_reg_195;
-
-assign tmp_37_fu_425_p3 = {{sum_1_reg_183}, {20'd0}};
-
-assign tmp_43_fu_313_p3 = {{tmp_s_fu_307_p2}, {3'd0}};
-
-assign tmp_44_fu_330_p1 = p_Val2_s_reg_160[22:0];
-
-assign tmp_4_fu_235_p1 = $signed(conv_layer1_bias_V_q0);
-
-assign tmp_51_cast_fu_433_p1 = p_Val2_1_reg_576;
-
-assign tmp_59_fu_325_p2 = (tmp_cast_reg_484 + tmp_91_cast_fu_321_p1);
-
-assign tmp_60_fu_291_p3 = {{row_offset_reg_172}, {2'd0}};
-
-assign tmp_61_fu_380_p3 = {{tmp_34_reg_528}, {tmp_35_fu_374_p2}};
-
-assign tmp_62_fu_387_p1 = tmp_61_fu_380_p3;
-
-assign tmp_63_fu_396_p2 = (tmp_36_cast_fu_392_p1 + tmp_94_cast_reg_533);
-
-assign tmp_64_fu_409_p2 = (tmp_cast1_reg_479 + tmp_99_cast_fu_401_p3);
-
-assign tmp_91_cast_fu_321_p1 = tmp_43_fu_313_p3;
-
-assign tmp_92_cast_fu_452_p1 = tmp_59_reg_538;
-
-assign tmp_94_cast_fu_299_p1 = tmp_60_fu_291_p3;
-
-assign tmp_99_cast_fu_401_p3 = {{tmp_63_fu_396_p2}, {3'd0}};
-
-assign tmp_cast1_fu_223_p1 = filter_reg_112;
-
-assign tmp_cast_fu_227_p1 = filter_reg_112;
-
-assign tmp_fu_218_p1 = filter_reg_112;
-
-assign tmp_i_fu_344_p2 = (($signed(p_Val2_s_39_fu_334_p2) > $signed(24'd0)) ? 1'b1 : 1'b0);
-
-assign tmp_s_fu_307_p2 = (tmp_33_cast_fu_303_p1 + phi_mul_reg_136);
-
-always @ (posedge ap_clk) begin
-    tmp_cast1_reg_479[8:4] <= 5'b00000;
-    tmp_cast_reg_484[13:4] <= 10'b0000000000;
-    tmp_94_cast_reg_533[1:0] <= 2'b00;
-    tmp_94_cast_reg_533[5] <= 1'b0;
-end
+assign output_V_we1 = 1'b0;
 
 endmodule //conv_layer1

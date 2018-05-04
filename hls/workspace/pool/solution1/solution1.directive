@@ -1,2 +1,19 @@
-<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView"/>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="pool" label="pool_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="pool" label="pool_label5" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="pool" label="pool_label6" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="pool" label="pool_label3" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="50"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
 

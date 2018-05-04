@@ -1,0 +1,281 @@
+<stg><name>dataflow_in_loop_con</name>
+
+
+<trans_list>
+
+<trans id="8" from="1" to="2">
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="4" op_0_bw="4" op_1_bw="4">
+<![CDATA[
+entry:1  %filter_0_i_i_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %filter_0_i_i)
+
+]]></Node>
+<StgValue><ssdm name="filter_0_i_i_read"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="24">
+<![CDATA[
+entry:2  call void @conv_layer1_label8_p(i4 %filter_0_i_i_read, [6728 x i24]* %output_V)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="5" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+entry:0  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str12) nounwind
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="6" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="24">
+<![CDATA[
+entry:2  call void @conv_layer1_label8_p(i4 %filter_0_i_i_read, [6728 x i24]* %output_V)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="7" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="0">
+<![CDATA[
+entry:3  ret void
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="10" name="filter_0_i_i" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="filter_0_i_i"/></StgValue>
+</port>
+<port id="11" name="output_V" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="output_V"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="12" name="conv_layer1_weights_31" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_31"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="13" name="conv_layer1_weights_29" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_29"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="14" name="conv_layer1_weights_27" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_27"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="15" name="conv_layer1_weights_25" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_25"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="16" name="conv_layer1_weights_23" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_23"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="17" name="conv_layer1_weights_21" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_21"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="18" name="conv_layer1_weights_19" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_19"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="19" name="conv_layer1_weights_17" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_17"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="20" name="conv_layer1_weights_15" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_15"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="21" name="conv_layer1_weights_13" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_13"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="22" name="conv_layer1_weights_11" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_11"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="23" name="conv_layer1_weights_9" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_9"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="24" name="conv_layer1_weights_7" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_7"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="25" name="conv_layer1_weights_5" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_5"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="26" name="conv_layer1_weights_3" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_3"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="27" name="conv_layer1_weights_1" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_weights_1"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="28" name="conv_layer1_bias_V" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="conv_layer1_bias_V"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="29" name="image_V_0" dir="0" iftype="1">
+<core>ROM_nP</core><StgValue><ssdm name="image_V_0"/><MemPortTyVec>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="31" from="_ssdm_op_Read.ap_auto.i4" to="filter_0_i_i_read" fromId="30" toId="3">
+</dataflow>
+<dataflow id="32" from="filter_0_i_i" to="filter_0_i_i_read" fromId="10" toId="3">
+</dataflow>
+<dataflow id="34" from="conv_layer1_label8_p" to="StgValue_4" fromId="33" toId="4">
+</dataflow>
+<dataflow id="35" from="filter_0_i_i_read" to="StgValue_4" fromId="3" toId="4">
+</dataflow>
+<dataflow id="36" from="output_V" to="StgValue_4" fromId="11" toId="4">
+</dataflow>
+<dataflow id="37" from="conv_layer1_weights_31" to="StgValue_4" fromId="12" toId="4">
+</dataflow>
+<dataflow id="38" from="conv_layer1_weights_29" to="StgValue_4" fromId="13" toId="4">
+</dataflow>
+<dataflow id="39" from="conv_layer1_weights_27" to="StgValue_4" fromId="14" toId="4">
+</dataflow>
+<dataflow id="40" from="conv_layer1_weights_25" to="StgValue_4" fromId="15" toId="4">
+</dataflow>
+<dataflow id="41" from="conv_layer1_weights_23" to="StgValue_4" fromId="16" toId="4">
+</dataflow>
+<dataflow id="42" from="conv_layer1_weights_21" to="StgValue_4" fromId="17" toId="4">
+</dataflow>
+<dataflow id="43" from="conv_layer1_weights_19" to="StgValue_4" fromId="18" toId="4">
+</dataflow>
+<dataflow id="44" from="conv_layer1_weights_17" to="StgValue_4" fromId="19" toId="4">
+</dataflow>
+<dataflow id="45" from="conv_layer1_weights_15" to="StgValue_4" fromId="20" toId="4">
+</dataflow>
+<dataflow id="46" from="conv_layer1_weights_13" to="StgValue_4" fromId="21" toId="4">
+</dataflow>
+<dataflow id="47" from="conv_layer1_weights_11" to="StgValue_4" fromId="22" toId="4">
+</dataflow>
+<dataflow id="48" from="conv_layer1_weights_9" to="StgValue_4" fromId="23" toId="4">
+</dataflow>
+<dataflow id="49" from="conv_layer1_weights_7" to="StgValue_4" fromId="24" toId="4">
+</dataflow>
+<dataflow id="50" from="conv_layer1_weights_5" to="StgValue_4" fromId="25" toId="4">
+</dataflow>
+<dataflow id="51" from="conv_layer1_weights_3" to="StgValue_4" fromId="26" toId="4">
+</dataflow>
+<dataflow id="52" from="conv_layer1_weights_1" to="StgValue_4" fromId="27" toId="4">
+</dataflow>
+<dataflow id="53" from="conv_layer1_bias_V" to="StgValue_4" fromId="28" toId="4">
+</dataflow>
+<dataflow id="54" from="image_V_0" to="StgValue_4" fromId="29" toId="4">
+</dataflow>
+<dataflow id="56" from="_ssdm_op_SpecDataflowPipeline" to="StgValue_5" fromId="55" toId="5">
+</dataflow>
+<dataflow id="58" from="StgValue_57" to="StgValue_5" fromId="57" toId="5">
+</dataflow>
+<dataflow id="60" from="p_str12" to="StgValue_5" fromId="59" toId="5">
+</dataflow>
+<dataflow id="61" from="conv_layer1_label8_p" to="StgValue_6" fromId="33" toId="6">
+</dataflow>
+<dataflow id="62" from="filter_0_i_i_read" to="StgValue_6" fromId="3" toId="6">
+</dataflow>
+<dataflow id="63" from="output_V" to="StgValue_6" fromId="11" toId="6">
+</dataflow>
+<dataflow id="64" from="conv_layer1_weights_31" to="StgValue_6" fromId="12" toId="6">
+</dataflow>
+<dataflow id="65" from="conv_layer1_weights_29" to="StgValue_6" fromId="13" toId="6">
+</dataflow>
+<dataflow id="66" from="conv_layer1_weights_27" to="StgValue_6" fromId="14" toId="6">
+</dataflow>
+<dataflow id="67" from="conv_layer1_weights_25" to="StgValue_6" fromId="15" toId="6">
+</dataflow>
+<dataflow id="68" from="conv_layer1_weights_23" to="StgValue_6" fromId="16" toId="6">
+</dataflow>
+<dataflow id="69" from="conv_layer1_weights_21" to="StgValue_6" fromId="17" toId="6">
+</dataflow>
+<dataflow id="70" from="conv_layer1_weights_19" to="StgValue_6" fromId="18" toId="6">
+</dataflow>
+<dataflow id="71" from="conv_layer1_weights_17" to="StgValue_6" fromId="19" toId="6">
+</dataflow>
+<dataflow id="72" from="conv_layer1_weights_15" to="StgValue_6" fromId="20" toId="6">
+</dataflow>
+<dataflow id="73" from="conv_layer1_weights_13" to="StgValue_6" fromId="21" toId="6">
+</dataflow>
+<dataflow id="74" from="conv_layer1_weights_11" to="StgValue_6" fromId="22" toId="6">
+</dataflow>
+<dataflow id="75" from="conv_layer1_weights_9" to="StgValue_6" fromId="23" toId="6">
+</dataflow>
+<dataflow id="76" from="conv_layer1_weights_7" to="StgValue_6" fromId="24" toId="6">
+</dataflow>
+<dataflow id="77" from="conv_layer1_weights_5" to="StgValue_6" fromId="25" toId="6">
+</dataflow>
+<dataflow id="78" from="conv_layer1_weights_3" to="StgValue_6" fromId="26" toId="6">
+</dataflow>
+<dataflow id="79" from="conv_layer1_weights_1" to="StgValue_6" fromId="27" toId="6">
+</dataflow>
+<dataflow id="80" from="conv_layer1_bias_V" to="StgValue_6" fromId="28" toId="6">
+</dataflow>
+<dataflow id="81" from="image_V_0" to="StgValue_6" fromId="29" toId="6">
+</dataflow>
+</dataflows>
+
+
+</stg>

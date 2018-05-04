@@ -1,0 +1,128 @@
+
+
+================================================================
+== Vivado HLS Report for 'dataflow_in_loop_con'
+================================================================
+* Date:           Fri May  4 18:52:22 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        nnet
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      9.63|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  854|  854|  855|  855| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                         |                      |  Latency  |  Interval | Pipeline|
+        |         Instance        |        Module        | min | max | min | max |   Type  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |conv_layer1_label8_p_U0  |conv_layer1_label8_p  |  854|  854|  854|  854|   none  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |       16|     17|    2785|   1495|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       16|     17|    2785|   1495|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        5|      7|       2|      2|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+------+------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------+----------------------+---------+-------+------+------+
+    |conv_layer1_label8_p_U0  |conv_layer1_label8_p  |       16|     17|  2785|  1495|
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Total                    |                      |       16|     17|  2785|  1495|
+    +-------------------------+----------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+----------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++---------------------+-----+-----+------------+----------------------+--------------+
+|filter_0_i_i         |  in |    4|   ap_none  |     filter_0_i_i     |    scalar    |
+|filter_0_i_i_ap_vld  |  in |    1|   ap_none  |     filter_0_i_i     |    scalar    |
+|output_V_address0    | out |   13|  ap_memory |       output_V       |     array    |
+|output_V_ce0         | out |    1|  ap_memory |       output_V       |     array    |
+|output_V_d0          | out |   24|  ap_memory |       output_V       |     array    |
+|output_V_q0          |  in |   24|  ap_memory |       output_V       |     array    |
+|output_V_we0         | out |    1|  ap_memory |       output_V       |     array    |
+|output_V_address1    | out |   13|  ap_memory |       output_V       |     array    |
+|output_V_ce1         | out |    1|  ap_memory |       output_V       |     array    |
+|output_V_d1          | out |   24|  ap_memory |       output_V       |     array    |
+|output_V_q1          |  in |   24|  ap_memory |       output_V       |     array    |
+|output_V_we1         | out |    1|  ap_memory |       output_V       |     array    |
+|ap_clk               |  in |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
+|ap_rst               |  in |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
+|ap_done              | out |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
+|ap_start             |  in |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
+|ap_ready             | out |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
+|ap_idle              | out |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
+|ap_continue          |  in |    1| ap_ctrl_hs | dataflow_in_loop_con | return value |
++---------------------+-----+-----+------------+----------------------+--------------+
+

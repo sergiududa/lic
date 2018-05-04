@@ -10,7 +10,7 @@ add_files -tb conv/solution1/.tcls/conv_test.c
 open_solution "solution1"
 set_part {xc7z020clg400-1} -tool vivado
 create_clock -period 10 -name default
-#source "./conv/solution1/directives.tcl"
+source "./conv/solution1/directives.tcl"
 csim_design -compiler gcc
 csynth_design
 cosim_design

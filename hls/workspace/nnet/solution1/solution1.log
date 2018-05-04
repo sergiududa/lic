@@ -9,141 +9,315 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [HLS 200-10] Analyzing design file 'nnet/solution1/nnet.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:15 ; elapsed = 00:01:02 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 481 ; free virtual = 3082
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:19 ; elapsed = 00:01:07 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 415 ; free virtual = 3087
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:03:06 ; elapsed = 00:02:15 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 500 ; free virtual = 3066
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:03:22 ; elapsed = 00:02:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 446 ; free virtual = 3071
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:39 ; elapsed = 00:01:27 . Memory (MB): peak = 825.438 ; gain = 477.375 ; free physical = 191 ; free virtual = 3183
+INFO: [XFORM 203-501] Unrolling loop 'conv_layer1_label0' (nnet/solution1/nnet.cpp:33) in function 'conv_layer1(ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [29][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [32][1], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' completely.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:04:39 ; elapsed = 00:03:51 . Memory (MB): peak = 825.434 ; gain = 477.375 ; free physical = 175 ; free virtual = 2730
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet/solution1/nnet.cpp:33) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet/solution1/nnet.cpp:60) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet/solution1/nnet.cpp:118) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet/solution1/nnet.cpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet/solution1/nnet.cpp:146) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:40 ; elapsed = 00:01:28 . Memory (MB): peak = 827.043 ; gain = 478.980 ; free physical = 170 ; free virtual = 3173
-INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1.1.1.1.1.1' (nnet/solution1/nnet.cpp:31) in function 'conv_layer1' automatically.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1.1.1' (nnet/solution1/nnet.cpp:31) in function 'conv_layer1' completely.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet/solution1/nnet.cpp:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet/solution1/nnet.cpp:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet/solution1/nnet.cpp:133) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet/solution1/nnet.cpp:147) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:04:42 ; elapsed = 00:03:53 . Memory (MB): peak = 827.062 ; gain = 479.004 ; free physical = 153 ; free virtual = 2718
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'pool_layer2_label18' (nnet/solution1/nnet.cpp:89) in function 'pool_layer2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv_layer2_label11' (nnet/solution1/nnet.cpp:53) in function 'conv_layer2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'pool_layer1_label15' (nnet/solution1/nnet.cpp:72) in function 'pool_layer1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv_layer1_label7' (nnet/solution1/nnet.cpp:25) in function 'conv_layer1' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'pool_layer2_label17' (nnet/solution1/nnet.cpp:90) in function 'pool_layer2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_layer2_label16' (nnet/solution1/nnet.cpp:93) in function 'pool_layer2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_layer2_label3' (nnet/solution1/nnet.cpp:94) in function 'pool_layer2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_layer2_label10' (nnet/solution1/nnet.cpp:58) in function 'conv_layer2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_layer2_label9' (nnet/solution1/nnet.cpp:59) in function 'conv_layer2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_layer2_label1' (nnet/solution1/nnet.cpp:60) in function 'conv_layer2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_layer1_label14' (nnet/solution1/nnet.cpp:73) in function 'pool_layer1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_layer1_label13' (nnet/solution1/nnet.cpp:76) in function 'pool_layer1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_layer1_label2' (nnet/solution1/nnet.cpp:77) in function 'pool_layer1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_layer1_label6' (nnet/solution1/nnet.cpp:30) in function 'conv_layer1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_layer1_label5' (nnet/solution1/nnet.cpp:31) in function 'conv_layer1' completely.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.2.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.2.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.3.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.3.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.3.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.3.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.V.1.1' in dimension 1 automatically.
 INFO: [XFORM 203-102] Partitioning array 'image.V' in dimension 3 automatically.
-INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V' in dimension 3 automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet/solution1/nnet.cpp:33) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet/solution1/nnet.cpp:60) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet/solution1/nnet.cpp:118) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet/solution1/nnet.cpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet/solution1/nnet.cpp:146) automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.V.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.0.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.1.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.2.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.2.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.3.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.3.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.3.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.V.3.3' in dimension 1 automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet/solution1/nnet.cpp:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet/solution1/nnet.cpp:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet/solution1/nnet.cpp:133) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet/solution1/nnet.cpp:147) automatically.
 INFO: [XFORM 203-602] Inlining function 'fc_layer1' into 'nnet' (nnet/solution1/nnet.cpp:163) automatically.
 INFO: [XFORM 203-602] Inlining function 'fc_layer2' into 'nnet' (nnet/solution1/nnet.cpp:164) automatically.
 INFO: [XFORM 203-602] Inlining function 'fc_layer3' into 'nnet' (nnet/solution1/nnet.cpp:165) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:41 ; elapsed = 00:01:30 . Memory (MB): peak = 827.043 ; gain = 478.980 ; free physical = 151 ; free virtual = 3171
-INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i5.i1.i4' in function 'pool_layer2' and propagating its result(s) since all actual argument(s) to the function are constants.
-INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i4.i1.i3' in function 'pool_layer1' and propagating its result(s) since all actual argument(s) to the function are constants.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:43 ; elapsed = 00:01:31 . Memory (MB): peak = 869.059 ; gain = 520.996 ; free physical = 154 ; free virtual = 3115
+INFO: [XFORM 203-721] Changing loop 'conv_layer1_label8' (nnet/solution1/nnet.cpp:24)  to a process function for dataflow in function 'conv_layer1'.
+INFO: [XFORM 203-721] Extract dataflow region from loop conv_layer1_label19 (nnet/solution1/nnet.cpp:21)  of function 'conv_layer1'.
+WARNING: [XFORM 203-713] All the elements of global array 'output.V' should be updated in process function 'conv_layer1_label8_proc' (nnet/solution1/nnet.cpp:23:52), otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_conv_layer1_label19' (nnet/solution1/nnet.cpp:22:1), detected/extracted 1 process function(s): 
+	 'conv_layer1_label8_proc'.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1_label8_proc' (nnet/solution1/nnet.cpp:34) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:04:50 ; elapsed = 00:04:02 . Memory (MB): peak = 827.062 ; gain = 479.004 ; free physical = 152 ; free virtual = 2712
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (nnet/solution1/nnet.cpp:87:21) in function 'pool_layer2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (nnet/solution1/nnet.cpp:70:21) in function 'pool_layer1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'conv_layer2_label12' (nnet/solution1/nnet.cpp:52:4) in function 'conv_layer2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (nnet/solution1/nnet.cpp:48:6) in function 'conv_layer2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'conv_layer1_label8' (nnet/solution1/nnet.cpp:24:4) in function 'conv_layer1_label8_proc'.
+WARNING: [XFORM 203-631] Renaming function 'dataflow_in_loop_conv_layer1_label19' to 'dataflow_in_loop_con' (nnet/solution1/nnet.cpp:22:1)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer1_label8_proc' to 'conv_layer1_label8_p' (nnet/solution1/nnet.cpp:13:4)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:04:57 ; elapsed = 00:04:10 . Memory (MB): peak = 869.055 ; gain = 520.996 ; free physical = 153 ; free virtual = 2643
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'nnet' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer1_label8_p'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'conv_layer1_label8_conv_layer1_label7'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+WARNING: [SCHED 204-21] Estimated clock period (9.634ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'mul' operation ('tmp_i_32', nnet/solution1/nnet.cpp:34) (3.36 ns)
+	'add' operation ('tmp_342_i', nnet/solution1/nnet.cpp:34) (3.02 ns)
+	'getelementptr' operation ('output_V_addr', nnet/solution1/nnet.cpp:34) (0 ns)
+	'store' operation (nnet/solution1/nnet.cpp:34) of variable 'p_trunc_ext_i_i', nnet/solution1/nnet.cpp:34 on array 'output_V' (3.25 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 251.11 seconds; current allocated memory: 358.356 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 28.7 seconds; current allocated memory: 359.428 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_con'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 28.31 seconds; current allocated memory: 359.559 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.77 seconds; current allocated memory: 359.637 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'conv_layer1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 91.57 seconds; current allocated memory: 331.039 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.19 seconds; current allocated memory: 359.756 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 2.84 seconds; current allocated memory: 331.367 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.52 seconds; current allocated memory: 359.857 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pool_layer1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_pool_layer1_label15'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 50, Final II = 50, Depth = 52.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 2.91 seconds; current allocated memory: 331.686 MB.
+INFO: [HLS 200-111]  Elapsed time: 3.79 seconds; current allocated memory: 361.567 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 2.64 seconds; current allocated memory: 331.961 MB.
+INFO: [HLS 200-111]  Elapsed time: 68.06 seconds; current allocated memory: 363.812 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'conv_layer2'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_conv_layer2_label12_conv_layer2_label11'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 16, Final II = 16, Depth = 21.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 2.71 seconds; current allocated memory: 332.384 MB.
+INFO: [HLS 200-111]  Elapsed time: 74.46 seconds; current allocated memory: 365.200 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 3.33 seconds; current allocated memory: 332.757 MB.
+INFO: [HLS 200-111]  Elapsed time: 59.04 seconds; current allocated memory: 367.114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pool_layer2'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_pool_layer2_label18'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 21, Final II = 21, Depth = 48.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 3.36 seconds; current allocated memory: 333.060 MB.
+INFO: [HLS 200-111]  Elapsed time: 57.06 seconds; current allocated memory: 368.055 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 2.53 seconds; current allocated memory: 333.335 MB.
+INFO: [HLS 200-111]  Elapsed time: 31.57 seconds; current allocated memory: 369.168 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'flatten'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 2.56 seconds; current allocated memory: 333.507 MB.
+INFO: [HLS 200-111]  Elapsed time: 31.21 seconds; current allocated memory: 369.474 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 1.57 seconds; current allocated memory: 333.677 MB.
+INFO: [HLS 200-111]  Elapsed time: 4.85 seconds; current allocated memory: 369.659 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'nnet'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 1.72 seconds; current allocated memory: 334.217 MB.
+INFO: [HLS 200-111]  Elapsed time: 5.24 seconds; current allocated memory: 370.216 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 5.02 seconds; current allocated memory: 334.851 MB.
+INFO: [HLS 200-111]  Elapsed time: 20.07 seconds; current allocated memory: 371.166 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer1_label8_p'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_31' to 'conv_layer1_labelbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_29' to 'conv_layer1_labelcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_27' to 'conv_layer1_labeldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_25' to 'conv_layer1_labeleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_23' to 'conv_layer1_labelfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_21' to 'conv_layer1_labelg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_19' to 'conv_layer1_labelhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_17' to 'conv_layer1_labelibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_15' to 'conv_layer1_labeljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_13' to 'conv_layer1_labelkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_11' to 'conv_layer1_labellbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_9' to 'conv_layer1_labelmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_7' to 'conv_layer1_labelncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_5' to 'conv_layer1_labelocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_3' to 'conv_layer1_labelpcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_weights_1' to 'conv_layer1_labelqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_conv_layer1_bias_V' to 'conv_layer1_labelrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_label8_p_image_V_0' to 'conv_layer1_labelsc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_19s_20ns_39_1_1' to 'nnet_mul_mul_19s_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mac_muladd_5ns_6ns_5ns_10_1_1' to 'nnet_mac_muladd_5udo' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_mac_muladd_5udo': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_19s_tde': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer1_label8_p'.
+INFO: [HLS 200-111]  Elapsed time: 19.87 seconds; current allocated memory: 373.573 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_con'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_con'.
+INFO: [HLS 200-111]  Elapsed time: 27.3 seconds; current allocated memory: 377.321 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'conv_layer1_conv_layer1_bias_V' to 'conv_layer1_conv_bkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'conv_layer1_image_V_0' to 'conv_layer1_imagecud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'conv_layer1_conv_layer1_weights_s' to 'conv_layer1_conv_dEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_19s_20ns_39_1_1' to 'nnet_mul_mul_19s_eOg' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_19s_eOg': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer1'.
-INFO: [HLS 200-111]  Elapsed time: 4.91 seconds; current allocated memory: 335.554 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.97 seconds; current allocated memory: 377.672 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer1'.
-INFO: [HLS 200-111]  Elapsed time: 2.98 seconds; current allocated memory: 337.469 MB.
+INFO: [HLS 200-111]  Elapsed time: 2.25 seconds; current allocated memory: 382.137 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer2'
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_bias_V' to 'conv_layer2_conv_fYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_s' to 'conv_layer2_conv_g8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_24s_19s_42_1_1' to 'nnet_mul_mul_24s_hbi' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_hbi': 1 instance(s).
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_63' to 'conv_layer2_conv_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_61' to 'conv_layer2_conv_wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_59' to 'conv_layer2_conv_xdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_57' to 'conv_layer2_conv_yd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_55' to 'conv_layer2_conv_zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_53' to 'conv_layer2_conv_Aem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_51' to 'conv_layer2_conv_Bew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_49' to 'conv_layer2_conv_CeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_47' to 'conv_layer2_conv_DeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_45' to 'conv_layer2_conv_Ee0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_43' to 'conv_layer2_conv_Ffa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_41' to 'conv_layer2_conv_Gfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_39' to 'conv_layer2_conv_Hfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_37' to 'conv_layer2_conv_IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_35' to 'conv_layer2_conv_JfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_33' to 'conv_layer2_conv_KfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_31' to 'conv_layer2_conv_Lf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_29' to 'conv_layer2_conv_Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_27' to 'conv_layer2_conv_Ngs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_25' to 'conv_layer2_conv_OgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_23' to 'conv_layer2_conv_PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_21' to 'conv_layer2_conv_QgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_19' to 'conv_layer2_conv_Rg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_17' to 'conv_layer2_conv_Shg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_15' to 'conv_layer2_conv_Thq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_13' to 'conv_layer2_conv_UhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_11' to 'conv_layer2_conv_VhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_9' to 'conv_layer2_conv_WhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_7' to 'conv_layer2_conv_Xh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_5' to 'conv_layer2_conv_Yie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_3' to 'conv_layer2_conv_Zio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights_1' to 'conv_layer2_conv_0iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_bias_V' to 'conv_layer2_conv_1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mac_muladd_5ns_4ns_4ns_8_1_1' to 'nnet_mac_muladd_52iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_19s_24s_43_1_1' to 'nnet_mul_mul_19s_3i2' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_mac_muladd_52iS': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_19s_3i2': 32 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer2'.
-INFO: [HLS 200-111]  Elapsed time: 2.76 seconds; current allocated memory: 339.326 MB.
+INFO: [HLS 200-111]  Elapsed time: 79.5 seconds; current allocated memory: 393.856 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer2'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer2'.
-INFO: [HLS 200-111]  Elapsed time: 3.61 seconds; current allocated memory: 341.416 MB.
+INFO: [HLS 200-111]  Elapsed time: 58.62 seconds; current allocated memory: 402.364 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'flatten'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'flatten'.
-INFO: [HLS 200-111]  Elapsed time: 2.74 seconds; current allocated memory: 342.984 MB.
+INFO: [HLS 200-111]  Elapsed time: 33.45 seconds; current allocated memory: 406.414 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'nnet'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -156,32 +330,125 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc_layer1_out_V' to '
 INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc_layer2_out_V' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc_layer3_out_V' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'nnet' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_31' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_29' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_27' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_25' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_23' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_21' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_19' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_17' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_15' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_13' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_11' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_9' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_7' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_1' will not be exposed as RTL port.
 WARNING: [RTGEN 206-101] Global array 'conv_layer1_bias_V' will not be exposed as RTL port.
 WARNING: [RTGEN 206-101] Global array 'image_V_0' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_s' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_63' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_61' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_59' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_57' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_55' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_53' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_51' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_49' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_47' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_45' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_43' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_41' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_39' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_37' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_35' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_33' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_31' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_29' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_27' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_25' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_23' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_21' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_19' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_17' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_15' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_13' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_11' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_9' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_7' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_1' will not be exposed as RTL port.
 WARNING: [RTGEN 206-101] Global array 'conv_layer2_bias_V' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_s' will not be exposed as RTL port.
 WARNING: [RTGEN 206-101] Global array 'fc_layer1_weights_V' will not be exposed as RTL port.
-INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer1_weights_V' to 'nnet_fc_layer1_weibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer1_weights_V' to 'nnet_fc_layer1_we4jc' due to the length limit 20
 WARNING: [RTGEN 206-101] Global array 'fc_layer2_weights_V' will not be exposed as RTL port.
-INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer2_weights_V' to 'nnet_fc_layer2_wejbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer2_weights_V' to 'nnet_fc_layer2_we5jm' due to the length limit 20
 WARNING: [RTGEN 206-101] Global array 'fc_layer3_weights_V' will not be exposed as RTL port.
-INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer3_weights_V' to 'nnet_fc_layer3_wekbM' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_24s_18s_41_1_1' to 'nnet_mul_mul_24s_lbW' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_hbi': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_lbW': 1 instance(s).
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer3_weights_V' to 'nnet_fc_layer3_we6jw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_24s_18s_41_1_1' to 'nnet_mul_mul_24s_7jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mul_mul_24s_19s_42_1_1' to 'nnet_mul_mul_24s_8jQ' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_7jG': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mul_mul_24s_8jQ': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'nnet'.
-INFO: [HLS 200-111]  Elapsed time: 1.92 seconds; current allocated memory: 344.903 MB.
-INFO: [RTMG 210-279] Implementing memory 'conv_layer1_conv_bkb_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'conv_layer1_imagecud_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'conv_layer1_conv_dEe_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_fYi_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_g8j_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer1_weibs_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer2_wejbC_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer3_wekbM_rom' using auto ROMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:43 ; elapsed = 00:02:32 . Memory (MB): peak = 869.059 ; gain = 520.996 ; free physical = 111 ; free virtual = 3110
+INFO: [HLS 200-111]  Elapsed time: 7.81 seconds; current allocated memory: 408.956 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labeldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labeleOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelhbi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labeljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labellbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelncg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelocq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelpcA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelqcK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelrcU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_labelsc4_rom' using block ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_vdy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_wdI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_xdS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_yd2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_zec_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Aem_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Bew_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_CeG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_DeQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Ee0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Ffa_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Gfk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Hfu_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_IfE_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_JfO_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_KfY_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Lf8_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Mgi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Ngs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_OgC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_PgM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_QgW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Rg6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Shg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Thq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_UhA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_VhK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_WhU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Xh4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Yie_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_Zio_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_0iy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_1iI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer1_we4jc_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer2_we5jm_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'nnet_fc_layer3_we6jw_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:16:12 ; elapsed = 00:15:43 . Memory (MB): peak = 939.055 ; gain = 590.996 ; free physical = 139 ; free virtual = 2396
 INFO: [SYSC 207-301] Generating SystemC RTL for nnet.
 INFO: [VHDL 208-304] Generating VHDL RTL for nnet.
 INFO: [VLOG 209-307] Generating Verilog RTL for nnet.
-INFO: [HLS 200-112] Total elapsed time: 152.2 seconds; peak allocated memory: 344.903 MB.
+INFO: [HLS 200-112] Total elapsed time: 943.59 seconds; peak allocated memory: 408.956 MB.

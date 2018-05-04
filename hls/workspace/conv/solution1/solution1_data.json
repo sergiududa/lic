@@ -12,15 +12,19 @@
     "Package": "clg400",
     "Speed": "-1"
   },
-  "HlsSolution": {
-    
-  },
+  "HlsSolution": {"Directives": [
+      "unroll conv\/conv_label0 {} {}",
+      "unroll conv\/conv_label1 {} {}",
+      "unroll conv\/conv_label2 {} {}",
+      "unroll conv\/conv_label3 {} {}",
+      "pipeline conv\/conv_label4 {} {}"
+    ]},
   "ClockInfo": {
     "ClockName": "ap_clk",
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1305713",
+    "Latency": "14932",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -123,7 +127,25 @@
           "Width": "10"
         }}
     },
+    "image_r_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "10",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "10"
+        }}
+    },
     "image_r_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "image_r_q1": {
       "type": "data",
       "dir": "in",
       "width": "32",
@@ -159,7 +181,25 @@
           "Width": "7"
         }}
     },
+    "weight_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "7",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "7"
+        }}
+    },
     "weight_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "weight_q1": {
       "type": "data",
       "dir": "in",
       "width": "32",
@@ -222,6 +262,18 @@
       "dir": "in",
       "width": "32"
     },
+    "image_r_address1": {
+      "dir": "out",
+      "width": "10"
+    },
+    "image_r_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "image_r_q1": {
+      "dir": "in",
+      "width": "32"
+    },
     "weight_address0": {
       "dir": "out",
       "width": "7"
@@ -231,6 +283,18 @@
       "width": "1"
     },
     "weight_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "weight_address1": {
+      "dir": "out",
+      "width": "7"
+    },
+    "weight_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "weight_q1": {
       "dir": "in",
       "width": "32"
     },
@@ -268,8 +332,24 @@
       "arraySize": "1024",
       "handshakeRef": "ap_none"
     },
+    "image_r_q1": {
+      "interfaceRef": "image_r_q1",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1024",
+      "handshakeRef": "ap_none"
+    },
     "weight_q0": {
       "interfaceRef": "weight_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "128",
+      "handshakeRef": "ap_none"
+    },
+    "weight_q1": {
+      "interfaceRef": "weight_q1",
       "dir": "in",
       "dataWidth": "32",
       "busTypeRef": "ap_memory",
@@ -289,64 +369,36 @@
     "Hierarchy": {"ModuleName": "conv"},
     "Metrics": {"conv": {
         "Latency": {
-          "LatencyBest": "1305713",
-          "LatencyAvg": "1305713",
-          "LatencyWorst": "1305713",
-          "PipelineII": "1305714",
+          "LatencyBest": "14932",
+          "LatencyAvg": "14932",
+          "LatencyWorst": "14932",
+          "PipelineII": "14933",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.16"
+          "Estimate": "9.63"
         },
         "Loops": [{
-            "Name": "Loop 1",
-            "TripCount": "8",
-            "Latency": "1305712",
-            "PipelineII": "",
-            "PipelineDepth": "163214",
-            "Loops": [{
-                "Name": "Loop 1.1",
-                "TripCount": "29",
-                "Latency": "163212",
-                "PipelineII": "",
-                "PipelineDepth": "5628",
-                "Loops": [{
-                    "Name": "Loop 1.1.1",
-                    "TripCount": "29",
-                    "Latency": "5626",
-                    "PipelineII": "",
-                    "PipelineDepth": "194",
-                    "Loops": [{
-                        "Name": "Loop 1.1.1.1",
-                        "TripCount": "4",
-                        "Latency": "184",
-                        "PipelineII": "",
-                        "PipelineDepth": "46",
-                        "Loops": [{
-                            "Name": "Loop 1.1.1.1.1",
-                            "TripCount": "4",
-                            "Latency": "44",
-                            "PipelineII": "",
-                            "PipelineDepth": "11"
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "L_conv_label4",
+            "TripCount": "232",
+            "Latency": "14930",
+            "PipelineII": "64",
+            "PipelineDepth": "147"
           }],
         "Area": {
-          "DSP48E": "5",
-          "FF": "787",
-          "LUT": "1480",
-          "BRAM_18K": "0"
+          "BRAM_18K": "0",
+          "DSP48E": "40",
+          "FF": "15070",
+          "LUT": "16155"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-04-25 14:03:45 EEST",
+    "Time": "2018-05-04 16:09:18 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4.1"
   }

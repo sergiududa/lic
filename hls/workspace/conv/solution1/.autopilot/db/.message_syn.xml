@@ -2,18 +2,22 @@
 <Messages>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;conv/solution1/conv.c&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:19 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 164 ; free virtual = 5299" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 164 ; free virtual = 5299" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 382 ; free virtual = 4738" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 383 ; free virtual = 4738" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 151 ; free virtual = 5296" tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label1&apos; (conv/solution1/conv.c:26) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 384 ; free virtual = 4743" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.c:28) automatically." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 151 ; free virtual = 5296" tag=""/>
-	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="812" content="Unrolling small iteration loop &apos;Loop-1.1.1.1.1.1&apos; (conv/solution1/conv.c:26) in function &apos;conv&apos; automatically." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.1.1.1.1&apos; (conv/solution1/conv.c:26) in function &apos;conv&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.c:28) automatically." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 142 ; free virtual = 5277" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 150 ; free virtual = 5285" tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.c:27) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 384 ; free virtual = 4743" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;conv_label4&apos; (conv/solution1/conv.c:18) in function &apos;conv&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label3&apos; (conv/solution1/conv.c:19) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label0&apos; (conv/solution1/conv.c:24) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label2&apos; (conv/solution1/conv.c:25) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.c:27) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 366 ; free virtual = 4721" tag=""/>
+	<Message prefix="[XFORM 203-541]" severity="INFO" keynum="789" content="Flattening a loop nest &apos;Loop-1&apos; (conv/solution1/conv.c:14:6) in function &apos;conv&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:42 ; elapsed = 00:00:38 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 346 ; free virtual = 4701" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;conv&apos; ..." tag=""/>
 	<Message prefix="[SYN 201-107]" severity="WARNING" keynum="557" content="Renaming port name &apos;conv/output&apos; to &apos;conv/output_r&apos; to avoid the conflict with HDL keywords or other object names." tag=""/>
@@ -22,14 +26,19 @@
 	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;conv&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;L_conv_label4&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between &apos;store&apos; operation (conv/solution1/conv.c:27) of variable &apos;a&apos;, /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6-&gt;conv/solution1/conv.c:27 on array &apos;output_r&apos; and &apos;store&apos; operation (conv/solution1/conv.c:27) of variable &apos;a&apos;, /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6-&gt;conv/solution1/conv.c:27 on array &apos;output_r&apos;." tag=""/>
+	<Message prefix="[SCHED 204-69]" severity="WARNING" keynum="104" content="Unable to schedule &apos;load&apos; operation (&apos;image_load_16&apos;, conv/solution1/conv.c:26) on array &apos;image_r&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;image_r&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 64, Depth = 147." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 32.06 seconds; current allocated memory: 60.640 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 86.22 seconds; current allocated memory: 81.854 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.21 seconds; current allocated memory: 61.038 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 19.41 seconds; current allocated memory: 92.897 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;conv&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -41,14 +50,14 @@
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_fadd_32ns_32ns_32_5_full_dsp_1&apos; to &apos;conv_fadd_32ns_32bkb&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_fmul_32ns_32ns_32_4_max_dsp_1&apos; to &apos;conv_fmul_32ns_32cud&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;conv_fcmp_32ns_32ns_1_1_1&apos; to &apos;conv_fcmp_32ns_32dEe&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;conv_fadd_32ns_32bkb&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;conv_fadd_32ns_32bkb&apos;: 8 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;conv_fcmp_32ns_32dEe&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;conv_fmul_32ns_32cud&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;conv_fmul_32ns_32cud&apos;: 8 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;conv&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.41 seconds; current allocated memory: 61.742 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:38 ; elapsed = 00:00:36 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 139 ; free virtual = 5275" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 20.96 seconds; current allocated memory: 102.899 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:02:22 ; elapsed = 00:02:42 . Memory (MB): peak = 553.434 ; gain = 205.371 ; free physical = 189 ; free virtual = 4597" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for conv." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for conv." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for conv." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 35.85 seconds; peak allocated memory: 61.742 MB." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 161.8 seconds; peak allocated memory: 102.899 MB." tag=""/>
 </Messages>

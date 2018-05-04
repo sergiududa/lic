@@ -36,11 +36,11 @@
 <TripCount>6</TripCount>
 <Latency>204</Latency>
 <IterationLatency>34</IterationLatency>
-<Loop1.1.1>
+<flatten_label4>
 <TripCount>16</TripCount>
 <Latency>32</Latency>
 <IterationLatency>2</IterationLatency>
-</Loop1.1.1>
+</flatten_label4>
 </Loop1.1>
 </Loop1>
 </SummaryOfLoopLatency>

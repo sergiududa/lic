@@ -7,18 +7,21 @@ Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Analyzing design file 'pool/solution1/pool.c' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 171 ; free virtual = 4987
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 170 ; free virtual = 4986
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:19 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 169 ; free virtual = 4270
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:27 ; elapsed = 00:00:25 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 168 ; free virtual = 4270
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:30 ; elapsed = 00:00:27 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 163 ; free virtual = 4984
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 166 ; free virtual = 4269
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 163 ; free virtual = 4984
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 143 ; free virtual = 4964
-INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i4.i1.i3' in function 'pool' and propagating its result(s) since all actual argument(s) to the function are constants.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 147 ; free virtual = 4972
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 166 ; free virtual = 4269
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'pool_label3' (pool/solution1/pool.c:9) in function 'pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'pool_label4' (pool/solution1/pool.c:10) in function 'pool' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_label5' (pool/solution1/pool.c:13) in function 'pool' completely.
+INFO: [XFORM 203-501] Unrolling loop 'pool_label6' (pool/solution1/pool.c:14) in function 'pool' completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 144 ; free virtual = 4247
+INFO: [XFORM 203-541] Flattening a loop nest 'pool_label2' (pool/solution1/pool.c:8:3) in function 'pool'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:37 ; elapsed = 00:00:35 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 142 ; free virtual = 4245
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'pool' ...
 WARNING: [SYN 201-107] Renaming port name 'pool/output' to 'pool/output_r' to avoid the conflict with HDL keywords or other object names.
@@ -27,14 +30,16 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pool'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pool_label2_pool_label3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 50, Final II = 50, Depth = 53.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 31.94 seconds; current allocated memory: 60.490 MB.
+INFO: [HLS 200-111]  Elapsed time: 37.7 seconds; current allocated memory: 71.065 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 60.930 MB.
+INFO: [HLS 200-111]  Elapsed time: 4.3 seconds; current allocated memory: 75.084 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pool'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -44,9 +49,9 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'pool' to 'ap_ctrl_hs'.
 INFO: [SYN 201-210] Renamed object name 'pool_fcmp_32ns_32ns_1_1_1' to 'pool_fcmp_32ns_32bkb' due to the length limit 20
 INFO: [RTGEN 206-100] Generating core module 'pool_fcmp_32ns_32bkb': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pool'.
-INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 61.529 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:37 ; elapsed = 00:00:35 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 136 ; free virtual = 4963
+INFO: [HLS 200-111]  Elapsed time: 5.89 seconds; current allocated memory: 83.113 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 122 ; free virtual = 4210
 INFO: [SYSC 207-301] Generating SystemC RTL for pool.
 INFO: [VHDL 208-304] Generating VHDL RTL for pool.
 INFO: [VLOG 209-307] Generating Verilog RTL for pool.
-INFO: [HLS 200-112] Total elapsed time: 35.3 seconds; peak allocated memory: 61.529 MB.
+INFO: [HLS 200-112] Total elapsed time: 68.36 seconds; peak allocated memory: 83.113 MB.

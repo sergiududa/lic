@@ -14,8 +14,8 @@ set C_modelName {conv}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ output_r float 32 regular {array 6728 { 0 3 } 0 1 }  }
-	{ image_r float 32 regular {array 1024 { 1 3 } 1 1 }  }
-	{ weight float 32 regular {array 128 { 1 3 } 1 1 }  }
+	{ image_r float 32 regular {array 1024 { 1 1 } 1 1 }  }
+	{ weight float 32 regular {array 128 { 1 1 } 1 1 }  }
 	{ bias float 32 regular {array 8 { 1 3 } 1 1 }  }
 }
 set C_modelArgMapList {[ 
@@ -24,7 +24,7 @@ set C_modelArgMapList {[
  	{ "Name" : "weight", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "weight","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 3,"step" : 1},{"low" : 0,"up" : 3,"step" : 1},{"low" : 0,"up" : 0,"step" : 1},{"low" : 0,"up" : 7,"step" : 1}]}]}]} , 
  	{ "Name" : "bias", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "bias","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 7,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 19
+set portNum 25
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -39,9 +39,15 @@ set portList {
 	{ image_r_address0 sc_out sc_lv 10 signal 1 } 
 	{ image_r_ce0 sc_out sc_logic 1 signal 1 } 
 	{ image_r_q0 sc_in sc_lv 32 signal 1 } 
+	{ image_r_address1 sc_out sc_lv 10 signal 1 } 
+	{ image_r_ce1 sc_out sc_logic 1 signal 1 } 
+	{ image_r_q1 sc_in sc_lv 32 signal 1 } 
 	{ weight_address0 sc_out sc_lv 7 signal 2 } 
 	{ weight_ce0 sc_out sc_logic 1 signal 2 } 
 	{ weight_q0 sc_in sc_lv 32 signal 2 } 
+	{ weight_address1 sc_out sc_lv 7 signal 2 } 
+	{ weight_ce1 sc_out sc_logic 1 signal 2 } 
+	{ weight_q1 sc_in sc_lv 32 signal 2 } 
 	{ bias_address0 sc_out sc_lv 3 signal 3 } 
 	{ bias_ce0 sc_out sc_logic 1 signal 3 } 
 	{ bias_q0 sc_in sc_lv 32 signal 3 } 
@@ -60,15 +66,21 @@ set NewPortList {[
  	{ "name": "image_r_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "image_r", "role": "address0" }} , 
  	{ "name": "image_r_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_r", "role": "ce0" }} , 
  	{ "name": "image_r_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "image_r", "role": "q0" }} , 
+ 	{ "name": "image_r_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "image_r", "role": "address1" }} , 
+ 	{ "name": "image_r_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_r", "role": "ce1" }} , 
+ 	{ "name": "image_r_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "image_r", "role": "q1" }} , 
  	{ "name": "weight_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "weight", "role": "address0" }} , 
  	{ "name": "weight_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "weight", "role": "ce0" }} , 
  	{ "name": "weight_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "weight", "role": "q0" }} , 
+ 	{ "name": "weight_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "weight", "role": "address1" }} , 
+ 	{ "name": "weight_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "weight", "role": "ce1" }} , 
+ 	{ "name": "weight_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "weight", "role": "q1" }} , 
  	{ "name": "bias_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "bias", "role": "address0" }} , 
  	{ "name": "bias_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "bias", "role": "ce0" }} , 
  	{ "name": "bias_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "bias", "role": "q0" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"],
 		"CDFG" : "conv",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -82,31 +94,46 @@ set RtlHierarchyInfo {[
 			{"Name" : "weight", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "bias", "Type" : "Memory", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U1", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U2", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fcmp_32ns_32dEe_U3", "Parent" : "0"}]}
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U2", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U3", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U4", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U5", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U6", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U7", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fadd_32ns_32bkb_U8", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U9", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U10", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U11", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U12", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U13", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U14", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U15", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fmul_32ns_32cud_U16", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_fcmp_32ns_32dEe_U17", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	conv {
-		output_r {Type O LastRead -1 FirstWrite 12}
-		image_r {Type I LastRead 5 FirstWrite -1}
-		weight {Type I LastRead 5 FirstWrite -1}
-		bias {Type I LastRead 4 FirstWrite -1}}}
+		output_r {Type O LastRead -1 FirstWrite 119}
+		image_r {Type I LastRead 65 FirstWrite -1}
+		weight {Type I LastRead 17 FirstWrite -1}
+		bias {Type I LastRead 122 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1305713", "Max" : "1305713"}
-	, {"Name" : "Interval", "Min" : "1305714", "Max" : "1305714"}
+	{"Name" : "Latency", "Min" : "14932", "Max" : "14932"}
+	, {"Name" : "Interval", "Min" : "14933", "Max" : "14933"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 
 	output_r { ap_memory {  { output_r_address0 mem_address 1 13 }  { output_r_ce0 mem_ce 1 1 }  { output_r_we0 mem_we 1 1 }  { output_r_d0 mem_din 1 32 } } }
-	image_r { ap_memory {  { image_r_address0 mem_address 1 10 }  { image_r_ce0 mem_ce 1 1 }  { image_r_q0 mem_dout 0 32 } } }
-	weight { ap_memory {  { weight_address0 mem_address 1 7 }  { weight_ce0 mem_ce 1 1 }  { weight_q0 mem_dout 0 32 } } }
+	image_r { ap_memory {  { image_r_address0 mem_address 1 10 }  { image_r_ce0 mem_ce 1 1 }  { image_r_q0 mem_dout 0 32 }  { image_r_address1 mem_address 1 10 }  { image_r_ce1 mem_ce 1 1 }  { image_r_q1 mem_dout 0 32 } } }
+	weight { ap_memory {  { weight_address0 mem_address 1 7 }  { weight_ce0 mem_ce 1 1 }  { weight_q0 mem_dout 0 32 }  { weight_address1 mem_address 1 7 }  { weight_ce1 mem_ce 1 1 }  { weight_q1 mem_dout 0 32 } } }
 	bias { ap_memory {  { bias_address0 mem_address 1 3 }  { bias_ce0 mem_ce 1 1 }  { bias_q0 mem_dout 0 32 } } }
 }
 

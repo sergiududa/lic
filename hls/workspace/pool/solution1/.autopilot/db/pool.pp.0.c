@@ -136,13 +136,13 @@ void pool(float output[14][14][8], float image[29][29][8])
 {
 
  float max;
- for(int channel = 0; channel < 8; channel++)
-  for(int i = 0; i < 29 -2 + 1; i += 2)
-   for(int j = 0; j < 29 - 2 + 1; j += 2)
+ pool_label2:for(int channel = 0; channel < 8; channel++)
+  pool_label3:for(int i = 0; i < 29 -2 + 1; i += 2)
+   pool_label4:for(int j = 0; j < 29 - 2 + 1; j += 2)
    {
     max = image[i][j][channel];
-    for(int k = 0; k < 2; k++)
-     for(int l = 0; l < 2; l++)
+    pool_label5:for(int k = 0; k < 2; k++)
+     pool_label6:for(int l = 0; l < 2; l++)
       max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
     output[i/2][j/2][channel] = max;
    }

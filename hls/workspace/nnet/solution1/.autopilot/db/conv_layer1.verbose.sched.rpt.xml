@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'conv_layer1'" level="0">
-<item name = "Date">Wed Apr 25 19:19:05 2018
+<item name = "Date">Fri May  4 18:45:37 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 6.97, 1.25</column>
+<column name="ap_clk">10.00, 9.63, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">505089, 505089, 505089, 505089, none</column>
+<column name="">6841, 6841, 6841, 6841, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,11 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">505088, 505088, 63136, -, -, 8, no</column>
-<column name=" + Loop 1.1">63133, 63133, 2177, -, -, 29, no</column>
-<column name="  ++ Loop 1.1.1">2175, 2175, 75, -, -, 29, no</column>
-<column name="   +++ Loop 1.1.1.1">72, 72, 18, -, -, 4, no</column>
-<column name="    ++++ Loop 1.1.1.1.1">16, 16, 4, -, -, 4, no</column>
+<column name="- conv_layer1_label19">6840, 6840, 856, -, -, 8, no</column>
 </table>
 </item>
 </section>

@@ -113,7 +113,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir I \
     corename image_r \
     op interface \
-    ports { image_r_address0 { O 13 vector } image_r_ce0 { O 1 bit } image_r_q0 { I 32 vector } } \
+    ports { image_r_address0 { O 13 vector } image_r_ce0 { O 1 bit } image_r_q0 { I 32 vector } image_r_address1 { O 13 vector } image_r_ce1 { O 1 bit } image_r_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'image_r'"

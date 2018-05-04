@@ -2,15 +2,19 @@
 <Messages>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;pool/solution1/pool.c&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 171 ; free virtual = 4987" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 170 ; free virtual = 4986" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:19 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 169 ; free virtual = 4270" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:27 ; elapsed = 00:00:25 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 168 ; free virtual = 4270" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:30 ; elapsed = 00:00:27 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 163 ; free virtual = 4984" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 166 ; free virtual = 4269" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 163 ; free virtual = 4984" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 143 ; free virtual = 4964" tag=""/>
-	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="805" content="Evaluating the output(s) of a call to function &apos;_ssdm_op_BitConcatenate.i4.i1.i3&apos; in function &apos;pool&apos; and propagating its result(s) since all actual argument(s) to the function are constants." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 147 ; free virtual = 4972" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 166 ; free virtual = 4269" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;pool_label3&apos; (pool/solution1/pool.c:9) in function &apos;pool&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;pool_label4&apos; (pool/solution1/pool.c:10) in function &apos;pool&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;pool_label5&apos; (pool/solution1/pool.c:13) in function &apos;pool&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;pool_label6&apos; (pool/solution1/pool.c:14) in function &apos;pool&apos; completely." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 144 ; free virtual = 4247" tag=""/>
+	<Message prefix="[XFORM 203-541]" severity="INFO" keynum="789" content="Flattening a loop nest &apos;pool_label2&apos; (pool/solution1/pool.c:8:3) in function &apos;pool&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:37 ; elapsed = 00:00:35 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 142 ; free virtual = 4245" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;pool&apos; ..." tag=""/>
 	<Message prefix="[SYN 201-107]" severity="WARNING" keynum="557" content="Renaming port name &apos;pool/output&apos; to &apos;pool/output_r&apos; to avoid the conflict with HDL keywords or other object names." tag=""/>
@@ -19,14 +23,16 @@
 	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;pool&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;pool_label2_pool_label3&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 50, Final II = 50, Depth = 53." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 31.94 seconds; current allocated memory: 60.490 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 37.7 seconds; current allocated memory: 71.065 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.21 seconds; current allocated memory: 60.930 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 4.3 seconds; current allocated memory: 75.084 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;pool&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -36,10 +42,10 @@
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pool_fcmp_32ns_32ns_1_1_1&apos; to &apos;pool_fcmp_32ns_32bkb&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pool_fcmp_32ns_32bkb&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;pool&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.41 seconds; current allocated memory: 61.529 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:37 ; elapsed = 00:00:35 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 136 ; free virtual = 4963" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 5.89 seconds; current allocated memory: 83.113 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 122 ; free virtual = 4210" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for pool." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for pool." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for pool." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 35.3 seconds; peak allocated memory: 61.529 MB." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 68.36 seconds; peak allocated memory: 83.113 MB." tag=""/>
 </Messages>

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 19
-set name nnet_mul_mul_24s_lbW
+set id 119
+set name nnet_mul_mul_24s_7jG
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -76,9 +76,85 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 }
 
 
+set id 120
+set name nnet_mul_mul_24s_8jQ
+set corename simcore_mul
+set op mul
+set stage_num 1
+set max_latency -1
+set registered_input 1
+set in0_width 24
+set in0_signed 1
+set in1_width 19
+set in1_signed 1
+set out_width 42
+set exp i0*i1
+set arg_lists {i0 {24 1 +} i1 {19 1 +} p {42 1 +} acc {0} }
+set TrueReset 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
+eval "ap_gen_simcore_mul { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    true_reset ${TrueReset} \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    in1_width ${in1_width} \
+    in1_signed ${in1_signed} \
+    out_width ${out_width} \
+    exp ${exp} \
+    arg_lists {${arg_lists}} \
+}"
+} else {
+puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler ${name}
+}
+
+
+set op mul
+set corename DSP48
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    true_reset ${TrueReset} \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    in1_width ${in1_width} \
+    in1_signed ${in1_signed} \
+    out_width ${out_width} \
+    exp ${exp} \
+    arg_lists {${arg_lists}} \
+}"
+} else {
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
+}
+}
+
+
 # Memory (RAM/ROM)  definition:
-set ID 22
-set MemName nnet_fc_layer1_weibs
+set ID 123
+set MemName nnet_fc_layer1_we4jc
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 18
@@ -157,8 +233,8 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 23
-set MemName nnet_fc_layer2_wejbC
+set ID 124
+set MemName nnet_fc_layer2_we5jm
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 19
@@ -237,8 +313,8 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 24
-set MemName nnet_fc_layer3_wekbM
+set ID 125
+set MemName nnet_fc_layer3_we6jw
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 20
@@ -327,14 +403,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 25 \
+    id 126 \
     name conv_layer1_out_V \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename conv_layer1_out_V \
     op interface \
-    ports { conv_layer1_out_V_address0 { O 13 vector } conv_layer1_out_V_ce0 { O 1 bit } conv_layer1_out_V_we0 { O 1 bit } conv_layer1_out_V_d0 { O 24 vector } conv_layer1_out_V_q0 { I 24 vector } } \
+    ports { conv_layer1_out_V_address0 { O 13 vector } conv_layer1_out_V_ce0 { O 1 bit } conv_layer1_out_V_we0 { O 1 bit } conv_layer1_out_V_d0 { O 24 vector } conv_layer1_out_V_q0 { I 24 vector } conv_layer1_out_V_address1 { O 13 vector } conv_layer1_out_V_ce1 { O 1 bit } conv_layer1_out_V_q1 { I 24 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'conv_layer1_out_V'"
@@ -346,14 +422,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 26 \
+    id 127 \
     name conv_layer2_out_V \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename conv_layer2_out_V \
     op interface \
-    ports { conv_layer2_out_V_address0 { O 12 vector } conv_layer2_out_V_ce0 { O 1 bit } conv_layer2_out_V_we0 { O 1 bit } conv_layer2_out_V_d0 { O 24 vector } conv_layer2_out_V_q0 { I 24 vector } } \
+    ports { conv_layer2_out_V_address0 { O 12 vector } conv_layer2_out_V_ce0 { O 1 bit } conv_layer2_out_V_we0 { O 1 bit } conv_layer2_out_V_d0 { O 24 vector } conv_layer2_out_V_q0 { I 24 vector } conv_layer2_out_V_address1 { O 12 vector } conv_layer2_out_V_ce1 { O 1 bit } conv_layer2_out_V_q1 { I 24 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'conv_layer2_out_V'"
@@ -365,14 +441,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 27 \
+    id 128 \
     name pool_layer1_out_V \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename pool_layer1_out_V \
     op interface \
-    ports { pool_layer1_out_V_address0 { O 11 vector } pool_layer1_out_V_ce0 { O 1 bit } pool_layer1_out_V_we0 { O 1 bit } pool_layer1_out_V_d0 { O 24 vector } pool_layer1_out_V_q0 { I 24 vector } } \
+    ports { pool_layer1_out_V_address0 { O 11 vector } pool_layer1_out_V_ce0 { O 1 bit } pool_layer1_out_V_we0 { O 1 bit } pool_layer1_out_V_d0 { O 24 vector } pool_layer1_out_V_q0 { I 24 vector } pool_layer1_out_V_address1 { O 11 vector } pool_layer1_out_V_ce1 { O 1 bit } pool_layer1_out_V_q1 { I 24 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'pool_layer1_out_V'"
@@ -384,7 +460,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 28 \
+    id 129 \
     name pool_layer2_out_V \
     reset_level 1 \
     sync_rst true \
@@ -403,7 +479,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 29 \
+    id 130 \
     name flatten_out_V \
     reset_level 1 \
     sync_rst true \
@@ -422,7 +498,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 30 \
+    id 131 \
     name fc_layer1_out_V \
     reset_level 1 \
     sync_rst true \
@@ -441,7 +517,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 31 \
+    id 132 \
     name fc_layer2_out_V \
     reset_level 1 \
     sync_rst true \
@@ -460,7 +536,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 32 \
+    id 133 \
     name fc_layer3_out_V \
     reset_level 1 \
     sync_rst true \
