@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="nnet.cpp" path="/home/sergiu/git/lic/hls/workspace/nnet_unroll/solution1/nnet.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="nnet_test.cpp" path="/home/sergiu/git/lic/hls/workspace/nnet_unroll/solution1/.tcls/nnet_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

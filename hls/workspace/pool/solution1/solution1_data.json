@@ -16,7 +16,8 @@
       "unroll pool\/pool_label4 {} {}",
       "unroll pool\/pool_label5 {} {}",
       "unroll pool\/pool_label6 {} {}",
-      "pipeline pool\/pool_label3 {{II 50}} {}"
+      "pipeline pool\/pool_label3 {{II 50}} {}",
+      "dataflow pool {} {}"
     ]},
   "ClockInfo": {
     "ClockName": "ap_clk",
@@ -39,10 +40,12 @@
   "Files": {
     "CSource": ["pool.c"],
     "Vhdl": [
+      "impl\/vhdl\/Loop_pool_label2_pro.vhd",
       "impl\/vhdl\/pool_fcmp_32ns_32bkb.vhd",
       "impl\/vhdl\/pool.vhd"
     ],
     "Verilog": [
+      "impl\/verilog\/Loop_pool_label2_pro.v",
       "impl\/verilog\/pool_fcmp_32ns_32bkb.v",
       "impl\/verilog\/pool.v"
     ],
@@ -66,12 +69,12 @@
     },
     "ap_ctrl": {
       "type": "ap_ctrl",
-      "ctrl_ports": "ap_start ap_done ap_idle ap_ready",
+      "ctrl_ports": "ap_done ap_start ap_ready ap_idle",
       "ctype": {
-        "start": {"Type": "bool"},
         "done": {"Type": "bool"},
-        "idle": {"Type": "bool"},
-        "ready": {"Type": "bool"}
+        "start": {"Type": "bool"},
+        "ready": {"Type": "bool"},
+        "idle": {"Type": "bool"}
       }
     },
     "ap_rst": {
@@ -95,6 +98,24 @@
       "ctype": {"DATA": {
           "Type": "null",
           "Width": "13"
+        }}
+    },
+    "image_r_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "image_r_d1": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
         }}
     },
     "image_r_q0": {
@@ -124,6 +145,15 @@
           "Width": "11"
         }}
     },
+    "output_r_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "11",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "11"
+        }}
+    },
     "output_r_d0": {
       "type": "data",
       "dir": "out",
@@ -132,33 +162,36 @@
           "Type": "real float",
           "Width": "32"
         }}
+    },
+    "output_r_d1": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "output_r_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
+    },
+    "output_r_q1": {
+      "type": "data",
+      "dir": "in",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "real float",
+          "Width": "32"
+        }}
     }
   },
   "RtlPorts": {
-    "ap_clk": {
-      "dir": "in",
-      "width": "1"
-    },
-    "ap_rst": {
-      "dir": "in",
-      "width": "1"
-    },
-    "ap_start": {
-      "dir": "in",
-      "width": "1"
-    },
-    "ap_done": {
-      "dir": "out",
-      "width": "1"
-    },
-    "ap_idle": {
-      "dir": "out",
-      "width": "1"
-    },
-    "ap_ready": {
-      "dir": "out",
-      "width": "1"
-    },
     "output_r_address0": {
       "dir": "out",
       "width": "11"
@@ -167,13 +200,37 @@
       "dir": "out",
       "width": "1"
     },
+    "output_r_d0": {
+      "dir": "out",
+      "width": "32"
+    },
+    "output_r_q0": {
+      "dir": "in",
+      "width": "32"
+    },
     "output_r_we0": {
       "dir": "out",
       "width": "1"
     },
-    "output_r_d0": {
+    "output_r_address1": {
+      "dir": "out",
+      "width": "11"
+    },
+    "output_r_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "output_r_d1": {
       "dir": "out",
       "width": "32"
+    },
+    "output_r_q1": {
+      "dir": "in",
+      "width": "32"
+    },
+    "output_r_we1": {
+      "dir": "out",
+      "width": "1"
     },
     "image_r_address0": {
       "dir": "out",
@@ -183,9 +240,17 @@
       "dir": "out",
       "width": "1"
     },
+    "image_r_d0": {
+      "dir": "out",
+      "width": "32"
+    },
     "image_r_q0": {
       "dir": "in",
       "width": "32"
+    },
+    "image_r_we0": {
+      "dir": "out",
+      "width": "1"
     },
     "image_r_address1": {
       "dir": "out",
@@ -195,16 +260,44 @@
       "dir": "out",
       "width": "1"
     },
+    "image_r_d1": {
+      "dir": "out",
+      "width": "32"
+    },
     "image_r_q1": {
       "dir": "in",
       "width": "32"
+    },
+    "image_r_we1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
     }
   },
   "CPorts": {
-    "ap_ctrl": {
-      "interfaceRef": "ap_ctrl",
-      "dir": "out"
-    },
     "output_r_d0": {
       "interfaceRef": "output_r_d0",
       "dir": "out",
@@ -213,9 +306,49 @@
       "arraySize": "1568",
       "handshakeRef": "ap_none"
     },
+    "output_r_q0": {
+      "interfaceRef": "output_r_q0",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1568",
+      "handshakeRef": "ap_none"
+    },
+    "output_r_d1": {
+      "interfaceRef": "output_r_d1",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1568",
+      "handshakeRef": "ap_none"
+    },
+    "output_r_q1": {
+      "interfaceRef": "output_r_q1",
+      "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "1568",
+      "handshakeRef": "ap_none"
+    },
+    "image_r_d0": {
+      "interfaceRef": "image_r_d0",
+      "dir": "out",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "6728",
+      "handshakeRef": "ap_none"
+    },
     "image_r_q0": {
       "interfaceRef": "image_r_q0",
       "dir": "in",
+      "dataWidth": "32",
+      "busTypeRef": "ap_memory",
+      "arraySize": "6728",
+      "handshakeRef": "ap_none"
+    },
+    "image_r_d1": {
+      "interfaceRef": "image_r_d1",
+      "dir": "out",
       "dataWidth": "32",
       "busTypeRef": "ap_memory",
       "arraySize": "6728",
@@ -228,16 +361,27 @@
       "busTypeRef": "ap_memory",
       "arraySize": "6728",
       "handshakeRef": "ap_none"
+    },
+    "ap_ctrl": {
+      "interfaceRef": "ap_ctrl",
+      "dir": "out"
     }
   },
   "ModuleInfo": {
-    "Hierarchy": {"ModuleName": "pool"},
-    "Metrics": {"pool": {
+    "Hierarchy": {
+      "ModuleName": "pool",
+      "Instances": [{
+          "ModuleName": "Loop_pool_label2_pro",
+          "InstanceName": "Loop_pool_label2_pro_U0"
+        }]
+    },
+    "Metrics": {
+      "Loop_pool_label2_pro": {
         "Latency": {
           "LatencyBest": "5604",
           "LatencyAvg": "5604",
           "LatencyWorst": "5604",
-          "PipelineII": "5605",
+          "PipelineII": "5604",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -255,15 +399,37 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "1688",
-          "LUT": "7508",
+          "FF": "1689",
+          "LUT": "7525",
           "BRAM_18K": "0"
         }
-      }}
+      },
+      "pool": {
+        "Latency": {
+          "LatencyBest": "5604",
+          "LatencyAvg": "5604",
+          "LatencyWorst": "5604",
+          "PipelineII": "5605",
+          "PipelineDepth": "",
+          "PipelineType": "dataflow"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "7.72"
+        },
+        "Area": {
+          "DSP48E": "0",
+          "FF": "1689",
+          "LUT": "7525",
+          "BRAM_18K": "0"
+        }
+      }
+    }
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-05-04 15:40:40 EEST",
+    "Time": "2018-05-08 18:34:29 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4.1"
   }

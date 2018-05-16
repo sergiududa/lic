@@ -15,6 +15,34 @@
         <directive functionName="conv" label="conv_label4" functionLabel="">
             <pragma name="PIPELINE"/>
         </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="axis" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="both" value="" positionalBoolean="register_mode"/>
+                <option name="port" value="output" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="axis" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="both" value="" positionalBoolean="register_mode"/>
+                <option name="port" value="image" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="weight" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="bias" positionalBoolean="4"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

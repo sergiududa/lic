@@ -275,6 +275,18 @@ float relu(float a)
 
 void conv(float output[29][29][8], float image[32][32][1], float weight[4][4][1][8], float bias[8])
 {_ssdm_SpecArrayDimSize(output,29);_ssdm_SpecArrayDimSize(image,32);_ssdm_SpecArrayDimSize(bias,8);_ssdm_SpecArrayDimSize(weight,4);
+_ssdm_op_SpecInterface(bias, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+# 6 "conv/solution1/conv.c"
+
+_ssdm_op_SpecInterface(weight, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+# 6 "conv/solution1/conv.c"
+
+_ssdm_op_SpecInterface(image, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+# 6 "conv/solution1/conv.c"
+
+_ssdm_op_SpecInterface(output, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+# 6 "conv/solution1/conv.c"
+
  int i,j,k,filter;
  float sum;
  int row_offset, col_offset, channel_offset;

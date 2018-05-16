@@ -14,4 +14,6 @@ lappend pragmaStatus12 {pragma "PIPELINE" source "/home/sergiu/git/lic/hls/works
 lappend pragmaStatus13 {pragma "UNROLL" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "pool_layer2/pool_layer2_label16" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
 lappend pragmaStatus14 {pragma "UNROLL" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "pool_layer2/pool_layer2_label17" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
 lappend pragmaStatus15 {pragma "PIPELINE" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "pool_layer2/pool_layer2_label18" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
-lappend pragmaStatus16 {pragma "DATAFLOW" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "conv_layer1/conv_layer1_label19" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus16 {pragma "PIPELINE" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "fc_layer3/fc_layer3_label0" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus17 {pragma "PIPELINE" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "fc_layer2/fc_layer2_label1" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus18 {pragma "PIPELINE" source "/home/sergiu/git/lic/hls/workspace/nnet/solution1/nnet.cpp" location "fc_layer1/fc_layer1_label2" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

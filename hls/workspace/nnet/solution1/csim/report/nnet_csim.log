@@ -1,6 +1,6 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../.tcls/nnet_test.cpp in debug mode
+   Compiling ../../nnet.cpp in debug mode
    Generating csim.exe
 Checking CONV Layer 1 ...
 DONE: 6728 out of 6728 are correct
@@ -24,10 +24,5 @@ Checking FC Layer 2 ...
 DONE: 84 out of 84 are correct
 
 Checking FC Layer 3 ...
-DONE: 10 out of 10 are correct
-
-
-===================================
-maximum difference 0.000199
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

@@ -311,6 +311,8 @@ int main()
 				correct_values++;
 
 		}
+		printf("DONE: %d out of %d are correct\n\n", correct_values, total_values);
+
 
 	return 0;
 

@@ -20,13 +20,13 @@ port (
     output_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
     output_V_ce0 : OUT STD_LOGIC;
     output_V_we0 : OUT STD_LOGIC;
-    output_V_d0 : OUT STD_LOGIC_VECTOR (23 downto 0);
+    output_V_d0 : OUT STD_LOGIC_VECTOR (22 downto 0);
     image_V_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
     image_V_ce0 : OUT STD_LOGIC;
-    image_V_q0 : IN STD_LOGIC_VECTOR (23 downto 0);
+    image_V_q0 : IN STD_LOGIC_VECTOR (22 downto 0);
     image_V_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
     image_V_ce1 : OUT STD_LOGIC;
-    image_V_q1 : IN STD_LOGIC_VECTOR (23 downto 0) );
+    image_V_q1 : IN STD_LOGIC_VECTOR (22 downto 0) );
 end;
 
 
@@ -116,7 +116,7 @@ architecture behav of pool_layer2 is
     signal indvar_flatten_reg_496 : STD_LOGIC_VECTOR (6 downto 0);
     signal channel_reg_507 : STD_LOGIC_VECTOR (4 downto 0);
     signal i_reg_518 : STD_LOGIC_VECTOR (3 downto 0);
-    signal reg_535 : STD_LOGIC_VECTOR (23 downto 0);
+    signal reg_535 : STD_LOGIC_VECTOR (22 downto 0);
     signal ap_CS_fsm_pp0_stage14 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_pp0_stage14 : signal is "none";
     signal ap_enable_reg_pp0_iter0 : STD_LOGIC := '0';
@@ -147,7 +147,7 @@ architecture behav of pool_layer2 is
     signal ap_block_state8_pp0_stage6_iter0 : BOOLEAN;
     signal ap_block_state29_pp0_stage6_iter1 : BOOLEAN;
     signal ap_block_pp0_stage6_11001 : BOOLEAN;
-    signal reg_541 : STD_LOGIC_VECTOR (23 downto 0);
+    signal reg_541 : STD_LOGIC_VECTOR (22 downto 0);
     signal ap_CS_fsm_pp0_stage2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_pp0_stage2 : signal is "none";
     signal ap_block_state4_pp0_stage2_iter0 : BOOLEAN;
@@ -175,7 +175,7 @@ architecture behav of pool_layer2 is
     signal ap_block_state15_pp0_stage13_iter0 : BOOLEAN;
     signal ap_block_state36_pp0_stage13_iter1 : BOOLEAN;
     signal ap_block_pp0_stage13_11001 : BOOLEAN;
-    signal reg_546 : STD_LOGIC_VECTOR (23 downto 0);
+    signal reg_546 : STD_LOGIC_VECTOR (22 downto 0);
     signal ap_CS_fsm_pp0_stage8 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_pp0_stage8 : signal is "none";
     signal ap_block_state10_pp0_stage8_iter0 : BOOLEAN;
@@ -186,7 +186,7 @@ architecture behav of pool_layer2 is
     signal ap_block_state11_pp0_stage9_iter0 : BOOLEAN;
     signal ap_block_state32_pp0_stage9_iter1 : BOOLEAN;
     signal ap_block_pp0_stage9_11001 : BOOLEAN;
-    signal reg_552 : STD_LOGIC_VECTOR (23 downto 0);
+    signal reg_552 : STD_LOGIC_VECTOR (22 downto 0);
     signal ap_CS_fsm_pp0_stage4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_pp0_stage4 : signal is "none";
     signal ap_block_state6_pp0_stage4_iter0 : BOOLEAN;
@@ -209,7 +209,7 @@ architecture behav of pool_layer2 is
     signal ap_block_state14_pp0_stage12_iter0 : BOOLEAN;
     signal ap_block_state35_pp0_stage12_iter1 : BOOLEAN;
     signal ap_block_pp0_stage12_11001 : BOOLEAN;
-    signal reg_558 : STD_LOGIC_VECTOR (23 downto 0);
+    signal reg_558 : STD_LOGIC_VECTOR (22 downto 0);
     signal ap_CS_fsm_pp0_stage15 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_pp0_stage15 : signal is "none";
     signal ap_block_state17_pp0_stage15_iter0 : BOOLEAN;
@@ -344,7 +344,7 @@ architecture behav of pool_layer2 is
     signal image_V_load_max_V_1_15_reg_1947 : STD_LOGIC_VECTOR (11 downto 0);
     signal image_V_load_max_V_1_16_fu_1298_p3 : STD_LOGIC_VECTOR (11 downto 0);
     signal image_V_load_max_V_1_16_reg_1958 : STD_LOGIC_VECTOR (11 downto 0);
-    signal image_V_load_41_reg_1968 : STD_LOGIC_VECTOR (23 downto 0);
+    signal image_V_load_41_reg_1968 : STD_LOGIC_VECTOR (22 downto 0);
     signal tmp_1_mid2_cast1_fu_1312_p1 : STD_LOGIC_VECTOR (10 downto 0);
     signal tmp_1_mid2_cast1_reg_1978 : STD_LOGIC_VECTOR (10 downto 0);
     signal tmp_46_fu_1382_p2 : STD_LOGIC_VECTOR (4 downto 0);
@@ -1333,8 +1333,8 @@ begin
 
     channel_1_fu_581_p2 <= std_logic_vector(unsigned(ap_const_lv5_1) + unsigned(ap_phi_mux_channel_phi_fu_511_p4));
     exitcond_flatten_fu_569_p2 <= "1" when (ap_phi_mux_indvar_flatten_phi_fu_500_p4 = ap_const_lv7_60) else "0";
-    grp_fu_529_p2 <= "1" when (signed(image_V_q1) > signed(image_V_q0)) else "0";
-    grp_fu_563_p2 <= "1" when (signed(reg_541) > signed(image_V_q0)) else "0";
+    grp_fu_529_p2 <= "1" when (unsigned(image_V_q1) > unsigned(image_V_q0)) else "0";
+    grp_fu_563_p2 <= "1" when (unsigned(reg_541) > unsigned(image_V_q0)) else "0";
     i_1_fu_821_p2 <= std_logic_vector(unsigned(ap_const_lv4_2) + unsigned(i_mid2_reg_1446));
     i_mid2_fu_593_p3 <= 
         ap_phi_mux_i_phi_fu_522_p4 when (tmp_s_fu_587_p2(0) = '1') else 
@@ -1578,7 +1578,7 @@ begin
         elsif (((ap_const_boolean_0 = ap_block_pp0_stage6) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage6) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
             output_V_d0 <= reg_535;
         else 
-            output_V_d0 <= "XXXXXXXXXXXXXXXXXXXXXXXX";
+            output_V_d0 <= "XXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
@@ -1599,18 +1599,18 @@ begin
     tmp_11_fu_866_p2 <= std_logic_vector(unsigned(ap_const_lv12_50) + unsigned(ap_reg_pp0_iter1_tmp_1_reg_1461));
     tmp_12_cast_fu_846_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_10_fu_841_p2),64));
     tmp_12_fu_871_p2 <= std_logic_vector(unsigned(tmp_1_mid2_cast_reg_1499) + unsigned(tmp_11_fu_866_p2));
-    tmp_13_0_0_1_fu_688_p2 <= "1" when (signed(image_V_q0) > signed(reg_535)) else "0";
-    tmp_13_0_1_fu_755_p2 <= "1" when (signed(reg_535) > signed(image_V_q0)) else "0";
-    tmp_13_1_0_1_fu_728_p2 <= "1" when (signed(image_V_q1) > signed(reg_535)) else "0";
-    tmp_13_2_0_1_fu_926_p2 <= "1" when (signed(image_V_q0) > signed(reg_541)) else "0";
-    tmp_13_2_1_fu_987_p2 <= "1" when (signed(reg_552) > signed(image_V_q0)) else "0";
-    tmp_13_3_0_1_fu_1078_p2 <= "1" when (signed(image_V_q0) > signed(reg_552)) else "0";
-    tmp_13_3_1_fu_1134_p2 <= "1" when (signed(reg_546) > signed(image_V_q0)) else "0";
-    tmp_13_4_0_1_fu_1165_p2 <= "1" when (signed(reg_546) > signed(image_V_q1)) else "0";
-    tmp_13_4_1_fu_1230_p2 <= "1" when (signed(reg_558) > signed(image_V_q0)) else "0";
-    tmp_13_5_0_1_fu_1250_p2 <= "1" when (signed(reg_552) > signed(image_V_q1)) else "0";
-    tmp_13_5_1_1_fu_1292_p2 <= "1" when (signed(reg_541) > signed(image_V_q1)) else "0";
-    tmp_13_5_1_fu_1276_p2 <= "1" when (signed(reg_535) > signed(image_V_q1)) else "0";
+    tmp_13_0_0_1_fu_688_p2 <= "1" when (unsigned(image_V_q0) > unsigned(reg_535)) else "0";
+    tmp_13_0_1_fu_755_p2 <= "1" when (unsigned(reg_535) > unsigned(image_V_q0)) else "0";
+    tmp_13_1_0_1_fu_728_p2 <= "1" when (unsigned(image_V_q1) > unsigned(reg_535)) else "0";
+    tmp_13_2_0_1_fu_926_p2 <= "1" when (unsigned(image_V_q0) > unsigned(reg_541)) else "0";
+    tmp_13_2_1_fu_987_p2 <= "1" when (unsigned(reg_552) > unsigned(image_V_q0)) else "0";
+    tmp_13_3_0_1_fu_1078_p2 <= "1" when (unsigned(image_V_q0) > unsigned(reg_552)) else "0";
+    tmp_13_3_1_fu_1134_p2 <= "1" when (unsigned(reg_546) > unsigned(image_V_q0)) else "0";
+    tmp_13_4_0_1_fu_1165_p2 <= "1" when (unsigned(reg_546) > unsigned(image_V_q1)) else "0";
+    tmp_13_4_1_fu_1230_p2 <= "1" when (unsigned(reg_558) > unsigned(image_V_q0)) else "0";
+    tmp_13_5_0_1_fu_1250_p2 <= "1" when (unsigned(reg_552) > unsigned(image_V_q1)) else "0";
+    tmp_13_5_1_1_fu_1292_p2 <= "1" when (unsigned(reg_541) > unsigned(image_V_q1)) else "0";
+    tmp_13_5_1_fu_1276_p2 <= "1" when (unsigned(reg_535) > unsigned(image_V_q1)) else "0";
     tmp_13_fu_938_p2 <= std_logic_vector(unsigned(ap_const_lv12_60) + unsigned(ap_reg_pp0_iter1_tmp_1_reg_1461));
     tmp_14_cast_fu_876_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_12_fu_871_p2),64));
     tmp_14_fu_943_p2 <= std_logic_vector(unsigned(tmp_1_mid2_cast_reg_1499) + unsigned(tmp_13_fu_938_p2));

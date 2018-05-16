@@ -29048,17 +29048,15 @@ void conv_layer1(float24_t output[29][29][8], float24_t image[32][32][1], float2
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
+#pragma empty_line
  conv_layer1_label19:for(filter = 0; filter < 8; filter++)
  {
-#pragma HLS DATAFLOW
-#pragma line 21 "nnet/solution1/nnet.cpp"
-
 #pragma empty_line
   conv_layer1_label8:for(i = 0; i < (32 - 4 + 1); i += 1)
    conv_layer1_label7:for(j = 0; j < (32 - 4 + 1); j += 1)
    {
 #pragma HLS PIPELINE
-#pragma line 25 "nnet/solution1/nnet.cpp"
+#pragma line 26 "nnet/solution1/nnet.cpp"
 
 #pragma empty_line
     sum = 0;
@@ -29066,16 +29064,16 @@ void conv_layer1(float24_t output[29][29][8], float24_t image[32][32][1], float2
 #pragma empty_line
      
 #pragma HLS UNROLL
-#pragma line 30 "nnet/solution1/nnet.cpp"
+#pragma line 31 "nnet/solution1/nnet.cpp"
 conv_layer1_label5:for(col_offset = 0; col_offset <4; col_offset++)
       
 #pragma HLS UNROLL
-#pragma line 31 "nnet/solution1/nnet.cpp"
+#pragma line 32 "nnet/solution1/nnet.cpp"
 conv_layer1_label0:for(channel_offset = 0; channel_offset < 1; channel_offset++)
 #pragma empty_line
 
 #pragma HLS UNROLL
-#pragma line 33 "nnet/solution1/nnet.cpp"
+#pragma line 34 "nnet/solution1/nnet.cpp"
 sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
     output[i/1][j/1][filter] = relu(sum + bias[filter]);
    }
@@ -29098,7 +29096,7 @@ void conv_layer2(float24_t output[13][13][16], float24_t image[14][14][8], float
    conv_layer2_label11:for(j = 0; j < (14 - 2 + 1); j += 1)
    {
 #pragma HLS PIPELINE II=16
-#pragma line 53 "nnet/solution1/nnet.cpp"
+#pragma line 54 "nnet/solution1/nnet.cpp"
 
 #pragma empty_line
     sum = 0;
@@ -29106,15 +29104,15 @@ void conv_layer2(float24_t output[13][13][16], float24_t image[14][14][8], float
 #pragma empty_line
      
 #pragma HLS UNROLL
-#pragma line 58 "nnet/solution1/nnet.cpp"
+#pragma line 59 "nnet/solution1/nnet.cpp"
 conv_layer2_label9:for(col_offset = 0; col_offset <2; col_offset++)
       
 #pragma HLS UNROLL
-#pragma line 59 "nnet/solution1/nnet.cpp"
+#pragma line 60 "nnet/solution1/nnet.cpp"
 conv_layer2_label1:for(channel_offset = 0; channel_offset < 8; channel_offset++)
        
 #pragma HLS UNROLL
-#pragma line 60 "nnet/solution1/nnet.cpp"
+#pragma line 61 "nnet/solution1/nnet.cpp"
 sum += image[i + row_offset][j + col_offset][channel_offset] * weight[row_offset][col_offset][channel_offset][filter];
     output[i/1][j/1][filter] = relu(sum + bias[filter]);
    }
@@ -29129,21 +29127,21 @@ void pool_layer1(float24_t output[14][14][8], float24_t image[29][29][8])
   pool_layer1_label15:for(int i = 0; i < 29 -2 + 1; i += 2)
    
 #pragma HLS PIPELINE II=50
-#pragma line 72 "nnet/solution1/nnet.cpp"
+#pragma line 73 "nnet/solution1/nnet.cpp"
 pool_layer1_label14:for(int j = 0; j < 29 - 2 + 1; j += 2)
    {
 #pragma HLS UNROLL
-#pragma line 73 "nnet/solution1/nnet.cpp"
+#pragma line 74 "nnet/solution1/nnet.cpp"
 
     max = image[i][j][channel];
     pool_layer1_label13:for(int k = 0; k < 2; k++)
      
 #pragma HLS UNROLL
-#pragma line 76 "nnet/solution1/nnet.cpp"
+#pragma line 77 "nnet/solution1/nnet.cpp"
 pool_layer1_label2:for(int l = 0; l < 2; l++)
       
 #pragma HLS UNROLL
-#pragma line 77 "nnet/solution1/nnet.cpp"
+#pragma line 78 "nnet/solution1/nnet.cpp"
 max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
     output[i/2][j/2][channel] = max;
    }
@@ -29158,21 +29156,21 @@ void pool_layer2(float24_t output[6][6][16], float24_t image[13][13][16])
   pool_layer2_label18:for(int i = 0; i < 13 -2 + 1; i += 2)
    
 #pragma HLS PIPELINE II=21
-#pragma line 89 "nnet/solution1/nnet.cpp"
+#pragma line 90 "nnet/solution1/nnet.cpp"
 pool_layer2_label17:for(int j = 0; j < 13 - 2 + 1; j += 2)
    {
 #pragma HLS UNROLL
-#pragma line 90 "nnet/solution1/nnet.cpp"
+#pragma line 91 "nnet/solution1/nnet.cpp"
 
     max = image[i][j][channel];
     pool_layer2_label16:for(int k = 0; k < 2; k++)
      
 #pragma HLS UNROLL
-#pragma line 93 "nnet/solution1/nnet.cpp"
+#pragma line 94 "nnet/solution1/nnet.cpp"
 pool_layer2_label3:for(int l = 0; l < 2; l++)
       
 #pragma HLS UNROLL
-#pragma line 94 "nnet/solution1/nnet.cpp"
+#pragma line 95 "nnet/solution1/nnet.cpp"
 max = image[k + i][l + j][channel] > max ? image[k + i][l + j][channel] : max;
     output[i/2][j/2][channel] = max;
    }
@@ -29192,8 +29190,11 @@ void flatten(float24_t output[576], float24_t input[6][6][16])
 void fc_layer1(float24_t output[120], float24_t input[576], float24_t weight[576][120], float24_t bias[120])
 {_ssdm_SpecArrayDimSize(output,120);_ssdm_SpecArrayDimSize(input,576);_ssdm_SpecArrayDimSize(bias,120);_ssdm_SpecArrayDimSize(weight,576);
 #pragma empty_line
- for(int i = 0; i < 120; i++)
+ fc_layer1_label2:for(int i = 0; i < 120; i++)
  {
+#pragma HLS PIPELINE
+#pragma line 115 "nnet/solution1/nnet.cpp"
+
   output[i] = 0;
   fc_layer1_label5:for(int j = 0; j < 576; j++)
    output[i] += weight[j][i] * input[j];
@@ -29206,8 +29207,11 @@ void fc_layer1(float24_t output[120], float24_t input[576], float24_t weight[576
 void fc_layer2(float24_t output[84], float24_t input[120], float24_t weight[120][84], float24_t bias[84])
 {_ssdm_SpecArrayDimSize(output,84);_ssdm_SpecArrayDimSize(input,120);_ssdm_SpecArrayDimSize(bias,84);_ssdm_SpecArrayDimSize(weight,120);
 #pragma empty_line
- for(int i = 0; i < 84; i++)
+ fc_layer2_label1:for(int i = 0; i < 84; i++)
  {
+#pragma HLS PIPELINE
+#pragma line 129 "nnet/solution1/nnet.cpp"
+
   output[i] = 0;
   fc_layer2_label6:for(int j = 0; j < 120; j++)
    output[i] += weight[j][i] * input[j];
@@ -29220,8 +29224,11 @@ void fc_layer2(float24_t output[84], float24_t input[120], float24_t weight[120]
 void fc_layer3(float24_t output[10], float24_t input[84], float24_t weight[84][10], float24_t bias[10])
 {_ssdm_SpecArrayDimSize(output,10);_ssdm_SpecArrayDimSize(input,84);_ssdm_SpecArrayDimSize(bias,10);_ssdm_SpecArrayDimSize(weight,84);
 #pragma empty_line
- for(int i = 0; i < 10; i++)
+ fc_layer3_label0:for(int i = 0; i < 10; i++)
  {
+#pragma HLS PIPELINE
+#pragma line 143 "nnet/solution1/nnet.cpp"
+
   output[i] = 0;
   fc_layer3_label7:for(int j = 0; j < 84; j++)
    output[i] += weight[j][i] * input[j];

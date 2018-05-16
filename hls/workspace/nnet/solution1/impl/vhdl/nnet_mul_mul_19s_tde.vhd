@@ -7,14 +7,14 @@ entity nnet_mul_mul_19s_tde_DSP48_0 is
 port (
     a: in std_logic_vector(19 - 1 downto 0);
     b: in std_logic_vector(20 - 1 downto 0);
-    p: out std_logic_vector(39 - 1 downto 0));
+    p: out std_logic_vector(43 - 1 downto 0));
 
 end entity;
 
 architecture behav of nnet_mul_mul_19s_tde_DSP48_0 is
     signal a_cvt: signed(19 - 1 downto 0);
     signal b_cvt: unsigned(20 - 1 downto 0);
-    signal p_cvt: signed(39 - 1 downto 0);
+    signal p_cvt: signed(43 - 1 downto 0);
 
     attribute keep : string; 
     attribute keep of a_cvt : signal is "true";
@@ -25,7 +25,7 @@ begin
 
     a_cvt <= signed(a);
     b_cvt <= unsigned(b);
-    p_cvt <= signed (resize(unsigned (signed (a_cvt) * signed ('0' & b_cvt)), 39));
+    p_cvt <= resize((signed (a_cvt) * signed ('0' & b_cvt)), 43);
     p <= std_logic_vector(p_cvt);
 
 end architecture;

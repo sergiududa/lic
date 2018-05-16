@@ -29028,6 +29028,7 @@ void conv_layer1(float24_t output[29][29][8], float24_t image[32][32][1], float2
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
+#pragma empty_line
  conv_layer1_label19:for(filter = 0; filter < 8; filter++)
  {
 #pragma empty_line
@@ -29121,7 +29122,7 @@ void flatten(float24_t output[576], float24_t input[6][6][16])
 void fc_layer1(float24_t output[120], float24_t input[576], float24_t weight[576][120], float24_t bias[120])
 {
 #pragma empty_line
- for(int i = 0; i < 120; i++)
+ fc_layer1_label2:for(int i = 0; i < 120; i++)
  {
   output[i] = 0;
   fc_layer1_label5:for(int j = 0; j < 576; j++)
@@ -29135,7 +29136,7 @@ void fc_layer1(float24_t output[120], float24_t input[576], float24_t weight[576
 void fc_layer2(float24_t output[84], float24_t input[120], float24_t weight[120][84], float24_t bias[84])
 {
 #pragma empty_line
- for(int i = 0; i < 84; i++)
+ fc_layer2_label1:for(int i = 0; i < 84; i++)
  {
   output[i] = 0;
   fc_layer2_label6:for(int j = 0; j < 120; j++)
@@ -29149,7 +29150,7 @@ void fc_layer2(float24_t output[84], float24_t input[120], float24_t weight[120]
 void fc_layer3(float24_t output[10], float24_t input[84], float24_t weight[84][10], float24_t bias[10])
 {
 #pragma empty_line
- for(int i = 0; i < 10; i++)
+ fc_layer3_label0:for(int i = 0; i < 10; i++)
  {
   output[i] = 0;
   fc_layer3_label7:for(int j = 0; j < 84; j++)

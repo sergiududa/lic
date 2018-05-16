@@ -11727,7 +11727,7 @@
 
 <Node id="22" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-.preheader.preheader:10  call void (...)* @_ssdm_op_SpecPipeline(i32 50, i32 1, i32 1, i32 0, [1 x i8]* @p_str12) nounwind
+.preheader.preheader:10  call void (...)* @_ssdm_op_SpecPipeline(i32 50, i32 1, i32 1, i32 0, [1 x i8]* @p_str14) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -11807,10 +11807,10 @@
 
 <Node id="613" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-.preheader.preheader:601  %empty_19 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str23, i32 %tmp)
+.preheader.preheader:601  %empty_21 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str23, i32 %tmp)
 
 ]]></Node>
-<StgValue><ssdm name="empty_19"/></StgValue>
+<StgValue><ssdm name="empty_21"/></StgValue>
 </operation>
 
 <operation id="763" st_id="53" stage="1" lat="1">

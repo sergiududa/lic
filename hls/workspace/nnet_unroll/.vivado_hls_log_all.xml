@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fc_layer3_weights_V' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.500+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fc_layer2_weights_V' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.477+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fc_layer1_weights_V' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.449+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_bias_V' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.429+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_1' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.383+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_3' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.335+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_5' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.313+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_7' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.282+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_9' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.206+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_11' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.152+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_13' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.131+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_15' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.114+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_17' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:07.054+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_19' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.987+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_21' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.967+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_23' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.944+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_25' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.884+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_27' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.849+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_29' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.829+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_31' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.806+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_33' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.786+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_35' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.726+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_37' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.638+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_39' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.582+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_41' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.523+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_43' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.446+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_45' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.422+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_47' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.382+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_49' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.241+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_51' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.200+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_53' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.150+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_55' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:06.017+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_57' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.962+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_59' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.869+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_61' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.786+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer2_weights_63' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.728+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_bias_V' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.692+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_1' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.644+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_3' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.524+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_5' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.444+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_7' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.379+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_9' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.313+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_11' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.240+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_13' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.169+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_15' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.070+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_17' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:05.003+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_19' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.954+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_21' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.873+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_23' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.799+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_25' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.679+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_27' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.625+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_29' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.572+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_layer1_weights_31' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.522+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'image_V' will not be exposed as RTL port." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:57:04.442+0300" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('image_V_load_17', nnet_unroll/solution1/nnet.cpp:86) on array 'image_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'image_V'." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:49:45.565+0300" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('image_V_load_215', nnet_unroll/solution1/nnet.cpp:51) on array 'image_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'image_V'." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:47:50.116+0300" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('image_V_load_159', nnet_unroll/solution1/nnet.cpp:66) on array 'image_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'image_V'." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:46:18.014+0300" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (nnet_unroll/solution1/nnet.cpp:62:15) in function 'pool_layer1' : &#xA;&#xA;&#xA;the outer loop is not a perfect loop." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:45:16.124+0300" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (nnet_unroll/solution1/nnet.cpp:82:15) in function 'pool_layer2' : &#xA;&#xA;&#xA;the outer loop is not a perfect loop." projectName="nnet_unroll" solutionName="solution1" date="2018-05-14T14:45:16.039+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -3,10 +3,10 @@
 
   module nnet_mul_mul_19s_3i2_DSP48_3(a, b, p);
 input signed [19 - 1 : 0] a; // synthesis attribute keep a "true"
-input signed [24 - 1 : 0] b; // synthesis attribute keep b "true"
+input [23 - 1 : 0] b; // synthesis attribute keep b "true"
 output signed [43 - 1 : 0] p; // synthesis attribute keep p "true"
 
-assign p = $signed (a) * $signed (b);
+assign p = $signed (a) * $signed ({1'b0, b});
 
 endmodule
 

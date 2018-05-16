@@ -9,61 +9,29 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [HLS 200-10] Analyzing design file 'conv/solution1/conv.c' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 382 ; free virtual = 4738
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 383 ; free virtual = 4738
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 170 ; free virtual = 3923
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 178 ; free virtual = 3919
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [XFORM 203-501] Unrolling loop 'conv_label1' (conv/solution1/conv.c:26) in function 'conv' completely.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 384 ; free virtual = 4743
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 141 ; free virtual = 3916
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'relu' into 'conv' (conv/solution1/conv.c:27) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 384 ; free virtual = 4743
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 138 ; free virtual = 3916
 INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv_label4' (conv/solution1/conv.c:18) in function 'conv' for pipelining.
 INFO: [XFORM 203-501] Unrolling loop 'conv_label3' (conv/solution1/conv.c:19) in function 'conv' completely.
 INFO: [XFORM 203-501] Unrolling loop 'conv_label0' (conv/solution1/conv.c:24) in function 'conv' completely.
 INFO: [XFORM 203-501] Unrolling loop 'conv_label2' (conv/solution1/conv.c:25) in function 'conv' completely.
 INFO: [XFORM 203-602] Inlining function 'relu' into 'conv' (conv/solution1/conv.c:27) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 366 ; free virtual = 4721
-INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv/solution1/conv.c:14:6) in function 'conv'.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:42 ; elapsed = 00:00:38 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 346 ; free virtual = 4701
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'conv' ...
-WARNING: [SYN 201-107] Renaming port name 'conv/output' to 'conv/output_r' to avoid the conflict with HDL keywords or other object names.
-WARNING: [SYN 201-107] Renaming port name 'conv/image' to 'conv/image_r' to avoid the conflict with HDL keywords or other object names.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'conv'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'L_conv_label4'.
-WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
-   between 'store' operation (conv/solution1/conv.c:27) of variable 'a', /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:27 on array 'output_r' and 'store' operation (conv/solution1/conv.c:27) of variable 'a', /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h:6->conv/solution1/conv.c:27 on array 'output_r'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('image_load_16', conv/solution1/conv.c:26) on array 'image_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'image_r'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 64, Depth = 147.
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 86.22 seconds; current allocated memory: 81.854 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 19.41 seconds; current allocated memory: 92.897 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'conv'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'conv/output_r' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'conv/image_r' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'conv/weight' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'conv/bias' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'conv' to 'ap_ctrl_hs'.
-INFO: [SYN 201-210] Renamed object name 'conv_fadd_32ns_32ns_32_5_full_dsp_1' to 'conv_fadd_32ns_32bkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'conv_fmul_32ns_32ns_32_4_max_dsp_1' to 'conv_fmul_32ns_32cud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'conv_fcmp_32ns_32ns_1_1_1' to 'conv_fcmp_32ns_32dEe' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'conv_fadd_32ns_32bkb': 8 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'conv_fcmp_32ns_32dEe': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'conv_fmul_32ns_32cud': 8 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'conv'.
-INFO: [HLS 200-111]  Elapsed time: 20.96 seconds; current allocated memory: 102.899 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:22 ; elapsed = 00:02:42 . Memory (MB): peak = 553.434 ; gain = 205.371 ; free physical = 189 ; free virtual = 4597
-INFO: [SYSC 207-301] Generating SystemC RTL for conv.
-INFO: [VHDL 208-304] Generating VHDL RTL for conv.
-INFO: [VLOG 209-307] Generating Verilog RTL for conv.
-INFO: [HLS 200-112] Total elapsed time: 161.8 seconds; peak allocated memory: 102.899 MB.
+ERROR: [XFORM 203-123] Cannot stream  'output' (conv/solution1/conv.c:5): The entries are not accessed in sequential order.
+ERROR: [HLS 200-70] Pre-synthesis failed.
+command 'ap_source' returned error code
+    while executing
+"source /home/sergiu/git/lic/hls/workspace/conv/solution1/csynth.tcl"
+    invoked from within
+"hls::main /home/sergiu/git/lic/hls/workspace/conv/solution1/csynth.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"

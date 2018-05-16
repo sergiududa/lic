@@ -8,3 +8,7 @@ set_directive_unroll "conv/conv_label1"
 set_directive_unroll "conv/conv_label2"
 set_directive_unroll "conv/conv_label3"
 set_directive_pipeline "conv/conv_label4"
+set_directive_interface -mode axis -register -register_mode both "conv" output
+set_directive_interface -mode axis -register -register_mode both "conv" image
+set_directive_interface -mode s_axilite "conv" weight
+set_directive_interface -mode s_axilite "conv" bias

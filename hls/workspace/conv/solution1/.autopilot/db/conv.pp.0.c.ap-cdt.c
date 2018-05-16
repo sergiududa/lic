@@ -144,6 +144,18 @@ float relu(float a)
 #pragma empty_line
 void conv(float output[29][29][8], float image[32][32][1], float weight[4][4][1][8], float bias[8])
 {_ssdm_SpecArrayDimSize(output,29);_ssdm_SpecArrayDimSize(image,32);_ssdm_SpecArrayDimSize(bias,8);_ssdm_SpecArrayDimSize(weight,4);
+#pragma HLS INTERFACE s_axilite port=bias
+#pragma line 6 "conv/solution1/conv.c"
+
+#pragma HLS INTERFACE s_axilite port=weight
+#pragma line 6 "conv/solution1/conv.c"
+
+#pragma HLS INTERFACE axis register both port=image
+#pragma line 6 "conv/solution1/conv.c"
+
+#pragma HLS INTERFACE axis register both port=output
+#pragma line 6 "conv/solution1/conv.c"
+
  int i,j,k,filter;
  float sum;
  int row_offset, col_offset, channel_offset;

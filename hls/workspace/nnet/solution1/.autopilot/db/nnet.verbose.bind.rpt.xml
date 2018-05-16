@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'nnet'" level="0">
-<item name = "Date">Fri May  4 18:51:34 2018
+<item name = "Date">Mon May 14 16:03:52 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 9.63, 1.25</column>
+<column name="ap_clk">10.00, 8.70, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,28 +24,25 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">379809, 379809, 379809, 379809, none</column>
+<column name="">99421, 99421, 99421, 99421, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_pool_layer1_fu_423">pool_layer1, 5603, 5603, 5603, 5603, none</column>
-<column name="grp_conv_layer2_fu_431">conv_layer2, 43270, 43270, 43270, 43270, none</column>
-<column name="grp_conv_layer1_fu_505">conv_layer1, 6841, 6841, 6841, 6841, none</column>
-<column name="grp_pool_layer2_fu_547">pool_layer2, 2044, 2044, 2044, 2044, none</column>
-<column name="grp_flatten_fu_555">flatten, 1237, 1237, 1237, 1237, none</column>
+<column name="grp_fc_layer1_fu_146">fc_layer1, 35041, 35041, 35041, 35041, none</column>
+<column name="grp_fc_layer2_fu_156">fc_layer2, 5045, 5045, 5045, 5045, none</column>
+<column name="grp_fc_layer3_fu_166">fc_layer3, 425, 425, 425, 425, none</column>
+<column name="grp_pool_layer1_fu_176">pool_layer1, 5603, 5603, 5603, 5603, none</column>
+<column name="grp_conv_layer2_fu_184">conv_layer2, 43270, 43270, 43270, 43270, none</column>
+<column name="grp_conv_layer1_fu_258">conv_layer1, 6741, 6741, 6741, 6741, none</column>
+<column name="grp_pool_layer2_fu_300">pool_layer2, 2044, 2044, 2044, 2044, none</column>
+<column name="grp_flatten_fu_308">flatten, 1237, 1237, 1237, 1237, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">276840, 276840, 2307, -, -, 120, no</column>
-<column name=" + fc_layer1_label5">2304, 2304, 4, -, -, 576, no</column>
-<column name="- Loop 2">40572, 40572, 483, -, -, 84, no</column>
-<column name=" + fc_layer2_label6">480, 480, 4, -, -, 120, no</column>
-<column name="- Loop 3">3390, 3390, 339, -, -, 10, no</column>
-<column name=" + fc_layer3_label7">336, 336, 4, -, -, 84, no</column>
 </table>
 </item>
 </section>

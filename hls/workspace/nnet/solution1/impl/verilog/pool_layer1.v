@@ -88,13 +88,13 @@ output   ap_ready;
 output  [10:0] output_V_address0;
 output   output_V_ce0;
 output   output_V_we0;
-output  [23:0] output_V_d0;
+output  [22:0] output_V_d0;
 output  [12:0] image_V_address0;
 output   image_V_ce0;
-input  [23:0] image_V_q0;
+input  [22:0] image_V_q0;
 output  [12:0] image_V_address1;
 output   image_V_ce1;
-input  [23:0] image_V_q1;
+input  [22:0] image_V_q1;
 
 reg ap_done;
 reg ap_idle;
@@ -102,7 +102,7 @@ reg ap_ready;
 reg[10:0] output_V_address0;
 reg output_V_ce0;
 reg output_V_we0;
-reg[23:0] output_V_d0;
+reg[22:0] output_V_d0;
 reg[12:0] image_V_address0;
 reg image_V_ce0;
 reg[12:0] image_V_address1;
@@ -113,7 +113,7 @@ wire    ap_CS_fsm_state1;
 reg   [6:0] indvar_flatten_reg_1047;
 reg   [3:0] channel_reg_1058;
 reg   [4:0] i_reg_1069;
-reg   [23:0] reg_1086;
+reg   [22:0] reg_1086;
 wire    ap_CS_fsm_pp0_stage4;
 reg    ap_enable_reg_pp0_iter0;
 wire    ap_block_state6_pp0_stage4_iter0;
@@ -161,7 +161,7 @@ wire    ap_block_pp0_stage44_11001;
 wire    ap_CS_fsm_pp0_stage48;
 wire    ap_block_state50_pp0_stage48_iter0;
 wire    ap_block_pp0_stage48_11001;
-reg   [23:0] reg_1091;
+reg   [22:0] reg_1091;
 wire    ap_CS_fsm_pp0_stage18;
 wire    ap_block_state20_pp0_stage18_iter0;
 wire    ap_block_pp0_stage18_11001;
@@ -174,7 +174,7 @@ wire    ap_block_pp0_stage32_11001;
 wire    ap_CS_fsm_pp0_stage39;
 wire    ap_block_state41_pp0_stage39_iter0;
 wire    ap_block_pp0_stage39_11001;
-reg   [23:0] reg_1096;
+reg   [22:0] reg_1096;
 wire   [0:0] exitcond_flatten_fu_1136_p2;
 wire    ap_CS_fsm_pp0_stage0;
 wire    ap_block_state2_pp0_stage0_iter0;
@@ -2530,19 +2530,19 @@ assign channel_2_fu_1148_p2 = (4'd1 + ap_phi_mux_channel_phi_fu_1062_p4);
 
 assign exitcond_flatten_fu_1136_p2 = ((ap_phi_mux_indvar_flatten_phi_fu_1051_p4 == 7'd112) ? 1'b1 : 1'b0);
 
-assign grp_fu_1080_p2 = (($signed(image_V_q0) > $signed(image_V_q1)) ? 1'b1 : 1'b0);
+assign grp_fu_1080_p2 = ((image_V_q0 > image_V_q1) ? 1'b1 : 1'b0);
 
-assign grp_fu_1100_p2 = (($signed(reg_1086) > $signed(image_V_q1)) ? 1'b1 : 1'b0);
+assign grp_fu_1100_p2 = ((reg_1086 > image_V_q1) ? 1'b1 : 1'b0);
 
-assign grp_fu_1106_p2 = (($signed(image_V_q0) > $signed(reg_1091)) ? 1'b1 : 1'b0);
+assign grp_fu_1106_p2 = ((image_V_q0 > reg_1091) ? 1'b1 : 1'b0);
 
-assign grp_fu_1112_p2 = (($signed(reg_1091) > $signed(image_V_q0)) ? 1'b1 : 1'b0);
+assign grp_fu_1112_p2 = ((reg_1091 > image_V_q0) ? 1'b1 : 1'b0);
 
-assign grp_fu_1118_p2 = (($signed(reg_1091) > $signed(image_V_q1)) ? 1'b1 : 1'b0);
+assign grp_fu_1118_p2 = ((reg_1091 > image_V_q1) ? 1'b1 : 1'b0);
 
-assign grp_fu_1124_p2 = (($signed(image_V_q0) > $signed(reg_1096)) ? 1'b1 : 1'b0);
+assign grp_fu_1124_p2 = ((image_V_q0 > reg_1096) ? 1'b1 : 1'b0);
 
-assign grp_fu_1130_p2 = (($signed(reg_1086) > $signed(image_V_q0)) ? 1'b1 : 1'b0);
+assign grp_fu_1130_p2 = ((reg_1086 > image_V_q0) ? 1'b1 : 1'b0);
 
 assign i_2_fu_2818_p2 = (5'd2 + i_mid2_reg_2877);
 
@@ -3082,7 +3082,7 @@ assign tmp_238_cast_fu_2651_p1 = tmp_223_fu_2646_p2;
 
 assign tmp_240_cast_fu_2724_p1 = tmp_225_reg_4009;
 
-assign tmp_26_0_0_1_fu_1270_p2 = (($signed(image_V_q1) > $signed(image_V_q0)) ? 1'b1 : 1'b0);
+assign tmp_26_0_0_1_fu_1270_p2 = ((image_V_q1 > image_V_q0) ? 1'b1 : 1'b0);
 
 assign tmp_49_fu_1724_p1 = tmp_135_fu_1718_p2[3:0];
 

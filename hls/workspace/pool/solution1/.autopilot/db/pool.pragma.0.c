@@ -134,6 +134,9 @@
 
 void pool(float output[14][14][8], float image[29][29][8])
 {_ssdm_SpecArrayDimSize(output,14);_ssdm_SpecArrayDimSize(image,29);
+#pragma HLS DATAFLOW
+#4 "pool/solution1/pool.c"
+
 
  float max;
  pool_label2:for(int channel = 0; channel < 8; channel++)

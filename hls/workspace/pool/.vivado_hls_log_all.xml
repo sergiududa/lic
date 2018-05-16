@@ -12,8 +12,10 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/image' to 'pool/image_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-05-04T15:40:07.503+0300" type="Warning"/>
-        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/output' to 'pool/output_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-05-04T15:40:07.482+0300" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/image' to 'pool/image_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-05-08T18:33:52.512+0300" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'pool/output' to 'pool/output_r' to avoid the conflict with HDL keywords or other object names." projectName="pool" solutionName="solution1" date="2018-05-08T18:33:52.230+0300" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'Loop_pool_label2_proc' to 'Loop_pool_label2_pro' (pool/solution1/pool.c:7:45)" projectName="pool" solutionName="solution1" date="2018-05-08T18:33:52.162+0300" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'output' (pool/solution1/pool.c:3) should be updated in process function 'Loop_pool_label2_proc' (pool/solution1/pool.c:7:45), otherwise it may not be synthesized correctly." projectName="pool" solutionName="solution1" date="2018-05-08T18:33:46.041+0300" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

@@ -1,0 +1,518 @@
+
+
+================================================================
+== Vivado HLS Report for 'nnet'
+================================================================
+* Date:           Mon May 14 14:52:28 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        nnet_unroll
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.45|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  381217|  381371|  381217|  381371|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+--------+--------+----------+-----------+-----------+------+----------+
+        |                     |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- fc_layer1_label2   |  276840|  276840|      2307|          -|          -|   120|    no    |
+        | + fc_layer1_label5  |    2304|    2304|         4|          -|          -|   576|    no    |
+        |- fc_layer2_label1   |   40572|   40572|       483|          -|          -|    84|    no    |
+        | + fc_layer2_label6  |     480|     480|         4|          -|          -|   120|    no    |
+        |- fc_layer3_label0   |    3390|    3390|       339|          -|          -|    10|    no    |
+        | + fc_layer3_label7  |     336|     336|         4|          -|          -|    84|    no    |
+        +---------------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 26
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / (!exitcond7_i)
+	15  / (exitcond7_i)
+10 --> 
+	11  / (!exitcond_i)
+	14  / (exitcond_i)
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	10  / true
+14 --> 
+	9  / true
+15 --> 
+	16  / (!exitcond6_i)
+	21  / (exitcond6_i)
+16 --> 
+	17  / (!exitcond_i1)
+	20  / (exitcond_i1)
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	16  / true
+20 --> 
+	15  / true
+21 --> 
+	22  / (!exitcond5_i)
+22 --> 
+	23  / (!exitcond_i2)
+	26  / (exitcond_i2)
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	22  / true
+26 --> 
+	21  / true
+
+* FSM state operations: 
+
+ <State 1> : 0.00ns
+ST_1 : Operation 27 [2/2] (0.00ns)   --->   "call fastcc void @conv_layer1([6728 x i24]* %conv_layer1_out_V)" [nnet_unroll/solution1/nnet.cpp:152]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 2> : 0.00ns
+ST_2 : Operation 28 [1/2] (0.00ns)   --->   "call fastcc void @conv_layer1([6728 x i24]* %conv_layer1_out_V)" [nnet_unroll/solution1/nnet.cpp:152]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 3> : 0.00ns
+ST_3 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @pool_layer1([1568 x i24]* %pool_layer1_out_V, [6728 x i24]* %conv_layer1_out_V)" [nnet_unroll/solution1/nnet.cpp:153]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 4> : 0.00ns
+ST_4 : Operation 30 [1/2] (0.00ns)   --->   "call fastcc void @pool_layer1([1568 x i24]* %pool_layer1_out_V, [6728 x i24]* %conv_layer1_out_V)" [nnet_unroll/solution1/nnet.cpp:153]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 5> : 0.00ns
+ST_5 : Operation 31 [2/2] (0.00ns)   --->   "call fastcc void @conv_layer2([2704 x i24]* %conv_layer2_out_V, [1568 x i24]* %pool_layer1_out_V)" [nnet_unroll/solution1/nnet.cpp:156]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 6> : 0.00ns
+ST_6 : Operation 32 [1/2] (0.00ns)   --->   "call fastcc void @conv_layer2([2704 x i24]* %conv_layer2_out_V, [1568 x i24]* %pool_layer1_out_V)" [nnet_unroll/solution1/nnet.cpp:156]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 7> : 0.00ns
+ST_7 : Operation 33 [2/2] (0.00ns)   --->   "call fastcc void @pool_layer2([576 x i24]* %pool_layer2_out_V, [2704 x i24]* %conv_layer2_out_V)" [nnet_unroll/solution1/nnet.cpp:157]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 8> : 1.77ns
+ST_8 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([6728 x i24]* %conv_layer1_out_V), !map !98"
+ST_8 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([2704 x i24]* %conv_layer2_out_V), !map !104"
+ST_8 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1568 x i24]* %pool_layer1_out_V), !map !110"
+ST_8 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([576 x i24]* %pool_layer2_out_V), !map !116"
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([120 x i24]* %fc_layer1_out_V), !map !122"
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([84 x i24]* %fc_layer2_out_V), !map !128"
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10 x i24]* %fc_layer3_out_V), !map !134"
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @nnet_str) nounwind"
+ST_8 : Operation 42 [1/2] (0.00ns)   --->   "call fastcc void @pool_layer2([576 x i24]* %pool_layer2_out_V, [2704 x i24]* %conv_layer2_out_V)" [nnet_unroll/solution1/nnet.cpp:157]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 43 [1/1] (1.76ns)   --->   "br label %1" [nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161]
+
+ <State 9> : 1.87ns
+ST_9 : Operation 44 [1/1] (0.00ns)   --->   "%i_i = phi i7 [ 0, %0 ], [ %i, %5 ]"
+ST_9 : Operation 45 [1/1] (1.48ns)   --->   "%exitcond7_i = icmp eq i7 %i_i, -8" [nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 46 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 120, i64 120, i64 120)"
+ST_9 : Operation 47 [1/1] (1.87ns)   --->   "%i = add i7 %i_i, 1" [nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 48 [1/1] (0.00ns)   --->   "br i1 %exitcond7_i, label %fc_layer1.exit.preheader, label %2" [nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str28) nounwind" [nnet_unroll/solution1/nnet.cpp:112->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_20_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str28)" [nnet_unroll/solution1/nnet.cpp:112->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_i = zext i7 %i_i to i64" [nnet_unroll/solution1/nnet.cpp:113->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_i_cast = zext i7 %i_i to i18" [nnet_unroll/solution1/nnet.cpp:113->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 53 [1/1] (0.00ns)   --->   "%fc_layer1_out_V_addr = getelementptr [120 x i24]* %fc_layer1_out_V, i64 0, i64 %tmp_i" [nnet_unroll/solution1/nnet.cpp:113->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 54 [1/1] (1.76ns)   --->   "br label %3" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]
+ST_9 : Operation 55 [1/1] (1.76ns)   --->   "br label %fc_layer1.exit" [nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162]
+
+ <State 10> : 7.22ns
+ST_10 : Operation 56 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i24 [ 0, %2 ], [ %tmp_21_i, %4 ]" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 57 [1/1] (0.00ns)   --->   "%j_i = phi i10 [ 0, %2 ], [ %j, %4 ]"
+ST_10 : Operation 58 [1/1] (3.25ns)   --->   "store i24 %p_Val2_s, i24* %fc_layer1_out_V_addr, align 4" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+ST_10 : Operation 59 [1/1] (1.77ns)   --->   "%exitcond_i = icmp eq i10 %j_i, -448" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 60 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 576, i64 576, i64 576)"
+ST_10 : Operation 61 [1/1] (1.95ns)   --->   "%j = add i10 %j_i, 1" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 62 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %5, label %4" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_i_21 = zext i10 %j_i to i64" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 64 [1/1] (0.00ns)   --->   "%tmp = call i17 @_ssdm_op_BitConcatenate.i17.i10.i7(i10 %j_i, i7 0)" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 65 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i17 %tmp to i18" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_1 = call i13 @_ssdm_op_BitConcatenate.i13.i10.i3(i10 %j_i, i3 0)" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 67 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i13 %tmp_1 to i18" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 68 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_2 = sub i18 %p_shl_cast, %p_shl1_cast" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_10 : Operation 69 [1/1] (3.96ns) (root node of TernaryAdder)   --->   "%tmp_3 = add i18 %tmp_2, %tmp_i_cast" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_10 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_3_cast = sext i18 %tmp_3 to i64" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 71 [1/1] (0.00ns)   --->   "%fc_layer1_weights_V_s = getelementptr [69120 x i18]* @fc_layer1_weights_V, i64 0, i64 %tmp_3_cast" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 72 [2/2] (3.25ns)   --->   "%fc_layer1_weights_V_1 = load i18* %fc_layer1_weights_V_s, align 4" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 20> <Depth = 840> <ROM>
+ST_10 : Operation 73 [1/1] (0.00ns)   --->   "%pool_layer2_out_V_ad = getelementptr [576 x i24]* %pool_layer2_out_V, i64 0, i64 %tmp_i_21" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_10 : Operation 74 [2/2] (3.25ns)   --->   "%pool_layer2_out_V_lo = load i24* %pool_layer2_out_V_ad, align 4" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+
+ <State 11> : 3.25ns
+ST_11 : Operation 75 [1/2] (3.25ns)   --->   "%fc_layer1_weights_V_1 = load i18* %fc_layer1_weights_V_s, align 4" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 20> <Depth = 840> <ROM>
+ST_11 : Operation 76 [1/2] (3.25ns)   --->   "%pool_layer2_out_V_lo = load i24* %pool_layer2_out_V_ad, align 4" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+
+ <State 12> : 6.38ns
+ST_12 : Operation 77 [1/1] (0.00ns)   --->   "%OP1_V_cast = sext i18 %fc_layer1_weights_V_1 to i41" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_12 : Operation 78 [1/1] (0.00ns)   --->   "%OP2_V_cast = sext i24 %pool_layer2_out_V_lo to i41" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_12 : Operation 79 [1/1] (6.38ns)   --->   "%p_Val2_1 = mul i41 %OP2_V_cast, %OP1_V_cast" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 13> : 2.99ns
+ST_13 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str29) nounwind" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_13 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_17_i = call i44 @_ssdm_op_BitConcatenate.i44.i24.i20(i24 %p_Val2_s, i20 0)" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_13 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_18_i_cast = sext i41 %p_Val2_1 to i44" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_13 : Operation 83 [1/1] (2.98ns)   --->   "%p_Val2_2 = add i44 %tmp_18_i_cast, %tmp_17_i" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_21_i = call i24 @_ssdm_op_PartSelect.i24.i44.i32.i32(i44 %p_Val2_2, i32 20, i32 43)" [nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161]
+ST_13 : Operation 85 [1/1] (0.00ns)   --->   "br label %3" [nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161]
+
+ <State 14> : 7.07ns
+ST_14 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_4 = trunc i24 %p_Val2_s to i23" [nnet_unroll/solution1/nnet.cpp:116->nnet_unroll/solution1/nnet.cpp:161]
+ST_14 : Operation 87 [1/1] (2.45ns)   --->   "%tmp_i_i = icmp sgt i24 %p_Val2_s, 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 88 [1/1] (1.37ns)   --->   "%a_V_i_i = select i1 %tmp_i_i, i23 %tmp_4, i23 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 89 [1/1] (0.00ns)   --->   "%a_V_i_i_cast = zext i23 %a_V_i_i to i24" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161]
+ST_14 : Operation 90 [1/1] (3.25ns)   --->   "store i24 %a_V_i_i_cast, i24* %fc_layer1_out_V_addr, align 4" [nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+ST_14 : Operation 91 [1/1] (0.00ns)   --->   "%empty_22 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str28, i32 %tmp_20_i)" [nnet_unroll/solution1/nnet.cpp:118->nnet_unroll/solution1/nnet.cpp:161]
+ST_14 : Operation 92 [1/1] (0.00ns)   --->   "br label %1" [nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161]
+
+ <State 15> : 1.87ns
+ST_15 : Operation 93 [1/1] (0.00ns)   --->   "%i_i7 = phi i7 [ %i_3, %9 ], [ 0, %fc_layer1.exit.preheader ]"
+ST_15 : Operation 94 [1/1] (1.48ns)   --->   "%exitcond6_i = icmp eq i7 %i_i7, -44" [nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 95 [1/1] (0.00ns)   --->   "%empty_23 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 84, i64 84, i64 84)"
+ST_15 : Operation 96 [1/1] (1.87ns)   --->   "%i_3 = add i7 %i_i7, 1" [nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 97 [1/1] (0.00ns)   --->   "br i1 %exitcond6_i, label %fc_layer2.exit.preheader, label %6" [nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 98 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str30) nounwind" [nnet_unroll/solution1/nnet.cpp:126->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_19_i8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str30)" [nnet_unroll/solution1/nnet.cpp:126->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_i9 = zext i7 %i_i7 to i64" [nnet_unroll/solution1/nnet.cpp:127->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_i9_cast = zext i7 %i_i7 to i14" [nnet_unroll/solution1/nnet.cpp:127->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 102 [1/1] (0.00ns)   --->   "%fc_layer2_out_V_addr = getelementptr [84 x i24]* %fc_layer2_out_V, i64 0, i64 %tmp_i9" [nnet_unroll/solution1/nnet.cpp:127->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 103 [1/1] (1.76ns)   --->   "br label %7" [nnet_unroll/solution1/nnet.cpp:128->nnet_unroll/solution1/nnet.cpp:162]
+ST_15 : Operation 104 [1/1] (1.76ns)   --->   "br label %fc_layer2.exit" [nnet_unroll/solution1/nnet.cpp:139->nnet_unroll/solution1/nnet.cpp:163]
+
+ <State 16> : 5.29ns
+ST_16 : Operation 105 [1/1] (0.00ns)   --->   "%p_Val2_3 = phi i24 [ 0, %6 ], [ %tmp_15_i, %8 ]" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_16 : Operation 106 [1/1] (0.00ns)   --->   "%j_i1 = phi i7 [ 0, %6 ], [ %j_3, %8 ]"
+ST_16 : Operation 107 [1/1] (0.00ns)   --->   "%phi_mul = phi i14 [ 0, %6 ], [ %next_mul, %8 ]"
+ST_16 : Operation 108 [1/1] (3.25ns)   --->   "store i24 %p_Val2_3, i24* %fc_layer2_out_V_addr, align 4" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+ST_16 : Operation 109 [1/1] (1.48ns)   --->   "%exitcond_i1 = icmp eq i7 %j_i1, -8" [nnet_unroll/solution1/nnet.cpp:128->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 110 [1/1] (0.00ns)   --->   "%empty_24 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 120, i64 120, i64 120)"
+ST_16 : Operation 111 [1/1] (1.87ns)   --->   "%j_3 = add i7 %j_i1, 1" [nnet_unroll/solution1/nnet.cpp:128->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 112 [1/1] (0.00ns)   --->   "br i1 %exitcond_i1, label %9, label %8" [nnet_unroll/solution1/nnet.cpp:128->nnet_unroll/solution1/nnet.cpp:162]
+ST_16 : Operation 113 [1/1] (0.00ns)   --->   "%tmp_i1 = zext i7 %j_i1 to i64" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_16 : Operation 114 [1/1] (2.03ns)   --->   "%next_mul = add i14 %phi_mul, 84"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 115 [1/1] (2.03ns)   --->   "%tmp_5 = add i14 %phi_mul, %tmp_i9_cast" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_5_cast = zext i14 %tmp_5 to i64" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_16 : Operation 117 [1/1] (0.00ns)   --->   "%fc_layer2_weights_V_s = getelementptr [10080 x i19]* @fc_layer2_weights_V, i64 0, i64 %tmp_5_cast" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_16 : Operation 118 [2/2] (3.25ns)   --->   "%fc_layer2_weights_V_1 = load i19* %fc_layer2_weights_V_s, align 4" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 20> <Depth = 840> <ROM>
+ST_16 : Operation 119 [1/1] (0.00ns)   --->   "%fc_layer1_out_V_addr_1 = getelementptr [120 x i24]* %fc_layer1_out_V, i64 0, i64 %tmp_i1" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_16 : Operation 120 [2/2] (3.25ns)   --->   "%fc_layer1_out_V_load = load i24* %fc_layer1_out_V_addr_1, align 4" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+
+ <State 17> : 3.25ns
+ST_17 : Operation 121 [1/2] (3.25ns)   --->   "%fc_layer2_weights_V_1 = load i19* %fc_layer2_weights_V_s, align 4" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 20> <Depth = 840> <ROM>
+ST_17 : Operation 122 [1/2] (3.25ns)   --->   "%fc_layer1_out_V_load = load i24* %fc_layer1_out_V_addr_1, align 4" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+
+ <State 18> : 6.38ns
+ST_18 : Operation 123 [1/1] (0.00ns)   --->   "%OP1_V_1_cast = sext i19 %fc_layer2_weights_V_1 to i42" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_18 : Operation 124 [1/1] (0.00ns)   --->   "%OP2_V_1_cast = sext i24 %fc_layer1_out_V_load to i42" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_18 : Operation 125 [1/1] (6.38ns)   --->   "%p_Val2_4 = mul i42 %OP2_V_1_cast, %OP1_V_1_cast" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 19> : 2.99ns
+ST_19 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str31) nounwind" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_19 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_12_i = call i44 @_ssdm_op_BitConcatenate.i44.i24.i20(i24 %p_Val2_3, i20 0)" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_19 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_13_i_cast = sext i42 %p_Val2_4 to i44" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_19 : Operation 129 [1/1] (2.98ns)   --->   "%p_Val2_5 = add i44 %tmp_13_i_cast, %tmp_12_i" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_15_i = call i24 @_ssdm_op_PartSelect.i24.i44.i32.i32(i44 %p_Val2_5, i32 20, i32 43)" [nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162]
+ST_19 : Operation 131 [1/1] (0.00ns)   --->   "br label %7" [nnet_unroll/solution1/nnet.cpp:128->nnet_unroll/solution1/nnet.cpp:162]
+
+ <State 20> : 7.07ns
+ST_20 : Operation 132 [1/1] (0.00ns)   --->   "%tmp_10 = trunc i24 %p_Val2_3 to i23" [nnet_unroll/solution1/nnet.cpp:130->nnet_unroll/solution1/nnet.cpp:162]
+ST_20 : Operation 133 [1/1] (2.45ns)   --->   "%tmp_i_i1 = icmp sgt i24 %p_Val2_3, 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 134 [1/1] (1.37ns)   --->   "%a_V_i_i1 = select i1 %tmp_i_i1, i23 %tmp_10, i23 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_20 : Operation 135 [1/1] (0.00ns)   --->   "%a_V_i_i1_cast = zext i23 %a_V_i_i1 to i24" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162]
+ST_20 : Operation 136 [1/1] (3.25ns)   --->   "store i24 %a_V_i_i1_cast, i24* %fc_layer2_out_V_addr, align 4" [nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+ST_20 : Operation 137 [1/1] (0.00ns)   --->   "%empty_25 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str30, i32 %tmp_19_i8)" [nnet_unroll/solution1/nnet.cpp:132->nnet_unroll/solution1/nnet.cpp:162]
+ST_20 : Operation 138 [1/1] (0.00ns)   --->   "br label %fc_layer1.exit" [nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162]
+
+ <State 21> : 1.77ns
+ST_21 : Operation 139 [1/1] (0.00ns)   --->   "%i_i1 = phi i4 [ %i_4, %13 ], [ 0, %fc_layer2.exit.preheader ]"
+ST_21 : Operation 140 [1/1] (1.30ns)   --->   "%exitcond5_i = icmp eq i4 %i_i1, -6" [nnet_unroll/solution1/nnet.cpp:139->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 141 [1/1] (0.00ns)   --->   "%empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"
+ST_21 : Operation 142 [1/1] (1.73ns)   --->   "%i_4 = add i4 %i_i1, 1" [nnet_unroll/solution1/nnet.cpp:139->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 143 [1/1] (0.00ns)   --->   "br i1 %exitcond5_i, label %fc_layer3.exit, label %10" [nnet_unroll/solution1/nnet.cpp:139->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 144 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str32) nounwind" [nnet_unroll/solution1/nnet.cpp:140->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 145 [1/1] (0.00ns)   --->   "%tmp_18_i1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str32)" [nnet_unroll/solution1/nnet.cpp:140->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 146 [1/1] (0.00ns)   --->   "%tmp_i1_27 = zext i4 %i_i1 to i64" [nnet_unroll/solution1/nnet.cpp:141->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 147 [1/1] (0.00ns)   --->   "%tmp_i1_cast = zext i4 %i_i1 to i11" [nnet_unroll/solution1/nnet.cpp:141->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 148 [1/1] (0.00ns)   --->   "%fc_layer3_out_V_addr = getelementptr [10 x i24]* %fc_layer3_out_V, i64 0, i64 %tmp_i1_27" [nnet_unroll/solution1/nnet.cpp:141->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 149 [1/1] (1.76ns)   --->   "br label %11" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]
+ST_21 : Operation 150 [1/1] (0.00ns)   --->   "ret void" [nnet_unroll/solution1/nnet.cpp:164]
+
+ <State 22> : 7.01ns
+ST_22 : Operation 151 [1/1] (0.00ns)   --->   "%p_Val2_6 = phi i24 [ 0, %10 ], [ %tmp_10_i, %12 ]" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 152 [1/1] (0.00ns)   --->   "%j_i2 = phi i7 [ 0, %10 ], [ %j_4, %12 ]"
+ST_22 : Operation 153 [1/1] (2.32ns)   --->   "store i24 %p_Val2_6, i24* %fc_layer3_out_V_addr, align 4" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+ST_22 : Operation 154 [1/1] (1.48ns)   --->   "%exitcond_i2 = icmp eq i7 %j_i2, -44" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 155 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 84, i64 84, i64 84)"
+ST_22 : Operation 156 [1/1] (1.87ns)   --->   "%j_4 = add i7 %j_i2, 1" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 157 [1/1] (0.00ns)   --->   "br i1 %exitcond_i2, label %13, label %12" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 158 [1/1] (0.00ns)   --->   "%tmp_i2 = zext i7 %j_i2 to i64" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 159 [1/1] (0.00ns)   --->   "%tmp_6 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %j_i2, i3 0)" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 160 [1/1] (0.00ns)   --->   "%p_shl2_cast = zext i10 %tmp_6 to i11" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 161 [1/1] (0.00ns)   --->   "%tmp_7 = call i8 @_ssdm_op_BitConcatenate.i8.i7.i1(i7 %j_i2, i1 false)" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 162 [1/1] (0.00ns)   --->   "%p_shl3_cast = zext i8 %tmp_7 to i11" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 163 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_8 = add i11 %p_shl3_cast, %p_shl2_cast" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 164 [1/1] (3.75ns) (root node of TernaryAdder)   --->   "%tmp_9 = add i11 %tmp_8, %tmp_i1_cast" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_9_cast = zext i11 %tmp_9 to i64" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 166 [1/1] (0.00ns)   --->   "%fc_layer3_weights_V_s = getelementptr [840 x i20]* @fc_layer3_weights_V, i64 0, i64 %tmp_9_cast" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 167 [2/2] (3.25ns)   --->   "%fc_layer3_weights_V_1 = load i20* %fc_layer3_weights_V_s, align 4" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 20> <Depth = 840> <ROM>
+ST_22 : Operation 168 [1/1] (0.00ns)   --->   "%fc_layer2_out_V_addr_1 = getelementptr [84 x i24]* %fc_layer2_out_V, i64 0, i64 %tmp_i2" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_22 : Operation 169 [2/2] (3.25ns)   --->   "%fc_layer2_out_V_load = load i24* %fc_layer2_out_V_addr_1, align 4" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+
+ <State 23> : 3.25ns
+ST_23 : Operation 170 [1/2] (3.25ns)   --->   "%fc_layer3_weights_V_1 = load i20* %fc_layer3_weights_V_s, align 4" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 20> <Depth = 840> <ROM>
+ST_23 : Operation 171 [1/2] (3.25ns)   --->   "%fc_layer2_out_V_load = load i24* %fc_layer2_out_V_addr_1, align 4" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+
+ <State 24> : 6.54ns
+ST_24 : Operation 172 [1/1] (0.00ns)   --->   "%OP1_V_2_cast = sext i20 %fc_layer3_weights_V_1 to i43" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_24 : Operation 173 [1/1] (0.00ns)   --->   "%OP2_V_2_cast = sext i24 %fc_layer2_out_V_load to i43" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_24 : Operation 174 [1/1] (6.54ns)   --->   "%p_Val2_7 = mul i43 %OP2_V_2_cast, %OP1_V_2_cast" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 6.54> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 25> : 2.99ns
+ST_25 : Operation 175 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str33) nounwind" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_25 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_7_i = call i44 @_ssdm_op_BitConcatenate.i44.i24.i20(i24 %p_Val2_6, i20 0)" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_25 : Operation 177 [1/1] (0.00ns)   --->   "%tmp_8_i_cast = sext i43 %p_Val2_7 to i44" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_25 : Operation 178 [1/1] (2.98ns)   --->   "%p_Val2_8 = add i44 %tmp_8_i_cast, %tmp_7_i" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_10_i = call i24 @_ssdm_op_PartSelect.i24.i44.i32.i32(i44 %p_Val2_8, i32 20, i32 43)" [nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163]
+ST_25 : Operation 180 [1/1] (0.00ns)   --->   "br label %11" [nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163]
+
+ <State 26> : 6.14ns
+ST_26 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_11 = trunc i24 %p_Val2_6 to i23" [nnet_unroll/solution1/nnet.cpp:144->nnet_unroll/solution1/nnet.cpp:163]
+ST_26 : Operation 182 [1/1] (2.45ns)   --->   "%tmp_i_i2 = icmp sgt i24 %p_Val2_6, 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 183 [1/1] (1.37ns)   --->   "%a_V_i_i2 = select i1 %tmp_i_i2, i23 %tmp_11, i23 0" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_26 : Operation 184 [1/1] (0.00ns)   --->   "%a_V_i_i2_cast = zext i23 %a_V_i_i2 to i24" [/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163]
+ST_26 : Operation 185 [1/1] (2.32ns)   --->   "store i24 %a_V_i_i2_cast, i24* %fc_layer3_out_V_addr, align 4" [nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 10> <RAM>
+ST_26 : Operation 186 [1/1] (0.00ns)   --->   "%empty_29 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str32, i32 %tmp_18_i1)" [nnet_unroll/solution1/nnet.cpp:146->nnet_unroll/solution1/nnet.cpp:163]
+ST_26 : Operation 187 [1/1] (0.00ns)   --->   "br label %fc_layer2.exit" [nnet_unroll/solution1/nnet.cpp:139->nnet_unroll/solution1/nnet.cpp:163]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161) [76]  (1.77 ns)
+
+ <State 9>: 1.87ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161) [76]  (0 ns)
+	'add' operation ('i', nnet_unroll/solution1/nnet.cpp:111->nnet_unroll/solution1/nnet.cpp:161) [79]  (1.87 ns)
+
+ <State 10>: 7.22ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', nnet_unroll/solution1/nnet.cpp:114->nnet_unroll/solution1/nnet.cpp:161) [90]  (0 ns)
+	'sub' operation ('tmp_2', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) [103]  (0 ns)
+	'add' operation ('tmp_3', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) [104]  (3.96 ns)
+	'getelementptr' operation ('fc_layer1_weights_V_s', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) [106]  (0 ns)
+	'load' operation ('fc_layer1_weights_V_1', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) on array 'fc_layer1_weights_V' [107]  (3.25 ns)
+
+ <State 11>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('fc_layer1_weights_V_1', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) on array 'fc_layer1_weights_V' [107]  (3.25 ns)
+
+ <State 12>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) [112]  (6.38 ns)
+
+ <State 13>: 2.99ns
+The critical path consists of the following:
+	'add' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:115->nnet_unroll/solution1/nnet.cpp:161) [115]  (2.99 ns)
+
+ <State 14>: 7.07ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_i_i', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161) [120]  (2.45 ns)
+	'select' operation ('a_V_i_i', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161) [121]  (1.37 ns)
+	'store' operation (nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161) of variable 'a_V_i_i_cast', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:117->nnet_unroll/solution1/nnet.cpp:161 on array 'fc_layer1_out_V' [123]  (3.25 ns)
+
+ <State 15>: 1.87ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162) [129]  (0 ns)
+	'add' operation ('i', nnet_unroll/solution1/nnet.cpp:125->nnet_unroll/solution1/nnet.cpp:162) [132]  (1.87 ns)
+
+ <State 16>: 5.29ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [144]  (0 ns)
+	'add' operation ('tmp_5', nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162) [154]  (2.04 ns)
+	'getelementptr' operation ('fc_layer2_weights_V_s', nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162) [156]  (0 ns)
+	'load' operation ('fc_layer2_weights_V_1', nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162) on array 'fc_layer2_weights_V' [157]  (3.25 ns)
+
+ <State 17>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('fc_layer2_weights_V_1', nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162) on array 'fc_layer2_weights_V' [157]  (3.25 ns)
+
+ <State 18>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162) [162]  (6.38 ns)
+
+ <State 19>: 2.99ns
+The critical path consists of the following:
+	'add' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:129->nnet_unroll/solution1/nnet.cpp:162) [165]  (2.99 ns)
+
+ <State 20>: 7.07ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_i_i1', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162) [170]  (2.45 ns)
+	'select' operation ('a_V_i_i1', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162) [171]  (1.37 ns)
+	'store' operation (nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162) of variable 'a_V_i_i1_cast', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:131->nnet_unroll/solution1/nnet.cpp:162 on array 'fc_layer2_out_V' [173]  (3.25 ns)
+
+ <State 21>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) with incoming values : ('tmp_10_i', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) [192]  (1.77 ns)
+
+ <State 22>: 7.01ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', nnet_unroll/solution1/nnet.cpp:142->nnet_unroll/solution1/nnet.cpp:163) [193]  (0 ns)
+	'add' operation ('tmp_8', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) [206]  (0 ns)
+	'add' operation ('tmp_9', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) [207]  (3.76 ns)
+	'getelementptr' operation ('fc_layer3_weights_V_s', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) [209]  (0 ns)
+	'load' operation ('fc_layer3_weights_V_1', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) on array 'fc_layer3_weights_V' [210]  (3.25 ns)
+
+ <State 23>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('fc_layer3_weights_V_1', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) on array 'fc_layer3_weights_V' [210]  (3.25 ns)
+
+ <State 24>: 6.54ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) [215]  (6.54 ns)
+
+ <State 25>: 2.99ns
+The critical path consists of the following:
+	'add' operation ('__Val2__', nnet_unroll/solution1/nnet.cpp:143->nnet_unroll/solution1/nnet.cpp:163) [218]  (2.99 ns)
+
+ <State 26>: 6.14ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_i_i2', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163) [223]  (2.45 ns)
+	'select' operation ('a_V_i_i2', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163) [224]  (1.37 ns)
+	'store' operation (nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163) of variable 'a_V_i_i2_cast', /home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h:13->nnet_unroll/solution1/nnet.cpp:145->nnet_unroll/solution1/nnet.cpp:163 on array 'fc_layer3_out_V' [226]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

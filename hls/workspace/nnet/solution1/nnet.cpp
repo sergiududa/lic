@@ -111,7 +111,7 @@ void flatten(float24_t output[FLATTEN_SIZE], float24_t input[P2_SIZE][P2_SIZE][P
 void fc_layer1(float24_t output[FC1_ACT_SIZE], float24_t input[FLATTEN_SIZE], float24_t weight[FC1_WEIGHTS_H][FC1_WEIGHTS_W], float24_t bias[FC1_BIAS_SIZE])
 {
 
-	for(int i = 0; i < FC1_WEIGHTS_W; i++)
+	fc_layer1_label2:for(int i = 0; i < FC1_WEIGHTS_W; i++)
 	{
 		output[i] = 0;
 		fc_layer1_label5:for(int j = 0; j < FC1_WEIGHTS_H; j++)
@@ -125,7 +125,7 @@ void fc_layer1(float24_t output[FC1_ACT_SIZE], float24_t input[FLATTEN_SIZE], fl
 void fc_layer2(float24_t output[FC2_ACT_SIZE], float24_t input[FC1_ACT_SIZE], float24_t weight[FC2_WEIGHTS_H][FC2_WEIGHTS_W], float24_t bias[FC2_BIAS_SIZE])
 {
 
-	for(int i = 0; i < FC2_WEIGHTS_W; i++)
+	fc_layer2_label1:for(int i = 0; i < FC2_WEIGHTS_W; i++)
 	{
 		output[i] = 0;
 		fc_layer2_label6:for(int j = 0; j < FC2_WEIGHTS_H; j++)
@@ -139,7 +139,7 @@ void fc_layer2(float24_t output[FC2_ACT_SIZE], float24_t input[FC1_ACT_SIZE], fl
 void fc_layer3(float24_t output[FC3_ACT_SIZE], float24_t input[FC2_ACT_SIZE], float24_t weight[FC3_WEIGHTS_H][FC3_WEIGHTS_W], float24_t bias[FC3_BIAS_SIZE])
 {
 
-	for(int i = 0; i < FC3_WEIGHTS_W; i++)
+	fc_layer3_label0:for(int i = 0; i < FC3_WEIGHTS_W; i++)
 	{
 		output[i] = 0;
 		fc_layer3_label7:for(int j = 0; j < FC3_WEIGHTS_H; j++)

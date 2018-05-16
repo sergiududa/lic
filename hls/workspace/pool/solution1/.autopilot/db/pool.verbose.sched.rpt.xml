@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pool'" level="0">
-<item name = "Date">Fri May  4 15:40:10 2018
+<item name = "Date">Tue May  8 18:34:05 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">pool</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">5604, 5604, 5604, 5604, none</column>
+<column name="">5604, 5604, 5605, 5605, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,6 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- pool_label2_pool_label3">5602, 5602, 53, 50, 50, 112, yes</column>
 </table>
 </item>
 </section>

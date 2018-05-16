@@ -13,8 +13,12 @@
 #pragma line 2 "conv/solution1/conv.c" 2 ::: 122
 #pragma line 1 "/home/sergiu/git/lic/hls/workspace/conv/headers/activations.h" 1 ::: 123
 #pragma line 3 "conv/solution1/conv.c" 2 ::: 131
-#pragma line 18 "conv/solution1/conv.c" ::: 149
-#pragma line 19 "conv/solution1/conv.c" ::: 153
-#pragma line 24 "conv/solution1/conv.c" ::: 161
-#pragma line 25 "conv/solution1/conv.c" ::: 165
-#pragma line 26 "conv/solution1/conv.c" ::: 169
+#pragma line 6 "conv/solution1/conv.c" ::: 137
+#pragma line 6 "conv/solution1/conv.c" ::: 140
+#pragma line 6 "conv/solution1/conv.c" ::: 143
+#pragma line 6 "conv/solution1/conv.c" ::: 146
+#pragma line 18 "conv/solution1/conv.c" ::: 161
+#pragma line 19 "conv/solution1/conv.c" ::: 165
+#pragma line 24 "conv/solution1/conv.c" ::: 173
+#pragma line 25 "conv/solution1/conv.c" ::: 177
+#pragma line 26 "conv/solution1/conv.c" ::: 181

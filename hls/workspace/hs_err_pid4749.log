@@ -1,0 +1,17 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/lib/x86_64-linux-gnu/libc.so.6(+0x354b0) [0x7fb845b324b0]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(+0xb9519) [0x7fb841a2f519]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(Tcl_ResetResult+0x10) [0x7fb841a2ff20]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(+0x34429) [0x7fb8419aa429]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(Tcl_EvalEx+0x13) [0x7fb8419ab0a3]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(Tcl_Eval+0x15) [0x7fb8419ab0c5]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libhls_support.so(+0x65cd9) [0x7fb835419cd9]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(Tcl_Finalize+0x49) [0x7fb8419ea199]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(Tcl_Exit+0x4a) [0x7fb8419ea34a]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/libtcl8.5.so(Tcl_Main+0x24e) [0x7fb841a1628e]
+/opt/Xilinx/Vivado/2017.4/lib/lnx64.o/librdi_common.so(+0x78ad0b) [0x7fb846df2d0b]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76ba) [0x7fb83f9cb6ba]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x6d) [0x7fb845c0441d]
