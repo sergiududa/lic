@@ -7,31 +7,7 @@ Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
-INFO: [HLS 200-10] Analyzing design file 'conv/solution1/conv.c' ...
-INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 170 ; free virtual = 3923
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 178 ; free virtual = 3919
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-501] Unrolling loop 'conv_label1' (conv/solution1/conv.c:26) in function 'conv' completely.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 141 ; free virtual = 3916
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'relu' into 'conv' (conv/solution1/conv.c:27) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 138 ; free virtual = 3916
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv_label4' (conv/solution1/conv.c:18) in function 'conv' for pipelining.
-INFO: [XFORM 203-501] Unrolling loop 'conv_label3' (conv/solution1/conv.c:19) in function 'conv' completely.
-INFO: [XFORM 203-501] Unrolling loop 'conv_label0' (conv/solution1/conv.c:24) in function 'conv' completely.
-INFO: [XFORM 203-501] Unrolling loop 'conv_label2' (conv/solution1/conv.c:25) in function 'conv' completely.
-INFO: [XFORM 203-602] Inlining function 'relu' into 'conv' (conv/solution1/conv.c:27) automatically.
-ERROR: [XFORM 203-123] Cannot stream  'output' (conv/solution1/conv.c:5): The entries are not accessed in sequential order.
-ERROR: [HLS 200-70] Pre-synthesis failed.
-command 'ap_source' returned error code
-    while executing
-"source /home/sergiu/git/lic/hls/workspace/conv/solution1/csynth.tcl"
-    invoked from within
-"hls::main /home/sergiu/git/lic/hls/workspace/conv/solution1/csynth.tcl"
-    ("uplevel" body line 1)
-    invoked from within
-"uplevel 1 hls::main {*}$args"
-    (procedure "hls_proc" line 5)
-    invoked from within
-"hls_proc $argv"
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

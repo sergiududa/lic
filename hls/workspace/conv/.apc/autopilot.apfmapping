@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="conv.c" path="/home/sergiu/git/lic/hls/workspace/conv/solution1/conv.c"/>
+    <originFiles name="conv.cpp" path="/home/sergiu/git/lic/hls/workspace/conv/solution1/conv.cpp"/>
   </source>
   <testbench>
-    <originFiles name="conv_test.c" path="/home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls/conv_test.c"/>
+    <originFiles name="conv_test.cpp" path="/home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls/conv_test.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

@@ -1,7 +1,15 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-make: 'csim.exe' is up to date.
-Checking CONV Layer ...
+   Compiling ../../.tcls/conv_test.cpp in debug mode
+   Compiling ../../conv.cpp in debug mode
+   Generating csim.exe
+
+===========
+Statistics:
+===========
+Initial buffer atempted to read 100 and succeeded 100
+Endline buffer atempted to read 112 and succeeded 112
+Nextelm buffer atempted to read 812 and succeeded 812Checking CONV Layer ...
 DONE: 6728 out of 6728 are correct
 
 INFO: [SIM 1] CSim done with 0 errors.

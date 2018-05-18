@@ -5,13 +5,13 @@
 ############################################################
 open_project conv
 set_top conv
-add_files conv/solution1/conv.c
-add_files -tb conv/solution1/.tcls/conv_test.c
+add_files conv/solution1/conv.cpp
+add_files -tb conv/solution1/.tcls/conv_test.cpp
 open_solution "solution1"
 set_part {xc7z020clg400-1} -tool vivado
 create_clock -period 10 -name default
 source "./conv/solution1/directives.tcl"
-csim_design -compiler gcc
+csim_design -clean -compiler gcc
 csynth_design
 cosim_design
 export_design -format ip_catalog

@@ -42,14 +42,14 @@
 			<location>/home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/conv.c</name>
+			<name>source/conv.cpp</name>
 			<type>1</type>
-			<location>/home/sergiu/git/lic/hls/workspace/conv/solution1/conv.c</location>
+			<location>/home/sergiu/git/lic/hls/workspace/conv/solution1/conv.cpp</location>
 		</link>
 		<link>
-			<name>testbench/conv_test.c</name>
+			<name>testbench/conv_test.cpp</name>
 			<type>1</type>
-			<location>/home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls/conv_test.c</location>
+			<location>/home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls/conv_test.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

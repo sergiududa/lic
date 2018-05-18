@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../.tcls/conv_test.c ../../conv.c
+HLS_SOURCES = ../../.tcls/conv_test.cpp ../../conv.cpp
 
 TARGET := csim.exe
 
@@ -61,7 +61,6 @@ IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
 IFLAG += -g
-DFLAG += -DAUTOCC
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += 
 
@@ -73,16 +72,14 @@ all: $(TARGET)
 
 
 
-AUTOCC := apcc  
-
-$(ObjDir)/conv_test.o: ../../.tcls/conv_test.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../.tcls/conv_test.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/conv_test.o: ../../.tcls/conv_test.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../.tcls/conv_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/conv_test.d
 
-$(ObjDir)/conv.o: ../../conv.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../conv.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/conv.o: ../../conv.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../conv.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/conv.d
