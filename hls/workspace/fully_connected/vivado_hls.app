@@ -1,13 +1,13 @@
-<project xmlns="com.autoesl.autopilot.project" top="fc" name="fully_connected">
+<project xmlns="com.autoesl.autopilot.project" name="fully_connected" top="fc">
+    <files>
+        <file name="fully_connected/solution1/fc.cpp" sc="0" tb="false" cflags=""/>
+        <file name="../solution1/.tcls/fc_test.cpp" sc="0" tb="1" cflags=""/>
+    </files>
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0" compiler="true"/>
+        <SimFlow name="csim" clean="true" csimMode="0" lastCsimMode="0" compiler="true"/>
     </Simulation>
-    <files xmlns="">
-        <file name="../solution1/.tcls/fc_test.c" sc="0" tb="1" cflags=" "/>
-        <file name="fully_connected/solution1/fc.c" sc="0" tb="false" cflags=""/>
-    </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
     </solutions>

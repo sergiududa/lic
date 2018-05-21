@@ -7,53 +7,7 @@ Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-INFO: [HLS 200-10] Analyzing design file 'fully_connected/solution1/fc.c' ...
-INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:20 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 259 ; free virtual = 5217
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 250 ; free virtual = 5216
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 255 ; free virtual = 5214
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc' (fully_connected/solution1/fc.c:13) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 255 ; free virtual = 5214
-INFO: [XFORM 203-602] Inlining function 'relu' into 'fc' (fully_connected/solution1/fc.c:13) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 236 ; free virtual = 5194
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 244 ; free virtual = 5202
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'fc' ...
-WARNING: [SYN 201-107] Renaming port name 'fc/output' to 'fc/output_r' to avoid the conflict with HDL keywords or other object names.
-WARNING: [SYN 201-107] Renaming port name 'fc/input' to 'fc/input_r' to avoid the conflict with HDL keywords or other object names.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'fc'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 32.7 seconds; current allocated memory: 60.207 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 60.470 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'fc'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'fc/output_r' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'fc/input_r' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'fc/weight' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'fc/bias' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'fc' to 'ap_ctrl_hs'.
-INFO: [SYN 201-210] Renamed object name 'fc_fadd_32ns_32ns_32_5_full_dsp_1' to 'fc_fadd_32ns_32nsbkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'fc_fmul_32ns_32ns_32_4_max_dsp_1' to 'fc_fmul_32ns_32nscud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'fc_fcmp_32ns_32ns_1_1_1' to 'fc_fcmp_32ns_32nsdEe' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'fc_fadd_32ns_32nsbkb': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fc_fcmp_32ns_32nsdEe': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fc_fmul_32ns_32nscud': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'fc'.
-INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 60.991 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:38 ; elapsed = 00:00:36 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 233 ; free virtual = 5192
-INFO: [SYSC 207-301] Generating SystemC RTL for fc.
-INFO: [VHDL 208-304] Generating VHDL RTL for fc.
-INFO: [VLOG 209-307] Generating Verilog RTL for fc.
-INFO: [HLS 200-112] Total elapsed time: 35.94 seconds; peak allocated memory: 60.991 MB.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

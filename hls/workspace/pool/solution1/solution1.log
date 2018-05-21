@@ -7,73 +7,7 @@ Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
-INFO: [HLS 200-10] Analyzing design file 'pool/solution1/pool.c' ...
-INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 156 ; free virtual = 3281
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:29 ; elapsed = 00:00:26 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 148 ; free virtual = 3274
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:32 ; elapsed = 00:00:29 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 133 ; free virtual = 3279
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 133 ; free virtual = 3279
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'pool_label3' (pool/solution1/pool.c:9) in function 'pool' for pipelining.
-INFO: [XFORM 203-501] Unrolling loop 'pool_label4' (pool/solution1/pool.c:10) in function 'pool' completely.
-INFO: [XFORM 203-501] Unrolling loop 'pool_label5' (pool/solution1/pool.c:13) in function 'pool' completely.
-INFO: [XFORM 203-501] Unrolling loop 'pool_label6' (pool/solution1/pool.c:14) in function 'pool' completely.
-INFO: [XFORM 203-721] Changing loop 'Loop_pool_label2_proc' (pool/solution1/pool.c:8) to a process function for dataflow in function 'pool'.
-WARNING: [XFORM 203-713] All the elements of global array 'output' (pool/solution1/pool.c:3) should be updated in process function 'Loop_pool_label2_proc' (pool/solution1/pool.c:7:45), otherwise it may not be synthesized correctly.
-INFO: [XFORM 203-712] Applying dataflow to function 'pool' (pool/solution1/pool.c:3), detected/extracted 1 process function(s): 
-	 'Loop_pool_label2_proc'.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:35 ; elapsed = 00:00:33 . Memory (MB): peak = 489.430 ; gain = 141.371 ; free physical = 127 ; free virtual = 3260
-INFO: [XFORM 203-541] Flattening a loop nest 'pool_label2' (pool/solution1/pool.c:8:3) in function 'Loop_pool_label2_proc'.
-WARNING: [XFORM 203-631] Renaming function 'Loop_pool_label2_proc' to 'Loop_pool_label2_pro' (pool/solution1/pool.c:7:45)
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:39 ; elapsed = 00:00:37 . Memory (MB): peak = 493.047 ; gain = 144.988 ; free physical = 140 ; free virtual = 3257
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'pool' ...
-WARNING: [SYN 201-107] Renaming port name 'pool/output' to 'pool/output_r' to avoid the conflict with HDL keywords or other object names.
-WARNING: [SYN 201-107] Renaming port name 'pool/image' to 'pool/image_r' to avoid the conflict with HDL keywords or other object names.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'Loop_pool_label2_pro'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'pool_label2_pool_label3'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 50, Final II = 50, Depth = 53.
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 40.65 seconds; current allocated memory: 80.644 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 4.63 seconds; current allocated memory: 84.657 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'pool'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 4.71 seconds; current allocated memory: 85.224 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.98 seconds; current allocated memory: 85.363 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'Loop_pool_label2_pro'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'pool_fcmp_32ns_32ns_1_1_1' to 'pool_fcmp_32ns_32bkb' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'pool_fcmp_32ns_32bkb': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_pool_label2_pro'.
-INFO: [HLS 200-111]  Elapsed time: 4.28 seconds; current allocated memory: 93.283 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'pool'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'pool/output_r' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'pool/image_r' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'pool' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'pool'.
-INFO: [HLS 200-111]  Elapsed time: 12.07 seconds; current allocated memory: 109.556 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:10 ; elapsed = 00:01:15 . Memory (MB): peak = 501.047 ; gain = 152.988 ; free physical = 127 ; free virtual = 3190
-INFO: [SYSC 207-301] Generating SystemC RTL for pool.
-INFO: [VHDL 208-304] Generating VHDL RTL for pool.
-INFO: [VLOG 209-307] Generating Verilog RTL for pool.
-INFO: [HLS 200-112] Total elapsed time: 74.72 seconds; peak allocated memory: 109.556 MB.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

@@ -42,14 +42,14 @@
 			<location>/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/fc.c</name>
+			<name>source/fc.cpp</name>
 			<type>1</type>
-			<location>/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/fc.c</location>
+			<location>/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/fc.cpp</location>
 		</link>
 		<link>
-			<name>testbench/fc_test.c</name>
+			<name>testbench/fc_test.cpp</name>
 			<type>1</type>
-			<location>/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/.tcls/fc_test.c</location>
+			<location>/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/.tcls/fc_test.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

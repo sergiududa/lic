@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="fc.c" path="/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/fc.c"/>
+    <originFiles name="fc.cpp" path="/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/fc.cpp"/>
   </source>
   <testbench>
-    <originFiles name="fc_test.c" path="/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/.tcls/fc_test.c"/>
+    <originFiles name="fc_test.cpp" path="/home/sergiu/git/lic/hls/workspace/fully_connected/solution1/.tcls/fc_test.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

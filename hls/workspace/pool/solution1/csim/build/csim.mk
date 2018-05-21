@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../.tcls/pool_test.c ../../pool.c
+HLS_SOURCES = ../../.tcls/pool_test.cpp ../../pool.cpp
 
 TARGET := csim.exe
 
@@ -61,7 +61,6 @@ IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
 IFLAG += -g
-DFLAG += -DAUTOCC
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += 
 
@@ -73,16 +72,14 @@ all: $(TARGET)
 
 
 
-AUTOCC := apcc  
-
-$(ObjDir)/pool_test.o: ../../.tcls/pool_test.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../.tcls/pool_test.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/pool_test.o: ../../.tcls/pool_test.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../.tcls/pool_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/pool_test.d
 
-$(ObjDir)/pool.o: ../../pool.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../pool.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/pool.o: ../../pool.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../pool.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/pool.d

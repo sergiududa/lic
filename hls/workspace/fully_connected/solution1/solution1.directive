@@ -1,2 +1,17 @@
-<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView"/>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile name="fully_connected/solution1/fc.cpp">
+    <directive functionName="fc" label=" " functionLabel=" ">
+      <pragma name="STREAM">
+        <option name="variable" value="in" positionalBoolean="4"/>
+        <option name="depth" value="1000"/>
+        <option name="dim" value="1"/>
+      </pragma>
+      <pragma name="STREAM">
+        <option name="variable" value="out" positionalBoolean="4"/>
+        <option name="depth" value="1000"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>

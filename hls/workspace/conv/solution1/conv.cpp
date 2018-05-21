@@ -30,7 +30,7 @@ void conv(float output[A_SIZE * A_SIZE * A_CHANNELS], float image[IMAGE_SIZE * I
 
 }
 */
-#define BUFFER_SIZE (IMAGE_SIZE * (CONV_KERNEL_SIZE -1) + CONV_KERNEL_SIZE) // Poate hardcodam valoarea la un momemnt dat ???
+#define BUFFER_SIZE (IMAGE_SIZE * IMAGE_CHANNELS * (CONV_KERNEL_SIZE -1) + CONV_KERNEL_SIZE * IMAGE_CHANNELS) // Poate hardcodam valoarea la un momemnt dat ???
 
 void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float bias[CONV_BIAS_SIZE])
 {
