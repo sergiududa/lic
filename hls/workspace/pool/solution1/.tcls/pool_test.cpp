@@ -3,20 +3,29 @@
 #include <hls_video.h>
 #include "/home/sergiu/git/lic/hls/workspace/pool/headers/defines.h"
 
-#define eps 0.00002
+#define eps 0.0002
 
-void pool(hls::stream<float>& out, hls::stream<float>& in);
+
+#include "ap_fixed.h"
+
+#define EXP_WIDTH	28
+#define INT_WIDTH	10
+
+typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
+
+
+void pool(hls::stream<float24_t>& out, hls::stream<float24_t>& in);
 
 int main()
 {
-	float pool_out[P_SIZE * P_SIZE * P_CHANNELS];
-	float pool_ref[P_SIZE][P_SIZE][P_CHANNELS];
-	float image[A_SIZE * A_SIZE * A_CHANNELS];
+	float24_t pool_out[P_SIZE * P_SIZE * P_CHANNELS];
+	float24_t pool_ref[P_SIZE][P_SIZE][P_CHANNELS];
+	float24_t image[A_SIZE * A_SIZE * A_CHANNELS];
 
 	int i,j,k;
 	int correct_values = 0, total_values = 0;
-	hls::stream<float> out("output_stream");
-	hls::stream<float> in("input_stream");
+	hls::stream<float24_t> out("output_stream");
+	hls::stream<float24_t> in("input_stream");
 
 	FILE* conv_content = fopen("../../../debug/conv_py.out","r");
 	if(conv_content == NULL)

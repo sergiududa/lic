@@ -6,11 +6,19 @@
 #endif
 
 
+#include "ap_fixed.h"
+
+#define EXP_WIDTH	28
+#define INT_WIDTH	10
+
+typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
+
+
 /*
-void pool(float output[P_SIZE * P_SIZE * P_CHANNELS], float image[A_SIZE * A_SIZE * A_CHANNELS])
+void pool(float24_t output[P_SIZE * P_SIZE * P_CHANNELS], float24_t image[A_SIZE * A_SIZE * A_CHANNELS])
 {
 
-	float max;
+	float24_t max;
 	int contor = 0;
 
 	for(int i = 0; i < A_SIZE -P_KERNEL_SIZE + 1; i += P_STRIDE)
@@ -30,12 +38,12 @@ void pool(float output[P_SIZE * P_SIZE * P_CHANNELS], float image[A_SIZE * A_SIZ
 /*
 #define BUFFER_SIZE (P_SIZE*P_CHANNELS)
 
-void pool(hls::stream<float>& out, hls::stream<float>& in)
+void pool(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 {
 
 	int i,j,k;
-	float read;
-	hls::LineBuffer<BUFFER_SIZE,1,float> pool_buff;
+	float24_t read;
+	hls::LineBuffer<BUFFER_SIZE,1,float24_t> pool_buff;
 	for(i = 0 ; i < A_SIZE; i++)
 		for(j = 0 ; j < A_SIZE; j++)
 			for(k = 0 ; k < A_CHANNELS; k++)
@@ -59,12 +67,14 @@ void pool(hls::stream<float>& out, hls::stream<float>& in)
 */
 #define BUFFER_SIZE (P_SIZE*P_CHANNELS)
 
-void pool(hls::stream<float>& out, hls::stream<float>& in)
+
+
+void pool(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 {
 
 	int i,j,k,l,m;
-	float read;
-	hls::LineBuffer<BUFFER_SIZE,1,float> pool_buff;
+	float24_t read;
+	hls::LineBuffer<BUFFER_SIZE,1,float24_t> pool_buff;
 
 	for(i = 0 ; i < P_SIZE; i++)
 		for(l = 0; l < P_KERNEL_SIZE; l++)
@@ -87,8 +97,21 @@ void pool(hls::stream<float>& out, hls::stream<float>& in)
 			for(int channel = 0; channel < P_CHANNELS; channel++)
 					in>>read;
 	}
+
+
+	for(int skip_row = P_SIZE * P_STRIDE ; skip_row < A_SIZE; skip_row++)
+		for(int skip_col = 0 ; skip_col < A_SIZE; skip_col++)
+			for(int skip_channel = 0 ; skip_channel < A_CHANNELS; skip_channel++)
+				in>>read;
+	int count = 0;
 	while(!in.empty())
-		in>>read;
+		{
+			in>>read;
+			count++;
+		}
+#ifndef __SYNTHESIS__
+	printf("%d ",count);
+#endif
 
 }
 

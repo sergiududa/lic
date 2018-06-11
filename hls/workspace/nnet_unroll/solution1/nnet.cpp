@@ -1,4 +1,4 @@
-#include "/home/sergiu/git/lic/hls/workspace/nnet/headers/weights.h"
+#include "/home/sergiu/git/lic/hls/workspace/nnet_unroll/headers/weights.h"
 #include "/home/sergiu/git/lic/hls/workspace/nnet/headers/defines.h"
 #include "/home/sergiu/git/lic/hls/workspace/nnet/headers/activations.h"
 #include "ap_fixed.h"

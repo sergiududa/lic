@@ -1,5 +1,5 @@
 obj/nnet.o: ../../nnet.cpp \
- /home/sergiu/git/lic/hls/workspace/nnet/headers/weights.h \
+ /home/sergiu/git/lic/hls/workspace/nnet_unroll/headers/weights.h \
  /opt/Xilinx/Vivado/2017.4/include/ap_fixed.h \
  /opt/Xilinx/Vivado/2017.4/include/ap_int.h \
  /opt/Xilinx/Vivado/2017.4/include/hls_half.h \

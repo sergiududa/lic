@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'pool'
 ================================================================
-* Date:           Tue May  8 18:34:05 2018
+* Date:           Thu Apr 19 10:53:09 2018
 
 * Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
 * Project:        pool
@@ -25,19 +25,30 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +------+------+------+------+----------+
-    |   Latency   |   Interval  | Pipeline |
-    |  min |  max |  min |  max |   Type   |
-    +------+------+------+------+----------+
-    |  5604|  5604|  5605|  5605| dataflow |
-    +------+------+------+------+----------+
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        N/A
+        +-------------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |                         |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1                 |  21504|  21504|      1536|          -|          -|    14|    no    |
+        | + Loop 1.1              |   1534|   1534|       767|          -|          -|     2|    no    |
+        |  ++ Loop 1.1.1          |    756|    756|        54|          -|          -|    14|    no    |
+        |   +++ Loop 1.1.1.1      |     52|     52|        26|          -|          -|     2|    no    |
+        |    ++++ Loop 1.1.1.1.1  |     24|     24|         3|          -|          -|     8|    no    |
+        |  ++ Loop 1.1.2          |      8|      8|         1|          -|          -|     8|    no    |
+        |- Loop 2                 |      ?|      ?|         1|          -|          -|     ?|    no    |
+        +-------------------------+-------+-------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -49,7 +60,7 @@ ExposeGlobal: 0
 ============================================================
 IsTopModel: 1
 ResetActiveHigh: 1
-IsCombinational: 2
+IsCombinational: 0
 IsDatapathOnly: 0
 HasWiredReturn: 1
 HasMFsm: 0
@@ -65,28 +76,707 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 2
+* Number of FSM states : 10
 * Pipeline : 0
-* Dataflow Pipeline: 1
-  DF-Pipeline-0: Size = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
+	3  / (!exitcond1)
+	10  / (exitcond1)
+3 --> 
+	4  / (!exitcond2)
+	2  / (exitcond2)
+4 --> 
+	5  / (!exitcond3)
+	9  / (exitcond3)
+5 --> 
+	6  / (!exitcond5)
+	4  / (exitcond5)
+6 --> 
+	7  / (!exitcond6)
+	5  / (exitcond6)
+7 --> 
+	8  / true
+8 --> 
+	6  / true
+9 --> 
+	9  / (!exitcond)
+	3  / (exitcond)
+10 --> 
+	10  / (tmp)
 
 * FSM state operations: 
 
- <State 1> : 0.00ns
-ST_1 : Operation 3 [2/2] (0.00ns)   --->   "call fastcc void @Loop_pool_label2_pro([1568 x float]* %output_r, [6728 x float]* %image_r)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ <State 1> : 1.77ns
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_1 = alloca float"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_2 = alloca float"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%tmp_5 = alloca float"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_13 = alloca float"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp_117 = alloca float"
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_116 = alloca float"
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_115 = alloca float"
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_114 = alloca float"
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_113 = alloca float"
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_112 = alloca float"
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_111 = alloca float"
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_110 = alloca float"
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_109 = alloca float"
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_108 = alloca float"
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_107 = alloca float"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_106 = alloca float"
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_105 = alloca float"
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_104 = alloca float"
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_103 = alloca float"
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_102 = alloca float"
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_101 = alloca float"
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_100 = alloca float"
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_99 = alloca float"
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_98 = alloca float"
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_97 = alloca float"
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_96 = alloca float"
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_95 = alloca float"
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_94 = alloca float"
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_93 = alloca float"
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_92 = alloca float"
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_91 = alloca float"
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_90 = alloca float"
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_89 = alloca float"
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_88 = alloca float"
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_87 = alloca float"
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_86 = alloca float"
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_85 = alloca float"
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_84 = alloca float"
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_83 = alloca float"
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_82 = alloca float"
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_81 = alloca float"
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_80 = alloca float"
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_79 = alloca float"
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_78 = alloca float"
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_77 = alloca float"
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_76 = alloca float"
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_75 = alloca float"
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_74 = alloca float"
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_73 = alloca float"
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_72 = alloca float"
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_71 = alloca float"
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_70 = alloca float"
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_69 = alloca float"
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_68 = alloca float"
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_67 = alloca float"
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_66 = alloca float"
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_65 = alloca float"
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_64 = alloca float"
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_63 = alloca float"
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_62 = alloca float"
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_61 = alloca float"
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_60 = alloca float"
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_59 = alloca float"
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_58 = alloca float"
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_57 = alloca float"
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_56 = alloca float"
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_55 = alloca float"
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%tmp_54 = alloca float"
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_53 = alloca float"
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_52 = alloca float"
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_51 = alloca float"
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_50 = alloca float"
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_49 = alloca float"
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_48 = alloca float"
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_47 = alloca float"
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_46 = alloca float"
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_45 = alloca float"
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_44 = alloca float"
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_43 = alloca float"
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_42 = alloca float"
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_41 = alloca float"
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_40 = alloca float"
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_39 = alloca float"
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_38 = alloca float"
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_37 = alloca float"
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_36 = alloca float"
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_35 = alloca float"
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_34 = alloca float"
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_33 = alloca float"
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_32 = alloca float"
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_31 = alloca float"
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_30 = alloca float"
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_29 = alloca float"
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_28 = alloca float"
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_27 = alloca float"
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_26 = alloca float"
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_25 = alloca float"
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_24 = alloca float"
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%tmp_23 = alloca float"
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_22 = alloca float"
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_21 = alloca float"
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%tmp_20 = alloca float"
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%tmp_19 = alloca float"
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_18 = alloca float"
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_17 = alloca float"
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_16 = alloca float"
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_15 = alloca float"
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_14 = alloca float"
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_12 = alloca float"
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_11 = alloca float"
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_4 = alloca float"
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_8 = alloca float"
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecInterface(float* %in_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecInterface(float* %out_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %out_V), !map !33"
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %in_V), !map !37"
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @pool_str) nounwind"
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%rbegin_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([55 x i8]* @hls_KD_KD_LineBuffe) nounwind"
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%rend_i = call i32 (...)* @_ssdm_op_SpecRegionEnd([55 x i8]* @hls_KD_KD_LineBuffe, i32 %rbegin_i) nounwind"
+ST_1 : Operation 130 [1/1] (1.76ns)   --->   "br label %.loopexit" [pool/solution1/pool.cpp:69]
 
- <State 2> : 0.00ns
-ST_2 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str) nounwind" [pool/solution1/pool.c:5]
-ST_2 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1568 x float]* %output_r) nounwind, !map !7"
-ST_2 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([6728 x float]* %image_r) nounwind, !map !14"
-ST_2 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @pool_str) nounwind"
-ST_2 : Operation 8 [1/2] (0.00ns)   --->   "call fastcc void @Loop_pool_label2_pro([1568 x float]* %output_r, [6728 x float]* %image_r)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "ret void" [pool/solution1/pool.c:18]
+ <State 2> : 1.77ns
+ST_2 : Operation 131 [1/1] (0.00ns)   --->   "%i = phi i4 [ 0, %0 ], [ %i_1, %.loopexit.loopexit ]"
+ST_2 : Operation 132 [1/1] (1.30ns)   --->   "%exitcond1 = icmp eq i4 %i, -2" [pool/solution1/pool.cpp:69]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 133 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14)"
+ST_2 : Operation 134 [1/1] (1.73ns)   --->   "%i_1 = add i4 %i, 1" [pool/solution1/pool.cpp:69]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 135 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader.preheader, label %.preheader23.preheader" [pool/solution1/pool.cpp:69]
+ST_2 : Operation 136 [1/1] (1.76ns)   --->   "br label %.preheader23" [pool/solution1/pool.cpp:70]
+ST_2 : Operation 137 [1/1] (0.00ns)   --->   "br label %.preheader" [pool/solution1/pool.cpp:90]
+
+ <State 3> : 1.77ns
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "%l = phi i2 [ %l_1, %.preheader23.loopexit ], [ 0, %.preheader23.preheader ]"
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "%tmp_118 = trunc i2 %l to i1" [pool/solution1/pool.cpp:70]
+ST_3 : Operation 140 [1/1] (0.95ns)   --->   "%exitcond2 = icmp eq i2 %l, -2" [pool/solution1/pool.cpp:70]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 141 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"
+ST_3 : Operation 142 [1/1] (1.56ns)   --->   "%l_1 = add i2 1, %l" [pool/solution1/pool.cpp:70]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 143 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %.loopexit.loopexit, label %.preheader22.preheader" [pool/solution1/pool.cpp:70]
+ST_3 : Operation 144 [1/1] (0.95ns)   --->   "%tmp_3 = icmp eq i2 %l, 1" [pool/solution1/pool.cpp:83]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 145 [1/1] (1.76ns)   --->   "br label %.preheader22" [pool/solution1/pool.cpp:71]
+ST_3 : Operation 146 [1/1] (0.00ns)   --->   "br label %.loopexit"
+
+ <State 4> : 1.77ns
+ST_4 : Operation 147 [1/1] (0.00ns)   --->   "%j = phi i4 [ 0, %.preheader22.preheader ], [ %j_1, %.preheader22.loopexit ]"
+ST_4 : Operation 148 [1/1] (1.30ns)   --->   "%exitcond3 = icmp eq i4 %j, -2" [pool/solution1/pool.cpp:71]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 149 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14)"
+ST_4 : Operation 150 [1/1] (1.73ns)   --->   "%j_1 = add i4 %j, 1" [pool/solution1/pool.cpp:71]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 151 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader18.0.preheader, label %.preheader21.preheader" [pool/solution1/pool.cpp:71]
+ST_4 : Operation 152 [1/1] (0.00ns)   --->   "%tmp_s = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %j, i3 0)" [pool/solution1/pool.cpp:77]
+ST_4 : Operation 153 [1/1] (1.76ns)   --->   "br label %.preheader21" [pool/solution1/pool.cpp:72]
+ST_4 : Operation 154 [1/1] (1.76ns)   --->   "br label %.preheader18.0" [pool/solution1/pool.cpp:87]
+
+ <State 5> : 1.89ns
+ST_5 : Operation 155 [1/1] (0.00ns)   --->   "%m = phi i2 [ 0, %.preheader21.preheader ], [ %m_1, %.preheader21.loopexit ]"
+ST_5 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_119 = trunc i2 %m to i1" [pool/solution1/pool.cpp:72]
+ST_5 : Operation 157 [1/1] (0.95ns)   --->   "%exitcond5 = icmp eq i2 %m, -2" [pool/solution1/pool.cpp:72]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 158 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"
+ST_5 : Operation 159 [1/1] (1.56ns)   --->   "%m_1 = add i2 1, %m" [pool/solution1/pool.cpp:72]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 160 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %.preheader22.loopexit, label %.preheader20.preheader" [pool/solution1/pool.cpp:72]
+ST_5 : Operation 161 [1/1] (0.93ns)   --->   "%tmp_7 = or i1 %tmp_119, %tmp_118" [pool/solution1/pool.cpp:76]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 162 [1/1] (0.95ns)   --->   "%tmp_9 = icmp eq i2 %m, 1" [pool/solution1/pool.cpp:83]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 163 [1/1] (0.93ns)   --->   "%or_cond = and i1 %tmp_3, %tmp_9" [pool/solution1/pool.cpp:83]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 164 [1/1] (1.76ns)   --->   "br label %.preheader20" [pool/solution1/pool.cpp:73]
+ST_5 : Operation 165 [1/1] (0.00ns)   --->   "br label %.preheader22"
+
+ <State 6> : 5.70ns
+ST_6 : Operation 166 [1/1] (0.00ns)   --->   "%k = phi i4 [ %k_1, %._crit_edge24 ], [ 0, %.preheader20.preheader ]"
+ST_6 : Operation 167 [1/1] (1.30ns)   --->   "%exitcond6 = icmp eq i4 %k, -8" [pool/solution1/pool.cpp:73]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 168 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"
+ST_6 : Operation 169 [1/1] (1.73ns)   --->   "%k_1 = add i4 %k, 1" [pool/solution1/pool.cpp:73]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 170 [1/1] (0.00ns)   --->   "br i1 %exitcond6, label %.preheader21.loopexit, label %_ifconv" [pool/solution1/pool.cpp:73]
+ST_6 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_1_load = load float* %tmp_1"
+ST_6 : Operation 172 [1/1] (0.00ns)   --->   "%tmp_2_load = load float* %tmp_2"
+ST_6 : Operation 173 [1/1] (0.00ns)   --->   "%tmp_5_load = load float* %tmp_5"
+ST_6 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_13_load = load float* %tmp_13"
+ST_6 : Operation 175 [1/1] (0.00ns)   --->   "%tmp_117_load = load float* %tmp_117"
+ST_6 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_116_load = load float* %tmp_116"
+ST_6 : Operation 177 [1/1] (0.00ns)   --->   "%tmp_115_load = load float* %tmp_115"
+ST_6 : Operation 178 [1/1] (0.00ns)   --->   "%tmp_114_load = load float* %tmp_114"
+ST_6 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_113_load = load float* %tmp_113"
+ST_6 : Operation 180 [1/1] (0.00ns)   --->   "%tmp_112_load = load float* %tmp_112"
+ST_6 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_111_load = load float* %tmp_111"
+ST_6 : Operation 182 [1/1] (0.00ns)   --->   "%tmp_110_load = load float* %tmp_110"
+ST_6 : Operation 183 [1/1] (0.00ns)   --->   "%tmp_109_load = load float* %tmp_109"
+ST_6 : Operation 184 [1/1] (0.00ns)   --->   "%tmp_108_load = load float* %tmp_108"
+ST_6 : Operation 185 [1/1] (0.00ns)   --->   "%tmp_107_load = load float* %tmp_107"
+ST_6 : Operation 186 [1/1] (0.00ns)   --->   "%tmp_106_load = load float* %tmp_106"
+ST_6 : Operation 187 [1/1] (0.00ns)   --->   "%tmp_105_load = load float* %tmp_105"
+ST_6 : Operation 188 [1/1] (0.00ns)   --->   "%tmp_104_load = load float* %tmp_104"
+ST_6 : Operation 189 [1/1] (0.00ns)   --->   "%tmp_103_load = load float* %tmp_103"
+ST_6 : Operation 190 [1/1] (0.00ns)   --->   "%tmp_102_load = load float* %tmp_102"
+ST_6 : Operation 191 [1/1] (0.00ns)   --->   "%tmp_101_load = load float* %tmp_101"
+ST_6 : Operation 192 [1/1] (0.00ns)   --->   "%tmp_100_load = load float* %tmp_100"
+ST_6 : Operation 193 [1/1] (0.00ns)   --->   "%tmp_99_load = load float* %tmp_99"
+ST_6 : Operation 194 [1/1] (0.00ns)   --->   "%tmp_98_load = load float* %tmp_98"
+ST_6 : Operation 195 [1/1] (0.00ns)   --->   "%tmp_97_load = load float* %tmp_97"
+ST_6 : Operation 196 [1/1] (0.00ns)   --->   "%tmp_96_load = load float* %tmp_96"
+ST_6 : Operation 197 [1/1] (0.00ns)   --->   "%tmp_95_load = load float* %tmp_95"
+ST_6 : Operation 198 [1/1] (0.00ns)   --->   "%tmp_94_load = load float* %tmp_94"
+ST_6 : Operation 199 [1/1] (0.00ns)   --->   "%tmp_93_load = load float* %tmp_93"
+ST_6 : Operation 200 [1/1] (0.00ns)   --->   "%tmp_92_load = load float* %tmp_92"
+ST_6 : Operation 201 [1/1] (0.00ns)   --->   "%tmp_91_load = load float* %tmp_91"
+ST_6 : Operation 202 [1/1] (0.00ns)   --->   "%tmp_90_load = load float* %tmp_90"
+ST_6 : Operation 203 [1/1] (0.00ns)   --->   "%tmp_89_load = load float* %tmp_89"
+ST_6 : Operation 204 [1/1] (0.00ns)   --->   "%tmp_88_load = load float* %tmp_88"
+ST_6 : Operation 205 [1/1] (0.00ns)   --->   "%tmp_87_load = load float* %tmp_87"
+ST_6 : Operation 206 [1/1] (0.00ns)   --->   "%tmp_86_load = load float* %tmp_86"
+ST_6 : Operation 207 [1/1] (0.00ns)   --->   "%tmp_85_load = load float* %tmp_85"
+ST_6 : Operation 208 [1/1] (0.00ns)   --->   "%tmp_84_load = load float* %tmp_84"
+ST_6 : Operation 209 [1/1] (0.00ns)   --->   "%tmp_83_load = load float* %tmp_83"
+ST_6 : Operation 210 [1/1] (0.00ns)   --->   "%tmp_82_load = load float* %tmp_82"
+ST_6 : Operation 211 [1/1] (0.00ns)   --->   "%tmp_81_load = load float* %tmp_81"
+ST_6 : Operation 212 [1/1] (0.00ns)   --->   "%tmp_80_load = load float* %tmp_80"
+ST_6 : Operation 213 [1/1] (0.00ns)   --->   "%tmp_79_load = load float* %tmp_79"
+ST_6 : Operation 214 [1/1] (0.00ns)   --->   "%tmp_78_load = load float* %tmp_78"
+ST_6 : Operation 215 [1/1] (0.00ns)   --->   "%tmp_77_load = load float* %tmp_77"
+ST_6 : Operation 216 [1/1] (0.00ns)   --->   "%tmp_76_load = load float* %tmp_76"
+ST_6 : Operation 217 [1/1] (0.00ns)   --->   "%tmp_75_load = load float* %tmp_75"
+ST_6 : Operation 218 [1/1] (0.00ns)   --->   "%tmp_74_load = load float* %tmp_74"
+ST_6 : Operation 219 [1/1] (0.00ns)   --->   "%tmp_73_load = load float* %tmp_73"
+ST_6 : Operation 220 [1/1] (0.00ns)   --->   "%tmp_72_load = load float* %tmp_72"
+ST_6 : Operation 221 [1/1] (0.00ns)   --->   "%tmp_71_load = load float* %tmp_71"
+ST_6 : Operation 222 [1/1] (0.00ns)   --->   "%tmp_70_load = load float* %tmp_70"
+ST_6 : Operation 223 [1/1] (0.00ns)   --->   "%tmp_69_load = load float* %tmp_69"
+ST_6 : Operation 224 [1/1] (0.00ns)   --->   "%tmp_68_load = load float* %tmp_68"
+ST_6 : Operation 225 [1/1] (0.00ns)   --->   "%tmp_67_load = load float* %tmp_67"
+ST_6 : Operation 226 [1/1] (0.00ns)   --->   "%tmp_66_load = load float* %tmp_66"
+ST_6 : Operation 227 [1/1] (0.00ns)   --->   "%tmp_65_load = load float* %tmp_65"
+ST_6 : Operation 228 [1/1] (0.00ns)   --->   "%tmp_64_load = load float* %tmp_64"
+ST_6 : Operation 229 [1/1] (0.00ns)   --->   "%tmp_63_load = load float* %tmp_63"
+ST_6 : Operation 230 [1/1] (0.00ns)   --->   "%tmp_62_load = load float* %tmp_62"
+ST_6 : Operation 231 [1/1] (0.00ns)   --->   "%tmp_61_load = load float* %tmp_61"
+ST_6 : Operation 232 [1/1] (0.00ns)   --->   "%tmp_60_load = load float* %tmp_60"
+ST_6 : Operation 233 [1/1] (0.00ns)   --->   "%tmp_59_load = load float* %tmp_59"
+ST_6 : Operation 234 [1/1] (0.00ns)   --->   "%tmp_58_load = load float* %tmp_58"
+ST_6 : Operation 235 [1/1] (0.00ns)   --->   "%tmp_57_load = load float* %tmp_57"
+ST_6 : Operation 236 [1/1] (0.00ns)   --->   "%tmp_56_load = load float* %tmp_56"
+ST_6 : Operation 237 [1/1] (0.00ns)   --->   "%tmp_55_load = load float* %tmp_55"
+ST_6 : Operation 238 [1/1] (0.00ns)   --->   "%tmp_54_load = load float* %tmp_54"
+ST_6 : Operation 239 [1/1] (0.00ns)   --->   "%tmp_53_load = load float* %tmp_53"
+ST_6 : Operation 240 [1/1] (0.00ns)   --->   "%tmp_52_load = load float* %tmp_52"
+ST_6 : Operation 241 [1/1] (0.00ns)   --->   "%tmp_51_load = load float* %tmp_51"
+ST_6 : Operation 242 [1/1] (0.00ns)   --->   "%tmp_50_load = load float* %tmp_50"
+ST_6 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_49_load = load float* %tmp_49"
+ST_6 : Operation 244 [1/1] (0.00ns)   --->   "%tmp_48_load = load float* %tmp_48"
+ST_6 : Operation 245 [1/1] (0.00ns)   --->   "%tmp_47_load = load float* %tmp_47"
+ST_6 : Operation 246 [1/1] (0.00ns)   --->   "%tmp_46_load = load float* %tmp_46"
+ST_6 : Operation 247 [1/1] (0.00ns)   --->   "%tmp_45_load = load float* %tmp_45"
+ST_6 : Operation 248 [1/1] (0.00ns)   --->   "%tmp_44_load = load float* %tmp_44"
+ST_6 : Operation 249 [1/1] (0.00ns)   --->   "%tmp_43_load = load float* %tmp_43"
+ST_6 : Operation 250 [1/1] (0.00ns)   --->   "%tmp_42_load = load float* %tmp_42"
+ST_6 : Operation 251 [1/1] (0.00ns)   --->   "%tmp_41_load = load float* %tmp_41"
+ST_6 : Operation 252 [1/1] (0.00ns)   --->   "%tmp_40_load = load float* %tmp_40"
+ST_6 : Operation 253 [1/1] (0.00ns)   --->   "%tmp_39_load = load float* %tmp_39"
+ST_6 : Operation 254 [1/1] (0.00ns)   --->   "%tmp_38_load = load float* %tmp_38"
+ST_6 : Operation 255 [1/1] (0.00ns)   --->   "%tmp_37_load = load float* %tmp_37"
+ST_6 : Operation 256 [1/1] (0.00ns)   --->   "%tmp_36_load = load float* %tmp_36"
+ST_6 : Operation 257 [1/1] (0.00ns)   --->   "%tmp_35_load = load float* %tmp_35"
+ST_6 : Operation 258 [1/1] (0.00ns)   --->   "%tmp_34_load = load float* %tmp_34"
+ST_6 : Operation 259 [1/1] (0.00ns)   --->   "%tmp_33_load = load float* %tmp_33"
+ST_6 : Operation 260 [1/1] (0.00ns)   --->   "%tmp_32_load = load float* %tmp_32"
+ST_6 : Operation 261 [1/1] (0.00ns)   --->   "%tmp_31_load = load float* %tmp_31"
+ST_6 : Operation 262 [1/1] (0.00ns)   --->   "%tmp_30_load = load float* %tmp_30"
+ST_6 : Operation 263 [1/1] (0.00ns)   --->   "%tmp_29_load = load float* %tmp_29"
+ST_6 : Operation 264 [1/1] (0.00ns)   --->   "%tmp_28_load = load float* %tmp_28"
+ST_6 : Operation 265 [1/1] (0.00ns)   --->   "%tmp_27_load = load float* %tmp_27"
+ST_6 : Operation 266 [1/1] (0.00ns)   --->   "%tmp_26_load = load float* %tmp_26"
+ST_6 : Operation 267 [1/1] (0.00ns)   --->   "%tmp_25_load = load float* %tmp_25"
+ST_6 : Operation 268 [1/1] (0.00ns)   --->   "%tmp_24_load = load float* %tmp_24"
+ST_6 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_23_load = load float* %tmp_23"
+ST_6 : Operation 270 [1/1] (0.00ns)   --->   "%tmp_22_load = load float* %tmp_22"
+ST_6 : Operation 271 [1/1] (0.00ns)   --->   "%tmp_21_load = load float* %tmp_21"
+ST_6 : Operation 272 [1/1] (0.00ns)   --->   "%tmp_20_load = load float* %tmp_20"
+ST_6 : Operation 273 [1/1] (0.00ns)   --->   "%tmp_19_load = load float* %tmp_19"
+ST_6 : Operation 274 [1/1] (0.00ns)   --->   "%tmp_18_load = load float* %tmp_18"
+ST_6 : Operation 275 [1/1] (0.00ns)   --->   "%tmp_17_load = load float* %tmp_17"
+ST_6 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_16_load = load float* %tmp_16"
+ST_6 : Operation 277 [1/1] (0.00ns)   --->   "%tmp_15_load = load float* %tmp_15"
+ST_6 : Operation 278 [1/1] (0.00ns)   --->   "%tmp_14_load = load float* %tmp_14"
+ST_6 : Operation 279 [1/1] (0.00ns)   --->   "%tmp_12_load = load float* %tmp_12"
+ST_6 : Operation 280 [1/1] (0.00ns)   --->   "%tmp_11_load = load float* %tmp_11"
+ST_6 : Operation 281 [1/1] (0.00ns)   --->   "%tmp_4_load = load float* %tmp_4"
+ST_6 : Operation 282 [1/1] (0.00ns)   --->   "%tmp_8_load = load float* %tmp_8"
+ST_6 : Operation 283 [1/1] (3.63ns)   --->   "%tmp_130 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V)" [pool/solution1/pool.cpp:75]   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_6 : Operation 284 [1/1] (0.00ns)   --->   "%tmp_6 = zext i4 %k to i7" [pool/solution1/pool.cpp:73]
+ST_6 : Operation 285 [1/1] (1.87ns)   --->   "%tmp_t = add i7 %tmp_s, %tmp_6" [pool/solution1/pool.cpp:77]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 286 [1/1] (3.82ns)   --->   "%tmp_120 = call float @_ssdm_op_Mux.ap_auto.112float.i7(float %tmp_1_load, float %tmp_2_load, float %tmp_5_load, float %tmp_13_load, float %tmp_117_load, float %tmp_116_load, float %tmp_115_load, float %tmp_114_load, float %tmp_113_load, float %tmp_112_load, float %tmp_111_load, float %tmp_110_load, float %tmp_109_load, float %tmp_108_load, float %tmp_107_load, float %tmp_106_load, float %tmp_105_load, float %tmp_104_load, float %tmp_103_load, float %tmp_102_load, float %tmp_101_load, float %tmp_100_load, float %tmp_99_load, float %tmp_98_load, float %tmp_97_load, float %tmp_96_load, float %tmp_95_load, float %tmp_94_load, float %tmp_93_load, float %tmp_92_load, float %tmp_91_load, float %tmp_90_load, float %tmp_89_load, float %tmp_88_load, float %tmp_87_load, float %tmp_86_load, float %tmp_85_load, float %tmp_84_load, float %tmp_83_load, float %tmp_82_load, float %tmp_81_load, float %tmp_80_load, float %tmp_79_load, float %tmp_78_load, float %tmp_77_load, float %tmp_76_load, float %tmp_75_load, float %tmp_74_load, float %tmp_73_load, float %tmp_72_load, float %tmp_71_load, float %tmp_70_load, float %tmp_69_load, float %tmp_68_load, float %tmp_67_load, float %tmp_66_load, float %tmp_65_load, float %tmp_64_load, float %tmp_63_load, float %tmp_62_load, float %tmp_61_load, float %tmp_60_load, float %tmp_59_load, float %tmp_58_load, float %tmp_57_load, float %tmp_56_load, float %tmp_55_load, float %tmp_54_load, float %tmp_53_load, float %tmp_52_load, float %tmp_51_load, float %tmp_50_load, float %tmp_49_load, float %tmp_48_load, float %tmp_47_load, float %tmp_46_load, float %tmp_45_load, float %tmp_44_load, float %tmp_43_load, float %tmp_42_load, float %tmp_41_load, float %tmp_40_load, float %tmp_39_load, float %tmp_38_load, float %tmp_37_load, float %tmp_36_load, float %tmp_35_load, float %tmp_34_load, float %tmp_33_load, float %tmp_32_load, float %tmp_31_load, float %tmp_30_load, float %tmp_29_load, float %tmp_28_load, float %tmp_27_load, float %tmp_26_load, float %tmp_25_load, float %tmp_24_load, float %tmp_23_load, float %tmp_22_load, float %tmp_21_load, float %tmp_20_load, float %tmp_19_load, float %tmp_18_load, float %tmp_17_load, float %tmp_16_load, float %tmp_15_load, float %tmp_14_load, float %tmp_12_load, float %tmp_11_load, float %tmp_4_load, float %tmp_8_load, i7 %tmp_t)" [pool/solution1/pool.cpp:77]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 3.82> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 287 [1/1] (0.00ns)   --->   "br label %.preheader21"
+
+ <State 7> : 7.72ns
+ST_7 : Operation 288 [1/1] (0.00ns)   --->   "%p_to_int = bitcast float %tmp_120 to i32" [pool/solution1/pool.cpp:77]
+ST_7 : Operation 289 [1/1] (0.00ns)   --->   "%tmp_121 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_to_int, i32 23, i32 30)" [pool/solution1/pool.cpp:77]
+ST_7 : Operation 290 [1/1] (0.00ns)   --->   "%tmp_122 = trunc i32 %p_to_int to i23" [pool/solution1/pool.cpp:77]
+ST_7 : Operation 291 [1/1] (0.00ns)   --->   "%read_to_int = bitcast float %tmp_130 to i32" [pool/solution1/pool.cpp:75]
+ST_7 : Operation 292 [1/1] (0.00ns)   --->   "%tmp_123 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %read_to_int, i32 23, i32 30)" [pool/solution1/pool.cpp:75]
+ST_7 : Operation 293 [1/1] (0.00ns)   --->   "%tmp_124 = trunc i32 %read_to_int to i23" [pool/solution1/pool.cpp:75]
+ST_7 : Operation 294 [1/1] (1.55ns)   --->   "%notlhs = icmp ne i8 %tmp_121, -1" [pool/solution1/pool.cpp:77]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 295 [1/1] (2.44ns)   --->   "%notrhs = icmp eq i23 %tmp_122, 0" [pool/solution1/pool.cpp:77]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 296 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp2)   --->   "%tmp_125 = or i1 %notrhs, %notlhs" [pool/solution1/pool.cpp:77]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 297 [1/1] (1.55ns)   --->   "%notlhs8 = icmp ne i8 %tmp_123, -1" [pool/solution1/pool.cpp:75]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 298 [1/1] (2.44ns)   --->   "%notrhs9 = icmp eq i23 %tmp_124, 0" [pool/solution1/pool.cpp:75]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 299 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp2)   --->   "%tmp_126 = or i1 %notrhs9, %notlhs8" [pool/solution1/pool.cpp:75]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp2)   --->   "%tmp_127 = and i1 %tmp_125, %tmp_126" [pool/solution1/pool.cpp:77]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 301 [1/1] (6.78ns)   --->   "%tmp_128 = fcmp ogt float %tmp_120, %tmp_130" [pool/solution1/pool.cpp:80]   --->   Core 105 'FCmp' <Latency = 0> <II = 1> <Delay = 6.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 302 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp2)   --->   "%tmp_129 = and i1 %tmp_127, %tmp_128" [pool/solution1/pool.cpp:80]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 303 [1/1] (0.93ns) (out node of the LUT)   --->   "%sel_tmp2 = and i1 %tmp_7, %tmp_129" [pool/solution1/pool.cpp:76]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 5.00ns
+ST_8 : Operation 304 [1/1] (1.37ns) (out node of the LUT)   --->   "%tmp_10 = select i1 %sel_tmp2, float %tmp_120, float %tmp_130" [pool/solution1/pool.cpp:84]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 305 [1/1] (1.55ns)   --->   "switch i7 %tmp_t, label %branch111 [
+    i7 0, label %._crit_edge116.pre
+    i7 1, label %branch1
+    i7 2, label %branch2
+    i7 3, label %branch3
+    i7 4, label %branch4
+    i7 5, label %branch5
+    i7 6, label %branch6
+    i7 7, label %branch7
+    i7 8, label %branch8
+    i7 9, label %branch9
+    i7 10, label %branch10
+    i7 11, label %branch11
+    i7 12, label %branch12
+    i7 13, label %branch13
+    i7 14, label %branch14
+    i7 15, label %branch15
+    i7 16, label %branch16
+    i7 17, label %branch17
+    i7 18, label %branch18
+    i7 19, label %branch19
+    i7 20, label %branch20
+    i7 21, label %branch21
+    i7 22, label %branch22
+    i7 23, label %branch23
+    i7 24, label %branch24
+    i7 25, label %branch25
+    i7 26, label %branch26
+    i7 27, label %branch27
+    i7 28, label %branch28
+    i7 29, label %branch29
+    i7 30, label %branch30
+    i7 31, label %branch31
+    i7 32, label %branch32
+    i7 33, label %branch33
+    i7 34, label %branch34
+    i7 35, label %branch35
+    i7 36, label %branch36
+    i7 37, label %branch37
+    i7 38, label %branch38
+    i7 39, label %branch39
+    i7 40, label %branch40
+    i7 41, label %branch41
+    i7 42, label %branch42
+    i7 43, label %branch43
+    i7 44, label %branch44
+    i7 45, label %branch45
+    i7 46, label %branch46
+    i7 47, label %branch47
+    i7 48, label %branch48
+    i7 49, label %branch49
+    i7 50, label %branch50
+    i7 51, label %branch51
+    i7 52, label %branch52
+    i7 53, label %branch53
+    i7 54, label %branch54
+    i7 55, label %branch55
+    i7 56, label %branch56
+    i7 57, label %branch57
+    i7 58, label %branch58
+    i7 59, label %branch59
+    i7 60, label %branch60
+    i7 61, label %branch61
+    i7 62, label %branch62
+    i7 63, label %branch63
+    i7 -64, label %branch64
+    i7 -63, label %branch65
+    i7 -62, label %branch66
+    i7 -61, label %branch67
+    i7 -60, label %branch68
+    i7 -59, label %branch69
+    i7 -58, label %branch70
+    i7 -57, label %branch71
+    i7 -56, label %branch72
+    i7 -55, label %branch73
+    i7 -54, label %branch74
+    i7 -53, label %branch75
+    i7 -52, label %branch76
+    i7 -51, label %branch77
+    i7 -50, label %branch78
+    i7 -49, label %branch79
+    i7 -48, label %branch80
+    i7 -47, label %branch81
+    i7 -46, label %branch82
+    i7 -45, label %branch83
+    i7 -44, label %branch84
+    i7 -43, label %branch85
+    i7 -42, label %branch86
+    i7 -41, label %branch87
+    i7 -40, label %branch88
+    i7 -39, label %branch89
+    i7 -38, label %branch90
+    i7 -37, label %branch91
+    i7 -36, label %branch92
+    i7 -35, label %branch93
+    i7 -34, label %branch94
+    i7 -33, label %branch95
+    i7 -32, label %branch96
+    i7 -31, label %branch97
+    i7 -30, label %branch98
+    i7 -29, label %branch99
+    i7 -28, label %branch100
+    i7 -27, label %branch101
+    i7 -26, label %branch102
+    i7 -25, label %branch103
+    i7 -24, label %branch104
+    i7 -23, label %branch105
+    i7 -22, label %branch106
+    i7 -21, label %branch107
+    i7 -20, label %branch108
+    i7 -19, label %branch109
+    i7 -18, label %branch110
+  ]" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 306 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_4" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 307 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 308 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_11" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 309 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 310 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_12" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 311 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 312 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_14" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 313 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 314 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_15" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 315 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 316 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_16" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 317 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 318 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_17" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 319 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 320 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_18" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 321 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 322 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_19" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 323 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 324 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_20" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 325 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 326 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_21" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 327 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 328 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_22" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 329 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 330 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_23" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 331 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 332 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_24" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 333 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 334 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_25" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 335 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 336 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_26" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 337 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 338 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_27" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 339 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 340 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_28" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 341 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 342 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_29" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 343 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 344 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_30" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 345 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 346 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_31" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 347 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 348 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_32" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 349 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 350 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_33" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 351 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 352 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_34" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 353 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 354 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_35" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 355 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 356 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_36" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 357 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 358 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_37" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 359 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 360 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_38" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 361 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 362 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_39" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 363 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 364 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_40" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 365 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 366 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_41" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 367 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 368 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_42" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 369 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 370 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_43" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 371 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 372 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_44" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 373 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 374 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_45" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 375 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 376 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_46" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 377 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 378 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_47" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 379 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 380 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_48" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 381 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 382 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_49" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 383 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 384 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_50" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 385 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 386 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_51" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 387 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 388 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_52" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 389 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 390 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_53" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 391 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 392 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_54" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 393 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 394 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_55" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 395 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 396 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_56" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 397 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 398 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_57" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 399 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 400 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_58" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 401 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 402 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_59" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 403 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 404 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_60" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 405 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 406 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_61" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 407 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 408 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_62" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 409 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 410 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_63" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 411 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 412 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_64" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 413 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 414 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_65" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 415 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 416 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_66" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 417 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 418 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_67" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 419 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 420 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_68" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 421 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 422 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_69" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 423 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 424 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_70" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 425 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 426 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_71" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 427 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 428 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_72" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 429 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 430 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_73" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 431 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 432 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_74" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 433 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 434 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_75" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 435 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 436 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_76" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 437 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 438 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_77" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 439 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 440 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_78" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 441 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 442 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_79" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 443 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 444 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_80" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 445 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 446 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_81" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 447 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 448 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_82" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 449 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 450 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_83" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 451 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 452 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_84" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 453 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 454 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_85" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 455 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 456 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_86" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 457 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 458 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_87" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 459 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 460 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_88" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 461 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 462 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_89" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 463 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 464 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_90" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 465 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 466 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_91" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 467 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 468 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_92" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 469 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 470 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_93" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 471 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 472 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_94" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 473 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 474 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_95" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 475 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 476 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_96" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 477 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 478 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_97" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 479 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 480 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_98" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 481 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 482 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_99" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 483 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 484 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_100" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 485 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 486 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_101" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 487 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 488 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_102" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 489 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 490 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_103" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 491 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 492 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_104" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 493 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 494 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_105" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 495 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 496 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_106" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 497 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 498 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_107" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 499 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 500 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_108" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 501 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 502 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_109" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 503 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 504 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_110" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 505 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 506 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_111" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 507 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 508 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_112" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 509 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 510 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_113" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 511 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 512 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_114" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 513 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 514 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_115" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 515 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 516 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_116" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 517 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 518 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_117" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 519 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 520 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_13" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 521 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 522 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_5" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 523 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 524 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_2" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 525 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 526 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_1" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 527 [1/1] (0.00ns)   --->   "br label %._crit_edge116"
+ST_8 : Operation 528 [1/1] (0.00ns)   --->   "store float %tmp_10, float* %tmp_8" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 529 [1/1] (0.00ns)   --->   "br label %._crit_edge116" [pool/solution1/pool.cpp:77]
+ST_8 : Operation 530 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %1, label %._crit_edge24" [pool/solution1/pool.cpp:83]
+ST_8 : Operation 531 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.floatP(float* %out_V, float %tmp_10)" [pool/solution1/pool.cpp:84]   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_8 : Operation 532 [1/1] (0.00ns)   --->   "br label %._crit_edge24" [pool/solution1/pool.cpp:84]
+ST_8 : Operation 533 [1/1] (0.00ns)   --->   "br label %.preheader20" [pool/solution1/pool.cpp:73]
+
+ <State 9> : 3.63ns
+ST_9 : Operation 534 [1/1] (0.00ns)   --->   "%channel = phi i4 [ %channel_1, %2 ], [ 0, %.preheader18.0.preheader ]" [pool/solution1/pool.cpp:87]
+ST_9 : Operation 535 [1/1] (1.30ns)   --->   "%exitcond = icmp eq i4 %channel, -8" [pool/solution1/pool.cpp:87]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 536 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"
+ST_9 : Operation 537 [1/1] (1.73ns)   --->   "%channel_1 = add i4 %channel, 1" [pool/solution1/pool.cpp:87]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 538 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader23.loopexit, label %2" [pool/solution1/pool.cpp:87]
+ST_9 : Operation 539 [1/1] (3.63ns)   --->   "%tmp_2_0 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V)" [pool/solution1/pool.cpp:88]   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_9 : Operation 540 [1/1] (0.00ns)   --->   "br label %.preheader18.0" [pool/solution1/pool.cpp:87]
+ST_9 : Operation 541 [1/1] (0.00ns)   --->   "br label %.preheader23"
+
+ <State 10> : 3.63ns
+ST_10 : Operation 542 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.floatP(float* %in_V, i32 1)" [pool/solution1/pool.cpp:90]   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_10 : Operation 543 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %4" [pool/solution1/pool.cpp:90]
+ST_10 : Operation 544 [1/1] (3.63ns)   --->   "%tmp_1_0 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V)" [pool/solution1/pool.cpp:91]   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_10 : Operation 545 [1/1] (0.00ns)   --->   "br label %.preheader" [pool/solution1/pool.cpp:91]
+ST_10 : Operation 546 [1/1] (0.00ns)   --->   "ret void" [pool/solution1/pool.cpp:93]
 
 
 ============================================================
@@ -94,11 +784,52 @@ ST_2 : Operation 9 [1/1] (0.00ns)   --->   "ret void" [pool/solution1/pool.c:18]
 ============================================================
 Target clock period: 10ns, clock uncertainty: 1.25ns.
 
- <State 1>: 0ns
+ <State 1>: 1.77ns
 The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', pool/solution1/pool.cpp:69) [124]  (1.77 ns)
 
- <State 2>: 0ns
+ <State 2>: 1.77ns
 The critical path consists of the following:
+	multiplexor before 'phi' operation ('l') with incoming values : ('l', pool/solution1/pool.cpp:70) [132]  (1.77 ns)
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('j') with incoming values : ('j', pool/solution1/pool.cpp:71) [142]  (1.77 ns)
+
+ <State 4>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('m') with incoming values : ('m', pool/solution1/pool.cpp:72) [151]  (1.77 ns)
+
+ <State 5>: 1.89ns
+The critical path consists of the following:
+	'phi' operation ('m') with incoming values : ('m', pool/solution1/pool.cpp:72) [151]  (0 ns)
+	'icmp' operation ('tmp_9', pool/solution1/pool.cpp:83) [159]  (0.959 ns)
+	'and' operation ('or_cond', pool/solution1/pool.cpp:83) [160]  (0.931 ns)
+
+ <State 6>: 5.7ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', pool/solution1/pool.cpp:73) [163]  (0 ns)
+	'add' operation ('tmp_t', pool/solution1/pool.cpp:77) [283]  (1.87 ns)
+	'mux' operation ('tmp_120', pool/solution1/pool.cpp:77) [284]  (3.83 ns)
+
+ <State 7>: 7.72ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_128', pool/solution1/pool.cpp:80) [298]  (6.79 ns)
+	'and' operation ('tmp_129', pool/solution1/pool.cpp:80) [299]  (0 ns)
+	'and' operation ('sel_tmp2', pool/solution1/pool.cpp:76) [300]  (0.931 ns)
+
+ <State 8>: 5ns
+The critical path consists of the following:
+	'select' operation ('tmp', pool/solution1/pool.cpp:84) [301]  (1.37 ns)
+	fifo write on port 'out_V' (pool/solution1/pool.cpp:84) [642]  (3.63 ns)
+
+ <State 9>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'in_V' (pool/solution1/pool.cpp:88) [659]  (3.63 ns)
+
+ <State 10>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'in_V' (pool/solution1/pool.cpp:91) [671]  (3.63 ns)
 
 
 ============================================================
@@ -111,6 +842,14 @@ N/A
   - Chain level:
 	State 1
 	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
 
 
 ============================================================

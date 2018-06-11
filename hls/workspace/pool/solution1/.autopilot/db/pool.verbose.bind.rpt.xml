@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pool'" level="0">
-<item name = "Date">Tue May  8 18:34:06 2018
+<item name = "Date">Thu Apr 19 10:53:10 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">pool</item>
@@ -24,18 +24,24 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">5604, 5604, 5605, 5605, dataflow</column>
+<column name="">?, ?, ?, ?, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_Loop_pool_label2_pro_fu_18">Loop_pool_label2_pro, 5604, 5604, 5604, 5604, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">21504, 21504, 1536, -, -, 14, no</column>
+<column name=" + Loop 1.1">1534, 1534, 767, -, -, 2, no</column>
+<column name="  ++ Loop 1.1.1">756, 756, 54, -, -, 14, no</column>
+<column name="   +++ Loop 1.1.1.1">52, 52, 26, -, -, 2, no</column>
+<column name="    ++++ Loop 1.1.1.1.1">24, 24, 3, -, -, 8, no</column>
+<column name="  ++ Loop 1.1.2">8, 8, 1, -, -, 8, no</column>
+<column name="- Loop 2">?, ?, 1, -, -, ?, no</column>
 </table>
 </item>
 </section>

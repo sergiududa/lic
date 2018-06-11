@@ -2,38 +2,1086 @@
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
-@pool_label2_pool_lab = internal unnamed_addr constant [24 x i8] c"pool_label2_pool_label3\00" ; [#uses=1 type=[24 x i8]*]
 @pool_str = internal unnamed_addr constant [5 x i8] c"pool\00" ; [#uses=1 type=[5 x i8]*]
-@p_str2 = private unnamed_addr constant [12 x i8] c"pool_label3\00", align 1 ; [#uses=3 type=[12 x i8]*]
-@p_str = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=2 type=[1 x i8]*]
+@llvm_global_ctors_1 = appending global [1 x void ()*] [void ()* @_GLOBAL__I_a] ; [#uses=0 type=[1 x void ()*]*]
+@llvm_global_ctors_0 = appending global [1 x i32] [i32 65535] ; [#uses=0 type=[1 x i32]*]
+@hls_KD_KD_LineBuffe = internal unnamed_addr constant [55 x i8] c"hls::LineBuffer<112, 1, float, 0>::LineBuffer.1.region\00" ; [#uses=2 type=[55 x i8]*]
+@ap_fifo_str = internal unnamed_addr constant [8 x i8] c"ap_fifo\00" ; [#uses=2 type=[8 x i8]*]
+@p_str = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=12 type=[1 x i8]*]
 
 ; [#uses=0]
-define void @pool([1568 x float]* %output, [6728 x float]* %image) nounwind uwtable {
-codeRepl:
-  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str) nounwind, !dbg !7 ; [debug line = 5:1]
-  call void (...)* @_ssdm_op_SpecBitsMap([1568 x float]* %output) nounwind, !map !25
-  call void (...)* @_ssdm_op_SpecBitsMap([6728 x float]* %image) nounwind, !map !32
+define void @pool(float* %out_V, float* %in_V) {
+  %tmp_1 = alloca float                           ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_1}, metadata !33) ; [debug variable = tmp]
+  %tmp_2 = alloca float                           ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_2}, metadata !33) ; [debug variable = tmp]
+  %tmp_5 = alloca float                           ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_5}, metadata !33) ; [debug variable = tmp]
+  %tmp_13 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_13}, metadata !33) ; [debug variable = tmp]
+  %tmp_117 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_117}, metadata !33) ; [debug variable = tmp]
+  %tmp_116 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_116}, metadata !33) ; [debug variable = tmp]
+  %tmp_115 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_115}, metadata !33) ; [debug variable = tmp]
+  %tmp_114 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_114}, metadata !33) ; [debug variable = tmp]
+  %tmp_113 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_113}, metadata !33) ; [debug variable = tmp]
+  %tmp_112 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_112}, metadata !33) ; [debug variable = tmp]
+  %tmp_111 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_111}, metadata !33) ; [debug variable = tmp]
+  %tmp_110 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_110}, metadata !33) ; [debug variable = tmp]
+  %tmp_109 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_109}, metadata !33) ; [debug variable = tmp]
+  %tmp_108 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_108}, metadata !33) ; [debug variable = tmp]
+  %tmp_107 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_107}, metadata !33) ; [debug variable = tmp]
+  %tmp_106 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_106}, metadata !33) ; [debug variable = tmp]
+  %tmp_105 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_105}, metadata !33) ; [debug variable = tmp]
+  %tmp_104 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_104}, metadata !33) ; [debug variable = tmp]
+  %tmp_103 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_103}, metadata !33) ; [debug variable = tmp]
+  %tmp_102 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_102}, metadata !33) ; [debug variable = tmp]
+  %tmp_101 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_101}, metadata !33) ; [debug variable = tmp]
+  %tmp_100 = alloca float                         ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_100}, metadata !33) ; [debug variable = tmp]
+  %tmp_99 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_99}, metadata !33) ; [debug variable = tmp]
+  %tmp_98 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_98}, metadata !33) ; [debug variable = tmp]
+  %tmp_97 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_97}, metadata !33) ; [debug variable = tmp]
+  %tmp_96 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_96}, metadata !33) ; [debug variable = tmp]
+  %tmp_95 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_95}, metadata !33) ; [debug variable = tmp]
+  %tmp_94 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_94}, metadata !33) ; [debug variable = tmp]
+  %tmp_93 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_93}, metadata !33) ; [debug variable = tmp]
+  %tmp_92 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_92}, metadata !33) ; [debug variable = tmp]
+  %tmp_91 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_91}, metadata !33) ; [debug variable = tmp]
+  %tmp_90 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_90}, metadata !33) ; [debug variable = tmp]
+  %tmp_89 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_89}, metadata !33) ; [debug variable = tmp]
+  %tmp_88 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_88}, metadata !33) ; [debug variable = tmp]
+  %tmp_87 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_87}, metadata !33) ; [debug variable = tmp]
+  %tmp_86 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_86}, metadata !33) ; [debug variable = tmp]
+  %tmp_85 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_85}, metadata !33) ; [debug variable = tmp]
+  %tmp_84 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_84}, metadata !33) ; [debug variable = tmp]
+  %tmp_83 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_83}, metadata !33) ; [debug variable = tmp]
+  %tmp_82 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_82}, metadata !33) ; [debug variable = tmp]
+  %tmp_81 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_81}, metadata !33) ; [debug variable = tmp]
+  %tmp_80 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_80}, metadata !33) ; [debug variable = tmp]
+  %tmp_79 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_79}, metadata !33) ; [debug variable = tmp]
+  %tmp_78 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_78}, metadata !33) ; [debug variable = tmp]
+  %tmp_77 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_77}, metadata !33) ; [debug variable = tmp]
+  %tmp_76 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_76}, metadata !33) ; [debug variable = tmp]
+  %tmp_75 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_75}, metadata !33) ; [debug variable = tmp]
+  %tmp_74 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_74}, metadata !33) ; [debug variable = tmp]
+  %tmp_73 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_73}, metadata !33) ; [debug variable = tmp]
+  %tmp_72 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_72}, metadata !33) ; [debug variable = tmp]
+  %tmp_71 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_71}, metadata !33) ; [debug variable = tmp]
+  %tmp_70 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_70}, metadata !33) ; [debug variable = tmp]
+  %tmp_69 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_69}, metadata !33) ; [debug variable = tmp]
+  %tmp_68 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_68}, metadata !33) ; [debug variable = tmp]
+  %tmp_67 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_67}, metadata !33) ; [debug variable = tmp]
+  %tmp_66 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_66}, metadata !33) ; [debug variable = tmp]
+  %tmp_65 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_65}, metadata !33) ; [debug variable = tmp]
+  %tmp_64 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_64}, metadata !33) ; [debug variable = tmp]
+  %tmp_63 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_63}, metadata !33) ; [debug variable = tmp]
+  %tmp_62 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_62}, metadata !33) ; [debug variable = tmp]
+  %tmp_61 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_61}, metadata !33) ; [debug variable = tmp]
+  %tmp_60 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_60}, metadata !33) ; [debug variable = tmp]
+  %tmp_59 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_59}, metadata !33) ; [debug variable = tmp]
+  %tmp_58 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_58}, metadata !33) ; [debug variable = tmp]
+  %tmp_57 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_57}, metadata !33) ; [debug variable = tmp]
+  %tmp_56 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_56}, metadata !33) ; [debug variable = tmp]
+  %tmp_55 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_55}, metadata !33) ; [debug variable = tmp]
+  %tmp_54 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_54}, metadata !33) ; [debug variable = tmp]
+  %tmp_53 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_53}, metadata !33) ; [debug variable = tmp]
+  %tmp_52 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_52}, metadata !33) ; [debug variable = tmp]
+  %tmp_51 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_51}, metadata !33) ; [debug variable = tmp]
+  %tmp_50 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_50}, metadata !33) ; [debug variable = tmp]
+  %tmp_49 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_49}, metadata !33) ; [debug variable = tmp]
+  %tmp_48 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_48}, metadata !33) ; [debug variable = tmp]
+  %tmp_47 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_47}, metadata !33) ; [debug variable = tmp]
+  %tmp_46 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_46}, metadata !33) ; [debug variable = tmp]
+  %tmp_45 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_45}, metadata !33) ; [debug variable = tmp]
+  %tmp_44 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_44}, metadata !33) ; [debug variable = tmp]
+  %tmp_43 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_43}, metadata !33) ; [debug variable = tmp]
+  %tmp_42 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_42}, metadata !33) ; [debug variable = tmp]
+  %tmp_41 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_41}, metadata !33) ; [debug variable = tmp]
+  %tmp_40 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_40}, metadata !33) ; [debug variable = tmp]
+  %tmp_39 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_39}, metadata !33) ; [debug variable = tmp]
+  %tmp_38 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_38}, metadata !33) ; [debug variable = tmp]
+  %tmp_37 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_37}, metadata !33) ; [debug variable = tmp]
+  %tmp_36 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_36}, metadata !33) ; [debug variable = tmp]
+  %tmp_35 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_35}, metadata !33) ; [debug variable = tmp]
+  %tmp_34 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_34}, metadata !33) ; [debug variable = tmp]
+  %tmp_33 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_33}, metadata !33) ; [debug variable = tmp]
+  %tmp_32 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_32}, metadata !33) ; [debug variable = tmp]
+  %tmp_31 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_31}, metadata !33) ; [debug variable = tmp]
+  %tmp_30 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_30}, metadata !33) ; [debug variable = tmp]
+  %tmp_29 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_29}, metadata !33) ; [debug variable = tmp]
+  %tmp_28 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_28}, metadata !33) ; [debug variable = tmp]
+  %tmp_27 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_27}, metadata !33) ; [debug variable = tmp]
+  %tmp_26 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_26}, metadata !33) ; [debug variable = tmp]
+  %tmp_25 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_25}, metadata !33) ; [debug variable = tmp]
+  %tmp_24 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_24}, metadata !33) ; [debug variable = tmp]
+  %tmp_23 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_23}, metadata !33) ; [debug variable = tmp]
+  %tmp_22 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_22}, metadata !33) ; [debug variable = tmp]
+  %tmp_21 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_21}, metadata !33) ; [debug variable = tmp]
+  %tmp_20 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_20}, metadata !33) ; [debug variable = tmp]
+  %tmp_19 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_19}, metadata !33) ; [debug variable = tmp]
+  %tmp_18 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_18}, metadata !33) ; [debug variable = tmp]
+  %tmp_17 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_17}, metadata !33) ; [debug variable = tmp]
+  %tmp_16 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_16}, metadata !33) ; [debug variable = tmp]
+  %tmp_15 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_15}, metadata !33) ; [debug variable = tmp]
+  %tmp_14 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_14}, metadata !33) ; [debug variable = tmp]
+  %tmp_12 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_12}, metadata !33) ; [debug variable = tmp]
+  %tmp_11 = alloca float                          ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_11}, metadata !33) ; [debug variable = tmp]
+  %tmp_4 = alloca float                           ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_4}, metadata !33) ; [debug variable = tmp]
+  %tmp_8 = alloca float                           ; [#uses=2 type=float*]
+  call void @llvm.dbg.declare(metadata !{float* %tmp_8}, metadata !33) ; [debug variable = tmp]
+  %empty = call i32 (...)* @_ssdm_op_SpecInterface(float* %in_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str) ; [#uses=0 type=i32]
+  %empty_6 = call i32 (...)* @_ssdm_op_SpecInterface(float* %out_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str) ; [#uses=0 type=i32]
+  call void (...)* @_ssdm_op_SpecBitsMap(float* %out_V), !map !95
+  call void (...)* @_ssdm_op_SpecBitsMap(float* %in_V), !map !99
   call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @pool_str) nounwind
-  call void @llvm.dbg.value(metadata !{[1568 x float]* %output}, i64 0, metadata !38), !dbg !41 ; [debug line = 3:17] [debug variable = output]
-  call void @llvm.dbg.value(metadata !{[6728 x float]* %image}, i64 0, metadata !42), !dbg !45 ; [debug line = 3:42] [debug variable = image]
-  call fastcc void @Loop_pool_label2_pro([1568 x float]* %output, [6728 x float]* %image)
-  ret void, !dbg !46                              ; [debug line = 18:1]
-}
+  call void @llvm.dbg.value(metadata !{float* %out_V}, i64 0, metadata !103), !dbg !112 ; [debug line = 62:31] [debug variable = out.V]
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !113), !dbg !115 ; [debug line = 62:56] [debug variable = in.V]
+  %rbegin_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([55 x i8]* @hls_KD_KD_LineBuffe) nounwind ; [#uses=1 type=i32]
+  %rend_i = call i32 (...)* @_ssdm_op_SpecRegionEnd([55 x i8]* @hls_KD_KD_LineBuffe, i32 %rbegin_i) nounwind ; [#uses=0 type=i32]
+  br label %.loopexit, !dbg !116                  ; [debug line = 69:6]
 
-; [#uses=1]
-declare i5 @llvm.part.select.i5(i5, i32, i32) nounwind readnone
+.loopexit.loopexit:                               ; preds = %.preheader23
+  br label %.loopexit
+
+.loopexit:                                        ; preds = %.loopexit.loopexit, %0
+  %i = phi i4 [ 0, %0 ], [ %i_1, %.loopexit.loopexit ] ; [#uses=2 type=i4]
+  %exitcond1 = icmp eq i4 %i, -2, !dbg !116       ; [#uses=1 type=i1] [debug line = 69:6]
+  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) ; [#uses=0 type=i32]
+  %i_1 = add i4 %i, 1, !dbg !119                  ; [#uses=1 type=i4] [debug line = 69:22]
+  call void @llvm.dbg.value(metadata !{i4 %i_1}, i64 0, metadata !120), !dbg !119 ; [debug line = 69:22] [debug variable = i]
+  br i1 %exitcond1, label %.preheader.preheader, label %.preheader23.preheader, !dbg !116 ; [debug line = 69:6]
+
+.preheader23.preheader:                           ; preds = %.loopexit
+  br label %.preheader23, !dbg !122               ; [debug line = 70:7]
+
+.preheader.preheader:                             ; preds = %.loopexit
+  br label %.preheader, !dbg !124                 ; [debug line = 112:48@90:9]
+
+.preheader23.loopexit:                            ; preds = %.preheader18.0
+  br label %.preheader23
+
+.preheader23:                                     ; preds = %.preheader23.loopexit, %.preheader23.preheader
+  %l = phi i2 [ %l_1, %.preheader23.loopexit ], [ 0, %.preheader23.preheader ] ; [#uses=4 type=i2]
+  %tmp_118 = trunc i2 %l to i1, !dbg !122         ; [#uses=1 type=i1] [debug line = 70:7]
+  %exitcond2 = icmp eq i2 %l, -2, !dbg !122       ; [#uses=1 type=i1] [debug line = 70:7]
+  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) ; [#uses=0 type=i32]
+  %l_1 = add i2 1, %l, !dbg !127                  ; [#uses=1 type=i2] [debug line = 70:21]
+  call void @llvm.dbg.value(metadata !{i2 %l_1}, i64 0, metadata !128), !dbg !127 ; [debug line = 70:21] [debug variable = l]
+  br i1 %exitcond2, label %.loopexit.loopexit, label %.preheader22.preheader, !dbg !122 ; [debug line = 70:7]
+
+.preheader22.preheader:                           ; preds = %.preheader23
+  %tmp_3 = icmp eq i2 %l, 1, !dbg !129            ; [#uses=1 type=i1] [debug line = 83:7]
+  br label %.preheader22, !dbg !135               ; [debug line = 71:9]
+
+.preheader22.loopexit:                            ; preds = %.preheader21
+  br label %.preheader22
+
+.preheader22:                                     ; preds = %.preheader22.loopexit, %.preheader22.preheader
+  %j = phi i4 [ 0, %.preheader22.preheader ], [ %j_1, %.preheader22.loopexit ] ; [#uses=3 type=i4]
+  %exitcond3 = icmp eq i4 %j, -2, !dbg !135       ; [#uses=1 type=i1] [debug line = 71:9]
+  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) ; [#uses=0 type=i32]
+  %j_1 = add i4 %j, 1, !dbg !136                  ; [#uses=1 type=i4] [debug line = 71:25]
+  call void @llvm.dbg.value(metadata !{i4 %j_1}, i64 0, metadata !137), !dbg !136 ; [debug line = 71:25] [debug variable = j]
+  br i1 %exitcond3, label %.preheader18.0.preheader, label %.preheader21.preheader, !dbg !135 ; [debug line = 71:9]
+
+.preheader18.0.preheader:                         ; preds = %.preheader22
+  br label %.preheader18.0, !dbg !138             ; [debug line = 87:23]
+
+.preheader21.preheader:                           ; preds = %.preheader22
+  %tmp_s = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %j, i3 0), !dbg !141 ; [#uses=1 type=i7] [debug line = 77:8]
+  br label %.preheader21, !dbg !142               ; [debug line = 72:9]
+
+.preheader21.loopexit:                            ; preds = %.preheader20
+  br label %.preheader21
+
+.preheader21:                                     ; preds = %.preheader21.loopexit, %.preheader21.preheader
+  %m = phi i2 [ 0, %.preheader21.preheader ], [ %m_1, %.preheader21.loopexit ] ; [#uses=4 type=i2]
+  %tmp_119 = trunc i2 %m to i1, !dbg !142         ; [#uses=1 type=i1] [debug line = 72:9]
+  %exitcond5 = icmp eq i2 %m, -2, !dbg !142       ; [#uses=1 type=i1] [debug line = 72:9]
+  %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) ; [#uses=0 type=i32]
+  %m_1 = add i2 1, %m, !dbg !143                  ; [#uses=1 type=i2] [debug line = 72:23]
+  call void @llvm.dbg.value(metadata !{i2 %m_1}, i64 0, metadata !144), !dbg !143 ; [debug line = 72:23] [debug variable = m]
+  br i1 %exitcond5, label %.preheader22.loopexit, label %.preheader20.preheader, !dbg !142 ; [debug line = 72:9]
+
+.preheader20.preheader:                           ; preds = %.preheader21
+  %tmp_7 = or i1 %tmp_119, %tmp_118, !dbg !145    ; [#uses=1 type=i1] [debug line = 76:7]
+  %tmp_9 = icmp eq i2 %m, 1, !dbg !129            ; [#uses=1 type=i1] [debug line = 83:7]
+  %or_cond = and i1 %tmp_3, %tmp_9, !dbg !129     ; [#uses=1 type=i1] [debug line = 83:7]
+  br label %.preheader20, !dbg !146               ; [debug line = 73:10]
+
+.preheader20:                                     ; preds = %._crit_edge24, %.preheader20.preheader
+  %k = phi i4 [ %k_1, %._crit_edge24 ], [ 0, %.preheader20.preheader ] ; [#uses=3 type=i4]
+  %exitcond6 = icmp eq i4 %k, -8, !dbg !146       ; [#uses=1 type=i1] [debug line = 73:10]
+  %empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) ; [#uses=0 type=i32]
+  %k_1 = add i4 %k, 1, !dbg !147                  ; [#uses=1 type=i4] [debug line = 73:25]
+  br i1 %exitcond6, label %.preheader21.loopexit, label %_ifconv, !dbg !146 ; [debug line = 73:10]
+
+_ifconv:                                          ; preds = %.preheader20
+  %tmp_1_load = load float* %tmp_1                ; [#uses=1 type=float]
+  %tmp_2_load = load float* %tmp_2                ; [#uses=1 type=float]
+  %tmp_5_load = load float* %tmp_5                ; [#uses=1 type=float]
+  %tmp_13_load = load float* %tmp_13              ; [#uses=1 type=float]
+  %tmp_117_load = load float* %tmp_117            ; [#uses=1 type=float]
+  %tmp_116_load = load float* %tmp_116            ; [#uses=1 type=float]
+  %tmp_115_load = load float* %tmp_115            ; [#uses=1 type=float]
+  %tmp_114_load = load float* %tmp_114            ; [#uses=1 type=float]
+  %tmp_113_load = load float* %tmp_113            ; [#uses=1 type=float]
+  %tmp_112_load = load float* %tmp_112            ; [#uses=1 type=float]
+  %tmp_111_load = load float* %tmp_111            ; [#uses=1 type=float]
+  %tmp_110_load = load float* %tmp_110            ; [#uses=1 type=float]
+  %tmp_109_load = load float* %tmp_109            ; [#uses=1 type=float]
+  %tmp_108_load = load float* %tmp_108            ; [#uses=1 type=float]
+  %tmp_107_load = load float* %tmp_107            ; [#uses=1 type=float]
+  %tmp_106_load = load float* %tmp_106            ; [#uses=1 type=float]
+  %tmp_105_load = load float* %tmp_105            ; [#uses=1 type=float]
+  %tmp_104_load = load float* %tmp_104            ; [#uses=1 type=float]
+  %tmp_103_load = load float* %tmp_103            ; [#uses=1 type=float]
+  %tmp_102_load = load float* %tmp_102            ; [#uses=1 type=float]
+  %tmp_101_load = load float* %tmp_101            ; [#uses=1 type=float]
+  %tmp_100_load = load float* %tmp_100            ; [#uses=1 type=float]
+  %tmp_99_load = load float* %tmp_99              ; [#uses=1 type=float]
+  %tmp_98_load = load float* %tmp_98              ; [#uses=1 type=float]
+  %tmp_97_load = load float* %tmp_97              ; [#uses=1 type=float]
+  %tmp_96_load = load float* %tmp_96              ; [#uses=1 type=float]
+  %tmp_95_load = load float* %tmp_95              ; [#uses=1 type=float]
+  %tmp_94_load = load float* %tmp_94              ; [#uses=1 type=float]
+  %tmp_93_load = load float* %tmp_93              ; [#uses=1 type=float]
+  %tmp_92_load = load float* %tmp_92              ; [#uses=1 type=float]
+  %tmp_91_load = load float* %tmp_91              ; [#uses=1 type=float]
+  %tmp_90_load = load float* %tmp_90              ; [#uses=1 type=float]
+  %tmp_89_load = load float* %tmp_89              ; [#uses=1 type=float]
+  %tmp_88_load = load float* %tmp_88              ; [#uses=1 type=float]
+  %tmp_87_load = load float* %tmp_87              ; [#uses=1 type=float]
+  %tmp_86_load = load float* %tmp_86              ; [#uses=1 type=float]
+  %tmp_85_load = load float* %tmp_85              ; [#uses=1 type=float]
+  %tmp_84_load = load float* %tmp_84              ; [#uses=1 type=float]
+  %tmp_83_load = load float* %tmp_83              ; [#uses=1 type=float]
+  %tmp_82_load = load float* %tmp_82              ; [#uses=1 type=float]
+  %tmp_81_load = load float* %tmp_81              ; [#uses=1 type=float]
+  %tmp_80_load = load float* %tmp_80              ; [#uses=1 type=float]
+  %tmp_79_load = load float* %tmp_79              ; [#uses=1 type=float]
+  %tmp_78_load = load float* %tmp_78              ; [#uses=1 type=float]
+  %tmp_77_load = load float* %tmp_77              ; [#uses=1 type=float]
+  %tmp_76_load = load float* %tmp_76              ; [#uses=1 type=float]
+  %tmp_75_load = load float* %tmp_75              ; [#uses=1 type=float]
+  %tmp_74_load = load float* %tmp_74              ; [#uses=1 type=float]
+  %tmp_73_load = load float* %tmp_73              ; [#uses=1 type=float]
+  %tmp_72_load = load float* %tmp_72              ; [#uses=1 type=float]
+  %tmp_71_load = load float* %tmp_71              ; [#uses=1 type=float]
+  %tmp_70_load = load float* %tmp_70              ; [#uses=1 type=float]
+  %tmp_69_load = load float* %tmp_69              ; [#uses=1 type=float]
+  %tmp_68_load = load float* %tmp_68              ; [#uses=1 type=float]
+  %tmp_67_load = load float* %tmp_67              ; [#uses=1 type=float]
+  %tmp_66_load = load float* %tmp_66              ; [#uses=1 type=float]
+  %tmp_65_load = load float* %tmp_65              ; [#uses=1 type=float]
+  %tmp_64_load = load float* %tmp_64              ; [#uses=1 type=float]
+  %tmp_63_load = load float* %tmp_63              ; [#uses=1 type=float]
+  %tmp_62_load = load float* %tmp_62              ; [#uses=1 type=float]
+  %tmp_61_load = load float* %tmp_61              ; [#uses=1 type=float]
+  %tmp_60_load = load float* %tmp_60              ; [#uses=1 type=float]
+  %tmp_59_load = load float* %tmp_59              ; [#uses=1 type=float]
+  %tmp_58_load = load float* %tmp_58              ; [#uses=1 type=float]
+  %tmp_57_load = load float* %tmp_57              ; [#uses=1 type=float]
+  %tmp_56_load = load float* %tmp_56              ; [#uses=1 type=float]
+  %tmp_55_load = load float* %tmp_55              ; [#uses=1 type=float]
+  %tmp_54_load = load float* %tmp_54              ; [#uses=1 type=float]
+  %tmp_53_load = load float* %tmp_53              ; [#uses=1 type=float]
+  %tmp_52_load = load float* %tmp_52              ; [#uses=1 type=float]
+  %tmp_51_load = load float* %tmp_51              ; [#uses=1 type=float]
+  %tmp_50_load = load float* %tmp_50              ; [#uses=1 type=float]
+  %tmp_49_load = load float* %tmp_49              ; [#uses=1 type=float]
+  %tmp_48_load = load float* %tmp_48              ; [#uses=1 type=float]
+  %tmp_47_load = load float* %tmp_47              ; [#uses=1 type=float]
+  %tmp_46_load = load float* %tmp_46              ; [#uses=1 type=float]
+  %tmp_45_load = load float* %tmp_45              ; [#uses=1 type=float]
+  %tmp_44_load = load float* %tmp_44              ; [#uses=1 type=float]
+  %tmp_43_load = load float* %tmp_43              ; [#uses=1 type=float]
+  %tmp_42_load = load float* %tmp_42              ; [#uses=1 type=float]
+  %tmp_41_load = load float* %tmp_41              ; [#uses=1 type=float]
+  %tmp_40_load = load float* %tmp_40              ; [#uses=1 type=float]
+  %tmp_39_load = load float* %tmp_39              ; [#uses=1 type=float]
+  %tmp_38_load = load float* %tmp_38              ; [#uses=1 type=float]
+  %tmp_37_load = load float* %tmp_37              ; [#uses=1 type=float]
+  %tmp_36_load = load float* %tmp_36              ; [#uses=1 type=float]
+  %tmp_35_load = load float* %tmp_35              ; [#uses=1 type=float]
+  %tmp_34_load = load float* %tmp_34              ; [#uses=1 type=float]
+  %tmp_33_load = load float* %tmp_33              ; [#uses=1 type=float]
+  %tmp_32_load = load float* %tmp_32              ; [#uses=1 type=float]
+  %tmp_31_load = load float* %tmp_31              ; [#uses=1 type=float]
+  %tmp_30_load = load float* %tmp_30              ; [#uses=1 type=float]
+  %tmp_29_load = load float* %tmp_29              ; [#uses=1 type=float]
+  %tmp_28_load = load float* %tmp_28              ; [#uses=1 type=float]
+  %tmp_27_load = load float* %tmp_27              ; [#uses=1 type=float]
+  %tmp_26_load = load float* %tmp_26              ; [#uses=1 type=float]
+  %tmp_25_load = load float* %tmp_25              ; [#uses=1 type=float]
+  %tmp_24_load = load float* %tmp_24              ; [#uses=1 type=float]
+  %tmp_23_load = load float* %tmp_23              ; [#uses=1 type=float]
+  %tmp_22_load = load float* %tmp_22              ; [#uses=1 type=float]
+  %tmp_21_load = load float* %tmp_21              ; [#uses=1 type=float]
+  %tmp_20_load = load float* %tmp_20              ; [#uses=1 type=float]
+  %tmp_19_load = load float* %tmp_19              ; [#uses=1 type=float]
+  %tmp_18_load = load float* %tmp_18              ; [#uses=1 type=float]
+  %tmp_17_load = load float* %tmp_17              ; [#uses=1 type=float]
+  %tmp_16_load = load float* %tmp_16              ; [#uses=1 type=float]
+  %tmp_15_load = load float* %tmp_15              ; [#uses=1 type=float]
+  %tmp_14_load = load float* %tmp_14              ; [#uses=1 type=float]
+  %tmp_12_load = load float* %tmp_12              ; [#uses=1 type=float]
+  %tmp_11_load = load float* %tmp_11              ; [#uses=1 type=float]
+  %tmp_4_load = load float* %tmp_4                ; [#uses=1 type=float]
+  %tmp_8_load = load float* %tmp_8                ; [#uses=1 type=float]
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !148), !dbg !153 ; [debug line = 101:48@75:7] [debug variable = stream<float>.V]
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !155), !dbg !158 ; [debug line = 123:48@102:9@75:7] [debug variable = stream<float>.V]
+  %tmp_130 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V), !dbg !161 ; [#uses=3 type=float] [debug line = 125:9@102:9@75:7]
+  call void @llvm.dbg.value(metadata !{float %tmp_130}, i64 0, metadata !163), !dbg !161 ; [debug line = 125:9@102:9@75:7] [debug variable = tmp]
+  call void @llvm.dbg.value(metadata !{float %tmp_130}, i64 0, metadata !164), !dbg !165 ; [debug line = 126:9@102:9@75:7] [debug variable = read]
+  %tmp_6 = zext i4 %k to i7                       ; [#uses=1 type=i7]
+  %tmp_t = add i7 %tmp_s, %tmp_6                  ; [#uses=2 type=i7]
+  %tmp_120 = call float @_ssdm_op_Mux.ap_auto.112float.i7(float %tmp_1_load, float %tmp_2_load, float %tmp_5_load, float %tmp_13_load, float %tmp_117_load, float %tmp_116_load, float %tmp_115_load, float %tmp_114_load, float %tmp_113_load, float %tmp_112_load, float %tmp_111_load, float %tmp_110_load, float %tmp_109_load, float %tmp_108_load, float %tmp_107_load, float %tmp_106_load, float %tmp_105_load, float %tmp_104_load, float %tmp_103_load, float %tmp_102_load, float %tmp_101_load, float %tmp_100_load, float %tmp_99_load, float %tmp_98_load, float %tmp_97_load, float %tmp_96_load, float %tmp_95_load, float %tmp_94_load, float %tmp_93_load, float %tmp_92_load, float %tmp_91_load, float %tmp_90_load, float %tmp_89_load, float %tmp_88_load, float %tmp_87_load, float %tmp_86_load, float %tmp_85_load, float %tmp_84_load, float %tmp_83_load, float %tmp_82_load, float %tmp_81_load, float %tmp_80_load, float %tmp_79_load, float %tmp_78_load, float %tmp_77_load, float %tmp_76_load, float %tmp_75_load, float %tmp_74_load, float %tmp_73_load, float %tmp_72_load, float %tmp_71_load, float %tmp_70_load, float %tmp_69_load, float %tmp_68_load, float %tmp_67_load, float %tmp_66_load, float %tmp_65_load, float %tmp_64_load, float %tmp_63_load, float %tmp_62_load, float %tmp_61_load, float %tmp_60_load, float %tmp_59_load, float %tmp_58_load, float %tmp_57_load, float %tmp_56_load, float %tmp_55_load, float %tmp_54_load, float %tmp_53_load, float %tmp_52_load, float %tmp_51_load, float %tmp_50_load, float %tmp_49_load, float %tmp_48_load, float %tmp_47_load, float %tmp_46_load, float %tmp_45_load, float %tmp_44_load, float %tmp_43_load, float %tmp_42_load, float %tmp_41_load, float %tmp_40_load, float %tmp_39_load, float %tmp_38_load, float %tmp_37_load, float %tmp_36_load, float %tmp_35_load, float %tmp_34_load, float %tmp_33_load, float %tmp_32_load, float %tmp_31_load, float %tmp_30_load, float %tmp_29_load, float %tmp_28_load, float %tmp_27_load, float %tmp_26_load, float %tmp_25_load, float %tmp_24_load, float %tmp_23_load, float %tmp_22_load, float %tmp_21_load, float %tmp_20_load, float %tmp_19_load, float %tmp_18_load, float %tmp_17_load, float %tmp_16_load, float %tmp_15_load, float %tmp_14_load, float %tmp_12_load, float %tmp_11_load, float %tmp_4_load, float %tmp_8_load, i7 %tmp_t) ; [#uses=3 type=float]
+  %p_to_int = bitcast float %tmp_120 to i32       ; [#uses=2 type=i32]
+  %tmp_121 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
+  %tmp_122 = trunc i32 %p_to_int to i23           ; [#uses=1 type=i23]
+  %read_to_int = bitcast float %tmp_130 to i32    ; [#uses=2 type=i32]
+  %tmp_123 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %read_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
+  %tmp_124 = trunc i32 %read_to_int to i23        ; [#uses=1 type=i23]
+  %notlhs = icmp ne i8 %tmp_121, -1               ; [#uses=1 type=i1]
+  %notrhs = icmp eq i23 %tmp_122, 0               ; [#uses=1 type=i1]
+  %tmp_125 = or i1 %notrhs, %notlhs               ; [#uses=1 type=i1]
+  %notlhs8 = icmp ne i8 %tmp_123, -1              ; [#uses=1 type=i1]
+  %notrhs9 = icmp eq i23 %tmp_124, 0              ; [#uses=1 type=i1]
+  %tmp_126 = or i1 %notrhs9, %notlhs8             ; [#uses=1 type=i1]
+  %tmp_127 = and i1 %tmp_125, %tmp_126            ; [#uses=1 type=i1]
+  %tmp_128 = fcmp ogt float %tmp_120, %tmp_130, !dbg !166 ; [#uses=1 type=i1] [debug line = 80:8]
+  %tmp_129 = and i1 %tmp_127, %tmp_128, !dbg !166 ; [#uses=1 type=i1] [debug line = 80:8]
+  %sel_tmp2 = and i1 %tmp_7, %tmp_129             ; [#uses=1 type=i1]
+  %tmp_10 = select i1 %sel_tmp2, float %tmp_120, float %tmp_130, !dbg !167 ; [#uses=113 type=float] [debug line = 145:31@106:9@84:8]
+  switch i7 %tmp_t, label %branch111 [
+    i7 0, label %._crit_edge116.pre
+    i7 1, label %branch1
+    i7 2, label %branch2
+    i7 3, label %branch3
+    i7 4, label %branch4
+    i7 5, label %branch5
+    i7 6, label %branch6
+    i7 7, label %branch7
+    i7 8, label %branch8
+    i7 9, label %branch9
+    i7 10, label %branch10
+    i7 11, label %branch11
+    i7 12, label %branch12
+    i7 13, label %branch13
+    i7 14, label %branch14
+    i7 15, label %branch15
+    i7 16, label %branch16
+    i7 17, label %branch17
+    i7 18, label %branch18
+    i7 19, label %branch19
+    i7 20, label %branch20
+    i7 21, label %branch21
+    i7 22, label %branch22
+    i7 23, label %branch23
+    i7 24, label %branch24
+    i7 25, label %branch25
+    i7 26, label %branch26
+    i7 27, label %branch27
+    i7 28, label %branch28
+    i7 29, label %branch29
+    i7 30, label %branch30
+    i7 31, label %branch31
+    i7 32, label %branch32
+    i7 33, label %branch33
+    i7 34, label %branch34
+    i7 35, label %branch35
+    i7 36, label %branch36
+    i7 37, label %branch37
+    i7 38, label %branch38
+    i7 39, label %branch39
+    i7 40, label %branch40
+    i7 41, label %branch41
+    i7 42, label %branch42
+    i7 43, label %branch43
+    i7 44, label %branch44
+    i7 45, label %branch45
+    i7 46, label %branch46
+    i7 47, label %branch47
+    i7 48, label %branch48
+    i7 49, label %branch49
+    i7 50, label %branch50
+    i7 51, label %branch51
+    i7 52, label %branch52
+    i7 53, label %branch53
+    i7 54, label %branch54
+    i7 55, label %branch55
+    i7 56, label %branch56
+    i7 57, label %branch57
+    i7 58, label %branch58
+    i7 59, label %branch59
+    i7 60, label %branch60
+    i7 61, label %branch61
+    i7 62, label %branch62
+    i7 63, label %branch63
+    i7 -64, label %branch64
+    i7 -63, label %branch65
+    i7 -62, label %branch66
+    i7 -61, label %branch67
+    i7 -60, label %branch68
+    i7 -59, label %branch69
+    i7 -58, label %branch70
+    i7 -57, label %branch71
+    i7 -56, label %branch72
+    i7 -55, label %branch73
+    i7 -54, label %branch74
+    i7 -53, label %branch75
+    i7 -52, label %branch76
+    i7 -51, label %branch77
+    i7 -50, label %branch78
+    i7 -49, label %branch79
+    i7 -48, label %branch80
+    i7 -47, label %branch81
+    i7 -46, label %branch82
+    i7 -45, label %branch83
+    i7 -44, label %branch84
+    i7 -43, label %branch85
+    i7 -42, label %branch86
+    i7 -41, label %branch87
+    i7 -40, label %branch88
+    i7 -39, label %branch89
+    i7 -38, label %branch90
+    i7 -37, label %branch91
+    i7 -36, label %branch92
+    i7 -35, label %branch93
+    i7 -34, label %branch94
+    i7 -33, label %branch95
+    i7 -32, label %branch96
+    i7 -31, label %branch97
+    i7 -30, label %branch98
+    i7 -29, label %branch99
+    i7 -28, label %branch100
+    i7 -27, label %branch101
+    i7 -26, label %branch102
+    i7 -25, label %branch103
+    i7 -24, label %branch104
+    i7 -23, label %branch105
+    i7 -22, label %branch106
+    i7 -21, label %branch107
+    i7 -20, label %branch108
+    i7 -19, label %branch109
+    i7 -18, label %branch110
+  ], !dbg !141                                    ; [debug line = 77:8]
+
+._crit_edge116.pre:                               ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_1, !dbg !167   ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116
+
+._crit_edge116:                                   ; preds = %branch111, %branch110, %branch109, %branch108, %branch107, %branch106, %branch105, %branch104, %branch103, %branch102, %branch101, %branch100, %branch99, %branch98, %branch97, %branch96, %branch95, %branch94, %branch93, %branch92, %branch91, %branch90, %branch89, %branch88, %branch87, %branch86, %branch85, %branch84, %branch83, %branch82, %branch81, %branch80, %branch79, %branch78, %branch77, %branch76, %branch75, %branch74, %branch73, %branch72, %branch71, %branch70, %branch69, %branch68, %branch67, %branch66, %branch65, %branch64, %branch63, %branch62, %branch61, %branch60, %branch59, %branch58, %branch57, %branch56, %branch55, %branch54, %branch53, %branch52, %branch51, %branch50, %branch49, %branch48, %branch47, %branch46, %branch45, %branch44, %branch43, %branch42, %branch41, %branch40, %branch39, %branch38, %branch37, %branch36, %branch35, %branch34, %branch33, %branch32, %branch31, %branch30, %branch29, %branch28, %branch27, %branch26, %branch25, %branch24, %branch23, %branch22, %branch21, %branch20, %branch19, %branch18, %branch17, %branch16, %branch15, %branch14, %branch13, %branch12, %branch11, %branch10, %branch9, %branch8, %branch7, %branch6, %branch5, %branch4, %branch3, %branch2, %branch1, %._crit_edge116.pre
+  br i1 %or_cond, label %1, label %._crit_edge24, !dbg !129 ; [debug line = 83:7]
+
+; <label>:1                                       ; preds = %._crit_edge116
+  call void @llvm.dbg.value(metadata !{float* %out_V}, i64 0, metadata !172), !dbg !174 ; [debug line = 105:48@84:8] [debug variable = stream<float>.V]
+  call void @llvm.dbg.value(metadata !{float* %out_V}, i64 0, metadata !175), !dbg !177 ; [debug line = 144:48@106:9@84:8] [debug variable = stream<float>.V]
+  call void @llvm.dbg.value(metadata !{float %tmp_10}, i64 0, metadata !33), !dbg !167 ; [debug line = 145:31@106:9@84:8] [debug variable = tmp]
+  call void @_ssdm_op_Write.ap_fifo.volatile.floatP(float* %out_V, float %tmp_10), !dbg !178 ; [debug line = 146:9@106:9@84:8]
+  br label %._crit_edge24, !dbg !171              ; [debug line = 84:8]
+
+._crit_edge24:                                    ; preds = %1, %._crit_edge116
+  call void @llvm.dbg.value(metadata !{i4 %k_1}, i64 0, metadata !179), !dbg !147 ; [debug line = 73:25] [debug variable = k]
+  br label %.preheader20, !dbg !147               ; [debug line = 73:25]
+
+.preheader18.0:                                   ; preds = %2, %.preheader18.0.preheader
+  %channel = phi i4 [ %channel_1, %2 ], [ 0, %.preheader18.0.preheader ] ; [#uses=2 type=i4]
+  %exitcond = icmp eq i4 %channel, -8, !dbg !138  ; [#uses=1 type=i1] [debug line = 87:23]
+  %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) ; [#uses=0 type=i32]
+  %channel_1 = add i4 %channel, 1, !dbg !180      ; [#uses=1 type=i4] [debug line = 87:38]
+  br i1 %exitcond, label %.preheader23.loopexit, label %2, !dbg !138 ; [debug line = 87:23]
+
+; <label>:2                                       ; preds = %.preheader18.0
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !148), !dbg !181 ; [debug line = 101:48@88:6] [debug variable = stream<float>.V]
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !155), !dbg !183 ; [debug line = 123:48@102:9@88:6] [debug variable = stream<float>.V]
+  %tmp_2_0 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V), !dbg !185 ; [#uses=0 type=float] [debug line = 125:9@102:9@88:6]
+  call void @llvm.dbg.value(metadata !{float %tmp_2_0}, i64 0, metadata !163), !dbg !185 ; [debug line = 125:9@102:9@88:6] [debug variable = tmp]
+  br label %.preheader18.0, !dbg !180             ; [debug line = 87:38]
+
+.preheader:                                       ; preds = %3, %.preheader.preheader
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !186), !dbg !124 ; [debug line = 112:48@90:9] [debug variable = stream<float>.V]
+  %tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.floatP(float* %in_V, i32 1), !dbg !189 ; [#uses=1 type=i1] [debug line = 113:20@90:9]
+  call void @llvm.dbg.value(metadata !{i1 %tmp}, i64 0, metadata !191), !dbg !189 ; [debug line = 113:20@90:9] [debug variable = tmp]
+  br i1 %tmp, label %3, label %4, !dbg !126       ; [debug line = 90:9]
+
+; <label>:3                                       ; preds = %.preheader
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !148), !dbg !192 ; [debug line = 101:48@91:3] [debug variable = stream<float>.V]
+  call void @llvm.dbg.value(metadata !{float* %in_V}, i64 0, metadata !155), !dbg !194 ; [debug line = 123:48@102:9@91:3] [debug variable = stream<float>.V]
+  %tmp_1_0 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V), !dbg !196 ; [#uses=0 type=float] [debug line = 125:9@102:9@91:3]
+  call void @llvm.dbg.value(metadata !{float %tmp_1_0}, i64 0, metadata !163), !dbg !196 ; [debug line = 125:9@102:9@91:3] [debug variable = tmp]
+  br label %.preheader, !dbg !193                 ; [debug line = 91:3]
+
+; <label>:4                                       ; preds = %.preheader
+  ret void, !dbg !197                             ; [debug line = 93:1]
+
+branch1:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_2, !dbg !167   ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch2:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_5, !dbg !167   ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch3:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_13, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch4:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_117, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch5:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_116, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch6:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_115, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch7:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_114, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch8:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_113, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch9:                                          ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_112, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch10:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_111, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch11:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_110, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch12:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_109, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch13:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_108, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch14:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_107, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch15:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_106, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch16:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_105, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch17:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_104, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch18:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_103, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch19:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_102, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch20:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_101, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch21:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_100, !dbg !167 ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch22:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_99, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch23:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_98, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch24:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_97, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch25:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_96, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch26:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_95, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch27:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_94, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch28:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_93, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch29:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_92, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch30:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_91, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch31:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_90, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch32:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_89, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch33:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_88, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch34:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_87, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch35:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_86, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch36:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_85, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch37:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_84, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch38:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_83, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch39:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_82, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch40:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_81, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch41:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_80, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch42:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_79, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch43:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_78, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch44:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_77, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch45:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_76, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch46:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_75, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch47:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_74, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch48:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_73, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch49:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_72, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch50:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_71, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch51:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_70, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch52:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_69, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch53:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_68, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch54:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_67, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch55:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_66, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch56:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_65, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch57:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_64, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch58:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_63, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch59:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_62, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch60:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_61, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch61:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_60, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch62:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_59, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch63:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_58, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch64:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_57, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch65:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_56, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch66:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_55, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch67:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_54, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch68:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_53, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch69:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_52, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch70:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_51, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch71:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_50, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch72:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_49, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch73:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_48, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch74:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_47, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch75:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_46, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch76:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_45, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch77:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_44, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch78:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_43, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch79:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_42, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch80:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_41, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch81:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_40, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch82:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_39, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch83:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_38, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch84:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_37, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch85:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_36, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch86:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_35, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch87:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_34, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch88:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_33, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch89:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_32, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch90:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_31, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch91:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_30, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch92:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_29, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch93:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_28, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch94:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_27, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch95:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_26, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch96:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_25, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch97:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_24, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch98:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_23, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch99:                                         ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_22, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch100:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_21, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch101:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_20, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch102:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_19, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch103:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_18, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch104:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_17, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch105:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_16, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch106:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_15, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch107:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_14, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch108:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_12, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch109:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_11, !dbg !167  ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch110:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_4, !dbg !167   ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+
+branch111:                                        ; preds = %_ifconv
+  store float %tmp_10, float* %tmp_8, !dbg !167   ; [debug line = 145:31@106:9@84:8]
+  br label %._crit_edge116, !dbg !141             ; [debug line = 77:8]
+}
 
 ; [#uses=1]
 declare i32 @llvm.part.select.i32(i32, i32, i32) nounwind readnone
 
-; [#uses=1]
-declare i13 @llvm.part.select.i13(i13, i32, i32) nounwind readnone
-
-; [#uses=1]
-declare i12 @llvm.part.select.i12(i12, i32, i32) nounwind readnone
-
-; [#uses=5]
+; [#uses=22]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
+
+; [#uses=112]
+declare void @llvm.dbg.declare(metadata, metadata) nounwind readnone
+
+; [#uses=1]
+define weak void @_ssdm_op_Write.ap_fifo.volatile.floatP(float*, float) {
+entry:
+  %empty = call float @_autotb_FifoWrite_float(float* %0, float %1) ; [#uses=0 type=float]
+  ret void
+}
 
 ; [#uses=1]
 define weak void @_ssdm_op_SpecTopModule(...) {
@@ -53,28 +1101,16 @@ entry:
   ret i32 0
 }
 
-; [#uses=1]
-define weak void @_ssdm_op_SpecPipeline(...) nounwind {
-entry:
-  ret void
-}
-
-; [#uses=1]
+; [#uses=6]
 define weak i32 @_ssdm_op_SpecLoopTripCount(...) {
 entry:
   ret i32 0
 }
 
 ; [#uses=2]
-define weak void @_ssdm_op_SpecLoopName(...) nounwind {
+define weak i32 @_ssdm_op_SpecInterface(...) {
 entry:
-  ret void
-}
-
-; [#uses=1]
-define weak void @_ssdm_op_SpecDataflowPipeline(...) nounwind {
-entry:
-  ret void
+  ret i32 0
 }
 
 ; [#uses=2]
@@ -83,1371 +1119,713 @@ entry:
   ret void
 }
 
-; [#uses=6]
-define weak i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13, i32, i32) nounwind readnone {
+; [#uses=3]
+define weak float @_ssdm_op_Read.ap_fifo.volatile.floatP(float*) {
 entry:
-  %empty = call i13 @llvm.part.select.i13(i13 %0, i32 %1, i32 %2) ; [#uses=1 type=i13]
-  %empty_10 = trunc i13 %empty to i9              ; [#uses=1 type=i9]
-  ret i9 %empty_10
+  %empty = call float @_autotb_FifoRead_float(float* %0) ; [#uses=1 type=float]
+  ret float %empty
 }
 
-; [#uses=84]
+; [#uses=2]
 define weak i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32, i32, i32) nounwind readnone {
 entry:
   %empty = call i32 @llvm.part.select.i32(i32 %0, i32 %1, i32 %2) ; [#uses=1 type=i32]
-  %empty_11 = trunc i32 %empty to i8              ; [#uses=1 type=i8]
-  ret i8 %empty_11
+  %empty_13 = trunc i32 %empty to i8              ; [#uses=1 type=i8]
+  ret i8 %empty_13
 }
-
-; [#uses=1]
-define weak i8 @_ssdm_op_PartSelect.i8.i12.i32.i32(i12, i32, i32) nounwind readnone {
-entry:
-  %empty = call i12 @llvm.part.select.i12(i12 %0, i32 %1, i32 %2) ; [#uses=1 type=i12]
-  %empty_12 = trunc i12 %empty to i8              ; [#uses=1 type=i8]
-  ret i8 %empty_12
-}
-
-; [#uses=1]
-define weak i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5, i32, i32) nounwind readnone {
-entry:
-  %empty = call i5 @llvm.part.select.i5(i5 %0, i32 %1, i32 %2) ; [#uses=1 type=i5]
-  %empty_13 = trunc i5 %empty to i4               ; [#uses=1 type=i4]
-  ret i4 %empty_13
-}
-
-; [#uses=0]
-declare i4 @_ssdm_op_PartSelect.i4.i13.i32.i32(i13, i32, i32) nounwind readnone
-
-; [#uses=0]
-declare i4 @_ssdm_op_PartSelect.i4.i12.i32.i32(i12, i32, i32) nounwind readnone
 
 ; [#uses=0]
 declare i23 @_ssdm_op_PartSelect.i23.i32.i32.i32(i32, i32, i32) nounwind readnone
 
-; [#uses=1]
-define weak i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4, i4) nounwind readnone {
-entry:
-  %empty = zext i4 %0 to i8                       ; [#uses=1 type=i8]
-  %empty_14 = zext i4 %1 to i8                    ; [#uses=1 type=i8]
-  %empty_15 = shl i8 %empty, 4                    ; [#uses=1 type=i8]
-  %empty_16 = or i8 %empty_15, %empty_14          ; [#uses=1 type=i8]
-  ret i8 %empty_16
-}
+; [#uses=0]
+declare i1 @_ssdm_op_PartSelect.i1.i2.i32.i32(i2, i32, i32) nounwind readnone
 
-; [#uses=6]
-define weak i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9, i4) nounwind readnone {
+; [#uses=1]
+define weak i1 @_ssdm_op_NbReadReq.ap_fifo.floatP(float*, i32) {
 entry:
-  %empty = zext i9 %0 to i13                      ; [#uses=1 type=i13]
-  %empty_17 = zext i4 %1 to i13                   ; [#uses=1 type=i13]
-  %empty_18 = shl i13 %empty, 4                   ; [#uses=1 type=i13]
-  %empty_19 = or i13 %empty_18, %empty_17         ; [#uses=1 type=i13]
-  ret i13 %empty_19
+  %empty = call i1 @_autotb_FifoCanRead_float(float* %0) ; [#uses=1 type=i1]
+  ret i1 %empty
 }
 
 ; [#uses=1]
-define weak i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8, i4) nounwind readnone {
+define weak float @_ssdm_op_Mux.ap_auto.112float.i7(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, i7) {
 entry:
-  %empty = zext i8 %0 to i12                      ; [#uses=1 type=i12]
-  %empty_20 = zext i4 %1 to i12                   ; [#uses=1 type=i12]
-  %empty_21 = shl i12 %empty, 4                   ; [#uses=1 type=i12]
-  %empty_22 = or i12 %empty_21, %empty_20         ; [#uses=1 type=i12]
-  ret i12 %empty_22
+  switch i7 %112, label %case111 [
+    i7 0, label %case0
+    i7 1, label %case1
+    i7 2, label %case2
+    i7 3, label %case3
+    i7 4, label %case4
+    i7 5, label %case5
+    i7 6, label %case6
+    i7 7, label %case7
+    i7 8, label %case8
+    i7 9, label %case9
+    i7 10, label %case10
+    i7 11, label %case11
+    i7 12, label %case12
+    i7 13, label %case13
+    i7 14, label %case14
+    i7 15, label %case15
+    i7 16, label %case16
+    i7 17, label %case17
+    i7 18, label %case18
+    i7 19, label %case19
+    i7 20, label %case20
+    i7 21, label %case21
+    i7 22, label %case22
+    i7 23, label %case23
+    i7 24, label %case24
+    i7 25, label %case25
+    i7 26, label %case26
+    i7 27, label %case27
+    i7 28, label %case28
+    i7 29, label %case29
+    i7 30, label %case30
+    i7 31, label %case31
+    i7 32, label %case32
+    i7 33, label %case33
+    i7 34, label %case34
+    i7 35, label %case35
+    i7 36, label %case36
+    i7 37, label %case37
+    i7 38, label %case38
+    i7 39, label %case39
+    i7 40, label %case40
+    i7 41, label %case41
+    i7 42, label %case42
+    i7 43, label %case43
+    i7 44, label %case44
+    i7 45, label %case45
+    i7 46, label %case46
+    i7 47, label %case47
+    i7 48, label %case48
+    i7 49, label %case49
+    i7 50, label %case50
+    i7 51, label %case51
+    i7 52, label %case52
+    i7 53, label %case53
+    i7 54, label %case54
+    i7 55, label %case55
+    i7 56, label %case56
+    i7 57, label %case57
+    i7 58, label %case58
+    i7 59, label %case59
+    i7 60, label %case60
+    i7 61, label %case61
+    i7 62, label %case62
+    i7 63, label %case63
+    i7 -64, label %case64
+    i7 -63, label %case65
+    i7 -62, label %case66
+    i7 -61, label %case67
+    i7 -60, label %case68
+    i7 -59, label %case69
+    i7 -58, label %case70
+    i7 -57, label %case71
+    i7 -56, label %case72
+    i7 -55, label %case73
+    i7 -54, label %case74
+    i7 -53, label %case75
+    i7 -52, label %case76
+    i7 -51, label %case77
+    i7 -50, label %case78
+    i7 -49, label %case79
+    i7 -48, label %case80
+    i7 -47, label %case81
+    i7 -46, label %case82
+    i7 -45, label %case83
+    i7 -44, label %case84
+    i7 -43, label %case85
+    i7 -42, label %case86
+    i7 -41, label %case87
+    i7 -40, label %case88
+    i7 -39, label %case89
+    i7 -38, label %case90
+    i7 -37, label %case91
+    i7 -36, label %case92
+    i7 -35, label %case93
+    i7 -34, label %case94
+    i7 -33, label %case95
+    i7 -32, label %case96
+    i7 -31, label %case97
+    i7 -30, label %case98
+    i7 -29, label %case99
+    i7 -28, label %case100
+    i7 -27, label %case101
+    i7 -26, label %case102
+    i7 -25, label %case103
+    i7 -24, label %case104
+    i7 -23, label %case105
+    i7 -22, label %case106
+    i7 -21, label %case107
+    i7 -20, label %case108
+    i7 -19, label %case109
+    i7 -18, label %case110
+  ]
+
+case0:                                            ; preds = %case111, %case110, %case109, %case108, %case107, %case106, %case105, %case104, %case103, %case102, %case101, %case100, %case99, %case98, %case97, %case96, %case95, %case94, %case93, %case92, %case91, %case90, %case89, %case88, %case87, %case86, %case85, %case84, %case83, %case82, %case81, %case80, %case79, %case78, %case77, %case76, %case75, %case74, %case73, %case72, %case71, %case70, %case69, %case68, %case67, %case66, %case65, %case64, %case63, %case62, %case61, %case60, %case59, %case58, %case57, %case56, %case55, %case54, %case53, %case52, %case51, %case50, %case49, %case48, %case47, %case46, %case45, %case44, %case43, %case42, %case41, %case40, %case39, %case38, %case37, %case36, %case35, %case34, %case33, %case32, %case31, %case30, %case29, %case28, %case27, %case26, %case25, %case24, %case23, %case22, %case21, %case20, %case19, %case18, %case17, %case16, %case15, %case14, %case13, %case12, %case11, %case10, %case9, %case8, %case7, %case6, %case5, %case4, %case3, %case2, %case1, %entry
+  %merge = phi float [ %0, %entry ], [ %1, %case1 ], [ %2, %case2 ], [ %3, %case3 ], [ %4, %case4 ], [ %5, %case5 ], [ %6, %case6 ], [ %7, %case7 ], [ %8, %case8 ], [ %9, %case9 ], [ %10, %case10 ], [ %11, %case11 ], [ %12, %case12 ], [ %13, %case13 ], [ %14, %case14 ], [ %15, %case15 ], [ %16, %case16 ], [ %17, %case17 ], [ %18, %case18 ], [ %19, %case19 ], [ %20, %case20 ], [ %21, %case21 ], [ %22, %case22 ], [ %23, %case23 ], [ %24, %case24 ], [ %25, %case25 ], [ %26, %case26 ], [ %27, %case27 ], [ %28, %case28 ], [ %29, %case29 ], [ %30, %case30 ], [ %31, %case31 ], [ %32, %case32 ], [ %33, %case33 ], [ %34, %case34 ], [ %35, %case35 ], [ %36, %case36 ], [ %37, %case37 ], [ %38, %case38 ], [ %39, %case39 ], [ %40, %case40 ], [ %41, %case41 ], [ %42, %case42 ], [ %43, %case43 ], [ %44, %case44 ], [ %45, %case45 ], [ %46, %case46 ], [ %47, %case47 ], [ %48, %case48 ], [ %49, %case49 ], [ %50, %case50 ], [ %51, %case51 ], [ %52, %case52 ], [ %53, %case53 ], [ %54, %case54 ], [ %55, %case55 ], [ %56, %case56 ], [ %57, %case57 ], [ %58, %case58 ], [ %59, %case59 ], [ %60, %case60 ], [ %61, %case61 ], [ %62, %case62 ], [ %63, %case63 ], [ %64, %case64 ], [ %65, %case65 ], [ %66, %case66 ], [ %67, %case67 ], [ %68, %case68 ], [ %69, %case69 ], [ %70, %case70 ], [ %71, %case71 ], [ %72, %case72 ], [ %73, %case73 ], [ %74, %case74 ], [ %75, %case75 ], [ %76, %case76 ], [ %77, %case77 ], [ %78, %case78 ], [ %79, %case79 ], [ %80, %case80 ], [ %81, %case81 ], [ %82, %case82 ], [ %83, %case83 ], [ %84, %case84 ], [ %85, %case85 ], [ %86, %case86 ], [ %87, %case87 ], [ %88, %case88 ], [ %89, %case89 ], [ %90, %case90 ], [ %91, %case91 ], [ %92, %case92 ], [ %93, %case93 ], [ %94, %case94 ], [ %95, %case95 ], [ %96, %case96 ], [ %97, %case97 ], [ %98, %case98 ], [ %99, %case99 ], [ %100, %case100 ], [ %101, %case101 ], [ %102, %case102 ], [ %103, %case103 ], [ %104, %case104 ], [ %105, %case105 ], [ %106, %case106 ], [ %107, %case107 ], [ %108, %case108 ], [ %109, %case109 ], [ %110, %case110 ], [ %111, %case111 ] ; [#uses=1 type=float]
+  ret float %merge
+
+case1:                                            ; preds = %entry
+  br label %case0
+
+case2:                                            ; preds = %entry
+  br label %case0
+
+case3:                                            ; preds = %entry
+  br label %case0
+
+case4:                                            ; preds = %entry
+  br label %case0
+
+case5:                                            ; preds = %entry
+  br label %case0
+
+case6:                                            ; preds = %entry
+  br label %case0
+
+case7:                                            ; preds = %entry
+  br label %case0
+
+case8:                                            ; preds = %entry
+  br label %case0
+
+case9:                                            ; preds = %entry
+  br label %case0
+
+case10:                                           ; preds = %entry
+  br label %case0
+
+case11:                                           ; preds = %entry
+  br label %case0
+
+case12:                                           ; preds = %entry
+  br label %case0
+
+case13:                                           ; preds = %entry
+  br label %case0
+
+case14:                                           ; preds = %entry
+  br label %case0
+
+case15:                                           ; preds = %entry
+  br label %case0
+
+case16:                                           ; preds = %entry
+  br label %case0
+
+case17:                                           ; preds = %entry
+  br label %case0
+
+case18:                                           ; preds = %entry
+  br label %case0
+
+case19:                                           ; preds = %entry
+  br label %case0
+
+case20:                                           ; preds = %entry
+  br label %case0
+
+case21:                                           ; preds = %entry
+  br label %case0
+
+case22:                                           ; preds = %entry
+  br label %case0
+
+case23:                                           ; preds = %entry
+  br label %case0
+
+case24:                                           ; preds = %entry
+  br label %case0
+
+case25:                                           ; preds = %entry
+  br label %case0
+
+case26:                                           ; preds = %entry
+  br label %case0
+
+case27:                                           ; preds = %entry
+  br label %case0
+
+case28:                                           ; preds = %entry
+  br label %case0
+
+case29:                                           ; preds = %entry
+  br label %case0
+
+case30:                                           ; preds = %entry
+  br label %case0
+
+case31:                                           ; preds = %entry
+  br label %case0
+
+case32:                                           ; preds = %entry
+  br label %case0
+
+case33:                                           ; preds = %entry
+  br label %case0
+
+case34:                                           ; preds = %entry
+  br label %case0
+
+case35:                                           ; preds = %entry
+  br label %case0
+
+case36:                                           ; preds = %entry
+  br label %case0
+
+case37:                                           ; preds = %entry
+  br label %case0
+
+case38:                                           ; preds = %entry
+  br label %case0
+
+case39:                                           ; preds = %entry
+  br label %case0
+
+case40:                                           ; preds = %entry
+  br label %case0
+
+case41:                                           ; preds = %entry
+  br label %case0
+
+case42:                                           ; preds = %entry
+  br label %case0
+
+case43:                                           ; preds = %entry
+  br label %case0
+
+case44:                                           ; preds = %entry
+  br label %case0
+
+case45:                                           ; preds = %entry
+  br label %case0
+
+case46:                                           ; preds = %entry
+  br label %case0
+
+case47:                                           ; preds = %entry
+  br label %case0
+
+case48:                                           ; preds = %entry
+  br label %case0
+
+case49:                                           ; preds = %entry
+  br label %case0
+
+case50:                                           ; preds = %entry
+  br label %case0
+
+case51:                                           ; preds = %entry
+  br label %case0
+
+case52:                                           ; preds = %entry
+  br label %case0
+
+case53:                                           ; preds = %entry
+  br label %case0
+
+case54:                                           ; preds = %entry
+  br label %case0
+
+case55:                                           ; preds = %entry
+  br label %case0
+
+case56:                                           ; preds = %entry
+  br label %case0
+
+case57:                                           ; preds = %entry
+  br label %case0
+
+case58:                                           ; preds = %entry
+  br label %case0
+
+case59:                                           ; preds = %entry
+  br label %case0
+
+case60:                                           ; preds = %entry
+  br label %case0
+
+case61:                                           ; preds = %entry
+  br label %case0
+
+case62:                                           ; preds = %entry
+  br label %case0
+
+case63:                                           ; preds = %entry
+  br label %case0
+
+case64:                                           ; preds = %entry
+  br label %case0
+
+case65:                                           ; preds = %entry
+  br label %case0
+
+case66:                                           ; preds = %entry
+  br label %case0
+
+case67:                                           ; preds = %entry
+  br label %case0
+
+case68:                                           ; preds = %entry
+  br label %case0
+
+case69:                                           ; preds = %entry
+  br label %case0
+
+case70:                                           ; preds = %entry
+  br label %case0
+
+case71:                                           ; preds = %entry
+  br label %case0
+
+case72:                                           ; preds = %entry
+  br label %case0
+
+case73:                                           ; preds = %entry
+  br label %case0
+
+case74:                                           ; preds = %entry
+  br label %case0
+
+case75:                                           ; preds = %entry
+  br label %case0
+
+case76:                                           ; preds = %entry
+  br label %case0
+
+case77:                                           ; preds = %entry
+  br label %case0
+
+case78:                                           ; preds = %entry
+  br label %case0
+
+case79:                                           ; preds = %entry
+  br label %case0
+
+case80:                                           ; preds = %entry
+  br label %case0
+
+case81:                                           ; preds = %entry
+  br label %case0
+
+case82:                                           ; preds = %entry
+  br label %case0
+
+case83:                                           ; preds = %entry
+  br label %case0
+
+case84:                                           ; preds = %entry
+  br label %case0
+
+case85:                                           ; preds = %entry
+  br label %case0
+
+case86:                                           ; preds = %entry
+  br label %case0
+
+case87:                                           ; preds = %entry
+  br label %case0
+
+case88:                                           ; preds = %entry
+  br label %case0
+
+case89:                                           ; preds = %entry
+  br label %case0
+
+case90:                                           ; preds = %entry
+  br label %case0
+
+case91:                                           ; preds = %entry
+  br label %case0
+
+case92:                                           ; preds = %entry
+  br label %case0
+
+case93:                                           ; preds = %entry
+  br label %case0
+
+case94:                                           ; preds = %entry
+  br label %case0
+
+case95:                                           ; preds = %entry
+  br label %case0
+
+case96:                                           ; preds = %entry
+  br label %case0
+
+case97:                                           ; preds = %entry
+  br label %case0
+
+case98:                                           ; preds = %entry
+  br label %case0
+
+case99:                                           ; preds = %entry
+  br label %case0
+
+case100:                                          ; preds = %entry
+  br label %case0
+
+case101:                                          ; preds = %entry
+  br label %case0
+
+case102:                                          ; preds = %entry
+  br label %case0
+
+case103:                                          ; preds = %entry
+  br label %case0
+
+case104:                                          ; preds = %entry
+  br label %case0
+
+case105:                                          ; preds = %entry
+  br label %case0
+
+case106:                                          ; preds = %entry
+  br label %case0
+
+case107:                                          ; preds = %entry
+  br label %case0
+
+case108:                                          ; preds = %entry
+  br label %case0
+
+case109:                                          ; preds = %entry
+  br label %case0
+
+case110:                                          ; preds = %entry
+  br label %case0
+
+case111:                                          ; preds = %entry
+  br label %case0
 }
 
 ; [#uses=1]
-define weak i11 @_ssdm_op_BitConcatenate.i11.i4.i7(i4, i7) nounwind readnone {
+define weak i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4, i3) nounwind readnone {
 entry:
-  %empty = zext i4 %0 to i11                      ; [#uses=1 type=i11]
-  %empty_23 = zext i7 %1 to i11                   ; [#uses=1 type=i11]
-  %empty_24 = shl i11 %empty, 7                   ; [#uses=1 type=i11]
-  %empty_25 = or i11 %empty_24, %empty_23         ; [#uses=1 type=i11]
-  ret i11 %empty_25
+  %empty = zext i4 %0 to i7                       ; [#uses=1 type=i7]
+  %empty_14 = zext i3 %1 to i7                    ; [#uses=1 type=i7]
+  %empty_15 = shl i7 %empty, 3                    ; [#uses=1 type=i7]
+  %empty_16 = or i7 %empty_15, %empty_14          ; [#uses=1 type=i7]
+  ret i7 %empty_16
 }
+
+; [#uses=0]
+declare void @_ssdm_SpecDependence(...) nounwind
 
 ; [#uses=1]
-define internal fastcc void @Loop_pool_label2_pro([1568 x float]* nocapture %output, [6728 x float]* %image) nounwind {
-newFuncRoot:
-  br label %0
+declare float @_autotb_FifoWrite_float(float*, float)
 
-pool_.exit.exitStub:                              ; preds = %0
-  ret void
+; [#uses=1]
+declare float @_autotb_FifoRead_float(float*)
 
-.reset:                                           ; preds = %0
-  %channel = add i4 1, %channel_0_i_i, !dbg !47   ; [#uses=1 type=i4] [debug line = 7:48]
-  call void @llvm.dbg.value(metadata !{i4 %channel}, i64 0, metadata !49) nounwind, !dbg !47 ; [debug line = 7:48] [debug variable = channel]
-  call void (...)* @_ssdm_op_SpecLoopName([24 x i8]* @pool_label2_pool_lab)
-  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 112, i64 112, i64 112) nounwind ; [#uses=0 type=i32]
-  %tmp_1_i = icmp ult i5 %i_0_i_i, -4, !dbg !51   ; [#uses=2 type=i1] [debug line = 8:28]
-  %i_0_i_i_mid2 = select i1 %tmp_1_i, i5 %i_0_i_i, i5 0 ; [#uses=4 type=i5]
-  %tmp_i_mid2_v = select i1 %tmp_1_i, i4 %channel_0_i_i, i4 %channel, !dbg !54 ; [#uses=10 type=i4] [debug line = 11:5]
-  %tmp_i_mid2_cast1 = zext i4 %tmp_i_mid2_v to i12, !dbg !58 ; [#uses=7 type=i12] [debug line = 9:2]
-  %tmp_i_mid2_cast = zext i4 %tmp_i_mid2_v to i13, !dbg !58 ; [#uses=56 type=i13] [debug line = 9:2]
-  call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str2) nounwind, !dbg !58 ; [debug line = 9:2]
-  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str2) nounwind, !dbg !58 ; [#uses=1 type=i32] [debug line = 9:2]
-  call void (...)* @_ssdm_op_SpecPipeline(i32 50, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind, !dbg !59 ; [debug line = 10:1]
-  %tmp_2_i_cast = zext i5 %i_0_i_i_mid2 to i13, !dbg !54 ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp = mul i13 232, %tmp_2_i_cast, !dbg !54     ; [#uses=28 type=i13] [debug line = 11:5]
-  %tmp_3 = add i13 %tmp_i_mid2_cast, %tmp, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_380_cast = zext i13 %tmp_3 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_380_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_5 = add i13 8, %tmp, !dbg !60              ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_11 = add i13 %tmp_i_mid2_cast, %tmp_5, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_382_cast = zext i13 %tmp_11 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_1 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_382_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_13 = add i13 16, %tmp, !dbg !54            ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_20 = add i13 %tmp_i_mid2_cast, %tmp_13, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_384_cast = zext i13 %tmp_20 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_4 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_384_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_22 = add i13 24, %tmp, !dbg !60            ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_29 = add i13 %tmp_i_mid2_cast, %tmp_22, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_386_cast = zext i13 %tmp_29 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_5 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_386_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_31 = add i13 32, %tmp, !dbg !54            ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_38 = add i13 %tmp_i_mid2_cast, %tmp_31, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_388_cast = zext i13 %tmp_38 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_8 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_388_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_40 = add i13 40, %tmp, !dbg !60            ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_47 = add i13 %tmp_i_mid2_cast, %tmp_40, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_390_cast = zext i13 %tmp_47 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_9 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_390_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_49 = add i13 48, %tmp, !dbg !54            ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_56 = add i13 %tmp_i_mid2_cast, %tmp_49, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_392_cast = zext i13 %tmp_56 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_12 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_392_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_58 = add i13 56, %tmp, !dbg !60            ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_65 = add i13 %tmp_i_mid2_cast, %tmp_58, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_394_cast = zext i13 %tmp_65 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_13 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_394_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_67 = add i13 64, %tmp, !dbg !54            ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_74 = add i13 %tmp_i_mid2_cast, %tmp_67, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_396_cast = zext i13 %tmp_74 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_16 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_396_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_76 = add i13 72, %tmp, !dbg !60            ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_83 = add i13 %tmp_i_mid2_cast, %tmp_76, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_398_cast = zext i13 %tmp_83 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_17 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_398_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_85 = add i13 80, %tmp, !dbg !54            ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_92 = add i13 %tmp_i_mid2_cast, %tmp_85, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_400_cast = zext i13 %tmp_92 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_20 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_400_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_94 = add i13 88, %tmp, !dbg !60            ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_101 = add i13 %tmp_i_mid2_cast, %tmp_94, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_402_cast = zext i13 %tmp_101 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_21 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_402_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_103 = add i13 96, %tmp, !dbg !54           ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_110 = add i13 %tmp_i_mid2_cast, %tmp_103, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_404_cast = zext i13 %tmp_110 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_24 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_404_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_112 = add i13 104, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_119 = add i13 %tmp_i_mid2_cast, %tmp_112, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_406_cast = zext i13 %tmp_119 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_25 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_406_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_121 = add i13 112, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_128 = add i13 %tmp_i_mid2_cast, %tmp_121, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_408_cast = zext i13 %tmp_128 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_28 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_408_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_130 = add i13 120, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_137 = add i13 %tmp_i_mid2_cast, %tmp_130, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_410_cast = zext i13 %tmp_137 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_29 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_410_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_139 = add i13 128, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_146 = add i13 %tmp_i_mid2_cast, %tmp_139, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_412_cast = zext i13 %tmp_146 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_32 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_412_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_148 = add i13 136, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_155 = add i13 %tmp_i_mid2_cast, %tmp_148, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_414_cast = zext i13 %tmp_155 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_33 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_414_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_157 = add i13 144, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_164 = add i13 %tmp_i_mid2_cast, %tmp_157, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_416_cast = zext i13 %tmp_164 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_36 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_416_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_166 = add i13 152, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_173 = add i13 %tmp_i_mid2_cast, %tmp_166, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_418_cast = zext i13 %tmp_173 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_37 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_418_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_175 = add i13 160, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_182 = add i13 %tmp_i_mid2_cast, %tmp_175, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_420_cast = zext i13 %tmp_182 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_40 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_420_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_184 = add i13 168, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_191 = add i13 %tmp_i_mid2_cast, %tmp_184, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_422_cast = zext i13 %tmp_191 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_41 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_422_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_193 = add i13 176, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_200 = add i13 %tmp_i_mid2_cast, %tmp_193, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_424_cast = zext i13 %tmp_200 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_44 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_424_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_202 = add i13 184, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_209 = add i13 %tmp_i_mid2_cast, %tmp_202, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_426_cast = zext i13 %tmp_209 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_45 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_426_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_211 = add i13 192, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_218 = add i13 %tmp_i_mid2_cast, %tmp_211, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_428_cast = zext i13 %tmp_218 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_48 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_428_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_220 = add i13 200, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_227 = add i13 %tmp_i_mid2_cast, %tmp_220, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_430_cast = zext i13 %tmp_227 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_49 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_430_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_229 = add i13 208, %tmp, !dbg !54          ; [#uses=1 type=i13] [debug line = 11:5]
-  %tmp_236 = add i13 %tmp_i_mid2_cast, %tmp_229, !dbg !54 ; [#uses=2 type=i13] [debug line = 11:5]
-  %tmp_432_cast = zext i13 %tmp_236 to i64, !dbg !54 ; [#uses=1 type=i64] [debug line = 11:5]
-  %image_addr_52 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_432_cast, !dbg !54 ; [#uses=1 type=float*] [debug line = 11:5]
-  %tmp_238 = add i13 216, %tmp, !dbg !60          ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_245 = add i13 %tmp_i_mid2_cast, %tmp_238, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_434_cast = zext i13 %tmp_245 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_53 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_434_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_247 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %i_0_i_i_mid2, i32 1, i32 4) ; [#uses=2 type=i4]
-  %tmp_254 = call i11 @_ssdm_op_BitConcatenate.i11.i4.i7(i4 %tmp_247, i7 0) ; [#uses=1 type=i11]
-  %p_shl_cast = zext i11 %tmp_254 to i12          ; [#uses=1 type=i12]
-  %tmp_256 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_247, i4 0) ; [#uses=1 type=i8]
-  %p_shl1_cast = zext i8 %tmp_256 to i12, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_263 = sub i12 %p_shl_cast, %p_shl1_cast, !dbg !65 ; [#uses=10 type=i12] [debug line = 15:5]
-  %tmp_439_cast = sext i12 %tmp_263 to i13, !dbg !65 ; [#uses=6 type=i13] [debug line = 15:5]
-  %tmp_265 = trunc i12 %tmp_263 to i4             ; [#uses=1 type=i4]
-  %tmp_272 = or i4 %tmp_265, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_274 = call i8 @_ssdm_op_PartSelect.i8.i12.i32.i32(i12 %tmp_263, i32 4, i32 11) ; [#uses=1 type=i8]
-  %tmp_281 = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %tmp_274, i4 %tmp_272) ; [#uses=1 type=i12]
-  %tmp_283 = sext i12 %tmp_281 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_283, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_290 = or i12 %tmp_263, 8, !dbg !65         ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_292 = add i12 %tmp_i_mid2_cast1, %tmp_290, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_445_cast = sext i12 %tmp_292 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_1 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_445_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_299 = add i13 16, %tmp_439_cast, !dbg !65  ; [#uses=2 type=i13] [debug line = 15:5]
-  %tmp_301 = trunc i13 %tmp_299 to i4             ; [#uses=1 type=i4]
-  %tmp_308 = or i4 %tmp_301, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_310 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_299, i32 4, i32 12) ; [#uses=1 type=i9]
-  %tmp_317 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_310, i4 %tmp_308) ; [#uses=1 type=i13]
-  %tmp_319 = sext i13 %tmp_317 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_2 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_319, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_326 = add i12 24, %tmp_263, !dbg !65       ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_328 = add i12 %tmp_i_mid2_cast1, %tmp_326, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_452_cast = sext i12 %tmp_328 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_3 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_452_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_335 = add i13 32, %tmp_439_cast, !dbg !65  ; [#uses=2 type=i13] [debug line = 15:5]
-  %tmp_337 = trunc i13 %tmp_335 to i4             ; [#uses=1 type=i4]
-  %tmp_344 = or i4 %tmp_337, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_346 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_335, i32 4, i32 12) ; [#uses=1 type=i9]
-  %tmp_353 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_346, i4 %tmp_344) ; [#uses=1 type=i13]
-  %tmp_355 = sext i13 %tmp_353 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_4 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_355, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_362 = add i12 40, %tmp_263, !dbg !65       ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_364 = add i12 %tmp_i_mid2_cast1, %tmp_362, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_459_cast = sext i12 %tmp_364 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_5 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_459_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_371 = add i13 48, %tmp_439_cast, !dbg !65  ; [#uses=2 type=i13] [debug line = 15:5]
-  %tmp_373 = trunc i13 %tmp_371 to i4             ; [#uses=1 type=i4]
-  %tmp_379 = or i4 %tmp_373, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_380 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_371, i32 4, i32 12) ; [#uses=1 type=i9]
-  %tmp_381 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_380, i4 %tmp_379) ; [#uses=1 type=i13]
-  %tmp_382 = sext i13 %tmp_381 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_6 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_382, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_383 = add i12 56, %tmp_263, !dbg !65       ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_384 = add i12 %tmp_i_mid2_cast1, %tmp_383, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_466_cast = sext i12 %tmp_384 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_7 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_466_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_385 = add i13 64, %tmp_439_cast, !dbg !65  ; [#uses=2 type=i13] [debug line = 15:5]
-  %tmp_386 = trunc i13 %tmp_385 to i4             ; [#uses=1 type=i4]
-  %tmp_387 = or i4 %tmp_386, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_388 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_385, i32 4, i32 12) ; [#uses=1 type=i9]
-  %tmp_389 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_388, i4 %tmp_387) ; [#uses=1 type=i13]
-  %tmp_390 = sext i13 %tmp_389 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_8 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_390, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_391 = add i12 72, %tmp_263, !dbg !65       ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_392 = add i12 %tmp_i_mid2_cast1, %tmp_391, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_473_cast = sext i12 %tmp_392 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_9 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_473_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_393 = add i13 80, %tmp_439_cast, !dbg !65  ; [#uses=2 type=i13] [debug line = 15:5]
-  %tmp_394 = trunc i13 %tmp_393 to i4             ; [#uses=1 type=i4]
-  %tmp_395 = or i4 %tmp_394, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_396 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_393, i32 4, i32 12) ; [#uses=1 type=i9]
-  %tmp_397 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_396, i4 %tmp_395) ; [#uses=1 type=i13]
-  %tmp_398 = sext i13 %tmp_397 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_10 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_398, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_399 = add i12 88, %tmp_263, !dbg !65       ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_400 = add i12 %tmp_i_mid2_cast1, %tmp_399, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_480_cast = sext i12 %tmp_400 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_11 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_480_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_401 = add i13 96, %tmp_439_cast, !dbg !65  ; [#uses=2 type=i13] [debug line = 15:5]
-  %tmp_402 = trunc i13 %tmp_401 to i4             ; [#uses=1 type=i4]
-  %tmp_403 = or i4 %tmp_402, %tmp_i_mid2_v        ; [#uses=1 type=i4]
-  %tmp_404 = call i9 @_ssdm_op_PartSelect.i9.i13.i32.i32(i13 %tmp_401, i32 4, i32 12) ; [#uses=1 type=i9]
-  %tmp_405 = call i13 @_ssdm_op_BitConcatenate.i13.i9.i4(i9 %tmp_404, i4 %tmp_403) ; [#uses=1 type=i13]
-  %tmp_406 = sext i13 %tmp_405 to i64, !dbg !65   ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_12 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_406, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %tmp_407 = add i12 104, %tmp_263, !dbg !65      ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_408 = add i12 %tmp_i_mid2_cast1, %tmp_407, !dbg !65 ; [#uses=1 type=i12] [debug line = 15:5]
-  %tmp_487_cast = sext i12 %tmp_408 to i64, !dbg !65 ; [#uses=1 type=i64] [debug line = 15:5]
-  %output_addr_13 = getelementptr [1568 x float]* %output, i64 0, i64 %tmp_487_cast, !dbg !65 ; [#uses=1 type=float*] [debug line = 15:5]
-  %image_load = load float* %image_addr, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_1 = load float* %image_addr_1, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_1_to_int = bitcast float %image_load_1 to i32 ; [#uses=2 type=i32]
-  %tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_409 = trunc i32 %image_load_1_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_to_int = bitcast float %image_load to i32 ; [#uses=2 type=i32]
-  %tmp_4 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_410 = trunc i32 %image_load_to_int to i23  ; [#uses=1 type=i23]
-  %notlhs = icmp ne i8 %tmp_2, -1                 ; [#uses=1 type=i1]
-  %notrhs = icmp eq i23 %tmp_409, 0               ; [#uses=1 type=i1]
-  %tmp_6 = or i1 %notrhs, %notlhs                 ; [#uses=1 type=i1]
-  %notlhs1 = icmp ne i8 %tmp_4, -1                ; [#uses=1 type=i1]
-  %notrhs2 = icmp eq i23 %tmp_410, 0              ; [#uses=1 type=i1]
-  %tmp_7 = or i1 %notrhs2, %notlhs1               ; [#uses=1 type=i1]
-  %tmp_8 = and i1 %tmp_6, %tmp_7                  ; [#uses=1 type=i1]
-  %tmp_9 = fcmp ogt float %image_load_1, %image_load, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_s = and i1 %tmp_8, %tmp_9, !dbg !60        ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_0_0_1 = select i1 %tmp_s, i13 %tmp_11, i13 %tmp_3, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_0_0_1_cast = zext i13 %max_1_i_0_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_56 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_0_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_56 = load float* %image_addr_56, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %tmp_5_i_0_s = or i5 %i_0_i_i_mid2, 1, !dbg !60 ; [#uses=1 type=i5] [debug line = 14:1]
-  %tmp_8_i_0_1_cast = zext i5 %tmp_5_i_0_s to i13, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_411 = mul i13 232, %tmp_8_i_0_1_cast, !dbg !60 ; [#uses=28 type=i13] [debug line = 14:1]
-  %tmp_412 = add i13 %tmp_i_mid2_cast, %tmp_411, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_489_cast = zext i13 %tmp_412 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_2 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_489_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_413 = add i13 8, %tmp_411, !dbg !60        ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_414 = add i13 %tmp_i_mid2_cast, %tmp_413, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_491_cast = zext i13 %tmp_414 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_3 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_491_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_415 = add i13 16, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_416 = add i13 %tmp_i_mid2_cast, %tmp_415, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_493_cast = zext i13 %tmp_416 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_6 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_493_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_417 = add i13 24, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_418 = add i13 %tmp_i_mid2_cast, %tmp_417, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_495_cast = zext i13 %tmp_418 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_7 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_495_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_419 = add i13 32, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_420 = add i13 %tmp_i_mid2_cast, %tmp_419, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_497_cast = zext i13 %tmp_420 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_10 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_497_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_421 = add i13 40, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_422 = add i13 %tmp_i_mid2_cast, %tmp_421, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_499_cast = zext i13 %tmp_422 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_11 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_499_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_423 = add i13 48, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_424 = add i13 %tmp_i_mid2_cast, %tmp_423, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_501_cast = zext i13 %tmp_424 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_14 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_501_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_425 = add i13 56, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_426 = add i13 %tmp_i_mid2_cast, %tmp_425, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_503_cast = zext i13 %tmp_426 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_15 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_503_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_427 = add i13 64, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_428 = add i13 %tmp_i_mid2_cast, %tmp_427, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_505_cast = zext i13 %tmp_428 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_18 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_505_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_429 = add i13 72, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_430 = add i13 %tmp_i_mid2_cast, %tmp_429, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_507_cast = zext i13 %tmp_430 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_19 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_507_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_431 = add i13 80, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_432 = add i13 %tmp_i_mid2_cast, %tmp_431, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_509_cast = zext i13 %tmp_432 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_22 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_509_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_433 = add i13 88, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_434 = add i13 %tmp_i_mid2_cast, %tmp_433, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_511_cast = zext i13 %tmp_434 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_23 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_511_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_435 = add i13 96, %tmp_411, !dbg !60       ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_436 = add i13 %tmp_i_mid2_cast, %tmp_435, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_513_cast = zext i13 %tmp_436 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_26 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_513_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_437 = add i13 104, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_438 = add i13 %tmp_i_mid2_cast, %tmp_437, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_515_cast = zext i13 %tmp_438 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_27 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_515_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_439 = add i13 112, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_440 = add i13 %tmp_i_mid2_cast, %tmp_439, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_517_cast = zext i13 %tmp_440 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_30 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_517_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_441 = add i13 120, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_442 = add i13 %tmp_i_mid2_cast, %tmp_441, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_519_cast = zext i13 %tmp_442 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_31 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_519_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_443 = add i13 128, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_444 = add i13 %tmp_i_mid2_cast, %tmp_443, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_521_cast = zext i13 %tmp_444 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_34 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_521_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_445 = add i13 136, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_446 = add i13 %tmp_i_mid2_cast, %tmp_445, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_523_cast = zext i13 %tmp_446 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_35 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_523_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_447 = add i13 144, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_448 = add i13 %tmp_i_mid2_cast, %tmp_447, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_525_cast = zext i13 %tmp_448 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_38 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_525_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_449 = add i13 152, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_450 = add i13 %tmp_i_mid2_cast, %tmp_449, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_527_cast = zext i13 %tmp_450 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_39 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_527_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_451 = add i13 160, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_452 = add i13 %tmp_i_mid2_cast, %tmp_451, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_529_cast = zext i13 %tmp_452 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_42 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_529_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_453 = add i13 168, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_454 = add i13 %tmp_i_mid2_cast, %tmp_453, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_531_cast = zext i13 %tmp_454 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_43 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_531_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_455 = add i13 176, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_456 = add i13 %tmp_i_mid2_cast, %tmp_455, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_533_cast = zext i13 %tmp_456 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_46 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_533_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_457 = add i13 184, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_458 = add i13 %tmp_i_mid2_cast, %tmp_457, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_535_cast = zext i13 %tmp_458 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_47 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_535_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_459 = add i13 192, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_460 = add i13 %tmp_i_mid2_cast, %tmp_459, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_537_cast = zext i13 %tmp_460 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_50 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_537_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_461 = add i13 200, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_462 = add i13 %tmp_i_mid2_cast, %tmp_461, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_539_cast = zext i13 %tmp_462 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_51 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_539_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_463 = add i13 208, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_464 = add i13 %tmp_i_mid2_cast, %tmp_463, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_541_cast = zext i13 %tmp_464 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_54 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_541_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %tmp_465 = add i13 216, %tmp_411, !dbg !60      ; [#uses=1 type=i13] [debug line = 14:1]
-  %tmp_466 = add i13 %tmp_i_mid2_cast, %tmp_465, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %tmp_543_cast = zext i13 %tmp_466 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_55 = getelementptr [6728 x float]* %image, i64 0, i64 %tmp_543_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_2 = load float* %image_addr_2, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_2_to_int = bitcast float %image_load_2 to i32 ; [#uses=2 type=i32]
-  %tmp_10 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_2_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_467 = trunc i32 %image_load_2_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_0_0_1_to_int = bitcast float %image_load_56 to i32 ; [#uses=2 type=i32]
-  %tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_0_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_468 = trunc i32 %max_1_i_0_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs3 = icmp ne i8 %tmp_10, -1               ; [#uses=1 type=i1]
-  %notrhs4 = icmp eq i23 %tmp_467, 0              ; [#uses=1 type=i1]
-  %tmp_14 = or i1 %notrhs4, %notlhs3              ; [#uses=1 type=i1]
-  %notlhs5 = icmp ne i8 %tmp_12, -1               ; [#uses=1 type=i1]
-  %notrhs6 = icmp eq i23 %tmp_468, 0              ; [#uses=1 type=i1]
-  %tmp_15 = or i1 %notrhs6, %notlhs5              ; [#uses=1 type=i1]
-  %tmp_16 = and i1 %tmp_14, %tmp_15               ; [#uses=1 type=i1]
-  %tmp_17 = fcmp ogt float %image_load_2, %image_load_56, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_18 = and i1 %tmp_16, %tmp_17, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_0_1 = select i1 %tmp_18, i13 %tmp_412, i13 %max_1_i_0_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_0_1_cast = zext i13 %max_1_i_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_57 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_57 = load float* %image_addr_57, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_3 = load float* %image_addr_3, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_3_to_int = bitcast float %image_load_3 to i32 ; [#uses=2 type=i32]
-  %tmp_19 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_3_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_469 = trunc i32 %image_load_3_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_0_1_to_int = bitcast float %image_load_57 to i32 ; [#uses=2 type=i32]
-  %tmp_21 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_470 = trunc i32 %max_1_i_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs7 = icmp ne i8 %tmp_19, -1               ; [#uses=1 type=i1]
-  %notrhs8 = icmp eq i23 %tmp_469, 0              ; [#uses=1 type=i1]
-  %tmp_23 = or i1 %notrhs8, %notlhs7              ; [#uses=1 type=i1]
-  %notlhs9 = icmp ne i8 %tmp_21, -1               ; [#uses=1 type=i1]
-  %notrhs1 = icmp eq i23 %tmp_470, 0              ; [#uses=1 type=i1]
-  %tmp_24 = or i1 %notrhs1, %notlhs9              ; [#uses=1 type=i1]
-  %tmp_25 = and i1 %tmp_23, %tmp_24               ; [#uses=1 type=i1]
-  %tmp_26 = fcmp ogt float %image_load_3, %image_load_57, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_27 = and i1 %tmp_25, %tmp_26, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_0_1_1 = select i1 %tmp_27, i13 %tmp_414, i13 %max_1_i_0_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_0_1_1_cast = zext i13 %max_1_i_0_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_58 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_0_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_58 = load float* %image_addr_58, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_58, float* %output_addr, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_4 = load float* %image_addr_4, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_5 = load float* %image_addr_5, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_5_to_int = bitcast float %image_load_5 to i32 ; [#uses=2 type=i32]
-  %tmp_28 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_5_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_471 = trunc i32 %image_load_5_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_4_to_int = bitcast float %image_load_4 to i32 ; [#uses=2 type=i32]
-  %tmp_30 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_4_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_472 = trunc i32 %image_load_4_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs2 = icmp ne i8 %tmp_28, -1               ; [#uses=1 type=i1]
-  %notrhs3 = icmp eq i23 %tmp_471, 0              ; [#uses=1 type=i1]
-  %tmp_32 = or i1 %notrhs3, %notlhs2              ; [#uses=1 type=i1]
-  %notlhs4 = icmp ne i8 %tmp_30, -1               ; [#uses=1 type=i1]
-  %notrhs5 = icmp eq i23 %tmp_472, 0              ; [#uses=1 type=i1]
-  %tmp_33 = or i1 %notrhs5, %notlhs4              ; [#uses=1 type=i1]
-  %tmp_34 = and i1 %tmp_32, %tmp_33               ; [#uses=1 type=i1]
-  %tmp_35 = fcmp ogt float %image_load_5, %image_load_4, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_36 = and i1 %tmp_34, %tmp_35, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_1_0_1 = select i1 %tmp_36, i13 %tmp_29, i13 %tmp_20, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_1_0_1_cast = zext i13 %max_1_i_1_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_59 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_1_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_59 = load float* %image_addr_59, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_6 = load float* %image_addr_6, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_6_to_int = bitcast float %image_load_6 to i32 ; [#uses=2 type=i32]
-  %tmp_37 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_6_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_473 = trunc i32 %image_load_6_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_1_0_1_to_int = bitcast float %image_load_59 to i32 ; [#uses=2 type=i32]
-  %tmp_39 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_1_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_474 = trunc i32 %max_1_i_1_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs6 = icmp ne i8 %tmp_37, -1               ; [#uses=1 type=i1]
-  %notrhs7 = icmp eq i23 %tmp_473, 0              ; [#uses=1 type=i1]
-  %tmp_41 = or i1 %notrhs7, %notlhs6              ; [#uses=1 type=i1]
-  %notlhs8 = icmp ne i8 %tmp_39, -1               ; [#uses=1 type=i1]
-  %notrhs9 = icmp eq i23 %tmp_474, 0              ; [#uses=1 type=i1]
-  %tmp_42 = or i1 %notrhs9, %notlhs8              ; [#uses=1 type=i1]
-  %tmp_43 = and i1 %tmp_41, %tmp_42               ; [#uses=1 type=i1]
-  %tmp_44 = fcmp ogt float %image_load_6, %image_load_59, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_45 = and i1 %tmp_43, %tmp_44, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_1_1 = select i1 %tmp_45, i13 %tmp_416, i13 %max_1_i_1_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_1_1_cast = zext i13 %max_1_i_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_60 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_60 = load float* %image_addr_60, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_7 = load float* %image_addr_7, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_7_to_int = bitcast float %image_load_7 to i32 ; [#uses=2 type=i32]
-  %tmp_46 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_7_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_475 = trunc i32 %image_load_7_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_1_1_to_int = bitcast float %image_load_60 to i32 ; [#uses=2 type=i32]
-  %tmp_48 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_1_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_476 = trunc i32 %max_1_i_1_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs10 = icmp ne i8 %tmp_46, -1              ; [#uses=1 type=i1]
-  %notrhs10 = icmp eq i23 %tmp_475, 0             ; [#uses=1 type=i1]
-  %tmp_50 = or i1 %notrhs10, %notlhs10            ; [#uses=1 type=i1]
-  %notlhs11 = icmp ne i8 %tmp_48, -1              ; [#uses=1 type=i1]
-  %notrhs11 = icmp eq i23 %tmp_476, 0             ; [#uses=1 type=i1]
-  %tmp_51 = or i1 %notrhs11, %notlhs11            ; [#uses=1 type=i1]
-  %tmp_52 = and i1 %tmp_50, %tmp_51               ; [#uses=1 type=i1]
-  %tmp_53 = fcmp ogt float %image_load_7, %image_load_60, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_54 = and i1 %tmp_52, %tmp_53, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_1_1_1 = select i1 %tmp_54, i13 %tmp_418, i13 %max_1_i_1_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_1_1_1_cast = zext i13 %max_1_i_1_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_61 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_1_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_61 = load float* %image_addr_61, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_61, float* %output_addr_1, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_8 = load float* %image_addr_8, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_9 = load float* %image_addr_9, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_9_to_int = bitcast float %image_load_9 to i32 ; [#uses=2 type=i32]
-  %tmp_55 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_9_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_477 = trunc i32 %image_load_9_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_8_to_int = bitcast float %image_load_8 to i32 ; [#uses=2 type=i32]
-  %tmp_57 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_8_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_478 = trunc i32 %image_load_8_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs12 = icmp ne i8 %tmp_55, -1              ; [#uses=1 type=i1]
-  %notrhs12 = icmp eq i23 %tmp_477, 0             ; [#uses=1 type=i1]
-  %tmp_59 = or i1 %notrhs12, %notlhs12            ; [#uses=1 type=i1]
-  %notlhs13 = icmp ne i8 %tmp_57, -1              ; [#uses=1 type=i1]
-  %notrhs13 = icmp eq i23 %tmp_478, 0             ; [#uses=1 type=i1]
-  %tmp_60 = or i1 %notrhs13, %notlhs13            ; [#uses=1 type=i1]
-  %tmp_61 = and i1 %tmp_59, %tmp_60               ; [#uses=1 type=i1]
-  %tmp_62 = fcmp ogt float %image_load_9, %image_load_8, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_63 = and i1 %tmp_61, %tmp_62, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_2_0_1 = select i1 %tmp_63, i13 %tmp_47, i13 %tmp_38, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_2_0_1_cast = zext i13 %max_1_i_2_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_62 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_2_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_62 = load float* %image_addr_62, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_10 = load float* %image_addr_10, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_10_to_int = bitcast float %image_load_10 to i32 ; [#uses=2 type=i32]
-  %tmp_64 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_10_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_479 = trunc i32 %image_load_10_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_2_0_1_to_int = bitcast float %image_load_62 to i32 ; [#uses=2 type=i32]
-  %tmp_66 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_2_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_480 = trunc i32 %max_1_i_2_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs14 = icmp ne i8 %tmp_64, -1              ; [#uses=1 type=i1]
-  %notrhs14 = icmp eq i23 %tmp_479, 0             ; [#uses=1 type=i1]
-  %tmp_68 = or i1 %notrhs14, %notlhs14            ; [#uses=1 type=i1]
-  %notlhs15 = icmp ne i8 %tmp_66, -1              ; [#uses=1 type=i1]
-  %notrhs15 = icmp eq i23 %tmp_480, 0             ; [#uses=1 type=i1]
-  %tmp_69 = or i1 %notrhs15, %notlhs15            ; [#uses=1 type=i1]
-  %tmp_70 = and i1 %tmp_68, %tmp_69               ; [#uses=1 type=i1]
-  %tmp_71 = fcmp ogt float %image_load_10, %image_load_62, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_72 = and i1 %tmp_70, %tmp_71, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_2_1 = select i1 %tmp_72, i13 %tmp_420, i13 %max_1_i_2_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_2_1_cast = zext i13 %max_1_i_2_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_63 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_2_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_63 = load float* %image_addr_63, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_11 = load float* %image_addr_11, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_11_to_int = bitcast float %image_load_11 to i32 ; [#uses=2 type=i32]
-  %tmp_73 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_11_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_481 = trunc i32 %image_load_11_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_2_1_to_int = bitcast float %image_load_63 to i32 ; [#uses=2 type=i32]
-  %tmp_75 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_2_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_482 = trunc i32 %max_1_i_2_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs16 = icmp ne i8 %tmp_73, -1              ; [#uses=1 type=i1]
-  %notrhs16 = icmp eq i23 %tmp_481, 0             ; [#uses=1 type=i1]
-  %tmp_77 = or i1 %notrhs16, %notlhs16            ; [#uses=1 type=i1]
-  %notlhs17 = icmp ne i8 %tmp_75, -1              ; [#uses=1 type=i1]
-  %notrhs17 = icmp eq i23 %tmp_482, 0             ; [#uses=1 type=i1]
-  %tmp_78 = or i1 %notrhs17, %notlhs17            ; [#uses=1 type=i1]
-  %tmp_79 = and i1 %tmp_77, %tmp_78               ; [#uses=1 type=i1]
-  %tmp_80 = fcmp ogt float %image_load_11, %image_load_63, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_81 = and i1 %tmp_79, %tmp_80, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_2_1_1 = select i1 %tmp_81, i13 %tmp_422, i13 %max_1_i_2_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_2_1_1_cast = zext i13 %max_1_i_2_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_64 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_2_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_64 = load float* %image_addr_64, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_64, float* %output_addr_2, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_12 = load float* %image_addr_12, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_13 = load float* %image_addr_13, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_13_to_int = bitcast float %image_load_13 to i32 ; [#uses=2 type=i32]
-  %tmp_82 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_13_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_483 = trunc i32 %image_load_13_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_12_to_int = bitcast float %image_load_12 to i32 ; [#uses=2 type=i32]
-  %tmp_84 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_12_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_484 = trunc i32 %image_load_12_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs18 = icmp ne i8 %tmp_82, -1              ; [#uses=1 type=i1]
-  %notrhs18 = icmp eq i23 %tmp_483, 0             ; [#uses=1 type=i1]
-  %tmp_86 = or i1 %notrhs18, %notlhs18            ; [#uses=1 type=i1]
-  %notlhs19 = icmp ne i8 %tmp_84, -1              ; [#uses=1 type=i1]
-  %notrhs19 = icmp eq i23 %tmp_484, 0             ; [#uses=1 type=i1]
-  %tmp_87 = or i1 %notrhs19, %notlhs19            ; [#uses=1 type=i1]
-  %tmp_88 = and i1 %tmp_86, %tmp_87               ; [#uses=1 type=i1]
-  %tmp_89 = fcmp ogt float %image_load_13, %image_load_12, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_90 = and i1 %tmp_88, %tmp_89, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_3_0_1 = select i1 %tmp_90, i13 %tmp_65, i13 %tmp_56, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_3_0_1_cast = zext i13 %max_1_i_3_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_65 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_3_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_65 = load float* %image_addr_65, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_14 = load float* %image_addr_14, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_14_to_int = bitcast float %image_load_14 to i32 ; [#uses=2 type=i32]
-  %tmp_91 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_14_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_485 = trunc i32 %image_load_14_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_3_0_1_to_int = bitcast float %image_load_65 to i32 ; [#uses=2 type=i32]
-  %tmp_93 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_3_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_486 = trunc i32 %max_1_i_3_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs20 = icmp ne i8 %tmp_91, -1              ; [#uses=1 type=i1]
-  %notrhs20 = icmp eq i23 %tmp_485, 0             ; [#uses=1 type=i1]
-  %tmp_95 = or i1 %notrhs20, %notlhs20            ; [#uses=1 type=i1]
-  %notlhs21 = icmp ne i8 %tmp_93, -1              ; [#uses=1 type=i1]
-  %notrhs21 = icmp eq i23 %tmp_486, 0             ; [#uses=1 type=i1]
-  %tmp_96 = or i1 %notrhs21, %notlhs21            ; [#uses=1 type=i1]
-  %tmp_97 = and i1 %tmp_95, %tmp_96               ; [#uses=1 type=i1]
-  %tmp_98 = fcmp ogt float %image_load_14, %image_load_65, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_99 = and i1 %tmp_97, %tmp_98, !dbg !60     ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_3_1 = select i1 %tmp_99, i13 %tmp_424, i13 %max_1_i_3_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_3_1_cast = zext i13 %max_1_i_3_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_66 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_3_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_66 = load float* %image_addr_66, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_15 = load float* %image_addr_15, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_15_to_int = bitcast float %image_load_15 to i32 ; [#uses=2 type=i32]
-  %tmp_100 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_15_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_487 = trunc i32 %image_load_15_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_3_1_to_int = bitcast float %image_load_66 to i32 ; [#uses=2 type=i32]
-  %tmp_102 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_3_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_488 = trunc i32 %max_1_i_3_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs22 = icmp ne i8 %tmp_100, -1             ; [#uses=1 type=i1]
-  %notrhs22 = icmp eq i23 %tmp_487, 0             ; [#uses=1 type=i1]
-  %tmp_104 = or i1 %notrhs22, %notlhs22           ; [#uses=1 type=i1]
-  %notlhs23 = icmp ne i8 %tmp_102, -1             ; [#uses=1 type=i1]
-  %notrhs23 = icmp eq i23 %tmp_488, 0             ; [#uses=1 type=i1]
-  %tmp_105 = or i1 %notrhs23, %notlhs23           ; [#uses=1 type=i1]
-  %tmp_106 = and i1 %tmp_104, %tmp_105            ; [#uses=1 type=i1]
-  %tmp_107 = fcmp ogt float %image_load_15, %image_load_66, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_108 = and i1 %tmp_106, %tmp_107, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_3_1_1 = select i1 %tmp_108, i13 %tmp_426, i13 %max_1_i_3_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_3_1_1_cast = zext i13 %max_1_i_3_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_67 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_3_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_67 = load float* %image_addr_67, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_67, float* %output_addr_3, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_16 = load float* %image_addr_16, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_17 = load float* %image_addr_17, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_17_to_int = bitcast float %image_load_17 to i32 ; [#uses=2 type=i32]
-  %tmp_109 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_17_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_489 = trunc i32 %image_load_17_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_16_to_int = bitcast float %image_load_16 to i32 ; [#uses=2 type=i32]
-  %tmp_111 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_16_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_490 = trunc i32 %image_load_16_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs24 = icmp ne i8 %tmp_109, -1             ; [#uses=1 type=i1]
-  %notrhs24 = icmp eq i23 %tmp_489, 0             ; [#uses=1 type=i1]
-  %tmp_113 = or i1 %notrhs24, %notlhs24           ; [#uses=1 type=i1]
-  %notlhs25 = icmp ne i8 %tmp_111, -1             ; [#uses=1 type=i1]
-  %notrhs25 = icmp eq i23 %tmp_490, 0             ; [#uses=1 type=i1]
-  %tmp_114 = or i1 %notrhs25, %notlhs25           ; [#uses=1 type=i1]
-  %tmp_115 = and i1 %tmp_113, %tmp_114            ; [#uses=1 type=i1]
-  %tmp_116 = fcmp ogt float %image_load_17, %image_load_16, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_117 = and i1 %tmp_115, %tmp_116, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_4_0_1 = select i1 %tmp_117, i13 %tmp_83, i13 %tmp_74, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_4_0_1_cast = zext i13 %max_1_i_4_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_68 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_4_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_68 = load float* %image_addr_68, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_18 = load float* %image_addr_18, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_18_to_int = bitcast float %image_load_18 to i32 ; [#uses=2 type=i32]
-  %tmp_118 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_18_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_491 = trunc i32 %image_load_18_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_4_0_1_to_int = bitcast float %image_load_68 to i32 ; [#uses=2 type=i32]
-  %tmp_120 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_4_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_492 = trunc i32 %max_1_i_4_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs26 = icmp ne i8 %tmp_118, -1             ; [#uses=1 type=i1]
-  %notrhs26 = icmp eq i23 %tmp_491, 0             ; [#uses=1 type=i1]
-  %tmp_122 = or i1 %notrhs26, %notlhs26           ; [#uses=1 type=i1]
-  %notlhs27 = icmp ne i8 %tmp_120, -1             ; [#uses=1 type=i1]
-  %notrhs27 = icmp eq i23 %tmp_492, 0             ; [#uses=1 type=i1]
-  %tmp_123 = or i1 %notrhs27, %notlhs27           ; [#uses=1 type=i1]
-  %tmp_124 = and i1 %tmp_122, %tmp_123            ; [#uses=1 type=i1]
-  %tmp_125 = fcmp ogt float %image_load_18, %image_load_68, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_126 = and i1 %tmp_124, %tmp_125, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_4_1 = select i1 %tmp_126, i13 %tmp_428, i13 %max_1_i_4_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_4_1_cast = zext i13 %max_1_i_4_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_69 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_4_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_69 = load float* %image_addr_69, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_19 = load float* %image_addr_19, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_19_to_int = bitcast float %image_load_19 to i32 ; [#uses=2 type=i32]
-  %tmp_127 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_19_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_493 = trunc i32 %image_load_19_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_4_1_to_int = bitcast float %image_load_69 to i32 ; [#uses=2 type=i32]
-  %tmp_129 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_4_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_494 = trunc i32 %max_1_i_4_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs28 = icmp ne i8 %tmp_127, -1             ; [#uses=1 type=i1]
-  %notrhs28 = icmp eq i23 %tmp_493, 0             ; [#uses=1 type=i1]
-  %tmp_131 = or i1 %notrhs28, %notlhs28           ; [#uses=1 type=i1]
-  %notlhs29 = icmp ne i8 %tmp_129, -1             ; [#uses=1 type=i1]
-  %notrhs29 = icmp eq i23 %tmp_494, 0             ; [#uses=1 type=i1]
-  %tmp_132 = or i1 %notrhs29, %notlhs29           ; [#uses=1 type=i1]
-  %tmp_133 = and i1 %tmp_131, %tmp_132            ; [#uses=1 type=i1]
-  %tmp_134 = fcmp ogt float %image_load_19, %image_load_69, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_135 = and i1 %tmp_133, %tmp_134, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_4_1_1 = select i1 %tmp_135, i13 %tmp_430, i13 %max_1_i_4_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_4_1_1_cast = zext i13 %max_1_i_4_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_70 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_4_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_70 = load float* %image_addr_70, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_70, float* %output_addr_4, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_20 = load float* %image_addr_20, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_21 = load float* %image_addr_21, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_21_to_int = bitcast float %image_load_21 to i32 ; [#uses=2 type=i32]
-  %tmp_136 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_21_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_495 = trunc i32 %image_load_21_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_20_to_int = bitcast float %image_load_20 to i32 ; [#uses=2 type=i32]
-  %tmp_138 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_20_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_496 = trunc i32 %image_load_20_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs30 = icmp ne i8 %tmp_136, -1             ; [#uses=1 type=i1]
-  %notrhs30 = icmp eq i23 %tmp_495, 0             ; [#uses=1 type=i1]
-  %tmp_140 = or i1 %notrhs30, %notlhs30           ; [#uses=1 type=i1]
-  %notlhs31 = icmp ne i8 %tmp_138, -1             ; [#uses=1 type=i1]
-  %notrhs31 = icmp eq i23 %tmp_496, 0             ; [#uses=1 type=i1]
-  %tmp_141 = or i1 %notrhs31, %notlhs31           ; [#uses=1 type=i1]
-  %tmp_142 = and i1 %tmp_140, %tmp_141            ; [#uses=1 type=i1]
-  %tmp_143 = fcmp ogt float %image_load_21, %image_load_20, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_144 = and i1 %tmp_142, %tmp_143, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_5_0_1 = select i1 %tmp_144, i13 %tmp_101, i13 %tmp_92, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_5_0_1_cast = zext i13 %max_1_i_5_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_71 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_5_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_71 = load float* %image_addr_71, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_22 = load float* %image_addr_22, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_22_to_int = bitcast float %image_load_22 to i32 ; [#uses=2 type=i32]
-  %tmp_145 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_22_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_497 = trunc i32 %image_load_22_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_5_0_1_to_int = bitcast float %image_load_71 to i32 ; [#uses=2 type=i32]
-  %tmp_147 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_5_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_498 = trunc i32 %max_1_i_5_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs32 = icmp ne i8 %tmp_145, -1             ; [#uses=1 type=i1]
-  %notrhs32 = icmp eq i23 %tmp_497, 0             ; [#uses=1 type=i1]
-  %tmp_149 = or i1 %notrhs32, %notlhs32           ; [#uses=1 type=i1]
-  %notlhs33 = icmp ne i8 %tmp_147, -1             ; [#uses=1 type=i1]
-  %notrhs33 = icmp eq i23 %tmp_498, 0             ; [#uses=1 type=i1]
-  %tmp_150 = or i1 %notrhs33, %notlhs33           ; [#uses=1 type=i1]
-  %tmp_151 = and i1 %tmp_149, %tmp_150            ; [#uses=1 type=i1]
-  %tmp_152 = fcmp ogt float %image_load_22, %image_load_71, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_153 = and i1 %tmp_151, %tmp_152, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_5_1 = select i1 %tmp_153, i13 %tmp_432, i13 %max_1_i_5_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_5_1_cast = zext i13 %max_1_i_5_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_72 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_5_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_72 = load float* %image_addr_72, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_23 = load float* %image_addr_23, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_23_to_int = bitcast float %image_load_23 to i32 ; [#uses=2 type=i32]
-  %tmp_154 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_23_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_499 = trunc i32 %image_load_23_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_5_1_to_int = bitcast float %image_load_72 to i32 ; [#uses=2 type=i32]
-  %tmp_156 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_5_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_500 = trunc i32 %max_1_i_5_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs34 = icmp ne i8 %tmp_154, -1             ; [#uses=1 type=i1]
-  %notrhs34 = icmp eq i23 %tmp_499, 0             ; [#uses=1 type=i1]
-  %tmp_158 = or i1 %notrhs34, %notlhs34           ; [#uses=1 type=i1]
-  %notlhs35 = icmp ne i8 %tmp_156, -1             ; [#uses=1 type=i1]
-  %notrhs35 = icmp eq i23 %tmp_500, 0             ; [#uses=1 type=i1]
-  %tmp_159 = or i1 %notrhs35, %notlhs35           ; [#uses=1 type=i1]
-  %tmp_160 = and i1 %tmp_158, %tmp_159            ; [#uses=1 type=i1]
-  %tmp_161 = fcmp ogt float %image_load_23, %image_load_72, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_162 = and i1 %tmp_160, %tmp_161, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_5_1_1 = select i1 %tmp_162, i13 %tmp_434, i13 %max_1_i_5_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_5_1_1_cast = zext i13 %max_1_i_5_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_73 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_5_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_73 = load float* %image_addr_73, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_73, float* %output_addr_5, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_24 = load float* %image_addr_24, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_25 = load float* %image_addr_25, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_25_to_int = bitcast float %image_load_25 to i32 ; [#uses=2 type=i32]
-  %tmp_163 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_25_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_501 = trunc i32 %image_load_25_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_24_to_int = bitcast float %image_load_24 to i32 ; [#uses=2 type=i32]
-  %tmp_165 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_24_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_502 = trunc i32 %image_load_24_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs36 = icmp ne i8 %tmp_163, -1             ; [#uses=1 type=i1]
-  %notrhs36 = icmp eq i23 %tmp_501, 0             ; [#uses=1 type=i1]
-  %tmp_167 = or i1 %notrhs36, %notlhs36           ; [#uses=1 type=i1]
-  %notlhs37 = icmp ne i8 %tmp_165, -1             ; [#uses=1 type=i1]
-  %notrhs37 = icmp eq i23 %tmp_502, 0             ; [#uses=1 type=i1]
-  %tmp_168 = or i1 %notrhs37, %notlhs37           ; [#uses=1 type=i1]
-  %tmp_169 = and i1 %tmp_167, %tmp_168            ; [#uses=1 type=i1]
-  %tmp_170 = fcmp ogt float %image_load_25, %image_load_24, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_171 = and i1 %tmp_169, %tmp_170, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_6_0_1 = select i1 %tmp_171, i13 %tmp_119, i13 %tmp_110, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_6_0_1_cast = zext i13 %max_1_i_6_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_74 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_6_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_74 = load float* %image_addr_74, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_26 = load float* %image_addr_26, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_26_to_int = bitcast float %image_load_26 to i32 ; [#uses=2 type=i32]
-  %tmp_172 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_26_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_503 = trunc i32 %image_load_26_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_6_0_1_to_int = bitcast float %image_load_74 to i32 ; [#uses=2 type=i32]
-  %tmp_174 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_6_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_504 = trunc i32 %max_1_i_6_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs38 = icmp ne i8 %tmp_172, -1             ; [#uses=1 type=i1]
-  %notrhs38 = icmp eq i23 %tmp_503, 0             ; [#uses=1 type=i1]
-  %tmp_176 = or i1 %notrhs38, %notlhs38           ; [#uses=1 type=i1]
-  %notlhs39 = icmp ne i8 %tmp_174, -1             ; [#uses=1 type=i1]
-  %notrhs39 = icmp eq i23 %tmp_504, 0             ; [#uses=1 type=i1]
-  %tmp_177 = or i1 %notrhs39, %notlhs39           ; [#uses=1 type=i1]
-  %tmp_178 = and i1 %tmp_176, %tmp_177            ; [#uses=1 type=i1]
-  %tmp_179 = fcmp ogt float %image_load_26, %image_load_74, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_180 = and i1 %tmp_178, %tmp_179, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_6_1 = select i1 %tmp_180, i13 %tmp_436, i13 %max_1_i_6_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_6_1_cast = zext i13 %max_1_i_6_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_75 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_6_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_75 = load float* %image_addr_75, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_27 = load float* %image_addr_27, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_27_to_int = bitcast float %image_load_27 to i32 ; [#uses=2 type=i32]
-  %tmp_181 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_27_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_505 = trunc i32 %image_load_27_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_6_1_to_int = bitcast float %image_load_75 to i32 ; [#uses=2 type=i32]
-  %tmp_183 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_6_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_506 = trunc i32 %max_1_i_6_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs40 = icmp ne i8 %tmp_181, -1             ; [#uses=1 type=i1]
-  %notrhs40 = icmp eq i23 %tmp_505, 0             ; [#uses=1 type=i1]
-  %tmp_185 = or i1 %notrhs40, %notlhs40           ; [#uses=1 type=i1]
-  %notlhs41 = icmp ne i8 %tmp_183, -1             ; [#uses=1 type=i1]
-  %notrhs41 = icmp eq i23 %tmp_506, 0             ; [#uses=1 type=i1]
-  %tmp_186 = or i1 %notrhs41, %notlhs41           ; [#uses=1 type=i1]
-  %tmp_187 = and i1 %tmp_185, %tmp_186            ; [#uses=1 type=i1]
-  %tmp_188 = fcmp ogt float %image_load_27, %image_load_75, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_189 = and i1 %tmp_187, %tmp_188, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_6_1_1 = select i1 %tmp_189, i13 %tmp_438, i13 %max_1_i_6_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_6_1_1_cast = zext i13 %max_1_i_6_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_76 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_6_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_76 = load float* %image_addr_76, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_76, float* %output_addr_6, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_28 = load float* %image_addr_28, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_29 = load float* %image_addr_29, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_29_to_int = bitcast float %image_load_29 to i32 ; [#uses=2 type=i32]
-  %tmp_190 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_29_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_507 = trunc i32 %image_load_29_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_28_to_int = bitcast float %image_load_28 to i32 ; [#uses=2 type=i32]
-  %tmp_192 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_28_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_508 = trunc i32 %image_load_28_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs42 = icmp ne i8 %tmp_190, -1             ; [#uses=1 type=i1]
-  %notrhs42 = icmp eq i23 %tmp_507, 0             ; [#uses=1 type=i1]
-  %tmp_194 = or i1 %notrhs42, %notlhs42           ; [#uses=1 type=i1]
-  %notlhs43 = icmp ne i8 %tmp_192, -1             ; [#uses=1 type=i1]
-  %notrhs43 = icmp eq i23 %tmp_508, 0             ; [#uses=1 type=i1]
-  %tmp_195 = or i1 %notrhs43, %notlhs43           ; [#uses=1 type=i1]
-  %tmp_196 = and i1 %tmp_194, %tmp_195            ; [#uses=1 type=i1]
-  %tmp_197 = fcmp ogt float %image_load_29, %image_load_28, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_198 = and i1 %tmp_196, %tmp_197, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_7_0_1 = select i1 %tmp_198, i13 %tmp_137, i13 %tmp_128, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_7_0_1_cast = zext i13 %max_1_i_7_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_77 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_7_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_77 = load float* %image_addr_77, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_30 = load float* %image_addr_30, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_30_to_int = bitcast float %image_load_30 to i32 ; [#uses=2 type=i32]
-  %tmp_199 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_30_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_509 = trunc i32 %image_load_30_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_7_0_1_to_int = bitcast float %image_load_77 to i32 ; [#uses=2 type=i32]
-  %tmp_201 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_7_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_510 = trunc i32 %max_1_i_7_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs44 = icmp ne i8 %tmp_199, -1             ; [#uses=1 type=i1]
-  %notrhs44 = icmp eq i23 %tmp_509, 0             ; [#uses=1 type=i1]
-  %tmp_203 = or i1 %notrhs44, %notlhs44           ; [#uses=1 type=i1]
-  %notlhs45 = icmp ne i8 %tmp_201, -1             ; [#uses=1 type=i1]
-  %notrhs45 = icmp eq i23 %tmp_510, 0             ; [#uses=1 type=i1]
-  %tmp_204 = or i1 %notrhs45, %notlhs45           ; [#uses=1 type=i1]
-  %tmp_205 = and i1 %tmp_203, %tmp_204            ; [#uses=1 type=i1]
-  %tmp_206 = fcmp ogt float %image_load_30, %image_load_77, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_207 = and i1 %tmp_205, %tmp_206, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_7_1 = select i1 %tmp_207, i13 %tmp_440, i13 %max_1_i_7_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_7_1_cast = zext i13 %max_1_i_7_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_78 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_7_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_78 = load float* %image_addr_78, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_31 = load float* %image_addr_31, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_31_to_int = bitcast float %image_load_31 to i32 ; [#uses=2 type=i32]
-  %tmp_208 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_31_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_511 = trunc i32 %image_load_31_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_7_1_to_int = bitcast float %image_load_78 to i32 ; [#uses=2 type=i32]
-  %tmp_210 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_7_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_512 = trunc i32 %max_1_i_7_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs46 = icmp ne i8 %tmp_208, -1             ; [#uses=1 type=i1]
-  %notrhs46 = icmp eq i23 %tmp_511, 0             ; [#uses=1 type=i1]
-  %tmp_212 = or i1 %notrhs46, %notlhs46           ; [#uses=1 type=i1]
-  %notlhs47 = icmp ne i8 %tmp_210, -1             ; [#uses=1 type=i1]
-  %notrhs47 = icmp eq i23 %tmp_512, 0             ; [#uses=1 type=i1]
-  %tmp_213 = or i1 %notrhs47, %notlhs47           ; [#uses=1 type=i1]
-  %tmp_214 = and i1 %tmp_212, %tmp_213            ; [#uses=1 type=i1]
-  %tmp_215 = fcmp ogt float %image_load_31, %image_load_78, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_216 = and i1 %tmp_214, %tmp_215, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_7_1_1 = select i1 %tmp_216, i13 %tmp_442, i13 %max_1_i_7_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_7_1_1_cast = zext i13 %max_1_i_7_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_79 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_7_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_79 = load float* %image_addr_79, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_79, float* %output_addr_7, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_32 = load float* %image_addr_32, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_33 = load float* %image_addr_33, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_33_to_int = bitcast float %image_load_33 to i32 ; [#uses=2 type=i32]
-  %tmp_217 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_33_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_513 = trunc i32 %image_load_33_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_32_to_int = bitcast float %image_load_32 to i32 ; [#uses=2 type=i32]
-  %tmp_219 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_32_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_514 = trunc i32 %image_load_32_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs48 = icmp ne i8 %tmp_217, -1             ; [#uses=1 type=i1]
-  %notrhs48 = icmp eq i23 %tmp_513, 0             ; [#uses=1 type=i1]
-  %tmp_221 = or i1 %notrhs48, %notlhs48           ; [#uses=1 type=i1]
-  %notlhs49 = icmp ne i8 %tmp_219, -1             ; [#uses=1 type=i1]
-  %notrhs49 = icmp eq i23 %tmp_514, 0             ; [#uses=1 type=i1]
-  %tmp_222 = or i1 %notrhs49, %notlhs49           ; [#uses=1 type=i1]
-  %tmp_223 = and i1 %tmp_221, %tmp_222            ; [#uses=1 type=i1]
-  %tmp_224 = fcmp ogt float %image_load_33, %image_load_32, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_225 = and i1 %tmp_223, %tmp_224, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_8_0_1 = select i1 %tmp_225, i13 %tmp_155, i13 %tmp_146, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_8_0_1_cast = zext i13 %max_1_i_8_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_80 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_8_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_80 = load float* %image_addr_80, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_34 = load float* %image_addr_34, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_34_to_int = bitcast float %image_load_34 to i32 ; [#uses=2 type=i32]
-  %tmp_226 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_34_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_515 = trunc i32 %image_load_34_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_8_0_1_to_int = bitcast float %image_load_80 to i32 ; [#uses=2 type=i32]
-  %tmp_228 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_8_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_516 = trunc i32 %max_1_i_8_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs50 = icmp ne i8 %tmp_226, -1             ; [#uses=1 type=i1]
-  %notrhs50 = icmp eq i23 %tmp_515, 0             ; [#uses=1 type=i1]
-  %tmp_230 = or i1 %notrhs50, %notlhs50           ; [#uses=1 type=i1]
-  %notlhs51 = icmp ne i8 %tmp_228, -1             ; [#uses=1 type=i1]
-  %notrhs51 = icmp eq i23 %tmp_516, 0             ; [#uses=1 type=i1]
-  %tmp_231 = or i1 %notrhs51, %notlhs51           ; [#uses=1 type=i1]
-  %tmp_232 = and i1 %tmp_230, %tmp_231            ; [#uses=1 type=i1]
-  %tmp_233 = fcmp ogt float %image_load_34, %image_load_80, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_234 = and i1 %tmp_232, %tmp_233, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_8_1 = select i1 %tmp_234, i13 %tmp_444, i13 %max_1_i_8_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_8_1_cast = zext i13 %max_1_i_8_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_81 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_8_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_81 = load float* %image_addr_81, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_35 = load float* %image_addr_35, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_35_to_int = bitcast float %image_load_35 to i32 ; [#uses=2 type=i32]
-  %tmp_235 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_35_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_517 = trunc i32 %image_load_35_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_8_1_to_int = bitcast float %image_load_81 to i32 ; [#uses=2 type=i32]
-  %tmp_237 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_8_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_518 = trunc i32 %max_1_i_8_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs52 = icmp ne i8 %tmp_235, -1             ; [#uses=1 type=i1]
-  %notrhs52 = icmp eq i23 %tmp_517, 0             ; [#uses=1 type=i1]
-  %tmp_239 = or i1 %notrhs52, %notlhs52           ; [#uses=1 type=i1]
-  %notlhs53 = icmp ne i8 %tmp_237, -1             ; [#uses=1 type=i1]
-  %notrhs53 = icmp eq i23 %tmp_518, 0             ; [#uses=1 type=i1]
-  %tmp_240 = or i1 %notrhs53, %notlhs53           ; [#uses=1 type=i1]
-  %tmp_241 = and i1 %tmp_239, %tmp_240            ; [#uses=1 type=i1]
-  %tmp_242 = fcmp ogt float %image_load_35, %image_load_81, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_243 = and i1 %tmp_241, %tmp_242, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_8_1_1 = select i1 %tmp_243, i13 %tmp_446, i13 %max_1_i_8_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_8_1_1_cast = zext i13 %max_1_i_8_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_82 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_8_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_82 = load float* %image_addr_82, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_82, float* %output_addr_8, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_36 = load float* %image_addr_36, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_37 = load float* %image_addr_37, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_37_to_int = bitcast float %image_load_37 to i32 ; [#uses=2 type=i32]
-  %tmp_244 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_37_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_519 = trunc i32 %image_load_37_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_36_to_int = bitcast float %image_load_36 to i32 ; [#uses=2 type=i32]
-  %tmp_246 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_36_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_520 = trunc i32 %image_load_36_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs54 = icmp ne i8 %tmp_244, -1             ; [#uses=1 type=i1]
-  %notrhs54 = icmp eq i23 %tmp_519, 0             ; [#uses=1 type=i1]
-  %tmp_248 = or i1 %notrhs54, %notlhs54           ; [#uses=1 type=i1]
-  %notlhs55 = icmp ne i8 %tmp_246, -1             ; [#uses=1 type=i1]
-  %notrhs55 = icmp eq i23 %tmp_520, 0             ; [#uses=1 type=i1]
-  %tmp_249 = or i1 %notrhs55, %notlhs55           ; [#uses=1 type=i1]
-  %tmp_250 = and i1 %tmp_248, %tmp_249            ; [#uses=1 type=i1]
-  %tmp_251 = fcmp ogt float %image_load_37, %image_load_36, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_252 = and i1 %tmp_250, %tmp_251, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_9_0_1 = select i1 %tmp_252, i13 %tmp_173, i13 %tmp_164, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_9_0_1_cast = zext i13 %max_1_i_9_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_83 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_9_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_83 = load float* %image_addr_83, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_38 = load float* %image_addr_38, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_38_to_int = bitcast float %image_load_38 to i32 ; [#uses=2 type=i32]
-  %tmp_253 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_38_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_521 = trunc i32 %image_load_38_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_9_0_1_to_int = bitcast float %image_load_83 to i32 ; [#uses=2 type=i32]
-  %tmp_255 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_9_0_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_522 = trunc i32 %max_1_i_9_0_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs56 = icmp ne i8 %tmp_253, -1             ; [#uses=1 type=i1]
-  %notrhs56 = icmp eq i23 %tmp_521, 0             ; [#uses=1 type=i1]
-  %tmp_257 = or i1 %notrhs56, %notlhs56           ; [#uses=1 type=i1]
-  %notlhs57 = icmp ne i8 %tmp_255, -1             ; [#uses=1 type=i1]
-  %notrhs57 = icmp eq i23 %tmp_522, 0             ; [#uses=1 type=i1]
-  %tmp_258 = or i1 %notrhs57, %notlhs57           ; [#uses=1 type=i1]
-  %tmp_259 = and i1 %tmp_257, %tmp_258            ; [#uses=1 type=i1]
-  %tmp_260 = fcmp ogt float %image_load_38, %image_load_83, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_261 = and i1 %tmp_259, %tmp_260, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_9_1 = select i1 %tmp_261, i13 %tmp_448, i13 %max_1_i_9_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_9_1_cast = zext i13 %max_1_i_9_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_84 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_9_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_84 = load float* %image_addr_84, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_39 = load float* %image_addr_39, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_39_to_int = bitcast float %image_load_39 to i32 ; [#uses=2 type=i32]
-  %tmp_262 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_39_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_523 = trunc i32 %image_load_39_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_9_1_to_int = bitcast float %image_load_84 to i32 ; [#uses=2 type=i32]
-  %tmp_264 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_9_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_524 = trunc i32 %max_1_i_9_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs58 = icmp ne i8 %tmp_262, -1             ; [#uses=1 type=i1]
-  %notrhs58 = icmp eq i23 %tmp_523, 0             ; [#uses=1 type=i1]
-  %tmp_266 = or i1 %notrhs58, %notlhs58           ; [#uses=1 type=i1]
-  %notlhs59 = icmp ne i8 %tmp_264, -1             ; [#uses=1 type=i1]
-  %notrhs59 = icmp eq i23 %tmp_524, 0             ; [#uses=1 type=i1]
-  %tmp_267 = or i1 %notrhs59, %notlhs59           ; [#uses=1 type=i1]
-  %tmp_268 = and i1 %tmp_266, %tmp_267            ; [#uses=1 type=i1]
-  %tmp_269 = fcmp ogt float %image_load_39, %image_load_84, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_270 = and i1 %tmp_268, %tmp_269, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_9_1_1 = select i1 %tmp_270, i13 %tmp_450, i13 %max_1_i_9_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_9_1_1_cast = zext i13 %max_1_i_9_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_85 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_9_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_85 = load float* %image_addr_85, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_85, float* %output_addr_9, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_40 = load float* %image_addr_40, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_41 = load float* %image_addr_41, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_41_to_int = bitcast float %image_load_41 to i32 ; [#uses=2 type=i32]
-  %tmp_271 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_41_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_525 = trunc i32 %image_load_41_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_40_to_int = bitcast float %image_load_40 to i32 ; [#uses=2 type=i32]
-  %tmp_273 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_40_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_526 = trunc i32 %image_load_40_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs60 = icmp ne i8 %tmp_271, -1             ; [#uses=1 type=i1]
-  %notrhs60 = icmp eq i23 %tmp_525, 0             ; [#uses=1 type=i1]
-  %tmp_275 = or i1 %notrhs60, %notlhs60           ; [#uses=1 type=i1]
-  %notlhs61 = icmp ne i8 %tmp_273, -1             ; [#uses=1 type=i1]
-  %notrhs61 = icmp eq i23 %tmp_526, 0             ; [#uses=1 type=i1]
-  %tmp_276 = or i1 %notrhs61, %notlhs61           ; [#uses=1 type=i1]
-  %tmp_277 = and i1 %tmp_275, %tmp_276            ; [#uses=1 type=i1]
-  %tmp_278 = fcmp ogt float %image_load_41, %image_load_40, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_279 = and i1 %tmp_277, %tmp_278, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_10_0_1 = select i1 %tmp_279, i13 %tmp_191, i13 %tmp_182, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_10_0_1_cast = zext i13 %max_1_i_10_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_86 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_10_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_86 = load float* %image_addr_86, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_42 = load float* %image_addr_42, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_42_to_int = bitcast float %image_load_42 to i32 ; [#uses=2 type=i32]
-  %tmp_280 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_42_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_527 = trunc i32 %image_load_42_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_10_0_1_to_in = bitcast float %image_load_86 to i32 ; [#uses=2 type=i32]
-  %tmp_282 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_10_0_1_to_in, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_528 = trunc i32 %max_1_i_10_0_1_to_in to i23 ; [#uses=1 type=i23]
-  %notlhs62 = icmp ne i8 %tmp_280, -1             ; [#uses=1 type=i1]
-  %notrhs62 = icmp eq i23 %tmp_527, 0             ; [#uses=1 type=i1]
-  %tmp_284 = or i1 %notrhs62, %notlhs62           ; [#uses=1 type=i1]
-  %notlhs63 = icmp ne i8 %tmp_282, -1             ; [#uses=1 type=i1]
-  %notrhs63 = icmp eq i23 %tmp_528, 0             ; [#uses=1 type=i1]
-  %tmp_285 = or i1 %notrhs63, %notlhs63           ; [#uses=1 type=i1]
-  %tmp_286 = and i1 %tmp_284, %tmp_285            ; [#uses=1 type=i1]
-  %tmp_287 = fcmp ogt float %image_load_42, %image_load_86, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_288 = and i1 %tmp_286, %tmp_287, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_10_1 = select i1 %tmp_288, i13 %tmp_452, i13 %max_1_i_10_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_10_1_cast = zext i13 %max_1_i_10_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_87 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_10_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_87 = load float* %image_addr_87, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_43 = load float* %image_addr_43, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_43_to_int = bitcast float %image_load_43 to i32 ; [#uses=2 type=i32]
-  %tmp_289 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_43_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_529 = trunc i32 %image_load_43_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_10_1_to_int = bitcast float %image_load_87 to i32 ; [#uses=2 type=i32]
-  %tmp_291 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_10_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_530 = trunc i32 %max_1_i_10_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs64 = icmp ne i8 %tmp_289, -1             ; [#uses=1 type=i1]
-  %notrhs64 = icmp eq i23 %tmp_529, 0             ; [#uses=1 type=i1]
-  %tmp_293 = or i1 %notrhs64, %notlhs64           ; [#uses=1 type=i1]
-  %notlhs65 = icmp ne i8 %tmp_291, -1             ; [#uses=1 type=i1]
-  %notrhs65 = icmp eq i23 %tmp_530, 0             ; [#uses=1 type=i1]
-  %tmp_294 = or i1 %notrhs65, %notlhs65           ; [#uses=1 type=i1]
-  %tmp_295 = and i1 %tmp_293, %tmp_294            ; [#uses=1 type=i1]
-  %tmp_296 = fcmp ogt float %image_load_43, %image_load_87, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_297 = and i1 %tmp_295, %tmp_296, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_10_1_1 = select i1 %tmp_297, i13 %tmp_454, i13 %max_1_i_10_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_10_1_1_cast = zext i13 %max_1_i_10_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_88 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_10_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_88 = load float* %image_addr_88, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_88, float* %output_addr_10, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_44 = load float* %image_addr_44, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_45 = load float* %image_addr_45, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_45_to_int = bitcast float %image_load_45 to i32 ; [#uses=2 type=i32]
-  %tmp_298 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_45_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_531 = trunc i32 %image_load_45_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_44_to_int = bitcast float %image_load_44 to i32 ; [#uses=2 type=i32]
-  %tmp_300 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_44_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_532 = trunc i32 %image_load_44_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs66 = icmp ne i8 %tmp_298, -1             ; [#uses=1 type=i1]
-  %notrhs66 = icmp eq i23 %tmp_531, 0             ; [#uses=1 type=i1]
-  %tmp_302 = or i1 %notrhs66, %notlhs66           ; [#uses=1 type=i1]
-  %notlhs67 = icmp ne i8 %tmp_300, -1             ; [#uses=1 type=i1]
-  %notrhs67 = icmp eq i23 %tmp_532, 0             ; [#uses=1 type=i1]
-  %tmp_303 = or i1 %notrhs67, %notlhs67           ; [#uses=1 type=i1]
-  %tmp_304 = and i1 %tmp_302, %tmp_303            ; [#uses=1 type=i1]
-  %tmp_305 = fcmp ogt float %image_load_45, %image_load_44, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_306 = and i1 %tmp_304, %tmp_305, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_11_0_1 = select i1 %tmp_306, i13 %tmp_209, i13 %tmp_200, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_11_0_1_cast = zext i13 %max_1_i_11_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_89 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_11_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_89 = load float* %image_addr_89, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_46 = load float* %image_addr_46, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_46_to_int = bitcast float %image_load_46 to i32 ; [#uses=2 type=i32]
-  %tmp_307 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_46_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_533 = trunc i32 %image_load_46_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_11_0_1_to_in = bitcast float %image_load_89 to i32 ; [#uses=2 type=i32]
-  %tmp_309 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_11_0_1_to_in, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_534 = trunc i32 %max_1_i_11_0_1_to_in to i23 ; [#uses=1 type=i23]
-  %notlhs68 = icmp ne i8 %tmp_307, -1             ; [#uses=1 type=i1]
-  %notrhs68 = icmp eq i23 %tmp_533, 0             ; [#uses=1 type=i1]
-  %tmp_311 = or i1 %notrhs68, %notlhs68           ; [#uses=1 type=i1]
-  %notlhs69 = icmp ne i8 %tmp_309, -1             ; [#uses=1 type=i1]
-  %notrhs69 = icmp eq i23 %tmp_534, 0             ; [#uses=1 type=i1]
-  %tmp_312 = or i1 %notrhs69, %notlhs69           ; [#uses=1 type=i1]
-  %tmp_313 = and i1 %tmp_311, %tmp_312            ; [#uses=1 type=i1]
-  %tmp_314 = fcmp ogt float %image_load_46, %image_load_89, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_315 = and i1 %tmp_313, %tmp_314, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_11_1 = select i1 %tmp_315, i13 %tmp_456, i13 %max_1_i_11_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_11_1_cast = zext i13 %max_1_i_11_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_90 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_11_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_90 = load float* %image_addr_90, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_47 = load float* %image_addr_47, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_47_to_int = bitcast float %image_load_47 to i32 ; [#uses=2 type=i32]
-  %tmp_316 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_47_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_535 = trunc i32 %image_load_47_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_11_1_to_int = bitcast float %image_load_90 to i32 ; [#uses=2 type=i32]
-  %tmp_318 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_11_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_536 = trunc i32 %max_1_i_11_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs70 = icmp ne i8 %tmp_316, -1             ; [#uses=1 type=i1]
-  %notrhs70 = icmp eq i23 %tmp_535, 0             ; [#uses=1 type=i1]
-  %tmp_320 = or i1 %notrhs70, %notlhs70           ; [#uses=1 type=i1]
-  %notlhs71 = icmp ne i8 %tmp_318, -1             ; [#uses=1 type=i1]
-  %notrhs71 = icmp eq i23 %tmp_536, 0             ; [#uses=1 type=i1]
-  %tmp_321 = or i1 %notrhs71, %notlhs71           ; [#uses=1 type=i1]
-  %tmp_322 = and i1 %tmp_320, %tmp_321            ; [#uses=1 type=i1]
-  %tmp_323 = fcmp ogt float %image_load_47, %image_load_90, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_324 = and i1 %tmp_322, %tmp_323, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_11_1_1 = select i1 %tmp_324, i13 %tmp_458, i13 %max_1_i_11_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_11_1_1_cast = zext i13 %max_1_i_11_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_91 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_11_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_91 = load float* %image_addr_91, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_91, float* %output_addr_11, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_48 = load float* %image_addr_48, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_49 = load float* %image_addr_49, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_49_to_int = bitcast float %image_load_49 to i32 ; [#uses=2 type=i32]
-  %tmp_325 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_49_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_537 = trunc i32 %image_load_49_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_48_to_int = bitcast float %image_load_48 to i32 ; [#uses=2 type=i32]
-  %tmp_327 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_48_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_538 = trunc i32 %image_load_48_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs72 = icmp ne i8 %tmp_325, -1             ; [#uses=1 type=i1]
-  %notrhs72 = icmp eq i23 %tmp_537, 0             ; [#uses=1 type=i1]
-  %tmp_329 = or i1 %notrhs72, %notlhs72           ; [#uses=1 type=i1]
-  %notlhs73 = icmp ne i8 %tmp_327, -1             ; [#uses=1 type=i1]
-  %notrhs73 = icmp eq i23 %tmp_538, 0             ; [#uses=1 type=i1]
-  %tmp_330 = or i1 %notrhs73, %notlhs73           ; [#uses=1 type=i1]
-  %tmp_331 = and i1 %tmp_329, %tmp_330            ; [#uses=1 type=i1]
-  %tmp_332 = fcmp ogt float %image_load_49, %image_load_48, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_333 = and i1 %tmp_331, %tmp_332, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_12_0_1 = select i1 %tmp_333, i13 %tmp_227, i13 %tmp_218, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_12_0_1_cast = zext i13 %max_1_i_12_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_92 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_12_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_92 = load float* %image_addr_92, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_50 = load float* %image_addr_50, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_50_to_int = bitcast float %image_load_50 to i32 ; [#uses=2 type=i32]
-  %tmp_334 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_50_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_539 = trunc i32 %image_load_50_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_12_0_1_to_in = bitcast float %image_load_92 to i32 ; [#uses=2 type=i32]
-  %tmp_336 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_12_0_1_to_in, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_540 = trunc i32 %max_1_i_12_0_1_to_in to i23 ; [#uses=1 type=i23]
-  %notlhs74 = icmp ne i8 %tmp_334, -1             ; [#uses=1 type=i1]
-  %notrhs74 = icmp eq i23 %tmp_539, 0             ; [#uses=1 type=i1]
-  %tmp_338 = or i1 %notrhs74, %notlhs74           ; [#uses=1 type=i1]
-  %notlhs75 = icmp ne i8 %tmp_336, -1             ; [#uses=1 type=i1]
-  %notrhs75 = icmp eq i23 %tmp_540, 0             ; [#uses=1 type=i1]
-  %tmp_339 = or i1 %notrhs75, %notlhs75           ; [#uses=1 type=i1]
-  %tmp_340 = and i1 %tmp_338, %tmp_339            ; [#uses=1 type=i1]
-  %tmp_341 = fcmp ogt float %image_load_50, %image_load_92, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_342 = and i1 %tmp_340, %tmp_341, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_12_1 = select i1 %tmp_342, i13 %tmp_460, i13 %max_1_i_12_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_12_1_cast = zext i13 %max_1_i_12_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_93 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_12_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_93 = load float* %image_addr_93, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_51 = load float* %image_addr_51, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_51_to_int = bitcast float %image_load_51 to i32 ; [#uses=2 type=i32]
-  %tmp_343 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_51_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_541 = trunc i32 %image_load_51_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_12_1_to_int = bitcast float %image_load_93 to i32 ; [#uses=2 type=i32]
-  %tmp_345 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_12_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_542 = trunc i32 %max_1_i_12_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs76 = icmp ne i8 %tmp_343, -1             ; [#uses=1 type=i1]
-  %notrhs76 = icmp eq i23 %tmp_541, 0             ; [#uses=1 type=i1]
-  %tmp_347 = or i1 %notrhs76, %notlhs76           ; [#uses=1 type=i1]
-  %notlhs77 = icmp ne i8 %tmp_345, -1             ; [#uses=1 type=i1]
-  %notrhs77 = icmp eq i23 %tmp_542, 0             ; [#uses=1 type=i1]
-  %tmp_348 = or i1 %notrhs77, %notlhs77           ; [#uses=1 type=i1]
-  %tmp_349 = and i1 %tmp_347, %tmp_348            ; [#uses=1 type=i1]
-  %tmp_350 = fcmp ogt float %image_load_51, %image_load_93, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_351 = and i1 %tmp_349, %tmp_350, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_12_1_1 = select i1 %tmp_351, i13 %tmp_462, i13 %max_1_i_12_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_12_1_1_cast = zext i13 %max_1_i_12_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_94 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_12_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_94 = load float* %image_addr_94, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_94, float* %output_addr_12, align 4, !dbg !65 ; [debug line = 15:5]
-  %image_load_52 = load float* %image_addr_52, align 4, !dbg !54 ; [#uses=2 type=float] [debug line = 11:5]
-  %image_load_53 = load float* %image_addr_53, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_53_to_int = bitcast float %image_load_53 to i32 ; [#uses=2 type=i32]
-  %tmp_352 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_53_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_543 = trunc i32 %image_load_53_to_int to i23 ; [#uses=1 type=i23]
-  %image_load_52_to_int = bitcast float %image_load_52 to i32 ; [#uses=2 type=i32]
-  %tmp_354 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_52_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_544 = trunc i32 %image_load_52_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs78 = icmp ne i8 %tmp_352, -1             ; [#uses=1 type=i1]
-  %notrhs78 = icmp eq i23 %tmp_543, 0             ; [#uses=1 type=i1]
-  %tmp_356 = or i1 %notrhs78, %notlhs78           ; [#uses=1 type=i1]
-  %notlhs79 = icmp ne i8 %tmp_354, -1             ; [#uses=1 type=i1]
-  %notrhs79 = icmp eq i23 %tmp_544, 0             ; [#uses=1 type=i1]
-  %tmp_357 = or i1 %notrhs79, %notlhs79           ; [#uses=1 type=i1]
-  %tmp_358 = and i1 %tmp_356, %tmp_357            ; [#uses=1 type=i1]
-  %tmp_359 = fcmp ogt float %image_load_53, %image_load_52, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_360 = and i1 %tmp_358, %tmp_359, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_13_0_1 = select i1 %tmp_360, i13 %tmp_245, i13 %tmp_236, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_13_0_1_cast = zext i13 %max_1_i_13_0_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_95 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_13_0_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_95 = load float* %image_addr_95, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_54 = load float* %image_addr_54, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_54_to_int = bitcast float %image_load_54 to i32 ; [#uses=2 type=i32]
-  %tmp_361 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_54_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_545 = trunc i32 %image_load_54_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_13_0_1_to_in = bitcast float %image_load_95 to i32 ; [#uses=2 type=i32]
-  %tmp_363 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_13_0_1_to_in, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_546 = trunc i32 %max_1_i_13_0_1_to_in to i23 ; [#uses=1 type=i23]
-  %notlhs80 = icmp ne i8 %tmp_361, -1             ; [#uses=1 type=i1]
-  %notrhs80 = icmp eq i23 %tmp_545, 0             ; [#uses=1 type=i1]
-  %tmp_365 = or i1 %notrhs80, %notlhs80           ; [#uses=1 type=i1]
-  %notlhs81 = icmp ne i8 %tmp_363, -1             ; [#uses=1 type=i1]
-  %notrhs81 = icmp eq i23 %tmp_546, 0             ; [#uses=1 type=i1]
-  %tmp_366 = or i1 %notrhs81, %notlhs81           ; [#uses=1 type=i1]
-  %tmp_367 = and i1 %tmp_365, %tmp_366            ; [#uses=1 type=i1]
-  %tmp_368 = fcmp ogt float %image_load_54, %image_load_95, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_369 = and i1 %tmp_367, %tmp_368, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_13_1 = select i1 %tmp_369, i13 %tmp_464, i13 %max_1_i_13_0_1, !dbg !60 ; [#uses=2 type=i13] [debug line = 14:1]
-  %max_1_i_13_1_cast = zext i13 %max_1_i_13_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_96 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_13_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_96 = load float* %image_addr_96, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_55 = load float* %image_addr_55, align 4, !dbg !60 ; [#uses=2 type=float] [debug line = 14:1]
-  %image_load_55_to_int = bitcast float %image_load_55 to i32 ; [#uses=2 type=i32]
-  %tmp_370 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %image_load_55_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_547 = trunc i32 %image_load_55_to_int to i23 ; [#uses=1 type=i23]
-  %max_1_i_13_1_to_int = bitcast float %image_load_96 to i32 ; [#uses=2 type=i32]
-  %tmp_372 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_13_1_to_int, i32 23, i32 30) ; [#uses=1 type=i8]
-  %tmp_548 = trunc i32 %max_1_i_13_1_to_int to i23 ; [#uses=1 type=i23]
-  %notlhs82 = icmp ne i8 %tmp_370, -1             ; [#uses=1 type=i1]
-  %notrhs82 = icmp eq i23 %tmp_547, 0             ; [#uses=1 type=i1]
-  %tmp_374 = or i1 %notrhs82, %notlhs82           ; [#uses=1 type=i1]
-  %notlhs83 = icmp ne i8 %tmp_372, -1             ; [#uses=1 type=i1]
-  %notrhs83 = icmp eq i23 %tmp_548, 0             ; [#uses=1 type=i1]
-  %tmp_375 = or i1 %notrhs83, %notlhs83           ; [#uses=1 type=i1]
-  %tmp_376 = and i1 %tmp_374, %tmp_375            ; [#uses=1 type=i1]
-  %tmp_377 = fcmp ogt float %image_load_55, %image_load_96, !dbg !60 ; [#uses=1 type=i1] [debug line = 14:1]
-  %tmp_378 = and i1 %tmp_376, %tmp_377, !dbg !60  ; [#uses=1 type=i1] [debug line = 14:1]
-  %max_1_i_13_1_1 = select i1 %tmp_378, i13 %tmp_466, i13 %max_1_i_13_1, !dbg !60 ; [#uses=1 type=i13] [debug line = 14:1]
-  %max_1_i_13_1_1_cast = zext i13 %max_1_i_13_1_1 to i64, !dbg !60 ; [#uses=1 type=i64] [debug line = 14:1]
-  %image_addr_97 = getelementptr [6728 x float]* %image, i64 0, i64 %max_1_i_13_1_1_cast, !dbg !60 ; [#uses=1 type=float*] [debug line = 14:1]
-  %image_load_97 = load float* %image_addr_97, align 4, !dbg !60 ; [#uses=1 type=float] [debug line = 14:1]
-  store float %image_load_97, float* %output_addr_13, align 4, !dbg !65 ; [debug line = 15:5]
-  %empty_26 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str2, i32 %tmp_1) nounwind, !dbg !66 ; [#uses=0 type=i32] [debug line = 16:4]
-  %i = add i5 2, %i_0_i_i_mid2, !dbg !67          ; [#uses=1 type=i5] [debug line = 8:45]
-  call void @llvm.dbg.value(metadata !{i5 %i}, i64 0, metadata !68) nounwind, !dbg !67 ; [debug line = 8:45] [debug variable = i]
-  br label %0, !dbg !67                           ; [debug line = 8:45]
+; [#uses=1]
+declare i1 @_autotb_FifoCanRead_float(float*)
 
-; <label>:0                                       ; preds = %.reset, %newFuncRoot
-  %indvar_flatten = phi i7 [ 0, %newFuncRoot ], [ %indvar_flatten_next, %.reset ] ; [#uses=2 type=i7]
-  %channel_0_i_i = phi i4 [ 0, %newFuncRoot ], [ %tmp_i_mid2_v, %.reset ] ; [#uses=2 type=i4]
-  %i_0_i_i = phi i5 [ 0, %newFuncRoot ], [ %i, %.reset ] ; [#uses=2 type=i5]
-  call void @llvm.dbg.value(metadata !{i4 %channel}, i64 0, metadata !49) nounwind, !dbg !47 ; [debug line = 7:48] [debug variable = channel]
-  %exitcond_flatten = icmp eq i7 %indvar_flatten, -16 ; [#uses=1 type=i1]
-  %indvar_flatten_next = add i7 %indvar_flatten, 1 ; [#uses=1 type=i7]
-  br i1 %exitcond_flatten, label %pool_.exit.exitStub, label %.reset
-}
+; [#uses=1]
+declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
-!opencl.kernels = !{!0}
+!opencl.kernels = !{!0, !7, !13, !19, !21, !24, !7, !7, !7, !7, !7, !7, !7, !7}
 !hls.encrypted.func = !{}
-!llvm.map.gv = !{}
+!llvm.map.gv = !{!26}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 0}
 !2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"float [14][8]*", metadata !"float [29][8]*"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"hls::stream<float> &", metadata !"hls::stream<float> &"}
 !4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"output", metadata !"image"}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"out", metadata !"in"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
-!7 = metadata !{i32 5, i32 1, metadata !8, null}
-!8 = metadata !{i32 786443, metadata !9, i32 4, i32 1, metadata !10, i32 0} ; [ DW_TAG_lexical_block ]
-!9 = metadata !{i32 786478, i32 0, metadata !10, metadata !"pool", metadata !"pool", metadata !"", metadata !10, i32 3, metadata !11, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !23, i32 4} ; [ DW_TAG_subprogram ]
-!10 = metadata !{i32 786473, metadata !"pool/solution1/pool.c", metadata !"/home/sergiu/git/lic/hls/workspace", null} ; [ DW_TAG_file_type ]
-!11 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !12, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
-!12 = metadata !{null, metadata !13, metadata !19}
-!13 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !14} ; [ DW_TAG_pointer_type ]
-!14 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 3584, i64 32, i32 0, i32 0, metadata !15, metadata !16, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!15 = metadata !{i32 786468, null, metadata !"float", null, i32 0, i64 32, i64 32, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ]
-!16 = metadata !{metadata !17, metadata !18}
-!17 = metadata !{i32 786465, i64 0, i64 13}       ; [ DW_TAG_subrange_type ]
-!18 = metadata !{i32 786465, i64 0, i64 7}        ; [ DW_TAG_subrange_type ]
-!19 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !20} ; [ DW_TAG_pointer_type ]
-!20 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 7424, i64 32, i32 0, i32 0, metadata !15, metadata !21, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!21 = metadata !{metadata !22, metadata !18}
-!22 = metadata !{i32 786465, i64 0, i64 28}       ; [ DW_TAG_subrange_type ]
-!23 = metadata !{metadata !24}
-!24 = metadata !{i32 786468}                      ; [ DW_TAG_base_type ]
-!25 = metadata !{metadata !26}
-!26 = metadata !{i32 0, i32 31, metadata !27}
+!7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
+!8 = metadata !{metadata !"kernel_arg_addr_space"}
+!9 = metadata !{metadata !"kernel_arg_access_qual"}
+!10 = metadata !{metadata !"kernel_arg_type"}
+!11 = metadata !{metadata !"kernel_arg_type_qual"}
+!12 = metadata !{metadata !"kernel_arg_name"}
+!13 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !18, metadata !6}
+!14 = metadata !{metadata !"kernel_arg_addr_space", i32 0}
+!15 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
+!16 = metadata !{metadata !"kernel_arg_type", metadata !"const float &"}
+!17 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
+!18 = metadata !{metadata !"kernel_arg_name", metadata !"wdata"}
+!19 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !20, metadata !6}
+!20 = metadata !{metadata !"kernel_arg_name", metadata !"din"}
+!21 = metadata !{null, metadata !14, metadata !15, metadata !22, metadata !17, metadata !23, metadata !6}
+!22 = metadata !{metadata !"kernel_arg_type", metadata !"float &"}
+!23 = metadata !{metadata !"kernel_arg_name", metadata !"rdata"}
+!24 = metadata !{null, metadata !14, metadata !15, metadata !22, metadata !17, metadata !25, metadata !6}
+!25 = metadata !{metadata !"kernel_arg_name", metadata !"dout"}
+!26 = metadata !{metadata !27, [1 x i32]* @llvm_global_ctors_0}
 !27 = metadata !{metadata !28}
-!28 = metadata !{metadata !"output", metadata !29, metadata !"float", i32 0, i32 31}
-!29 = metadata !{metadata !30, metadata !30, metadata !31}
-!30 = metadata !{i32 0, i32 13, i32 1}
-!31 = metadata !{i32 0, i32 7, i32 1}
-!32 = metadata !{metadata !33}
-!33 = metadata !{i32 0, i32 31, metadata !34}
-!34 = metadata !{metadata !35}
-!35 = metadata !{metadata !"image", metadata !36, metadata !"float", i32 0, i32 31}
-!36 = metadata !{metadata !37, metadata !37, metadata !31}
-!37 = metadata !{i32 0, i32 28, i32 1}
-!38 = metadata !{i32 786689, metadata !9, metadata !"output", null, i32 3, metadata !39, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!39 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 50176, i64 32, i32 0, i32 0, metadata !15, metadata !40, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!40 = metadata !{metadata !17, metadata !17, metadata !18}
-!41 = metadata !{i32 3, i32 17, metadata !9, null}
-!42 = metadata !{i32 786689, metadata !9, metadata !"image", null, i32 3, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!43 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 215296, i64 32, i32 0, i32 0, metadata !15, metadata !44, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!44 = metadata !{metadata !22, metadata !22, metadata !18}
-!45 = metadata !{i32 3, i32 42, metadata !9, null}
-!46 = metadata !{i32 18, i32 1, metadata !8, null}
-!47 = metadata !{i32 7, i32 48, metadata !48, null}
-!48 = metadata !{i32 786443, metadata !8, i32 7, i32 14, metadata !10, i32 1} ; [ DW_TAG_lexical_block ]
-!49 = metadata !{i32 786688, metadata !48, metadata !"channel", metadata !10, i32 7, metadata !50, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!50 = metadata !{i32 786468, null, metadata !"int", null, i32 0, i64 32, i64 32, i64 0, i32 0, i32 5} ; [ DW_TAG_base_type ]
-!51 = metadata !{i32 8, i32 28, metadata !52, null}
-!52 = metadata !{i32 786443, metadata !53, i32 8, i32 15, metadata !10, i32 3} ; [ DW_TAG_lexical_block ]
-!53 = metadata !{i32 786443, metadata !48, i32 8, i32 3, metadata !10, i32 2} ; [ DW_TAG_lexical_block ]
-!54 = metadata !{i32 11, i32 5, metadata !55, null}
-!55 = metadata !{i32 786443, metadata !56, i32 10, i32 4, metadata !10, i32 6} ; [ DW_TAG_lexical_block ]
-!56 = metadata !{i32 786443, metadata !57, i32 9, i32 13, metadata !10, i32 5} ; [ DW_TAG_lexical_block ]
-!57 = metadata !{i32 786443, metadata !52, i32 9, i32 1, metadata !10, i32 4} ; [ DW_TAG_lexical_block ]
-!58 = metadata !{i32 9, i32 2, metadata !57, null}
-!59 = metadata !{i32 10, i32 1, metadata !57, null}
-!60 = metadata !{i32 14, i32 1, metadata !61, null}
-!61 = metadata !{i32 786443, metadata !62, i32 14, i32 1, metadata !10, i32 10} ; [ DW_TAG_lexical_block ]
-!62 = metadata !{i32 786443, metadata !63, i32 13, i32 13, metadata !10, i32 9} ; [ DW_TAG_lexical_block ]
-!63 = metadata !{i32 786443, metadata !64, i32 13, i32 1, metadata !10, i32 8} ; [ DW_TAG_lexical_block ]
-!64 = metadata !{i32 786443, metadata !55, i32 12, i32 17, metadata !10, i32 7} ; [ DW_TAG_lexical_block ]
-!65 = metadata !{i32 15, i32 5, metadata !55, null}
-!66 = metadata !{i32 16, i32 4, metadata !56, null}
-!67 = metadata !{i32 8, i32 45, metadata !52, null}
-!68 = metadata !{i32 786688, metadata !52, metadata !"i", metadata !10, i32 8, metadata !50, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!28 = metadata !{i32 0, i32 31, metadata !29}
+!29 = metadata !{metadata !30}
+!30 = metadata !{metadata !"llvm.global_ctors.0", metadata !31, metadata !"", i32 0, i32 31}
+!31 = metadata !{metadata !32}
+!32 = metadata !{i32 0, i32 0, i32 1}
+!33 = metadata !{i32 786688, metadata !34, metadata !"tmp", metadata !37, i32 145, metadata !44, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!34 = metadata !{i32 786443, metadata !35, i32 144, i32 79, metadata !37, i32 12} ; [ DW_TAG_lexical_block ]
+!35 = metadata !{i32 786478, i32 0, metadata !36, metadata !"write", metadata !"write", metadata !"_ZN3hls6streamIfE5writeERKf", metadata !37, i32 144, metadata !38, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, metadata !83, metadata !48, i32 144} ; [ DW_TAG_subprogram ]
+!36 = metadata !{i32 786489, null, metadata !"hls", metadata !37, i32 69} ; [ DW_TAG_namespace ]
+!37 = metadata !{i32 786473, metadata !"/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_stream.h", metadata !"/home/sergiu/git/lic/hls/workspace", null} ; [ DW_TAG_file_type ]
+!38 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !39, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!39 = metadata !{null, metadata !40, metadata !87}
+!40 = metadata !{i32 786447, i32 0, metadata !"", i32 0, i32 0, i64 64, i64 64, i64 0, i32 64, metadata !41} ; [ DW_TAG_pointer_type ]
+!41 = metadata !{i32 786434, metadata !36, metadata !"stream<float>", metadata !37, i32 79, i64 32, i64 32, i32 0, i32 0, null, metadata !42, i32 0, null, metadata !93} ; [ DW_TAG_class_type ]
+!42 = metadata !{metadata !43, metadata !45, metadata !50, metadata !56, metadata !61, metadata !65, metadata !69, metadata !70, metadata !75, metadata !76, metadata !77, metadata !80, metadata !83, metadata !84, metadata !89}
+!43 = metadata !{i32 786445, metadata !41, metadata !"V", metadata !37, i32 163, i64 32, i64 32, i64 0, i32 0, metadata !44} ; [ DW_TAG_member ]
+!44 = metadata !{i32 786468, null, metadata !"float", null, i32 0, i64 32, i64 32, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ]
+!45 = metadata !{i32 786478, i32 0, metadata !41, metadata !"stream", metadata !"stream", metadata !"", metadata !37, i32 83, metadata !46, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 83} ; [ DW_TAG_subprogram ]
+!46 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !47, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!47 = metadata !{null, metadata !40}
+!48 = metadata !{metadata !49}
+!49 = metadata !{i32 786468}                      ; [ DW_TAG_base_type ]
+!50 = metadata !{i32 786478, i32 0, metadata !41, metadata !"stream", metadata !"stream", metadata !"", metadata !37, i32 86, metadata !51, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 86} ; [ DW_TAG_subprogram ]
+!51 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !52, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!52 = metadata !{null, metadata !40, metadata !53}
+!53 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !54} ; [ DW_TAG_pointer_type ]
+!54 = metadata !{i32 786470, null, metadata !"", null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !55} ; [ DW_TAG_const_type ]
+!55 = metadata !{i32 786468, null, metadata !"char", null, i32 0, i64 8, i64 8, i64 0, i32 0, i32 6} ; [ DW_TAG_base_type ]
+!56 = metadata !{i32 786478, i32 0, metadata !41, metadata !"stream", metadata !"stream", metadata !"", metadata !37, i32 91, metadata !57, i1 false, i1 false, i32 0, i32 0, null, i32 257, i1 false, null, null, i32 0, metadata !48, i32 91} ; [ DW_TAG_subprogram ]
+!57 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !58, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!58 = metadata !{null, metadata !40, metadata !59}
+!59 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !60} ; [ DW_TAG_reference_type ]
+!60 = metadata !{i32 786470, null, metadata !"", null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !41} ; [ DW_TAG_const_type ]
+!61 = metadata !{i32 786478, i32 0, metadata !41, metadata !"operator=", metadata !"operator=", metadata !"_ZN3hls6streamIfEaSERKS1_", metadata !37, i32 94, metadata !62, i1 false, i1 false, i32 0, i32 0, null, i32 257, i1 false, null, null, i32 0, metadata !48, i32 94} ; [ DW_TAG_subprogram ]
+!62 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !63, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!63 = metadata !{metadata !64, metadata !40, metadata !59}
+!64 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !41} ; [ DW_TAG_reference_type ]
+!65 = metadata !{i32 786478, i32 0, metadata !41, metadata !"operator>>", metadata !"operator>>", metadata !"_ZN3hls6streamIfErsERf", metadata !37, i32 101, metadata !66, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 101} ; [ DW_TAG_subprogram ]
+!66 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !67, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!67 = metadata !{null, metadata !40, metadata !68}
+!68 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !44} ; [ DW_TAG_reference_type ]
+!69 = metadata !{i32 786478, i32 0, metadata !41, metadata !"operator<<", metadata !"operator<<", metadata !"_ZN3hls6streamIfElsERKf", metadata !37, i32 105, metadata !38, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 105} ; [ DW_TAG_subprogram ]
+!70 = metadata !{i32 786478, i32 0, metadata !41, metadata !"empty", metadata !"empty", metadata !"_ZNK3hls6streamIfE5emptyEv", metadata !37, i32 112, metadata !71, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 112} ; [ DW_TAG_subprogram ]
+!71 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !72, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!72 = metadata !{metadata !73, metadata !74}
+!73 = metadata !{i32 786468, null, metadata !"bool", null, i32 0, i64 8, i64 8, i64 0, i32 0, i32 2} ; [ DW_TAG_base_type ]
+!74 = metadata !{i32 786447, i32 0, metadata !"", i32 0, i32 0, i64 64, i64 64, i64 0, i32 64, metadata !60} ; [ DW_TAG_pointer_type ]
+!75 = metadata !{i32 786478, i32 0, metadata !41, metadata !"full", metadata !"full", metadata !"_ZNK3hls6streamIfE4fullEv", metadata !37, i32 117, metadata !71, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 117} ; [ DW_TAG_subprogram ]
+!76 = metadata !{i32 786478, i32 0, metadata !41, metadata !"read", metadata !"read", metadata !"_ZN3hls6streamIfE4readERf", metadata !37, i32 123, metadata !66, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 123} ; [ DW_TAG_subprogram ]
+!77 = metadata !{i32 786478, i32 0, metadata !41, metadata !"read", metadata !"read", metadata !"_ZN3hls6streamIfE4readEv", metadata !37, i32 129, metadata !78, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 129} ; [ DW_TAG_subprogram ]
+!78 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !79, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!79 = metadata !{metadata !44, metadata !40}
+!80 = metadata !{i32 786478, i32 0, metadata !41, metadata !"read_nb", metadata !"read_nb", metadata !"_ZN3hls6streamIfE7read_nbERf", metadata !37, i32 136, metadata !81, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 136} ; [ DW_TAG_subprogram ]
+!81 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !82, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!82 = metadata !{metadata !73, metadata !40, metadata !68}
+!83 = metadata !{i32 786478, i32 0, metadata !41, metadata !"write", metadata !"write", metadata !"_ZN3hls6streamIfE5writeERKf", metadata !37, i32 144, metadata !38, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 144} ; [ DW_TAG_subprogram ]
+!84 = metadata !{i32 786478, i32 0, metadata !41, metadata !"write_nb", metadata !"write_nb", metadata !"_ZN3hls6streamIfE8write_nbERKf", metadata !37, i32 150, metadata !85, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 150} ; [ DW_TAG_subprogram ]
+!85 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !86, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!86 = metadata !{metadata !73, metadata !40, metadata !87}
+!87 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !88} ; [ DW_TAG_reference_type ]
+!88 = metadata !{i32 786470, null, metadata !"", null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !44} ; [ DW_TAG_const_type ]
+!89 = metadata !{i32 786478, i32 0, metadata !41, metadata !"size", metadata !"size", metadata !"_ZN3hls6streamIfE4sizeEv", metadata !37, i32 157, metadata !90, i1 false, i1 false, i32 0, i32 0, null, i32 256, i1 false, null, null, i32 0, metadata !48, i32 157} ; [ DW_TAG_subprogram ]
+!90 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !91, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!91 = metadata !{metadata !92, metadata !40}
+!92 = metadata !{i32 786468, null, metadata !"unsigned int", null, i32 0, i64 32, i64 32, i64 0, i32 0, i32 7} ; [ DW_TAG_base_type ]
+!93 = metadata !{metadata !94}
+!94 = metadata !{i32 786479, null, metadata !"__STREAM_T__", metadata !44, null, i32 0, i32 0} ; [ DW_TAG_template_type_parameter ]
+!95 = metadata !{metadata !96}
+!96 = metadata !{i32 0, i32 31, metadata !97}
+!97 = metadata !{metadata !98}
+!98 = metadata !{metadata !"out.V", metadata !31, metadata !"float", i32 0, i32 31}
+!99 = metadata !{metadata !100}
+!100 = metadata !{i32 0, i32 31, metadata !101}
+!101 = metadata !{metadata !102}
+!102 = metadata !{metadata !"in.V", metadata !31, metadata !"float", i32 0, i32 31}
+!103 = metadata !{i32 790531, metadata !104, metadata !"out.V", null, i32 62, metadata !109, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!104 = metadata !{i32 786689, metadata !105, metadata !"out", metadata !106, i32 16777278, metadata !64, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!105 = metadata !{i32 786478, i32 0, metadata !106, metadata !"pool", metadata !"pool", metadata !"_Z4poolRN3hls6streamIfEES2_", metadata !106, i32 62, metadata !107, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !48, i32 63} ; [ DW_TAG_subprogram ]
+!106 = metadata !{i32 786473, metadata !"pool/solution1/pool.cpp", metadata !"/home/sergiu/git/lic/hls/workspace", null} ; [ DW_TAG_file_type ]
+!107 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !108, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
+!108 = metadata !{null, metadata !64, metadata !64}
+!109 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !110} ; [ DW_TAG_pointer_type ]
+!110 = metadata !{i32 786438, metadata !36, metadata !"stream<float>", metadata !37, i32 79, i64 32, i64 32, i32 0, i32 0, null, metadata !111, i32 0, null, metadata !93} ; [ DW_TAG_class_field_type ]
+!111 = metadata !{metadata !43}
+!112 = metadata !{i32 62, i32 31, metadata !105, null}
+!113 = metadata !{i32 790531, metadata !114, metadata !"in.V", null, i32 62, metadata !109, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!114 = metadata !{i32 786689, metadata !105, metadata !"in", metadata !106, i32 33554494, metadata !64, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!115 = metadata !{i32 62, i32 56, metadata !105, null}
+!116 = metadata !{i32 69, i32 6, metadata !117, null}
+!117 = metadata !{i32 786443, metadata !118, i32 69, i32 2, metadata !106, i32 1} ; [ DW_TAG_lexical_block ]
+!118 = metadata !{i32 786443, metadata !105, i32 63, i32 1, metadata !106, i32 0} ; [ DW_TAG_lexical_block ]
+!119 = metadata !{i32 69, i32 22, metadata !117, null}
+!120 = metadata !{i32 786688, metadata !118, metadata !"i", metadata !106, i32 65, metadata !121, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!121 = metadata !{i32 786468, null, metadata !"int", null, i32 0, i64 32, i64 32, i64 0, i32 0, i32 5} ; [ DW_TAG_base_type ]
+!122 = metadata !{i32 70, i32 7, metadata !123, null}
+!123 = metadata !{i32 786443, metadata !117, i32 70, i32 3, metadata !106, i32 2} ; [ DW_TAG_lexical_block ]
+!124 = metadata !{i32 112, i32 48, metadata !125, metadata !126}
+!125 = metadata !{i32 786478, i32 0, metadata !36, metadata !"empty", metadata !"empty", metadata !"_ZNK3hls6streamIfE5emptyEv", metadata !37, i32 112, metadata !71, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, metadata !70, metadata !48, i32 112} ; [ DW_TAG_subprogram ]
+!126 = metadata !{i32 90, i32 9, metadata !118, null}
+!127 = metadata !{i32 70, i32 21, metadata !123, null}
+!128 = metadata !{i32 786688, metadata !118, metadata !"l", metadata !106, i32 65, metadata !121, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!129 = metadata !{i32 83, i32 7, metadata !130, null}
+!130 = metadata !{i32 786443, metadata !131, i32 74, i32 6, metadata !106, i32 7} ; [ DW_TAG_lexical_block ]
+!131 = metadata !{i32 786443, metadata !132, i32 73, i32 6, metadata !106, i32 6} ; [ DW_TAG_lexical_block ]
+!132 = metadata !{i32 786443, metadata !133, i32 72, i32 5, metadata !106, i32 5} ; [ DW_TAG_lexical_block ]
+!133 = metadata !{i32 786443, metadata !134, i32 71, i32 5, metadata !106, i32 4} ; [ DW_TAG_lexical_block ]
+!134 = metadata !{i32 786443, metadata !123, i32 71, i32 3, metadata !106, i32 3} ; [ DW_TAG_lexical_block ]
+!135 = metadata !{i32 71, i32 9, metadata !133, null}
+!136 = metadata !{i32 71, i32 25, metadata !133, null}
+!137 = metadata !{i32 786688, metadata !118, metadata !"j", metadata !106, i32 65, metadata !121, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!138 = metadata !{i32 87, i32 23, metadata !139, null}
+!139 = metadata !{i32 786443, metadata !140, i32 87, i32 4, metadata !106, i32 9} ; [ DW_TAG_lexical_block ]
+!140 = metadata !{i32 786443, metadata !134, i32 86, i32 3, metadata !106, i32 8} ; [ DW_TAG_lexical_block ]
+!141 = metadata !{i32 77, i32 8, metadata !130, null}
+!142 = metadata !{i32 72, i32 9, metadata !132, null}
+!143 = metadata !{i32 72, i32 23, metadata !132, null}
+!144 = metadata !{i32 786688, metadata !118, metadata !"m", metadata !106, i32 65, metadata !121, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!145 = metadata !{i32 76, i32 7, metadata !130, null}
+!146 = metadata !{i32 73, i32 10, metadata !131, null}
+!147 = metadata !{i32 73, i32 25, metadata !131, null}
+!148 = metadata !{i32 790531, metadata !149, metadata !"stream<float>.V", null, i32 101, metadata !152, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!149 = metadata !{i32 786689, metadata !150, metadata !"this", metadata !37, i32 16777317, metadata !151, i32 64, i32 0} ; [ DW_TAG_arg_variable ]
+!150 = metadata !{i32 786478, i32 0, metadata !36, metadata !"operator>>", metadata !"operator>>", metadata !"_ZN3hls6streamIfErsERf", metadata !37, i32 101, metadata !66, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, metadata !65, metadata !48, i32 101} ; [ DW_TAG_subprogram ]
+!151 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !41} ; [ DW_TAG_pointer_type ]
+!152 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !110} ; [ DW_TAG_pointer_type ]
+!153 = metadata !{i32 101, i32 48, metadata !150, metadata !154}
+!154 = metadata !{i32 75, i32 7, metadata !130, null}
+!155 = metadata !{i32 790531, metadata !156, metadata !"stream<float>.V", null, i32 123, metadata !152, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!156 = metadata !{i32 786689, metadata !157, metadata !"this", metadata !37, i32 16777339, metadata !151, i32 64, i32 0} ; [ DW_TAG_arg_variable ]
+!157 = metadata !{i32 786478, i32 0, metadata !36, metadata !"read", metadata !"read", metadata !"_ZN3hls6streamIfE4readERf", metadata !37, i32 123, metadata !66, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, metadata !76, metadata !48, i32 123} ; [ DW_TAG_subprogram ]
+!158 = metadata !{i32 123, i32 48, metadata !157, metadata !159}
+!159 = metadata !{i32 102, i32 9, metadata !160, metadata !154}
+!160 = metadata !{i32 786443, metadata !150, i32 101, i32 82, metadata !37, i32 13} ; [ DW_TAG_lexical_block ]
+!161 = metadata !{i32 125, i32 9, metadata !162, metadata !159}
+!162 = metadata !{i32 786443, metadata !157, i32 123, i32 73, metadata !37, i32 14} ; [ DW_TAG_lexical_block ]
+!163 = metadata !{i32 786688, metadata !162, metadata !"tmp", metadata !37, i32 124, metadata !44, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!164 = metadata !{i32 786688, metadata !118, metadata !"read", metadata !106, i32 66, metadata !44, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!165 = metadata !{i32 126, i32 9, metadata !162, metadata !159}
+!166 = metadata !{i32 80, i32 8, metadata !130, null}
+!167 = metadata !{i32 145, i32 31, metadata !34, metadata !168}
+!168 = metadata !{i32 106, i32 9, metadata !169, metadata !171}
+!169 = metadata !{i32 786443, metadata !170, i32 105, i32 88, metadata !37, i32 11} ; [ DW_TAG_lexical_block ]
+!170 = metadata !{i32 786478, i32 0, metadata !36, metadata !"operator<<", metadata !"operator<<", metadata !"_ZN3hls6streamIfElsERKf", metadata !37, i32 105, metadata !38, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, metadata !69, metadata !48, i32 105} ; [ DW_TAG_subprogram ]
+!171 = metadata !{i32 84, i32 8, metadata !130, null}
+!172 = metadata !{i32 790531, metadata !173, metadata !"stream<float>.V", null, i32 105, metadata !152, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!173 = metadata !{i32 786689, metadata !170, metadata !"this", metadata !37, i32 16777321, metadata !151, i32 64, i32 0} ; [ DW_TAG_arg_variable ]
+!174 = metadata !{i32 105, i32 48, metadata !170, metadata !171}
+!175 = metadata !{i32 790531, metadata !176, metadata !"stream<float>.V", null, i32 144, metadata !152, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!176 = metadata !{i32 786689, metadata !35, metadata !"this", metadata !37, i32 16777360, metadata !151, i32 64, i32 0} ; [ DW_TAG_arg_variable ]
+!177 = metadata !{i32 144, i32 48, metadata !35, metadata !168}
+!178 = metadata !{i32 146, i32 9, metadata !34, metadata !168}
+!179 = metadata !{i32 786688, metadata !118, metadata !"k", metadata !106, i32 65, metadata !121, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!180 = metadata !{i32 87, i32 38, metadata !139, null}
+!181 = metadata !{i32 101, i32 48, metadata !150, metadata !182}
+!182 = metadata !{i32 88, i32 6, metadata !139, null}
+!183 = metadata !{i32 123, i32 48, metadata !157, metadata !184}
+!184 = metadata !{i32 102, i32 9, metadata !160, metadata !182}
+!185 = metadata !{i32 125, i32 9, metadata !162, metadata !184}
+!186 = metadata !{i32 790531, metadata !187, metadata !"stream<float>.V", null, i32 112, metadata !152, i32 0, i32 0} ; [ DW_TAG_arg_variable_field ]
+!187 = metadata !{i32 786689, metadata !125, metadata !"this", metadata !37, i32 16777328, metadata !188, i32 64, i32 0} ; [ DW_TAG_arg_variable ]
+!188 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !60} ; [ DW_TAG_pointer_type ]
+!189 = metadata !{i32 113, i32 20, metadata !190, metadata !126}
+!190 = metadata !{i32 786443, metadata !125, i32 112, i32 62, metadata !37, i32 10} ; [ DW_TAG_lexical_block ]
+!191 = metadata !{i32 786688, metadata !190, metadata !"tmp", metadata !37, i32 113, metadata !73, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!192 = metadata !{i32 101, i32 48, metadata !150, metadata !193}
+!193 = metadata !{i32 91, i32 3, metadata !118, null}
+!194 = metadata !{i32 123, i32 48, metadata !157, metadata !195}
+!195 = metadata !{i32 102, i32 9, metadata !160, metadata !193}
+!196 = metadata !{i32 125, i32 9, metadata !162, metadata !195}
+!197 = metadata !{i32 93, i32 1, metadata !118, null}

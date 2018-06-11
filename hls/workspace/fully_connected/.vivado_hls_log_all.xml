@@ -7,6 +7,7 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="fully_connected" solutionName="solution1" date="2018-05-31T17:51:46.366+0300"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="fully_connected" solutionName="solution1" date="2018-05-21T16:00:40.966+0300"/>
       </csimLog>
     </logs>

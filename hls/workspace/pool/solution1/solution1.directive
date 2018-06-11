@@ -14,9 +14,6 @@
                 <option name="II" value="50"/>
             </pragma>
         </directive>
-        <directive functionName="pool" label="" functionLabel="">
-            <pragma name="DATAFLOW"/>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

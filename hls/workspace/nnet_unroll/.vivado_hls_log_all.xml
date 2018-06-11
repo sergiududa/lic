@@ -6,7 +6,9 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="nnet_unroll" solutionName="solution1" date="2018-05-31T17:38:59.899+0300"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>

@@ -1,30 +1,30 @@
-set lang "C"
+set lang "C++"
 set moduleName "pool"
 set moduleIsExternC "0"
 set rawDecl ""
 set globalVariable ""
 set PortList ""
-set PortName0 "output"
-set BitWidth0 "64"
+set PortName0 "out"
+set BitWidth0 "32"
 set ArrayOpt0 ""
 set Const0 "0"
 set Volatile0 "0"
-set Pointer0 "0"
-set Reference0 "0"
-set Dims0 [list 14 14 8]
-set Interface0 "wire"
+set Pointer0 "2"
+set Reference0 "1"
+set Dims0 [list 0]
+set Interface0 [list AP_STREAM 0] 
 set DataType0 "float"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
-set PortName1 "image"
-set BitWidth1 "64"
+set PortName1 "in"
+set BitWidth1 "32"
 set ArrayOpt1 ""
 set Const1 "0"
 set Volatile1 "0"
-set Pointer1 "0"
-set Reference1 "0"
-set Dims1 [list 29 29 8]
-set Interface1 "wire"
+set Pointer1 "2"
+set Reference1 "1"
+set Dims1 [list 0]
+set Interface1 [list AP_STREAM 0] 
 set DataType1 "float"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1

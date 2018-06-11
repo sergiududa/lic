@@ -1,6 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>output_r</name>
+<name>out_V</name>
 <CType>
 <TypeName>float</TypeName>
 <TypeWidth>32</TypeWidth>
@@ -10,7 +10,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>image_r</name>
+<name>in_V</name>
 <CType>
 <TypeName>float</TypeName>
 <TypeWidth>32</TypeWidth>

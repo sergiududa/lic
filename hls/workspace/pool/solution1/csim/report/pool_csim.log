@@ -3,8 +3,9 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../.tcls/pool_test.cpp in debug mode
    Compiling ../../pool.cpp in debug mode
    Generating csim.exe
-Checking POOL  ...
-DONE: 1568 out of 1568 are correct
+0 Checking POOL  ...
+Missmatch in POOL check
+DONE: 1489 out of 1568 are correct
 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

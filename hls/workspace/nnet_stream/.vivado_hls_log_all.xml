@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'pool_buff.val[86].V' (nnet_stream/solution1/nnet.cpp:202)." projectName="nnet_stream" solutionName="solution1" date="2018-06-05T11:26:33.675+0300" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

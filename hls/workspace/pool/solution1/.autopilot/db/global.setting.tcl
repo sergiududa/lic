@@ -5,13 +5,13 @@ set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
 set CombLogicFlag 0
-set PipelineFlag 1
+set PipelineFlag 0
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
 set FloatingPointFlag 1
 set FftOrFirFlag 0
-set NbRWValue 0
+set NbRWValue 1
 set intNbAccess 0
 set NewDSPMapping 1
 set HasDSPModule 0
@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg400:-1"
-set SourceFiles {sc {} c pool.c}
+set SourceFiles {sc {} c pool.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/sergiu/git/lic/hls/workspace/pool/solution1/solution1.directive}
-set TBFiles {verilog .tcls/pool_test.c bc .tcls/pool_test.c vhdl .tcls/pool_test.c sc .tcls/pool_test.c cas .tcls/pool_test.c c {}}
+set TBFiles {verilog .tcls/pool_test.cpp bc .tcls/pool_test.cpp vhdl .tcls/pool_test.cpp sc .tcls/pool_test.cpp cas .tcls/pool_test.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

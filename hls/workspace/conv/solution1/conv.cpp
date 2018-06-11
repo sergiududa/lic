@@ -1,10 +1,21 @@
 #include "/home/sergiu/git/lic/hls/workspace/conv/headers/defines.h"
 #include "/home/sergiu/git/lic/hls/workspace/conv/headers/activations.h"
+#include "/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h"
 #include <hls_video.h>
 
 #ifndef __SYNTHESIS__
 #include <stdio.h>
 #endif
+
+
+
+#include "ap_fixed.h"
+
+#define FLOAT_WIDTH		24
+#define INT_WIDTH	4
+
+typedef ap_fixed<FLOAT_WIDTH, INT_WIDTH> float24_t;
+
 
 /*
 void conv(float output[A_SIZE * A_SIZE * A_CHANNELS], float image[IMAGE_SIZE * IMAGE_SIZE * IMAGE_CHANNELS], float weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float bias[CONV_BIAS_SIZE])
@@ -32,12 +43,12 @@ void conv(float output[A_SIZE * A_SIZE * A_CHANNELS], float image[IMAGE_SIZE * I
 */
 #define BUFFER_SIZE (IMAGE_SIZE * IMAGE_CHANNELS * (CONV_KERNEL_SIZE -1) + CONV_KERNEL_SIZE * IMAGE_CHANNELS) // Poate hardcodam valoarea la un momemnt dat ???
 
-void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float bias[CONV_BIAS_SIZE])
+void conv(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float24_t bias[CONV_BIAS_SIZE])
 {
 	int i,j,k,filter, contor = 0;
-	float sum, placeholder;
+	float24_t sum, placeholder;
 	int row_offset, col_offset, channel_offset;
-	hls::LineBuffer<BUFFER_SIZE,1,float> conv_buff;
+	buffer<BUFFER_SIZE> conv_buff;
 
 	/// DEBUG
 
@@ -64,8 +75,7 @@ void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KER
 		else
 		{
 			in>>placeholder;
-			conv_buff.shift_up(0);
-			conv_buff.insert_top(placeholder,0);
+			conv_buff.InsertBack(placeholder);
 			reads1++;
 		}
 	}
@@ -83,7 +93,7 @@ void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KER
 		for(row_offset = 0; row_offset <CONV_KERNEL_SIZE; row_offset++)
 			for(col_offset = 0; col_offset <CONV_KERNEL_SIZE; col_offset++)
 				for(channel_offset = 0; channel_offset < CONV_CHANNELS; channel_offset++)
-					sum += conv_buff.getval(row_offset*IMAGE_SIZE * IMAGE_CHANNELS +  col_offset * IMAGE_CHANNELS + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+					sum += conv_buff.GetValue(row_offset*IMAGE_SIZE * IMAGE_CHANNELS +  col_offset * IMAGE_CHANNELS + channel_offset) * weight[row_offset][col_offset][channel_offset][filter];
 		out<<relu(sum + bias[filter]);
 	}
 
@@ -102,8 +112,7 @@ void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KER
 			{
 				reads3++;
 				in>>placeholder;
-				conv_buff.shift_up(0);
-				conv_buff.insert_top(placeholder,0);
+				conv_buff.InsertBack(placeholder);
 			}
 		}
 	else
@@ -121,8 +130,7 @@ void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KER
 				{
 					reads2++;
 					in>>placeholder;
-					conv_buff.shift_up(0);
-					conv_buff.insert_top(placeholder,0);
+					conv_buff.InsertBack(placeholder);
 				}
 			}
 

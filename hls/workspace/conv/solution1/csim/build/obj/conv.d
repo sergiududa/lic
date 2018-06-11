@@ -1,9 +1,7 @@
 obj/conv.o: ../../conv.cpp \
  /home/sergiu/git/lic/hls/workspace/conv/headers/defines.h \
  /home/sergiu/git/lic/hls/workspace/conv/headers/activations.h \
- /opt/Xilinx/Vivado/2017.4/include/hls_video.h \
- /opt/Xilinx/Vivado/2017.4/include/hls/hls_axi_io.h \
- /opt/Xilinx/Vivado/2017.4/include/ap_axi_sdata.h \
+ /opt/Xilinx/Vivado/2017.4/include/ap_fixed.h \
  /opt/Xilinx/Vivado/2017.4/include/ap_int.h \
  /opt/Xilinx/Vivado/2017.4/include/hls_half.h \
  /opt/Xilinx/Vivado/2017.4/include/hls_fpo.h \
@@ -17,9 +15,12 @@ obj/conv.o: ../../conv.cpp \
  /opt/Xilinx/Vivado/2017.4/include/hls_half.h \
  /opt/Xilinx/Vivado/2017.4/include/etc/ap_fixed_sim.h \
  /opt/Xilinx/Vivado/2017.4/include/etc/ap_int_sim.h \
- /opt/Xilinx/Vivado/2017.4/include/hls/utils/x_hls_utils.h \
- /opt/Xilinx/Vivado/2017.4/include/ap_fixed.h \
  /opt/Xilinx/Vivado/2017.4/include/ap_fixed_special.h \
+ /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h \
+ /opt/Xilinx/Vivado/2017.4/include/hls_video.h \
+ /opt/Xilinx/Vivado/2017.4/include/hls/hls_axi_io.h \
+ /opt/Xilinx/Vivado/2017.4/include/ap_axi_sdata.h \
+ /opt/Xilinx/Vivado/2017.4/include/hls/utils/x_hls_utils.h \
  /opt/Xilinx/Vivado/2017.4/include/hls_math.h \
  /opt/Xilinx/Vivado/2017.4/include/hls_hotbm_apfixed.h \
  /opt/Xilinx/Vivado/2017.4/include/ap_fixed.h \

@@ -4,20 +4,28 @@
 #include "/home/sergiu/git/lic/hls/workspace/conv/headers/weights.h"
 #include <hls_video.h>
 
+
+#include "ap_fixed.h"
+
+#define FLOAT_WIDTH		24
+#define INT_WIDTH	4
+
+typedef ap_fixed<FLOAT_WIDTH, INT_WIDTH> float24_t;
+
 #define eps 0.00002
 
 //void conv(float output[A_SIZE * A_SIZE * A_CHANNELS], float image[IMAGE_SIZE * IMAGE_SIZE * IMAGE_CHANNELS], float weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float bias[CONV_BIAS_SIZE]);
-void conv(hls::stream<float> &out, hls::stream<float> &in, float weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float bias[CONV_BIAS_SIZE]);
+void conv(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[CONV_KERNEL_SIZE][CONV_KERNEL_SIZE][CONV_CHANNELS][CONV_FILTERS], float24_t bias[CONV_BIAS_SIZE]);
 
 int main()
 {
-	float conv_out[A_SIZE * A_SIZE * A_CHANNELS];
-	float conv_ref[A_SIZE][A_SIZE][A_CHANNELS];
+	float24_t conv_out[A_SIZE * A_SIZE * A_CHANNELS];
+	float24_t conv_ref[A_SIZE][A_SIZE][A_CHANNELS];
 
 	int i,j,k;
-	hls::stream<float> out("output_stream");
-	hls::stream<float> in("input_stream");
-
+	hls::stream<float24_t> out("output_stream");
+	hls::stream<float24_t> in("input_stream");
+	float a;
 
 	for(i = 0 ; i < IMAGE_SIZE * IMAGE_SIZE; i++)
 		in<<image[i];
@@ -36,7 +44,8 @@ int main()
 	for(k = 0; k < A_CHANNELS; k++)
 		for(i = 0; i < A_SIZE; i++)
 			for(j = 0; j < A_SIZE; j++)
-				fscanf(conv_content,"%f",&conv_ref[i][j][k]);
+				{fscanf(conv_content,"%f",&a);
+				conv_ref[i][j][k] = (float24_t)a;}
 	int correct_values = 0, total_values = 0;
 
 	printf("Checking CONV Layer ...\n");
