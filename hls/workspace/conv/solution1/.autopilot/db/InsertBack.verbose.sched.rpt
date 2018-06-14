@@ -1,0 +1,1402 @@
+
+
+================================================================
+== Vivado HLS Report for 'InsertBack'
+================================================================
+* Date:           Thu Jun 14 08:46:15 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        conv
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      3.25|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |   99|   99|  100|  100| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 100, depth = 100
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 100
+* Pipeline : 1
+  Pipeline-0 : II = 100, D = 100, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+
+* FSM state operations: 
+
+ <State 1> : 3.25ns
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%buffer_array_V_addr = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 1" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_1 : Operation 102 [2/2] (3.25ns)   --->   "%buffer_array_V_load = load i24* %buffer_array_V_addr, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_2 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 2" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_1 : Operation 104 [2/2] (3.25ns)   --->   "%buffer_array_V_load_1 = load i24* %buffer_array_V_addr_2, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 2> : 3.25ns
+ST_2 : Operation 105 [1/2] (3.25ns)   --->   "%buffer_array_V_load = load i24* %buffer_array_V_addr, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_2 : Operation 106 [1/2] (3.25ns)   --->   "%buffer_array_V_load_1 = load i24* %buffer_array_V_addr_2, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_2 : Operation 107 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_3 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 3" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_2 : Operation 108 [2/2] (3.25ns)   --->   "%buffer_array_V_load_2 = load i24* %buffer_array_V_addr_3, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_2 : Operation 109 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_4 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_2 : Operation 110 [2/2] (3.25ns)   --->   "%buffer_array_V_load_3 = load i24* %buffer_array_V_addr_4, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 3> : 3.25ns
+ST_3 : Operation 111 [1/2] (3.25ns)   --->   "%buffer_array_V_load_2 = load i24* %buffer_array_V_addr_3, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_3 : Operation 112 [1/2] (3.25ns)   --->   "%buffer_array_V_load_3 = load i24* %buffer_array_V_addr_4, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_5 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 5" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_3 : Operation 114 [2/2] (3.25ns)   --->   "%buffer_array_V_load_4 = load i24* %buffer_array_V_addr_5, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_6 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 6" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_3 : Operation 116 [2/2] (3.25ns)   --->   "%buffer_array_V_load_5 = load i24* %buffer_array_V_addr_6, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 4> : 3.25ns
+ST_4 : Operation 117 [1/2] (3.25ns)   --->   "%buffer_array_V_load_4 = load i24* %buffer_array_V_addr_5, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_4 : Operation 118 [1/2] (3.25ns)   --->   "%buffer_array_V_load_5 = load i24* %buffer_array_V_addr_6, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_4 : Operation 119 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_7 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 7" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_4 : Operation 120 [2/2] (3.25ns)   --->   "%buffer_array_V_load_6 = load i24* %buffer_array_V_addr_7, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_4 : Operation 121 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_8 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 8" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_4 : Operation 122 [2/2] (3.25ns)   --->   "%buffer_array_V_load_7 = load i24* %buffer_array_V_addr_8, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 5> : 3.25ns
+ST_5 : Operation 123 [1/2] (3.25ns)   --->   "%buffer_array_V_load_6 = load i24* %buffer_array_V_addr_7, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_5 : Operation 124 [1/2] (3.25ns)   --->   "%buffer_array_V_load_7 = load i24* %buffer_array_V_addr_8, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_5 : Operation 125 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_9 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 9" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_5 : Operation 126 [2/2] (3.25ns)   --->   "%buffer_array_V_load_8 = load i24* %buffer_array_V_addr_9, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_5 : Operation 127 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_10 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 10" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_5 : Operation 128 [2/2] (3.25ns)   --->   "%buffer_array_V_load_9 = load i24* %buffer_array_V_addr_10, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 6> : 3.25ns
+ST_6 : Operation 129 [1/2] (3.25ns)   --->   "%buffer_array_V_load_8 = load i24* %buffer_array_V_addr_9, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_6 : Operation 130 [1/2] (3.25ns)   --->   "%buffer_array_V_load_9 = load i24* %buffer_array_V_addr_10, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_6 : Operation 131 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_11 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 11" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_6 : Operation 132 [2/2] (3.25ns)   --->   "%buffer_array_V_load_10 = load i24* %buffer_array_V_addr_11, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_6 : Operation 133 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_12 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 12" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_6 : Operation 134 [2/2] (3.25ns)   --->   "%buffer_array_V_load_11 = load i24* %buffer_array_V_addr_12, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 7> : 3.25ns
+ST_7 : Operation 135 [1/2] (3.25ns)   --->   "%buffer_array_V_load_10 = load i24* %buffer_array_V_addr_11, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_7 : Operation 136 [1/2] (3.25ns)   --->   "%buffer_array_V_load_11 = load i24* %buffer_array_V_addr_12, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_7 : Operation 137 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_13 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 13" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_7 : Operation 138 [2/2] (3.25ns)   --->   "%buffer_array_V_load_12 = load i24* %buffer_array_V_addr_13, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_7 : Operation 139 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_14 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 14" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_7 : Operation 140 [2/2] (3.25ns)   --->   "%buffer_array_V_load_13 = load i24* %buffer_array_V_addr_14, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 8> : 3.25ns
+ST_8 : Operation 141 [1/2] (3.25ns)   --->   "%buffer_array_V_load_12 = load i24* %buffer_array_V_addr_13, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_8 : Operation 142 [1/2] (3.25ns)   --->   "%buffer_array_V_load_13 = load i24* %buffer_array_V_addr_14, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_8 : Operation 143 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_15 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 15" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_8 : Operation 144 [2/2] (3.25ns)   --->   "%buffer_array_V_load_14 = load i24* %buffer_array_V_addr_15, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_8 : Operation 145 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_16 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 16" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_8 : Operation 146 [2/2] (3.25ns)   --->   "%buffer_array_V_load_15 = load i24* %buffer_array_V_addr_16, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 9> : 3.25ns
+ST_9 : Operation 147 [1/2] (3.25ns)   --->   "%buffer_array_V_load_14 = load i24* %buffer_array_V_addr_15, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_9 : Operation 148 [1/2] (3.25ns)   --->   "%buffer_array_V_load_15 = load i24* %buffer_array_V_addr_16, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_9 : Operation 149 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_17 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 17" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_9 : Operation 150 [2/2] (3.25ns)   --->   "%buffer_array_V_load_16 = load i24* %buffer_array_V_addr_17, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_9 : Operation 151 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_18 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 18" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_9 : Operation 152 [2/2] (3.25ns)   --->   "%buffer_array_V_load_17 = load i24* %buffer_array_V_addr_18, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 10> : 3.25ns
+ST_10 : Operation 153 [1/2] (3.25ns)   --->   "%buffer_array_V_load_16 = load i24* %buffer_array_V_addr_17, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_10 : Operation 154 [1/2] (3.25ns)   --->   "%buffer_array_V_load_17 = load i24* %buffer_array_V_addr_18, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_10 : Operation 155 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_19 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 19" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_10 : Operation 156 [2/2] (3.25ns)   --->   "%buffer_array_V_load_18 = load i24* %buffer_array_V_addr_19, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_10 : Operation 157 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_20 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 20" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_10 : Operation 158 [2/2] (3.25ns)   --->   "%buffer_array_V_load_19 = load i24* %buffer_array_V_addr_20, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 11> : 3.25ns
+ST_11 : Operation 159 [1/2] (3.25ns)   --->   "%buffer_array_V_load_18 = load i24* %buffer_array_V_addr_19, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_11 : Operation 160 [1/2] (3.25ns)   --->   "%buffer_array_V_load_19 = load i24* %buffer_array_V_addr_20, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_11 : Operation 161 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_21 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 21" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_11 : Operation 162 [2/2] (3.25ns)   --->   "%buffer_array_V_load_20 = load i24* %buffer_array_V_addr_21, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_11 : Operation 163 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_22 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 22" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_11 : Operation 164 [2/2] (3.25ns)   --->   "%buffer_array_V_load_21 = load i24* %buffer_array_V_addr_22, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 12> : 3.25ns
+ST_12 : Operation 165 [1/2] (3.25ns)   --->   "%buffer_array_V_load_20 = load i24* %buffer_array_V_addr_21, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_12 : Operation 166 [1/2] (3.25ns)   --->   "%buffer_array_V_load_21 = load i24* %buffer_array_V_addr_22, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_12 : Operation 167 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_23 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 23" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_12 : Operation 168 [2/2] (3.25ns)   --->   "%buffer_array_V_load_22 = load i24* %buffer_array_V_addr_23, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_12 : Operation 169 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_24 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 24" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_12 : Operation 170 [2/2] (3.25ns)   --->   "%buffer_array_V_load_23 = load i24* %buffer_array_V_addr_24, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 13> : 3.25ns
+ST_13 : Operation 171 [1/2] (3.25ns)   --->   "%buffer_array_V_load_22 = load i24* %buffer_array_V_addr_23, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_13 : Operation 172 [1/2] (3.25ns)   --->   "%buffer_array_V_load_23 = load i24* %buffer_array_V_addr_24, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_13 : Operation 173 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_25 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 25" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_13 : Operation 174 [2/2] (3.25ns)   --->   "%buffer_array_V_load_24 = load i24* %buffer_array_V_addr_25, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_13 : Operation 175 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_26 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 26" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_13 : Operation 176 [2/2] (3.25ns)   --->   "%buffer_array_V_load_25 = load i24* %buffer_array_V_addr_26, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 14> : 3.25ns
+ST_14 : Operation 177 [1/2] (3.25ns)   --->   "%buffer_array_V_load_24 = load i24* %buffer_array_V_addr_25, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_14 : Operation 178 [1/2] (3.25ns)   --->   "%buffer_array_V_load_25 = load i24* %buffer_array_V_addr_26, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_14 : Operation 179 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_27 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 27" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_14 : Operation 180 [2/2] (3.25ns)   --->   "%buffer_array_V_load_26 = load i24* %buffer_array_V_addr_27, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_14 : Operation 181 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_28 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 28" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_14 : Operation 182 [2/2] (3.25ns)   --->   "%buffer_array_V_load_27 = load i24* %buffer_array_V_addr_28, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 15> : 3.25ns
+ST_15 : Operation 183 [1/2] (3.25ns)   --->   "%buffer_array_V_load_26 = load i24* %buffer_array_V_addr_27, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_15 : Operation 184 [1/2] (3.25ns)   --->   "%buffer_array_V_load_27 = load i24* %buffer_array_V_addr_28, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_15 : Operation 185 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_29 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 29" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_15 : Operation 186 [2/2] (3.25ns)   --->   "%buffer_array_V_load_28 = load i24* %buffer_array_V_addr_29, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_15 : Operation 187 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_30 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 30" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_15 : Operation 188 [2/2] (3.25ns)   --->   "%buffer_array_V_load_29 = load i24* %buffer_array_V_addr_30, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 16> : 3.25ns
+ST_16 : Operation 189 [1/2] (3.25ns)   --->   "%buffer_array_V_load_28 = load i24* %buffer_array_V_addr_29, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_16 : Operation 190 [1/2] (3.25ns)   --->   "%buffer_array_V_load_29 = load i24* %buffer_array_V_addr_30, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_16 : Operation 191 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_31 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 31" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_16 : Operation 192 [2/2] (3.25ns)   --->   "%buffer_array_V_load_30 = load i24* %buffer_array_V_addr_31, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_16 : Operation 193 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_32 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 32" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_16 : Operation 194 [2/2] (3.25ns)   --->   "%buffer_array_V_load_31 = load i24* %buffer_array_V_addr_32, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 17> : 3.25ns
+ST_17 : Operation 195 [1/2] (3.25ns)   --->   "%buffer_array_V_load_30 = load i24* %buffer_array_V_addr_31, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_17 : Operation 196 [1/2] (3.25ns)   --->   "%buffer_array_V_load_31 = load i24* %buffer_array_V_addr_32, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_17 : Operation 197 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_33 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 33" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_17 : Operation 198 [2/2] (3.25ns)   --->   "%buffer_array_V_load_32 = load i24* %buffer_array_V_addr_33, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_17 : Operation 199 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_34 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 34" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_17 : Operation 200 [2/2] (3.25ns)   --->   "%buffer_array_V_load_33 = load i24* %buffer_array_V_addr_34, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 18> : 3.25ns
+ST_18 : Operation 201 [1/2] (3.25ns)   --->   "%buffer_array_V_load_32 = load i24* %buffer_array_V_addr_33, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_18 : Operation 202 [1/2] (3.25ns)   --->   "%buffer_array_V_load_33 = load i24* %buffer_array_V_addr_34, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_18 : Operation 203 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_35 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 35" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_18 : Operation 204 [2/2] (3.25ns)   --->   "%buffer_array_V_load_34 = load i24* %buffer_array_V_addr_35, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_18 : Operation 205 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_36 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 36" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_18 : Operation 206 [2/2] (3.25ns)   --->   "%buffer_array_V_load_35 = load i24* %buffer_array_V_addr_36, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 19> : 3.25ns
+ST_19 : Operation 207 [1/2] (3.25ns)   --->   "%buffer_array_V_load_34 = load i24* %buffer_array_V_addr_35, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_19 : Operation 208 [1/2] (3.25ns)   --->   "%buffer_array_V_load_35 = load i24* %buffer_array_V_addr_36, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_19 : Operation 209 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_37 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 37" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_19 : Operation 210 [2/2] (3.25ns)   --->   "%buffer_array_V_load_36 = load i24* %buffer_array_V_addr_37, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_19 : Operation 211 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_38 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 38" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_19 : Operation 212 [2/2] (3.25ns)   --->   "%buffer_array_V_load_37 = load i24* %buffer_array_V_addr_38, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 20> : 3.25ns
+ST_20 : Operation 213 [1/2] (3.25ns)   --->   "%buffer_array_V_load_36 = load i24* %buffer_array_V_addr_37, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_20 : Operation 214 [1/2] (3.25ns)   --->   "%buffer_array_V_load_37 = load i24* %buffer_array_V_addr_38, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_20 : Operation 215 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_39 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 39" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_20 : Operation 216 [2/2] (3.25ns)   --->   "%buffer_array_V_load_38 = load i24* %buffer_array_V_addr_39, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_20 : Operation 217 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_40 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 40" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_20 : Operation 218 [2/2] (3.25ns)   --->   "%buffer_array_V_load_39 = load i24* %buffer_array_V_addr_40, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 21> : 3.25ns
+ST_21 : Operation 219 [1/2] (3.25ns)   --->   "%buffer_array_V_load_38 = load i24* %buffer_array_V_addr_39, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_21 : Operation 220 [1/2] (3.25ns)   --->   "%buffer_array_V_load_39 = load i24* %buffer_array_V_addr_40, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_21 : Operation 221 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_41 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 41" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_21 : Operation 222 [2/2] (3.25ns)   --->   "%buffer_array_V_load_40 = load i24* %buffer_array_V_addr_41, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_21 : Operation 223 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_42 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 42" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_21 : Operation 224 [2/2] (3.25ns)   --->   "%buffer_array_V_load_41 = load i24* %buffer_array_V_addr_42, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 22> : 3.25ns
+ST_22 : Operation 225 [1/2] (3.25ns)   --->   "%buffer_array_V_load_40 = load i24* %buffer_array_V_addr_41, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_22 : Operation 226 [1/2] (3.25ns)   --->   "%buffer_array_V_load_41 = load i24* %buffer_array_V_addr_42, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_22 : Operation 227 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_43 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 43" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_22 : Operation 228 [2/2] (3.25ns)   --->   "%buffer_array_V_load_42 = load i24* %buffer_array_V_addr_43, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_22 : Operation 229 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_44 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 44" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_22 : Operation 230 [2/2] (3.25ns)   --->   "%buffer_array_V_load_43 = load i24* %buffer_array_V_addr_44, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 23> : 3.25ns
+ST_23 : Operation 231 [1/2] (3.25ns)   --->   "%buffer_array_V_load_42 = load i24* %buffer_array_V_addr_43, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_23 : Operation 232 [1/2] (3.25ns)   --->   "%buffer_array_V_load_43 = load i24* %buffer_array_V_addr_44, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_23 : Operation 233 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_45 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 45" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_23 : Operation 234 [2/2] (3.25ns)   --->   "%buffer_array_V_load_44 = load i24* %buffer_array_V_addr_45, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_23 : Operation 235 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_46 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 46" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_23 : Operation 236 [2/2] (3.25ns)   --->   "%buffer_array_V_load_45 = load i24* %buffer_array_V_addr_46, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 24> : 3.25ns
+ST_24 : Operation 237 [1/2] (3.25ns)   --->   "%buffer_array_V_load_44 = load i24* %buffer_array_V_addr_45, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_24 : Operation 238 [1/2] (3.25ns)   --->   "%buffer_array_V_load_45 = load i24* %buffer_array_V_addr_46, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_24 : Operation 239 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_47 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 47" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_24 : Operation 240 [2/2] (3.25ns)   --->   "%buffer_array_V_load_46 = load i24* %buffer_array_V_addr_47, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_24 : Operation 241 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_48 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 48" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_24 : Operation 242 [2/2] (3.25ns)   --->   "%buffer_array_V_load_47 = load i24* %buffer_array_V_addr_48, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 25> : 3.25ns
+ST_25 : Operation 243 [1/2] (3.25ns)   --->   "%buffer_array_V_load_46 = load i24* %buffer_array_V_addr_47, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_25 : Operation 244 [1/2] (3.25ns)   --->   "%buffer_array_V_load_47 = load i24* %buffer_array_V_addr_48, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_25 : Operation 245 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_49 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 49" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_25 : Operation 246 [2/2] (3.25ns)   --->   "%buffer_array_V_load_48 = load i24* %buffer_array_V_addr_49, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_25 : Operation 247 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_50 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 50" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_25 : Operation 248 [2/2] (3.25ns)   --->   "%buffer_array_V_load_49 = load i24* %buffer_array_V_addr_50, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 26> : 3.25ns
+ST_26 : Operation 249 [1/2] (3.25ns)   --->   "%buffer_array_V_load_48 = load i24* %buffer_array_V_addr_49, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_26 : Operation 250 [1/2] (3.25ns)   --->   "%buffer_array_V_load_49 = load i24* %buffer_array_V_addr_50, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_26 : Operation 251 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_51 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 51" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_26 : Operation 252 [2/2] (3.25ns)   --->   "%buffer_array_V_load_50 = load i24* %buffer_array_V_addr_51, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_26 : Operation 253 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_52 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 52" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_26 : Operation 254 [2/2] (3.25ns)   --->   "%buffer_array_V_load_51 = load i24* %buffer_array_V_addr_52, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 27> : 3.25ns
+ST_27 : Operation 255 [1/2] (3.25ns)   --->   "%buffer_array_V_load_50 = load i24* %buffer_array_V_addr_51, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_27 : Operation 256 [1/2] (3.25ns)   --->   "%buffer_array_V_load_51 = load i24* %buffer_array_V_addr_52, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_27 : Operation 257 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_53 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 53" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_27 : Operation 258 [2/2] (3.25ns)   --->   "%buffer_array_V_load_52 = load i24* %buffer_array_V_addr_53, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_27 : Operation 259 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_54 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 54" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_27 : Operation 260 [2/2] (3.25ns)   --->   "%buffer_array_V_load_53 = load i24* %buffer_array_V_addr_54, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 28> : 3.25ns
+ST_28 : Operation 261 [1/2] (3.25ns)   --->   "%buffer_array_V_load_52 = load i24* %buffer_array_V_addr_53, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_28 : Operation 262 [1/2] (3.25ns)   --->   "%buffer_array_V_load_53 = load i24* %buffer_array_V_addr_54, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_28 : Operation 263 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_55 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 55" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_28 : Operation 264 [2/2] (3.25ns)   --->   "%buffer_array_V_load_54 = load i24* %buffer_array_V_addr_55, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_28 : Operation 265 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_56 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 56" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_28 : Operation 266 [2/2] (3.25ns)   --->   "%buffer_array_V_load_55 = load i24* %buffer_array_V_addr_56, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 29> : 3.25ns
+ST_29 : Operation 267 [1/2] (3.25ns)   --->   "%buffer_array_V_load_54 = load i24* %buffer_array_V_addr_55, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_29 : Operation 268 [1/2] (3.25ns)   --->   "%buffer_array_V_load_55 = load i24* %buffer_array_V_addr_56, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_29 : Operation 269 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_57 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 57" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_29 : Operation 270 [2/2] (3.25ns)   --->   "%buffer_array_V_load_56 = load i24* %buffer_array_V_addr_57, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_29 : Operation 271 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_58 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 58" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_29 : Operation 272 [2/2] (3.25ns)   --->   "%buffer_array_V_load_57 = load i24* %buffer_array_V_addr_58, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 30> : 3.25ns
+ST_30 : Operation 273 [1/2] (3.25ns)   --->   "%buffer_array_V_load_56 = load i24* %buffer_array_V_addr_57, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_30 : Operation 274 [1/2] (3.25ns)   --->   "%buffer_array_V_load_57 = load i24* %buffer_array_V_addr_58, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_30 : Operation 275 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_59 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 59" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_30 : Operation 276 [2/2] (3.25ns)   --->   "%buffer_array_V_load_58 = load i24* %buffer_array_V_addr_59, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_30 : Operation 277 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_60 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 60" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_30 : Operation 278 [2/2] (3.25ns)   --->   "%buffer_array_V_load_59 = load i24* %buffer_array_V_addr_60, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 31> : 3.25ns
+ST_31 : Operation 279 [1/2] (3.25ns)   --->   "%buffer_array_V_load_58 = load i24* %buffer_array_V_addr_59, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_31 : Operation 280 [1/2] (3.25ns)   --->   "%buffer_array_V_load_59 = load i24* %buffer_array_V_addr_60, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_31 : Operation 281 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_61 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 61" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_31 : Operation 282 [2/2] (3.25ns)   --->   "%buffer_array_V_load_60 = load i24* %buffer_array_V_addr_61, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_31 : Operation 283 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_62 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 62" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_31 : Operation 284 [2/2] (3.25ns)   --->   "%buffer_array_V_load_61 = load i24* %buffer_array_V_addr_62, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 32> : 3.25ns
+ST_32 : Operation 285 [1/2] (3.25ns)   --->   "%buffer_array_V_load_60 = load i24* %buffer_array_V_addr_61, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_32 : Operation 286 [1/2] (3.25ns)   --->   "%buffer_array_V_load_61 = load i24* %buffer_array_V_addr_62, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_32 : Operation 287 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_63 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 63" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_32 : Operation 288 [2/2] (3.25ns)   --->   "%buffer_array_V_load_62 = load i24* %buffer_array_V_addr_63, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_32 : Operation 289 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_64 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 64" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_32 : Operation 290 [2/2] (3.25ns)   --->   "%buffer_array_V_load_63 = load i24* %buffer_array_V_addr_64, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 33> : 3.25ns
+ST_33 : Operation 291 [1/2] (3.25ns)   --->   "%buffer_array_V_load_62 = load i24* %buffer_array_V_addr_63, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_33 : Operation 292 [1/2] (3.25ns)   --->   "%buffer_array_V_load_63 = load i24* %buffer_array_V_addr_64, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_33 : Operation 293 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_65 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 65" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_33 : Operation 294 [2/2] (3.25ns)   --->   "%buffer_array_V_load_64 = load i24* %buffer_array_V_addr_65, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_33 : Operation 295 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_66 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 66" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_33 : Operation 296 [2/2] (3.25ns)   --->   "%buffer_array_V_load_65 = load i24* %buffer_array_V_addr_66, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 34> : 3.25ns
+ST_34 : Operation 297 [1/2] (3.25ns)   --->   "%buffer_array_V_load_64 = load i24* %buffer_array_V_addr_65, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_34 : Operation 298 [1/2] (3.25ns)   --->   "%buffer_array_V_load_65 = load i24* %buffer_array_V_addr_66, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_34 : Operation 299 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_67 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 67" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_34 : Operation 300 [2/2] (3.25ns)   --->   "%buffer_array_V_load_66 = load i24* %buffer_array_V_addr_67, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_34 : Operation 301 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_68 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 68" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_34 : Operation 302 [2/2] (3.25ns)   --->   "%buffer_array_V_load_67 = load i24* %buffer_array_V_addr_68, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 35> : 3.25ns
+ST_35 : Operation 303 [1/2] (3.25ns)   --->   "%buffer_array_V_load_66 = load i24* %buffer_array_V_addr_67, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_35 : Operation 304 [1/2] (3.25ns)   --->   "%buffer_array_V_load_67 = load i24* %buffer_array_V_addr_68, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_35 : Operation 305 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_69 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 69" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_35 : Operation 306 [2/2] (3.25ns)   --->   "%buffer_array_V_load_68 = load i24* %buffer_array_V_addr_69, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_35 : Operation 307 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_70 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 70" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_35 : Operation 308 [2/2] (3.25ns)   --->   "%buffer_array_V_load_69 = load i24* %buffer_array_V_addr_70, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 36> : 3.25ns
+ST_36 : Operation 309 [1/2] (3.25ns)   --->   "%buffer_array_V_load_68 = load i24* %buffer_array_V_addr_69, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_36 : Operation 310 [1/2] (3.25ns)   --->   "%buffer_array_V_load_69 = load i24* %buffer_array_V_addr_70, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_36 : Operation 311 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_71 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 71" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_36 : Operation 312 [2/2] (3.25ns)   --->   "%buffer_array_V_load_70 = load i24* %buffer_array_V_addr_71, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_36 : Operation 313 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_72 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 72" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_36 : Operation 314 [2/2] (3.25ns)   --->   "%buffer_array_V_load_71 = load i24* %buffer_array_V_addr_72, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 37> : 3.25ns
+ST_37 : Operation 315 [1/2] (3.25ns)   --->   "%buffer_array_V_load_70 = load i24* %buffer_array_V_addr_71, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_37 : Operation 316 [1/2] (3.25ns)   --->   "%buffer_array_V_load_71 = load i24* %buffer_array_V_addr_72, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_37 : Operation 317 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_73 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 73" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_37 : Operation 318 [2/2] (3.25ns)   --->   "%buffer_array_V_load_72 = load i24* %buffer_array_V_addr_73, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_37 : Operation 319 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_74 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 74" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_37 : Operation 320 [2/2] (3.25ns)   --->   "%buffer_array_V_load_73 = load i24* %buffer_array_V_addr_74, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 38> : 3.25ns
+ST_38 : Operation 321 [1/2] (3.25ns)   --->   "%buffer_array_V_load_72 = load i24* %buffer_array_V_addr_73, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_38 : Operation 322 [1/2] (3.25ns)   --->   "%buffer_array_V_load_73 = load i24* %buffer_array_V_addr_74, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_38 : Operation 323 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_75 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 75" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_38 : Operation 324 [2/2] (3.25ns)   --->   "%buffer_array_V_load_74 = load i24* %buffer_array_V_addr_75, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_38 : Operation 325 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_76 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 76" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_38 : Operation 326 [2/2] (3.25ns)   --->   "%buffer_array_V_load_75 = load i24* %buffer_array_V_addr_76, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 39> : 3.25ns
+ST_39 : Operation 327 [1/2] (3.25ns)   --->   "%buffer_array_V_load_74 = load i24* %buffer_array_V_addr_75, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_39 : Operation 328 [1/2] (3.25ns)   --->   "%buffer_array_V_load_75 = load i24* %buffer_array_V_addr_76, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_39 : Operation 329 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_77 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 77" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_39 : Operation 330 [2/2] (3.25ns)   --->   "%buffer_array_V_load_76 = load i24* %buffer_array_V_addr_77, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_39 : Operation 331 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_78 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 78" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_39 : Operation 332 [2/2] (3.25ns)   --->   "%buffer_array_V_load_77 = load i24* %buffer_array_V_addr_78, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 40> : 3.25ns
+ST_40 : Operation 333 [1/2] (3.25ns)   --->   "%buffer_array_V_load_76 = load i24* %buffer_array_V_addr_77, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_40 : Operation 334 [1/2] (3.25ns)   --->   "%buffer_array_V_load_77 = load i24* %buffer_array_V_addr_78, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_40 : Operation 335 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_79 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 79" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_40 : Operation 336 [2/2] (3.25ns)   --->   "%buffer_array_V_load_78 = load i24* %buffer_array_V_addr_79, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_40 : Operation 337 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_80 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 80" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_40 : Operation 338 [2/2] (3.25ns)   --->   "%buffer_array_V_load_79 = load i24* %buffer_array_V_addr_80, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 41> : 3.25ns
+ST_41 : Operation 339 [1/2] (3.25ns)   --->   "%buffer_array_V_load_78 = load i24* %buffer_array_V_addr_79, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_41 : Operation 340 [1/2] (3.25ns)   --->   "%buffer_array_V_load_79 = load i24* %buffer_array_V_addr_80, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_41 : Operation 341 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_81 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 81" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_41 : Operation 342 [2/2] (3.25ns)   --->   "%buffer_array_V_load_80 = load i24* %buffer_array_V_addr_81, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_41 : Operation 343 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_82 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 82" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_41 : Operation 344 [2/2] (3.25ns)   --->   "%buffer_array_V_load_81 = load i24* %buffer_array_V_addr_82, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 42> : 3.25ns
+ST_42 : Operation 345 [1/2] (3.25ns)   --->   "%buffer_array_V_load_80 = load i24* %buffer_array_V_addr_81, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_42 : Operation 346 [1/2] (3.25ns)   --->   "%buffer_array_V_load_81 = load i24* %buffer_array_V_addr_82, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_42 : Operation 347 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_83 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 83" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_42 : Operation 348 [2/2] (3.25ns)   --->   "%buffer_array_V_load_82 = load i24* %buffer_array_V_addr_83, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_42 : Operation 349 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_84 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 84" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_42 : Operation 350 [2/2] (3.25ns)   --->   "%buffer_array_V_load_83 = load i24* %buffer_array_V_addr_84, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 43> : 3.25ns
+ST_43 : Operation 351 [1/2] (3.25ns)   --->   "%buffer_array_V_load_82 = load i24* %buffer_array_V_addr_83, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_43 : Operation 352 [1/2] (3.25ns)   --->   "%buffer_array_V_load_83 = load i24* %buffer_array_V_addr_84, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_43 : Operation 353 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_85 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 85" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_43 : Operation 354 [2/2] (3.25ns)   --->   "%buffer_array_V_load_84 = load i24* %buffer_array_V_addr_85, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_43 : Operation 355 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_86 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 86" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_43 : Operation 356 [2/2] (3.25ns)   --->   "%buffer_array_V_load_85 = load i24* %buffer_array_V_addr_86, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 44> : 3.25ns
+ST_44 : Operation 357 [1/2] (3.25ns)   --->   "%buffer_array_V_load_84 = load i24* %buffer_array_V_addr_85, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_44 : Operation 358 [1/2] (3.25ns)   --->   "%buffer_array_V_load_85 = load i24* %buffer_array_V_addr_86, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_44 : Operation 359 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_87 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 87" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_44 : Operation 360 [2/2] (3.25ns)   --->   "%buffer_array_V_load_86 = load i24* %buffer_array_V_addr_87, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_44 : Operation 361 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_88 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 88" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_44 : Operation 362 [2/2] (3.25ns)   --->   "%buffer_array_V_load_87 = load i24* %buffer_array_V_addr_88, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 45> : 3.25ns
+ST_45 : Operation 363 [1/2] (3.25ns)   --->   "%buffer_array_V_load_86 = load i24* %buffer_array_V_addr_87, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_45 : Operation 364 [1/2] (3.25ns)   --->   "%buffer_array_V_load_87 = load i24* %buffer_array_V_addr_88, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_45 : Operation 365 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_89 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 89" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_45 : Operation 366 [2/2] (3.25ns)   --->   "%buffer_array_V_load_88 = load i24* %buffer_array_V_addr_89, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_45 : Operation 367 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_90 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 90" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_45 : Operation 368 [2/2] (3.25ns)   --->   "%buffer_array_V_load_89 = load i24* %buffer_array_V_addr_90, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 46> : 3.25ns
+ST_46 : Operation 369 [1/2] (3.25ns)   --->   "%buffer_array_V_load_88 = load i24* %buffer_array_V_addr_89, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_46 : Operation 370 [1/2] (3.25ns)   --->   "%buffer_array_V_load_89 = load i24* %buffer_array_V_addr_90, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_46 : Operation 371 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_91 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 91" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_46 : Operation 372 [2/2] (3.25ns)   --->   "%buffer_array_V_load_90 = load i24* %buffer_array_V_addr_91, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_46 : Operation 373 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_92 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 92" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_46 : Operation 374 [2/2] (3.25ns)   --->   "%buffer_array_V_load_91 = load i24* %buffer_array_V_addr_92, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 47> : 3.25ns
+ST_47 : Operation 375 [1/2] (3.25ns)   --->   "%buffer_array_V_load_90 = load i24* %buffer_array_V_addr_91, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_47 : Operation 376 [1/2] (3.25ns)   --->   "%buffer_array_V_load_91 = load i24* %buffer_array_V_addr_92, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_47 : Operation 377 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_93 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 93" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_47 : Operation 378 [2/2] (3.25ns)   --->   "%buffer_array_V_load_92 = load i24* %buffer_array_V_addr_93, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_47 : Operation 379 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_94 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 94" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_47 : Operation 380 [2/2] (3.25ns)   --->   "%buffer_array_V_load_93 = load i24* %buffer_array_V_addr_94, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 48> : 3.25ns
+ST_48 : Operation 381 [1/2] (3.25ns)   --->   "%buffer_array_V_load_92 = load i24* %buffer_array_V_addr_93, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_48 : Operation 382 [1/2] (3.25ns)   --->   "%buffer_array_V_load_93 = load i24* %buffer_array_V_addr_94, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_48 : Operation 383 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_95 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 95" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_48 : Operation 384 [2/2] (3.25ns)   --->   "%buffer_array_V_load_94 = load i24* %buffer_array_V_addr_95, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_48 : Operation 385 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_96 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 96" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_48 : Operation 386 [2/2] (3.25ns)   --->   "%buffer_array_V_load_95 = load i24* %buffer_array_V_addr_96, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 49> : 3.25ns
+ST_49 : Operation 387 [1/2] (3.25ns)   --->   "%buffer_array_V_load_94 = load i24* %buffer_array_V_addr_95, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_49 : Operation 388 [1/2] (3.25ns)   --->   "%buffer_array_V_load_95 = load i24* %buffer_array_V_addr_96, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_49 : Operation 389 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_97 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 97" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_49 : Operation 390 [2/2] (3.25ns)   --->   "%buffer_array_V_load_96 = load i24* %buffer_array_V_addr_97, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_49 : Operation 391 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_98 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 98" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_49 : Operation 392 [2/2] (3.25ns)   --->   "%buffer_array_V_load_97 = load i24* %buffer_array_V_addr_98, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 50> : 3.25ns
+ST_50 : Operation 393 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_1 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 0" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_50 : Operation 394 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load, i24* %buffer_array_V_addr_1, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_50 : Operation 395 [1/2] (3.25ns)   --->   "%buffer_array_V_load_96 = load i24* %buffer_array_V_addr_97, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_50 : Operation 396 [1/2] (3.25ns)   --->   "%buffer_array_V_load_97 = load i24* %buffer_array_V_addr_98, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_50 : Operation 397 [1/1] (0.00ns)   --->   "%buffer_array_V_addr_99 = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 99" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]
+ST_50 : Operation 398 [2/2] (3.25ns)   --->   "%buffer_array_V_load_98 = load i24* %buffer_array_V_addr_99, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 51> : 3.25ns
+ST_51 : Operation 399 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_1, i24* %buffer_array_V_addr, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_51 : Operation 400 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_2, i24* %buffer_array_V_addr_2, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_51 : Operation 401 [1/2] (3.25ns)   --->   "%buffer_array_V_load_98 = load i24* %buffer_array_V_addr_99, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 52> : 3.25ns
+ST_52 : Operation 402 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_3, i24* %buffer_array_V_addr_3, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_52 : Operation 403 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_4, i24* %buffer_array_V_addr_4, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 53> : 3.25ns
+ST_53 : Operation 404 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_5, i24* %buffer_array_V_addr_5, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_53 : Operation 405 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_6, i24* %buffer_array_V_addr_6, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 54> : 3.25ns
+ST_54 : Operation 406 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_7, i24* %buffer_array_V_addr_7, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_54 : Operation 407 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_8, i24* %buffer_array_V_addr_8, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 55> : 3.25ns
+ST_55 : Operation 408 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_9, i24* %buffer_array_V_addr_9, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_55 : Operation 409 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_10, i24* %buffer_array_V_addr_10, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 56> : 3.25ns
+ST_56 : Operation 410 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_11, i24* %buffer_array_V_addr_11, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_56 : Operation 411 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_12, i24* %buffer_array_V_addr_12, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 57> : 3.25ns
+ST_57 : Operation 412 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_13, i24* %buffer_array_V_addr_13, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_57 : Operation 413 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_14, i24* %buffer_array_V_addr_14, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 58> : 3.25ns
+ST_58 : Operation 414 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_15, i24* %buffer_array_V_addr_15, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_58 : Operation 415 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_16, i24* %buffer_array_V_addr_16, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 59> : 3.25ns
+ST_59 : Operation 416 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_17, i24* %buffer_array_V_addr_17, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_59 : Operation 417 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_18, i24* %buffer_array_V_addr_18, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 60> : 3.25ns
+ST_60 : Operation 418 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_19, i24* %buffer_array_V_addr_19, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_60 : Operation 419 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_20, i24* %buffer_array_V_addr_20, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 61> : 3.25ns
+ST_61 : Operation 420 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_21, i24* %buffer_array_V_addr_21, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_61 : Operation 421 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_22, i24* %buffer_array_V_addr_22, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 62> : 3.25ns
+ST_62 : Operation 422 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_23, i24* %buffer_array_V_addr_23, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_62 : Operation 423 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_24, i24* %buffer_array_V_addr_24, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 63> : 3.25ns
+ST_63 : Operation 424 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_25, i24* %buffer_array_V_addr_25, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_63 : Operation 425 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_26, i24* %buffer_array_V_addr_26, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 64> : 3.25ns
+ST_64 : Operation 426 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_27, i24* %buffer_array_V_addr_27, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_64 : Operation 427 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_28, i24* %buffer_array_V_addr_28, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 65> : 3.25ns
+ST_65 : Operation 428 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_29, i24* %buffer_array_V_addr_29, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_65 : Operation 429 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_30, i24* %buffer_array_V_addr_30, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 66> : 3.25ns
+ST_66 : Operation 430 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_31, i24* %buffer_array_V_addr_31, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_66 : Operation 431 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_32, i24* %buffer_array_V_addr_32, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 67> : 3.25ns
+ST_67 : Operation 432 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_33, i24* %buffer_array_V_addr_33, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_67 : Operation 433 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_34, i24* %buffer_array_V_addr_34, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 68> : 3.25ns
+ST_68 : Operation 434 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_35, i24* %buffer_array_V_addr_35, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_68 : Operation 435 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_36, i24* %buffer_array_V_addr_36, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 69> : 3.25ns
+ST_69 : Operation 436 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_37, i24* %buffer_array_V_addr_37, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_69 : Operation 437 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_38, i24* %buffer_array_V_addr_38, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 70> : 3.25ns
+ST_70 : Operation 438 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_39, i24* %buffer_array_V_addr_39, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_70 : Operation 439 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_40, i24* %buffer_array_V_addr_40, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 71> : 3.25ns
+ST_71 : Operation 440 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_41, i24* %buffer_array_V_addr_41, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_71 : Operation 441 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_42, i24* %buffer_array_V_addr_42, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 72> : 3.25ns
+ST_72 : Operation 442 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_43, i24* %buffer_array_V_addr_43, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_72 : Operation 443 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_44, i24* %buffer_array_V_addr_44, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 73> : 3.25ns
+ST_73 : Operation 444 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_45, i24* %buffer_array_V_addr_45, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_73 : Operation 445 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_46, i24* %buffer_array_V_addr_46, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 74> : 3.25ns
+ST_74 : Operation 446 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_47, i24* %buffer_array_V_addr_47, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_74 : Operation 447 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_48, i24* %buffer_array_V_addr_48, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 75> : 3.25ns
+ST_75 : Operation 448 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_49, i24* %buffer_array_V_addr_49, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_75 : Operation 449 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_50, i24* %buffer_array_V_addr_50, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 76> : 3.25ns
+ST_76 : Operation 450 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_51, i24* %buffer_array_V_addr_51, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_76 : Operation 451 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_52, i24* %buffer_array_V_addr_52, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 77> : 3.25ns
+ST_77 : Operation 452 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_53, i24* %buffer_array_V_addr_53, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_77 : Operation 453 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_54, i24* %buffer_array_V_addr_54, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 78> : 3.25ns
+ST_78 : Operation 454 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_55, i24* %buffer_array_V_addr_55, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_78 : Operation 455 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_56, i24* %buffer_array_V_addr_56, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 79> : 3.25ns
+ST_79 : Operation 456 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_57, i24* %buffer_array_V_addr_57, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_79 : Operation 457 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_58, i24* %buffer_array_V_addr_58, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 80> : 3.25ns
+ST_80 : Operation 458 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_59, i24* %buffer_array_V_addr_59, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_80 : Operation 459 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_60, i24* %buffer_array_V_addr_60, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 81> : 3.25ns
+ST_81 : Operation 460 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_61, i24* %buffer_array_V_addr_61, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_81 : Operation 461 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_62, i24* %buffer_array_V_addr_62, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 82> : 3.25ns
+ST_82 : Operation 462 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_63, i24* %buffer_array_V_addr_63, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_82 : Operation 463 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_64, i24* %buffer_array_V_addr_64, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 83> : 3.25ns
+ST_83 : Operation 464 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_65, i24* %buffer_array_V_addr_65, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_83 : Operation 465 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_66, i24* %buffer_array_V_addr_66, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 84> : 3.25ns
+ST_84 : Operation 466 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_67, i24* %buffer_array_V_addr_67, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_84 : Operation 467 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_68, i24* %buffer_array_V_addr_68, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 85> : 3.25ns
+ST_85 : Operation 468 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_69, i24* %buffer_array_V_addr_69, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_85 : Operation 469 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_70, i24* %buffer_array_V_addr_70, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 86> : 3.25ns
+ST_86 : Operation 470 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_71, i24* %buffer_array_V_addr_71, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_86 : Operation 471 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_72, i24* %buffer_array_V_addr_72, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 87> : 3.25ns
+ST_87 : Operation 472 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_73, i24* %buffer_array_V_addr_73, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_87 : Operation 473 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_74, i24* %buffer_array_V_addr_74, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 88> : 3.25ns
+ST_88 : Operation 474 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_75, i24* %buffer_array_V_addr_75, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_88 : Operation 475 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_76, i24* %buffer_array_V_addr_76, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 89> : 3.25ns
+ST_89 : Operation 476 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_77, i24* %buffer_array_V_addr_77, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_89 : Operation 477 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_78, i24* %buffer_array_V_addr_78, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 90> : 3.25ns
+ST_90 : Operation 478 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_79, i24* %buffer_array_V_addr_79, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_90 : Operation 479 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_80, i24* %buffer_array_V_addr_80, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 91> : 3.25ns
+ST_91 : Operation 480 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_81, i24* %buffer_array_V_addr_81, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_91 : Operation 481 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_82, i24* %buffer_array_V_addr_82, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 92> : 3.25ns
+ST_92 : Operation 482 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_83, i24* %buffer_array_V_addr_83, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_92 : Operation 483 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_84, i24* %buffer_array_V_addr_84, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 93> : 3.25ns
+ST_93 : Operation 484 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_85, i24* %buffer_array_V_addr_85, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_93 : Operation 485 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_86, i24* %buffer_array_V_addr_86, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 94> : 3.25ns
+ST_94 : Operation 486 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_87, i24* %buffer_array_V_addr_87, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_94 : Operation 487 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_88, i24* %buffer_array_V_addr_88, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 95> : 3.25ns
+ST_95 : Operation 488 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_89, i24* %buffer_array_V_addr_89, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_95 : Operation 489 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_90, i24* %buffer_array_V_addr_90, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 96> : 3.25ns
+ST_96 : Operation 490 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_91, i24* %buffer_array_V_addr_91, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_96 : Operation 491 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_92, i24* %buffer_array_V_addr_92, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 97> : 3.25ns
+ST_97 : Operation 492 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_93, i24* %buffer_array_V_addr_93, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_97 : Operation 493 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_94, i24* %buffer_array_V_addr_94, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 98> : 3.25ns
+ST_98 : Operation 494 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_95, i24* %buffer_array_V_addr_95, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_98 : Operation 495 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_96, i24* %buffer_array_V_addr_96, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 99> : 3.25ns
+ST_99 : Operation 496 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_97, i24* %buffer_array_V_addr_97, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_99 : Operation 497 [1/1] (3.25ns)   --->   "store i24 %buffer_array_V_load_98, i24* %buffer_array_V_addr_98, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 100> : 3.25ns
+ST_100 : Operation 498 [1/1] (0.00ns)   --->   "%val_V_read = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %val_V)"
+ST_100 : Operation 499 [1/1] (3.25ns)   --->   "store i24 %val_V_read, i24* %buffer_array_V_addr_99, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:58]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_100 : Operation 500 [1/1] (0.00ns)   --->   "ret void" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:59]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('buffer_array_V_addr', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) [4]  (0 ns)
+	'load' operation ('buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [5]  (3.25 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [5]  (3.25 ns)
+
+ <State 3>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_2', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [12]  (3.25 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_4', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [18]  (3.25 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_6', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [24]  (3.25 ns)
+
+ <State 6>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_8', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [30]  (3.25 ns)
+
+ <State 7>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_10', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [36]  (3.25 ns)
+
+ <State 8>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_12', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [42]  (3.25 ns)
+
+ <State 9>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_14', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [48]  (3.25 ns)
+
+ <State 10>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_16', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [54]  (3.25 ns)
+
+ <State 11>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_18', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [60]  (3.25 ns)
+
+ <State 12>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_20', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [66]  (3.25 ns)
+
+ <State 13>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_22', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [72]  (3.25 ns)
+
+ <State 14>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_24', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [78]  (3.25 ns)
+
+ <State 15>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_26', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [84]  (3.25 ns)
+
+ <State 16>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_28', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [90]  (3.25 ns)
+
+ <State 17>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_30', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [96]  (3.25 ns)
+
+ <State 18>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_32', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [102]  (3.25 ns)
+
+ <State 19>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_34', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [108]  (3.25 ns)
+
+ <State 20>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_36', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [114]  (3.25 ns)
+
+ <State 21>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_38', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [120]  (3.25 ns)
+
+ <State 22>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_40', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [126]  (3.25 ns)
+
+ <State 23>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_42', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [132]  (3.25 ns)
+
+ <State 24>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_44', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [138]  (3.25 ns)
+
+ <State 25>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_46', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [144]  (3.25 ns)
+
+ <State 26>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_48', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [150]  (3.25 ns)
+
+ <State 27>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_50', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [156]  (3.25 ns)
+
+ <State 28>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_52', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [162]  (3.25 ns)
+
+ <State 29>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_54', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [168]  (3.25 ns)
+
+ <State 30>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_56', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [174]  (3.25 ns)
+
+ <State 31>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_58', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [180]  (3.25 ns)
+
+ <State 32>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_60', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [186]  (3.25 ns)
+
+ <State 33>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_62', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [192]  (3.25 ns)
+
+ <State 34>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_64', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [198]  (3.25 ns)
+
+ <State 35>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_66', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [204]  (3.25 ns)
+
+ <State 36>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_68', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [210]  (3.25 ns)
+
+ <State 37>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_70', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [216]  (3.25 ns)
+
+ <State 38>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_72', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [222]  (3.25 ns)
+
+ <State 39>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_74', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [228]  (3.25 ns)
+
+ <State 40>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_76', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [234]  (3.25 ns)
+
+ <State 41>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_78', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [240]  (3.25 ns)
+
+ <State 42>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_80', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [246]  (3.25 ns)
+
+ <State 43>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_82', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [252]  (3.25 ns)
+
+ <State 44>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_84', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [258]  (3.25 ns)
+
+ <State 45>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_86', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [264]  (3.25 ns)
+
+ <State 46>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_88', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [270]  (3.25 ns)
+
+ <State 47>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_90', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [276]  (3.25 ns)
+
+ <State 48>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_92', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [282]  (3.25 ns)
+
+ <State 49>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load_94', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' [288]  (3.25 ns)
+
+ <State 50>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('buffer_array_V_addr_1', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) [6]  (0 ns)
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [7]  (3.25 ns)
+
+ <State 51>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_1', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [10]  (3.25 ns)
+
+ <State 52>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_3', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [16]  (3.25 ns)
+
+ <State 53>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_5', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [22]  (3.25 ns)
+
+ <State 54>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_7', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [28]  (3.25 ns)
+
+ <State 55>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_9', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [34]  (3.25 ns)
+
+ <State 56>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_11', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [40]  (3.25 ns)
+
+ <State 57>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_13', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [46]  (3.25 ns)
+
+ <State 58>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_15', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [52]  (3.25 ns)
+
+ <State 59>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_17', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [58]  (3.25 ns)
+
+ <State 60>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_19', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [64]  (3.25 ns)
+
+ <State 61>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_21', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [70]  (3.25 ns)
+
+ <State 62>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_23', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [76]  (3.25 ns)
+
+ <State 63>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_25', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [82]  (3.25 ns)
+
+ <State 64>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_27', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [88]  (3.25 ns)
+
+ <State 65>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_29', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [94]  (3.25 ns)
+
+ <State 66>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_31', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [100]  (3.25 ns)
+
+ <State 67>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_33', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [106]  (3.25 ns)
+
+ <State 68>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_35', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [112]  (3.25 ns)
+
+ <State 69>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_37', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [118]  (3.25 ns)
+
+ <State 70>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_39', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [124]  (3.25 ns)
+
+ <State 71>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_41', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [130]  (3.25 ns)
+
+ <State 72>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_43', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [136]  (3.25 ns)
+
+ <State 73>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_45', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [142]  (3.25 ns)
+
+ <State 74>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_47', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [148]  (3.25 ns)
+
+ <State 75>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_49', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [154]  (3.25 ns)
+
+ <State 76>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_51', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [160]  (3.25 ns)
+
+ <State 77>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_53', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [166]  (3.25 ns)
+
+ <State 78>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_55', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [172]  (3.25 ns)
+
+ <State 79>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_57', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [178]  (3.25 ns)
+
+ <State 80>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_59', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [184]  (3.25 ns)
+
+ <State 81>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_61', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [190]  (3.25 ns)
+
+ <State 82>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_63', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [196]  (3.25 ns)
+
+ <State 83>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_65', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [202]  (3.25 ns)
+
+ <State 84>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_67', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [208]  (3.25 ns)
+
+ <State 85>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_69', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [214]  (3.25 ns)
+
+ <State 86>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_71', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [220]  (3.25 ns)
+
+ <State 87>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_73', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [226]  (3.25 ns)
+
+ <State 88>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_75', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [232]  (3.25 ns)
+
+ <State 89>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_77', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [238]  (3.25 ns)
+
+ <State 90>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_79', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [244]  (3.25 ns)
+
+ <State 91>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_81', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [250]  (3.25 ns)
+
+ <State 92>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_83', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [256]  (3.25 ns)
+
+ <State 93>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_85', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [262]  (3.25 ns)
+
+ <State 94>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_87', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [268]  (3.25 ns)
+
+ <State 95>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_89', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [274]  (3.25 ns)
+
+ <State 96>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_91', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [280]  (3.25 ns)
+
+ <State 97>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_93', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [286]  (3.25 ns)
+
+ <State 98>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_95', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [292]  (3.25 ns)
+
+ <State 99>: 3.25ns
+The critical path consists of the following:
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_97', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' [298]  (3.25 ns)
+
+ <State 100>: 3.25ns
+The critical path consists of the following:
+	wire read on port 'val_V' [3]  (0 ns)
+	'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:58) of variable 'op.V' on array 'buffer_100_array_V' [302]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

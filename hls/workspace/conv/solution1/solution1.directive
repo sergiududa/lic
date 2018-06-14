@@ -1,49 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-  <sourceFile>
-    <directive functionName="conv" label="conv_label0" functionLabel="">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="conv" label="conv_label1" functionLabel="">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="conv" label="conv_label2" functionLabel="">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="conv" label="conv_label3" functionLabel="">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="conv" label="conv_label4" functionLabel="">
-      <pragma name="PIPELINE"/>
-    </directive>
-  </sourceFile>
-  <sourceFile name="conv/solution1/.tcls/conv_test.cpp">
-    <directive functionName="main" label=" " functionLabel=" ">
-      <pragma name="STREAM">
-        <option name="variable" value="in" positionalBoolean="4"/>
-        <option name="depth" value="1024"/>
-        <option name="dim" value="1"/>
-      </pragma>
-      <pragma name="STREAM">
-        <option name="variable" value="out" positionalBoolean="4"/>
-        <option name="depth" value="1024"/>
-        <option name="dim" value="1"/>
-      </pragma>
-    </directive>
-  </sourceFile>
-  <sourceFile name="conv/solution1/conv.cpp">
-    <directive functionName="conv" label=" " functionLabel=" ">
-      <pragma name="DATAFLOW"/>
-      <pragma name="STREAM">
-        <option name="variable" value="out" positionalBoolean="4"/>
-        <option name="depth" value="1024"/>
-        <option name="dim" value="1"/>
-      </pragma>
-      <pragma name="STREAM">
-        <option name="variable" value="in" positionalBoolean="4"/>
-        <option name="depth" value="1024"/>
-        <option name="dim" value="1"/>
-      </pragma>
-    </directive>
-  </sourceFile>
+    <sourceFile name="">
+        <directive functionName="conv" label="conv_label0" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label1" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label2" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label3" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="main" label="" functionLabel="">
+            <pragma name="STREAM">
+                <option name="variable" value="in" positionalBoolean="4"/>
+                <option name="depth" value="1024"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="main" label="" functionLabel="">
+            <pragma name="STREAM">
+                <option name="variable" value="out" positionalBoolean="4"/>
+                <option name="depth" value="1024"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="STREAM">
+                <option name="variable" value="out" positionalBoolean="4"/>
+                <option name="depth" value="1024"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="STREAM">
+                <option name="variable" value="in" positionalBoolean="4"/>
+                <option name="depth" value="1024"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="conv_label0" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label1" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label2" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label3" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="conv_label5" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+    </sourceFile>
 </AutoPilot:ProjectResources>
+

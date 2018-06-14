@@ -1,0 +1,148 @@
+<stg><name>GetValue</name>
+
+
+<trans_list>
+
+<trans id="11" from="1" to="2">
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="3" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:0  %pos_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %pos_r)
+
+]]></Node>
+<StgValue><ssdm name="pos_read"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="64" op_0_bw="8">
+<![CDATA[
+:1  %tmp = zext i8 %pos_read to i64
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="7" op_0_bw="24" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:2  %buffer_array_V_addr = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 %tmp
+
+]]></Node>
+<StgValue><ssdm name="buffer_array_V_addr"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="24" op_0_bw="7">
+<![CDATA[
+:3  %buffer_array_V_load = load i24* %buffer_array_V_addr, align 4
+
+]]></Node>
+<StgValue><ssdm name="buffer_array_V_load"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="7" st_id="2" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="24" op_0_bw="7">
+<![CDATA[
+:3  %buffer_array_V_load = load i24* %buffer_array_V_addr, align 4
+
+]]></Node>
+<StgValue><ssdm name="buffer_array_V_load"/></StgValue>
+</operation>
+
+<operation id="8" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="0" op_0_bw="24">
+<![CDATA[
+:4  ret i24 %buffer_array_V_load
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="12" name="buffer_100_array_V" dir="0" iftype="1">
+<core>RAM</core><StgValue><ssdm name="buffer_100_array_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="13" name="pos_r" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="pos_r"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="15" from="_ssdm_op_Read.ap_auto.i8" to="pos_read" fromId="14" toId="3">
+</dataflow>
+<dataflow id="16" from="pos_r" to="pos_read" fromId="13" toId="3">
+</dataflow>
+<dataflow id="17" from="pos_read" to="tmp" fromId="3" toId="4">
+</dataflow>
+<dataflow id="18" from="buffer_100_array_V" to="buffer_array_V_addr" fromId="12" toId="5">
+</dataflow>
+<dataflow id="20" from="StgValue_19" to="buffer_array_V_addr" fromId="19" toId="5">
+</dataflow>
+<dataflow id="21" from="tmp" to="buffer_array_V_addr" fromId="4" toId="5">
+</dataflow>
+<dataflow id="22" from="buffer_array_V_addr" to="buffer_array_V_load" fromId="5" toId="6">
+</dataflow>
+<dataflow id="23" from="buffer_array_V_addr" to="buffer_array_V_load" fromId="5" toId="7">
+</dataflow>
+<dataflow id="24" from="buffer_array_V_load" to="StgValue_8" fromId="7" toId="8">
+</dataflow>
+</dataflows>
+
+
+</stg>

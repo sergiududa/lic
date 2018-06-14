@@ -1,0 +1,125 @@
+
+
+================================================================
+== Vivado HLS Report for 'GetValue'
+================================================================
+* Date:           Thu Jun 14 08:46:20 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        conv
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      3.25|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+
+* FSM state operations: 
+
+ <State 1> : 3.25ns
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%pos_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %pos_r)"
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%tmp = zext i8 %pos_read to i64" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65]
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%buffer_array_V_addr = getelementptr [100 x i24]* %buffer_100_array_V, i64 0, i64 %tmp" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65]
+ST_1 : Operation 6 [2/2] (3.25ns)   --->   "%buffer_array_V_load = load i24* %buffer_array_V_addr, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+
+ <State 2> : 3.25ns
+ST_2 : Operation 7 [1/2] (3.25ns)   --->   "%buffer_array_V_load = load i24* %buffer_array_V_addr, align 4" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 100> <RAM>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "ret i24 %buffer_array_V_load" [/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.25ns
+The critical path consists of the following:
+	wire read on port 'pos_r' [3]  (0 ns)
+	'getelementptr' operation ('buffer_array_V_addr', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65) [5]  (0 ns)
+	'load' operation ('buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65) on array 'buffer_100_array_V' [6]  (3.25 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:65) on array 'buffer_100_array_V' [6]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

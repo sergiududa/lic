@@ -5,7 +5,7 @@
 
 #include "ap_fixed.h"
 
-#define EXP_WIDTH	24
+#define EXP_WIDTH	16
 #define INT_WIDTH	4
 
 typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
@@ -36,15 +36,15 @@ void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
 
 
 	for(i = 0; i < (IMAGE_SIZE - CONV1_KERNEL_SIZE + 1); i += CONV1_STRIDE)
-		for(j = 0; j < (IMAGE_SIZE - CONV1_KERNEL_SIZE + 1); j += CONV1_STRIDE)
+		conv_layer1_label9:for(j = 0; j < (IMAGE_SIZE - CONV1_KERNEL_SIZE + 1); j += CONV1_STRIDE)
 		{
 			conv_layer1_label2:for(filter = 0; filter < CONV1_FILTERS; filter++)
 			{
 				//Insert smart comment here
 				sum = 0;
-				for(row_offset = 0; row_offset <CONV1_KERNEL_SIZE; row_offset++)
-					for(col_offset = 0; col_offset <CONV1_KERNEL_SIZE; col_offset++)
-						for(channel_offset = 0; channel_offset < CONV1_CHANNELS; channel_offset++)
+				conv_layer1_label6:for(row_offset = 0; row_offset <CONV1_KERNEL_SIZE; row_offset++)
+					conv_layer1_label7:for(col_offset = 0; col_offset <CONV1_KERNEL_SIZE; col_offset++)
+						conv_layer1_label8:for(channel_offset = 0; channel_offset < CONV1_CHANNELS; channel_offset++)
 							sum += conv_buff.getval(row_offset*IMAGE_SIZE * IMAGE_CHANNELS +  col_offset * IMAGE_CHANNELS + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
 				out<<relu(sum + bias[filter]);
 			}
@@ -110,13 +110,13 @@ void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
 	for(i = 0; i < (P1_SIZE - CONV2_KERNEL_SIZE + 1); i += CONV2_STRIDE)
 		conv_layer2_label5:for(j = 0; j < (P1_SIZE - CONV2_KERNEL_SIZE + 1); j += CONV2_STRIDE)
 		{
-			for(filter = 0; filter < CONV2_FILTERS; filter++)
+			conv_layer2_label12:for(filter = 0; filter < CONV2_FILTERS; filter++)
 			{
 				//Insert smart comment here
 				sum = 0;
-				for(row_offset = 0; row_offset <CONV2_KERNEL_SIZE; row_offset++)
-					for(col_offset = 0; col_offset <CONV2_KERNEL_SIZE; col_offset++)
-						for(channel_offset = 0; channel_offset < CONV2_CHANNELS; channel_offset++)
+				conv_layer2_label13:for(row_offset = 0; row_offset <CONV2_KERNEL_SIZE; row_offset++)
+					conv_layer2_label10:for(col_offset = 0; col_offset <CONV2_KERNEL_SIZE; col_offset++)
+						conv_layer2_label11:for(channel_offset = 0; channel_offset < CONV2_CHANNELS; channel_offset++)
 							sum += conv_buff.getval(row_offset*P1_SIZE * P1_CHANNELS +  col_offset * P1_CHANNELS + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
 				out<<relu(sum + bias[filter]);
 			}
@@ -159,9 +159,9 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 
 	for(i = 0 ; i < P1_SIZE; i++)
 		pool_layer1_label6:for(l = 0; l < P1_KERNEL_SIZE; l++)
-		{	for(j = 0 ; j < P1_SIZE; j++)
-				for(m = 0; m < P1_KERNEL_SIZE; m++)
-					for(k = 0 ; k < P1_CHANNELS; k++)
+		{	pool_layer1_label14:for(j = 0 ; j < P1_SIZE; j++)
+				pool_layer1_label15:for(m = 0; m < P1_KERNEL_SIZE; m++)
+					pool_layer1_label19:pool_layer1_label18:for(k = 0 ; k < P1_CHANNELS; k++)
 					{
 						in>>read;
 						if(l == 0 && m == 0)
@@ -174,13 +174,13 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 						if(l == (P1_KERNEL_SIZE - 1) && m == (P1_KERNEL_SIZE - 1))
 							out<<pool_buff.val[j*P1_CHANNELS + k][0];
 					}
-		for(int skip = P1_SIZE * P1_STRIDE ; skip < A1_SIZE; skip++)
-			for(int channel = 0; channel < P1_CHANNELS; channel++)
+		pool_layer1_label20:for(int skip = P1_SIZE * P1_STRIDE ; skip < A1_SIZE; skip++)
+			pool_layer1_label16:for(int channel = 0; channel < P1_CHANNELS; channel++)
 					in>>read;
 	}
 	pool_layer1_label7:for(int skip_row = P1_SIZE * P1_STRIDE ; skip_row < A1_SIZE; skip_row++)
-		for(int skip_col = 0 ; skip_col < A1_SIZE; skip_col++)
-			for(int skip_channel = 0 ; skip_channel < A1_CHANNELS; skip_channel++)
+		pool_layer1_label33:for(int skip_col = 0 ; skip_col < A1_SIZE; skip_col++)
+			pool_layer1_label35:for(int skip_channel = 0 ; skip_channel < A1_CHANNELS; skip_channel++)
 				in>>read;
 }
 
@@ -202,10 +202,10 @@ void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 	hls::LineBuffer<POOL2_BUFFER_SIZE,1,float24_t> pool_buff;
 
 	for(i = 0 ; i < P2_SIZE; i++)
-		pool_layer2_label8:for(l = 0; l < P2_KERNEL_SIZE; l++)
-		{	for(j = 0 ; j < P2_SIZE; j++)
-				for(m = 0; m < P2_KERNEL_SIZE; m++)
-					for(k = 0 ; k < P2_CHANNELS; k++)
+		pool_layer2_label28:for(l = 0; l < P2_KERNEL_SIZE; l++)
+		{	pool_layer2_label0:for(j = 0 ; j < P2_SIZE; j++)
+				pool_layer2_label26:for(m = 0; m < P2_KERNEL_SIZE; m++)
+					pool_layer2_label36:for(k = 0 ; k < P2_CHANNELS; k++)
 					{
 						in>>read;
 						if(l == 0 && m == 0)
@@ -218,13 +218,13 @@ void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 						if(l == (P2_KERNEL_SIZE - 1) && m == (P2_KERNEL_SIZE - 1))
 							out<<pool_buff.val[j*P2_CHANNELS + k][0];
 					}
-		for(int skip = P2_SIZE * P2_STRIDE ; skip < A2_SIZE; skip++)
-			for(int channel = 0; channel < P2_CHANNELS; channel++)
+		pool_layer2_label38:for(int skip = P2_SIZE * P2_STRIDE ; skip < A2_SIZE; skip++)
+			pool_layer2_label37:for(int channel = 0; channel < P2_CHANNELS; channel++)
 					in>>read;
 	}
 	pool_layer2_label9:for(int skip_row = P2_SIZE * P2_STRIDE ; skip_row < A2_SIZE; skip_row++)
 		pool_layer2_label16:for(int skip_col = 0 ; skip_col < A2_SIZE; skip_col++)
-			for(int skip_channel = 0 ; skip_channel < A2_CHANNELS; skip_channel++)
+			pool_layer2_label39:for(int skip_channel = 0 ; skip_channel < A2_CHANNELS; skip_channel++)
 				in>>read;
 }
 
@@ -240,7 +240,7 @@ void fc_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
 	fc_layer1_label12:for(int j = 0; j < FC1_WEIGHTS_H; j++)
 	{
 		in>>read;
-		for(int i = 0; i < FC1_WEIGHTS_W; i++)
+		fc_layer1_label40:for(int i = 0; i < FC1_WEIGHTS_W; i++)
 		{
 			output[i] += weight[j][i] * read;
 		}
@@ -264,7 +264,7 @@ void fc_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
 	fc_layer2_label13:for(int j = 0; j < FC2_WEIGHTS_H; j++)
 	{
 		in>>read;
-		for(int i = 0; i < FC2_WEIGHTS_W; i++)
+		fc_layer2_label41:for(int i = 0; i < FC2_WEIGHTS_W; i++)
 		{
 			output[i] += weight[j][i] * read;
 		}
@@ -285,7 +285,7 @@ void fc_layer3(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
 	fc_layer3_label10:for(int j = 0; j < FC3_WEIGHTS_H; j++)
 	{
 		in>>read;
-		for(int i = 0; i < FC3_WEIGHTS_W; i++)
+		fc_layer3_label42:for(int i = 0; i < FC3_WEIGHTS_W; i++)
 		{
 			output[i] += weight[j][i] * read;
 		}

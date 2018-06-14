@@ -5,7 +5,7 @@ set rawDecl ""
 set globalVariable ""
 set PortList ""
 set PortName0 "fc3_out"
-set BitWidth0 "32"
+set BitWidth0 "16"
 set ArrayOpt0 ""
 set Const0 "0"
 set Volatile0 "0"
@@ -13,7 +13,7 @@ set Pointer0 "2"
 set Reference0 "1"
 set Dims0 [list 0]
 set Interface0 [list AP_STREAM 0] 
-set DataType0 "[list ap_fixed 24 4 5 3 0 ]"
+set DataType0 "[list ap_fixed 16 4 5 3 0 ]"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set globalAPint "" 

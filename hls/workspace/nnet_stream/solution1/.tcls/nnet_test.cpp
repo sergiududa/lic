@@ -6,13 +6,13 @@
 
 #include "ap_fixed.h"
 
-#define EXP_WIDTH	24
+#define EXP_WIDTH	16
 #define INT_WIDTH	4
 
 typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
 
 
-#define eps 0.002
+#define eps 0.1
 
 void nnet(hls::stream<float24_t> &fc3_out);
 

@@ -81,18 +81,18 @@ void conv(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t wei
 	}
 
 
-	for(i = 0; i < (IMAGE_SIZE - CONV_KERNEL_SIZE + 1); i += CONV_STRIDE)
-	for(j = 0; j < (IMAGE_SIZE - CONV_KERNEL_SIZE + 1); j += CONV_STRIDE)
+	conv_label5:for(i = 0; i < (IMAGE_SIZE - CONV_KERNEL_SIZE + 1); i += CONV_STRIDE)
+	conv_label4:for(j = 0; j < (IMAGE_SIZE - CONV_KERNEL_SIZE + 1); j += CONV_STRIDE)
 	{
 
 
-	for(filter = 0; filter < CONV_FILTERS; filter++)
+	conv_label3:for(filter = 0; filter < CONV_FILTERS; filter++)
 	{
 		//Insert smart comment here
 		sum = 0;
-		for(row_offset = 0; row_offset <CONV_KERNEL_SIZE; row_offset++)
-			for(col_offset = 0; col_offset <CONV_KERNEL_SIZE; col_offset++)
-				for(channel_offset = 0; channel_offset < CONV_CHANNELS; channel_offset++)
+		conv_label2:for(row_offset = 0; row_offset <CONV_KERNEL_SIZE; row_offset++)
+			conv_label1:for(col_offset = 0; col_offset <CONV_KERNEL_SIZE; col_offset++)
+				conv_label0:for(channel_offset = 0; channel_offset < CONV_CHANNELS; channel_offset++)
 					sum += conv_buff.GetValue(row_offset*IMAGE_SIZE * IMAGE_CHANNELS +  col_offset * IMAGE_CHANNELS + channel_offset) * weight[row_offset][col_offset][channel_offset][filter];
 		out<<relu(sum + bias[filter]);
 	}

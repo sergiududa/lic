@@ -1,4 +1,4 @@
-INFO: [HLS 200-0] Workspace /home/sergiu/git/lic/hls/workspace/conv/solution1 opened at Thu May 31 17:46:28 EEST 2018
+INFO: [HLS 200-0] Workspace /home/sergiu/git/lic/hls/workspace/conv/solution1 opened at Thu Jun 14 08:42:04 EEST 2018
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Command     config_clock returned 0; 0 sec.
@@ -12,12 +12,12 @@ Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
-Command           ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
 Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
@@ -26,23 +26,23 @@ Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xff
 Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
 Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0.03 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
-Command       ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
-Command       ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
-Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.02 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
 Command       ap_source returned 0; 0 sec.
 Execute       get_default_platform 
@@ -61,48 +61,48 @@ Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/inte
 Command           ap_source returned 0; 0 sec.
 Command         ap_source returned 0; 0 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
-Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.01 sec.
-Command     import_lib returned 0; 0.09 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Command     import_lib returned 0; 0.02 sec.
 Execute     source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command           ap_source returned 0; 0 sec.
-Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command             ap_source returned 0; 0.03 sec.
-Command           ap_source returned 0; 0.04 sec.
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command           ap_source returned 0; 0.04 sec.
+Command           ap_source returned 0; 0.02 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command           ap_source returned 0; 0.03 sec.
+Command           ap_source returned 0; 0.01 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command           ap_source returned 0; 0 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source returned 0; 0.45 sec.
+Command           ap_source returned 0; 0.14 sec.
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command           ap_source returned 0; 0.02 sec.
-Command         ap_source returned 0; 0.63 sec.
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.19 sec.
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0.64 sec.
-Command     ap_source returned 0; 0.64 sec.
+Command       ap_source returned 0; 0.19 sec.
+Command     ap_source returned 0; 0.19 sec.
 Execute     open_platform DefaultPlatform 
 Command     open_platform returned 0; 0 sec.
 Execute     import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
 Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.05 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
@@ -118,8 +118,8 @@ Command           ap_source returned 0; 0.01 sec.
 Command         ap_source returned 0; 0.01 sec.
 Command       ap_source returned 0; 0.01 sec.
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
-Command       ap_source returned 0; 0.01 sec.
-Command     import_lib returned 0; 0.12 sec.
+Command       ap_source returned 0; 0 sec.
+Command     import_lib returned 0; 0.02 sec.
 Execute     source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command       ap_source returned 0; 0.01 sec.
@@ -129,14 +129,14 @@ Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 Execute         license_isbetapart xc7z020 
-Command         license_isbetapart returned 1; 0.06 sec.
+Command         license_isbetapart returned 1; 0 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Command         config_chip_info returned 0; 0 sec.
 Execute         config_chip_info -quiet -speed slow 
 Command         config_chip_info returned 0; 0 sec.
-Command       add_library returned 0; 0.09 sec.
+Command       add_library returned 0; 0.01 sec.
 Execute       add_library xilinx/zynq/zynq_fpv6 
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
@@ -144,34 +144,620 @@ Command       add_library returned 0; 0 sec.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 Execute       get_default_platform 
 Command       get_default_platform returned 0; 0 sec.
-Command     set_part returned 0; 0.26 sec.
+Command     set_part returned 0; 0.04 sec.
 Execute     get_default_platform 
 Command     get_default_platform returned 0; 0 sec.
 Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
-Command     config_chip_info returned 0; 0.01 sec.
+Command     config_chip_info returned 0; 0 sec.
 Execute     config_chip_info -quiet -speed slow 
 Command     config_chip_info returned 0; 0 sec.
-Command   open_solution returned 0; 1.17 sec.
-Execute   csim_design -clean -compiler gcc -quiet 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-Execute     source csim/.lst_opt.tcl 
-Command     ap_source returned 0; 0 sec.
-Execute     is_encrypted /home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls/conv_test.cpp 
-Command     is_encrypted returned 0; 0 sec.
-Execute     is_xip /home/sergiu/git/lic/hls/workspace/conv/solution1/.tcls/conv_test.cpp 
-Command     is_xip returned 0; 0 sec.
-Execute     is_encrypted /home/sergiu/git/lic/hls/workspace/conv/solution1/conv.cpp 
-Command     is_encrypted returned 0; 0 sec.
-Execute     is_xip /home/sergiu/git/lic/hls/workspace/conv/solution1/conv.cpp 
-Command     is_xip returned 0; 0 sec.
+Command   open_solution returned 0; 0.31 sec.
+Execute   set_part xc7z020clg400-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart returned 1; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed slow 
+Command       config_chip_info returned 0; 0 sec.
+Command     add_library returned 0; 0.01 sec.
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     add_library returned 0; 0 sec.
 Execute     get_default_platform 
 Command     get_default_platform returned 0; 0 sec.
-Execute     source run_sim.tcl 
-Command     ap_source returned 0; 0.21 sec.
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-Command   csim_design returned 0; 48.21 sec.
-Command ap_source returned 0; 49.38 sec.
-Execute cleanup_all 
-Command cleanup_all returned 0; 0 sec.
+Command   set_part returned 0; 0.04 sec.
+Execute   create_clock -period 10 -name default 
+Command   create_clock returned 0; 0 sec.
+Execute   source ./conv/solution1/directives.tcl 
+Execute     set_directive_unroll conv/conv_label0 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label2 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label3 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label4 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_stream -depth 1024 -dim 1 main in 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+Command     set_directive_stream returned 0; 0 sec.
+Execute     set_directive_stream -depth 1024 -dim 1 main out 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+Command     set_directive_stream returned 0; 0.01 sec.
+Execute     set_directive_stream -depth 1024 -dim 1 conv out 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+Command     set_directive_stream returned 0; 0 sec.
+Execute     set_directive_stream -depth 1024 -dim 1 conv in 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+Command     set_directive_stream returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label0 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label2 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_unroll conv/conv_label3 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0.01 sec.
+Execute     set_directive_unroll conv/conv_label4 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+Command     set_directive_unroll returned 0; 0 sec.
+Execute     set_directive_pipeline conv/conv_label5 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'PIPELINE' 
+Command     set_directive_pipeline returned 0; 0 sec.
+Command   ap_source returned 0; 0.02 sec.
+Execute   csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -VP9_rom_infer_simplify=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file 'conv/solution1/conv.cpp' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling conv/solution1/conv.cpp as C++
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted conv/solution1/conv.cpp 
+Command       is_encrypted returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "conv/solution1/conv.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E conv/solution1/conv.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp
+Command       clang returned 0; 1 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp"  -o "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/useless.bc
+Command       clang returned 0; 2.79 sec.
+INFO: [HLS 200-0] GCC PP time: 3 seconds per iteration
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredout depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'STREAM' variable=positionBooleanTextRequiredin depth=1024 dim=1 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'UNROLL' 
+INFO: [HLS 200-0] Setting directive 'PIPELINE' 
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp.ap-line.cpp /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+Execute       cdt  "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp.ap-line.cpp"  -m "conv" -o "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/sergiu/git/lic/hls/workspace/conv/solution1/solution1.directive --source /home/sergiu/git/lic/hls/workspace/conv/solution1/conv.cpp --error /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSP_Double_Pump_Mac16 DSP_Double_Pump_Mac8 DSP_Macro DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db --ca --es --gf --pd --p2d /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db --sd --scff /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/.systemc_flag --ad 
+INFO: [HLS 200-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+Command       cdt returned 0; 15.27 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pp.0.cpp.ap-cdt.cpp /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.0.cpp /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+Execute       source /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.2.cpp
+Command       clang returned 0; 0.97 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Processing labels
+Execute       clang  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.g.bc
+Command       clang returned 0; 2.84 sec.
+Execute       source /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/ve_warning.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+Execute       source /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+WARNING: [HLS 200-40] Directive 'STREAM' cannot be applied: Function 'main' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'STREAM' cannot be applied: Function 'main' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 416 ; free virtual = 4254
+INFO: [HLS 200-0] Linking Release ...
+Execute       llvm-ld /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.bc -hls-opt -except-internalize conv -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o 
+Command       llvm-ld returned 0; 0.64 sec.
+Execute       disassemble /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o 
+Execute         is_encrypted /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.bc 
+Command         is_encrypted returned 0; 0 sec.
+Command       disassemble returned 0; 0.53 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+Execute       llvm-ld /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/conv.g.bc -hls-opt -except-internalize conv -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g 
+Command       llvm-ld returned 0; 0.58 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:49 ; elapsed = 00:00:27 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 407 ; free virtual = 4254
+Execute       ::config_rtl 
+Command       config_rtl returned 0; 0 sec.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 -enable_clang39=0 -VP9_rom_infer_simplify=0 
+Execute         cleanup_all_models 
+Command         cleanup_all_models returned 0; 0 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.pp.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform returned 0; 0.06 sec.
+Execute         llvm-ld /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lfloatconversion -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld returned 0; 0.56 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top conv -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.0.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label4' (conv/solution1/conv.cpp:86) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label3' (conv/solution1/conv.cpp:90) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label2' (conv/solution1/conv.cpp:95) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label1' (conv/solution1/conv.cpp:96) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label0' (conv/solution1/conv.cpp:97) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label0' (conv/solution1/conv.cpp:97) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' completely.
+Command         transform returned 0; 0.18 sec.
+Execute         disassemble /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.1 /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.1 
+Execute           is_encrypted /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.1.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.56 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 387 ; free virtual = 4237
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.1.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'buffer<100>::GetValue' into 'conv' (conv/solution1/conv.cpp:96) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv' (conv/solution1/conv.cpp:97) automatically.
+Command         transform returned 0; 0.1 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform returned 0; 0.06 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 490.066 ; gain = 142.004 ; free physical = 375 ; free virtual = 4225
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.g.1.bc to /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+Execute         transform -hls -tmp /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.1.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'buffer<100>::InsertBack' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:17).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv_label5' (conv/solution1/conv.cpp:85) in function 'conv' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:56) in function 'buffer<100>::InsertBack' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label4' (conv/solution1/conv.cpp:86) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label3' (conv/solution1/conv.cpp:90) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label2' (conv/solution1/conv.cpp:95) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label1' (conv/solution1/conv.cpp:96) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.2' (conv/solution1/conv.cpp:102) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.3' (conv/solution1/conv.cpp:120) in function 'conv' completely.
+Command         transform returned 0; 20.56 sec.
+INFO: [HLS 200-0] Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+Command         transform returned 0; 16.51 sec.
+Execute         disassemble /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.2 /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.2 
+Execute           is_encrypted /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.2.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.63 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:28 ; elapsed = 00:01:06 . Memory (MB): peak = 569.438 ; gain = 221.375 ; free physical = 193 ; free virtual = 4057
+INFO: [HLS 200-0] Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.2.bc -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'buffer<100>::InsertBack' to 'InsertBack' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:17)
+WARNING: [XFORM 203-631] Renaming function 'buffer<100>::GetValue' to 'GetValue' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:18)
+Command         transform returned 0; 100.83 sec.
+Execute         disassemble /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.3 /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.3 
+Execute           is_encrypted /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/a.o.3.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.55 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:03:09 ; elapsed = 00:02:47 . Memory (MB): peak = 681.434 ; gain = 333.371 ; free physical = 133 ; free virtual = 3972
+INFO: [HLS 200-0] Finish building internal data model.
+Command       opt_and_import_c returned 0; 140.61 sec.
+Command     elaborate returned 0; 166.59 sec.
+Execute     autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'conv' ...
+Execute       ap_set_top_model conv 
+Command       ap_set_top_model returned 0; 0.01 sec.
+Execute       get_model_list conv -filter all-wo-channel -topdown 
+Command       get_model_list returned 0; 0 sec.
+Execute       preproc_iomode -model conv 
+Command       preproc_iomode returned 0; 0.02 sec.
+Execute       preproc_iomode -model relu 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model GetValue 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model InsertBack 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       get_model_list conv -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: InsertBack GetValue relu conv
+INFO: [HLS 200-0] Configuring Module : InsertBack ...
+Execute       set_default_model InsertBack 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit InsertBack 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : GetValue ...
+Execute       set_default_model GetValue 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit GetValue 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : relu ...
+Execute       set_default_model relu 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit relu 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : conv ...
+Execute       set_default_model conv 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit conv 
+Command       apply_spec_resource_limit returned 0; 0.01 sec.
+INFO: [HLS 200-0] Model list for preprocess: InsertBack GetValue relu conv
+INFO: [HLS 200-0] Preprocessing Module: InsertBack ...
+Execute       set_default_model InsertBack 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model InsertBack 
+Command       cdfg_preprocess returned 0; 0.03 sec.
+Execute       rtl_gen_preprocess InsertBack 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: GetValue ...
+Execute       set_default_model GetValue 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model GetValue 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess GetValue 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: relu ...
+Execute       set_default_model relu 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model relu 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess relu 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: conv ...
+Execute       set_default_model conv 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model conv 
+Command       cdfg_preprocess returned 0; 83.21 sec.
+Execute       rtl_gen_preprocess conv 
+Command       rtl_gen_preprocess returned 0; 0.02 sec.
+INFO: [HLS 200-0] Model list for synthesis: InsertBack GetValue relu conv
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'InsertBack'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model InsertBack 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model InsertBack 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'InsertBack'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_1', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' and 'load' operation ('buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('buffer_array_V_load_4', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buffer_100_array_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 100, Depth = 100.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 1.38 sec.
+INFO: [HLS 200-111]  Elapsed time: 252 seconds; current allocated memory: 614.659 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/InsertBack.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 1.36 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/InsertBack.sched.adb -f 
+Command       db_write returned 0; 0.98 sec.
+INFO: [HLS 200-0] Finish scheduling InsertBack.
+Execute       set_default_model InsertBack 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model InsertBack 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=InsertBack
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.48 seconds; current allocated memory: 615.897 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/InsertBack.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 1.19 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/InsertBack.bind.adb -f 
+Command       db_write returned 0; 0.87 sec.
+INFO: [HLS 200-0] Finish binding InsertBack.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'GetValue'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model GetValue 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model GetValue 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'GetValue'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.08 seconds; current allocated memory: 615.973 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/GetValue.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.02 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/GetValue.sched.adb -f 
+Command       db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish scheduling GetValue.
+Execute       set_default_model GetValue 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model GetValue 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=GetValue
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 616.008 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/GetValue.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.02 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/GetValue.bind.adb -f 
+Command       db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish binding GetValue.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'relu'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model relu 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model relu 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'relu'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 616.068 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/relu.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.02 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/relu.sched.adb -f 
+Command       db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish scheduling relu.
+Execute       set_default_model relu 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model relu 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=relu
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 616.099 MB.
+Execute       report -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/relu.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.04 sec.
+Execute       db_write -o /home/sergiu/git/lic/hls/workspace/conv/solution1/.autopilot/db/relu.bind.adb -f 
+Command       db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish binding relu.

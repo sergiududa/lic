@@ -1,0 +1,26 @@
+digraph ap_test{
+graph [splines=ortho]
+rankdir=BT;
+size="500, 500";
+
+1 [shape=box fixedsize=true width=1.375 height=0.25]
+
+
+73[shape=box fixedsize=true width=1.9833333333333334 height=2.0]
+74[shape=box fixedsize=true width=1.75 height=2.0]
+75[shape=box fixedsize=true width=1.75 height=2.0]
+76[shape=box fixedsize=true width=1.75 height=2.0]
+77[shape=box fixedsize=true width=1.75 height=2.0]
+78[shape=box fixedsize=true width=1.75 height=2.0]
+79[shape=box fixedsize=true width=1.75 height=2.0]
+80[shape=box fixedsize=true width=1.75 height=2.0]
+
+80 -> 1
+73 -> 74
+74 -> 75
+75 -> 76
+76 -> 77
+77 -> 78
+78 -> 79
+79 -> 80
+}

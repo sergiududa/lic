@@ -28980,7 +28980,7 @@ inline bool operator!=(
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-typedef ap_fixed<24, 4> float24_t;
+typedef ap_fixed<16, 4> float24_t;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -47244,7 +47244,7 @@ _ssdm_op_SpecDataflowPipeline(-1, "");
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-typedef ap_fixed<24, 4> float24_t;
+typedef ap_fixed<16, 4> float24_t;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -47272,15 +47272,15 @@ void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
 #pragma empty_line
 #pragma empty_line
  for(i = 0; i < (32 - 4 + 1); i += 1)
-  for(j = 0; j < (32 - 4 + 1); j += 1)
+  conv_layer1_label9:for(j = 0; j < (32 - 4 + 1); j += 1)
   {
    conv_layer1_label2:for(filter = 0; filter < 8; filter++)
    {
 #pragma empty_line
     sum = 0;
-    for(row_offset = 0; row_offset <4; row_offset++)
-     for(col_offset = 0; col_offset <4; col_offset++)
-      for(channel_offset = 0; channel_offset < 1; channel_offset++)
+    conv_layer1_label6:for(row_offset = 0; row_offset <4; row_offset++)
+     conv_layer1_label7:for(col_offset = 0; col_offset <4; col_offset++)
+      conv_layer1_label8:for(channel_offset = 0; channel_offset < 1; channel_offset++)
        sum += conv_buff.getval(row_offset*32 * 1 + col_offset * 1 + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
     out<<relu(sum + bias[filter]);
    }
@@ -47334,13 +47334,13 @@ void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
  for(i = 0; i < (14 - 2 + 1); i += 1)
   conv_layer2_label5:for(j = 0; j < (14 - 2 + 1); j += 1)
   {
-   for(filter = 0; filter < 16; filter++)
+   conv_layer2_label12:for(filter = 0; filter < 16; filter++)
    {
 #pragma empty_line
     sum = 0;
-    for(row_offset = 0; row_offset <2; row_offset++)
-     for(col_offset = 0; col_offset <2; col_offset++)
-      for(channel_offset = 0; channel_offset < 8; channel_offset++)
+    conv_layer2_label13:for(row_offset = 0; row_offset <2; row_offset++)
+     conv_layer2_label10:for(col_offset = 0; col_offset <2; col_offset++)
+      conv_layer2_label11:for(channel_offset = 0; channel_offset < 8; channel_offset++)
        sum += conv_buff.getval(row_offset*14 * 8 + col_offset * 8 + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
     out<<relu(sum + bias[filter]);
    }
@@ -47383,9 +47383,9 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 #pragma empty_line
  for(i = 0 ; i < 14; i++)
   pool_layer1_label6:for(l = 0; l < 2; l++)
-  { for(j = 0 ; j < 14; j++)
-    for(m = 0; m < 2; m++)
-     for(k = 0 ; k < 8; k++)
+  { pool_layer1_label14:for(j = 0 ; j < 14; j++)
+    pool_layer1_label15:for(m = 0; m < 2; m++)
+     pool_layer1_label19:pool_layer1_label18:for(k = 0 ; k < 8; k++)
      {
       in>>read;
       if(l == 0 && m == 0)
@@ -47398,13 +47398,13 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
       if(l == (2 - 1) && m == (2 - 1))
        out<<pool_buff.val[j*8 + k][0];
      }
-  for(int skip = 14 * 2 ; skip < 29; skip++)
-   for(int channel = 0; channel < 8; channel++)
+  pool_layer1_label20:for(int skip = 14 * 2 ; skip < 29; skip++)
+   pool_layer1_label16:for(int channel = 0; channel < 8; channel++)
      in>>read;
  }
  pool_layer1_label7:for(int skip_row = 14 * 2 ; skip_row < 29; skip_row++)
-  for(int skip_col = 0 ; skip_col < 29; skip_col++)
-   for(int skip_channel = 0 ; skip_channel < 8; skip_channel++)
+  pool_layer1_label33:for(int skip_col = 0 ; skip_col < 29; skip_col++)
+   pool_layer1_label35:for(int skip_channel = 0 ; skip_channel < 8; skip_channel++)
     in>>read;
 }
 #pragma line 197 "nnet_stream/solution1/nnet.cpp"
@@ -47416,10 +47416,10 @@ void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
  hls::LineBuffer<(6*16),1,float24_t> pool_buff;
 #pragma empty_line
  for(i = 0 ; i < 6; i++)
-  pool_layer2_label8:for(l = 0; l < 2; l++)
-  { for(j = 0 ; j < 6; j++)
-    for(m = 0; m < 2; m++)
-     for(k = 0 ; k < 16; k++)
+  pool_layer2_label28:for(l = 0; l < 2; l++)
+  { pool_layer2_label0:for(j = 0 ; j < 6; j++)
+    pool_layer2_label26:for(m = 0; m < 2; m++)
+     pool_layer2_label36:for(k = 0 ; k < 16; k++)
      {
       in>>read;
       if(l == 0 && m == 0)
@@ -47432,13 +47432,13 @@ void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
       if(l == (2 - 1) && m == (2 - 1))
        out<<pool_buff.val[j*16 + k][0];
      }
-  for(int skip = 6 * 2 ; skip < 13; skip++)
-   for(int channel = 0; channel < 16; channel++)
+  pool_layer2_label38:for(int skip = 6 * 2 ; skip < 13; skip++)
+   pool_layer2_label37:for(int channel = 0; channel < 16; channel++)
      in>>read;
  }
  pool_layer2_label9:for(int skip_row = 6 * 2 ; skip_row < 13; skip_row++)
   pool_layer2_label16:for(int skip_col = 0 ; skip_col < 13; skip_col++)
-   for(int skip_channel = 0 ; skip_channel < 16; skip_channel++)
+   pool_layer2_label39:for(int skip_channel = 0 ; skip_channel < 16; skip_channel++)
     in>>read;
 }
 #pragma empty_line
@@ -47454,7 +47454,7 @@ void fc_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
  fc_layer1_label12:for(int j = 0; j < 576; j++)
  {
   in>>read;
-  for(int i = 0; i < 120; i++)
+  fc_layer1_label40:for(int i = 0; i < 120; i++)
   {
    output[i] += weight[j][i] * read;
   }
@@ -47471,7 +47471,7 @@ void fc_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
  fc_layer2_label13:for(int j = 0; j < 120; j++)
  {
   in>>read;
-  for(int i = 0; i < 84; i++)
+  fc_layer2_label41:for(int i = 0; i < 84; i++)
   {
    output[i] += weight[j][i] * read;
   }
@@ -47492,7 +47492,7 @@ void fc_layer3(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
  fc_layer3_label10:for(int j = 0; j < 84; j++)
  {
   in>>read;
-  for(int i = 0; i < 10; i++)
+  fc_layer3_label42:for(int i = 0; i < 10; i++)
   {
    output[i] += weight[j][i] * read;
   }

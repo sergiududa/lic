@@ -1,31 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;conv/solution1/conv.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;conv/solution1/conv.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 170 ; free virtual = 3923" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 178 ; free virtual = 3919" tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;STREAM&apos; cannot be applied: Function &apos;main&apos; does not exist in any synthesis source file." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;STREAM&apos; cannot be applied: Function &apos;main&apos; does not exist in any synthesis source file." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::sin_cos_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_K2&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::cos_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::cos_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;first_order_fixed_16::sin_cos_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::sin_cos_K2&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::cos_K3&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_cos_K4&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_cos_K2&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_cos_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_cos_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::cos_K4&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::sin_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::cos_K2&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::sin_cos_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_cos_K3&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::sin_K2&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_K3&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::sin_K4&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::cos_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;second_order_float::sin_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;first_order_fixed_16::sin_cos_K1&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sin_or_cos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::cos_K0&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1852" content="Directive &apos;RESOURCE&apos; for core &apos;ROM_1P_LUTRAM&apos; cannot be applied: Variable &apos;fourth_order_double::cos_K2&apos; can not be recognized(UNKNOWN VARIABLE) in &apos;sincos_approximation&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 416 ; free virtual = 4254" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:49 ; elapsed = 00:00:27 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 407 ; free virtual = 4254" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label1&apos; (conv/solution1/conv.c:26) in function &apos;conv&apos; completely." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 141 ; free virtual = 3916" tag=""/>
+	<Message prefix="[XFORM 203-503]" severity="WARNING" keynum="890" content="Ignored unroll directive &apos;conv_label4&apos; (conv/solution1/conv.cpp:86) in function &apos;conv(hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; (*) [4][1][8], ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)&apos;: multiple loop unroll directives in one loop, use the first one and ignore the rest." tag=""/>
+	<Message prefix="[XFORM 203-503]" severity="WARNING" keynum="890" content="Ignored unroll directive &apos;conv_label3&apos; (conv/solution1/conv.cpp:90) in function &apos;conv(hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; (*) [4][1][8], ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)&apos;: multiple loop unroll directives in one loop, use the first one and ignore the rest." tag=""/>
+	<Message prefix="[XFORM 203-503]" severity="WARNING" keynum="890" content="Ignored unroll directive &apos;conv_label2&apos; (conv/solution1/conv.cpp:95) in function &apos;conv(hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; (*) [4][1][8], ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)&apos;: multiple loop unroll directives in one loop, use the first one and ignore the rest." tag=""/>
+	<Message prefix="[XFORM 203-503]" severity="WARNING" keynum="890" content="Ignored unroll directive &apos;conv_label1&apos; (conv/solution1/conv.cpp:96) in function &apos;conv(hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; (*) [4][1][8], ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)&apos;: multiple loop unroll directives in one loop, use the first one and ignore the rest." tag=""/>
+	<Message prefix="[XFORM 203-503]" severity="WARNING" keynum="890" content="Ignored unroll directive &apos;conv_label0&apos; (conv/solution1/conv.cpp:97) in function &apos;conv(hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; (*) [4][1][8], ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)&apos;: multiple loop unroll directives in one loop, use the first one and ignore the rest." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label0&apos; (conv/solution1/conv.cpp:97) in function &apos;conv(hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, hls::stream&lt;ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;&amp;, ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt; (*) [4][1][8], ap_fixed&lt;24, 4, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)&apos; completely." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 387 ; free virtual = 4237" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.c:27) automatically." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 361.434 ; gain = 13.375 ; free physical = 138 ; free virtual = 3916" tag=""/>
-	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;conv_label4&apos; (conv/solution1/conv.c:18) in function &apos;conv&apos; for pipelining." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label3&apos; (conv/solution1/conv.c:19) in function &apos;conv&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label0&apos; (conv/solution1/conv.c:24) in function &apos;conv&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label2&apos; (conv/solution1/conv.c:25) in function &apos;conv&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.c:27) automatically." tag=""/>
-	<Message prefix="[XFORM 203-123]" severity="ERROR" keynum="1028" content="Cannot stream  &apos;output&apos; (conv/solution1/conv.c:5): The entries are not accessed in sequential order." tag=""/>
-	<Message prefix="[HLS 200-70]" severity="ERROR" keynum="HLS_70_1855" content="Pre-synthesis failed." tag=""/>
-	<Message prefix="[HLS 200-150]" severity="INFO" keynum="11" content="command &apos;ap_source&apos; returned error code
-    while executing
-&quot;source /home/sergiu/git/lic/hls/workspace/conv/solution1/csynth.tcl&quot;
-    invoked from within
-&quot;hls::main /home/sergiu/git/lic/hls/workspace/conv/solution1/csynth.tcl&quot;
-    (&quot;uplevel&quot; body line 1)
-    invoked from within
-&quot;uplevel 1 hls::main {*}$args&quot;
-    (procedure &quot;hls_proc&quot; line 5)
-    invoked from within
-&quot;hls_proc $argv&quot;" tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;buffer&lt;100&gt;::GetValue&apos; into &apos;conv&apos; (conv/solution1/conv.cpp:96) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;relu&apos; into &apos;conv&apos; (conv/solution1/conv.cpp:97) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 490.066 ; gain = 142.004 ; free physical = 375 ; free virtual = 4225" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="817" content="Unrolling all loops for pipelining in function &apos;buffer&lt;100&gt;::InsertBack&apos; (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:17)." tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;conv_label5&apos; (conv/solution1/conv.cpp:85) in function &apos;conv&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1&apos; (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:56) in function &apos;buffer&lt;100&gt;::InsertBack&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label4&apos; (conv/solution1/conv.cpp:86) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label3&apos; (conv/solution1/conv.cpp:90) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label2&apos; (conv/solution1/conv.cpp:95) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;conv_label1&apos; (conv/solution1/conv.cpp:96) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-3.1.2&apos; (conv/solution1/conv.cpp:102) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-3.1.3&apos; (conv/solution1/conv.cpp:120) in function &apos;conv&apos; completely." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:28 ; elapsed = 00:01:06 . Memory (MB): peak = 569.438 ; gain = 221.375 ; free physical = 193 ; free virtual = 4057" tag=""/>
+	<Message prefix="[XFORM 203-631]" severity="WARNING" keynum="902" content="Renaming function &apos;buffer&lt;100&gt;::InsertBack&apos; to &apos;InsertBack&apos; (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:17)" tag=""/>
+	<Message prefix="[XFORM 203-631]" severity="WARNING" keynum="902" content="Renaming function &apos;buffer&lt;100&gt;::GetValue&apos; to &apos;GetValue&apos; (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:18)" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:03:09 ; elapsed = 00:02:47 . Memory (MB): peak = 681.434 ; gain = 333.371 ; free physical = 133 ; free virtual = 3972" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;conv&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;InsertBack&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;InsertBack&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between &apos;store&apos; operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable &apos;buffer_array_V_load_1&apos;, /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array &apos;buffer_100_array_V&apos; and &apos;load&apos; operation (&apos;buffer_array_V_load&apos;, /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array &apos;buffer_100_array_V&apos;." tag=""/>
+	<Message prefix="[SCHED 204-69]" severity="WARNING" keynum="104" content="Unable to schedule &apos;load&apos; operation (&apos;buffer_array_V_load_4&apos;, /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array &apos;buffer_100_array_V&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;buffer_100_array_V&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 100, Depth = 100." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 252 seconds; current allocated memory: 614.659 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 2.48 seconds; current allocated memory: 615.897 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;GetValue&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 2.08 seconds; current allocated memory: 615.973 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.04 seconds; current allocated memory: 616.008 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;relu&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;relu&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 1." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.07 seconds; current allocated memory: 616.068 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.05 seconds; current allocated memory: 616.099 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;conv&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;conv_label5&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 100, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_3_0_2&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 101, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_3_0_2&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 102, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_3_0_3&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 103, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_3_0_3&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 180, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_5_2_2&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 218, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_6_3_1&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 237, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_7_1_2&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 247, distance = 1, offset = 1)
+   between &apos;call&apos; operation (&apos;p_08_0_7_2_3&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos; and &apos;call&apos; operation (&apos;p_s&apos;, conv/solution1/conv.cpp:96) to &apos;GetValue&apos;." tag=""/>
 </Messages>

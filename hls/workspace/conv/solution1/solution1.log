@@ -7,7 +7,122 @@ Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'conv/solution1/conv.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+WARNING: [HLS 200-40] Directive 'STREAM' cannot be applied: Function 'main' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'STREAM' cannot be applied: Function 'main' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 416 ; free virtual = 4254
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:49 ; elapsed = 00:00:27 . Memory (MB): peak = 361.438 ; gain = 13.375 ; free physical = 407 ; free virtual = 4254
+INFO: [HLS 200-10] Starting code transformations ...
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label4' (conv/solution1/conv.cpp:86) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label3' (conv/solution1/conv.cpp:90) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label2' (conv/solution1/conv.cpp:95) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label1' (conv/solution1/conv.cpp:96) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+WARNING: [XFORM 203-503] Ignored unroll directive 'conv_label0' (conv/solution1/conv.cpp:97) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)': multiple loop unroll directives in one loop, use the first one and ignore the rest.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label0' (conv/solution1/conv.cpp:97) in function 'conv(hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, hls::stream<ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >&, ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [4][1][8], ap_fixed<24, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' completely.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 489.434 ; gain = 141.371 ; free physical = 387 ; free virtual = 4237
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'buffer<100>::GetValue' into 'conv' (conv/solution1/conv.cpp:96) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv' (conv/solution1/conv.cpp:97) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 490.066 ; gain = 142.004 ; free physical = 375 ; free virtual = 4225
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'buffer<100>::InsertBack' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:17).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv_label5' (conv/solution1/conv.cpp:85) in function 'conv' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:56) in function 'buffer<100>::InsertBack' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label4' (conv/solution1/conv.cpp:86) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label3' (conv/solution1/conv.cpp:90) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label2' (conv/solution1/conv.cpp:95) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'conv_label1' (conv/solution1/conv.cpp:96) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.2' (conv/solution1/conv.cpp:102) in function 'conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.3' (conv/solution1/conv.cpp:120) in function 'conv' completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:28 ; elapsed = 00:01:06 . Memory (MB): peak = 569.438 ; gain = 221.375 ; free physical = 193 ; free virtual = 4057
+WARNING: [XFORM 203-631] Renaming function 'buffer<100>::InsertBack' to 'InsertBack' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:17)
+WARNING: [XFORM 203-631] Renaming function 'buffer<100>::GetValue' to 'GetValue' (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:18)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:03:09 ; elapsed = 00:02:47 . Memory (MB): peak = 681.434 ; gain = 333.371 ; free physical = 133 ; free virtual = 3972
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'InsertBack'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'InsertBack'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (/home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) of variable 'buffer_array_V_load_1', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57 on array 'buffer_100_array_V' and 'load' operation ('buffer_array_V_load', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('buffer_array_V_load_4', /home/sergiu/git/lic/hls/workspace/conv/headers/buffer.h:57) on array 'buffer_100_array_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buffer_100_array_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 100, Depth = 100.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 252 seconds; current allocated memory: 614.659 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.48 seconds; current allocated memory: 615.897 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'GetValue'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'GetValue'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.08 seconds; current allocated memory: 615.973 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 616.008 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'relu'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'relu'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 616.068 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 616.099 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'conv_label5'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 100, distance = 1, offset = 1)
+   between 'call' operation ('p_08_0_3_0_2', conv/solution1/conv.cpp:96) to 'GetValue' and 'call' operation ('p_s', conv/solution1/conv.cpp:96) to 'GetValue'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 101, distance = 1, offset = 1)
+   between 'call' operation ('p_08_0_3_0_2', conv/solution1/conv.cpp:96) to 'GetValue' and 'call' operation ('p_s', conv/solution1/conv.cpp:96) to 'GetValue'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 102, distance = 1, offset = 1)
+   between 'call' operation ('p_08_0_3_0_3', conv/solution1/conv.cpp:96) to 'GetValue' and 'call' operation ('p_s', conv/solution1/conv.cpp:96) to 'GetValue'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 103, distance = 1, offset = 1)
+   between 'call' operation ('p_08_0_3_0_3', conv/solution1/conv.cpp:96) to 'GetValue' and 'call' operation ('p_s', conv/solution1/conv.cpp:96) to 'GetValue'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 180, distance = 1, offset = 1)
+   between 'call' operation ('p_08_0_5_2_2', conv/solution1/conv.cpp:96) to 'GetValue' and 'call' operation ('p_s', conv/solution1/conv.cpp

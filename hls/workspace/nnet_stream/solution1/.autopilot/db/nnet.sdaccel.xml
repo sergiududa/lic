@@ -1,0 +1,146 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'nnet'" level="0">
+<item name = "Date">Thu Jun 14 14:04:28 2018
+</item>
+<item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
+<item name = "Project">nnet_stream</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">13.00</item>
+<item name = "Clock uncertainty (ns)">1.62</item>
+<item name = "Estimated clock period (ns)">13.91</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">70532, 70532, 70516, 70516, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="fc_layer1_U0">fc_layer1, 70515, 70515, 70515, 70515, none</column>
+<column name="pool_layer1_U0">pool_layer1, 6729, 6729, 6729, 6729, none</column>
+<column name="pool_layer2_U0">pool_layer2, 2705, 2705, 2705, 2705, none</column>
+<column name="fc_layer2_U0">fc_layer2, 10491, 10491, 10491, 10491, none</column>
+<column name="conv_layer1_U0">conv_layer1, 6940, 6940, 6940, 6940, none</column>
+<column name="conv_layer2_U0">conv_layer2, 5666, 10736, 5666, 10736, none</column>
+<column name="fc_layer3_U0">fc_layer3, 863, 863, 863, 863, none</column>
+<column name="Loop_1_proc138_U0">Loop_1_proc138, 2049, 2049, 2049, 2049, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 8</column>
+<column name="FIFO">0, -, 35, 196</column>
+<column name="Instance">95, 360, 28237, 38737</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, -</column>
+<column name="Register">-, -, 7, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">33, 163, 26, 73</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="Loop_1_proc138_U0">Loop_1_proc138, 1, 0, 26, 87</column>
+<column name="conv_layer1_U0">conv_layer1, 0, 114, 5329, 2216</column>
+<column name="conv_layer2_U0">conv_layer2, 0, 32, 5881, 1053</column>
+<column name="fc_layer1_U0">fc_layer1, 81, 120, 3083, 5528</column>
+<column name="fc_layer2_U0">fc_layer2, 12, 84, 2190, 3632</column>
+<column name="fc_layer3_U0">fc_layer3, 1, 10, 440, 502</column>
+<column name="pool_layer1_U0">pool_layer1, 0, 0, 5989, 13785</column>
+<column name="pool_layer2_U0">pool_layer2, 0, 0, 5299, 11934</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="conv1_out_V_V_U">0, 5, 28, 1, 16, 16</column>
+<column name="conv2_out_V_V_U">0, 5, 28, 1, 16, 16</column>
+<column name="fc1_out_V_V_U">0, 5, 28, 1, 16, 16</column>
+<column name="fc2_out_V_V_U">0, 5, 28, 1, 16, 16</column>
+<column name="image_in_V_V_U">0, 5, 28, 1, 16, 16</column>
+<column name="pool1_out_V_V_U">0, 5, 28, 1, 16, 16</column>
+<column name="pool2_out_V_V_U">0, 5, 28, 1, 16, 16</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_idle">and, 0, 0, 8, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="conv_layer1_U0_ap_start">1, 0, 1, 0</column>
+<column name="conv_layer2_U0_ap_start">1, 0, 1, 0</column>
+<column name="fc_layer1_U0_ap_start">1, 0, 1, 0</column>
+<column name="fc_layer2_U0_ap_start">1, 0, 1, 0</column>
+<column name="fc_layer3_U0_ap_start">1, 0, 1, 0</column>
+<column name="pool_layer1_U0_ap_start">1, 0, 1, 0</column>
+<column name="pool_layer2_U0_ap_start">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="fc3_out_V_V_din">out, 16, ap_fifo, fc3_out_V_V, pointer</column>
+<column name="fc3_out_V_V_full_n">in, 1, ap_fifo, fc3_out_V_V, pointer</column>
+<column name="fc3_out_V_V_write">out, 1, ap_fifo, fc3_out_V_V, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, nnet, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, nnet, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, nnet, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, nnet, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, nnet, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, nnet, return value</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">0.00</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+</table>
+</item>
+</section>
+</profile>

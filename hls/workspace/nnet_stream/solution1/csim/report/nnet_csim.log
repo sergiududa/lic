@@ -5,7 +5,7 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Generating csim.exe
 Checking FC Layer 3 ...
 Missmatch in FC3 check
-DONE: 5 out of 10 are correct
+DONE: 4 out of 10 are correct
 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************
