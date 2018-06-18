@@ -26,18 +26,18 @@ end;
 architecture behav of nnet is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "nnet,hls_ip_2017_4_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=13.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=13.906000,HLS_SYN_LAT=70532,HLS_SYN_TPT=70516,HLS_SYN_MEM=95,HLS_SYN_DSP=360,HLS_SYN_FF=28279,HLS_SYN_LUT=38941}";
+    "nnet,hls_ip_2017_4_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=13.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=13.906000,HLS_SYN_LAT=70532,HLS_SYN_TPT=70515,HLS_SYN_MEM=96,HLS_SYN_DSP=158,HLS_SYN_FF=23069,HLS_SYN_LUT=30779}";
     constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_logic_1 : STD_LOGIC := '1';
 
-    signal Loop_1_proc138_U0_ap_start : STD_LOGIC;
-    signal Loop_1_proc138_U0_ap_done : STD_LOGIC;
-    signal Loop_1_proc138_U0_ap_continue : STD_LOGIC;
-    signal Loop_1_proc138_U0_ap_idle : STD_LOGIC;
-    signal Loop_1_proc138_U0_ap_ready : STD_LOGIC;
-    signal Loop_1_proc138_U0_image_in_V_V_din : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_1_proc138_U0_image_in_V_V_write : STD_LOGIC;
+    signal Loop_1_proc137_U0_ap_start : STD_LOGIC;
+    signal Loop_1_proc137_U0_ap_done : STD_LOGIC;
+    signal Loop_1_proc137_U0_ap_continue : STD_LOGIC;
+    signal Loop_1_proc137_U0_ap_idle : STD_LOGIC;
+    signal Loop_1_proc137_U0_ap_ready : STD_LOGIC;
+    signal Loop_1_proc137_U0_image_in_V_V_din : STD_LOGIC_VECTOR (15 downto 0);
+    signal Loop_1_proc137_U0_image_in_V_V_write : STD_LOGIC;
     signal conv_layer1_U0_ap_start : STD_LOGIC := '0';
     signal conv_layer1_U0_ap_done : STD_LOGIC;
     signal conv_layer1_U0_ap_continue : STD_LOGIC;
@@ -118,8 +118,8 @@ architecture behav of nnet is
     signal fc2_out_V_V_empty_n : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
-    signal Loop_1_proc138_U0_start_full_n : STD_LOGIC;
-    signal Loop_1_proc138_U0_start_write : STD_LOGIC;
+    signal Loop_1_proc137_U0_start_full_n : STD_LOGIC;
+    signal Loop_1_proc137_U0_start_write : STD_LOGIC;
     signal conv_layer1_U0_start_full_n : STD_LOGIC;
     signal conv_layer1_U0_start_write : STD_LOGIC;
     signal pool_layer1_U0_start_full_n : STD_LOGIC;
@@ -135,7 +135,7 @@ architecture behav of nnet is
     signal fc_layer3_U0_start_full_n : STD_LOGIC;
     signal fc_layer3_U0_start_write : STD_LOGIC;
 
-    component Loop_1_proc138 IS
+    component Loop_1_proc137 IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
@@ -293,18 +293,18 @@ architecture behav of nnet is
 
 
 begin
-    Loop_1_proc138_U0 : component Loop_1_proc138
+    Loop_1_proc137_U0 : component Loop_1_proc137
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        ap_start => Loop_1_proc138_U0_ap_start,
-        ap_done => Loop_1_proc138_U0_ap_done,
-        ap_continue => Loop_1_proc138_U0_ap_continue,
-        ap_idle => Loop_1_proc138_U0_ap_idle,
-        ap_ready => Loop_1_proc138_U0_ap_ready,
-        image_in_V_V_din => Loop_1_proc138_U0_image_in_V_V_din,
+        ap_start => Loop_1_proc137_U0_ap_start,
+        ap_done => Loop_1_proc137_U0_ap_done,
+        ap_continue => Loop_1_proc137_U0_ap_continue,
+        ap_idle => Loop_1_proc137_U0_ap_idle,
+        ap_ready => Loop_1_proc137_U0_ap_ready,
+        image_in_V_V_din => Loop_1_proc137_U0_image_in_V_V_din,
         image_in_V_V_full_n => image_in_V_V_full_n,
-        image_in_V_V_write => Loop_1_proc138_U0_image_in_V_V_write);
+        image_in_V_V_write => Loop_1_proc137_U0_image_in_V_V_write);
 
     conv_layer1_U0 : component conv_layer1
     port map (
@@ -424,9 +424,9 @@ begin
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_1_proc138_U0_image_in_V_V_din,
+        if_din => Loop_1_proc137_U0_image_in_V_V_din,
         if_full_n => image_in_V_V_full_n,
-        if_write => Loop_1_proc138_U0_image_in_V_V_write,
+        if_write => Loop_1_proc137_U0_image_in_V_V_write,
         if_dout => image_in_V_V_dout,
         if_empty_n => image_in_V_V_empty_n,
         if_read => conv_layer1_U0_in_V_V_read);
@@ -596,12 +596,12 @@ begin
         end if;
     end process;
 
-    Loop_1_proc138_U0_ap_continue <= ap_const_logic_1;
-    Loop_1_proc138_U0_ap_start <= ap_start;
-    Loop_1_proc138_U0_start_full_n <= ap_const_logic_1;
-    Loop_1_proc138_U0_start_write <= ap_const_logic_0;
+    Loop_1_proc137_U0_ap_continue <= ap_const_logic_1;
+    Loop_1_proc137_U0_ap_start <= ap_start;
+    Loop_1_proc137_U0_start_full_n <= ap_const_logic_1;
+    Loop_1_proc137_U0_start_write <= ap_const_logic_0;
     ap_done <= fc_layer3_U0_ap_done;
-    ap_idle <= (pool_layer2_U0_ap_idle and pool_layer1_U0_ap_idle and fc_layer3_U0_ap_idle and fc_layer2_U0_ap_idle and fc_layer1_U0_ap_idle and conv_layer2_U0_ap_idle and conv_layer1_U0_ap_idle and Loop_1_proc138_U0_ap_idle);
+    ap_idle <= (pool_layer2_U0_ap_idle and pool_layer1_U0_ap_idle and fc_layer3_U0_ap_idle and fc_layer2_U0_ap_idle and fc_layer1_U0_ap_idle and conv_layer2_U0_ap_idle and conv_layer1_U0_ap_idle and Loop_1_proc137_U0_ap_idle);
     ap_ready <= fc_layer3_U0_ap_done;
     ap_sync_continue <= ap_const_logic_1;
     ap_sync_done <= fc_layer3_U0_ap_done;

@@ -5,6 +5,7 @@
 
 #include "ap_fixed.h"
 
+
 #define EXP_WIDTH	16
 #define INT_WIDTH	4
 
@@ -14,7 +15,7 @@ typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
 
 void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[CONV1_KERNEL_SIZE][CONV1_KERNEL_SIZE][CONV1_CHANNELS][CONV1_FILTERS], float24_t bias[CONV1_BIAS_SIZE])
 {
-	int i,j,k,filter, contor = 0;
+	int i,j,k,filter;
 	float24_t sum, placeholder;
 	int row_offset, col_offset, channel_offset;
 	hls::LineBuffer<CONV1_BUFFER_SIZE,1,float24_t> conv_buff;
@@ -45,7 +46,16 @@ void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
 				conv_layer1_label6:for(row_offset = 0; row_offset <CONV1_KERNEL_SIZE; row_offset++)
 					conv_layer1_label7:for(col_offset = 0; col_offset <CONV1_KERNEL_SIZE; col_offset++)
 						conv_layer1_label8:for(channel_offset = 0; channel_offset < CONV1_CHANNELS; channel_offset++)
-							sum += conv_buff.getval(row_offset*IMAGE_SIZE * IMAGE_CHANNELS +  col_offset * IMAGE_CHANNELS + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+						{
+							int t1,t2;
+							static float24_t val1,val2;
+							t1 = row_offset * IMAGE_SIZE * IMAGE_CHANNELS;
+							t2 = col_offset * IMAGE_CHANNELS;
+							val1 = conv_buff.getval(t1 +  t2  + channel_offset, 0);
+							val2 = weight[row_offset][col_offset][channel_offset][filter];
+							sum +=  val1 * val2;
+						}
+
 				out<<relu(sum + bias[filter]);
 			}
 
@@ -86,7 +96,7 @@ void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
 
 void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[CONV2_KERNEL_SIZE][CONV2_KERNEL_SIZE][CONV2_CHANNELS][CONV2_FILTERS], float24_t bias[CONV2_BIAS_SIZE])
 {
-	int i,j,k,filter, contor = 0;
+	int i,j,k,filter;
 	float24_t sum, placeholder;
 	int row_offset, col_offset, channel_offset;
 	hls::LineBuffer<CONV2_BUFFER_SIZE,1,float24_t> conv_buff;
@@ -117,7 +127,12 @@ void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
 				conv_layer2_label13:for(row_offset = 0; row_offset <CONV2_KERNEL_SIZE; row_offset++)
 					conv_layer2_label10:for(col_offset = 0; col_offset <CONV2_KERNEL_SIZE; col_offset++)
 						conv_layer2_label11:for(channel_offset = 0; channel_offset < CONV2_CHANNELS; channel_offset++)
-							sum += conv_buff.getval(row_offset*P1_SIZE * P1_CHANNELS +  col_offset * P1_CHANNELS + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+						{
+							int t1, t2;
+							t1 = row_offset*P1_SIZE * P1_CHANNELS;
+							t2 = col_offset * P1_CHANNELS;
+							sum += conv_buff.getval(t1 +  t2 + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+						}
 				out<<relu(sum + bias[filter]);
 			}
 
@@ -183,13 +198,6 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 			pool_layer1_label35:for(int skip_channel = 0 ; skip_channel < A1_CHANNELS; skip_channel++)
 				in>>read;
 }
-
-
-
-
-
-
-
 
 
 #define POOL2_BUFFER_SIZE (P2_SIZE*P2_CHANNELS)

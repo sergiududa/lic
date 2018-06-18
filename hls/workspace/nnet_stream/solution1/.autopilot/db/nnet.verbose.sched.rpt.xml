@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'nnet'" level="0">
-<item name = "Date">Thu Jun 14 14:00:31 2018
+<item name = "Date">Mon Jun 18 15:49:32 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet_stream</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">70532, 70532, 70516, 70516, dataflow</column>
+<column name="">70532, 70532, 70515, 70515, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="nnet,hls_ip_2017_4_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=13.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=13.906000,HLS_SYN_LAT=70532,HLS_SYN_TPT=70516,HLS_SYN_MEM=95,HLS_SYN_DSP=360,HLS_SYN_FF=28279,HLS_SYN_LUT=38941}" *)
+(* CORE_GENERATION_INFO="nnet,hls_ip_2017_4_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=13.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=13.906000,HLS_SYN_LAT=70532,HLS_SYN_TPT=70515,HLS_SYN_MEM=96,HLS_SYN_DSP=158,HLS_SYN_FF=23069,HLS_SYN_LUT=30779}" *)
 
 module nnet (
         fc3_out_V_V_din,
@@ -32,13 +32,13 @@ output   ap_done;
 output   ap_ready;
 output   ap_idle;
 
-wire    Loop_1_proc138_U0_ap_start;
-wire    Loop_1_proc138_U0_ap_done;
-wire    Loop_1_proc138_U0_ap_continue;
-wire    Loop_1_proc138_U0_ap_idle;
-wire    Loop_1_proc138_U0_ap_ready;
-wire   [15:0] Loop_1_proc138_U0_image_in_V_V_din;
-wire    Loop_1_proc138_U0_image_in_V_V_write;
+wire    Loop_1_proc137_U0_ap_start;
+wire    Loop_1_proc137_U0_ap_done;
+wire    Loop_1_proc137_U0_ap_continue;
+wire    Loop_1_proc137_U0_ap_idle;
+wire    Loop_1_proc137_U0_ap_ready;
+wire   [15:0] Loop_1_proc137_U0_image_in_V_V_din;
+wire    Loop_1_proc137_U0_image_in_V_V_write;
 reg    conv_layer1_U0_ap_start;
 wire    conv_layer1_U0_ap_done;
 wire    conv_layer1_U0_ap_continue;
@@ -119,8 +119,8 @@ wire   [15:0] fc2_out_V_V_dout;
 wire    fc2_out_V_V_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
-wire    Loop_1_proc138_U0_start_full_n;
-wire    Loop_1_proc138_U0_start_write;
+wire    Loop_1_proc137_U0_start_full_n;
+wire    Loop_1_proc137_U0_start_write;
 wire    conv_layer1_U0_start_full_n;
 wire    conv_layer1_U0_start_write;
 wire    pool_layer1_U0_start_full_n;
@@ -147,17 +147,17 @@ initial begin
 #0 fc_layer3_U0_ap_start = 1'b0;
 end
 
-Loop_1_proc138 Loop_1_proc138_U0(
+Loop_1_proc137 Loop_1_proc137_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(Loop_1_proc138_U0_ap_start),
-    .ap_done(Loop_1_proc138_U0_ap_done),
-    .ap_continue(Loop_1_proc138_U0_ap_continue),
-    .ap_idle(Loop_1_proc138_U0_ap_idle),
-    .ap_ready(Loop_1_proc138_U0_ap_ready),
-    .image_in_V_V_din(Loop_1_proc138_U0_image_in_V_V_din),
+    .ap_start(Loop_1_proc137_U0_ap_start),
+    .ap_done(Loop_1_proc137_U0_ap_done),
+    .ap_continue(Loop_1_proc137_U0_ap_continue),
+    .ap_idle(Loop_1_proc137_U0_ap_idle),
+    .ap_ready(Loop_1_proc137_U0_ap_ready),
+    .image_in_V_V_din(Loop_1_proc137_U0_image_in_V_V_din),
     .image_in_V_V_full_n(image_in_V_V_full_n),
-    .image_in_V_V_write(Loop_1_proc138_U0_image_in_V_V_write)
+    .image_in_V_V_write(Loop_1_proc137_U0_image_in_V_V_write)
 );
 
 conv_layer1 conv_layer1_U0(
@@ -277,9 +277,9 @@ fifo_w16_d1_A image_in_V_V_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_1_proc138_U0_image_in_V_V_din),
+    .if_din(Loop_1_proc137_U0_image_in_V_V_din),
     .if_full_n(image_in_V_V_full_n),
-    .if_write(Loop_1_proc138_U0_image_in_V_V_write),
+    .if_write(Loop_1_proc137_U0_image_in_V_V_write),
     .if_dout(image_in_V_V_dout),
     .if_empty_n(image_in_V_V_empty_n),
     .if_read(conv_layer1_U0_in_V_V_read)
@@ -419,17 +419,17 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign Loop_1_proc138_U0_ap_continue = 1'b1;
+assign Loop_1_proc137_U0_ap_continue = 1'b1;
 
-assign Loop_1_proc138_U0_ap_start = ap_start;
+assign Loop_1_proc137_U0_ap_start = ap_start;
 
-assign Loop_1_proc138_U0_start_full_n = 1'b1;
+assign Loop_1_proc137_U0_start_full_n = 1'b1;
 
-assign Loop_1_proc138_U0_start_write = 1'b0;
+assign Loop_1_proc137_U0_start_write = 1'b0;
 
 assign ap_done = fc_layer3_U0_ap_done;
 
-assign ap_idle = (pool_layer2_U0_ap_idle & pool_layer1_U0_ap_idle & fc_layer3_U0_ap_idle & fc_layer2_U0_ap_idle & fc_layer1_U0_ap_idle & conv_layer2_U0_ap_idle & conv_layer1_U0_ap_idle & Loop_1_proc138_U0_ap_idle);
+assign ap_idle = (pool_layer2_U0_ap_idle & pool_layer1_U0_ap_idle & fc_layer3_U0_ap_idle & fc_layer2_U0_ap_idle & fc_layer1_U0_ap_idle & conv_layer2_U0_ap_idle & conv_layer1_U0_ap_idle & Loop_1_proc137_U0_ap_idle);
 
 assign ap_ready = fc_layer3_U0_ap_done;
 

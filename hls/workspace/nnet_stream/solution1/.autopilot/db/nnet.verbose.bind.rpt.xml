@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'nnet'" level="0">
-<item name = "Date">Thu Jun 14 14:00:37 2018
+<item name = "Date">Mon Jun 18 15:49:38 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet_stream</item>
@@ -24,21 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">70532, 70532, 70516, 70516, dataflow</column>
+<column name="">70532, 70532, 70515, 70515, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_fc_layer1_fu_290">fc_layer1, 70515, 70515, 70515, 70515, none</column>
-<column name="grp_pool_layer1_fu_298">pool_layer1, 6729, 6729, 6729, 6729, none</column>
-<column name="grp_pool_layer2_fu_304">pool_layer2, 2705, 2705, 2705, 2705, none</column>
-<column name="grp_fc_layer2_fu_310">fc_layer2, 10491, 10491, 10491, 10491, none</column>
-<column name="grp_conv_layer1_fu_318">conv_layer1, 6940, 6940, 6940, 6940, none</column>
-<column name="grp_conv_layer2_fu_324">conv_layer2, 5666, 10736, 5666, 10736, none</column>
-<column name="grp_fc_layer3_fu_396">fc_layer3, 863, 863, 863, 863, none</column>
-<column name="grp_Loop_1_proc138_fu_423">Loop_1_proc138, 2049, 2049, 2049, 2049, none</column>
+<column name="grp_pool_layer1_fu_272">pool_layer1, 6729, 6729, 6729, 6729, none</column>
+<column name="grp_pool_layer2_fu_278">pool_layer2, 2705, 2705, 2705, 2705, none</column>
+<column name="grp_conv_layer1_fu_284">conv_layer1, 6940, 6940, 6940, 6940, none</column>
+<column name="grp_conv_layer2_fu_290">conv_layer2, 5666, 10736, 5666, 10736, none</column>
+<column name="grp_fc_layer1_fu_362">fc_layer1, 70514, 70514, 70514, 70514, none</column>
+<column name="grp_fc_layer2_fu_370">fc_layer2, 10490, 10490, 10490, 10490, none</column>
+<column name="grp_fc_layer3_fu_378">fc_layer3, 1198, 1198, 1198, 1198, none</column>
+<column name="grp_Loop_1_proc137_fu_387">Loop_1_proc137, 2049, 2049, 2049, 2049, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

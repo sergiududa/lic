@@ -32,9 +32,6 @@
         <directive functionName="conv_layer2" label="conv_layer2_label13" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
-        <directive functionName="conv_layer2" label="conv_layer2_label4" functionLabel="">
-            <pragma name="UNROLL"/>
-        </directive>
         <directive functionName="conv_layer2" label="conv_layer2_label3" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
@@ -109,26 +106,11 @@
         <directive functionName="fc_layer1" label="fc_layer1_label30" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
-        <directive functionName="fc_layer1" label="fc_layer1_label12" functionLabel="">
-            <pragma name="PIPELINE">
-                <option name="II" value="122"/>
-            </pragma>
-        </directive>
         <directive functionName="fc_layer2" label="fc_layer2_label31" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
-        <directive functionName="fc_layer2" label="fc_layer2_label13" functionLabel="">
-            <pragma name="PIPELINE">
-                <option name="II" value="86"/>
-            </pragma>
-        </directive>
         <directive functionName="fc_layer3" label="fc_layer3_label32" functionLabel="">
             <pragma name="UNROLL"/>
-        </directive>
-        <directive functionName="fc_layer3" label="fc_layer3_label10" functionLabel="">
-            <pragma name="PIPELINE">
-                <option name="II" value="10"/>
-            </pragma>
         </directive>
         <directive functionName="pool_layer1" label="pool_layer1_label33" functionLabel="">
             <pragma name="UNROLL"/>
@@ -151,20 +133,29 @@
         <directive functionName="pool_layer2" label="pool_layer2_label39" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
-        <directive functionName="fc_layer1" label="fc_layer1_label40" functionLabel="">
-            <pragma name="UNROLL"/>
-        </directive>
-        <directive functionName="fc_layer2" label="fc_layer2_label41" functionLabel="">
-            <pragma name="UNROLL"/>
-        </directive>
-        <directive functionName="fc_layer3" label="fc_layer3_label42" functionLabel="">
-            <pragma name="UNROLL"/>
-        </directive>
         <directive functionName="pool_layer2" label="pool_layer2_label0" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
         <directive functionName="pool_layer2" label="pool_layer2_label28" functionLabel="">
             <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv_layer2" label="conv_layer2_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="fc_layer2" label="fc_layer2_label41" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="fc_layer1" label="fc_layer1_label40" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="fc_layer3" label="fc_layer3_label42" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="4"/>
+            </pragma>
         </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>

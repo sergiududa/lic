@@ -47783,13 +47783,14 @@ _ssdm_op_SpecDataflowPipeline(-1, "");
 
 
 
+
 typedef ap_fixed<16, 4> float24_t;
 
 
 
 void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[4][4][1][8], float24_t bias[8])
 {_ssdm_SpecArrayDimSize(bias,8);_ssdm_SpecArrayDimSize(weight,4);
- int i,j,k,filter, contor = 0;
+ int i,j,k,filter;
  float24_t sum, placeholder;
  int row_offset, col_offset, channel_offset;
  hls::LineBuffer<(32 * 1 * (4 -1) + 4 * 1),1,float24_t> conv_buff;
@@ -47814,28 +47815,37 @@ void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
   conv_layer1_label9:for(j = 0; j < (32 - 4 + 1); j += 1)
   {
 #pragma HLS PIPELINE II=8
-#40 "nnet_stream/solution1/nnet.cpp"
+#41 "nnet_stream/solution1/nnet.cpp"
 
    conv_layer1_label2:for(filter = 0; filter < 8; filter++)
    {
 #pragma HLS UNROLL
-#42 "nnet_stream/solution1/nnet.cpp"
+#43 "nnet_stream/solution1/nnet.cpp"
 
 
     sum = 0;
     conv_layer1_label6:for(row_offset = 0; row_offset <4; row_offset++)
      
 #pragma HLS UNROLL
-#46 "nnet_stream/solution1/nnet.cpp"
+#47 "nnet_stream/solution1/nnet.cpp"
 conv_layer1_label7:for(col_offset = 0; col_offset <4; col_offset++)
       
 #pragma HLS UNROLL
-#47 "nnet_stream/solution1/nnet.cpp"
-conv_layer1_label8:for(channel_offset = 0; channel_offset < 1; channel_offset++)
-       
-#pragma HLS UNROLL
 #48 "nnet_stream/solution1/nnet.cpp"
-sum += conv_buff.getval(row_offset*32 * 1 + col_offset * 1 + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+conv_layer1_label8:for(channel_offset = 0; channel_offset < 1; channel_offset++)
+      {
+#pragma HLS UNROLL
+#49 "nnet_stream/solution1/nnet.cpp"
+
+       int t1,t2;
+       static float24_t val1,val2;
+       t1 = row_offset * 32 * 1;
+       t2 = col_offset * 1;
+       val1 = conv_buff.getval(t1 + t2 + channel_offset, 0);
+       val2 = weight[row_offset][col_offset][channel_offset][filter];
+       sum += val1 * val2;
+      }
+
     out<<relu(sum + bias[filter]);
    }
 
@@ -47845,7 +47855,7 @@ sum += conv_buff.getval(row_offset*32 * 1 + col_offset * 1 + channel_offset, 0) 
     conv_layer1_label1:for(int p = 0 ; p<1; p++)
      
 #pragma HLS UNROLL
-#56 "nnet_stream/solution1/nnet.cpp"
+#66 "nnet_stream/solution1/nnet.cpp"
 if(in.empty() == 0)
      {
       in>>placeholder;
@@ -47858,7 +47868,7 @@ if(in.empty() == 0)
      conv_layer1_label0:for(int p = 0 ; p<4 * 1; p++)
       
 #pragma HLS UNROLL
-#66 "nnet_stream/solution1/nnet.cpp"
+#76 "nnet_stream/solution1/nnet.cpp"
 if(in.empty() == 0)
       {
        in>>placeholder;
@@ -47867,10 +47877,10 @@ if(in.empty() == 0)
       }
   }
 }
-#87 "nnet_stream/solution1/nnet.cpp"
+#97 "nnet_stream/solution1/nnet.cpp"
 void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[2][2][8][16], float24_t bias[16])
 {_ssdm_SpecArrayDimSize(bias,16);_ssdm_SpecArrayDimSize(weight,2);
- int i,j,k,filter, contor = 0;
+ int i,j,k,filter;
  float24_t sum, placeholder;
  int row_offset, col_offset, channel_offset;
  hls::LineBuffer<(14 * 8 * (2 -1) + 2 * 8),1,float24_t> conv_buff;
@@ -47897,23 +47907,28 @@ void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float2
    conv_layer2_label12:for(filter = 0; filter < 16; filter++)
    {
 #pragma HLS PIPELINE
-#114 "nnet_stream/solution1/nnet.cpp"
+#124 "nnet_stream/solution1/nnet.cpp"
 
 
     sum = 0;
     conv_layer2_label13:for(row_offset = 0; row_offset <2; row_offset++)
      
 #pragma HLS UNROLL
-#118 "nnet_stream/solution1/nnet.cpp"
+#128 "nnet_stream/solution1/nnet.cpp"
 conv_layer2_label10:for(col_offset = 0; col_offset <2; col_offset++)
       
 #pragma HLS UNROLL
-#119 "nnet_stream/solution1/nnet.cpp"
+#129 "nnet_stream/solution1/nnet.cpp"
 conv_layer2_label11:for(channel_offset = 0; channel_offset < 8; channel_offset++)
-       
+      {
 #pragma HLS UNROLL
-#120 "nnet_stream/solution1/nnet.cpp"
-sum += conv_buff.getval(row_offset*14 * 8 + col_offset * 8 + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+#130 "nnet_stream/solution1/nnet.cpp"
+
+       int t1, t2;
+       t1 = row_offset*14 * 8;
+       t2 = col_offset * 8;
+       sum += conv_buff.getval(t1 + t2 + channel_offset, 0) * weight[row_offset][col_offset][channel_offset][filter];
+      }
     out<<relu(sum + bias[filter]);
    }
 
@@ -47923,7 +47938,7 @@ sum += conv_buff.getval(row_offset*14 * 8 + col_offset * 8 + channel_offset, 0) 
     conv_layer2_label3:for(int p = 0 ; p<8; p++)
      
 #pragma HLS UNROLL
-#128 "nnet_stream/solution1/nnet.cpp"
+#143 "nnet_stream/solution1/nnet.cpp"
 if(in.empty() == 0)
      {
       in>>placeholder;
@@ -47936,7 +47951,7 @@ if(in.empty() == 0)
      conv_layer2_label4:for(int p = 0 ; p<2 * 8; p++)
       
 #pragma HLS UNROLL
-#138 "nnet_stream/solution1/nnet.cpp"
+#153 "nnet_stream/solution1/nnet.cpp"
 if(in.empty() == 0)
       {
        in>>placeholder;
@@ -47963,22 +47978,22 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
   pool_layer1_label6:for(l = 0; l < 2; l++)
   {
 #pragma HLS PIPELINE II=232
-#162 "nnet_stream/solution1/nnet.cpp"
+#177 "nnet_stream/solution1/nnet.cpp"
  pool_layer1_label14:for(j = 0 ; j < 14; j++)
     
 #pragma HLS UNROLL
-#163 "nnet_stream/solution1/nnet.cpp"
+#178 "nnet_stream/solution1/nnet.cpp"
 pool_layer1_label15:for(m = 0; m < 2; m++)
      
 #pragma HLS UNROLL
-#164 "nnet_stream/solution1/nnet.cpp"
+#179 "nnet_stream/solution1/nnet.cpp"
 pool_layer1_label19:pool_layer1_label18:for(k = 0 ; k < 8; k++)
      {
 #pragma HLS UNROLL
-#164 "nnet_stream/solution1/nnet.cpp"
+#179 "nnet_stream/solution1/nnet.cpp"
 
 #pragma HLS UNROLL
-#165 "nnet_stream/solution1/nnet.cpp"
+#180 "nnet_stream/solution1/nnet.cpp"
 
       in>>read;
       if(l == 0 && m == 0)
@@ -47994,28 +48009,31 @@ pool_layer1_label19:pool_layer1_label18:for(k = 0 ; k < 8; k++)
   pool_layer1_label20:for(int skip = 14 * 2 ; skip < 29; skip++)
    
 #pragma HLS UNROLL
-#178 "nnet_stream/solution1/nnet.cpp"
+#193 "nnet_stream/solution1/nnet.cpp"
 pool_layer1_label16:for(int channel = 0; channel < 8; channel++)
      
 #pragma HLS UNROLL
-#179 "nnet_stream/solution1/nnet.cpp"
+#194 "nnet_stream/solution1/nnet.cpp"
 in>>read;
  }
  pool_layer1_label7:for(int skip_row = 14 * 2 ; skip_row < 29; skip_row++)
   
 #pragma HLS PIPELINE
-#182 "nnet_stream/solution1/nnet.cpp"
+#197 "nnet_stream/solution1/nnet.cpp"
 pool_layer1_label33:for(int skip_col = 0 ; skip_col < 29; skip_col++)
    
 #pragma HLS UNROLL
-#183 "nnet_stream/solution1/nnet.cpp"
+#198 "nnet_stream/solution1/nnet.cpp"
 pool_layer1_label35:for(int skip_channel = 0 ; skip_channel < 8; skip_channel++)
     
 #pragma HLS UNROLL
-#184 "nnet_stream/solution1/nnet.cpp"
+#199 "nnet_stream/solution1/nnet.cpp"
 in>>read;
 }
-#197 "nnet_stream/solution1/nnet.cpp"
+
+
+
+
 void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
 {
 
@@ -48027,19 +48045,19 @@ void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in)
   pool_layer2_label28:for(l = 0; l < 2; l++)
   {
 #pragma HLS PIPELINE
-#206 "nnet_stream/solution1/nnet.cpp"
+#214 "nnet_stream/solution1/nnet.cpp"
  pool_layer2_label0:for(j = 0 ; j < 6; j++)
     
 #pragma HLS UNROLL
-#207 "nnet_stream/solution1/nnet.cpp"
+#215 "nnet_stream/solution1/nnet.cpp"
 pool_layer2_label26:for(m = 0; m < 2; m++)
      
 #pragma HLS UNROLL
-#208 "nnet_stream/solution1/nnet.cpp"
+#216 "nnet_stream/solution1/nnet.cpp"
 pool_layer2_label36:for(k = 0 ; k < 16; k++)
      {
 #pragma HLS UNROLL
-#209 "nnet_stream/solution1/nnet.cpp"
+#217 "nnet_stream/solution1/nnet.cpp"
 
       in>>read;
       if(l == 0 && m == 0)
@@ -48055,25 +48073,25 @@ pool_layer2_label36:for(k = 0 ; k < 16; k++)
   pool_layer2_label38:for(int skip = 6 * 2 ; skip < 13; skip++)
    
 #pragma HLS UNROLL
-#222 "nnet_stream/solution1/nnet.cpp"
+#230 "nnet_stream/solution1/nnet.cpp"
 pool_layer2_label37:for(int channel = 0; channel < 16; channel++)
      
 #pragma HLS UNROLL
-#223 "nnet_stream/solution1/nnet.cpp"
+#231 "nnet_stream/solution1/nnet.cpp"
 in>>read;
  }
  pool_layer2_label9:for(int skip_row = 6 * 2 ; skip_row < 13; skip_row++)
   
 #pragma HLS PIPELINE
-#226 "nnet_stream/solution1/nnet.cpp"
+#234 "nnet_stream/solution1/nnet.cpp"
 pool_layer2_label16:for(int skip_col = 0 ; skip_col < 13; skip_col++)
    
 #pragma HLS UNROLL
-#227 "nnet_stream/solution1/nnet.cpp"
+#235 "nnet_stream/solution1/nnet.cpp"
 pool_layer2_label39:for(int skip_channel = 0 ; skip_channel < 16; skip_channel++)
     
 #pragma HLS UNROLL
-#228 "nnet_stream/solution1/nnet.cpp"
+#236 "nnet_stream/solution1/nnet.cpp"
 in>>read;
 }
 
@@ -48088,14 +48106,11 @@ void fc_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
  float24_t output[120] = {0};
  fc_layer1_label12:for(int j = 0; j < 576; j++)
  {
-#pragma HLS PIPELINE II=122
-#241 "nnet_stream/solution1/nnet.cpp"
-
   in>>read;
   fc_layer1_label40:for(int i = 0; i < 120; i++)
   {
-#pragma HLS UNROLL
-#244 "nnet_stream/solution1/nnet.cpp"
+#pragma HLS UNROLL factor=4
+#252 "nnet_stream/solution1/nnet.cpp"
 
    output[i] += weight[j][i] * read;
   }
@@ -48104,21 +48119,18 @@ void fc_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
   out<< relu(output[i] + bias[i]);
 
 }
-#260 "nnet_stream/solution1/nnet.cpp"
+#268 "nnet_stream/solution1/nnet.cpp"
 void fc_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_t weight[120][84], float24_t bias[84])
 {_ssdm_SpecArrayDimSize(bias,84);_ssdm_SpecArrayDimSize(weight,120);
  float24_t read;
  float24_t output[84] = {0};
  fc_layer2_label13:for(int j = 0; j < 120; j++)
  {
-#pragma HLS PIPELINE II=86
-#265 "nnet_stream/solution1/nnet.cpp"
-
   in>>read;
   fc_layer2_label41:for(int i = 0; i < 84; i++)
   {
-#pragma HLS UNROLL
-#268 "nnet_stream/solution1/nnet.cpp"
+#pragma HLS UNROLL factor=4
+#276 "nnet_stream/solution1/nnet.cpp"
 
    output[i] += weight[j][i] * read;
   }
@@ -48138,14 +48150,11 @@ void fc_layer3(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
  float24_t output[10] = {0};
  fc_layer3_label10:for(int j = 0; j < 84; j++)
  {
-#pragma HLS PIPELINE II=10
-#286 "nnet_stream/solution1/nnet.cpp"
-
   in>>read;
   fc_layer3_label42:for(int i = 0; i < 10; i++)
   {
-#pragma HLS UNROLL
-#289 "nnet_stream/solution1/nnet.cpp"
+#pragma HLS UNROLL factor=4
+#297 "nnet_stream/solution1/nnet.cpp"
 
    output[i] += weight[j][i] * read;
   }
@@ -48161,7 +48170,7 @@ void fc_layer3(hls::stream<float24_t> &out, hls::stream<float24_t> &in, float24_
 void nnet(hls::stream<float24_t> &fc3_out)
 {
 #pragma HLS DATAFLOW
-#302 "nnet_stream/solution1/nnet.cpp"
+#310 "nnet_stream/solution1/nnet.cpp"
 
  hls::stream<float24_t> conv1_out("conv1_out");
  hls::stream<float24_t> conv2_out("conv2_out");

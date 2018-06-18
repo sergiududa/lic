@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'conv_layer2'" level="0">
-<item name = "Date">Thu Jun 14 14:01:49 2018
+<item name = "Date">Mon Jun 18 15:50:51 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet_stream</item>
@@ -276,11 +276,11 @@
 <column name="filter_1_fu_2918_p2">+, 0, 0, 15, 5, 1</column>
 <column name="i_2_fu_2854_p2">+, 0, 0, 13, 4, 1</column>
 <column name="i_3_fu_2848_p2">+, 0, 0, 15, 8, 1</column>
-<column name="i_3_mid1_fu_2878_p2">+, 0, 0, 13, 4, 2</column>
+<column name="i_4_mid1_fu_2878_p2">+, 0, 0, 13, 4, 2</column>
 <column name="indvar_flatten_next_fu_2872_p2">+, 0, 0, 15, 8, 1</column>
 <column name="j_op_fu_3718_p2">+, 0, 0, 13, 4, 1</column>
-<column name="p_Val2_cast_530_fu_3694_p2">+, 0, 0, 22, 15, 15</column>
-<column name="p_Val2_s_529_fu_3688_p2">+, 0, 0, 23, 16, 16</column>
+<column name="p_Val2_cast_520_fu_3694_p2">+, 0, 0, 22, 15, 15</column>
+<column name="p_Val2_s_519_fu_3688_p2">+, 0, 0, 23, 16, 16</column>
 <column name="ap_block_pp0_stage0_01001">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state18_pp0_stage0_iter13">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state3">and, 0, 0, 8, 1, 1</column>
@@ -400,7 +400,6 @@
 <column name="p_Val2_s_reg_5167">12, 0, 12, 0</column>
 <column name="reg_2837">16, 0, 16, 0</column>
 <column name="tmp_11_reg_5201">1, 0, 1, 0</column>
-<column name="tmp_12_reg_5197">1, 0, 1, 0</column>
 <column name="tmp_1_1_reg_5335">1, 0, 1, 0</column>
 <column name="tmp_1_2_reg_5344">1, 0, 1, 0</column>
 <column name="tmp_1_3_reg_5353">1, 0, 1, 0</column>
@@ -409,16 +408,8 @@
 <column name="tmp_1_6_reg_5380">1, 0, 1, 0</column>
 <column name="tmp_1_7_reg_5389">1, 0, 1, 0</column>
 <column name="tmp_1_reg_5193">1, 0, 1, 0</column>
-<column name="tmp_212_reg_4807">16, 0, 16, 0</column>
-<column name="tmp_215_reg_4847">16, 0, 16, 0</column>
-<column name="tmp_218_reg_4887">16, 0, 16, 0</column>
-<column name="tmp_221_reg_4927">16, 0, 16, 0</column>
-<column name="tmp_224_reg_4967">16, 0, 16, 0</column>
-<column name="tmp_227_reg_5007">16, 0, 16, 0</column>
-<column name="tmp_230_reg_5047">16, 0, 16, 0</column>
-<column name="tmp_233_reg_5087">16, 0, 16, 0</column>
-<column name="tmp_236_reg_5142">16, 0, 16, 0</column>
-<column name="tmp_239_reg_5178">16, 0, 16, 0</column>
+<column name="tmp_20_reg_5197">1, 0, 1, 0</column>
+<column name="tmp_29_reg_4807">16, 0, 16, 0</column>
 <column name="tmp_2_10_reg_5295">1, 0, 1, 0</column>
 <column name="tmp_2_11_reg_5304">1, 0, 1, 0</column>
 <column name="tmp_2_12_reg_5313">1, 0, 1, 0</column>
@@ -435,6 +426,15 @@
 <column name="tmp_2_9_reg_5277">1, 0, 1, 0</column>
 <column name="tmp_2_reg_4708">5, 0, 64, 59</column>
 <column name="tmp_2_s_reg_5286">1, 0, 1, 0</column>
+<column name="tmp_32_reg_4847">16, 0, 16, 0</column>
+<column name="tmp_35_reg_4887">16, 0, 16, 0</column>
+<column name="tmp_38_reg_4927">16, 0, 16, 0</column>
+<column name="tmp_41_reg_4967">16, 0, 16, 0</column>
+<column name="tmp_44_reg_5007">16, 0, 16, 0</column>
+<column name="tmp_47_reg_5047">16, 0, 16, 0</column>
+<column name="tmp_50_reg_5087">16, 0, 16, 0</column>
+<column name="tmp_53_reg_5142">16, 0, 16, 0</column>
+<column name="tmp_56_reg_5178">16, 0, 16, 0</column>
 <column name="tmp_6_reg_4757">15, 0, 15, 0</column>
 <column name="tmp_V_716_reg_5339">16, 0, 16, 0</column>
 <column name="tmp_V_718_reg_5348">16, 0, 16, 0</column>

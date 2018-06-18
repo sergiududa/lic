@@ -24,18 +24,18 @@
 <Best-caseLatency>70532</Best-caseLatency>
 <Average-caseLatency>70532</Average-caseLatency>
 <Worst-caseLatency>70532</Worst-caseLatency>
-<DataflowPipelineThroughput>70516</DataflowPipelineThroughput>
-<Interval-min>70516</Interval-min>
-<Interval-max>70516</Interval-max>
+<DataflowPipelineThroughput>70515</DataflowPipelineThroughput>
+<Interval-min>70515</Interval-min>
+<Interval-max>70515</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>95</BRAM_18K>
-<DSP48E>360</DSP48E>
-<FF>28279</FF>
-<LUT>38941</LUT>
+<BRAM_18K>96</BRAM_18K>
+<DSP48E>158</DSP48E>
+<FF>23069</FF>
+<LUT>30779</LUT>
 </Resources>
 <AvailableResources>
 <BRAM_18K>280</BRAM_18K>

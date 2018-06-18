@@ -17,17 +17,17 @@ const sc_logic nnet::ap_const_logic_0 = sc_dt::Log_0;
 const sc_logic nnet::ap_const_logic_1 = sc_dt::Log_1;
 
 nnet::nnet(sc_module_name name) : sc_module(name), mVcdFile(0) {
-    Loop_1_proc138_U0 = new Loop_1_proc138("Loop_1_proc138_U0");
-    Loop_1_proc138_U0->ap_clk(ap_clk);
-    Loop_1_proc138_U0->ap_rst(ap_rst);
-    Loop_1_proc138_U0->ap_start(Loop_1_proc138_U0_ap_start);
-    Loop_1_proc138_U0->ap_done(Loop_1_proc138_U0_ap_done);
-    Loop_1_proc138_U0->ap_continue(Loop_1_proc138_U0_ap_continue);
-    Loop_1_proc138_U0->ap_idle(Loop_1_proc138_U0_ap_idle);
-    Loop_1_proc138_U0->ap_ready(Loop_1_proc138_U0_ap_ready);
-    Loop_1_proc138_U0->image_in_V_V_din(Loop_1_proc138_U0_image_in_V_V_din);
-    Loop_1_proc138_U0->image_in_V_V_full_n(image_in_V_V_full_n);
-    Loop_1_proc138_U0->image_in_V_V_write(Loop_1_proc138_U0_image_in_V_V_write);
+    Loop_1_proc137_U0 = new Loop_1_proc137("Loop_1_proc137_U0");
+    Loop_1_proc137_U0->ap_clk(ap_clk);
+    Loop_1_proc137_U0->ap_rst(ap_rst);
+    Loop_1_proc137_U0->ap_start(Loop_1_proc137_U0_ap_start);
+    Loop_1_proc137_U0->ap_done(Loop_1_proc137_U0_ap_done);
+    Loop_1_proc137_U0->ap_continue(Loop_1_proc137_U0_ap_continue);
+    Loop_1_proc137_U0->ap_idle(Loop_1_proc137_U0_ap_idle);
+    Loop_1_proc137_U0->ap_ready(Loop_1_proc137_U0_ap_ready);
+    Loop_1_proc137_U0->image_in_V_V_din(Loop_1_proc137_U0_image_in_V_V_din);
+    Loop_1_proc137_U0->image_in_V_V_full_n(image_in_V_V_full_n);
+    Loop_1_proc137_U0->image_in_V_V_write(Loop_1_proc137_U0_image_in_V_V_write);
     conv_layer1_U0 = new conv_layer1("conv_layer1_U0");
     conv_layer1_U0->ap_clk(ap_clk);
     conv_layer1_U0->ap_rst(ap_rst);
@@ -131,9 +131,9 @@ nnet::nnet(sc_module_name name) : sc_module(name), mVcdFile(0) {
     image_in_V_V_U->reset(ap_rst);
     image_in_V_V_U->if_read_ce(ap_var_for_const0);
     image_in_V_V_U->if_write_ce(ap_var_for_const0);
-    image_in_V_V_U->if_din(Loop_1_proc138_U0_image_in_V_V_din);
+    image_in_V_V_U->if_din(Loop_1_proc137_U0_image_in_V_V_din);
     image_in_V_V_U->if_full_n(image_in_V_V_full_n);
-    image_in_V_V_U->if_write(Loop_1_proc138_U0_image_in_V_V_write);
+    image_in_V_V_U->if_write(Loop_1_proc137_U0_image_in_V_V_write);
     image_in_V_V_U->if_dout(image_in_V_V_dout);
     image_in_V_V_U->if_empty_n(image_in_V_V_empty_n);
     image_in_V_V_U->if_read(conv_layer1_U0_in_V_V_read);
@@ -208,20 +208,20 @@ nnet::nnet(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dont_initialize();
     sensitive << ( ap_clk.pos() );
 
-    SC_METHOD(thread_Loop_1_proc138_U0_ap_continue);
+    SC_METHOD(thread_Loop_1_proc137_U0_ap_continue);
 
-    SC_METHOD(thread_Loop_1_proc138_U0_ap_start);
+    SC_METHOD(thread_Loop_1_proc137_U0_ap_start);
     sensitive << ( ap_start );
 
-    SC_METHOD(thread_Loop_1_proc138_U0_start_full_n);
+    SC_METHOD(thread_Loop_1_proc137_U0_start_full_n);
 
-    SC_METHOD(thread_Loop_1_proc138_U0_start_write);
+    SC_METHOD(thread_Loop_1_proc137_U0_start_write);
 
     SC_METHOD(thread_ap_done);
     sensitive << ( fc_layer3_U0_ap_done );
 
     SC_METHOD(thread_ap_idle);
-    sensitive << ( Loop_1_proc138_U0_ap_idle );
+    sensitive << ( Loop_1_proc137_U0_ap_idle );
     sensitive << ( conv_layer1_U0_ap_idle );
     sensitive << ( pool_layer1_U0_ap_idle );
     sensitive << ( conv_layer2_U0_ap_idle );
@@ -320,13 +320,13 @@ nnet::nnet(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ap_idle, "(port)ap_idle");
 #endif
 #ifdef __HLS_TRACE_LEVEL_INT__
-    sc_trace(mVcdFile, Loop_1_proc138_U0_ap_start, "Loop_1_proc138_U0_ap_start");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_ap_done, "Loop_1_proc138_U0_ap_done");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_ap_continue, "Loop_1_proc138_U0_ap_continue");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_ap_idle, "Loop_1_proc138_U0_ap_idle");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_ap_ready, "Loop_1_proc138_U0_ap_ready");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_image_in_V_V_din, "Loop_1_proc138_U0_image_in_V_V_din");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_image_in_V_V_write, "Loop_1_proc138_U0_image_in_V_V_write");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_ap_start, "Loop_1_proc137_U0_ap_start");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_ap_done, "Loop_1_proc137_U0_ap_done");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_ap_continue, "Loop_1_proc137_U0_ap_continue");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_ap_idle, "Loop_1_proc137_U0_ap_idle");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_ap_ready, "Loop_1_proc137_U0_ap_ready");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_image_in_V_V_din, "Loop_1_proc137_U0_image_in_V_V_din");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_image_in_V_V_write, "Loop_1_proc137_U0_image_in_V_V_write");
     sc_trace(mVcdFile, conv_layer1_U0_ap_start, "conv_layer1_U0_ap_start");
     sc_trace(mVcdFile, conv_layer1_U0_ap_done, "conv_layer1_U0_ap_done");
     sc_trace(mVcdFile, conv_layer1_U0_ap_continue, "conv_layer1_U0_ap_continue");
@@ -407,8 +407,8 @@ nnet::nnet(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, fc2_out_V_V_empty_n, "fc2_out_V_V_empty_n");
     sc_trace(mVcdFile, ap_sync_done, "ap_sync_done");
     sc_trace(mVcdFile, ap_sync_ready, "ap_sync_ready");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_start_full_n, "Loop_1_proc138_U0_start_full_n");
-    sc_trace(mVcdFile, Loop_1_proc138_U0_start_write, "Loop_1_proc138_U0_start_write");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_start_full_n, "Loop_1_proc137_U0_start_full_n");
+    sc_trace(mVcdFile, Loop_1_proc137_U0_start_write, "Loop_1_proc137_U0_start_write");
     sc_trace(mVcdFile, conv_layer1_U0_start_full_n, "conv_layer1_U0_start_full_n");
     sc_trace(mVcdFile, conv_layer1_U0_start_write, "conv_layer1_U0_start_write");
     sc_trace(mVcdFile, pool_layer1_U0_start_full_n, "pool_layer1_U0_start_full_n");
@@ -438,7 +438,7 @@ nnet::~nnet() {
     mHdltvoutHandle << "] " << endl;
     mHdltvinHandle.close();
     mHdltvoutHandle.close();
-    delete Loop_1_proc138_U0;
+    delete Loop_1_proc137_U0;
     delete conv_layer1_U0;
     delete pool_layer1_U0;
     delete conv_layer2_U0;
@@ -497,20 +497,20 @@ void nnet::thread_ap_clk_no_reset_() {
     }
 }
 
-void nnet::thread_Loop_1_proc138_U0_ap_continue() {
-    Loop_1_proc138_U0_ap_continue = ap_const_logic_1;
+void nnet::thread_Loop_1_proc137_U0_ap_continue() {
+    Loop_1_proc137_U0_ap_continue = ap_const_logic_1;
 }
 
-void nnet::thread_Loop_1_proc138_U0_ap_start() {
-    Loop_1_proc138_U0_ap_start = ap_start.read();
+void nnet::thread_Loop_1_proc137_U0_ap_start() {
+    Loop_1_proc137_U0_ap_start = ap_start.read();
 }
 
-void nnet::thread_Loop_1_proc138_U0_start_full_n() {
-    Loop_1_proc138_U0_start_full_n = ap_const_logic_1;
+void nnet::thread_Loop_1_proc137_U0_start_full_n() {
+    Loop_1_proc137_U0_start_full_n = ap_const_logic_1;
 }
 
-void nnet::thread_Loop_1_proc138_U0_start_write() {
-    Loop_1_proc138_U0_start_write = ap_const_logic_0;
+void nnet::thread_Loop_1_proc137_U0_start_write() {
+    Loop_1_proc137_U0_start_write = ap_const_logic_0;
 }
 
 void nnet::thread_ap_done() {
@@ -518,7 +518,7 @@ void nnet::thread_ap_done() {
 }
 
 void nnet::thread_ap_idle() {
-    ap_idle = (Loop_1_proc138_U0_ap_idle.read() & conv_layer1_U0_ap_idle.read() & pool_layer1_U0_ap_idle.read() & conv_layer2_U0_ap_idle.read() & pool_layer2_U0_ap_idle.read() & fc_layer1_U0_ap_idle.read() & fc_layer2_U0_ap_idle.read() & fc_layer3_U0_ap_idle.read());
+    ap_idle = (Loop_1_proc137_U0_ap_idle.read() & conv_layer1_U0_ap_idle.read() & pool_layer1_U0_ap_idle.read() & conv_layer2_U0_ap_idle.read() & pool_layer2_U0_ap_idle.read() & fc_layer1_U0_ap_idle.read() & fc_layer2_U0_ap_idle.read() & fc_layer3_U0_ap_idle.read());
 }
 
 void nnet::thread_ap_ready() {

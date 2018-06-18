@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vivado HLS Report for 'Loop_1_proc137'
+================================================================
+* Date:           Mon Jun 18 15:42:17 2018
+
+* Version:        2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)
+* Project:        nnet_stream
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  13.00|      6.89|        1.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  2049|  2049|  2049|  2049|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  2048|  2048|         2|          -|          -|  1024|    no    |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond_i_i)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecInterface(i16* %image_in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str181, i32 0, i32 0, [1 x i8]* @p_str182, [1 x i8]* @p_str183, [1 x i8]* @p_str184, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str185, [1 x i8]* @p_str186)"
+ST_1 : Operation 5 [1/1] (1.76ns)   --->   "br label %0"
+
+ <State 2> : 3.25ns
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%i_0_i_i = phi i11 [ 0, %newFuncRoot ], [ %i, %1 ]"
+ST_2 : Operation 7 [1/1] (1.88ns)   --->   "%exitcond_i_i = icmp eq i11 %i_0_i_i, -1024" [nnet_stream/solution1/nnet.cpp:319]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%empty_590 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024)"
+ST_2 : Operation 9 [1/1] (1.97ns)   --->   "%i = add i11 %i_0_i_i, 1" [nnet_stream/solution1/nnet.cpp:319]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.97> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %exitcond_i_i, label %nnet_.exit.exitStub, label %1" [nnet_stream/solution1/nnet.cpp:319]
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_i = zext i11 %i_0_i_i to i64" [nnet_stream/solution1/nnet.cpp:320]
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%image_V_addr = getelementptr [1024 x i12]* @image_V, i64 0, i64 %tmp_i" [nnet_stream/solution1/nnet.cpp:320]
+ST_2 : Operation 13 [2/2] (3.25ns)   --->   "%tmp_V = load i12* %image_V_addr, align 2" [nnet_stream/solution1/nnet.cpp:320]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 12> <Depth = 1024> <ROM>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "ret void"
+
+ <State 3> : 6.89ns
+ST_3 : Operation 15 [1/2] (3.25ns)   --->   "%tmp_V = load i12* %image_V_addr, align 2" [nnet_stream/solution1/nnet.cpp:320]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 12> <Depth = 1024> <ROM>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_V_753 = zext i12 %tmp_V to i16" [nnet_stream/solution1/nnet.cpp:320]
+ST_3 : Operation 17 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i16P(i16* %image_in_V_V, i16 %tmp_V_753)" [nnet_stream/solution1/nnet.cpp:320]   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 1> <FIFO>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "br label %0" [nnet_stream/solution1/nnet.cpp:319]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 13ns, clock uncertainty: 1.62ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', nnet_stream/solution1/nnet.cpp:319) [6]  (1.77 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', nnet_stream/solution1/nnet.cpp:319) [6]  (0 ns)
+	'getelementptr' operation ('image_V_addr', nnet_stream/solution1/nnet.cpp:320) [13]  (0 ns)
+	'load' operation ('tmp.V', nnet_stream/solution1/nnet.cpp:320) on array 'image_V' [14]  (3.25 ns)
+
+ <State 3>: 6.89ns
+The critical path consists of the following:
+	'load' operation ('tmp.V', nnet_stream/solution1/nnet.cpp:320) on array 'image_V' [14]  (3.25 ns)
+	fifo write on port 'image_in_V_V' (nnet_stream/solution1/nnet.cpp:320) [16]  (3.63 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

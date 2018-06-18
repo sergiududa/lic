@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'nnet'" level="0">
-<item name = "Date">Thu Jun 14 14:04:28 2018
+<item name = "Date">Mon Jun 18 15:53:20 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet_stream</item>
@@ -24,21 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">70532, 70532, 70516, 70516, dataflow</column>
+<column name="">70532, 70532, 70515, 70515, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="fc_layer1_U0">fc_layer1, 70515, 70515, 70515, 70515, none</column>
 <column name="pool_layer1_U0">pool_layer1, 6729, 6729, 6729, 6729, none</column>
 <column name="pool_layer2_U0">pool_layer2, 2705, 2705, 2705, 2705, none</column>
-<column name="fc_layer2_U0">fc_layer2, 10491, 10491, 10491, 10491, none</column>
 <column name="conv_layer1_U0">conv_layer1, 6940, 6940, 6940, 6940, none</column>
 <column name="conv_layer2_U0">conv_layer2, 5666, 10736, 5666, 10736, none</column>
-<column name="fc_layer3_U0">fc_layer3, 863, 863, 863, 863, none</column>
-<column name="Loop_1_proc138_U0">Loop_1_proc138, 2049, 2049, 2049, 2049, none</column>
+<column name="fc_layer1_U0">fc_layer1, 70514, 70514, 70514, 70514, none</column>
+<column name="fc_layer2_U0">fc_layer2, 10490, 10490, 10490, 10490, none</column>
+<column name="fc_layer3_U0">fc_layer3, 1198, 1198, 1198, 1198, none</column>
+<column name="Loop_1_proc137_U0">Loop_1_proc137, 2049, 2049, 2049, 2049, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -57,26 +57,26 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 8</column>
 <column name="FIFO">0, -, 35, 196</column>
-<column name="Instance">95, 360, 28237, 38737</column>
+<column name="Instance">96, 158, 23027, 30575</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, -</column>
 <column name="Register">-, -, 7, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">33, 163, 26, 73</specialColumn>
+<specialColumn name="Utilization (%)">34, 71, 21, 57</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="Loop_1_proc138_U0">Loop_1_proc138, 1, 0, 26, 87</column>
+<column name="Loop_1_proc137_U0">Loop_1_proc137, 1, 0, 26, 87</column>
 <column name="conv_layer1_U0">conv_layer1, 0, 114, 5329, 2216</column>
 <column name="conv_layer2_U0">conv_layer2, 0, 32, 5881, 1053</column>
-<column name="fc_layer1_U0">fc_layer1, 81, 120, 3083, 5528</column>
-<column name="fc_layer2_U0">fc_layer2, 12, 84, 2190, 3632</column>
-<column name="fc_layer3_U0">fc_layer3, 1, 10, 440, 502</column>
+<column name="fc_layer1_U0">fc_layer1, 81, 4, 187, 523</column>
+<column name="fc_layer2_U0">fc_layer2, 12, 4, 194, 508</column>
+<column name="fc_layer3_U0">fc_layer3, 2, 4, 120, 469</column>
 <column name="pool_layer1_U0">pool_layer1, 0, 0, 5989, 13785</column>
-<column name="pool_layer2_U0">pool_layer2, 0, 0, 5299, 11934</column>
+<column name="pool_layer2_U0">pool_layer2, 0, 0, 5301, 11934</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">

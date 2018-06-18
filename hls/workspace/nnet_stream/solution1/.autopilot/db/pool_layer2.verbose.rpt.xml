@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pool_layer2'" level="0">
-<item name = "Date">Thu Jun 14 14:03:30 2018
+<item name = "Date">Mon Jun 18 15:52:54 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet_stream</item>
@@ -53,7 +53,7 @@
 <column name="Instance">-, -, -, -</column>
 <column name="Memory">0, -, 3072, 96</column>
 <column name="Multiplexer">-, -, -, 2315</column>
-<column name="Register">-, -, 2227, -</column>
+<column name="Register">-, -, 2229, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, 4, 22</specialColumn>
 </table>
@@ -980,6 +980,7 @@
 <column name="exitcond_flatten_reg_5600">1, 0, 1, 0</column>
 <column name="indvar_flatten_next_reg_5604">4, 0, 4, 0</column>
 <column name="indvar_flatten_reg_1631">4, 0, 4, 0</column>
+<column name="l_1_reg_6295">2, 0, 2, 0</column>
 <column name="l_mid2_reg_5609">2, 0, 2, 0</column>
 <column name="l_reg_1642">2, 0, 2, 0</column>
 <column name="pool_buff_val_0_V_l_reg_5620">16, 0, 16, 0</column>

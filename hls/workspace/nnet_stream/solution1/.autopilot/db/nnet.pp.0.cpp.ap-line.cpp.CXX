@@ -1426,6 +1426,5 @@
 #pragma line 5 "nnet_stream/solution1/nnet.cpp" 2 ::: 47238
 #pragma line 1 "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_fixed.h" 1 ::: 47240
 #pragma line 7 "nnet_stream/solution1/nnet.cpp" 2 ::: 47241
-#pragma line 87 "nnet_stream/solution1/nnet.cpp" ::: 47309
-#pragma line 197 "nnet_stream/solution1/nnet.cpp" ::: 47409
-#pragma line 260 "nnet_stream/solution1/nnet.cpp" ::: 47465
+#pragma line 97 "nnet_stream/solution1/nnet.cpp" ::: 47319
+#pragma line 268 "nnet_stream/solution1/nnet.cpp" ::: 47483

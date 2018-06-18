@@ -11,7 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "Loop_1_proc138.h"
+#include "Loop_1_proc137.h"
 #include "conv_layer1.h"
 #include "pool_layer1.h"
 #include "conv_layer2.h"
@@ -47,7 +47,7 @@ struct nnet : public sc_module {
 
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
-    Loop_1_proc138* Loop_1_proc138_U0;
+    Loop_1_proc137* Loop_1_proc137_U0;
     conv_layer1* conv_layer1_U0;
     pool_layer1* pool_layer1_U0;
     conv_layer2* conv_layer2_U0;
@@ -62,13 +62,13 @@ struct nnet : public sc_module {
     fifo_w16_d1_A* pool2_out_V_V_U;
     fifo_w16_d1_A* fc1_out_V_V_U;
     fifo_w16_d1_A* fc2_out_V_V_U;
-    sc_signal< sc_logic > Loop_1_proc138_U0_ap_start;
-    sc_signal< sc_logic > Loop_1_proc138_U0_ap_done;
-    sc_signal< sc_logic > Loop_1_proc138_U0_ap_continue;
-    sc_signal< sc_logic > Loop_1_proc138_U0_ap_idle;
-    sc_signal< sc_logic > Loop_1_proc138_U0_ap_ready;
-    sc_signal< sc_lv<16> > Loop_1_proc138_U0_image_in_V_V_din;
-    sc_signal< sc_logic > Loop_1_proc138_U0_image_in_V_V_write;
+    sc_signal< sc_logic > Loop_1_proc137_U0_ap_start;
+    sc_signal< sc_logic > Loop_1_proc137_U0_ap_done;
+    sc_signal< sc_logic > Loop_1_proc137_U0_ap_continue;
+    sc_signal< sc_logic > Loop_1_proc137_U0_ap_idle;
+    sc_signal< sc_logic > Loop_1_proc137_U0_ap_ready;
+    sc_signal< sc_lv<16> > Loop_1_proc137_U0_image_in_V_V_din;
+    sc_signal< sc_logic > Loop_1_proc137_U0_image_in_V_V_write;
     sc_signal< sc_logic > conv_layer1_U0_ap_start;
     sc_signal< sc_logic > conv_layer1_U0_ap_done;
     sc_signal< sc_logic > conv_layer1_U0_ap_continue;
@@ -149,8 +149,8 @@ struct nnet : public sc_module {
     sc_signal< sc_logic > fc2_out_V_V_empty_n;
     sc_signal< sc_logic > ap_sync_done;
     sc_signal< sc_logic > ap_sync_ready;
-    sc_signal< sc_logic > Loop_1_proc138_U0_start_full_n;
-    sc_signal< sc_logic > Loop_1_proc138_U0_start_write;
+    sc_signal< sc_logic > Loop_1_proc137_U0_start_full_n;
+    sc_signal< sc_logic > Loop_1_proc137_U0_start_write;
     sc_signal< sc_logic > conv_layer1_U0_start_full_n;
     sc_signal< sc_logic > conv_layer1_U0_start_write;
     sc_signal< sc_logic > pool_layer1_U0_start_full_n;
@@ -171,10 +171,10 @@ struct nnet : public sc_module {
     // Thread declarations
     void thread_ap_var_for_const0();
     void thread_ap_clk_no_reset_();
-    void thread_Loop_1_proc138_U0_ap_continue();
-    void thread_Loop_1_proc138_U0_ap_start();
-    void thread_Loop_1_proc138_U0_start_full_n();
-    void thread_Loop_1_proc138_U0_start_write();
+    void thread_Loop_1_proc137_U0_ap_continue();
+    void thread_Loop_1_proc137_U0_ap_start();
+    void thread_Loop_1_proc137_U0_start_full_n();
+    void thread_Loop_1_proc137_U0_start_write();
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();

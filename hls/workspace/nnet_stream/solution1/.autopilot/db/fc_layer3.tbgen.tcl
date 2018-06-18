@@ -49,7 +49,7 @@ set NewPortList {[
  	{ "name": "in_V_V_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "in_V_V", "role": "read" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6"],
 		"CDFG" : "fc_layer3",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -64,59 +64,26 @@ set RtlHierarchyInfo {[
 			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "fc_layer3_weights_V_10", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_1", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_2", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_3", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_4", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_5", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_6", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_7", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_8", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_9", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_10_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_1_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_2_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_3_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_4_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_5_U", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_6_U", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_7_U", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_8_U", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_9_U", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.output_V_U", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U425", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U426", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U427", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ikb_U428", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U429", "Parent" : "0"},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U430", "Parent" : "0"},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U431", "Parent" : "0"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U432", "Parent" : "0"},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ijb_U433", "Parent" : "0"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1ikb_U434", "Parent" : "0"}]}
+			{"Name" : "fc_layer3_weights_V", "Type" : "Memory", "Direction" : "I"}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_weights_V_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.output_V_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1h9b_U228", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1h9b_U229", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1iab_U230", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.nnet_mac_muladd_1iab_U231", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	fc_layer3 {
-		out_V_V {Type O LastRead -1 FirstWrite 4}
-		in_V_V {Type I LastRead 2 FirstWrite -1}
-		fc_layer3_weights_V_10 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_1 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_2 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_3 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_4 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_5 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_6 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_7 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_8 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_9 {Type I LastRead -1 FirstWrite -1}}}
+		out_V_V {Type O LastRead -1 FirstWrite 3}
+		in_V_V {Type I LastRead 1 FirstWrite -1}
+		fc_layer3_weights_V {Type I LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "863", "Max" : "863"}
-	, {"Name" : "Interval", "Min" : "863", "Max" : "863"}
+	{"Name" : "Latency", "Min" : "1198", "Max" : "1198"}
+	, {"Name" : "Interval", "Min" : "1198", "Max" : "1198"}
 ]}
 
 set PipelineEnableSignalInfo {[

@@ -1,10 +1,10 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 421
-set MemName fc_layer2_fc_layeh8b
+set ID 224
+set MemName fc_layer2_fc_layeh7b
 set CoreName ap_simcore_mem
-set PortList { 1 }
+set PortList { 1 1 }
 set DataWd 11
 set AddrRange 10080
 set AddrWd 14
@@ -29,7 +29,7 @@ if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
     sync_rst true \
     stage_num ${NumOfStage}  \
     registered_input ${RegisteredInput} \
-    port_num 1 \
+    port_num 2 \
     port_list \{${PortList}\} \
     data_wd ${DataWd} \
     addr_wd ${AddrWd} \
@@ -63,7 +63,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
     sync_rst true \
     stage_num ${NumOfStage}  \
     registered_input ${RegisteredInput} \
-    port_num 1 \
+    port_num 2 \
     port_list \{${PortList}\} \
     data_wd ${DataWd} \
     addr_wd ${AddrWd} \
@@ -81,7 +81,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 422
+set ID 225
 set MemName fc_layer2_output_V
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
@@ -172,7 +172,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 423 \
+    id 226 \
     name out_V_V \
     type fifo \
     dir O \
@@ -187,7 +187,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 424 \
+    id 227 \
     name in_V_V \
     type fifo \
     dir I \

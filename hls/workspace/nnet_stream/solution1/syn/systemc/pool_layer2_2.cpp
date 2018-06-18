@@ -65,7 +65,7 @@ void pool_layer2::thread_ap_clk_no_reset_() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter1.read()) && 
          esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0))) {
-        l_reg_1642 = l_1_fu_5115_p2.read();
+        l_reg_1642 = l_1_reg_6295.read();
     } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && 
                 !(esl_seteq<1,1,1>(ap_const_logic_0, ap_start.read()) || esl_seteq<1,1,1>(ap_done_reg.read(), ap_const_logic_1)))) {
         l_reg_1642 = ap_const_lv2_0;
@@ -75,6 +75,9 @@ void pool_layer2::thread_ap_clk_no_reset_() {
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter0.read()) && esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0))) {
         indvar_flatten_next_reg_5604 = indvar_flatten_next_fu_1724_p2.read();
+    }
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter0.read()) && esl_seteq<1,1,1>(exitcond_flatten_reg_5600.read(), ap_const_lv1_0) && esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage193.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage193_11001.read(), ap_const_boolean_0))) {
+        l_1_reg_6295 = l_1_fu_5115_p2.read();
     }
     if ((esl_seteq<1,1,1>(exitcond_flatten_reg_5600.read(), ap_const_lv1_0) && esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage1.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage1_11001.read(), ap_const_boolean_0))) {
         l_mid2_reg_5609 = l_mid2_fu_1736_p3.read();

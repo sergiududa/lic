@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'fc_layer2'" level="0">
-<item name = "Date">Thu Jun 14 13:59:59 2018
+<item name = "Date">Mon Jun 18 15:49:26 2018
 </item>
 <item name = "Version">2017.4.1 (Build 2117188 on Tue Jan 30 15:53:01 MST 2018)</item>
 <item name = "Project">nnet_stream</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">10491, 10491, 10491, 10491, none</column>
+<column name="">10490, 10490, 10490, 10490, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- fc_layer2_label13">10320, 10320, 86, 86, 86, 120, yes</column>
+<column name="- fc_layer2_label13">10320, 10320, 86, -, -, 120, no</column>
+<column name=" + fc_layer2_label41">84, 84, 4, -, -, 21, no</column>
 <column name="- fc_layer2_label11">168, 168, 2, -, -, 84, no</column>
 </table>
 </item>

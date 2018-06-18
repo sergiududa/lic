@@ -2,12 +2,6 @@
     <checksum>
         <value string="false"/>
     </checksum>
-    <downStreamTool>
-        <DownStreamTool name="vivado"/>
-    </downStreamTool>
-    <clockList>
-        <clock default="false" name="default" period="13"/>
-    </clockList>
     <config>
         <schedule model="nnet"/>
     </config>
@@ -69,5 +63,11 @@
         <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
         <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
     </libraryList>
+    <downStreamTool>
+        <DownStreamTool name="vivado"/>
+    </downStreamTool>
+    <clockList>
+        <clock default="false" name="default" period="13"/>
+    </clockList>
 </solution>
 

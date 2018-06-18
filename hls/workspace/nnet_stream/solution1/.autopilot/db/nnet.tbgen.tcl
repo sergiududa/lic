@@ -47,7 +47,7 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "3", "218", "331", "525", "622", "745", "832", "854", "855", "856", "857", "858", "859", "860"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "3", "218", "331", "525", "622", "629", "636", "643", "644", "645", "646", "647", "648", "649"],
 		"CDFG" : "nnet",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
@@ -57,14 +57,14 @@ set RtlHierarchyInfo {[
 		"VariableLatency" : "1",
 		"InputProcess" : [],
 		"OutputProcess" : [
-			{"ID" : "832", "Name" : "fc_layer3_U0"}],
+			{"ID" : "636", "Name" : "fc_layer3_U0"}],
 		"Port" : [
 			{"Name" : "fc3_out_V_V", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "out_V_V"}]},
+					{"ID" : "636", "SubInstance" : "fc_layer3_U0", "Port" : "out_V_V"}]},
 			{"Name" : "image_V", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "Loop_1_proc138_U0", "Port" : "image_V"}]},
+					{"ID" : "1", "SubInstance" : "Loop_1_proc137_U0", "Port" : "image_V"}]},
 			{"Name" : "conv_layer2_weights_63", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "331", "SubInstance" : "conv_layer2_U0", "Port" : "conv_layer2_weights_63"}]},
@@ -169,39 +169,12 @@ set RtlHierarchyInfo {[
 					{"ID" : "622", "SubInstance" : "fc_layer1_U0", "Port" : "fc_layer1_weights_V"}]},
 			{"Name" : "fc_layer2_weights_V", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "745", "SubInstance" : "fc_layer2_U0", "Port" : "fc_layer2_weights_V"}]},
-			{"Name" : "fc_layer3_weights_V_10", "Type" : "Memory", "Direction" : "I",
+					{"ID" : "629", "SubInstance" : "fc_layer2_U0", "Port" : "fc_layer2_weights_V"}]},
+			{"Name" : "fc_layer3_weights_V", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_10"}]},
-			{"Name" : "fc_layer3_weights_V_1", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_1"}]},
-			{"Name" : "fc_layer3_weights_V_2", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_2"}]},
-			{"Name" : "fc_layer3_weights_V_3", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_3"}]},
-			{"Name" : "fc_layer3_weights_V_4", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_4"}]},
-			{"Name" : "fc_layer3_weights_V_5", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_5"}]},
-			{"Name" : "fc_layer3_weights_V_6", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_6"}]},
-			{"Name" : "fc_layer3_weights_V_7", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_7"}]},
-			{"Name" : "fc_layer3_weights_V_8", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_8"}]},
-			{"Name" : "fc_layer3_weights_V_9", "Type" : "Memory", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "832", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V_9"}]}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Loop_1_proc138_U0", "Parent" : "0", "Child" : ["2"],
-		"CDFG" : "Loop_1_proc138",
+					{"ID" : "636", "SubInstance" : "fc_layer3_U0", "Port" : "fc_layer3_weights_V"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Loop_1_proc137_U0", "Parent" : "0", "Child" : ["2"],
+		"CDFG" : "Loop_1_proc137",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"Combinational" : "0",
@@ -209,11 +182,11 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "image_in_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "3", "DependentChan" : "854",
+			{"Name" : "image_in_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "3", "DependentChan" : "643",
 				"BlockSignal" : [
 					{"Name" : "image_in_V_V_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "image_V", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.Loop_1_proc138_U0.image_V_U", "Parent" : "1"},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.Loop_1_proc137_U0.image_V_U", "Parent" : "1"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_layer1_U0", "Parent" : "0", "Child" : ["4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217"],
 		"CDFG" : "conv_layer1",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
@@ -223,10 +196,10 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "218", "DependentChan" : "855",
+			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "218", "DependentChan" : "644",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "854",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "643",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]}]},
 	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.conv_layer1_U0.conv_buff_val_0_V_U", "Parent" : "3"},
@@ -452,10 +425,10 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "331", "DependentChan" : "856",
+			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "331", "DependentChan" : "645",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "3", "DependentChan" : "855",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "3", "DependentChan" : "644",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]}]},
 	{"ID" : "219", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.pool_layer1_U0.pool_buff_val_0_V_U", "Parent" : "218"},
@@ -579,10 +552,10 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "525", "DependentChan" : "857",
+			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "525", "DependentChan" : "646",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "218", "DependentChan" : "856",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "218", "DependentChan" : "645",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "conv_layer2_weights_63", "Type" : "Memory", "Direction" : "I"},
@@ -820,10 +793,10 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "622", "DependentChan" : "858",
+			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "622", "DependentChan" : "647",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "331", "DependentChan" : "857",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "331", "DependentChan" : "646",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]}]},
 	{"ID" : "526", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.pool_layer2_U0.pool_buff_val_0_V_U", "Parent" : "525"},
@@ -922,7 +895,7 @@ set RtlHierarchyInfo {[
 	{"ID" : "619", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.pool_layer2_U0.pool_buff_val_93_V_U", "Parent" : "525"},
 	{"ID" : "620", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.pool_layer2_U0.pool_buff_val_94_V_U", "Parent" : "525"},
 	{"ID" : "621", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.pool_layer2_U0.pool_buff_val_95_V_U", "Parent" : "525"},
-	{"ID" : "622", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0", "Parent" : "0", "Child" : ["623", "624", "625", "626", "627", "628", "629", "630", "631", "632", "633", "634", "635", "636", "637", "638", "639", "640", "641", "642", "643", "644", "645", "646", "647", "648", "649", "650", "651", "652", "653", "654", "655", "656", "657", "658", "659", "660", "661", "662", "663", "664", "665", "666", "667", "668", "669", "670", "671", "672", "673", "674", "675", "676", "677", "678", "679", "680", "681", "682", "683", "684", "685", "686", "687", "688", "689", "690", "691", "692", "693", "694", "695", "696", "697", "698", "699", "700", "701", "702", "703", "704", "705", "706", "707", "708", "709", "710", "711", "712", "713", "714", "715", "716", "717", "718", "719", "720", "721", "722", "723", "724", "725", "726", "727", "728", "729", "730", "731", "732", "733", "734", "735", "736", "737", "738", "739", "740", "741", "742", "743", "744"],
+	{"ID" : "622", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0", "Parent" : "0", "Child" : ["623", "624", "625", "626", "627", "628"],
 		"CDFG" : "fc_layer1",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -931,136 +904,20 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "745", "DependentChan" : "859",
+			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "629", "DependentChan" : "648",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "525", "DependentChan" : "858",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "525", "DependentChan" : "647",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "fc_layer1_weights_V", "Type" : "Memory", "Direction" : "I"}]},
 	{"ID" : "623", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.fc_layer1_weights_V_U", "Parent" : "622"},
 	{"ID" : "624", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.output_V_U", "Parent" : "622"},
-	{"ID" : "625", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U212", "Parent" : "622"},
-	{"ID" : "626", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U213", "Parent" : "622"},
-	{"ID" : "627", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U214", "Parent" : "622"},
-	{"ID" : "628", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U215", "Parent" : "622"},
-	{"ID" : "629", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U216", "Parent" : "622"},
-	{"ID" : "630", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U217", "Parent" : "622"},
-	{"ID" : "631", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U218", "Parent" : "622"},
-	{"ID" : "632", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U219", "Parent" : "622"},
-	{"ID" : "633", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U220", "Parent" : "622"},
-	{"ID" : "634", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U221", "Parent" : "622"},
-	{"ID" : "635", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U222", "Parent" : "622"},
-	{"ID" : "636", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U223", "Parent" : "622"},
-	{"ID" : "637", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U224", "Parent" : "622"},
-	{"ID" : "638", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U225", "Parent" : "622"},
-	{"ID" : "639", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U226", "Parent" : "622"},
-	{"ID" : "640", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U227", "Parent" : "622"},
-	{"ID" : "641", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U228", "Parent" : "622"},
-	{"ID" : "642", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U229", "Parent" : "622"},
-	{"ID" : "643", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U230", "Parent" : "622"},
-	{"ID" : "644", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U231", "Parent" : "622"},
-	{"ID" : "645", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U232", "Parent" : "622"},
-	{"ID" : "646", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U233", "Parent" : "622"},
-	{"ID" : "647", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U234", "Parent" : "622"},
-	{"ID" : "648", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U235", "Parent" : "622"},
-	{"ID" : "649", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U236", "Parent" : "622"},
-	{"ID" : "650", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U237", "Parent" : "622"},
-	{"ID" : "651", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U238", "Parent" : "622"},
-	{"ID" : "652", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U239", "Parent" : "622"},
-	{"ID" : "653", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U240", "Parent" : "622"},
-	{"ID" : "654", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U241", "Parent" : "622"},
-	{"ID" : "655", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U242", "Parent" : "622"},
-	{"ID" : "656", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U243", "Parent" : "622"},
-	{"ID" : "657", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U244", "Parent" : "622"},
-	{"ID" : "658", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U245", "Parent" : "622"},
-	{"ID" : "659", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U246", "Parent" : "622"},
-	{"ID" : "660", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U247", "Parent" : "622"},
-	{"ID" : "661", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U248", "Parent" : "622"},
-	{"ID" : "662", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U249", "Parent" : "622"},
-	{"ID" : "663", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U250", "Parent" : "622"},
-	{"ID" : "664", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U251", "Parent" : "622"},
-	{"ID" : "665", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U252", "Parent" : "622"},
-	{"ID" : "666", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U253", "Parent" : "622"},
-	{"ID" : "667", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U254", "Parent" : "622"},
-	{"ID" : "668", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U255", "Parent" : "622"},
-	{"ID" : "669", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U256", "Parent" : "622"},
-	{"ID" : "670", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U257", "Parent" : "622"},
-	{"ID" : "671", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U258", "Parent" : "622"},
-	{"ID" : "672", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U259", "Parent" : "622"},
-	{"ID" : "673", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U260", "Parent" : "622"},
-	{"ID" : "674", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U261", "Parent" : "622"},
-	{"ID" : "675", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U262", "Parent" : "622"},
-	{"ID" : "676", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U263", "Parent" : "622"},
-	{"ID" : "677", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U264", "Parent" : "622"},
-	{"ID" : "678", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U265", "Parent" : "622"},
-	{"ID" : "679", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U266", "Parent" : "622"},
-	{"ID" : "680", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U267", "Parent" : "622"},
-	{"ID" : "681", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U268", "Parent" : "622"},
-	{"ID" : "682", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U269", "Parent" : "622"},
-	{"ID" : "683", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U270", "Parent" : "622"},
-	{"ID" : "684", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U271", "Parent" : "622"},
-	{"ID" : "685", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U272", "Parent" : "622"},
-	{"ID" : "686", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U273", "Parent" : "622"},
-	{"ID" : "687", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U274", "Parent" : "622"},
-	{"ID" : "688", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U275", "Parent" : "622"},
-	{"ID" : "689", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U276", "Parent" : "622"},
-	{"ID" : "690", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U277", "Parent" : "622"},
-	{"ID" : "691", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U278", "Parent" : "622"},
-	{"ID" : "692", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U279", "Parent" : "622"},
-	{"ID" : "693", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U280", "Parent" : "622"},
-	{"ID" : "694", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U281", "Parent" : "622"},
-	{"ID" : "695", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U282", "Parent" : "622"},
-	{"ID" : "696", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U283", "Parent" : "622"},
-	{"ID" : "697", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U284", "Parent" : "622"},
-	{"ID" : "698", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U285", "Parent" : "622"},
-	{"ID" : "699", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U286", "Parent" : "622"},
-	{"ID" : "700", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U287", "Parent" : "622"},
-	{"ID" : "701", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U288", "Parent" : "622"},
-	{"ID" : "702", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U289", "Parent" : "622"},
-	{"ID" : "703", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U290", "Parent" : "622"},
-	{"ID" : "704", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U291", "Parent" : "622"},
-	{"ID" : "705", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U292", "Parent" : "622"},
-	{"ID" : "706", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U293", "Parent" : "622"},
-	{"ID" : "707", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U294", "Parent" : "622"},
-	{"ID" : "708", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U295", "Parent" : "622"},
-	{"ID" : "709", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U296", "Parent" : "622"},
-	{"ID" : "710", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U297", "Parent" : "622"},
-	{"ID" : "711", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U298", "Parent" : "622"},
-	{"ID" : "712", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U299", "Parent" : "622"},
-	{"ID" : "713", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U300", "Parent" : "622"},
-	{"ID" : "714", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U301", "Parent" : "622"},
-	{"ID" : "715", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U302", "Parent" : "622"},
-	{"ID" : "716", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U303", "Parent" : "622"},
-	{"ID" : "717", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U304", "Parent" : "622"},
-	{"ID" : "718", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U305", "Parent" : "622"},
-	{"ID" : "719", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U306", "Parent" : "622"},
-	{"ID" : "720", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U307", "Parent" : "622"},
-	{"ID" : "721", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U308", "Parent" : "622"},
-	{"ID" : "722", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U309", "Parent" : "622"},
-	{"ID" : "723", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U310", "Parent" : "622"},
-	{"ID" : "724", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U311", "Parent" : "622"},
-	{"ID" : "725", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U312", "Parent" : "622"},
-	{"ID" : "726", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U313", "Parent" : "622"},
-	{"ID" : "727", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U314", "Parent" : "622"},
-	{"ID" : "728", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U315", "Parent" : "622"},
-	{"ID" : "729", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U316", "Parent" : "622"},
-	{"ID" : "730", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U317", "Parent" : "622"},
-	{"ID" : "731", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U318", "Parent" : "622"},
-	{"ID" : "732", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U319", "Parent" : "622"},
-	{"ID" : "733", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U320", "Parent" : "622"},
-	{"ID" : "734", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U321", "Parent" : "622"},
-	{"ID" : "735", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U322", "Parent" : "622"},
-	{"ID" : "736", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U323", "Parent" : "622"},
-	{"ID" : "737", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U324", "Parent" : "622"},
-	{"ID" : "738", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U325", "Parent" : "622"},
-	{"ID" : "739", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U326", "Parent" : "622"},
-	{"ID" : "740", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U327", "Parent" : "622"},
-	{"ID" : "741", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U328", "Parent" : "622"},
-	{"ID" : "742", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U329", "Parent" : "622"},
-	{"ID" : "743", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U330", "Parent" : "622"},
-	{"ID" : "744", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1h7b_U331", "Parent" : "622"},
-	{"ID" : "745", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0", "Parent" : "0", "Child" : ["746", "747", "748", "749", "750", "751", "752", "753", "754", "755", "756", "757", "758", "759", "760", "761", "762", "763", "764", "765", "766", "767", "768", "769", "770", "771", "772", "773", "774", "775", "776", "777", "778", "779", "780", "781", "782", "783", "784", "785", "786", "787", "788", "789", "790", "791", "792", "793", "794", "795", "796", "797", "798", "799", "800", "801", "802", "803", "804", "805", "806", "807", "808", "809", "810", "811", "812", "813", "814", "815", "816", "817", "818", "819", "820", "821", "822", "823", "824", "825", "826", "827", "828", "829", "830", "831"],
+	{"ID" : "625", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1bZs_U212", "Parent" : "622"},
+	{"ID" : "626", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1bZs_U213", "Parent" : "622"},
+	{"ID" : "627", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1bZs_U214", "Parent" : "622"},
+	{"ID" : "628", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer1_U0.nnet_mac_muladd_1bZs_U215", "Parent" : "622"},
+	{"ID" : "629", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0", "Parent" : "0", "Child" : ["630", "631", "632", "633", "634", "635"],
 		"CDFG" : "fc_layer2",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -1069,100 +926,20 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "832", "DependentChan" : "860",
+			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "636", "DependentChan" : "649",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "622", "DependentChan" : "859",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "622", "DependentChan" : "648",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "fc_layer2_weights_V", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "746", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.fc_layer2_weights_V_U", "Parent" : "745"},
-	{"ID" : "747", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.output_V_U", "Parent" : "745"},
-	{"ID" : "748", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U337", "Parent" : "745"},
-	{"ID" : "749", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U338", "Parent" : "745"},
-	{"ID" : "750", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U339", "Parent" : "745"},
-	{"ID" : "751", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U340", "Parent" : "745"},
-	{"ID" : "752", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U341", "Parent" : "745"},
-	{"ID" : "753", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U342", "Parent" : "745"},
-	{"ID" : "754", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U343", "Parent" : "745"},
-	{"ID" : "755", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U344", "Parent" : "745"},
-	{"ID" : "756", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U345", "Parent" : "745"},
-	{"ID" : "757", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U346", "Parent" : "745"},
-	{"ID" : "758", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U347", "Parent" : "745"},
-	{"ID" : "759", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U348", "Parent" : "745"},
-	{"ID" : "760", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U349", "Parent" : "745"},
-	{"ID" : "761", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U350", "Parent" : "745"},
-	{"ID" : "762", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U351", "Parent" : "745"},
-	{"ID" : "763", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U352", "Parent" : "745"},
-	{"ID" : "764", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U353", "Parent" : "745"},
-	{"ID" : "765", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U354", "Parent" : "745"},
-	{"ID" : "766", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U355", "Parent" : "745"},
-	{"ID" : "767", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U356", "Parent" : "745"},
-	{"ID" : "768", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U357", "Parent" : "745"},
-	{"ID" : "769", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U358", "Parent" : "745"},
-	{"ID" : "770", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U359", "Parent" : "745"},
-	{"ID" : "771", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U360", "Parent" : "745"},
-	{"ID" : "772", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U361", "Parent" : "745"},
-	{"ID" : "773", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U362", "Parent" : "745"},
-	{"ID" : "774", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U363", "Parent" : "745"},
-	{"ID" : "775", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U364", "Parent" : "745"},
-	{"ID" : "776", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U365", "Parent" : "745"},
-	{"ID" : "777", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U366", "Parent" : "745"},
-	{"ID" : "778", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U367", "Parent" : "745"},
-	{"ID" : "779", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U368", "Parent" : "745"},
-	{"ID" : "780", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U369", "Parent" : "745"},
-	{"ID" : "781", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U370", "Parent" : "745"},
-	{"ID" : "782", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U371", "Parent" : "745"},
-	{"ID" : "783", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U372", "Parent" : "745"},
-	{"ID" : "784", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U373", "Parent" : "745"},
-	{"ID" : "785", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U374", "Parent" : "745"},
-	{"ID" : "786", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U375", "Parent" : "745"},
-	{"ID" : "787", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U376", "Parent" : "745"},
-	{"ID" : "788", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U377", "Parent" : "745"},
-	{"ID" : "789", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U378", "Parent" : "745"},
-	{"ID" : "790", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U379", "Parent" : "745"},
-	{"ID" : "791", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U380", "Parent" : "745"},
-	{"ID" : "792", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U381", "Parent" : "745"},
-	{"ID" : "793", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U382", "Parent" : "745"},
-	{"ID" : "794", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U383", "Parent" : "745"},
-	{"ID" : "795", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U384", "Parent" : "745"},
-	{"ID" : "796", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U385", "Parent" : "745"},
-	{"ID" : "797", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U386", "Parent" : "745"},
-	{"ID" : "798", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U387", "Parent" : "745"},
-	{"ID" : "799", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U388", "Parent" : "745"},
-	{"ID" : "800", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U389", "Parent" : "745"},
-	{"ID" : "801", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U390", "Parent" : "745"},
-	{"ID" : "802", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U391", "Parent" : "745"},
-	{"ID" : "803", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U392", "Parent" : "745"},
-	{"ID" : "804", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U393", "Parent" : "745"},
-	{"ID" : "805", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U394", "Parent" : "745"},
-	{"ID" : "806", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U395", "Parent" : "745"},
-	{"ID" : "807", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U396", "Parent" : "745"},
-	{"ID" : "808", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U397", "Parent" : "745"},
-	{"ID" : "809", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U398", "Parent" : "745"},
-	{"ID" : "810", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U399", "Parent" : "745"},
-	{"ID" : "811", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U400", "Parent" : "745"},
-	{"ID" : "812", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U401", "Parent" : "745"},
-	{"ID" : "813", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U402", "Parent" : "745"},
-	{"ID" : "814", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U403", "Parent" : "745"},
-	{"ID" : "815", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U404", "Parent" : "745"},
-	{"ID" : "816", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U405", "Parent" : "745"},
-	{"ID" : "817", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U406", "Parent" : "745"},
-	{"ID" : "818", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U407", "Parent" : "745"},
-	{"ID" : "819", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U408", "Parent" : "745"},
-	{"ID" : "820", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U409", "Parent" : "745"},
-	{"ID" : "821", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U410", "Parent" : "745"},
-	{"ID" : "822", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U411", "Parent" : "745"},
-	{"ID" : "823", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U412", "Parent" : "745"},
-	{"ID" : "824", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U413", "Parent" : "745"},
-	{"ID" : "825", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U414", "Parent" : "745"},
-	{"ID" : "826", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U415", "Parent" : "745"},
-	{"ID" : "827", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U416", "Parent" : "745"},
-	{"ID" : "828", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U417", "Parent" : "745"},
-	{"ID" : "829", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U418", "Parent" : "745"},
-	{"ID" : "830", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U419", "Parent" : "745"},
-	{"ID" : "831", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U420", "Parent" : "745"},
-	{"ID" : "832", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0", "Parent" : "0", "Child" : ["833", "834", "835", "836", "837", "838", "839", "840", "841", "842", "843", "844", "845", "846", "847", "848", "849", "850", "851", "852", "853"],
+	{"ID" : "630", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.fc_layer2_weights_V_U", "Parent" : "629"},
+	{"ID" : "631", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.output_V_U", "Parent" : "629"},
+	{"ID" : "632", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U220", "Parent" : "629"},
+	{"ID" : "633", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U221", "Parent" : "629"},
+	{"ID" : "634", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U222", "Parent" : "629"},
+	{"ID" : "635", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer2_U0.nnet_mac_muladd_1bVr_U223", "Parent" : "629"},
+	{"ID" : "636", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0", "Parent" : "0", "Child" : ["637", "638", "639", "640", "641", "642"],
 		"CDFG" : "fc_layer3",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -1174,52 +951,28 @@ set RtlHierarchyInfo {[
 			{"Name" : "out_V_V", "Type" : "Fifo", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "out_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "745", "DependentChan" : "860",
+			{"Name" : "in_V_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "629", "DependentChan" : "649",
 				"BlockSignal" : [
 					{"Name" : "in_V_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "fc_layer3_weights_V_10", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_1", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_2", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_3", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_4", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_5", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_6", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_7", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_8", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "fc_layer3_weights_V_9", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "833", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_10_U", "Parent" : "832"},
-	{"ID" : "834", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_1_U", "Parent" : "832"},
-	{"ID" : "835", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_2_U", "Parent" : "832"},
-	{"ID" : "836", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_3_U", "Parent" : "832"},
-	{"ID" : "837", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_4_U", "Parent" : "832"},
-	{"ID" : "838", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_5_U", "Parent" : "832"},
-	{"ID" : "839", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_6_U", "Parent" : "832"},
-	{"ID" : "840", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_7_U", "Parent" : "832"},
-	{"ID" : "841", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_8_U", "Parent" : "832"},
-	{"ID" : "842", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_9_U", "Parent" : "832"},
-	{"ID" : "843", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.output_V_U", "Parent" : "832"},
-	{"ID" : "844", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U425", "Parent" : "832"},
-	{"ID" : "845", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U426", "Parent" : "832"},
-	{"ID" : "846", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U427", "Parent" : "832"},
-	{"ID" : "847", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ikb_U428", "Parent" : "832"},
-	{"ID" : "848", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U429", "Parent" : "832"},
-	{"ID" : "849", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U430", "Parent" : "832"},
-	{"ID" : "850", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U431", "Parent" : "832"},
-	{"ID" : "851", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U432", "Parent" : "832"},
-	{"ID" : "852", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ijb_U433", "Parent" : "832"},
-	{"ID" : "853", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1ikb_U434", "Parent" : "832"},
-	{"ID" : "854", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.image_in_V_V_U", "Parent" : "0"},
-	{"ID" : "855", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv1_out_V_V_U", "Parent" : "0"},
-	{"ID" : "856", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pool1_out_V_V_U", "Parent" : "0"},
-	{"ID" : "857", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv2_out_V_V_U", "Parent" : "0"},
-	{"ID" : "858", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pool2_out_V_V_U", "Parent" : "0"},
-	{"ID" : "859", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc1_out_V_V_U", "Parent" : "0"},
-	{"ID" : "860", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc2_out_V_V_U", "Parent" : "0"}]}
+			{"Name" : "fc_layer3_weights_V", "Type" : "Memory", "Direction" : "I"}]},
+	{"ID" : "637", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.fc_layer3_weights_V_U", "Parent" : "636"},
+	{"ID" : "638", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.output_V_U", "Parent" : "636"},
+	{"ID" : "639", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1h9b_U228", "Parent" : "636"},
+	{"ID" : "640", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1h9b_U229", "Parent" : "636"},
+	{"ID" : "641", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1iab_U230", "Parent" : "636"},
+	{"ID" : "642", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.fc_layer3_U0.nnet_mac_muladd_1iab_U231", "Parent" : "636"},
+	{"ID" : "643", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.image_in_V_V_U", "Parent" : "0"},
+	{"ID" : "644", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv1_out_V_V_U", "Parent" : "0"},
+	{"ID" : "645", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pool1_out_V_V_U", "Parent" : "0"},
+	{"ID" : "646", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv2_out_V_V_U", "Parent" : "0"},
+	{"ID" : "647", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pool2_out_V_V_U", "Parent" : "0"},
+	{"ID" : "648", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc1_out_V_V_U", "Parent" : "0"},
+	{"ID" : "649", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fc2_out_V_V_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	nnet {
-		fc3_out_V_V {Type O LastRead -1 FirstWrite 4}
+		fc3_out_V_V {Type O LastRead -1 FirstWrite 3}
 		image_V {Type I LastRead -1 FirstWrite -1}
 		conv_layer2_weights_63 {Type I LastRead -1 FirstWrite -1}
 		conv_layer2_weights_61 {Type I LastRead -1 FirstWrite -1}
@@ -1256,17 +1009,8 @@ set ArgLastReadFirstWriteLatency {
 		conv_layer2_bias_V {Type I LastRead -1 FirstWrite -1}
 		fc_layer1_weights_V {Type I LastRead -1 FirstWrite -1}
 		fc_layer2_weights_V {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_10 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_1 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_2 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_3 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_4 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_5 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_6 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_7 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_8 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_9 {Type I LastRead -1 FirstWrite -1}}
-	Loop_1_proc138 {
+		fc_layer3_weights_V {Type I LastRead -1 FirstWrite -1}}
+	Loop_1_proc137 {
 		image_in_V_V {Type O LastRead -1 FirstWrite 2}
 		image_V {Type I LastRead -1 FirstWrite -1}}
 	conv_layer1 {
@@ -1315,32 +1059,23 @@ set ArgLastReadFirstWriteLatency {
 		out_V_V {Type O LastRead -1 FirstWrite 18}
 		in_V_V {Type I LastRead 209 FirstWrite -1}}
 	fc_layer1 {
-		out_V_V {Type O LastRead -1 FirstWrite 4}
-		in_V_V {Type I LastRead 2 FirstWrite -1}
+		out_V_V {Type O LastRead -1 FirstWrite 3}
+		in_V_V {Type I LastRead 1 FirstWrite -1}
 		fc_layer1_weights_V {Type I LastRead -1 FirstWrite -1}}
 	fc_layer2 {
-		out_V_V {Type O LastRead -1 FirstWrite 4}
-		in_V_V {Type I LastRead 2 FirstWrite -1}
+		out_V_V {Type O LastRead -1 FirstWrite 3}
+		in_V_V {Type I LastRead 1 FirstWrite -1}
 		fc_layer2_weights_V {Type I LastRead -1 FirstWrite -1}}
 	fc_layer3 {
-		out_V_V {Type O LastRead -1 FirstWrite 4}
-		in_V_V {Type I LastRead 2 FirstWrite -1}
-		fc_layer3_weights_V_10 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_1 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_2 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_3 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_4 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_5 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_6 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_7 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_8 {Type I LastRead -1 FirstWrite -1}
-		fc_layer3_weights_V_9 {Type I LastRead -1 FirstWrite -1}}}
+		out_V_V {Type O LastRead -1 FirstWrite 3}
+		in_V_V {Type I LastRead 1 FirstWrite -1}
+		fc_layer3_weights_V {Type I LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
 	{"Name" : "Latency", "Min" : "70532", "Max" : "70532"}
-	, {"Name" : "Interval", "Min" : "70516", "Max" : "70516"}
+	, {"Name" : "Interval", "Min" : "70515", "Max" : "70515"}
 ]}
 
 set PipelineEnableSignalInfo {[
